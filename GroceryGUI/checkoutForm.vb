@@ -4,7 +4,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        ' Close the form
+        ' Close the form.
         Me.Close()
         frmPrimaryForm.Show()
     End Sub

@@ -14,3 +14,4 @@ It will ask for git user info
 
 MOG was here
 darek
+hello
