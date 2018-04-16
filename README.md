@@ -11,3 +11,5 @@ Click "clone"
 This will download the version of the project currently on github
 Rightclick the project in the team explorer click the github button, forgot what its called
 It will ask for git user info
+
+MOG was here
