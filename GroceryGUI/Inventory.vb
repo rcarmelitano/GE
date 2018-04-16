@@ -8,4 +8,8 @@
         Me.InventoryTableAdapter.Fill(Me.GEDataSet.Inventory)
 
     End Sub
+
+    Private Sub mnuNewItem_Click(sender As Object, e As EventArgs) Handles mnuNewItem.Click
+
+    End Sub
 End Class

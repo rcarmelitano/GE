@@ -27,9 +27,6 @@ Partial Class frmInventory
         Me.mnuClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuNewItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvInventory = New System.Windows.Forms.DataGridView()
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.InventoryTableAdapter = New GroceryGUI.GEDataSetTableAdapters.InventoryTableAdapter()
         Me.InventoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,15 +36,19 @@ Partial Class frmInventory
         Me.InventoryCountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnDelete = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.InventoryTableAdapter = New GroceryGUI.GEDataSetTableAdapters.InventoryTableAdapter()
+        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuClose, Me.mnuNewItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuClose, Me.mnuNewItem, Me.ViewToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(946, 24)
@@ -63,8 +64,8 @@ Partial Class frmInventory
         'mnuNewItem
         '
         Me.mnuNewItem.Name = "mnuNewItem"
-        Me.mnuNewItem.Size = New System.Drawing.Size(70, 20)
-        Me.mnuNewItem.Text = "New Item"
+        Me.mnuNewItem.Size = New System.Drawing.Size(57, 20)
+        Me.mnuNewItem.Text = "Update"
         '
         'dgvInventory
         '
@@ -79,20 +80,6 @@ Partial Class frmInventory
         Me.dgvInventory.RowHeadersVisible = False
         Me.dgvInventory.Size = New System.Drawing.Size(922, 367)
         Me.dgvInventory.TabIndex = 1
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'InventoryBindingSource
-        '
-        Me.InventoryBindingSource.DataMember = "Inventory"
-        Me.InventoryBindingSource.DataSource = Me.GEDataSet
-        '
-        'InventoryTableAdapter
-        '
-        Me.InventoryTableAdapter.ClearBeforeFill = True
         '
         'InventoryIDDataGridViewTextBoxColumn
         '
@@ -157,6 +144,26 @@ Partial Class frmInventory
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseColumnTextForButtonValue = True
         '
+        'InventoryBindingSource
+        '
+        Me.InventoryBindingSource.DataMember = "Inventory"
+        Me.InventoryBindingSource.DataSource = Me.GEDataSet
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'InventoryTableAdapter
+        '
+        Me.InventoryTableAdapter.ClearBeforeFill = True
+        '
+        'ViewToolStripMenuItem
+        '
+        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.ViewToolStripMenuItem.Text = "View"
+        '
         'frmInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -170,8 +177,8 @@ Partial Class frmInventory
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -193,4 +200,5 @@ Partial Class frmInventory
     Friend WithEvents InventoryCountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnUpdate As DataGridViewButtonColumn
     Friend WithEvents btnDelete As DataGridViewButtonColumn
+    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
 End Class
