@@ -1,0 +1,162 @@
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.exe.config
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.exe
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.pdb
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.xml
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbprojResolveAssemblyReference.cache
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.Form1.resources
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.Resources.resources
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.GenerateResource.Cache
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.CoreCompileInputs.cache
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.exe
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.xml
+C:\Users\ls0057\source\repos\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.pdb
+H:\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.exe.config
+H:\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.exe
+H:\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.pdb
+H:\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.xml
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbprojResolveAssemblyReference.cache
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.Resources.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.GenerateResource.Cache
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.CoreCompileInputs.cache
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.exe
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.xml
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.pdb
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPromotion.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmQuickKey.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.exe.config
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.exe
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.pdb
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.xml
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbprojResolveAssemblyReference.cache
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmQuickKey.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.Resources.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPromotion.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.GenerateResource.Cache
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.CoreCompileInputs.cache
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.exe
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.xml
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.pdb
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\Interop.ADODB.dll
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.ResolveComReference.cache
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCoupons.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewCustomer.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCheckoutForm.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPrimaryForm.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateCustomer.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCouponsView.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmDiscounts.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmDiscountsView.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewShipping.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewReturn.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmReturnsView.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPromotionsView.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateShipping.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCustomers.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.CustomerView.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCustomerHistory.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmReportsMenu.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCards.resources
+C:\Users\ls0057\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCardsView.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.exe.config
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.exe
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.pdb
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.xml
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbprojResolveAssemblyReference.cache
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\Interop.ADODB.dll
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.ResolveComReference.cache
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCoupons.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCouponsView.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCustomerHistory.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.CustomerView.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmDiscounts.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmDiscountsView.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCards.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCardsView.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewCustomer.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPromotionsView.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmQuickKey.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCheckoutForm.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCustomers.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.Resources.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPrimaryForm.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPromotion.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmReportsMenu.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewReturn.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewShipping.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmReturnsView.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateCustomer.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateShipping.resources
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.GenerateResource.Cache
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.CoreCompileInputs.cache
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.exe
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.xml
+C:\Users\Luke Sanders\Desktop\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.pdb
+H:\GroceryGUI\GroceryGUI\obj\Debug\Interop.ADODB.dll
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.ResolveComReference.cache
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCoupons.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCouponsView.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCustomerHistory.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.CustomerView.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmDiscounts.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmDiscountsView.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCards.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCardsView.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewCustomer.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPromotionsView.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCheckoutForm.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCustomers.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPrimaryForm.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmReportsMenu.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewReturn.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewShipping.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmReturnsView.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateCustomer.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateShipping.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmShipmentConfirmation.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.InventoryView.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewInventory.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewProduct.resources
+H:\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmProducts.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.exe.config
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.exe
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.pdb
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\bin\Debug\GroceryGUI.xml
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbprojResolveAssemblyReference.cache
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\Interop.ADODB.dll
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.ResolveComReference.cache
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCoupons.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCouponsView.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCustomerHistory.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.CustomerView.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmDiscounts.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmDiscountsView.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCards.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCardsView.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmInventory.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewInventory.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.InventoryView.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewCustomer.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewProduct.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.NewSupplier.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmProducts.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.ProductsAndInventoryMenu.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPromotionsView.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmQuickKey.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCheckoutForm.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmCustomers.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.Resources.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPrimaryForm.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmPromotion.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmReportsMenu.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewReturn.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmNewShipping.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmReturnsView.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmShipmentConfirmation.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmSuppliers.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateCustomer.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateShipping.resources
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.GenerateResource.cache
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.vbproj.CoreCompileInputs.cache
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.exe
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.xml
+C:\Users\rc0083\Downloads\Luke-TonsOfAddedGUIForms(NeedsJoshsStuff)(4_13_18-10_48 P.M.)\GroceryGUI\GroceryGUI\obj\Debug\GroceryGUI.pdb
