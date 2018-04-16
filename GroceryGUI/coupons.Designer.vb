@@ -14,7 +14,7 @@ Partial Class frmCoupons
         End Try
     End Sub
 
-    'Required by the Windows Form Designer
+    'Required by the Windows Form Designer!
     Private components As System.ComponentModel.IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
