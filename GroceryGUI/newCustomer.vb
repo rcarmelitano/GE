@@ -14,6 +14,8 @@
             txtUsedLineOfCredit.Enabled = False
             txtAvailableCredit.Clear()
             txtUsedLineOfCredit.Clear()
+            txtAvailableCredit.Text = "0.00"
+            txtUsedLineOfCredit.Text = "0.00"
         End If
     End Sub
 
