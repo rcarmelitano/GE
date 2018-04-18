@@ -41,7 +41,7 @@ Partial Class frmPrimaryForm
         Me.btnCheckout.Location = New System.Drawing.Point(96, 277)
         Me.btnCheckout.Name = "btnCheckout"
         Me.btnCheckout.Size = New System.Drawing.Size(142, 51)
-        Me.btnCheckout.TabIndex = 0
+        Me.btnCheckout.TabIndex = 1
         Me.btnCheckout.Text = "CHECKOUT"
         Me.btnCheckout.UseVisualStyleBackColor = True
         '
@@ -51,7 +51,7 @@ Partial Class frmPrimaryForm
         Me.btnCustomers.Location = New System.Drawing.Point(326, 277)
         Me.btnCustomers.Name = "btnCustomers"
         Me.btnCustomers.Size = New System.Drawing.Size(142, 51)
-        Me.btnCustomers.TabIndex = 1
+        Me.btnCustomers.TabIndex = 2
         Me.btnCustomers.Text = "CUSTOMERS"
         Me.btnCustomers.UseVisualStyleBackColor = True
         '
@@ -61,7 +61,7 @@ Partial Class frmPrimaryForm
         Me.btnDeliveries.Location = New System.Drawing.Point(554, 277)
         Me.btnDeliveries.Name = "btnDeliveries"
         Me.btnDeliveries.Size = New System.Drawing.Size(142, 51)
-        Me.btnDeliveries.TabIndex = 2
+        Me.btnDeliveries.TabIndex = 3
         Me.btnDeliveries.Text = "DELIVERIES"
         Me.btnDeliveries.UseVisualStyleBackColor = True
         '
@@ -71,7 +71,7 @@ Partial Class frmPrimaryForm
         Me.btnSupplierInfo.Location = New System.Drawing.Point(96, 369)
         Me.btnSupplierInfo.Name = "btnSupplierInfo"
         Me.btnSupplierInfo.Size = New System.Drawing.Size(142, 51)
-        Me.btnSupplierInfo.TabIndex = 3
+        Me.btnSupplierInfo.TabIndex = 4
         Me.btnSupplierInfo.Text = "SUPPLIER INFO"
         Me.btnSupplierInfo.UseVisualStyleBackColor = True
         '
@@ -81,7 +81,7 @@ Partial Class frmPrimaryForm
         Me.btnItemReturns.Location = New System.Drawing.Point(96, 463)
         Me.btnItemReturns.Name = "btnItemReturns"
         Me.btnItemReturns.Size = New System.Drawing.Size(142, 51)
-        Me.btnItemReturns.TabIndex = 4
+        Me.btnItemReturns.TabIndex = 7
         Me.btnItemReturns.Text = "ITEM RETURNS"
         Me.btnItemReturns.UseVisualStyleBackColor = True
         '
@@ -91,7 +91,7 @@ Partial Class frmPrimaryForm
         Me.btnReports.Location = New System.Drawing.Point(554, 369)
         Me.btnReports.Name = "btnReports"
         Me.btnReports.Size = New System.Drawing.Size(142, 51)
-        Me.btnReports.TabIndex = 5
+        Me.btnReports.TabIndex = 6
         Me.btnReports.Text = "REPORTS"
         Me.btnReports.UseVisualStyleBackColor = True
         '
@@ -101,7 +101,7 @@ Partial Class frmPrimaryForm
         Me.btnInventory.Location = New System.Drawing.Point(326, 362)
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Size = New System.Drawing.Size(142, 64)
-        Me.btnInventory.TabIndex = 6
+        Me.btnInventory.TabIndex = 5
         Me.btnInventory.Text = "PRODUCTS " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "&& " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INVENTORY"
         Me.btnInventory.UseVisualStyleBackColor = True
         '
@@ -111,7 +111,7 @@ Partial Class frmPrimaryForm
         Me.btnPromotions.Location = New System.Drawing.Point(554, 463)
         Me.btnPromotions.Name = "btnPromotions"
         Me.btnPromotions.Size = New System.Drawing.Size(142, 51)
-        Me.btnPromotions.TabIndex = 7
+        Me.btnPromotions.TabIndex = 9
         Me.btnPromotions.Text = "PROMOTIONS"
         Me.btnPromotions.UseVisualStyleBackColor = True
         '
@@ -132,7 +132,7 @@ Partial Class frmPrimaryForm
         Me.btnExit.Location = New System.Drawing.Point(-2, -2)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(140, 51)
-        Me.btnExit.TabIndex = 9
+        Me.btnExit.TabIndex = 10
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
@@ -142,7 +142,7 @@ Partial Class frmPrimaryForm
         Me.btnGiftCards.Location = New System.Drawing.Point(326, 463)
         Me.btnGiftCards.Name = "btnGiftCards"
         Me.btnGiftCards.Size = New System.Drawing.Size(142, 51)
-        Me.btnGiftCards.TabIndex = 10
+        Me.btnGiftCards.TabIndex = 8
         Me.btnGiftCards.Text = "GIFT CARDS"
         Me.btnGiftCards.UseVisualStyleBackColor = True
         '

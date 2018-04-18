@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmNewProduct
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,93 +20,120 @@ Partial Class frmNewProduct
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.txtDepartmentID = New System.Windows.Forms.TextBox()
         Me.txtCategoryID = New System.Windows.Forms.TextBox()
         Me.btnClearDepartmentID = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.DepartmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dgvDepartments = New System.Windows.Forms.DataGridView()
+        Me.DepartmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DepartmentsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.btnSearchDepartmentID = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClearCategoryID = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.CategoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dgvCategories = New System.Windows.Forms.DataGridView()
+        Me.CategoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategoriesBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnSearchCategoryID = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CategoriesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CategoriesTableAdapter()
-        Me.DepartmentsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DepartmentsTableAdapter()
         Me.CategoryIDToolStrip = New System.Windows.Forms.ToolStrip()
         Me.CategoryIDToolStripLabel = New System.Windows.Forms.ToolStripLabel()
         Me.CategoryIDToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
         Me.CategoryIDToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.DepartmentIDToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.CategoryIDToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.CategoryIDToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.CategoryIDToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.CategoryIDToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.CategoriesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CategoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CategoriesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CategoriesTableAdapter()
+        Me.DepartmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DepartmentsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DepartmentsTableAdapter()
+        Me.DepartmentIDSearchToolStrip = New System.Windows.Forms.ToolStrip()
         Me.DepartmentIDToolStripLabel = New System.Windows.Forms.ToolStripLabel()
         Me.DepartmentIDToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
-        Me.DepartmentIDToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.CategoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DepartmentIDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DepartmentIDSearchToolStripButton = New System.Windows.Forms.ToolStripButton()
+        CType(Me.dgvDepartments, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DepartmentsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCategories, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CategoriesBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.CategoryIDToolStrip.SuspendLayout()
-        Me.DepartmentIDToolStrip.SuspendLayout()
+        Me.CategoryIDToolStrip1.SuspendLayout()
+        CType(Me.CategoriesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DepartmentIDSearchToolStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtDepartmentID
         '
-        Me.txtDepartmentID.Location = New System.Drawing.Point(519, 220)
+        Me.txtDepartmentID.Location = New System.Drawing.Point(93, 226)
         Me.txtDepartmentID.Name = "txtDepartmentID"
         Me.txtDepartmentID.Size = New System.Drawing.Size(113, 20)
         Me.txtDepartmentID.TabIndex = 104
         '
         'txtCategoryID
         '
-        Me.txtCategoryID.Location = New System.Drawing.Point(165, 220)
+        Me.txtCategoryID.Location = New System.Drawing.Point(438, 226)
         Me.txtCategoryID.Name = "txtCategoryID"
         Me.txtCategoryID.Size = New System.Drawing.Size(126, 20)
         Me.txtCategoryID.TabIndex = 103
         '
         'btnClearDepartmentID
         '
-        Me.btnClearDepartmentID.Location = New System.Drawing.Point(520, 398)
+        Me.btnClearDepartmentID.Location = New System.Drawing.Point(94, 404)
         Me.btnClearDepartmentID.Name = "btnClearDepartmentID"
         Me.btnClearDepartmentID.Size = New System.Drawing.Size(98, 39)
         Me.btnClearDepartmentID.TabIndex = 102
         Me.btnClearDepartmentID.Text = "Clear"
         Me.btnClearDepartmentID.UseVisualStyleBackColor = True
         '
-        'DataGridView2
+        'dgvDepartments
         '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AllowUserToDeleteRows = False
-        Me.DataGridView2.AutoGenerateColumns = False
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DepartmentIDDataGridViewTextBoxColumn1, Me.NameDataGridViewTextBoxColumn1})
-        Me.DataGridView2.DataSource = Me.DepartmentsBindingSource
-        Me.DataGridView2.Location = New System.Drawing.Point(438, 251)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.RowHeadersVisible = False
-        Me.DataGridView2.Size = New System.Drawing.Size(273, 141)
-        Me.DataGridView2.TabIndex = 101
+        Me.dgvDepartments.AllowUserToAddRows = False
+        Me.dgvDepartments.AllowUserToDeleteRows = False
+        Me.dgvDepartments.AutoGenerateColumns = False
+        Me.dgvDepartments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvDepartments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DepartmentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn1})
+        Me.dgvDepartments.DataSource = Me.DepartmentsBindingSource1
+        Me.dgvDepartments.Location = New System.Drawing.Point(12, 257)
+        Me.dgvDepartments.Name = "dgvDepartments"
+        Me.dgvDepartments.ReadOnly = True
+        Me.dgvDepartments.RowHeadersVisible = False
+        Me.dgvDepartments.Size = New System.Drawing.Size(273, 141)
+        Me.dgvDepartments.TabIndex = 101
         '
-        'DepartmentsBindingSource
+        'DepartmentIDDataGridViewTextBoxColumn
         '
-        Me.DepartmentsBindingSource.DataMember = "Departments"
-        Me.DepartmentsBindingSource.DataSource = Me.GEDataSet
+        Me.DepartmentIDDataGridViewTextBoxColumn.DataPropertyName = "departmentID"
+        Me.DepartmentIDDataGridViewTextBoxColumn.HeaderText = "departmentID"
+        Me.DepartmentIDDataGridViewTextBoxColumn.Name = "DepartmentIDDataGridViewTextBoxColumn"
+        Me.DepartmentIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DepartmentIDDataGridViewTextBoxColumn.Width = 96
+        '
+        'NameDataGridViewTextBoxColumn1
+        '
+        Me.NameDataGridViewTextBoxColumn1.DataPropertyName = "name"
+        Me.NameDataGridViewTextBoxColumn1.HeaderText = "name"
+        Me.NameDataGridViewTextBoxColumn1.Name = "NameDataGridViewTextBoxColumn1"
+        Me.NameDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.NameDataGridViewTextBoxColumn1.Width = 58
+        '
+        'DepartmentsBindingSource1
+        '
+        Me.DepartmentsBindingSource1.DataMember = "Departments"
+        Me.DepartmentsBindingSource1.DataSource = Me.GEDataSet
         '
         'GEDataSet
         '
@@ -115,7 +142,7 @@ Partial Class frmNewProduct
         '
         'btnSearchDepartmentID
         '
-        Me.btnSearchDepartmentID.Location = New System.Drawing.Point(638, 218)
+        Me.btnSearchDepartmentID.Location = New System.Drawing.Point(212, 224)
         Me.btnSearchDepartmentID.Name = "btnSearchDepartmentID"
         Me.btnSearchDepartmentID.Size = New System.Drawing.Size(75, 23)
         Me.btnSearchDepartmentID.TabIndex = 100
@@ -125,7 +152,7 @@ Partial Class frmNewProduct
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(434, 223)
+        Me.Label1.Location = New System.Drawing.Point(8, 229)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 13)
         Me.Label1.TabIndex = 99
@@ -133,37 +160,53 @@ Partial Class frmNewProduct
         '
         'btnClearCategoryID
         '
-        Me.btnClearCategoryID.Location = New System.Drawing.Point(179, 398)
+        Me.btnClearCategoryID.Location = New System.Drawing.Point(452, 404)
         Me.btnClearCategoryID.Name = "btnClearCategoryID"
         Me.btnClearCategoryID.Size = New System.Drawing.Size(98, 39)
         Me.btnClearCategoryID.TabIndex = 98
         Me.btnClearCategoryID.Text = "Clear"
         Me.btnClearCategoryID.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'dgvCategories
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CategoryIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.CategoriesBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(96, 251)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(274, 141)
-        Me.DataGridView1.TabIndex = 97
+        Me.dgvCategories.AllowUserToAddRows = False
+        Me.dgvCategories.AllowUserToDeleteRows = False
+        Me.dgvCategories.AutoGenerateColumns = False
+        Me.dgvCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCategories.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CategoryIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn})
+        Me.dgvCategories.DataSource = Me.CategoriesBindingSource2
+        Me.dgvCategories.Location = New System.Drawing.Point(369, 257)
+        Me.dgvCategories.Name = "dgvCategories"
+        Me.dgvCategories.ReadOnly = True
+        Me.dgvCategories.RowHeadersVisible = False
+        Me.dgvCategories.Size = New System.Drawing.Size(274, 141)
+        Me.dgvCategories.TabIndex = 97
         '
-        'CategoriesBindingSource
+        'CategoryIDDataGridViewTextBoxColumn
         '
-        Me.CategoriesBindingSource.DataMember = "Categories"
-        Me.CategoriesBindingSource.DataSource = Me.GEDataSet
+        Me.CategoryIDDataGridViewTextBoxColumn.DataPropertyName = "categoryID"
+        Me.CategoryIDDataGridViewTextBoxColumn.HeaderText = "categoryID"
+        Me.CategoryIDDataGridViewTextBoxColumn.Name = "CategoryIDDataGridViewTextBoxColumn"
+        Me.CategoryIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CategoryIDDataGridViewTextBoxColumn.Width = 84
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "name"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NameDataGridViewTextBoxColumn.Width = 58
+        '
+        'CategoriesBindingSource2
+        '
+        Me.CategoriesBindingSource2.DataMember = "Categories"
+        Me.CategoriesBindingSource2.DataSource = Me.GEDataSet
         '
         'btnSearchCategoryID
         '
-        Me.btnSearchCategoryID.Location = New System.Drawing.Point(297, 218)
+        Me.btnSearchCategoryID.Location = New System.Drawing.Point(570, 224)
         Me.btnSearchCategoryID.Name = "btnSearchCategoryID"
         Me.btnSearchCategoryID.Size = New System.Drawing.Size(75, 23)
         Me.btnSearchCategoryID.TabIndex = 96
@@ -173,7 +216,7 @@ Partial Class frmNewProduct
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(93, 223)
+        Me.Label8.Location = New System.Drawing.Point(366, 229)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(66, 13)
         Me.Label8.TabIndex = 95
@@ -181,18 +224,18 @@ Partial Class frmNewProduct
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.ViewProductsToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuClose, Me.ViewProductsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(661, 24)
         Me.MenuStrip1.TabIndex = 105
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'CloseToolStripMenuItem
+        'mnuClose
         '
-        Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
-        Me.CloseToolStripMenuItem.Text = "Close"
+        Me.mnuClose.Name = "mnuClose"
+        Me.mnuClose.Size = New System.Drawing.Size(48, 20)
+        Me.mnuClose.Text = "Close"
         '
         'ViewProductsToolStripMenuItem
         '
@@ -205,14 +248,6 @@ Partial Class frmNewProduct
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
-        '
-        'CategoriesTableAdapter
-        '
-        Me.CategoriesTableAdapter.ClearBeforeFill = True
-        '
-        'DepartmentsTableAdapter
-        '
-        Me.DepartmentsTableAdapter.ClearBeforeFill = True
         '
         'CategoryIDToolStrip
         '
@@ -242,15 +277,66 @@ Partial Class frmNewProduct
         Me.CategoryIDToolStripButton.Size = New System.Drawing.Size(68, 22)
         Me.CategoryIDToolStripButton.Text = "categoryID"
         '
-        'DepartmentIDToolStrip
+        'CategoryIDToolStrip1
         '
-        Me.DepartmentIDToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DepartmentIDToolStripLabel, Me.DepartmentIDToolStripTextBox, Me.DepartmentIDToolStripButton})
-        Me.DepartmentIDToolStrip.Location = New System.Drawing.Point(0, 24)
-        Me.DepartmentIDToolStrip.Name = "DepartmentIDToolStrip"
-        Me.DepartmentIDToolStrip.Size = New System.Drawing.Size(800, 25)
-        Me.DepartmentIDToolStrip.TabIndex = 107
-        Me.DepartmentIDToolStrip.Text = "DepartmentIDToolStrip"
-        Me.DepartmentIDToolStrip.Visible = False
+        Me.CategoryIDToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CategoryIDToolStripLabel1, Me.CategoryIDToolStripTextBox1, Me.CategoryIDToolStripButton1})
+        Me.CategoryIDToolStrip1.Location = New System.Drawing.Point(0, 24)
+        Me.CategoryIDToolStrip1.Name = "CategoryIDToolStrip1"
+        Me.CategoryIDToolStrip1.Size = New System.Drawing.Size(800, 25)
+        Me.CategoryIDToolStrip1.TabIndex = 107
+        Me.CategoryIDToolStrip1.Text = "CategoryIDToolStrip1"
+        Me.CategoryIDToolStrip1.Visible = False
+        '
+        'CategoryIDToolStripLabel1
+        '
+        Me.CategoryIDToolStripLabel1.Name = "CategoryIDToolStripLabel1"
+        Me.CategoryIDToolStripLabel1.Size = New System.Drawing.Size(67, 22)
+        Me.CategoryIDToolStripLabel1.Text = "categoryID:"
+        '
+        'CategoryIDToolStripTextBox1
+        '
+        Me.CategoryIDToolStripTextBox1.Name = "CategoryIDToolStripTextBox1"
+        Me.CategoryIDToolStripTextBox1.Size = New System.Drawing.Size(100, 25)
+        '
+        'CategoryIDToolStripButton1
+        '
+        Me.CategoryIDToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.CategoryIDToolStripButton1.Name = "CategoryIDToolStripButton1"
+        Me.CategoryIDToolStripButton1.Size = New System.Drawing.Size(68, 22)
+        Me.CategoryIDToolStripButton1.Text = "categoryID"
+        '
+        'CategoriesBindingSource1
+        '
+        Me.CategoriesBindingSource1.DataMember = "Categories"
+        Me.CategoriesBindingSource1.DataSource = Me.GEDataSet
+        '
+        'CategoriesBindingSource
+        '
+        Me.CategoriesBindingSource.DataMember = "Categories"
+        Me.CategoriesBindingSource.DataSource = Me.GEDataSet
+        '
+        'CategoriesTableAdapter
+        '
+        Me.CategoriesTableAdapter.ClearBeforeFill = True
+        '
+        'DepartmentsBindingSource
+        '
+        Me.DepartmentsBindingSource.DataMember = "Departments"
+        Me.DepartmentsBindingSource.DataSource = Me.GEDataSet
+        '
+        'DepartmentsTableAdapter
+        '
+        Me.DepartmentsTableAdapter.ClearBeforeFill = True
+        '
+        'DepartmentIDSearchToolStrip
+        '
+        Me.DepartmentIDSearchToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DepartmentIDToolStripLabel, Me.DepartmentIDToolStripTextBox, Me.DepartmentIDSearchToolStripButton})
+        Me.DepartmentIDSearchToolStrip.Location = New System.Drawing.Point(0, 24)
+        Me.DepartmentIDSearchToolStrip.Name = "DepartmentIDSearchToolStrip"
+        Me.DepartmentIDSearchToolStrip.Size = New System.Drawing.Size(800, 25)
+        Me.DepartmentIDSearchToolStrip.TabIndex = 108
+        Me.DepartmentIDSearchToolStrip.Text = "DepartmentIDSearchToolStrip"
+        Me.DepartmentIDSearchToolStrip.Visible = False
         '
         'DepartmentIDToolStripLabel
         '
@@ -263,81 +349,54 @@ Partial Class frmNewProduct
         Me.DepartmentIDToolStripTextBox.Name = "DepartmentIDToolStripTextBox"
         Me.DepartmentIDToolStripTextBox.Size = New System.Drawing.Size(100, 25)
         '
-        'DepartmentIDToolStripButton
+        'DepartmentIDSearchToolStripButton
         '
-        Me.DepartmentIDToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.DepartmentIDToolStripButton.Name = "DepartmentIDToolStripButton"
-        Me.DepartmentIDToolStripButton.Size = New System.Drawing.Size(84, 22)
-        Me.DepartmentIDToolStripButton.Text = "departmentID"
-        '
-        'CategoryIDDataGridViewTextBoxColumn
-        '
-        Me.CategoryIDDataGridViewTextBoxColumn.DataPropertyName = "categoryID"
-        Me.CategoryIDDataGridViewTextBoxColumn.HeaderText = "Category ID"
-        Me.CategoryIDDataGridViewTextBoxColumn.Name = "CategoryIDDataGridViewTextBoxColumn"
-        Me.CategoryIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CategoryIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CategoryIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.CategoryIDDataGridViewTextBoxColumn.Width = 69
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "Name"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.NameDataGridViewTextBoxColumn.Width = 41
-        '
-        'DepartmentIDDataGridViewTextBoxColumn1
-        '
-        Me.DepartmentIDDataGridViewTextBoxColumn1.DataPropertyName = "departmentID"
-        Me.DepartmentIDDataGridViewTextBoxColumn1.HeaderText = "departmentID"
-        Me.DepartmentIDDataGridViewTextBoxColumn1.Name = "DepartmentIDDataGridViewTextBoxColumn1"
-        Me.DepartmentIDDataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DepartmentIDDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DepartmentIDDataGridViewTextBoxColumn1.Width = 96
-        '
-        'NameDataGridViewTextBoxColumn1
-        '
-        Me.NameDataGridViewTextBoxColumn1.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn1.HeaderText = "name"
-        Me.NameDataGridViewTextBoxColumn1.Name = "NameDataGridViewTextBoxColumn1"
-        Me.NameDataGridViewTextBoxColumn1.ReadOnly = True
-        Me.NameDataGridViewTextBoxColumn1.Width = 58
+        Me.DepartmentIDSearchToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.DepartmentIDSearchToolStripButton.Name = "DepartmentIDSearchToolStripButton"
+        Me.DepartmentIDSearchToolStripButton.Size = New System.Drawing.Size(119, 22)
+        Me.DepartmentIDSearchToolStripButton.Text = "departmentIDSearch"
         '
         'frmNewProduct
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 457)
+        Me.ClientSize = New System.Drawing.Size(661, 457)
         Me.Controls.Add(Me.CategoryIDToolStrip)
-        Me.Controls.Add(Me.DepartmentIDToolStrip)
+        Me.Controls.Add(Me.CategoryIDToolStrip1)
+        Me.Controls.Add(Me.DepartmentIDSearchToolStrip)
         Me.Controls.Add(Me.txtDepartmentID)
         Me.Controls.Add(Me.txtCategoryID)
         Me.Controls.Add(Me.btnClearDepartmentID)
-        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.dgvDepartments)
         Me.Controls.Add(Me.btnSearchDepartmentID)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnClearCategoryID)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvCategories)
         Me.Controls.Add(Me.btnSearchCategoryID)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
         Me.Name = "frmNewProduct"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "NewProduct"
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvDepartments, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DepartmentsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCategories, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CategoriesBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.CategoryIDToolStrip.ResumeLayout(False)
         Me.CategoryIDToolStrip.PerformLayout()
-        Me.DepartmentIDToolStrip.ResumeLayout(False)
-        Me.DepartmentIDToolStrip.PerformLayout()
+        Me.CategoryIDToolStrip1.ResumeLayout(False)
+        Me.CategoryIDToolStrip1.PerformLayout()
+        CType(Me.CategoriesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DepartmentIDSearchToolStrip.ResumeLayout(False)
+        Me.DepartmentIDSearchToolStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -346,32 +405,39 @@ Partial Class frmNewProduct
     Friend WithEvents txtDepartmentID As TextBox
     Friend WithEvents txtCategoryID As TextBox
     Friend WithEvents btnClearDepartmentID As Button
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents dgvDepartments As DataGridView
     Friend WithEvents btnSearchDepartmentID As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents btnClearCategoryID As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvCategories As DataGridView
     Friend WithEvents btnSearchCategoryID As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents mnuClose As ToolStripMenuItem
     Friend WithEvents ViewProductsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents CategoriesBindingSource As BindingSource
     Friend WithEvents CategoriesTableAdapter As GEDataSetTableAdapters.CategoriesTableAdapter
-    Friend WithEvents DepartmentsBindingSource As BindingSource
-    Friend WithEvents DepartmentsTableAdapter As GEDataSetTableAdapters.DepartmentsTableAdapter
+    Friend WithEvents CategoriesBindingSource1 As BindingSource
     Friend WithEvents CategoryIDToolStrip As ToolStrip
     Friend WithEvents CategoryIDToolStripLabel As ToolStripLabel
     Friend WithEvents CategoryIDToolStripTextBox As ToolStripTextBox
     Friend WithEvents CategoryIDToolStripButton As ToolStripButton
-    Friend WithEvents DepartmentIDToolStrip As ToolStrip
-    Friend WithEvents DepartmentIDToolStripLabel As ToolStripLabel
-    Friend WithEvents DepartmentIDToolStripTextBox As ToolStripTextBox
-    Friend WithEvents DepartmentIDToolStripButton As ToolStripButton
-    Friend WithEvents DepartmentIDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents NameDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents CategoryIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CategoriesBindingSource2 As BindingSource
+    Friend WithEvents CategoryIDToolStrip1 As ToolStrip
+    Friend WithEvents CategoryIDToolStripLabel1 As ToolStripLabel
+    Friend WithEvents CategoryIDToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents CategoryIDToolStripButton1 As ToolStripButton
+    Friend WithEvents DepartmentsBindingSource As BindingSource
+    Friend WithEvents DepartmentsTableAdapter As GEDataSetTableAdapters.DepartmentsTableAdapter
+    Friend WithEvents DepartmentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NameDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DepartmentsBindingSource1 As BindingSource
+    Friend WithEvents DepartmentIDSearchToolStrip As ToolStrip
+    Friend WithEvents DepartmentIDToolStripLabel As ToolStripLabel
+    Friend WithEvents DepartmentIDToolStripTextBox As ToolStripTextBox
+    Friend WithEvents DepartmentIDSearchToolStripButton As ToolStripButton
 End Class

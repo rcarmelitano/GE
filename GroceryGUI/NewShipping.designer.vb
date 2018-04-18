@@ -223,6 +223,7 @@ Partial Class frmNewShipping
         '
         'cmbCouriers
         '
+        Me.cmbCouriers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCouriers.Enabled = False
         Me.cmbCouriers.FormattingEnabled = True
         Me.cmbCouriers.Items.AddRange(New Object() {"Fed-Ex", "UPS", "USPS"})

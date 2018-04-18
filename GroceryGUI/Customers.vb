@@ -53,4 +53,28 @@
             End Try
         End If
     End Sub
+
+    Private Sub dgvCustomers_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomers.CellContentClick
+        If e.ColumnIndex <> 11 Then
+            Exit Sub
+        End If
+
+        Dim V As String = dgvCustomers.Rows(e.RowIndex).Cells(0).Value
+        Dim index As Integer
+        index = e.RowIndex
+        Dim selectedrow As DataGridViewRow
+        selectedrow = dgvCustomers.Rows(index)
+        frmUpdateCustomer.CustomerIDTextBox.Text = selectedrow.Cells(0).Value.ToString()
+        frmUpdateCustomer.txtFirst.Text = selectedrow.Cells(1).Value.ToString()
+        frmUpdateCustomer.txtLast.Text = selectedrow.Cells(2).Value.ToString()
+        frmUpdateCustomer.txtbirthdate.Text = selectedrow.Cells(3).Value.ToString()
+        frmUpdateCustomer.txtprimary.Text = selectedrow.Cells(4).Value.ToString()
+        frmUpdateCustomer.txtSecondary.Text = selectedrow.Cells(5).Value.ToString()
+        frmUpdateCustomer.txtEmail.Text = selectedrow.Cells(6).Value.ToString()
+
+        Me.Hide()
+        frmUpdateCustomer.Show()
+    End Sub
+
+
 End Class

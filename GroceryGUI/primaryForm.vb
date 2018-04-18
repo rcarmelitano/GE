@@ -53,4 +53,10 @@
         Me.Hide()
         frmGiftCards.Show()
     End Sub
+
+    Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
+        ' Hide the current form and display the products and inventory menu
+        Me.Hide()
+        frmProductsAndInventoryMenu.Show()
+    End Sub
 End Class

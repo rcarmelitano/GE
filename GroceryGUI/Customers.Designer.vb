@@ -37,6 +37,11 @@ Partial Class frmCustomers
         Me.CustomerDOBDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrimaryPhoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SecondaryPhoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lineOfCredit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.usedLineOfCredit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.taxExempt = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.wholeSale = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Edit = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -53,7 +58,7 @@ Partial Class frmCustomers
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.HistoryToolStripMenuItem, Me.NewCustomerToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(718, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1288, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -108,12 +113,13 @@ Partial Class frmCustomers
         Me.dgvCustomers.AllowUserToDeleteRows = False
         Me.dgvCustomers.AutoGenerateColumns = False
         Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCustomers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustomerIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.CustomerDOBDataGridViewTextBoxColumn, Me.PrimaryPhoneDataGridViewTextBoxColumn, Me.SecondaryPhoneDataGridViewTextBoxColumn, Me.Edit, Me.Delete})
+        Me.dgvCustomers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustomerIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.CustomerDOBDataGridViewTextBoxColumn, Me.PrimaryPhoneDataGridViewTextBoxColumn, Me.SecondaryPhoneDataGridViewTextBoxColumn, Me.email, Me.lineOfCredit, Me.usedLineOfCredit, Me.taxExempt, Me.wholeSale, Me.Edit, Me.Delete})
         Me.dgvCustomers.DataSource = Me.CustomersBindingSource
         Me.dgvCustomers.Location = New System.Drawing.Point(12, 82)
         Me.dgvCustomers.Name = "dgvCustomers"
+        Me.dgvCustomers.ReadOnly = True
         Me.dgvCustomers.RowHeadersVisible = False
-        Me.dgvCustomers.Size = New System.Drawing.Size(694, 315)
+        Me.dgvCustomers.Size = New System.Drawing.Size(1222, 315)
         Me.dgvCustomers.TabIndex = 7
         '
         'CustomerIDDataGridViewTextBoxColumn
@@ -121,6 +127,7 @@ Partial Class frmCustomers
         Me.CustomerIDDataGridViewTextBoxColumn.DataPropertyName = "customerID"
         Me.CustomerIDDataGridViewTextBoxColumn.HeaderText = "customerID"
         Me.CustomerIDDataGridViewTextBoxColumn.Name = "CustomerIDDataGridViewTextBoxColumn"
+        Me.CustomerIDDataGridViewTextBoxColumn.ReadOnly = True
         Me.CustomerIDDataGridViewTextBoxColumn.Width = 86
         '
         'FirstNameDataGridViewTextBoxColumn
@@ -128,6 +135,7 @@ Partial Class frmCustomers
         Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
         Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "firstName"
         Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
+        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
         Me.FirstNameDataGridViewTextBoxColumn.Width = 76
         '
         'LastNameDataGridViewTextBoxColumn
@@ -135,6 +143,7 @@ Partial Class frmCustomers
         Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName"
         Me.LastNameDataGridViewTextBoxColumn.HeaderText = "lastName"
         Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
+        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
         Me.LastNameDataGridViewTextBoxColumn.Width = 76
         '
         'CustomerDOBDataGridViewTextBoxColumn
@@ -142,6 +151,7 @@ Partial Class frmCustomers
         Me.CustomerDOBDataGridViewTextBoxColumn.DataPropertyName = "customerDOB"
         Me.CustomerDOBDataGridViewTextBoxColumn.HeaderText = "customerDOB"
         Me.CustomerDOBDataGridViewTextBoxColumn.Name = "CustomerDOBDataGridViewTextBoxColumn"
+        Me.CustomerDOBDataGridViewTextBoxColumn.ReadOnly = True
         Me.CustomerDOBDataGridViewTextBoxColumn.Width = 98
         '
         'PrimaryPhoneDataGridViewTextBoxColumn
@@ -149,6 +159,7 @@ Partial Class frmCustomers
         Me.PrimaryPhoneDataGridViewTextBoxColumn.DataPropertyName = "primaryPhone"
         Me.PrimaryPhoneDataGridViewTextBoxColumn.HeaderText = "primaryPhone"
         Me.PrimaryPhoneDataGridViewTextBoxColumn.Name = "PrimaryPhoneDataGridViewTextBoxColumn"
+        Me.PrimaryPhoneDataGridViewTextBoxColumn.ReadOnly = True
         Me.PrimaryPhoneDataGridViewTextBoxColumn.Width = 96
         '
         'SecondaryPhoneDataGridViewTextBoxColumn
@@ -156,20 +167,61 @@ Partial Class frmCustomers
         Me.SecondaryPhoneDataGridViewTextBoxColumn.DataPropertyName = "secondaryPhone"
         Me.SecondaryPhoneDataGridViewTextBoxColumn.HeaderText = "secondaryPhone"
         Me.SecondaryPhoneDataGridViewTextBoxColumn.Name = "SecondaryPhoneDataGridViewTextBoxColumn"
+        Me.SecondaryPhoneDataGridViewTextBoxColumn.ReadOnly = True
         Me.SecondaryPhoneDataGridViewTextBoxColumn.Width = 112
+        '
+        'email
+        '
+        Me.email.DataPropertyName = "email"
+        Me.email.HeaderText = "email"
+        Me.email.Name = "email"
+        Me.email.ReadOnly = True
+        '
+        'lineOfCredit
+        '
+        Me.lineOfCredit.DataPropertyName = "lineOfCredit"
+        Me.lineOfCredit.HeaderText = "lineOfCredit"
+        Me.lineOfCredit.Name = "lineOfCredit"
+        Me.lineOfCredit.ReadOnly = True
+        '
+        'usedLineOfCredit
+        '
+        Me.usedLineOfCredit.DataPropertyName = "usedLineOfCredit"
+        Me.usedLineOfCredit.HeaderText = "usedLineOfCredit"
+        Me.usedLineOfCredit.Name = "usedLineOfCredit"
+        Me.usedLineOfCredit.ReadOnly = True
+        '
+        'taxExempt
+        '
+        Me.taxExempt.DataPropertyName = "taxExempt"
+        Me.taxExempt.HeaderText = "taxExempt"
+        Me.taxExempt.Name = "taxExempt"
+        Me.taxExempt.ReadOnly = True
+        '
+        'wholeSale
+        '
+        Me.wholeSale.DataPropertyName = "wholeSale"
+        Me.wholeSale.HeaderText = "wholeSale"
+        Me.wholeSale.Name = "wholeSale"
+        Me.wholeSale.ReadOnly = True
         '
         'Edit
         '
+        Me.Edit.DataPropertyName = "edit1"
         Me.Edit.HeaderText = ""
         Me.Edit.Name = "Edit"
+        Me.Edit.ReadOnly = True
         Me.Edit.Text = "Edit"
         Me.Edit.UseColumnTextForButtonValue = True
         Me.Edit.Width = 65
         '
         'Delete
         '
+        Me.Delete.DataPropertyName = "delete1"
         Me.Delete.HeaderText = ""
         Me.Delete.Name = "Delete"
+        Me.Delete.ReadOnly = True
+        Me.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Delete.Text = "Delete"
         Me.Delete.UseColumnTextForButtonValue = True
         Me.Delete.Width = 65
@@ -192,7 +244,7 @@ Partial Class frmCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(718, 409)
+        Me.ClientSize = New System.Drawing.Size(1288, 409)
         Me.Controls.Add(Me.dgvCustomers)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.txtCustomerID)
@@ -224,13 +276,18 @@ Partial Class frmCustomers
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents CustomersBindingSource As BindingSource
     Friend WithEvents CustomersTableAdapter As GEDataSetTableAdapters.CustomersTableAdapter
+    Friend WithEvents HistoryToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CustomerIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CustomerDOBDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrimaryPhoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SecondaryPhoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents email As DataGridViewTextBoxColumn
+    Friend WithEvents lineOfCredit As DataGridViewTextBoxColumn
+    Friend WithEvents usedLineOfCredit As DataGridViewTextBoxColumn
+    Friend WithEvents taxExempt As DataGridViewCheckBoxColumn
+    Friend WithEvents wholeSale As DataGridViewCheckBoxColumn
     Friend WithEvents Edit As DataGridViewButtonColumn
     Friend WithEvents Delete As DataGridViewButtonColumn
-    Friend WithEvents HistoryToolStripMenuItem As ToolStripMenuItem
 End Class

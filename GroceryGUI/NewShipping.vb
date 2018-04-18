@@ -4,14 +4,17 @@
     Dim shippingCost As Double = 0
 
     Private Sub mnuViewShipments_Click(sender As Object, e As EventArgs) Handles mnuViewShipments.Click
-        ' Hide the current form and display the shipping view form
-        Me.Hide()
-
+        ' Display the shipping view form
+        frmShipmentView.Show()
     End Sub
 
     Private Sub rdoBtnLocalYes_CheckedChanged(sender As Object, e As EventArgs) Handles rdoBtnLocalYes.CheckedChanged
         ' Disable cmbCouriers
         cmbCouriers.Enabled = False
+
+        ' Display the cost of local delivery
+        shippingCost = 20.0
+        lblPrice.Text = shippingCost.ToString("N2")
     End Sub
 
     Private Sub UpdateShipmentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateShipmentToolStripMenuItem.Click
@@ -37,8 +40,10 @@
     Private Sub rdoBtnLocalNo_CheckedChanged(sender As Object, e As EventArgs) Handles rdoBtnLocalNo.CheckedChanged
         ' Enable cmbCouriers
         cmbCouriers.Enabled = True
-        ' Clear any selected courier
+        ' Clear any selected courier and reset the shipping total
         cmbCouriers.Text = String.Empty
+        shippingCost = 0.00
+        lblPrice.Text = shippingCost.ToString("N2")
     End Sub
 
     Private Sub btnCreateShipment_Click(sender As Object, e As EventArgs) Handles btnCreateShipment.Click
