@@ -10,16 +10,6 @@
         frmPrimaryForm.Show()
     End Sub
 
-    Private Sub CustomersView_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        ' Ask the user if they are sure they want to close the current form
-        If MessageBox.Show("Are you sure you want to close the customers list?", "Customers Close",
-           MessageBoxButtons.YesNo) = DialogResult.No Then
-            e.Cancel = True
-        Else
-            frmPrimaryForm.Show()
-        End If
-    End Sub
-
     Private Sub frmCustomers_Load(sender As Object, e As EventArgs)
 
     End Sub
@@ -71,10 +61,13 @@
         frmUpdateCustomer.txtprimary.Text = selectedrow.Cells(4).Value.ToString()
         frmUpdateCustomer.txtSecondary.Text = selectedrow.Cells(5).Value.ToString()
         frmUpdateCustomer.txtEmail.Text = selectedrow.Cells(6).Value.ToString()
+        frmUpdateCustomer.CheckBox3.Checked = selectedrow.Cells(9).Value
 
-        Me.Hide()
+        Me.Close()
         frmUpdateCustomer.Show()
+
     End Sub
+
 
 
 End Class

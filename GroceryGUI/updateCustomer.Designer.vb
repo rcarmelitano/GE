@@ -25,10 +25,10 @@ Partial Class frmUpdateCustomer
         Me.components = New System.ComponentModel.Container()
         Dim CustomerIDLabel As System.Windows.Forms.Label
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Gift_Cards1DataGridView = New System.Windows.Forms.DataGridView()
+        Me.Gift_CardsDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Gift_Cards1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Gift_CardsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
@@ -57,24 +57,18 @@ Partial Class frmUpdateCustomer
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuUpdate = New System.Windows.Forms.ToolStripMenuItem()
         Me.CustomerIDTextBox = New System.Windows.Forms.TextBox()
+        Me.CustomersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CustomersTableAdapter()
         Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Gift_CardsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Gift_CardsTableAdapter()
-        Me.CustomersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CustomersTableAdapter()
         Me.TableAdapterManager = New GroceryGUI.GEDataSetTableAdapters.TableAdapterManager()
-        Me.Gift_Cards1TableAdapter = New GroceryGUI.GEDataSetTableAdapters.Gift_Cards1TableAdapter()
-        Me.Param1ToolStripLabel = New System.Windows.Forms.ToolStripLabel()
-        Me.Param1ToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
-        Me.FillToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.FillToolStrip = New System.Windows.Forms.ToolStrip()
         CustomerIDLabel = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.Gift_Cards1DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Gift_Cards1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Gift_CardsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Gift_CardsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FillToolStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'CustomerIDLabel
@@ -88,42 +82,50 @@ Partial Class frmUpdateCustomer
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Gift_Cards1DataGridView)
+        Me.GroupBox2.Controls.Add(Me.Gift_CardsDataGridView)
         Me.GroupBox2.Location = New System.Drawing.Point(399, 170)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(220, 211)
+        Me.GroupBox2.Size = New System.Drawing.Size(200, 215)
         Me.GroupBox2.TabIndex = 46
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Gift Cards"
         '
-        'Gift_Cards1DataGridView
+        'Gift_CardsDataGridView
         '
-        Me.Gift_Cards1DataGridView.AutoGenerateColumns = False
-        Me.Gift_Cards1DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Gift_Cards1DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
-        Me.Gift_Cards1DataGridView.DataSource = Me.Gift_Cards1BindingSource
-        Me.Gift_Cards1DataGridView.Location = New System.Drawing.Point(6, 18)
-        Me.Gift_Cards1DataGridView.Name = "Gift_Cards1DataGridView"
-        Me.Gift_Cards1DataGridView.RowHeadersVisible = False
-        Me.Gift_Cards1DataGridView.Size = New System.Drawing.Size(206, 187)
-        Me.Gift_Cards1DataGridView.TabIndex = 0
+        Me.Gift_CardsDataGridView.AllowUserToAddRows = False
+        Me.Gift_CardsDataGridView.AllowUserToDeleteRows = False
+        Me.Gift_CardsDataGridView.AutoGenerateColumns = False
+        Me.Gift_CardsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.Gift_CardsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Gift_CardsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn4})
+        Me.Gift_CardsDataGridView.DataSource = Me.Gift_CardsBindingSource
+        Me.Gift_CardsDataGridView.Location = New System.Drawing.Point(6, 19)
+        Me.Gift_CardsDataGridView.Name = "Gift_CardsDataGridView"
+        Me.Gift_CardsDataGridView.ReadOnly = True
+        Me.Gift_CardsDataGridView.RowHeadersVisible = False
+        Me.Gift_CardsDataGridView.Size = New System.Drawing.Size(188, 188)
+        Me.Gift_CardsDataGridView.TabIndex = 0
         '
         'DataGridViewTextBoxColumn1
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "cardTotal"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "cardTotal"
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "giftCardID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "giftCardID"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 79
         '
-        'DataGridViewTextBoxColumn2
+        'DataGridViewTextBoxColumn4
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "giftCardID"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "giftCardID"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "cardTotal"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "cardTotal"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 77
         '
-        'Gift_Cards1BindingSource
+        'Gift_CardsBindingSource
         '
-        Me.Gift_Cards1BindingSource.DataMember = "Gift_Cards1"
-        Me.Gift_Cards1BindingSource.DataSource = Me.GEDataSet
+        Me.Gift_CardsBindingSource.DataMember = "Gift_Cards"
+        Me.Gift_CardsBindingSource.DataSource = Me.GEDataSet
         '
         'GEDataSet
         '
@@ -133,6 +135,7 @@ Partial Class frmUpdateCustomer
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Enabled = False
         Me.CheckBox3.Location = New System.Drawing.Point(26, 19)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(76, 17)
@@ -143,6 +146,7 @@ Partial Class frmUpdateCustomer
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Enabled = False
         Me.CheckBox2.Location = New System.Drawing.Point(26, 49)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(45, 17)
@@ -153,6 +157,7 @@ Partial Class frmUpdateCustomer
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Enabled = False
         Me.CheckBox1.Location = New System.Drawing.Point(26, 78)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(51, 17)
@@ -176,9 +181,9 @@ Partial Class frmUpdateCustomer
         '
         Me.btnSave.Enabled = False
         Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnSave.Location = New System.Drawing.Point(14, 391)
+        Me.btnSave.Location = New System.Drawing.Point(14, 405)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(605, 67)
+        Me.btnSave.Size = New System.Drawing.Size(585, 67)
         Me.btnSave.TabIndex = 44
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
@@ -365,7 +370,7 @@ Partial Class frmUpdateCustomer
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(20, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(632, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(613, 24)
         Me.MenuStrip1.TabIndex = 25
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -384,6 +389,10 @@ Partial Class frmUpdateCustomer
         Me.CustomerIDTextBox.Size = New System.Drawing.Size(155, 20)
         Me.CustomerIDTextBox.TabIndex = 47
         '
+        'CustomersTableAdapter
+        '
+        Me.CustomersTableAdapter.ClearBeforeFill = True
+        '
         'CustomersBindingSource
         '
         Me.CustomersBindingSource.DataMember = "Customers"
@@ -393,10 +402,6 @@ Partial Class frmUpdateCustomer
         '
         Me.Gift_CardsTableAdapter.ClearBeforeFill = True
         '
-        'CustomersTableAdapter
-        '
-        Me.CustomersTableAdapter.ClearBeforeFill = True
-        '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
@@ -404,12 +409,11 @@ Partial Class frmUpdateCustomer
         Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
-        Me.TableAdapterManager.CustomersTableAdapter = Me.CustomersTableAdapter
+        Me.TableAdapterManager.CustomersTableAdapter = Nothing
         Me.TableAdapterManager.DepartmentsTableAdapter = Nothing
         Me.TableAdapterManager.Discount_TypeTableAdapter = Nothing
         Me.TableAdapterManager.DiscountsTableAdapter = Nothing
         Me.TableAdapterManager.EmployeesTableAdapter = Nothing
-        Me.TableAdapterManager.Gift_Cards1TableAdapter = Nothing
         Me.TableAdapterManager.Gift_CardsTableAdapter = Me.Gift_CardsTableAdapter
         Me.TableAdapterManager.InventoryTableAdapter = Nothing
         Me.TableAdapterManager.Item_DiscountTableAdapter = Nothing
@@ -436,47 +440,13 @@ Partial Class frmUpdateCustomer
         Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = GroceryGUI.GEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'Gift_Cards1TableAdapter
-        '
-        Me.Gift_Cards1TableAdapter.ClearBeforeFill = True
-        '
-        'Param1ToolStripLabel
-        '
-        Me.Param1ToolStripLabel.Name = "Param1ToolStripLabel"
-        Me.Param1ToolStripLabel.Size = New System.Drawing.Size(50, 22)
-        Me.Param1ToolStripLabel.Text = "Param1:"
-        '
-        'Param1ToolStripTextBox
-        '
-        Me.Param1ToolStripTextBox.Name = "Param1ToolStripTextBox"
-        Me.Param1ToolStripTextBox.Size = New System.Drawing.Size(100, 25)
-        '
-        'FillToolStripButton
-        '
-        Me.FillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.FillToolStripButton.Name = "FillToolStripButton"
-        Me.FillToolStripButton.Size = New System.Drawing.Size(26, 22)
-        Me.FillToolStripButton.Text = "Fill"
-        '
-        'FillToolStrip
-        '
-        Me.FillToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Param1ToolStripLabel, Me.Param1ToolStripTextBox, Me.FillToolStripButton})
-        Me.FillToolStrip.Location = New System.Drawing.Point(0, 24)
-        Me.FillToolStrip.Name = "FillToolStrip"
-        Me.FillToolStrip.Size = New System.Drawing.Size(632, 25)
-        Me.FillToolStrip.TabIndex = 48
-        Me.FillToolStrip.Text = "FillToolStrip"
-        '
         'frmUpdateCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(632, 470)
-        Me.Controls.Add(Me.FillToolStrip)
+        Me.ClientSize = New System.Drawing.Size(613, 484)
         Me.Controls.Add(CustomerIDLabel)
         Me.Controls.Add(Me.CustomerIDTextBox)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.txtUsedLineOfCredit)
         Me.Controls.Add(Me.txtFirst)
@@ -494,6 +464,8 @@ Partial Class frmUpdateCustomer
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -501,16 +473,14 @@ Partial Class frmUpdateCustomer
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "updateCustomer"
         Me.GroupBox2.ResumeLayout(False)
-        CType(Me.Gift_Cards1DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Gift_Cards1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Gift_CardsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Gift_CardsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FillToolStrip.ResumeLayout(False)
-        Me.FillToolStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -547,14 +517,9 @@ Partial Class frmUpdateCustomer
     Friend WithEvents CustomersTableAdapter As GEDataSetTableAdapters.CustomersTableAdapter
     Friend WithEvents TableAdapterManager As GEDataSetTableAdapters.TableAdapterManager
     Friend WithEvents CustomerIDTextBox As TextBox
-    Friend WithEvents Gift_Cards1TableAdapter As GEDataSetTableAdapters.Gift_Cards1TableAdapter
-    Friend WithEvents Gift_Cards1BindingSource As BindingSource
-    Friend WithEvents Gift_Cards1DataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents Param1ToolStripLabel As ToolStripLabel
-    Friend WithEvents Param1ToolStripTextBox As ToolStripTextBox
-    Friend WithEvents FillToolStripButton As ToolStripButton
-    Friend WithEvents FillToolStrip As ToolStrip
     Friend WithEvents mnuUpdate As ToolStripMenuItem
+    Friend WithEvents Gift_CardsDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents Gift_CardsBindingSource As BindingSource
 End Class

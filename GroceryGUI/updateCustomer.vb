@@ -1,42 +1,31 @@
-﻿Public Class frmUpdateCustomer
+﻿Imports System.Data
+Imports System.Data.SqlClient
+
+
+
+
+Public Class frmUpdateCustomer
     Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click
         ' Close the form
         Me.Close()
+        frmCustomers.Show()
     End Sub
 
     Private Sub HistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HistoryToolStripMenuItem.Click
         ' Display the customer history form
         frmCustomerHistory.Show()
+        frmCustomerHistory.LoadDataGrid(CustomerIDTextBox.Text)
     End Sub
 
-    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
-        Try
-            Me.Gift_Cards1TableAdapter.Fill(Me.GEDataSet.Gift_Cards1, CType(Param1ToolStripTextBox.Text, Integer))
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
 
-    End Sub
 
     Private Sub frmUpdateCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Param1ToolStripTextBox.Text = CustomerIDTextBox.Text
-        FillToolStripButton.PerformClick()
-        FillToolStrip.Hide()
-        CheckBox1.Checked = True
-        btnSave.Enabled = True
-        btnSave.Enabled = False
+        Me.Gift_CardsTableAdapter.CustomerGiftCards(Me.GEDataSet.Gift_Cards, CustomerIDTextBox.Text)
     End Sub
 
-    Private Sub FillToolStripButton_Click_1(sender As Object, e As EventArgs) Handles FillToolStripButton.Click
-        Try
-            Me.Gift_Cards1TableAdapter.Fill(Me.GEDataSet.Gift_Cards1, CType(Param1ToolStripTextBox.Text, Integer))
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
-
-    End Sub
 
     Private Sub UpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuUpdate.Click
+
         ' Disable ReadOnly for textboxes
         txtFirst.ReadOnly = False
         txtLast.ReadOnly = False
@@ -57,6 +46,10 @@
         txtUsedLineOfCredit.Enabled = True
         txtEmail.Enabled = True
         btnSave.Enabled = True
+        CheckBox1.Enabled = True
+        CheckBox2.Enabled = True
+        CheckBox3.Enabled = True
+
     End Sub
 
     Private Sub updateCustomer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -68,6 +61,33 @@
             ' Show the customers form
             frmCustomers.Show()
         End If
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+
+
+        Dim something As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GE.mdf;Integrated Security=True")
+        Dim Command As New SqlCommand("UPDATE customers SET firstName =@firstName,lastName =@lastName,customerDOB =@customerDOB,primaryPhone =@primaryPhone,secondaryPhone =@secondaryPhone,email =@email,lineOfCredit =@lineOfCredit,usedLineOfCredit =@usedlineofcredit
+                                            where CustomerID = @customerID", something)
+
+        Command.Parameters.AddWithValue("@firstName", txtFirst.Text)
+        Command.Parameters.AddWithValue("@lastname", txtLast.Text)
+        Command.Parameters.AddWithValue("@customerDOB", txtbirthdate.Text)
+        Command.Parameters.AddWithValue("@primaryPhone", txtprimary.Text)
+        Command.Parameters.AddWithValue("@secondaryPhone", txtSecondary.Text)
+        Command.Parameters.AddWithValue("@email", txtEmail.Text)
+        Command.Parameters.AddWithValue("@lineOfCredit", txtUsedLineOfCredit.Text)
+        Command.Parameters.AddWithValue("@usedlineofcredit", txtUsedLineOfCredit.Text)
+        Command.Parameters.AddWithValue("@customerID", CustomerIDTextBox.Text)
+
+        Try
+            something.Open()
+            Dim rowsaffected As Integer = Command.ExecuteNonQuery()
+
+        Catch
+
+        End Try
     End Sub
 End Class
 
