@@ -61,6 +61,7 @@ Partial Class frmUpdateCustomer
         Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Gift_CardsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Gift_CardsTableAdapter()
         Me.TableAdapterManager = New GroceryGUI.GEDataSetTableAdapters.TableAdapterManager()
+        Me.Button1 = New System.Windows.Forms.Button()
         CustomerIDLabel = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.Gift_CardsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -440,11 +441,23 @@ Partial Class frmUpdateCustomer
         Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = GroceryGUI.GEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'Button1
+        '
+        Me.Button1.Enabled = False
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.Button1.Location = New System.Drawing.Point(14, 47)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(68, 67)
+        Me.Button1.TabIndex = 48
+        Me.Button1.Text = "Save"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmUpdateCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(613, 484)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(CustomerIDLabel)
         Me.Controls.Add(Me.CustomerIDTextBox)
         Me.Controls.Add(Me.btnSave)
@@ -522,4 +535,5 @@ Partial Class frmUpdateCustomer
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents Gift_CardsBindingSource As BindingSource
+    Friend WithEvents Button1 As Button
 End Class
