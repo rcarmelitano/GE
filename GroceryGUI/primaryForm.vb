@@ -59,4 +59,9 @@
         Me.Hide()
         frmProductsAndInventoryMenu.Show()
     End Sub
+
+    Private Sub btnSupplierInfo_Click(sender As Object, e As EventArgs) Handles btnSupplierInfo.Click
+        frmSuppliers.Show()
+
+    End Sub
 End Class

@@ -51,6 +51,8 @@ Partial Class NewSupplier
         Me.txtZip = New System.Windows.Forms.TextBox()
         Me.txtNotes = New System.Windows.Forms.TextBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.txtId = New System.Windows.Forms.TextBox()
+        Me.lblId = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -287,11 +289,29 @@ Partial Class NewSupplier
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
+        'txtId
+        '
+        Me.txtId.Location = New System.Drawing.Point(112, 49)
+        Me.txtId.Name = "txtId"
+        Me.txtId.Size = New System.Drawing.Size(143, 20)
+        Me.txtId.TabIndex = 29
+        '
+        'lblId
+        '
+        Me.lblId.AutoSize = True
+        Me.lblId.Location = New System.Drawing.Point(21, 49)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(18, 13)
+        Me.lblId.TabIndex = 28
+        Me.lblId.Text = "ID"
+        '
         'NewSupplier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(415, 655)
+        Me.Controls.Add(Me.txtId)
+        Me.Controls.Add(Me.lblId)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.txtNotes)
         Me.Controls.Add(Me.txtZip)
@@ -360,4 +380,6 @@ Partial Class NewSupplier
     Friend WithEvents txtZip As TextBox
     Friend WithEvents txtNotes As TextBox
     Friend WithEvents btnUpdate As Button
+    Friend WithEvents txtId As TextBox
+    Friend WithEvents lblId As Label
 End Class

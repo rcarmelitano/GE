@@ -5,5 +5,22 @@
         'TODO: This line of code loads data into the 'GEDataSet.Shippers' table. You can move, or remove it, as needed.
         Me.ShippersTableAdapter.Fill(Me.GEDataSet.Shippers)
 
+
+
+
+
+
+
+    End Sub
+
+    Private Sub dgvSuppliers_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSuppliers.CellContentClick
+
+
+
+        If e.ColumnIndex <> 13 Then
+            Exit Sub
+        End If
+        NewSupplier.Show()
+
     End Sub
 End Class

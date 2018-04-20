@@ -1,23 +1,39 @@
 ﻿Public Class frmCustomers
     Private Sub NewCustomerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewCustomerToolStripMenuItem.Click
         ' Hide the current form and open the form to view customer information
-        frmNewCustomer.Show()
+        frmUpdateCustomer.Show()
+        frmUpdateCustomer.txtFirst.ReadOnly = False
+        frmUpdateCustomer.txtLast.ReadOnly = False
+        frmUpdateCustomer.txtDOB.ReadOnly = False
+        frmUpdateCustomer.txtPrimaryPhone.ReadOnly = False
+        frmUpdateCustomer.txtSecondary.ReadOnly = False
+        frmUpdateCustomer.txtAvailableCredit.ReadOnly = False
+        frmUpdateCustomer.txtUsedLineOfCredit.ReadOnly = False
+        frmUpdateCustomer.txtEmail.ReadOnly = False
+        frmUpdateCustomer.CustomerIDTextBox.ReadOnly = False
+        frmUpdateCustomer.CustomerIDTextBox.Enabled = True
+
+        ' Enable textboxes
+        frmUpdateCustomer.txtFirst.Enabled = True
+        frmUpdateCustomer.txtLast.Enabled = True
+        frmUpdateCustomer.txtDOB.Enabled = True
+        frmUpdateCustomer.txtPrimaryPhone.Enabled = True
+        frmUpdateCustomer.txtSecondary.Enabled = True
+        frmUpdateCustomer.txtAvailableCredit.Enabled = True
+        frmUpdateCustomer.txtUsedLineOfCredit.Enabled = True
+        frmUpdateCustomer.txtEmail.Enabled = True
+        frmUpdateCustomer.btnSave.Enabled = True
+        frmUpdateCustomer.CheckBox1.Enabled = True
+        frmUpdateCustomer.CheckBox2.Enabled = True
+        frmUpdateCustomer.CheckBox3.Enabled = True
+        frmUpdateCustomer.Button1.Enabled = True
+
     End Sub
 
     Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click
         ' Close the current form and display the primaryForm
         Me.Close()
         frmPrimaryForm.Show()
-    End Sub
-
-    Private Sub CustomersView_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        ' Ask the user if they are sure they want to close the current form
-        If MessageBox.Show("Are you sure you want to close the customers list?", "Customers Close",
-           MessageBoxButtons.YesNo) = DialogResult.No Then
-            e.Cancel = True
-        Else
-            frmPrimaryForm.Show()
-        End If
     End Sub
 
     Private Sub frmCustomers_Load(sender As Object, e As EventArgs)
@@ -67,14 +83,14 @@
         frmUpdateCustomer.CustomerIDTextBox.Text = selectedrow.Cells(0).Value.ToString()
         frmUpdateCustomer.txtFirst.Text = selectedrow.Cells(1).Value.ToString()
         frmUpdateCustomer.txtLast.Text = selectedrow.Cells(2).Value.ToString()
-        frmUpdateCustomer.txtbirthdate.Text = selectedrow.Cells(3).Value.ToString()
-        frmUpdateCustomer.txtprimary.Text = selectedrow.Cells(4).Value.ToString()
+        frmUpdateCustomer.txtDOB.Text = selectedrow.Cells(3).Value.ToString()
+        frmUpdateCustomer.txtPrimaryPhone.Text = selectedrow.Cells(4).Value.ToString()
         frmUpdateCustomer.txtSecondary.Text = selectedrow.Cells(5).Value.ToString()
         frmUpdateCustomer.txtEmail.Text = selectedrow.Cells(6).Value.ToString()
+        frmUpdateCustomer.CheckBox3.Checked = selectedrow.Cells(9).Value
 
-        Me.Hide()
+        Me.Close()
         frmUpdateCustomer.Show()
+
     End Sub
-
-
 End Class
