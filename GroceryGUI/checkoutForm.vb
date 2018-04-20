@@ -1,7 +1,4 @@
 ﻿Public Class frmCheckoutForm
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         ' Close the form.
@@ -38,8 +35,8 @@
     End Sub
 
     Private Sub frmCheckoutForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GEDataSet.Inventory' table. You can move, or remove it, as needed.
-        Me.InventoryTableAdapter.Fill(Me.GEDataSet.Inventory)
+        'TODO: This line of code loads data into the 'GEDataSet.Products' table. You can move, or remove it, as needed.
+        Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
         'TODO: This line of code loads data into the 'GEDataSet.Products' table. You can move, or remove it, as needed.
         Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
 

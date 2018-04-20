@@ -233,9 +233,7 @@ C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Resources.resour
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPrimaryForm.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPromotion.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReportsMenu.resources
-C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewReturn.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewShipping.resources
-C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReturnsView.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmShipmentConfirmation.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmSuppliers.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateCustomer.resources
@@ -345,3 +343,6 @@ C:\Users\rc0083\Downloads\GE\GE\GroceryGUI\obj\Debug\GroceryGUI.vbproj.CoreCompi
 C:\Users\rc0083\Downloads\GE\GE\GroceryGUI\obj\Debug\GroceryGUI.exe
 C:\Users\rc0083\Downloads\GE\GE\GroceryGUI\obj\Debug\GroceryGUI.xml
 C:\Users\rc0083\Downloads\GE\GE\GroceryGUI\obj\Debug\GroceryGUI.pdb
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\bin\Debug\GE.mdf
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\bin\Debug\GE_log.ldf
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewReturn.resources

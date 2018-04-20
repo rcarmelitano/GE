@@ -25,8 +25,6 @@ Partial Class frmInventory
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuClose = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuNewItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvInventory = New System.Windows.Forms.DataGridView()
         Me.InventoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,7 +34,6 @@ Partial Class frmInventory
         Me.ReorderAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InventoryCountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnDelete = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.InventoryTableAdapter = New GroceryGUI.GEDataSetTableAdapters.InventoryTableAdapter()
@@ -48,7 +45,7 @@ Partial Class frmInventory
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuClose, Me.mnuNewItem, Me.ViewToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuClose})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(946, 24)
@@ -61,25 +58,13 @@ Partial Class frmInventory
         Me.mnuClose.Size = New System.Drawing.Size(48, 20)
         Me.mnuClose.Text = "Close"
         '
-        'mnuNewItem
-        '
-        Me.mnuNewItem.Name = "mnuNewItem"
-        Me.mnuNewItem.Size = New System.Drawing.Size(57, 20)
-        Me.mnuNewItem.Text = "Update"
-        '
-        'ViewToolStripMenuItem
-        '
-        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.ViewToolStripMenuItem.Text = "View"
-        '
         'dgvInventory
         '
         Me.dgvInventory.AllowUserToAddRows = False
         Me.dgvInventory.AllowUserToDeleteRows = False
         Me.dgvInventory.AutoGenerateColumns = False
         Me.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvInventory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InventoryIDDataGridViewTextBoxColumn, Me.SupplierIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.UnitCostDataGridViewTextBoxColumn, Me.PurchaseUnitDataGridViewTextBoxColumn, Me.ReorderAmountDataGridViewTextBoxColumn, Me.InventoryCountDataGridViewTextBoxColumn, Me.btnUpdate, Me.btnDelete})
+        Me.dgvInventory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InventoryIDDataGridViewTextBoxColumn, Me.SupplierIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.UnitCostDataGridViewTextBoxColumn, Me.PurchaseUnitDataGridViewTextBoxColumn, Me.ReorderAmountDataGridViewTextBoxColumn, Me.InventoryCountDataGridViewTextBoxColumn, Me.btnUpdate})
         Me.dgvInventory.DataSource = Me.InventoryBindingSource
         Me.dgvInventory.Location = New System.Drawing.Point(12, 27)
         Me.dgvInventory.Name = "dgvInventory"
@@ -142,13 +127,7 @@ Partial Class frmInventory
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseColumnTextForButtonValue = True
-        '
-        'btnDelete
-        '
-        Me.btnDelete.HeaderText = ""
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseColumnTextForButtonValue = True
+        Me.btnUpdate.Width = 65
         '
         'InventoryBindingSource
         '
@@ -186,7 +165,6 @@ Partial Class frmInventory
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents mnuClose As ToolStripMenuItem
-    Friend WithEvents mnuNewItem As ToolStripMenuItem
     Friend WithEvents dgvInventory As DataGridView
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents InventoryBindingSource As BindingSource
@@ -199,6 +177,4 @@ Partial Class frmInventory
     Friend WithEvents ReorderAmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents InventoryCountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnUpdate As DataGridViewButtonColumn
-    Friend WithEvents btnDelete As DataGridViewButtonColumn
-    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
 End Class

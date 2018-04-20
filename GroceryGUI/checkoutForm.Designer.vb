@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmCheckoutForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmCheckoutForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.txtCustomerID = New System.Windows.Forms.TextBox()
@@ -32,8 +32,6 @@ Partial Class frmCheckoutForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCustomerSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ProductsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnAccount = New System.Windows.Forms.Button()
@@ -62,20 +60,17 @@ Partial Class frmCheckoutForm
         Me.Label13 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.NewCustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.ProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ProductsTableAdapter()
-        Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.InventoryTableAdapter = New GroceryGUI.GEDataSetTableAdapters.InventoryTableAdapter()
-        Me.SKU = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.productName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UPCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtCustomerID
@@ -154,24 +149,14 @@ Partial Class frmCheckoutForm
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SKU, Me.productName, Me.UPC})
-        Me.DataGridView1.DataSource = Me.ProductsBindingSource1
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SKUDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.UPCDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.ProductsBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(28, 106)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(656, 418)
         Me.DataGridView1.TabIndex = 9
-        '
-        'ProductsBindingSource1
-        '
-        Me.ProductsBindingSource1.DataMember = "Products"
-        Me.ProductsBindingSource1.DataSource = Me.GEDataSet
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label4
         '
@@ -450,6 +435,11 @@ Partial Class frmCheckoutForm
         Me.NewCustomerToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
         Me.NewCustomerToolStripMenuItem.Text = "New Customer"
         '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'ProductsBindingSource
         '
         Me.ProductsBindingSource.DataMember = "Products"
@@ -459,35 +449,26 @@ Partial Class frmCheckoutForm
         '
         Me.ProductsTableAdapter.ClearBeforeFill = True
         '
-        'InventoryBindingSource
+        'SKUDataGridViewTextBoxColumn
         '
-        Me.InventoryBindingSource.DataMember = "Inventory"
-        Me.InventoryBindingSource.DataSource = Me.GEDataSet
+        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
+        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'InventoryTableAdapter
+        'ProductNameDataGridViewTextBoxColumn
         '
-        Me.InventoryTableAdapter.ClearBeforeFill = True
+        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "productName"
+        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "productName"
+        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
+        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'SKU
+        'UPCDataGridViewTextBoxColumn
         '
-        Me.SKU.DataPropertyName = "SKU"
-        Me.SKU.HeaderText = "SKU"
-        Me.SKU.Name = "SKU"
-        Me.SKU.ReadOnly = True
-        '
-        'productName
-        '
-        Me.productName.DataPropertyName = "productName"
-        Me.productName.HeaderText = "productName"
-        Me.productName.Name = "productName"
-        Me.productName.ReadOnly = True
-        '
-        'UPC
-        '
-        Me.UPC.DataPropertyName = "UPC"
-        Me.UPC.HeaderText = "UPC"
-        Me.UPC.Name = "UPC"
-        Me.UPC.ReadOnly = True
+        Me.UPCDataGridViewTextBoxColumn.DataPropertyName = "UPC"
+        Me.UPCDataGridViewTextBoxColumn.HeaderText = "UPC"
+        Me.UPCDataGridViewTextBoxColumn.Name = "UPCDataGridViewTextBoxColumn"
+        Me.UPCDataGridViewTextBoxColumn.ReadOnly = True
         '
         'frmCheckoutForm
         '
@@ -528,14 +509,12 @@ Partial Class frmCheckoutForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Checkout"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -581,10 +560,7 @@ Partial Class frmCheckoutForm
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents ProductsBindingSource As BindingSource
     Friend WithEvents ProductsTableAdapter As GEDataSetTableAdapters.ProductsTableAdapter
-    Friend WithEvents InventoryBindingSource As BindingSource
-    Friend WithEvents InventoryTableAdapter As GEDataSetTableAdapters.InventoryTableAdapter
-    Friend WithEvents ProductsBindingSource1 As BindingSource
-    Friend WithEvents SKU As DataGridViewTextBoxColumn
-    Friend WithEvents productName As DataGridViewTextBoxColumn
-    Friend WithEvents UPC As DataGridViewTextBoxColumn
+    Friend WithEvents SKUDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UPCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

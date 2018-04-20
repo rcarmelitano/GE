@@ -12,7 +12,8 @@
     End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
-        ' Close the current form
+        ' Close the current form and show the products and inventory menu again
         Me.Close()
+        frmProductsAndInventoryMenu.Show()
     End Sub
 End Class

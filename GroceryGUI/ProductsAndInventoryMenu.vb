@@ -16,4 +16,10 @@
         Me.Hide()
         frmProducts.Show()
     End Sub
+
+    Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
+        ' Hide the current form and display the inventory form
+        Me.Hide()
+        frmInventory.Show()
+    End Sub
 End Class

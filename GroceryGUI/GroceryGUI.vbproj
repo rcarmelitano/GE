@@ -173,6 +173,12 @@
     <Compile Include="NewProduct.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NewReturn.Designer.vb">
+      <DependentUpon>NewReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewReturn.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NewSupplier.designer.vb">
       <DependentUpon>NewSupplier.vb</DependentUpon>
     </Compile>
@@ -252,22 +258,10 @@
     <Compile Include="ReportsMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Returns.Designer.vb">
-      <DependentUpon>Returns.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Returns.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="NewShipping.designer.vb">
       <DependentUpon>NewShipping.vb</DependentUpon>
     </Compile>
     <Compile Include="NewShipping.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReturnsView.Designer.vb">
-      <DependentUpon>ReturnsView.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ReturnsView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ShipmentConfirmation.Designer.vb">
@@ -347,6 +341,9 @@
     <EmbeddedResource Include="NewProduct.resx">
       <DependentUpon>NewProduct.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewReturn.resx">
+      <DependentUpon>NewReturn.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewSupplier.resx">
       <DependentUpon>NewSupplier.vb</DependentUpon>
     </EmbeddedResource>
@@ -386,14 +383,8 @@
     <EmbeddedResource Include="ReportsMenu.resx">
       <DependentUpon>ReportsMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Returns.resx">
-      <DependentUpon>Returns.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NewShipping.resx">
       <DependentUpon>NewShipping.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReturnsView.resx">
-      <DependentUpon>ReturnsView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShipmentConfirmation.resx">
       <DependentUpon>ShipmentConfirmation.vb</DependentUpon>
