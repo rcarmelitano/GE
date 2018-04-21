@@ -45,7 +45,7 @@ Public Class frmCustomers
             something.Open()
             Dim rowsaffected As Integer = Command.ExecuteNonQuery()
             dblId = Command.ExecuteScalar()
-            MessageBox.Show(dblId)
+
 
         Catch
 
