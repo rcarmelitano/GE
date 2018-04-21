@@ -13,7 +13,7 @@
 
     Private Sub NewCustomerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewCustomerToolStripMenuItem.Click
         ' Open the newCustomer form
-        frmNewCustomer.Show()
+        frmUpdateCustomer.Show()
     End Sub
 
     Private Sub checkoutForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

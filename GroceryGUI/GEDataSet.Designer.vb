@@ -3058,9 +3058,9 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddCustomersRow(ByVal customerID As Integer, ByVal firstName As String, ByVal lastName As String, ByVal customerDOB As Date, ByVal primaryPhone As String, ByVal secondaryPhone As String, ByVal email As String, ByVal lineOfCredit As Decimal, ByVal usedLineOfCredit As Decimal, ByVal wholeSale As Boolean, ByVal taxExempt As Boolean) As CustomersRow
+        Public Overloads Function AddCustomersRow(ByVal firstName As String, ByVal lastName As String, ByVal customerDOB As Date, ByVal primaryPhone As String, ByVal secondaryPhone As String, ByVal email As String, ByVal lineOfCredit As Decimal, ByVal usedLineOfCredit As Decimal, ByVal wholeSale As Boolean, ByVal taxExempt As Boolean) As CustomersRow
             Dim rowCustomersRow As CustomersRow = CType(Me.NewRow,CustomersRow)
-            Dim columnValuesArray() As Object = New Object() {customerID, firstName, lastName, customerDOB, primaryPhone, secondaryPhone, email, lineOfCredit, usedLineOfCredit, wholeSale, taxExempt}
+            Dim columnValuesArray() As Object = New Object() {Nothing, firstName, lastName, customerDOB, primaryPhone, secondaryPhone, email, lineOfCredit, usedLineOfCredit, wholeSale, taxExempt}
             rowCustomersRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowCustomersRow)
             Return rowCustomersRow
@@ -3128,6 +3128,8 @@ Partial Public Class GEDataSet
             Me.columntaxExempt = New Global.System.Data.DataColumn("taxExempt", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntaxExempt)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncustomerID}, true))
+            Me.columncustomerID.AutoIncrement = true
+            Me.columncustomerID.AutoIncrementSeed = 302
             Me.columncustomerID.AllowDBNull = false
             Me.columncustomerID.Unique = true
             Me.columnfirstName.AllowDBNull = false

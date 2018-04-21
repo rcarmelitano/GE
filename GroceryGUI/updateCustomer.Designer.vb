@@ -51,7 +51,6 @@ Partial Class frmUpdateCustomer
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.HistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -61,7 +60,7 @@ Partial Class frmUpdateCustomer
         Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Gift_CardsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Gift_CardsTableAdapter()
         Me.TableAdapterManager = New GroceryGUI.GEDataSetTableAdapters.TableAdapterManager()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnsave2 = New System.Windows.Forms.Button()
         CustomerIDLabel = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.Gift_CardsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -196,7 +195,7 @@ Partial Class frmUpdateCustomer
         Me.txtUsedLineOfCredit.Name = "txtUsedLineOfCredit"
         Me.txtUsedLineOfCredit.ReadOnly = True
         Me.txtUsedLineOfCredit.Size = New System.Drawing.Size(155, 20)
-        Me.txtUsedLineOfCredit.TabIndex = 43
+        Me.txtUsedLineOfCredit.TabIndex = 9
         Me.txtUsedLineOfCredit.Text = "0.00"
         '
         'txtFirst
@@ -206,7 +205,7 @@ Partial Class frmUpdateCustomer
         Me.txtFirst.Name = "txtFirst"
         Me.txtFirst.ReadOnly = True
         Me.txtFirst.Size = New System.Drawing.Size(155, 20)
-        Me.txtFirst.TabIndex = 41
+        Me.txtFirst.TabIndex = 2
         '
         'txtLast
         '
@@ -215,7 +214,7 @@ Partial Class frmUpdateCustomer
         Me.txtLast.Name = "txtLast"
         Me.txtLast.ReadOnly = True
         Me.txtLast.Size = New System.Drawing.Size(155, 20)
-        Me.txtLast.TabIndex = 40
+        Me.txtLast.TabIndex = 3
         '
         'txtbirthdate
         '
@@ -224,7 +223,7 @@ Partial Class frmUpdateCustomer
         Me.txtbirthdate.Name = "txtbirthdate"
         Me.txtbirthdate.ReadOnly = True
         Me.txtbirthdate.Size = New System.Drawing.Size(155, 20)
-        Me.txtbirthdate.TabIndex = 39
+        Me.txtbirthdate.TabIndex = 4
         '
         'txtEmail
         '
@@ -233,7 +232,7 @@ Partial Class frmUpdateCustomer
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.ReadOnly = True
         Me.txtEmail.Size = New System.Drawing.Size(155, 20)
-        Me.txtEmail.TabIndex = 38
+        Me.txtEmail.TabIndex = 7
         '
         'txtAvailableCredit
         '
@@ -242,7 +241,7 @@ Partial Class frmUpdateCustomer
         Me.txtAvailableCredit.Name = "txtAvailableCredit"
         Me.txtAvailableCredit.ReadOnly = True
         Me.txtAvailableCredit.Size = New System.Drawing.Size(155, 20)
-        Me.txtAvailableCredit.TabIndex = 37
+        Me.txtAvailableCredit.TabIndex = 8
         Me.txtAvailableCredit.Text = "0.00"
         '
         'txtprimary
@@ -252,7 +251,7 @@ Partial Class frmUpdateCustomer
         Me.txtprimary.Name = "txtprimary"
         Me.txtprimary.ReadOnly = True
         Me.txtprimary.Size = New System.Drawing.Size(155, 20)
-        Me.txtprimary.TabIndex = 36
+        Me.txtprimary.TabIndex = 5
         '
         'txtSecondary
         '
@@ -261,7 +260,7 @@ Partial Class frmUpdateCustomer
         Me.txtSecondary.Name = "txtSecondary"
         Me.txtSecondary.ReadOnly = True
         Me.txtSecondary.Size = New System.Drawing.Size(155, 20)
-        Me.txtSecondary.TabIndex = 35
+        Me.txtSecondary.TabIndex = 6
         Me.txtSecondary.TabStop = False
         '
         'Label8
@@ -341,13 +340,6 @@ Partial Class frmUpdateCustomer
         Me.HistoryToolStripMenuItem.Size = New System.Drawing.Size(76, 20)
         Me.HistoryToolStripMenuItem.Text = "History"
         '
-        'DeleteToolStripMenuItem
-        '
-        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Padding = New System.Windows.Forms.Padding(23, 0, 4, 0)
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
-        Me.DeleteToolStripMenuItem.Text = "Delete"
-        '
         'BackToolStripMenuItem
         '
         Me.BackToolStripMenuItem.Name = "BackToolStripMenuItem"
@@ -367,12 +359,12 @@ Partial Class frmUpdateCustomer
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.HistoryToolStripMenuItem, Me.mnuUpdate})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.HistoryToolStripMenuItem, Me.mnuUpdate})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(20, 2, 0, 2)
         Me.MenuStrip1.Size = New System.Drawing.Size(613, 24)
-        Me.MenuStrip1.TabIndex = 25
+        Me.MenuStrip1.TabIndex = 10
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'mnuUpdate
@@ -388,7 +380,7 @@ Partial Class frmUpdateCustomer
         Me.CustomerIDTextBox.Name = "CustomerIDTextBox"
         Me.CustomerIDTextBox.ReadOnly = True
         Me.CustomerIDTextBox.Size = New System.Drawing.Size(155, 20)
-        Me.CustomerIDTextBox.TabIndex = 47
+        Me.CustomerIDTextBox.TabIndex = 1
         '
         'CustomersTableAdapter
         '
@@ -441,23 +433,24 @@ Partial Class frmUpdateCustomer
         Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = GroceryGUI.GEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'Button1
+        'btnsave2
         '
-        Me.Button1.Enabled = False
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.Button1.Location = New System.Drawing.Point(14, 47)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(68, 67)
-        Me.Button1.TabIndex = 48
-        Me.Button1.Text = "Save"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnsave2.Enabled = False
+        Me.btnsave2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.btnsave2.Location = New System.Drawing.Point(14, 405)
+        Me.btnsave2.Name = "btnsave2"
+        Me.btnsave2.Size = New System.Drawing.Size(585, 67)
+        Me.btnsave2.TabIndex = 48
+        Me.btnsave2.Text = "Save"
+        Me.btnsave2.UseVisualStyleBackColor = True
+        Me.btnsave2.Visible = False
         '
         'frmUpdateCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(613, 484)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnsave2)
         Me.Controls.Add(CustomerIDLabel)
         Me.Controls.Add(Me.CustomerIDTextBox)
         Me.Controls.Add(Me.btnSave)
@@ -484,7 +477,6 @@ Partial Class frmUpdateCustomer
         Me.MaximizeBox = False
         Me.Name = "frmUpdateCustomer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "updateCustomer"
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.Gift_CardsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Gift_CardsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -520,7 +512,6 @@ Partial Class frmUpdateCustomer
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents HistoryToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BackToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label9 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
@@ -535,5 +526,5 @@ Partial Class frmUpdateCustomer
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents Gift_CardsBindingSource As BindingSource
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnsave2 As Button
 End Class

@@ -366,7 +366,6 @@ D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCardsView.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmInventory.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmNewInventory.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.InventoryView.resources
-D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmNewCustomer.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmNewProduct.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmNewReturn.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.NewSupplier.resources

@@ -6,6 +6,7 @@ Imports System.Data.SqlClient
 
 Public Class frmUpdateCustomer
 
+
     Dim something As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GE.mdf;Integrated Security=True")
     Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click
         ' Close the form
@@ -22,10 +23,14 @@ Public Class frmUpdateCustomer
 
 
     Private Sub frmUpdateCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Me.Gift_CardsTableAdapter.CustomerGiftCards(Me.GEDataSet.Gift_Cards, CustomerIDTextBox.Text)
+
+        'select max(id) from invoicetable.
+
     End Sub
 
-
+    '---------------------------------------------------------------------------------------------------------when update button is clicked it enables, and makes it inreable 
     Private Sub UpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuUpdate.Click
 
         ' Disable ReadOnly for textboxes
@@ -37,6 +42,8 @@ Public Class frmUpdateCustomer
         txtAvailableCredit.ReadOnly = False
         txtUsedLineOfCredit.ReadOnly = False
         txtEmail.ReadOnly = False
+        btnsave2.Visible = False
+        btnsave2.Enabled = False
 
         ' Enable textboxes
         txtFirst.Enabled = True
@@ -51,9 +58,8 @@ Public Class frmUpdateCustomer
         CheckBox1.Enabled = True
         CheckBox2.Enabled = True
         CheckBox3.Enabled = True
-
     End Sub
-
+    '----------------------------------------------------------------------------------------------------------------------closing the form
     Private Sub updateCustomer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         ' Ask the user if they are sure they want to close the current form
         If MessageBox.Show("Are you sure you want to cancel?", "Customer Update Close",
@@ -64,8 +70,10 @@ Public Class frmUpdateCustomer
             frmCustomers.Show()
         End If
     End Sub
-
+    '-------------------------------------------------------------------------------------------query to save an update to a customer 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+
 
         Dim Command As New SqlCommand("UPDATE customers SET firstName =@firstName,lastName =@lastName,customerDOB =@customerDOB,primaryPhone =@primaryPhone,secondaryPhone =@secondaryPhone,email =@email,lineOfCredit =@lineOfCredit,usedLineOfCredit =@usedlineofcredit
                                             where CustomerID = @customerID", something)
@@ -88,8 +96,8 @@ Public Class frmUpdateCustomer
 
         End Try
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    '------------------------------------------------------------------------------------------query to add a new customer to the database 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnsave2.Click
         Dim Command As New SqlCommand("INSERT INTO Customers (customerID,firstName,lastName,customerDOB,primaryPhone,secondaryPhone,email)VALUES 
 (@customerID,@firstName,@lastName,@customerDOB,@PrimaryPhone,@secondaryPhone,@email)", something)
 

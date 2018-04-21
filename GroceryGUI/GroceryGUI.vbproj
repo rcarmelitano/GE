@@ -161,12 +161,6 @@
     <Compile Include="InventoryView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newCustomer.Designer.vb">
-      <DependentUpon>newCustomer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="newCustomer.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="NewProduct.Designer.vb">
       <DependentUpon>NewProduct.vb</DependentUpon>
     </Compile>
@@ -334,9 +328,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryView.resx">
       <DependentUpon>InventoryView.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="newCustomer.resx">
-      <DependentUpon>newCustomer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewProduct.resx">
       <DependentUpon>NewProduct.vb</DependentUpon>
