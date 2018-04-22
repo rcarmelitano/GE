@@ -35,7 +35,6 @@ Partial Class frmNewReturn
         Me.txtReturnID = New System.Windows.Forms.TextBox()
         Me.txtOrderDetailID = New System.Windows.Forms.TextBox()
         Me.txtReason = New System.Windows.Forms.TextBox()
-        Me.dtpReturnDate = New System.Windows.Forms.DateTimePicker()
         Me.dgvOrderDetails = New System.Windows.Forms.DataGridView()
         Me.OrderDetailIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,11 +44,15 @@ Partial Class frmNewReturn
         Me.Order_DetailsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Order_DetailsTableAdapter()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.nudQuantity = New System.Windows.Forms.NumericUpDown()
+        Me.txtReturnDate = New System.Windows.Forms.TextBox()
+        Me.ReturnsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ReturnsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ReturnsTableAdapter()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvOrderDetails, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OrderDetailsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ReturnsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnFinalizeReturn
@@ -139,6 +142,7 @@ Partial Class frmNewReturn
         '
         Me.txtOrderDetailID.Location = New System.Drawing.Point(112, 74)
         Me.txtOrderDetailID.Name = "txtOrderDetailID"
+        Me.txtOrderDetailID.ReadOnly = True
         Me.txtOrderDetailID.Size = New System.Drawing.Size(100, 20)
         Me.txtOrderDetailID.TabIndex = 8
         '
@@ -148,14 +152,6 @@ Partial Class frmNewReturn
         Me.txtReason.Name = "txtReason"
         Me.txtReason.Size = New System.Drawing.Size(190, 20)
         Me.txtReason.TabIndex = 9
-        '
-        'dtpReturnDate
-        '
-        Me.dtpReturnDate.Location = New System.Drawing.Point(112, 338)
-        Me.dtpReturnDate.MinDate = New Date(2018, 4, 21, 0, 0, 0, 0)
-        Me.dtpReturnDate.Name = "dtpReturnDate"
-        Me.dtpReturnDate.Size = New System.Drawing.Size(190, 20)
-        Me.dtpReturnDate.TabIndex = 11
         '
         'dgvOrderDetails
         '
@@ -231,15 +227,31 @@ Partial Class frmNewReturn
         Me.nudQuantity.Size = New System.Drawing.Size(100, 20)
         Me.nudQuantity.TabIndex = 16
         '
+        'txtReturnDate
+        '
+        Me.txtReturnDate.Location = New System.Drawing.Point(112, 338)
+        Me.txtReturnDate.Name = "txtReturnDate"
+        Me.txtReturnDate.Size = New System.Drawing.Size(190, 20)
+        Me.txtReturnDate.TabIndex = 17
+        '
+        'ReturnsBindingSource
+        '
+        Me.ReturnsBindingSource.DataMember = "Returns"
+        Me.ReturnsBindingSource.DataSource = Me.GEDataSet
+        '
+        'ReturnsTableAdapter
+        '
+        Me.ReturnsTableAdapter.ClearBeforeFill = True
+        '
         'frmNewReturn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(319, 427)
+        Me.Controls.Add(Me.txtReturnDate)
         Me.Controls.Add(Me.nudQuantity)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.dgvOrderDetails)
-        Me.Controls.Add(Me.dtpReturnDate)
         Me.Controls.Add(Me.txtReason)
         Me.Controls.Add(Me.txtOrderDetailID)
         Me.Controls.Add(Me.txtReturnID)
@@ -262,6 +274,7 @@ Partial Class frmNewReturn
         CType(Me.OrderDetailsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudQuantity, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ReturnsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -279,7 +292,6 @@ Partial Class frmNewReturn
     Friend WithEvents txtReturnID As TextBox
     Friend WithEvents txtOrderDetailID As TextBox
     Friend WithEvents txtReason As TextBox
-    Friend WithEvents dtpReturnDate As DateTimePicker
     Friend WithEvents dgvOrderDetails As DataGridView
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents OrderDetailsBindingSource As BindingSource
@@ -289,4 +301,7 @@ Partial Class frmNewReturn
     Friend WithEvents SKUDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents quantity As DataGridViewTextBoxColumn
     Friend WithEvents nudQuantity As NumericUpDown
+    Friend WithEvents txtReturnDate As TextBox
+    Friend WithEvents ReturnsBindingSource As BindingSource
+    Friend WithEvents ReturnsTableAdapter As GEDataSetTableAdapters.ReturnsTableAdapter
 End Class
