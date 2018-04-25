@@ -98,8 +98,11 @@ Partial Class frmProductsAndInventoryMenu
         Me.Controls.Add(Me.btnInventory)
         Me.Controls.Add(Me.btnCreateProduct)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
         Me.Name = "frmProductsAndInventoryMenu"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ProductsAndInventoryMenu"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

@@ -221,7 +221,6 @@ C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCardsView
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmInventory.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewInventory.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.InventoryView.resources
-C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewCustomer.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewProduct.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.NewSupplier.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmProducts.resources

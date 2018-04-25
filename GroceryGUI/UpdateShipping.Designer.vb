@@ -26,7 +26,6 @@ Partial Class frmUpdateShipping
         Me.btnCreateShipment = New System.Windows.Forms.Button()
         Me.txtTimeDelivered = New System.Windows.Forms.TextBox()
         Me.txtZIP = New System.Windows.Forms.TextBox()
-        Me.txtState = New System.Windows.Forms.TextBox()
         Me.txtCity = New System.Windows.Forms.TextBox()
         Me.txtShipAddressTwo = New System.Windows.Forms.TextBox()
         Me.txtShipAddressOne = New System.Windows.Forms.TextBox()
@@ -46,6 +45,7 @@ Partial Class frmUpdateShipping
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblOrderID = New System.Windows.Forms.Label()
         Me.lblTrackingNumber = New System.Windows.Forms.Label()
+        Me.cmbState = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -79,13 +79,6 @@ Partial Class frmUpdateShipping
         Me.txtZIP.Name = "txtZIP"
         Me.txtZIP.Size = New System.Drawing.Size(166, 20)
         Me.txtZIP.TabIndex = 51
-        '
-        'txtState
-        '
-        Me.txtState.Location = New System.Drawing.Point(119, 181)
-        Me.txtState.Name = "txtState"
-        Me.txtState.Size = New System.Drawing.Size(166, 20)
-        Me.txtState.TabIndex = 50
         '
         'txtCity
         '
@@ -243,11 +236,21 @@ Partial Class frmUpdateShipping
         Me.lblTrackingNumber.Size = New System.Drawing.Size(167, 23)
         Me.lblTrackingNumber.TabIndex = 61
         '
+        'cmbState
+        '
+        Me.cmbState.FormattingEnabled = True
+        Me.cmbState.Items.AddRange(New Object() {"Alabama ", "Alaska ", "Arizona ", "Arkansas ", "California ", "Colorado ", "Connecticut ", "Delaware ", "Florida ", "Georgia ", "Hawaii ", "Idaho ", "Illinois", "Indiana ", "Iowa ", "Kansas ", "Kentucky ", "Louisiana ", "Maine ", "Maryland ", "Massachusetts ", "Michigan ", "Minnesota ", "Mississippi ", "Missouri ", "Montana", "Nebraska ", "Nevada ", "New Hampshire ", "New Jersey ", "New Mexico ", "New York ", "North Carolina ", "North Dakota ", "Ohio ", "Oklahoma ", "Oregon ", "Pennsylvania", "Rhode Island ", "South Carolina ", "South Dakota ", "Tennessee ", "Texas ", "Utah ", "Vermont ", "Virginia ", "Washington ", "West Virginia ", "Wisconsin ", "Wyoming"})
+        Me.cmbState.Location = New System.Drawing.Point(119, 180)
+        Me.cmbState.Name = "cmbState"
+        Me.cmbState.Size = New System.Drawing.Size(167, 21)
+        Me.cmbState.TabIndex = 63
+        '
         'frmUpdateShipping
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(359, 377)
+        Me.Controls.Add(Me.cmbState)
         Me.Controls.Add(Me.lblOrderID)
         Me.Controls.Add(Me.lblTrackingNumber)
         Me.Controls.Add(Me.Label5)
@@ -257,7 +260,6 @@ Partial Class frmUpdateShipping
         Me.Controls.Add(Me.btnCreateShipment)
         Me.Controls.Add(Me.txtTimeDelivered)
         Me.Controls.Add(Me.txtZIP)
-        Me.Controls.Add(Me.txtState)
         Me.Controls.Add(Me.txtCity)
         Me.Controls.Add(Me.txtShipAddressTwo)
         Me.Controls.Add(Me.txtShipAddressOne)
@@ -285,7 +287,6 @@ Partial Class frmUpdateShipping
     Friend WithEvents btnCreateShipment As Button
     Friend WithEvents txtTimeDelivered As TextBox
     Friend WithEvents txtZIP As TextBox
-    Friend WithEvents txtState As TextBox
     Friend WithEvents txtCity As TextBox
     Friend WithEvents txtShipAddressTwo As TextBox
     Friend WithEvents txtShipAddressOne As TextBox
@@ -305,4 +306,5 @@ Partial Class frmUpdateShipping
     Friend WithEvents Label1 As Label
     Friend WithEvents lblOrderID As Label
     Friend WithEvents lblTrackingNumber As Label
+    Friend WithEvents cmbState As ComboBox
 End Class

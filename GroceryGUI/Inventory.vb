@@ -10,7 +10,8 @@
     End Sub
 
     Private Sub mnuClose_Click(sender As Object, e As EventArgs) Handles mnuClose.Click
-        ' Close the form
+        ' Close the form and display the product and inventory menu
+        frmProductsAndInventoryMenu.Show()
         Me.Close()
     End Sub
 End Class
