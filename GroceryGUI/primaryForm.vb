@@ -59,4 +59,10 @@
         Me.Hide()
         frmProductsAndInventoryMenu.Show()
     End Sub
+
+	'---------------------------closing form and opening suppliers form
+	Private Sub btnSupplierInfo_Click(sender As Object, e As EventArgs) Handles btnSupplierInfo.Click
+		Me.Hide()
+		frmSuppliers.Show()
+	End Sub
 End Class
