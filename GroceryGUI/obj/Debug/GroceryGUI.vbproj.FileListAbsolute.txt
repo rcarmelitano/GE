@@ -485,3 +485,4 @@ G:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.exe
 G:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.xml
 G:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.pdb
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.audit.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.audit.resources
