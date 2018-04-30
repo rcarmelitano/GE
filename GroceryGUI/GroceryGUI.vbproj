@@ -111,12 +111,6 @@
     <Compile Include="couponsView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerHistory.Designer.vb">
-      <DependentUpon>CustomerHistory.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerHistory.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="CustomerView.Designer.vb">
       <DependentUpon>CustomerView.vb</DependentUpon>
     </Compile>
@@ -365,9 +359,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="couponsView.resx">
       <DependentUpon>couponsView.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerHistory.resx">
-      <DependentUpon>CustomerHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerView.resx">
       <DependentUpon>CustomerView.vb</DependentUpon>

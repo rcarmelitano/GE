@@ -550,3 +550,4 @@ D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.testing.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.supplierhistory.resources
 E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.supplierhistory.resources
 E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.ShippingAdresses.resources
+D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.ShippingAdresses.resources
