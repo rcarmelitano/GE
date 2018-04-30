@@ -65,6 +65,7 @@ Partial Class frmUpdateCustomer
 		Me.txtbirthdate = New System.Windows.Forms.MaskedTextBox()
 		Me.txtprimary = New System.Windows.Forms.MaskedTextBox()
 		Me.txtSecondary = New System.Windows.Forms.MaskedTextBox()
+		Me.AddressToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		CustomerIDLabel = New System.Windows.Forms.Label()
 		Me.GroupBox2.SuspendLayout()
 		CType(Me.Gift_CardsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -335,7 +336,7 @@ Partial Class frmUpdateCustomer
 		'
 		'MenuStrip1
 		'
-		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.HistoryToolStripMenuItem, Me.mnuUpdate})
+		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.HistoryToolStripMenuItem, Me.mnuUpdate, Me.AddressToolStripMenuItem})
 		Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
 		Me.MenuStrip1.Name = "MenuStrip1"
 		Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(20, 2, 0, 2)
@@ -374,38 +375,72 @@ Partial Class frmUpdateCustomer
 		'TableAdapterManager
 		'
 		Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+		Me.TableAdapterManager.Billing_Addresses1TableAdapter = Nothing
 		Me.TableAdapterManager.Billing_AddressesTableAdapter = Nothing
+		Me.TableAdapterManager.Campaign_Targets1TableAdapter = Nothing
 		Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
+		Me.TableAdapterManager.Categories1TableAdapter = Nothing
 		Me.TableAdapterManager.CategoriesTableAdapter = Nothing
+		Me.TableAdapterManager.Coupons1TableAdapter = Nothing
 		Me.TableAdapterManager.CouponsTableAdapter = Nothing
+		Me.TableAdapterManager.CreditAuditTableAdapter = Nothing
+		Me.TableAdapterManager.Customers1TableAdapter = Nothing
 		Me.TableAdapterManager.CustomersTableAdapter = Nothing
+		Me.TableAdapterManager.Departments1TableAdapter = Nothing
 		Me.TableAdapterManager.DepartmentsTableAdapter = Nothing
+		Me.TableAdapterManager.Discount_Type1TableAdapter = Nothing
 		Me.TableAdapterManager.Discount_TypeTableAdapter = Nothing
+		Me.TableAdapterManager.Discounts1TableAdapter = Nothing
 		Me.TableAdapterManager.DiscountsTableAdapter = Nothing
+		Me.TableAdapterManager.Employees1TableAdapter = Nothing
 		Me.TableAdapterManager.EmployeesTableAdapter = Nothing
+		Me.TableAdapterManager.Gift_Cards1TableAdapter = Nothing
 		Me.TableAdapterManager.Gift_CardsTableAdapter = Me.Gift_CardsTableAdapter
+		Me.TableAdapterManager.Inventory1TableAdapter = Nothing
 		Me.TableAdapterManager.InventoryTableAdapter = Nothing
+		Me.TableAdapterManager.Item_Discount1TableAdapter = Nothing
 		Me.TableAdapterManager.Item_DiscountTableAdapter = Nothing
+		Me.TableAdapterManager.Marketing_Campaigns1TableAdapter = Nothing
 		Me.TableAdapterManager.Marketing_CampaignsTableAdapter = Nothing
+		Me.TableAdapterManager.Order_Details1TableAdapter = Nothing
 		Me.TableAdapterManager.Order_DetailsTableAdapter = Nothing
+		Me.TableAdapterManager.Order_Discount1TableAdapter = Nothing
 		Me.TableAdapterManager.Order_DiscountTableAdapter = Nothing
+		Me.TableAdapterManager.Orders1TableAdapter = Nothing
 		Me.TableAdapterManager.OrdersTableAdapter = Nothing
+		Me.TableAdapterManager.Payment_Types1TableAdapter = Nothing
 		Me.TableAdapterManager.Payment_TypesTableAdapter = Nothing
+		Me.TableAdapterManager.Payments1TableAdapter = Nothing
 		Me.TableAdapterManager.PaymentsTableAdapter = Nothing
+		Me.TableAdapterManager.Products1TableAdapter = Nothing
 		Me.TableAdapterManager.ProductsTableAdapter = Nothing
+		Me.TableAdapterManager.Promo_Info_Type1TableAdapter = Nothing
 		Me.TableAdapterManager.Promo_Info_TypeTableAdapter = Nothing
+		Me.TableAdapterManager.Promoted_Products1TableAdapter = Nothing
 		Me.TableAdapterManager.Promoted_ProductsTableAdapter = Nothing
+		Me.TableAdapterManager.Promotions1TableAdapter = Nothing
 		Me.TableAdapterManager.PromotionsTableAdapter = Nothing
+		Me.TableAdapterManager.Purchase_Order_Details1TableAdapter = Nothing
 		Me.TableAdapterManager.Purchase_Order_DetailsTableAdapter = Nothing
+		Me.TableAdapterManager.Purchase_Order1TableAdapter = Nothing
 		Me.TableAdapterManager.Purchase_OrderTableAdapter = Nothing
+		Me.TableAdapterManager.Returns1TableAdapter = Nothing
 		Me.TableAdapterManager.ReturnsTableAdapter = Nothing
+		Me.TableAdapterManager.Shipment_Details1TableAdapter = Nothing
 		Me.TableAdapterManager.Shipment_DetailsTableAdapter = Nothing
+		Me.TableAdapterManager.Shipment1TableAdapter = Nothing
 		Me.TableAdapterManager.ShipmentTableAdapter = Nothing
+		Me.TableAdapterManager.Shippers1TableAdapter = Nothing
 		Me.TableAdapterManager.ShippersTableAdapter = Nothing
+		Me.TableAdapterManager.Shipping_Addresses1TableAdapter = Nothing
 		Me.TableAdapterManager.Shipping_AddressesTableAdapter = Nothing
+		Me.TableAdapterManager.Shrinkage1TableAdapter = Nothing
 		Me.TableAdapterManager.ShrinkageTableAdapter = Nothing
+		Me.TableAdapterManager.Status1TableAdapter = Nothing
 		Me.TableAdapterManager.StatusTableAdapter = Nothing
+		Me.TableAdapterManager.Suppliers1TableAdapter = Nothing
 		Me.TableAdapterManager.SuppliersTableAdapter = Nothing
+		Me.TableAdapterManager.Trade_Shows1TableAdapter = Nothing
 		Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
 		Me.TableAdapterManager.UpdateOrder = GroceryGUI.GEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
 		'
@@ -491,6 +526,12 @@ Partial Class frmUpdateCustomer
 		Me.txtSecondary.ReadOnly = True
 		Me.txtSecondary.Size = New System.Drawing.Size(155, 20)
 		Me.txtSecondary.TabIndex = 6
+		'
+		'AddressToolStripMenuItem
+		'
+		Me.AddressToolStripMenuItem.Name = "AddressToolStripMenuItem"
+		Me.AddressToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
+		Me.AddressToolStripMenuItem.Text = "address"
 		'
 		'frmUpdateCustomer
 		'
@@ -582,4 +623,5 @@ Partial Class frmUpdateCustomer
     Friend WithEvents txtbirthdate As MaskedTextBox
     Friend WithEvents txtprimary As MaskedTextBox
     Friend WithEvents txtSecondary As MaskedTextBox
+	Friend WithEvents AddressToolStripMenuItem As ToolStripMenuItem
 End Class

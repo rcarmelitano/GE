@@ -4,7 +4,7 @@
 			MessageBox.Show("notes can not be empty", "error",
 							MessageBoxButtons.OK, MessageBoxIcon.Error)
 		Else
-			Me.Close()
+			Me.Hide()
 		End If
 	End Sub
 End Class

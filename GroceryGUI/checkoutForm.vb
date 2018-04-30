@@ -10,10 +10,11 @@
         ' Open the quickKeyMenu form
         frmQuickKey.Show()
     End Sub
-
+    '---------------------------------------------------------------------------------------------------------------------------------------handles adding a new customer 
     Private Sub NewCustomerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewCustomerToolStripMenuItem.Click
         ' Open the newCustomer form
-        frmUpdateCustomer.Show()
+        frmCustomers.NewCustomerToolStripMenuItem.PerformClick()
+        Me.Close()
     End Sub
 
     Private Sub checkoutForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -40,5 +41,9 @@
         'TODO: This line of code loads data into the 'GEDataSet.Products' table. You can move, or remove it, as needed.
         Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
 
+    End Sub
+
+    Private Sub txtEmployeeID_TextChanged(sender As Object, e As EventArgs) Handles txtEmployeeID.TextChanged
+        txtEmployeeID.Text = trying
     End Sub
 End Class

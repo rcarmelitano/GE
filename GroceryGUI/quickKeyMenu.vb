@@ -26,7 +26,6 @@ Partial Class frmQuickKey
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtKeyItem = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
-        Me.btnAddKey = New System.Windows.Forms.Button()
         Me.btnBagel = New System.Windows.Forms.Button()
         Me.btnBreakfast = New System.Windows.Forms.Button()
         Me.btnLargeCoffee = New System.Windows.Forms.Button()
@@ -69,16 +68,6 @@ Partial Class frmQuickKey
         Me.btnSearch.TabIndex = 3
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = True
-        '
-        'btnAddKey
-        '
-        Me.btnAddKey.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddKey.Location = New System.Drawing.Point(71, 167)
-        Me.btnAddKey.Name = "btnAddKey"
-        Me.btnAddKey.Size = New System.Drawing.Size(73, 64)
-        Me.btnAddKey.TabIndex = 4
-        Me.btnAddKey.Text = " +" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Add " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Key"
-        Me.btnAddKey.UseVisualStyleBackColor = True
         '
         'btnBagel
         '
@@ -140,7 +129,6 @@ Partial Class frmQuickKey
         Me.Controls.Add(Me.btnSmallCoffee)
         Me.Controls.Add(Me.btnBreakfast)
         Me.Controls.Add(Me.btnBagel)
-        Me.Controls.Add(Me.btnAddKey)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.txtKeyItem)
         Me.Controls.Add(Me.Label1)
@@ -159,7 +147,6 @@ Partial Class frmQuickKey
     Friend WithEvents Label1 As Label
     Friend WithEvents txtKeyItem As TextBox
     Friend WithEvents btnSearch As Button
-    Friend WithEvents btnAddKey As Button
     Friend WithEvents btnBagel As Button
     Friend WithEvents btnBreakfast As Button
     Friend WithEvents btnLargeCoffee As Button

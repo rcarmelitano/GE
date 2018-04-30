@@ -60,9 +60,25 @@
         frmProductsAndInventoryMenu.Show()
     End Sub
 
-	'---------------------------closing form and opening suppliers form
-	Private Sub btnSupplierInfo_Click(sender As Object, e As EventArgs) Handles btnSupplierInfo.Click
+    '----------------------------------------------------------------------------------------------------------closing form and opening suppliers form
+    Private Sub btnSupplierInfo_Click(sender As Object, e As EventArgs) Handles btnSupplierInfo.Click
 		Me.Hide()
 		frmSuppliers.Show()
 	End Sub
+    '-------------------------------------------------------------------------------------------------------------employee button clicked 
+    Private Sub btnEmployees_Click(sender As Object, e As EventArgs) Handles btnEmployees.Click
+        Employees.Show()
+        Me.Hide()
+    End Sub
+
+    '-----------------------------------------------------------------------------------------------------search for an employee by name or ID
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        MainFormEmployeeSearch.ShowDialog()
+    End Sub
+
+    '----------------------------------------------------------------------------------------------------selecting a employee ID
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
 End Class

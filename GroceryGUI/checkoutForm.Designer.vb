@@ -32,6 +32,11 @@ Partial Class frmCheckoutForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCustomerSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UPCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnAccount = New System.Windows.Forms.Button()
@@ -55,22 +60,16 @@ Partial Class frmCheckoutForm
         Me.btnInventorySearch = New System.Windows.Forms.Button()
         Me.btnHotKeys = New System.Windows.Forms.Button()
         Me.btnPayPal = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
         Me.txtEmployeeID = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.NewCustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.ProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ProductsTableAdapter()
-        Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtCustomerID
@@ -157,6 +156,37 @@ Partial Class frmCheckoutForm
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(656, 418)
         Me.DataGridView1.TabIndex = 9
+        '
+        'SKUDataGridViewTextBoxColumn
+        '
+        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
+        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProductNameDataGridViewTextBoxColumn
+        '
+        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "productName"
+        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "productName"
+        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
+        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UPCDataGridViewTextBoxColumn
+        '
+        Me.UPCDataGridViewTextBoxColumn.DataPropertyName = "UPC"
+        Me.UPCDataGridViewTextBoxColumn.HeaderText = "UPC"
+        Me.UPCDataGridViewTextBoxColumn.Name = "UPCDataGridViewTextBoxColumn"
+        Me.UPCDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProductsBindingSource
+        '
+        Me.ProductsBindingSource.DataMember = "Products"
+        Me.ProductsBindingSource.DataSource = Me.GEDataSet
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label4
         '
@@ -392,21 +422,13 @@ Partial Class frmCheckoutForm
         Me.btnPayPal.Text = "PayPal"
         Me.btnPayPal.UseVisualStyleBackColor = True
         '
-        'btnEdit
-        '
-        Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnEdit.Location = New System.Drawing.Point(948, 10)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(51, 25)
-        Me.btnEdit.TabIndex = 26
-        Me.btnEdit.Text = "Edit"
-        Me.btnEdit.UseVisualStyleBackColor = True
-        '
         'txtEmployeeID
         '
-        Me.txtEmployeeID.Location = New System.Drawing.Point(820, 10)
+        Me.txtEmployeeID.Enabled = False
+        Me.txtEmployeeID.Location = New System.Drawing.Point(876, 10)
         Me.txtEmployeeID.Multiline = True
         Me.txtEmployeeID.Name = "txtEmployeeID"
+        Me.txtEmployeeID.ReadOnly = True
         Me.txtEmployeeID.Size = New System.Drawing.Size(119, 24)
         Me.txtEmployeeID.TabIndex = 27
         '
@@ -414,7 +436,7 @@ Partial Class frmCheckoutForm
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.Label13.Location = New System.Drawing.Point(713, 10)
+        Me.Label13.Location = New System.Drawing.Point(764, 10)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(96, 18)
         Me.Label13.TabIndex = 28
@@ -435,40 +457,9 @@ Partial Class frmCheckoutForm
         Me.NewCustomerToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
         Me.NewCustomerToolStripMenuItem.Text = "New Customer"
         '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ProductsBindingSource
-        '
-        Me.ProductsBindingSource.DataMember = "Products"
-        Me.ProductsBindingSource.DataSource = Me.GEDataSet
-        '
         'ProductsTableAdapter
         '
         Me.ProductsTableAdapter.ClearBeforeFill = True
-        '
-        'SKUDataGridViewTextBoxColumn
-        '
-        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
-        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
-        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
-        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ProductNameDataGridViewTextBoxColumn
-        '
-        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "productName"
-        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "productName"
-        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
-        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UPCDataGridViewTextBoxColumn
-        '
-        Me.UPCDataGridViewTextBoxColumn.DataPropertyName = "UPC"
-        Me.UPCDataGridViewTextBoxColumn.HeaderText = "UPC"
-        Me.UPCDataGridViewTextBoxColumn.Name = "UPCDataGridViewTextBoxColumn"
-        Me.UPCDataGridViewTextBoxColumn.ReadOnly = True
         '
         'frmCheckoutForm
         '
@@ -477,7 +468,6 @@ Partial Class frmCheckoutForm
         Me.ClientSize = New System.Drawing.Size(1011, 711)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtEmployeeID)
-        Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnPayPal)
         Me.Controls.Add(Me.btnHotKeys)
         Me.Controls.Add(Me.btnInventorySearch)
@@ -509,12 +499,12 @@ Partial Class frmCheckoutForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Checkout"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -547,7 +537,6 @@ Partial Class frmCheckoutForm
     Friend WithEvents btnInventorySearch As Button
     Friend WithEvents btnHotKeys As Button
     Friend WithEvents btnPayPal As Button
-    Friend WithEvents btnEdit As Button
     Friend WithEvents txtEmployeeID As TextBox
     Friend WithEvents lblTotalAmount As Label
     Friend WithEvents lblTaxAmount As Label
