@@ -25,10 +25,11 @@ Public Class NewSupplier
 
     '-----------------------------------------------------------------open a form that show supplier history 
     Private Sub mnuhistory_Click(sender As Object, e As EventArgs) Handles mnuhistory.Click
-        supplierhistory.ShowDialog()
-        Try
-            supplierhistory.loadDetails(txtSupplierID.Text)
-        Catch ex As Exception
+
+		Try
+			supplierhistory.loadDetails(txtSupplierID.Text)
+			supplierhistory.ShowDialog()
+		Catch ex As Exception
             supplierhistory.Close()
             MessageBox.Show("user has no history", "error",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)

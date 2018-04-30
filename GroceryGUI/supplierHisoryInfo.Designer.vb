@@ -1,0 +1,209 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class supplierHisoryInfo
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.Purchase_Order_DetailsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Purchase_Order_DetailsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Purchase_Order_DetailsTableAdapter()
+        Me.TableAdapterManager = New GroceryGUI.GEDataSetTableAdapters.TableAdapterManager()
+        Me.Purchase_Order_DetailsDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Purchase_Order_DetailsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Purchase_Order_DetailsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Purchase_Order_DetailsBindingSource
+        '
+        Me.Purchase_Order_DetailsBindingSource.DataMember = "Purchase_Order_Details"
+        Me.Purchase_Order_DetailsBindingSource.DataSource = Me.GEDataSet
+        '
+        'Purchase_Order_DetailsTableAdapter
+        '
+        Me.Purchase_Order_DetailsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Billing_Addresses1TableAdapter = Nothing
+        Me.TableAdapterManager.Billing_AddressesTableAdapter = Nothing
+        Me.TableAdapterManager.Campaign_Targets1TableAdapter = Nothing
+        Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
+        Me.TableAdapterManager.Categories1TableAdapter = Nothing
+        Me.TableAdapterManager.CategoriesTableAdapter = Nothing
+        Me.TableAdapterManager.Coupons1TableAdapter = Nothing
+        Me.TableAdapterManager.CouponsTableAdapter = Nothing
+        Me.TableAdapterManager.CreditAuditTableAdapter = Nothing
+        Me.TableAdapterManager.Customers1TableAdapter = Nothing
+        Me.TableAdapterManager.CustomersTableAdapter = Nothing
+        Me.TableAdapterManager.Departments1TableAdapter = Nothing
+        Me.TableAdapterManager.DepartmentsTableAdapter = Nothing
+        Me.TableAdapterManager.Discount_Type1TableAdapter = Nothing
+        Me.TableAdapterManager.Discount_TypeTableAdapter = Nothing
+        Me.TableAdapterManager.Discounts1TableAdapter = Nothing
+        Me.TableAdapterManager.DiscountsTableAdapter = Nothing
+        Me.TableAdapterManager.Employees1TableAdapter = Nothing
+        Me.TableAdapterManager.EmployeesTableAdapter = Nothing
+        Me.TableAdapterManager.Gift_Cards1TableAdapter = Nothing
+        Me.TableAdapterManager.Gift_CardsTableAdapter = Nothing
+        Me.TableAdapterManager.Inventory1TableAdapter = Nothing
+        Me.TableAdapterManager.InventoryTableAdapter = Nothing
+        Me.TableAdapterManager.Item_Discount1TableAdapter = Nothing
+        Me.TableAdapterManager.Item_DiscountTableAdapter = Nothing
+        Me.TableAdapterManager.Marketing_Campaigns1TableAdapter = Nothing
+        Me.TableAdapterManager.Marketing_CampaignsTableAdapter = Nothing
+        Me.TableAdapterManager.Order_Details1TableAdapter = Nothing
+        Me.TableAdapterManager.Order_DetailsTableAdapter = Nothing
+        Me.TableAdapterManager.Order_Discount1TableAdapter = Nothing
+        Me.TableAdapterManager.Order_DiscountTableAdapter = Nothing
+        Me.TableAdapterManager.Orders1TableAdapter = Nothing
+        Me.TableAdapterManager.OrdersTableAdapter = Nothing
+        Me.TableAdapterManager.Payment_Types1TableAdapter = Nothing
+        Me.TableAdapterManager.Payment_TypesTableAdapter = Nothing
+        Me.TableAdapterManager.Payments1TableAdapter = Nothing
+        Me.TableAdapterManager.PaymentsTableAdapter = Nothing
+        Me.TableAdapterManager.Products1TableAdapter = Nothing
+        Me.TableAdapterManager.ProductsTableAdapter = Nothing
+        Me.TableAdapterManager.Promo_Info_Type1TableAdapter = Nothing
+        Me.TableAdapterManager.Promo_Info_TypeTableAdapter = Nothing
+        Me.TableAdapterManager.Promoted_Products1TableAdapter = Nothing
+        Me.TableAdapterManager.Promoted_ProductsTableAdapter = Nothing
+        Me.TableAdapterManager.Promotions1TableAdapter = Nothing
+        Me.TableAdapterManager.PromotionsTableAdapter = Nothing
+        Me.TableAdapterManager.Purchase_Order_Details1TableAdapter = Nothing
+        Me.TableAdapterManager.Purchase_Order_DetailsTableAdapter = Me.Purchase_Order_DetailsTableAdapter
+        Me.TableAdapterManager.Purchase_Order1TableAdapter = Nothing
+        Me.TableAdapterManager.Purchase_OrderTableAdapter = Nothing
+        Me.TableAdapterManager.Returns1TableAdapter = Nothing
+        Me.TableAdapterManager.ReturnsTableAdapter = Nothing
+        Me.TableAdapterManager.Shipment_Details1TableAdapter = Nothing
+        Me.TableAdapterManager.Shipment_DetailsTableAdapter = Nothing
+        Me.TableAdapterManager.Shipment1TableAdapter = Nothing
+        Me.TableAdapterManager.ShipmentTableAdapter = Nothing
+        Me.TableAdapterManager.Shippers1TableAdapter = Nothing
+        Me.TableAdapterManager.ShippersTableAdapter = Nothing
+        Me.TableAdapterManager.Shipping_Addresses1TableAdapter = Nothing
+        Me.TableAdapterManager.Shipping_AddressesTableAdapter = Nothing
+        Me.TableAdapterManager.Shrinkage1TableAdapter = Nothing
+        Me.TableAdapterManager.ShrinkageTableAdapter = Nothing
+        Me.TableAdapterManager.Status1TableAdapter = Nothing
+        Me.TableAdapterManager.StatusTableAdapter = Nothing
+        Me.TableAdapterManager.Suppliers1TableAdapter = Nothing
+        Me.TableAdapterManager.SuppliersTableAdapter = Nothing
+        Me.TableAdapterManager.Trade_Shows1TableAdapter = Nothing
+        Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = GroceryGUI.GEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'Purchase_Order_DetailsDataGridView
+        '
+        Me.Purchase_Order_DetailsDataGridView.AutoGenerateColumns = False
+        Me.Purchase_Order_DetailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Purchase_Order_DetailsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
+        Me.Purchase_Order_DetailsDataGridView.DataSource = Me.Purchase_Order_DetailsBindingSource
+        Me.Purchase_Order_DetailsDataGridView.Location = New System.Drawing.Point(0, 90)
+        Me.Purchase_Order_DetailsDataGridView.Name = "Purchase_Order_DetailsDataGridView"
+        Me.Purchase_Order_DetailsDataGridView.Size = New System.Drawing.Size(767, 220)
+        Me.Purchase_Order_DetailsDataGridView.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "orderDetailID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "orderDetailID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "purchaseOrderID"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "purchaseOrderID"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "SKU"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "SKU"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "quantity"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "quantity"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "statusID"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "statusID"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "unit"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "unit"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "note"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "note"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'supplierHisoryInfo
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(837, 307)
+        Me.Controls.Add(Me.Purchase_Order_DetailsDataGridView)
+        Me.Name = "supplierHisoryInfo"
+        Me.Text = "supplierHisoryInfo"
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Purchase_Order_DetailsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Purchase_Order_DetailsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+
+    Friend WithEvents GEDataSet As GEDataSet
+    Friend WithEvents Purchase_Order_DetailsBindingSource As BindingSource
+    Friend WithEvents Purchase_Order_DetailsTableAdapter As GEDataSetTableAdapters.Purchase_Order_DetailsTableAdapter
+    Friend WithEvents TableAdapterManager As GEDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents Purchase_Order_DetailsDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+End Class

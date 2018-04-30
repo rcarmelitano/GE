@@ -111,6 +111,12 @@
     <Compile Include="couponsView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomerHistory.Designer.vb">
+      <DependentUpon>CustomerHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CustomerView.Designer.vb">
       <DependentUpon>CustomerView.vb</DependentUpon>
     </Compile>
@@ -216,6 +222,25 @@
     <Compile Include="POSCustomerSearch.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="POScustumerInfo.Designer.vb">
+      <DependentUpon>POScustumerInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POScustumerInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POSEmailSearch.Designer.vb">
+      <DependentUpon>POSEmailSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POSEmailSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POSPhoneSearch.Designer.vb">
+      <DependentUpon>POSPhoneSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POSPhoneSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POsSearchCustomer.vb" />
     <Compile Include="Products.Designer.vb">
       <DependentUpon>Products.vb</DependentUpon>
     </Compile>
@@ -319,6 +344,12 @@
     <Compile Include="ShippingAdresses.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="supplierHisoryInfo.Designer.vb">
+      <DependentUpon>supplierHisoryInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="supplierHisoryInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="supplierhistory.Designer.vb">
       <DependentUpon>supplierhistory.vb</DependentUpon>
     </Compile>
@@ -359,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="couponsView.resx">
       <DependentUpon>couponsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerHistory.resx">
+      <DependentUpon>CustomerHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerView.resx">
       <DependentUpon>CustomerView.vb</DependentUpon>
@@ -404,6 +438,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="orderHIstory.resx">
       <DependentUpon>orderHIstory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POSCustomerSearch.resx">
+      <DependentUpon>POSCustomerSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POScustumerInfo.resx">
+      <DependentUpon>POScustumerInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POSEmailSearch.resx">
+      <DependentUpon>POSEmailSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POSPhoneSearch.resx">
+      <DependentUpon>POSPhoneSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products.resx">
       <DependentUpon>Products.vb</DependentUpon>
@@ -455,6 +501,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShippingAdresses.resx">
       <DependentUpon>ShippingAdresses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplierHisoryInfo.resx">
+      <DependentUpon>supplierHisoryInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="supplierhistory.resx">
       <DependentUpon>supplierhistory.vb</DependentUpon>

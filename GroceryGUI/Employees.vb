@@ -66,7 +66,7 @@ Public Class Employees
         Employeesupdate.TextBox4.Enabled = True
         Employeesupdate.TextBox5.Enabled = True
         Employeesupdate.TextBox6.Enabled = True
-
+        Employeesupdate.Button1.Enabled = True
         Employeesupdate.UpdateToolStripMenuItem.Enabled = False
         Employeesupdate.Show()
 

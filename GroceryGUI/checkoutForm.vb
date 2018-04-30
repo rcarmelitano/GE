@@ -28,6 +28,7 @@
     End Sub
 
     Private Sub btnCustomerSearch_Click(sender As Object, e As EventArgs) Handles btnCustomerSearch.Click
+        POSCustomerSearch.ShowDialog()
 
     End Sub
 
@@ -46,4 +47,24 @@
     Private Sub txtEmployeeID_TextChanged(sender As Object, e As EventArgs) Handles txtEmployeeID.TextChanged
         txtEmployeeID.Text = trying
     End Sub
+
+
+    Function itemvalidation()
+        Dim intQuanity = txtQuantity.Text
+        Dim intbarcode = txtBarcode.Text
+
+
+
+    End Function
+
+
+
+
+
+
+
+
+
+
+
 End Class
