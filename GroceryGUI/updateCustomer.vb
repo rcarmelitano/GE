@@ -20,16 +20,16 @@ Public Class frmUpdateCustomer
 
 	'------------------------------------------------------------------------------------------------------------------------------button click for customer History
 	Private Sub HistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HistoryToolStripMenuItem.Click
-		' Display the customer history form
-		frmCustomerHistory.ShowDialog()
-		Try
-			frmCustomerHistory.LoadDataGrid(CustomerIDTextBox.Text)
-		Catch ex As Exception
-			frmCustomerHistory.Close()
-			MessageBox.Show("user has no history", "error",
+        ' Display the customer history form
+        'frmCustomerHistory.ShowDialog()
+        'Try
+        '      frmCustomerHistory.LoadDataGrid(CustomerIDTextBox.Text)
+        '     Catch ex As Exception
+        'frmCustomerHistory.Close()
+        MessageBox.Show("user has no history", "error",
 							MessageBoxButtons.OK, MessageBoxIcon.Warning)
-		End Try
-	End Sub
+        'End Try
+    End Sub
 
 	'----------------------------------------------------------------------------------------------------------------------------------form loader
 	Private Sub frmUpdateCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load

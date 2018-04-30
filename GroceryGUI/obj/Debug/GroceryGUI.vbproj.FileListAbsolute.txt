@@ -356,7 +356,6 @@ D:\GEneedtofix\GroceryGUI\obj\Debug\Interop.ADODB.dll
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.vbproj.ResolveComReference.cache
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmCoupons.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmCouponsView.resources
-D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmCustomerHistory.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.CustomerView.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmDiscounts.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmDiscountsView.resources
