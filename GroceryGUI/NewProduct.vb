@@ -1,31 +1,19 @@
-﻿Public Class frmNewProduct
+﻿' Include imports for the form
+Imports System.Data.SqlClient
+Imports System.Data
 
-    Private Sub btnSearchCategoryID_Click(sender As Object, e As EventArgs) Handles btnSearchCategoryID.Click
-        ' Perform a search for category ID
-        Try
-            Me.CategoriesTableAdapter.categoryID(Me.GEDataSet.Categories, CType(txtCategoryID.Text, Integer))
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show("Please enter a valid Category ID.")
-        End Try
+Public Class frmNewProduct
 
-        If txtCategoryID.Text = String.Empty Then
-            'TODO: This line of code loads data into the 'GEDataSet.Departments' table. You can move, or remove it, as needed.
-            Me.CategoriesTableAdapter.Fill(Me.GEDataSet.Categories)
-        End If
-    End Sub
-
-    Private Sub btnSearchDepartmentID_Click(sender As Object, e As EventArgs) Handles btnSearchDepartmentID.Click
-        ' Perform a search for department ID
-        Try
-            Me.DepartmentsTableAdapter.departmentIDSearch(Me.GEDataSet.Departments, CType(txtDepartmentID.Text, Integer))
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show("Please enter a valid Category ID.")
-        End Try
-    End Sub
+    ' Create a new connection to the database for this form
+    Dim productConnection As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GE.mdf;Integrated Security=True")
 
     Private Sub frmNewProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GEDataSet.Departments' table. You can move, or remove it, as needed.
         Me.DepartmentsTableAdapter.Fill(Me.GEDataSet.Departments)
+        Me.CategoriesTableAdapter.Fill(Me.GEDataSet.Categories)
+
+        ' Disable the Status checkbox
+        cbStatus.Enabled = False
     End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuClose.Click
@@ -47,5 +35,60 @@
     Private Sub ViewProductsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewProductsToolStripMenuItem.Click
         ' Display the list of existing products
         frmProductsView.Show()
+    End Sub
+
+    Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
+
+        ' Check to make sure that the user can continue on with the product creation
+        If mtxtSKU.Text <> String.Empty And txtProductName.Text <> String.Empty And txtDescription.Text <> String.Empty And txtDepartmentID.Text <> String.Empty And txtRetailUnit.Text <> String.Empty And txtRetailCost.Text <> String.Empty And txtCategoryID.Text <> String.Empty Then
+            ' Hide the current form and display the next form (NewInventory) to continue the new product process
+            Me.Hide()
+            frmNewInventory.Show()
+        Else
+            ' Display an error message to the user
+            MessageBox.Show("You must fill out all of the required information to continue. Please try again.")
+        End If
+    End Sub
+
+    Private Sub dgvDepartments_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDepartments.CellContentClick
+        ' Do nothing if the column index of 2 is not selected
+        If e.ColumnIndex <> 2 Then
+            Exit Sub
+        End If
+
+        Dim index As Integer
+        index = e.RowIndex
+        Dim selectedRow As DataGridViewRow
+        selectedRow = dgvDepartments.Rows(index)
+
+        ' Grab the selected ID and stick it in the txtDepartmentID textbox
+        txtDepartmentID.Text = selectedRow.Cells(0).Value.ToString()
+    End Sub
+
+    Private Sub dgvCategories_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCategories.CellContentClick
+        ' Do nothing if the column index of 2 is not selected
+        If e.ColumnIndex <> 2 Then
+            Exit Sub
+        End If
+
+        Dim index As Integer
+        index = e.RowIndex
+        Dim selectedRow As DataGridViewRow
+        selectedRow = dgvCategories.Rows(index)
+
+        ' Grab the selected ID and stick it in the txtCategoryID textbox
+        txtCategoryID.Text = selectedRow.Cells(0).Value.ToString()
+    End Sub
+
+    Private Sub rbNo_CheckedChanged(sender As Object, e As EventArgs) Handles rbNo.CheckedChanged
+        ' Enable the UPC box
+        mtxtUPC.Enabled = True
+        mtxtUPC.ReadOnly = False
+    End Sub
+
+    Private Sub rbYes_CheckedChanged(sender As Object, e As EventArgs) Handles rbYes.CheckedChanged
+        ' Disable the UPC box
+        mtxtUPC.Enabled = False
+        mtxtUPC.ReadOnly = True
     End Sub
 End Class

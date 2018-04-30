@@ -10,7 +10,6 @@ Public Class frmNewReturn
     ' Make value to hold the max quantity
     Dim quantityMax As Integer = 0
 
-
     Private Sub btnFinalizeReturn_Click(sender As Object, e As EventArgs) Handles btnFinalizeReturn.Click
 
         If nudQuantity.Text <= quantityMax And txtOrderDetailID.Text <> String.Empty And txtReason.Text <> String.Empty Then
@@ -28,7 +27,7 @@ Public Class frmNewReturn
                 addReturn.Parameters.AddWithValue("@orderDetailID", txtOrderDetailID.Text)
                 addReturn.Parameters.AddWithValue("@reason", txtReason.Text)
                 addReturn.Parameters.AddWithValue("@quantity", nudQuantity.Text)
-                addReturn.Parameters.AddWithValue("@returnDate", txtReturnDate.Text)
+                addReturn.Parameters.AddWithValue("@returnDate", dtpReturnDate.Text)
 
                 returnsConnection.Open()
                 Dim rowsAffected As Integer = addReturn.ExecuteNonQuery()
@@ -61,13 +60,13 @@ Public Class frmNewReturn
                 addReturn.Parameters.AddWithValue("@orderDetailID", txtOrderDetailID.Text)
                 addReturn.Parameters.AddWithValue("@reason", txtReason.Text)
                 addReturn.Parameters.AddWithValue("@quantity", nudQuantity.Text)
-                addReturn.Parameters.AddWithValue("@returnDate", txtReturnDate.Text)
+                addReturn.Parameters.AddWithValue("@returnDate", dtpReturnDate.Text)
 
                 rowsAffected = addReturn.ExecuteNonQuery()
             End If
         Else
             ' Output a message to the user
-            MessageBox.Show("You have entered an invalid quantity, please try again.")
+            MessageBox.Show("All fields must be filled to make the return. Please try again.")
         End If
     End Sub
 
@@ -78,11 +77,14 @@ Public Class frmNewReturn
     End Sub
 
     Private Sub frmNewReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GEDataSet.Returns' table. You can move, or remove it, as needed.
-        Me.ReturnsTableAdapter.Fill(Me.GEDataSet.Returns)
-        'TODO: This line of code loads data into the 'GEDataSet.Order_Details' table. You can move, or remove it, as needed.
-        Me.Order_DetailsTableAdapter.Fill(Me.GEDataSet.Order_Details)
 
+
+        ' Converts the date and time of the datetimepicker to a usable string format
+        dtpReturnDate.Format = DateTimePickerFormat.Custom
+        dtpReturnDate.CustomFormat = "MM/dd/yyyy hh:mm"
+
+        ' Do not let the date be before the current date
+        dtpReturnDate.MinDate = DateAndTime.Now()
 
         ' Get the max id number currently in the database and then add 1
         Dim returnID As Integer = 0
@@ -97,29 +99,44 @@ Public Class frmNewReturn
 
     End Sub
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        Try
-            ' Grab the selected ID and stick it in the txtOrderDetailsID textbox
-            txtOrderDetailID.Text = dgvOrderDetails.Item(0, dgvOrderDetails.CurrentCell.Value - 1).Value
-
-            ' Display the quantiy of the selected order detail in txtQuantity
-            nudQuantity.Text = dgvOrderDetails.Item(2, dgvOrderDetails.CurrentCell.Value - 1).Value
-
-            ' Convert the string to an int
-            Integer.TryParse(nudQuantity.Text, quantityMax)
-        Catch
-            MessageBox.Show("You can only add a Customer ID." & vbCrLf & "Click an ID from the list and press the ""Add"" button to add it to the textbox.")
-
-            ' Clear the quantity and order details id textbox
-            nudQuantity.Text = String.Empty
-            txtOrderDetailID.Clear()
-        End Try
-    End Sub
-
     ' Reset the quantity to 0 if the user attempts to remove it completely
     Private Sub nudQuantity_TextChanged(sender As Object, e As EventArgs) Handles nudQuantity.TextChanged
         If nudQuantity.Text.Length = 0 Then
             nudQuantity.Text = "0"
         End If
+    End Sub
+
+    Private Sub btnOrderID_Click(sender As Object, e As EventArgs) Handles btnOrderID.Click
+        Try
+            Me.Order_DetailsTableAdapter.OrderIDHistory(Me.GEDataSet.Order_Details, txtOrderID.Text)
+        Catch
+            ' Display a message to the user and clear the order id textbox and the datagrid
+            MessageBox.Show("You cannot enter a invalid Order ID. Please try again.")
+            txtOrderID.Clear()
+
+        End Try
+    End Sub
+
+    Private Sub dgvOrderDetails_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvOrderDetails.CellContentClick
+        If e.ColumnIndex <> 4 Then
+            Exit Sub
+        End If
+
+        Dim index As Integer
+        index = e.RowIndex
+        Dim selectedRow As DataGridViewRow
+        selectedRow = dgvOrderDetails.Rows(index)
+
+        ' Grab the selected ID and stick it in the txtOrderDetailsID textbox
+        txtOrderDetailID.Text = selectedRow.Cells(0).Value.ToString()
+
+        ' Display the quantiy of the selected order detail in txtQuantity
+        nudQuantity.Text = selectedRow.Cells(2).Value.ToString()
+
+        ' Fill the datetimepicker with the current date
+        dtpReturnDate.Text = DateAndTime.Now()
+
+        ' Convert the string to an int
+        Integer.TryParse(nudQuantity.Text, quantityMax)
     End Sub
 End Class
