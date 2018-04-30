@@ -10,7 +10,6 @@ Public Class frmNewReturn
     ' Make value to hold the max quantity
     Dim quantityMax As Integer = 0
 
-
     Private Sub btnFinalizeReturn_Click(sender As Object, e As EventArgs) Handles btnFinalizeReturn.Click
 
         If nudQuantity.Text <= quantityMax And txtOrderDetailID.Text <> String.Empty And txtReason.Text <> String.Empty Then
@@ -83,10 +82,6 @@ Public Class frmNewReturn
         ' Converts the date and time of the datetimepicker to a usable string format
         dtpReturnDate.Format = DateTimePickerFormat.Custom
         dtpReturnDate.CustomFormat = "MM/dd/yyyy hh:mm"
-
-
-
-
 
         ' Do not let the date be before the current date
         dtpReturnDate.MinDate = DateAndTime.Now()

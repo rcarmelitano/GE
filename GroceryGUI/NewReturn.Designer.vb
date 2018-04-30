@@ -164,7 +164,6 @@ Partial Class frmNewReturn
         Me.dgvOrderDetails.AllowUserToAddRows = False
         Me.dgvOrderDetails.AllowUserToDeleteRows = False
         Me.dgvOrderDetails.AutoGenerateColumns = False
-        Me.dgvOrderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvOrderDetails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OrderDetailIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.quantity, Me.price, Me.btnAddID})
         Me.dgvOrderDetails.DataSource = Me.OrderDetailsBindingSource
@@ -245,6 +244,7 @@ Partial Class frmNewReturn
         '
         'OrderDetailIDDataGridViewTextBoxColumn
         '
+        Me.OrderDetailIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.OrderDetailIDDataGridViewTextBoxColumn.DataPropertyName = "orderDetailID"
         Me.OrderDetailIDDataGridViewTextBoxColumn.HeaderText = "orderDetailID"
         Me.OrderDetailIDDataGridViewTextBoxColumn.Name = "OrderDetailIDDataGridViewTextBoxColumn"
@@ -253,6 +253,7 @@ Partial Class frmNewReturn
         '
         'SKUDataGridViewTextBoxColumn
         '
+        Me.SKUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
         Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
         Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
@@ -261,6 +262,7 @@ Partial Class frmNewReturn
         '
         'quantity
         '
+        Me.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.quantity.DataPropertyName = "quantity"
         Me.quantity.HeaderText = "quantity"
         Me.quantity.Name = "quantity"
@@ -270,6 +272,7 @@ Partial Class frmNewReturn
         '
         'price
         '
+        Me.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.price.DataPropertyName = "price"
         Me.price.HeaderText = "price"
         Me.price.Name = "price"
@@ -278,13 +281,13 @@ Partial Class frmNewReturn
         '
         'btnAddID
         '
-        Me.btnAddID.HeaderText = "Add"
+        Me.btnAddID.HeaderText = ""
         Me.btnAddID.Name = "btnAddID"
         Me.btnAddID.ReadOnly = True
         Me.btnAddID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.btnAddID.Text = "Add"
         Me.btnAddID.UseColumnTextForButtonValue = True
-        Me.btnAddID.Width = 51
+        Me.btnAddID.Width = 63
         '
         'frmNewReturn
         '
