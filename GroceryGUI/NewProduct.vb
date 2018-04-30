@@ -81,15 +81,14 @@ Public Class frmNewProduct
     End Sub
 
     Private Sub rbNo_CheckedChanged(sender As Object, e As EventArgs) Handles rbNo.CheckedChanged
-        ' Get the max UPC number currently in the database and then add 1
-        Dim UPC As Integer = 0
-        Dim getMaxUPCAndIncrement As New SqlCommand("select max(UPC) + 1 from Products", productConnection)
+        ' Enable the UPC box
+        mtxtUPC.Enabled = True
+        mtxtUPC.ReadOnly = False
+    End Sub
 
-        ' Fill the returnID textbox with the next value through the use of the getMaxUPCAndIncrement command above
-        productConnection.Open()
-        Dim rowsAffected As Integer = getMaxUPCAndIncrement.ExecuteNonQuery()
-        UPC = getMaxUPCAndIncrement.ExecuteScalar()
-        ' Display the new UPC
-        txtUPC.Text = UPC
+    Private Sub rbYes_CheckedChanged(sender As Object, e As EventArgs) Handles rbYes.CheckedChanged
+        ' Disable the UPC box
+        mtxtUPC.Enabled = False
+        mtxtUPC.ReadOnly = True
     End Sub
 End Class
