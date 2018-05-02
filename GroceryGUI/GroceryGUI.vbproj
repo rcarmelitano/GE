@@ -67,6 +67,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -91,6 +92,18 @@
       <DependentUpon>audit.vb</DependentUpon>
     </Compile>
     <Compile Include="audit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="billingAdresses.Designer.vb">
+      <DependentUpon>billingAdresses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="billingAdresses.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CampaignsView.Designer.vb">
+      <DependentUpon>CampaignsView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CampaignsView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="coupons.Designer.vb">
@@ -129,6 +142,18 @@
     <Compile Include="DiscountsView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Employees.Designer.vb">
+      <DependentUpon>Employees.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employeesupdate.Designer.vb">
+      <DependentUpon>Employeesupdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employeesupdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GEDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +180,19 @@
     <Compile Include="Inventory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MainFormEmployeeSearch.Designer.vb">
+      <DependentUpon>MainFormEmployeeSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormEmployeeSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketingCampaigns.Designer.vb">
+      <DependentUpon>MarketingCampaigns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MarketingCampaigns.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="NewInventory.Designer.vb">
       <DependentUpon>NewInventory.vb</DependentUpon>
     </Compile>
@@ -179,12 +217,49 @@
     <Compile Include="NewReturn.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NewShinpping.Designer.vb">
+      <DependentUpon>NewShinpping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewShinpping.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NewSupplier.designer.vb">
       <DependentUpon>NewSupplier.vb</DependentUpon>
     </Compile>
     <Compile Include="NewSupplier.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="orderHIstory.Designer.vb">
+      <DependentUpon>orderHIstory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="orderHIstory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POSCustomerSearch.Designer.vb">
+      <DependentUpon>POSCustomerSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POSCustomerSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POScustumerInfo.Designer.vb">
+      <DependentUpon>POScustumerInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POScustumerInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POSEmailSearch.Designer.vb">
+      <DependentUpon>POSEmailSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POSEmailSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POSPhoneSearch.Designer.vb">
+      <DependentUpon>POSPhoneSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POSPhoneSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POsSearchCustomer.vb" />
     <Compile Include="Products.Designer.vb">
       <DependentUpon>Products.vb</DependentUpon>
     </Compile>
@@ -282,10 +357,34 @@
     <Compile Include="ShipmentView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ShippingAdresses.Designer.vb">
+      <DependentUpon>ShippingAdresses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingAdresses.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supplierHisoryInfo.Designer.vb">
+      <DependentUpon>supplierHisoryInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="supplierHisoryInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supplierhistory.Designer.vb">
+      <DependentUpon>supplierhistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="supplierhistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Suppliers.designer.vb">
       <DependentUpon>Suppliers.vb</DependentUpon>
     </Compile>
     <Compile Include="Suppliers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testing.Designer.vb">
+      <DependentUpon>testing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="testing.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="updateCustomer.Designer.vb">
@@ -305,6 +404,9 @@
     <EmbeddedResource Include="audit.resx">
       <DependentUpon>audit.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CampaignsView.resx">
+      <DependentUpon>CampaignsView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="coupons.resx">
       <DependentUpon>coupons.vb</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +425,12 @@
     <EmbeddedResource Include="DiscountsView.resx">
       <DependentUpon>DiscountsView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employees.resx">
+      <DependentUpon>Employees.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employeesupdate.resx">
+      <DependentUpon>Employeesupdate.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiftCards.resx">
       <DependentUpon>GiftCards.vb</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +439,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormEmployeeSearch.resx">
+      <DependentUpon>MainFormEmployeeSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketingCampaigns.resx">
+      <DependentUpon>MarketingCampaigns.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewInventory.resx">
       <DependentUpon>NewInventory.vb</DependentUpon>
@@ -344,8 +458,26 @@
     <EmbeddedResource Include="NewReturn.resx">
       <DependentUpon>NewReturn.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewShinpping.resx">
+      <DependentUpon>NewShinpping.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewSupplier.resx">
       <DependentUpon>NewSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="orderHIstory.resx">
+      <DependentUpon>orderHIstory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POSCustomerSearch.resx">
+      <DependentUpon>POSCustomerSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POScustumerInfo.resx">
+      <DependentUpon>POScustumerInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POSEmailSearch.resx">
+      <DependentUpon>POSEmailSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POSPhoneSearch.resx">
+      <DependentUpon>POSPhoneSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products.resx">
       <DependentUpon>Products.vb</DependentUpon>
@@ -395,8 +527,20 @@
     <EmbeddedResource Include="ShipmentView.resx">
       <DependentUpon>ShipmentView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ShippingAdresses.resx">
+      <DependentUpon>ShippingAdresses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplierHisoryInfo.resx">
+      <DependentUpon>supplierHisoryInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplierhistory.resx">
+      <DependentUpon>supplierhistory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Suppliers.resx">
       <DependentUpon>Suppliers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testing.resx">
+      <DependentUpon>testing.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="updateCustomer.resx">
       <DependentUpon>updateCustomer.vb</DependentUpon>

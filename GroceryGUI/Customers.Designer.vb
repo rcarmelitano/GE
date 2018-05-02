@@ -25,7 +25,6 @@ Partial Class frmCustomers
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.BackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewCustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtCustomerID = New System.Windows.Forms.TextBox()
@@ -43,7 +42,6 @@ Partial Class frmCustomers
         Me.taxExempt = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.wholeSale = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Edit = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.CustomersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CustomersTableAdapter()
@@ -55,10 +53,10 @@ Partial Class frmCustomers
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.HistoryToolStripMenuItem, Me.NewCustomerToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.NewCustomerToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1204, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1129, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -67,12 +65,6 @@ Partial Class frmCustomers
         Me.BackToolStripMenuItem.Name = "BackToolStripMenuItem"
         Me.BackToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.BackToolStripMenuItem.Text = "Back"
-        '
-        'HistoryToolStripMenuItem
-        '
-        Me.HistoryToolStripMenuItem.Name = "HistoryToolStripMenuItem"
-        Me.HistoryToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.HistoryToolStripMenuItem.Text = "History"
         '
         'NewCustomerToolStripMenuItem
         '
@@ -113,14 +105,14 @@ Partial Class frmCustomers
         Me.dgvCustomers.AllowUserToDeleteRows = False
         Me.dgvCustomers.AutoGenerateColumns = False
         Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCustomers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustomerIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.CustomerDOBDataGridViewTextBoxColumn, Me.PrimaryPhoneDataGridViewTextBoxColumn, Me.SecondaryPhoneDataGridViewTextBoxColumn, Me.email, Me.lineOfCredit, Me.usedLineOfCredit, Me.taxExempt, Me.wholeSale, Me.Edit, Me.Delete})
+        Me.dgvCustomers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustomerIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.CustomerDOBDataGridViewTextBoxColumn, Me.PrimaryPhoneDataGridViewTextBoxColumn, Me.SecondaryPhoneDataGridViewTextBoxColumn, Me.email, Me.lineOfCredit, Me.usedLineOfCredit, Me.taxExempt, Me.wholeSale, Me.Edit})
         Me.dgvCustomers.DataSource = Me.CustomersBindingSource
-        Me.dgvCustomers.Location = New System.Drawing.Point(12, 82)
+        Me.dgvCustomers.Location = New System.Drawing.Point(0, 82)
         Me.dgvCustomers.Name = "dgvCustomers"
         Me.dgvCustomers.ReadOnly = True
         Me.dgvCustomers.RowHeadersVisible = False
         Me.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCustomers.Size = New System.Drawing.Size(1222, 315)
+        Me.dgvCustomers.Size = New System.Drawing.Size(1129, 315)
         Me.dgvCustomers.TabIndex = 7
         '
         'CustomerIDDataGridViewTextBoxColumn
@@ -216,17 +208,6 @@ Partial Class frmCustomers
         Me.Edit.UseColumnTextForButtonValue = True
         Me.Edit.Width = 65
         '
-        'Delete
-        '
-        Me.Delete.DataPropertyName = "delete1"
-        Me.Delete.HeaderText = ""
-        Me.Delete.Name = "Delete"
-        Me.Delete.ReadOnly = True
-        Me.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Delete.Text = "Delete"
-        Me.Delete.UseColumnTextForButtonValue = True
-        Me.Delete.Width = 65
-        '
         'CustomersBindingSource
         '
         Me.CustomersBindingSource.DataMember = "Customers"
@@ -245,7 +226,7 @@ Partial Class frmCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1204, 409)
+        Me.ClientSize = New System.Drawing.Size(1129, 397)
         Me.Controls.Add(Me.dgvCustomers)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.txtCustomerID)
@@ -276,8 +257,6 @@ Partial Class frmCustomers
     Friend WithEvents dgvCustomers As DataGridView
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents CustomersBindingSource As BindingSource
-    Friend WithEvents CustomersTableAdapter As GEDataSetTableAdapters.CustomersTableAdapter
-    Friend WithEvents HistoryToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CustomerIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -290,5 +269,5 @@ Partial Class frmCustomers
     Friend WithEvents taxExempt As DataGridViewCheckBoxColumn
     Friend WithEvents wholeSale As DataGridViewCheckBoxColumn
     Friend WithEvents Edit As DataGridViewButtonColumn
-    Friend WithEvents Delete As DataGridViewButtonColumn
+    Friend WithEvents CustomersTableAdapter As GEDataSetTableAdapters.CustomersTableAdapter
 End Class

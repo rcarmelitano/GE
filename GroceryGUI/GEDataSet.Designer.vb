@@ -27,11 +27,15 @@ Partial Public Class GEDataSet
     
     Private tableBilling_Addresses As Billing_AddressesDataTable
     
-    Private tableCampaign_Targets As Campaign_TargetsDataTable
+    Private tableCampaign_Opt_Ins As Campaign_Opt_InsDataTable
+    
+    Private tableCampaign_Types As Campaign_TypesDataTable
     
     Private tableCategories As CategoriesDataTable
     
     Private tableCoupons As CouponsDataTable
+    
+    Private tableCreditAudit As CreditAuditDataTable
     
     Private tableCustomers As CustomersDataTable
     
@@ -63,8 +67,6 @@ Partial Public Class GEDataSet
     
     Private tableProducts As ProductsDataTable
     
-    Private tablePromo_Info_Type As Promo_Info_TypeDataTable
-    
     Private tablePromoted_Products As Promoted_ProductsDataTable
     
     Private tablePromotions As PromotionsDataTable
@@ -93,15 +95,19 @@ Partial Public Class GEDataSet
     
     Private relationFK__Billing_A__custo__398D8EEE As Global.System.Data.DataRelation
     
-    Private relationFK__Campaign___campa__66603565 As Global.System.Data.DataRelation
+    Private relationFK__Campaign___campa__5AB9788F As Global.System.Data.DataRelation
     
-    Private relationFK__Campaign___custo__6754599E As Global.System.Data.DataRelation
+    Private relationFK__Campaign___custo__5BAD9CC8 As Global.System.Data.DataRelation
     
     Private relationFK__Categorie__depar__33D4B598 As Global.System.Data.DataRelation
     
     Private relationFK__Coupons__discoun__76969D2E As Global.System.Data.DataRelation
     
     Private relationFK__Coupons__promoti__778AC167 As Global.System.Data.DataRelation
+    
+    Private relationFK__CreditAud__Custo__40F9A68C As Global.System.Data.DataRelation
+    
+    Private relationFK__CreditAud__Emplo__40058253 As Global.System.Data.DataRelation
     
     Private relationFK__Discounts__disco__6E01572D As Global.System.Data.DataRelation
     
@@ -141,9 +147,7 @@ Partial Public Class GEDataSet
     
     Private relationFK__Promoted_Pr__SKU__7E37BEF6 As Global.System.Data.DataRelation
     
-    Private relationFK__Promotion__campa__72C60C4A As Global.System.Data.DataRelation
-    
-    Private relationFK__Promotion__promo__73BA3083 As Global.System.Data.DataRelation
+    Private relationFK__Promotion__campa__56E8E7AB As Global.System.Data.DataRelation
     
     Private relationFK__Purchase___statu__3D5E1FD2 As Global.System.Data.DataRelation
     
@@ -174,6 +178,8 @@ Partial Public Class GEDataSet
     Private relationFK__Shrinkage__SKU__0B91BA14 As Global.System.Data.DataRelation
     
     Private relationFK__Shrinkage__statu__0C85DE4D As Global.System.Data.DataRelation
+    
+    Private relationFK__Marketing__campa__57DD0BE4 As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -207,14 +213,20 @@ Partial Public Class GEDataSet
             If (Not (ds.Tables("Billing_Addresses")) Is Nothing) Then
                 MyBase.Tables.Add(New Billing_AddressesDataTable(ds.Tables("Billing_Addresses")))
             End If
-            If (Not (ds.Tables("Campaign_Targets")) Is Nothing) Then
-                MyBase.Tables.Add(New Campaign_TargetsDataTable(ds.Tables("Campaign_Targets")))
+            If (Not (ds.Tables("Campaign_Opt_Ins")) Is Nothing) Then
+                MyBase.Tables.Add(New Campaign_Opt_InsDataTable(ds.Tables("Campaign_Opt_Ins")))
+            End If
+            If (Not (ds.Tables("Campaign_Types")) Is Nothing) Then
+                MyBase.Tables.Add(New Campaign_TypesDataTable(ds.Tables("Campaign_Types")))
             End If
             If (Not (ds.Tables("Categories")) Is Nothing) Then
                 MyBase.Tables.Add(New CategoriesDataTable(ds.Tables("Categories")))
             End If
             If (Not (ds.Tables("Coupons")) Is Nothing) Then
                 MyBase.Tables.Add(New CouponsDataTable(ds.Tables("Coupons")))
+            End If
+            If (Not (ds.Tables("CreditAudit")) Is Nothing) Then
+                MyBase.Tables.Add(New CreditAuditDataTable(ds.Tables("CreditAudit")))
             End If
             If (Not (ds.Tables("Customers")) Is Nothing) Then
                 MyBase.Tables.Add(New CustomersDataTable(ds.Tables("Customers")))
@@ -260,9 +272,6 @@ Partial Public Class GEDataSet
             End If
             If (Not (ds.Tables("Products")) Is Nothing) Then
                 MyBase.Tables.Add(New ProductsDataTable(ds.Tables("Products")))
-            End If
-            If (Not (ds.Tables("Promo_Info_Type")) Is Nothing) Then
-                MyBase.Tables.Add(New Promo_Info_TypeDataTable(ds.Tables("Promo_Info_Type")))
             End If
             If (Not (ds.Tables("Promoted_Products")) Is Nothing) Then
                 MyBase.Tables.Add(New Promoted_ProductsDataTable(ds.Tables("Promoted_Products")))
@@ -334,9 +343,19 @@ Partial Public Class GEDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Campaign_Targets() As Campaign_TargetsDataTable
+    Public ReadOnly Property Campaign_Opt_Ins() As Campaign_Opt_InsDataTable
         Get
-            Return Me.tableCampaign_Targets
+            Return Me.tableCampaign_Opt_Ins
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property Campaign_Types() As Campaign_TypesDataTable
+        Get
+            Return Me.tableCampaign_Types
         End Get
     End Property
     
@@ -357,6 +376,16 @@ Partial Public Class GEDataSet
     Public ReadOnly Property Coupons() As CouponsDataTable
         Get
             Return Me.tableCoupons
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property CreditAudit() As CreditAuditDataTable
+        Get
+            Return Me.tableCreditAudit
         End Get
     End Property
     
@@ -507,16 +536,6 @@ Partial Public Class GEDataSet
     Public ReadOnly Property Products() As ProductsDataTable
         Get
             Return Me.tableProducts
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Promo_Info_Type() As Promo_Info_TypeDataTable
-        Get
-            Return Me.tablePromo_Info_Type
         End Get
     End Property
     
@@ -720,14 +739,20 @@ Partial Public Class GEDataSet
             If (Not (ds.Tables("Billing_Addresses")) Is Nothing) Then
                 MyBase.Tables.Add(New Billing_AddressesDataTable(ds.Tables("Billing_Addresses")))
             End If
-            If (Not (ds.Tables("Campaign_Targets")) Is Nothing) Then
-                MyBase.Tables.Add(New Campaign_TargetsDataTable(ds.Tables("Campaign_Targets")))
+            If (Not (ds.Tables("Campaign_Opt_Ins")) Is Nothing) Then
+                MyBase.Tables.Add(New Campaign_Opt_InsDataTable(ds.Tables("Campaign_Opt_Ins")))
+            End If
+            If (Not (ds.Tables("Campaign_Types")) Is Nothing) Then
+                MyBase.Tables.Add(New Campaign_TypesDataTable(ds.Tables("Campaign_Types")))
             End If
             If (Not (ds.Tables("Categories")) Is Nothing) Then
                 MyBase.Tables.Add(New CategoriesDataTable(ds.Tables("Categories")))
             End If
             If (Not (ds.Tables("Coupons")) Is Nothing) Then
                 MyBase.Tables.Add(New CouponsDataTable(ds.Tables("Coupons")))
+            End If
+            If (Not (ds.Tables("CreditAudit")) Is Nothing) Then
+                MyBase.Tables.Add(New CreditAuditDataTable(ds.Tables("CreditAudit")))
             End If
             If (Not (ds.Tables("Customers")) Is Nothing) Then
                 MyBase.Tables.Add(New CustomersDataTable(ds.Tables("Customers")))
@@ -773,9 +798,6 @@ Partial Public Class GEDataSet
             End If
             If (Not (ds.Tables("Products")) Is Nothing) Then
                 MyBase.Tables.Add(New ProductsDataTable(ds.Tables("Products")))
-            End If
-            If (Not (ds.Tables("Promo_Info_Type")) Is Nothing) Then
-                MyBase.Tables.Add(New Promo_Info_TypeDataTable(ds.Tables("Promo_Info_Type")))
             End If
             If (Not (ds.Tables("Promoted_Products")) Is Nothing) Then
                 MyBase.Tables.Add(New Promoted_ProductsDataTable(ds.Tables("Promoted_Products")))
@@ -854,10 +876,16 @@ Partial Public Class GEDataSet
                 Me.tableBilling_Addresses.InitVars
             End If
         End If
-        Me.tableCampaign_Targets = CType(MyBase.Tables("Campaign_Targets"),Campaign_TargetsDataTable)
+        Me.tableCampaign_Opt_Ins = CType(MyBase.Tables("Campaign_Opt_Ins"),Campaign_Opt_InsDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableCampaign_Targets) Is Nothing) Then
-                Me.tableCampaign_Targets.InitVars
+            If (Not (Me.tableCampaign_Opt_Ins) Is Nothing) Then
+                Me.tableCampaign_Opt_Ins.InitVars
+            End If
+        End If
+        Me.tableCampaign_Types = CType(MyBase.Tables("Campaign_Types"),Campaign_TypesDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableCampaign_Types) Is Nothing) Then
+                Me.tableCampaign_Types.InitVars
             End If
         End If
         Me.tableCategories = CType(MyBase.Tables("Categories"),CategoriesDataTable)
@@ -870,6 +898,12 @@ Partial Public Class GEDataSet
         If (initTable = true) Then
             If (Not (Me.tableCoupons) Is Nothing) Then
                 Me.tableCoupons.InitVars
+            End If
+        End If
+        Me.tableCreditAudit = CType(MyBase.Tables("CreditAudit"),CreditAuditDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableCreditAudit) Is Nothing) Then
+                Me.tableCreditAudit.InitVars
             End If
         End If
         Me.tableCustomers = CType(MyBase.Tables("Customers"),CustomersDataTable)
@@ -962,12 +996,6 @@ Partial Public Class GEDataSet
                 Me.tableProducts.InitVars
             End If
         End If
-        Me.tablePromo_Info_Type = CType(MyBase.Tables("Promo_Info_Type"),Promo_Info_TypeDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tablePromo_Info_Type) Is Nothing) Then
-                Me.tablePromo_Info_Type.InitVars
-            End If
-        End If
         Me.tablePromoted_Products = CType(MyBase.Tables("Promoted_Products"),Promoted_ProductsDataTable)
         If (initTable = true) Then
             If (Not (Me.tablePromoted_Products) Is Nothing) Then
@@ -1047,11 +1075,13 @@ Partial Public Class GEDataSet
             End If
         End If
         Me.relationFK__Billing_A__custo__398D8EEE = Me.Relations("FK__Billing_A__custo__398D8EEE")
-        Me.relationFK__Campaign___campa__66603565 = Me.Relations("FK__Campaign___campa__66603565")
-        Me.relationFK__Campaign___custo__6754599E = Me.Relations("FK__Campaign___custo__6754599E")
+        Me.relationFK__Campaign___campa__5AB9788F = Me.Relations("FK__Campaign___campa__5AB9788F")
+        Me.relationFK__Campaign___custo__5BAD9CC8 = Me.Relations("FK__Campaign___custo__5BAD9CC8")
         Me.relationFK__Categorie__depar__33D4B598 = Me.Relations("FK__Categorie__depar__33D4B598")
         Me.relationFK__Coupons__discoun__76969D2E = Me.Relations("FK__Coupons__discoun__76969D2E")
         Me.relationFK__Coupons__promoti__778AC167 = Me.Relations("FK__Coupons__promoti__778AC167")
+        Me.relationFK__CreditAud__Custo__40F9A68C = Me.Relations("FK__CreditAud__Custo__40F9A68C")
+        Me.relationFK__CreditAud__Emplo__40058253 = Me.Relations("FK__CreditAud__Emplo__40058253")
         Me.relationFK__Discounts__disco__6E01572D = Me.Relations("FK__Discounts__disco__6E01572D")
         Me.relationFK__Gift_Card__custo__2B3F6F97 = Me.Relations("FK__Gift_Card__custo__2B3F6F97")
         Me.relationFK__Inventory__SKU__07C12930 = Me.Relations("FK__Inventory__SKU__07C12930")
@@ -1071,8 +1101,7 @@ Partial Public Class GEDataSet
         Me.relationFK__Products__depart__4BAC3F29 = Me.Relations("FK__Products__depart__4BAC3F29")
         Me.relationFK__Promoted___promo__7F2BE32F = Me.Relations("FK__Promoted___promo__7F2BE32F")
         Me.relationFK__Promoted_Pr__SKU__7E37BEF6 = Me.Relations("FK__Promoted_Pr__SKU__7E37BEF6")
-        Me.relationFK__Promotion__campa__72C60C4A = Me.Relations("FK__Promotion__campa__72C60C4A")
-        Me.relationFK__Promotion__promo__73BA3083 = Me.Relations("FK__Promotion__promo__73BA3083")
+        Me.relationFK__Promotion__campa__56E8E7AB = Me.Relations("FK__Promotion__campa__56E8E7AB")
         Me.relationFK__Purchase___statu__3D5E1FD2 = Me.Relations("FK__Purchase___statu__3D5E1FD2")
         Me.relationFK__Purchase___suppl__3C69FB99 = Me.Relations("FK__Purchase___suppl__3C69FB99")
         Me.relationFK__Purchase___purch__4E88ABD4 = Me.Relations("FK__Purchase___purch__4E88ABD4")
@@ -1088,6 +1117,7 @@ Partial Public Class GEDataSet
         Me.relationFK__Shrinkage__emplo__0A9D95DB = Me.Relations("FK__Shrinkage__emplo__0A9D95DB")
         Me.relationFK__Shrinkage__SKU__0B91BA14 = Me.Relations("FK__Shrinkage__SKU__0B91BA14")
         Me.relationFK__Shrinkage__statu__0C85DE4D = Me.Relations("FK__Shrinkage__statu__0C85DE4D")
+        Me.relationFK__Marketing__campa__57DD0BE4 = Me.Relations("FK__Marketing__campa__57DD0BE4")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1100,12 +1130,16 @@ Partial Public Class GEDataSet
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableBilling_Addresses = New Billing_AddressesDataTable()
         MyBase.Tables.Add(Me.tableBilling_Addresses)
-        Me.tableCampaign_Targets = New Campaign_TargetsDataTable()
-        MyBase.Tables.Add(Me.tableCampaign_Targets)
+        Me.tableCampaign_Opt_Ins = New Campaign_Opt_InsDataTable()
+        MyBase.Tables.Add(Me.tableCampaign_Opt_Ins)
+        Me.tableCampaign_Types = New Campaign_TypesDataTable()
+        MyBase.Tables.Add(Me.tableCampaign_Types)
         Me.tableCategories = New CategoriesDataTable()
         MyBase.Tables.Add(Me.tableCategories)
         Me.tableCoupons = New CouponsDataTable()
         MyBase.Tables.Add(Me.tableCoupons)
+        Me.tableCreditAudit = New CreditAuditDataTable()
+        MyBase.Tables.Add(Me.tableCreditAudit)
         Me.tableCustomers = New CustomersDataTable()
         MyBase.Tables.Add(Me.tableCustomers)
         Me.tableDepartments = New DepartmentsDataTable()
@@ -1136,8 +1170,6 @@ Partial Public Class GEDataSet
         MyBase.Tables.Add(Me.tablePayments)
         Me.tableProducts = New ProductsDataTable()
         MyBase.Tables.Add(Me.tableProducts)
-        Me.tablePromo_Info_Type = New Promo_Info_TypeDataTable()
-        MyBase.Tables.Add(Me.tablePromo_Info_Type)
         Me.tablePromoted_Products = New Promoted_ProductsDataTable()
         MyBase.Tables.Add(Me.tablePromoted_Products)
         Me.tablePromotions = New PromotionsDataTable()
@@ -1166,16 +1198,20 @@ Partial Public Class GEDataSet
         MyBase.Tables.Add(Me.tableTrade_Shows)
         Me.relationFK__Billing_A__custo__398D8EEE = New Global.System.Data.DataRelation("FK__Billing_A__custo__398D8EEE", New Global.System.Data.DataColumn() {Me.tableCustomers.customerIDColumn}, New Global.System.Data.DataColumn() {Me.tableBilling_Addresses.customerIDColumn}, false)
         Me.Relations.Add(Me.relationFK__Billing_A__custo__398D8EEE)
-        Me.relationFK__Campaign___campa__66603565 = New Global.System.Data.DataRelation("FK__Campaign___campa__66603565", New Global.System.Data.DataColumn() {Me.tableMarketing_Campaigns.campaignIDColumn}, New Global.System.Data.DataColumn() {Me.tableCampaign_Targets.campaignIDColumn}, false)
-        Me.Relations.Add(Me.relationFK__Campaign___campa__66603565)
-        Me.relationFK__Campaign___custo__6754599E = New Global.System.Data.DataRelation("FK__Campaign___custo__6754599E", New Global.System.Data.DataColumn() {Me.tableCustomers.customerIDColumn}, New Global.System.Data.DataColumn() {Me.tableCampaign_Targets.customerIDColumn}, false)
-        Me.Relations.Add(Me.relationFK__Campaign___custo__6754599E)
+        Me.relationFK__Campaign___campa__5AB9788F = New Global.System.Data.DataRelation("FK__Campaign___campa__5AB9788F", New Global.System.Data.DataColumn() {Me.tableCampaign_Types.campaignTypeIDColumn}, New Global.System.Data.DataColumn() {Me.tableCampaign_Opt_Ins.campaignTypeIDColumn}, false)
+        Me.Relations.Add(Me.relationFK__Campaign___campa__5AB9788F)
+        Me.relationFK__Campaign___custo__5BAD9CC8 = New Global.System.Data.DataRelation("FK__Campaign___custo__5BAD9CC8", New Global.System.Data.DataColumn() {Me.tableCustomers.customerIDColumn}, New Global.System.Data.DataColumn() {Me.tableCampaign_Opt_Ins.customerIDColumn}, false)
+        Me.Relations.Add(Me.relationFK__Campaign___custo__5BAD9CC8)
         Me.relationFK__Categorie__depar__33D4B598 = New Global.System.Data.DataRelation("FK__Categorie__depar__33D4B598", New Global.System.Data.DataColumn() {Me.tableDepartments.departmentIDColumn}, New Global.System.Data.DataColumn() {Me.tableCategories.departmentIDColumn}, false)
         Me.Relations.Add(Me.relationFK__Categorie__depar__33D4B598)
         Me.relationFK__Coupons__discoun__76969D2E = New Global.System.Data.DataRelation("FK__Coupons__discoun__76969D2E", New Global.System.Data.DataColumn() {Me.tableDiscounts.discountIDColumn}, New Global.System.Data.DataColumn() {Me.tableCoupons.discountIDColumn}, false)
         Me.Relations.Add(Me.relationFK__Coupons__discoun__76969D2E)
         Me.relationFK__Coupons__promoti__778AC167 = New Global.System.Data.DataRelation("FK__Coupons__promoti__778AC167", New Global.System.Data.DataColumn() {Me.tablePromotions.promotionIDColumn}, New Global.System.Data.DataColumn() {Me.tableCoupons.promotionIDColumn}, false)
         Me.Relations.Add(Me.relationFK__Coupons__promoti__778AC167)
+        Me.relationFK__CreditAud__Custo__40F9A68C = New Global.System.Data.DataRelation("FK__CreditAud__Custo__40F9A68C", New Global.System.Data.DataColumn() {Me.tableCustomers.customerIDColumn}, New Global.System.Data.DataColumn() {Me.tableCreditAudit.CustomerIdColumn}, false)
+        Me.Relations.Add(Me.relationFK__CreditAud__Custo__40F9A68C)
+        Me.relationFK__CreditAud__Emplo__40058253 = New Global.System.Data.DataRelation("FK__CreditAud__Emplo__40058253", New Global.System.Data.DataColumn() {Me.tableEmployees.employeeIDColumn}, New Global.System.Data.DataColumn() {Me.tableCreditAudit.EmployeeIdColumn}, false)
+        Me.Relations.Add(Me.relationFK__CreditAud__Emplo__40058253)
         Me.relationFK__Discounts__disco__6E01572D = New Global.System.Data.DataRelation("FK__Discounts__disco__6E01572D", New Global.System.Data.DataColumn() {Me.tableDiscount_Type.discountTypeIDColumn}, New Global.System.Data.DataColumn() {Me.tableDiscounts.discountTypeIDColumn}, false)
         Me.Relations.Add(Me.relationFK__Discounts__disco__6E01572D)
         Me.relationFK__Gift_Card__custo__2B3F6F97 = New Global.System.Data.DataRelation("FK__Gift_Card__custo__2B3F6F97", New Global.System.Data.DataColumn() {Me.tableCustomers.customerIDColumn}, New Global.System.Data.DataColumn() {Me.tableGift_Cards.customerIDColumn}, false)
@@ -1214,10 +1250,8 @@ Partial Public Class GEDataSet
         Me.Relations.Add(Me.relationFK__Promoted___promo__7F2BE32F)
         Me.relationFK__Promoted_Pr__SKU__7E37BEF6 = New Global.System.Data.DataRelation("FK__Promoted_Pr__SKU__7E37BEF6", New Global.System.Data.DataColumn() {Me.tableProducts.SKUColumn}, New Global.System.Data.DataColumn() {Me.tablePromoted_Products.SKUColumn}, false)
         Me.Relations.Add(Me.relationFK__Promoted_Pr__SKU__7E37BEF6)
-        Me.relationFK__Promotion__campa__72C60C4A = New Global.System.Data.DataRelation("FK__Promotion__campa__72C60C4A", New Global.System.Data.DataColumn() {Me.tableMarketing_Campaigns.campaignIDColumn}, New Global.System.Data.DataColumn() {Me.tablePromotions.campaignIDColumn}, false)
-        Me.Relations.Add(Me.relationFK__Promotion__campa__72C60C4A)
-        Me.relationFK__Promotion__promo__73BA3083 = New Global.System.Data.DataRelation("FK__Promotion__promo__73BA3083", New Global.System.Data.DataColumn() {Me.tablePromo_Info_Type.promoInfoIDColumn}, New Global.System.Data.DataColumn() {Me.tablePromotions.promoInfoIDColumn}, false)
-        Me.Relations.Add(Me.relationFK__Promotion__promo__73BA3083)
+        Me.relationFK__Promotion__campa__56E8E7AB = New Global.System.Data.DataRelation("FK__Promotion__campa__56E8E7AB", New Global.System.Data.DataColumn() {Me.tableMarketing_Campaigns.campaignIDColumn}, New Global.System.Data.DataColumn() {Me.tablePromotions.campaignIDColumn}, false)
+        Me.Relations.Add(Me.relationFK__Promotion__campa__56E8E7AB)
         Me.relationFK__Purchase___statu__3D5E1FD2 = New Global.System.Data.DataRelation("FK__Purchase___statu__3D5E1FD2", New Global.System.Data.DataColumn() {Me.tableStatus.statusIDColumn}, New Global.System.Data.DataColumn() {Me.tablePurchase_Order.statusIDColumn}, false)
         Me.Relations.Add(Me.relationFK__Purchase___statu__3D5E1FD2)
         Me.relationFK__Purchase___suppl__3C69FB99 = New Global.System.Data.DataRelation("FK__Purchase___suppl__3C69FB99", New Global.System.Data.DataColumn() {Me.tableSuppliers.supplierIDColumn}, New Global.System.Data.DataColumn() {Me.tablePurchase_Order.supplierIDColumn}, false)
@@ -1248,6 +1282,8 @@ Partial Public Class GEDataSet
         Me.Relations.Add(Me.relationFK__Shrinkage__SKU__0B91BA14)
         Me.relationFK__Shrinkage__statu__0C85DE4D = New Global.System.Data.DataRelation("FK__Shrinkage__statu__0C85DE4D", New Global.System.Data.DataColumn() {Me.tableStatus.statusIDColumn}, New Global.System.Data.DataColumn() {Me.tableShrinkage.statusIDColumn}, false)
         Me.Relations.Add(Me.relationFK__Shrinkage__statu__0C85DE4D)
+        Me.relationFK__Marketing__campa__57DD0BE4 = New Global.System.Data.DataRelation("FK__Marketing__campa__57DD0BE4", New Global.System.Data.DataColumn() {Me.tableCampaign_Types.campaignTypeIDColumn}, New Global.System.Data.DataColumn() {Me.tableMarketing_Campaigns.campaignTypeIDColumn}, false)
+        Me.Relations.Add(Me.relationFK__Marketing__campa__57DD0BE4)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1258,7 +1294,13 @@ Partial Public Class GEDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeCampaign_Targets() As Boolean
+    Private Function ShouldSerializeCampaign_Opt_Ins() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeCampaign_Types() As Boolean
         Return false
     End Function
     
@@ -1271,6 +1313,12 @@ Partial Public Class GEDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeCoupons() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeCreditAudit() As Boolean
         Return false
     End Function
     
@@ -1361,12 +1409,6 @@ Partial Public Class GEDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeProducts() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializePromo_Info_Type() As Boolean
         Return false
     End Function
     
@@ -1510,13 +1552,19 @@ Partial Public Class GEDataSet
     Public Delegate Sub Billing_AddressesRowChangeEventHandler(ByVal sender As Object, ByVal e As Billing_AddressesRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub Campaign_TargetsRowChangeEventHandler(ByVal sender As Object, ByVal e As Campaign_TargetsRowChangeEvent)
+    Public Delegate Sub Campaign_Opt_InsRowChangeEventHandler(ByVal sender As Object, ByVal e As Campaign_Opt_InsRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub Campaign_TypesRowChangeEventHandler(ByVal sender As Object, ByVal e As Campaign_TypesRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub CategoriesRowChangeEventHandler(ByVal sender As Object, ByVal e As CategoriesRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub CouponsRowChangeEventHandler(ByVal sender As Object, ByVal e As CouponsRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub CreditAuditRowChangeEventHandler(ByVal sender As Object, ByVal e As CreditAuditRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub CustomersRowChangeEventHandler(ByVal sender As Object, ByVal e As CustomersRowChangeEvent)
@@ -1562,9 +1610,6 @@ Partial Public Class GEDataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub ProductsRowChangeEventHandler(ByVal sender As Object, ByVal e As ProductsRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub Promo_Info_TypeRowChangeEventHandler(ByVal sender As Object, ByVal e As Promo_Info_TypeRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub Promoted_ProductsRowChangeEventHandler(ByVal sender As Object, ByVal e As Promoted_ProductsRowChangeEvent)
@@ -1963,10 +2008,10 @@ Partial Public Class GEDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class Campaign_TargetsDataTable
-        Inherits Global.System.Data.TypedTableBase(Of Campaign_TargetsRow)
+    Partial Public Class Campaign_Opt_InsDataTable
+        Inherits Global.System.Data.TypedTableBase(Of Campaign_Opt_InsRow)
         
-        Private columncampaignID As Global.System.Data.DataColumn
+        Private columncampaignTypeID As Global.System.Data.DataColumn
         
         Private columncustomerID As Global.System.Data.DataColumn
         
@@ -1974,7 +2019,7 @@ Partial Public Class GEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Campaign_Targets"
+            Me.TableName = "Campaign_Opt_Ins"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -2007,9 +2052,9 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property campaignIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property campaignTypeIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columncampaignID
+                Return Me.columncampaignTypeID
             End Get
         End Property
         
@@ -2032,56 +2077,56 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As Campaign_TargetsRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As Campaign_Opt_InsRow
             Get
-                Return CType(Me.Rows(index),Campaign_TargetsRow)
+                Return CType(Me.Rows(index),Campaign_Opt_InsRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Campaign_TargetsRowChanging As Campaign_TargetsRowChangeEventHandler
+        Public Event Campaign_Opt_InsRowChanging As Campaign_Opt_InsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Campaign_TargetsRowChanged As Campaign_TargetsRowChangeEventHandler
+        Public Event Campaign_Opt_InsRowChanged As Campaign_Opt_InsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Campaign_TargetsRowDeleting As Campaign_TargetsRowChangeEventHandler
+        Public Event Campaign_Opt_InsRowDeleting As Campaign_Opt_InsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Campaign_TargetsRowDeleted As Campaign_TargetsRowChangeEventHandler
+        Public Event Campaign_Opt_InsRowDeleted As Campaign_Opt_InsRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddCampaign_TargetsRow(ByVal row As Campaign_TargetsRow)
+        Public Overloads Sub AddCampaign_Opt_InsRow(ByVal row As Campaign_Opt_InsRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddCampaign_TargetsRow(ByVal parentMarketing_CampaignsRowByFK__Campaign___campa__66603565 As Marketing_CampaignsRow, ByVal parentCustomersRowByFK__Campaign___custo__6754599E As CustomersRow) As Campaign_TargetsRow
-            Dim rowCampaign_TargetsRow As Campaign_TargetsRow = CType(Me.NewRow,Campaign_TargetsRow)
+        Public Overloads Function AddCampaign_Opt_InsRow(ByVal parentCampaign_TypesRowByFK__Campaign___campa__5AB9788F As Campaign_TypesRow, ByVal parentCustomersRowByFK__Campaign___custo__5BAD9CC8 As CustomersRow) As Campaign_Opt_InsRow
+            Dim rowCampaign_Opt_InsRow As Campaign_Opt_InsRow = CType(Me.NewRow,Campaign_Opt_InsRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Nothing}
-            If (Not (parentMarketing_CampaignsRowByFK__Campaign___campa__66603565) Is Nothing) Then
-                columnValuesArray(0) = parentMarketing_CampaignsRowByFK__Campaign___campa__66603565(0)
+            If (Not (parentCampaign_TypesRowByFK__Campaign___campa__5AB9788F) Is Nothing) Then
+                columnValuesArray(0) = parentCampaign_TypesRowByFK__Campaign___campa__5AB9788F(0)
             End If
-            If (Not (parentCustomersRowByFK__Campaign___custo__6754599E) Is Nothing) Then
-                columnValuesArray(1) = parentCustomersRowByFK__Campaign___custo__6754599E(0)
+            If (Not (parentCustomersRowByFK__Campaign___custo__5BAD9CC8) Is Nothing) Then
+                columnValuesArray(1) = parentCustomersRowByFK__Campaign___custo__5BAD9CC8(0)
             End If
-            rowCampaign_TargetsRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowCampaign_TargetsRow)
-            Return rowCampaign_TargetsRow
+            rowCampaign_Opt_InsRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowCampaign_Opt_InsRow)
+            Return rowCampaign_Opt_InsRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindBycampaignIDcustomerID(ByVal campaignID As Integer, ByVal customerID As Integer) As Campaign_TargetsRow
-            Return CType(Me.Rows.Find(New Object() {campaignID, customerID}),Campaign_TargetsRow)
+        Public Function FindBycampaignTypeIDcustomerID(ByVal campaignTypeID As Integer, ByVal customerID As Integer) As Campaign_Opt_InsRow
+            Return CType(Me.Rows.Find(New Object() {campaignTypeID, customerID}),Campaign_Opt_InsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As Campaign_TargetsDataTable = CType(MyBase.Clone,Campaign_TargetsDataTable)
+            Dim cln As Campaign_Opt_InsDataTable = CType(MyBase.Clone,Campaign_Opt_InsDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -2089,52 +2134,52 @@ Partial Public Class GEDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New Campaign_TargetsDataTable()
+            Return New Campaign_Opt_InsDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columncampaignID = MyBase.Columns("campaignID")
+            Me.columncampaignTypeID = MyBase.Columns("campaignTypeID")
             Me.columncustomerID = MyBase.Columns("customerID")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitClass()
-            Me.columncampaignID = New Global.System.Data.DataColumn("campaignID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncampaignID)
+            Me.columncampaignTypeID = New Global.System.Data.DataColumn("campaignTypeID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncampaignTypeID)
             Me.columncustomerID = New Global.System.Data.DataColumn("customerID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncustomerID)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncampaignID, Me.columncustomerID}, true))
-            Me.columncampaignID.AllowDBNull = false
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncampaignTypeID, Me.columncustomerID}, true))
+            Me.columncampaignTypeID.AllowDBNull = false
             Me.columncustomerID.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewCampaign_TargetsRow() As Campaign_TargetsRow
-            Return CType(Me.NewRow,Campaign_TargetsRow)
+        Public Function NewCampaign_Opt_InsRow() As Campaign_Opt_InsRow
+            Return CType(Me.NewRow,Campaign_Opt_InsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New Campaign_TargetsRow(builder)
+            Return New Campaign_Opt_InsRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(Campaign_TargetsRow)
+            Return GetType(Campaign_Opt_InsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.Campaign_TargetsRowChangedEvent) Is Nothing) Then
-                RaiseEvent Campaign_TargetsRowChanged(Me, New Campaign_TargetsRowChangeEvent(CType(e.Row,Campaign_TargetsRow), e.Action))
+            If (Not (Me.Campaign_Opt_InsRowChangedEvent) Is Nothing) Then
+                RaiseEvent Campaign_Opt_InsRowChanged(Me, New Campaign_Opt_InsRowChangeEvent(CType(e.Row,Campaign_Opt_InsRow), e.Action))
             End If
         End Sub
         
@@ -2142,8 +2187,8 @@ Partial Public Class GEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.Campaign_TargetsRowChangingEvent) Is Nothing) Then
-                RaiseEvent Campaign_TargetsRowChanging(Me, New Campaign_TargetsRowChangeEvent(CType(e.Row,Campaign_TargetsRow), e.Action))
+            If (Not (Me.Campaign_Opt_InsRowChangingEvent) Is Nothing) Then
+                RaiseEvent Campaign_Opt_InsRowChanging(Me, New Campaign_Opt_InsRowChangeEvent(CType(e.Row,Campaign_Opt_InsRow), e.Action))
             End If
         End Sub
         
@@ -2151,8 +2196,8 @@ Partial Public Class GEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.Campaign_TargetsRowDeletedEvent) Is Nothing) Then
-                RaiseEvent Campaign_TargetsRowDeleted(Me, New Campaign_TargetsRowChangeEvent(CType(e.Row,Campaign_TargetsRow), e.Action))
+            If (Not (Me.Campaign_Opt_InsRowDeletedEvent) Is Nothing) Then
+                RaiseEvent Campaign_Opt_InsRowDeleted(Me, New Campaign_Opt_InsRowChangeEvent(CType(e.Row,Campaign_Opt_InsRow), e.Action))
             End If
         End Sub
         
@@ -2160,14 +2205,14 @@ Partial Public Class GEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.Campaign_TargetsRowDeletingEvent) Is Nothing) Then
-                RaiseEvent Campaign_TargetsRowDeleting(Me, New Campaign_TargetsRowChangeEvent(CType(e.Row,Campaign_TargetsRow), e.Action))
+            If (Not (Me.Campaign_Opt_InsRowDeletingEvent) Is Nothing) Then
+                RaiseEvent Campaign_Opt_InsRowDeleting(Me, New Campaign_Opt_InsRowChangeEvent(CType(e.Row,Campaign_Opt_InsRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveCampaign_TargetsRow(ByVal row As Campaign_TargetsRow)
+        Public Sub RemoveCampaign_Opt_InsRow(ByVal row As Campaign_Opt_InsRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -2194,7 +2239,283 @@ Partial Public Class GEDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "Campaign_TargetsDataTable"
+            attribute2.FixedValue = "Campaign_Opt_InsDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class Campaign_TypesDataTable
+        Inherits Global.System.Data.TypedTableBase(Of Campaign_TypesRow)
+        
+        Private columncampaignTypeID As Global.System.Data.DataColumn
+        
+        Private columntitle As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "Campaign_Types"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property campaignTypeIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncampaignTypeID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property titleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntitle
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As Campaign_TypesRow
+            Get
+                Return CType(Me.Rows(index),Campaign_TypesRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event Campaign_TypesRowChanging As Campaign_TypesRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event Campaign_TypesRowChanged As Campaign_TypesRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event Campaign_TypesRowDeleting As Campaign_TypesRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event Campaign_TypesRowDeleted As Campaign_TypesRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddCampaign_TypesRow(ByVal row As Campaign_TypesRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddCampaign_TypesRow(ByVal campaignTypeID As Integer, ByVal title As String) As Campaign_TypesRow
+            Dim rowCampaign_TypesRow As Campaign_TypesRow = CType(Me.NewRow,Campaign_TypesRow)
+            Dim columnValuesArray() As Object = New Object() {campaignTypeID, title}
+            rowCampaign_TypesRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowCampaign_TypesRow)
+            Return rowCampaign_TypesRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindBycampaignTypeID(ByVal campaignTypeID As Integer) As Campaign_TypesRow
+            Return CType(Me.Rows.Find(New Object() {campaignTypeID}),Campaign_TypesRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As Campaign_TypesDataTable = CType(MyBase.Clone,Campaign_TypesDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New Campaign_TypesDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columncampaignTypeID = MyBase.Columns("campaignTypeID")
+            Me.columntitle = MyBase.Columns("title")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columncampaignTypeID = New Global.System.Data.DataColumn("campaignTypeID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncampaignTypeID)
+            Me.columntitle = New Global.System.Data.DataColumn("title", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntitle)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncampaignTypeID}, true))
+            Me.columncampaignTypeID.AllowDBNull = false
+            Me.columncampaignTypeID.Unique = true
+            Me.columntitle.AllowDBNull = false
+            Me.columntitle.MaxLength = 80
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewCampaign_TypesRow() As Campaign_TypesRow
+            Return CType(Me.NewRow,Campaign_TypesRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New Campaign_TypesRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(Campaign_TypesRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.Campaign_TypesRowChangedEvent) Is Nothing) Then
+                RaiseEvent Campaign_TypesRowChanged(Me, New Campaign_TypesRowChangeEvent(CType(e.Row,Campaign_TypesRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.Campaign_TypesRowChangingEvent) Is Nothing) Then
+                RaiseEvent Campaign_TypesRowChanging(Me, New Campaign_TypesRowChangeEvent(CType(e.Row,Campaign_TypesRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.Campaign_TypesRowDeletedEvent) Is Nothing) Then
+                RaiseEvent Campaign_TypesRowDeleted(Me, New Campaign_TypesRowChangeEvent(CType(e.Row,Campaign_TypesRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.Campaign_TypesRowDeletingEvent) Is Nothing) Then
+                RaiseEvent Campaign_TypesRowDeleting(Me, New Campaign_TypesRowChangeEvent(CType(e.Row,Campaign_TypesRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveCampaign_TypesRow(ByVal row As Campaign_TypesRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As GEDataSet = New GEDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "Campaign_TypesDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -2873,6 +3194,361 @@ Partial Public Class GEDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class CreditAuditDataTable
+        Inherits Global.System.Data.TypedTableBase(Of CreditAuditRow)
+        
+        Private columnAuditId As Global.System.Data.DataColumn
+        
+        Private columnEmployeeId As Global.System.Data.DataColumn
+        
+        Private columnCustomerId As Global.System.Data.DataColumn
+        
+        Private columnstartamount As Global.System.Data.DataColumn
+        
+        Private columnnewAmount As Global.System.Data.DataColumn
+        
+        Private columnChangedOn As Global.System.Data.DataColumn
+        
+        Private columnreason As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "CreditAudit"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property AuditIdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAuditId
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property EmployeeIdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEmployeeId
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CustomerIdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustomerId
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property startamountColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstartamount
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property newAmountColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnewAmount
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ChangedOnColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnChangedOn
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property reasonColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnreason
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As CreditAuditRow
+            Get
+                Return CType(Me.Rows(index),CreditAuditRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event CreditAuditRowChanging As CreditAuditRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event CreditAuditRowChanged As CreditAuditRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event CreditAuditRowDeleting As CreditAuditRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event CreditAuditRowDeleted As CreditAuditRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddCreditAuditRow(ByVal row As CreditAuditRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddCreditAuditRow(ByVal parentEmployeesRowByFK__CreditAud__Emplo__40058253 As EmployeesRow, ByVal parentCustomersRowByFK__CreditAud__Custo__40F9A68C As CustomersRow, ByVal startamount As Decimal, ByVal newAmount As Decimal, ByVal ChangedOn As Date, ByVal reason As String) As CreditAuditRow
+            Dim rowCreditAuditRow As CreditAuditRow = CType(Me.NewRow,CreditAuditRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, startamount, newAmount, ChangedOn, reason}
+            If (Not (parentEmployeesRowByFK__CreditAud__Emplo__40058253) Is Nothing) Then
+                columnValuesArray(1) = parentEmployeesRowByFK__CreditAud__Emplo__40058253(0)
+            End If
+            If (Not (parentCustomersRowByFK__CreditAud__Custo__40F9A68C) Is Nothing) Then
+                columnValuesArray(2) = parentCustomersRowByFK__CreditAud__Custo__40F9A68C(0)
+            End If
+            rowCreditAuditRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowCreditAuditRow)
+            Return rowCreditAuditRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindByAuditId(ByVal AuditId As Integer) As CreditAuditRow
+            Return CType(Me.Rows.Find(New Object() {AuditId}),CreditAuditRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As CreditAuditDataTable = CType(MyBase.Clone,CreditAuditDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New CreditAuditDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnAuditId = MyBase.Columns("AuditId")
+            Me.columnEmployeeId = MyBase.Columns("EmployeeId")
+            Me.columnCustomerId = MyBase.Columns("CustomerId")
+            Me.columnstartamount = MyBase.Columns("startamount")
+            Me.columnnewAmount = MyBase.Columns("newAmount")
+            Me.columnChangedOn = MyBase.Columns("ChangedOn")
+            Me.columnreason = MyBase.Columns("reason")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnAuditId = New Global.System.Data.DataColumn("AuditId", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAuditId)
+            Me.columnEmployeeId = New Global.System.Data.DataColumn("EmployeeId", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmployeeId)
+            Me.columnCustomerId = New Global.System.Data.DataColumn("CustomerId", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustomerId)
+            Me.columnstartamount = New Global.System.Data.DataColumn("startamount", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstartamount)
+            Me.columnnewAmount = New Global.System.Data.DataColumn("newAmount", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnewAmount)
+            Me.columnChangedOn = New Global.System.Data.DataColumn("ChangedOn", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnChangedOn)
+            Me.columnreason = New Global.System.Data.DataColumn("reason", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnreason)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnAuditId}, true))
+            Me.columnAuditId.AutoIncrement = true
+            Me.columnAuditId.AutoIncrementSeed = -1
+            Me.columnAuditId.AutoIncrementStep = -1
+            Me.columnAuditId.AllowDBNull = false
+            Me.columnAuditId.ReadOnly = true
+            Me.columnAuditId.Unique = true
+            Me.columnEmployeeId.AllowDBNull = false
+            Me.columnCustomerId.AllowDBNull = false
+            Me.columnstartamount.AllowDBNull = false
+            Me.columnnewAmount.AllowDBNull = false
+            Me.columnreason.AllowDBNull = false
+            Me.columnreason.MaxLength = 250
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewCreditAuditRow() As CreditAuditRow
+            Return CType(Me.NewRow,CreditAuditRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New CreditAuditRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(CreditAuditRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.CreditAuditRowChangedEvent) Is Nothing) Then
+                RaiseEvent CreditAuditRowChanged(Me, New CreditAuditRowChangeEvent(CType(e.Row,CreditAuditRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.CreditAuditRowChangingEvent) Is Nothing) Then
+                RaiseEvent CreditAuditRowChanging(Me, New CreditAuditRowChangeEvent(CType(e.Row,CreditAuditRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.CreditAuditRowDeletedEvent) Is Nothing) Then
+                RaiseEvent CreditAuditRowDeleted(Me, New CreditAuditRowChangeEvent(CType(e.Row,CreditAuditRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.CreditAuditRowDeletingEvent) Is Nothing) Then
+                RaiseEvent CreditAuditRowDeleting(Me, New CreditAuditRowChangeEvent(CType(e.Row,CreditAuditRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveCreditAuditRow(ByVal row As CreditAuditRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As GEDataSet = New GEDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "CreditAuditDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class CustomersDataTable
         Inherits Global.System.Data.TypedTableBase(Of CustomersRow)
         
@@ -3058,9 +3734,9 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddCustomersRow(ByVal firstName As String, ByVal lastName As String, ByVal customerDOB As Date, ByVal primaryPhone As String, ByVal secondaryPhone As String, ByVal email As String, ByVal lineOfCredit As Decimal, ByVal usedLineOfCredit As Decimal, ByVal wholeSale As Boolean, ByVal taxExempt As Boolean) As CustomersRow
+        Public Overloads Function AddCustomersRow(ByVal customerID As Integer, ByVal firstName As String, ByVal lastName As String, ByVal customerDOB As Date, ByVal primaryPhone As String, ByVal secondaryPhone As String, ByVal email As String, ByVal lineOfCredit As Decimal, ByVal usedLineOfCredit As Decimal, ByVal wholeSale As Boolean, ByVal taxExempt As Boolean) As CustomersRow
             Dim rowCustomersRow As CustomersRow = CType(Me.NewRow,CustomersRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, firstName, lastName, customerDOB, primaryPhone, secondaryPhone, email, lineOfCredit, usedLineOfCredit, wholeSale, taxExempt}
+            Dim columnValuesArray() As Object = New Object() {customerID, firstName, lastName, customerDOB, primaryPhone, secondaryPhone, email, lineOfCredit, usedLineOfCredit, wholeSale, taxExempt}
             rowCustomersRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowCustomersRow)
             Return rowCustomersRow
@@ -3128,15 +3804,12 @@ Partial Public Class GEDataSet
             Me.columntaxExempt = New Global.System.Data.DataColumn("taxExempt", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntaxExempt)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncustomerID}, true))
-            Me.columncustomerID.AutoIncrement = true
-            Me.columncustomerID.AutoIncrementSeed = 302
             Me.columncustomerID.AllowDBNull = false
             Me.columncustomerID.Unique = true
             Me.columnfirstName.AllowDBNull = false
             Me.columnfirstName.MaxLength = 40
             Me.columnlastName.AllowDBNull = false
             Me.columnlastName.MaxLength = 40
-            Me.columnprimaryPhone.AllowDBNull = false
             Me.columnprimaryPhone.MaxLength = 12
             Me.columnsecondaryPhone.MaxLength = 12
             Me.columnemail.MaxLength = 250
@@ -5438,6 +6111,8 @@ Partial Public Class GEDataSet
         
         Private columncampaignID As Global.System.Data.DataColumn
         
+        Private columncampaignTypeID As Global.System.Data.DataColumn
+        
         Private columntitle As Global.System.Data.DataColumn
         
         Private columndescription As Global.System.Data.DataColumn
@@ -5486,6 +6161,14 @@ Partial Public Class GEDataSet
         Public ReadOnly Property campaignIDColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columncampaignID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property campaignTypeIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncampaignTypeID
             End Get
         End Property
         
@@ -5558,9 +6241,12 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddMarketing_CampaignsRow(ByVal campaignID As Integer, ByVal title As String, ByVal description As String, ByVal startDate As Date, ByVal endDate As Date) As Marketing_CampaignsRow
+        Public Overloads Function AddMarketing_CampaignsRow(ByVal campaignID As Integer, ByVal parentCampaign_TypesRowByFK__Marketing__campa__57DD0BE4 As Campaign_TypesRow, ByVal title As String, ByVal description As String, ByVal startDate As Date, ByVal endDate As Date) As Marketing_CampaignsRow
             Dim rowMarketing_CampaignsRow As Marketing_CampaignsRow = CType(Me.NewRow,Marketing_CampaignsRow)
-            Dim columnValuesArray() As Object = New Object() {campaignID, title, description, startDate, endDate}
+            Dim columnValuesArray() As Object = New Object() {campaignID, Nothing, title, description, startDate, endDate}
+            If (Not (parentCampaign_TypesRowByFK__Marketing__campa__57DD0BE4) Is Nothing) Then
+                columnValuesArray(1) = parentCampaign_TypesRowByFK__Marketing__campa__57DD0BE4(0)
+            End If
             rowMarketing_CampaignsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowMarketing_CampaignsRow)
             Return rowMarketing_CampaignsRow
@@ -5590,6 +6276,7 @@ Partial Public Class GEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
             Me.columncampaignID = MyBase.Columns("campaignID")
+            Me.columncampaignTypeID = MyBase.Columns("campaignTypeID")
             Me.columntitle = MyBase.Columns("title")
             Me.columndescription = MyBase.Columns("description")
             Me.columnstartDate = MyBase.Columns("startDate")
@@ -5601,6 +6288,8 @@ Partial Public Class GEDataSet
         Private Sub InitClass()
             Me.columncampaignID = New Global.System.Data.DataColumn("campaignID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncampaignID)
+            Me.columncampaignTypeID = New Global.System.Data.DataColumn("campaignTypeID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncampaignTypeID)
             Me.columntitle = New Global.System.Data.DataColumn("title", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntitle)
             Me.columndescription = New Global.System.Data.DataColumn("description", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -7720,282 +8409,6 @@ Partial Public Class GEDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class Promo_Info_TypeDataTable
-        Inherits Global.System.Data.TypedTableBase(Of Promo_Info_TypeRow)
-        
-        Private columnpromoInfoID As Global.System.Data.DataColumn
-        
-        Private columncampaignType As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "Promo_Info_Type"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property promoInfoIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnpromoInfoID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property campaignTypeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columncampaignType
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As Promo_Info_TypeRow
-            Get
-                Return CType(Me.Rows(index),Promo_Info_TypeRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Promo_Info_TypeRowChanging As Promo_Info_TypeRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Promo_Info_TypeRowChanged As Promo_Info_TypeRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Promo_Info_TypeRowDeleting As Promo_Info_TypeRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Promo_Info_TypeRowDeleted As Promo_Info_TypeRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddPromo_Info_TypeRow(ByVal row As Promo_Info_TypeRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddPromo_Info_TypeRow(ByVal promoInfoID As Integer, ByVal campaignType As String) As Promo_Info_TypeRow
-            Dim rowPromo_Info_TypeRow As Promo_Info_TypeRow = CType(Me.NewRow,Promo_Info_TypeRow)
-            Dim columnValuesArray() As Object = New Object() {promoInfoID, campaignType}
-            rowPromo_Info_TypeRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowPromo_Info_TypeRow)
-            Return rowPromo_Info_TypeRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindBypromoInfoID(ByVal promoInfoID As Integer) As Promo_Info_TypeRow
-            Return CType(Me.Rows.Find(New Object() {promoInfoID}),Promo_Info_TypeRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As Promo_Info_TypeDataTable = CType(MyBase.Clone,Promo_Info_TypeDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New Promo_Info_TypeDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnpromoInfoID = MyBase.Columns("promoInfoID")
-            Me.columncampaignType = MyBase.Columns("campaignType")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnpromoInfoID = New Global.System.Data.DataColumn("promoInfoID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpromoInfoID)
-            Me.columncampaignType = New Global.System.Data.DataColumn("campaignType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncampaignType)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnpromoInfoID}, true))
-            Me.columnpromoInfoID.AllowDBNull = false
-            Me.columnpromoInfoID.Unique = true
-            Me.columncampaignType.AllowDBNull = false
-            Me.columncampaignType.MaxLength = 40
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewPromo_Info_TypeRow() As Promo_Info_TypeRow
-            Return CType(Me.NewRow,Promo_Info_TypeRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New Promo_Info_TypeRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(Promo_Info_TypeRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.Promo_Info_TypeRowChangedEvent) Is Nothing) Then
-                RaiseEvent Promo_Info_TypeRowChanged(Me, New Promo_Info_TypeRowChangeEvent(CType(e.Row,Promo_Info_TypeRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.Promo_Info_TypeRowChangingEvent) Is Nothing) Then
-                RaiseEvent Promo_Info_TypeRowChanging(Me, New Promo_Info_TypeRowChangeEvent(CType(e.Row,Promo_Info_TypeRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.Promo_Info_TypeRowDeletedEvent) Is Nothing) Then
-                RaiseEvent Promo_Info_TypeRowDeleted(Me, New Promo_Info_TypeRowChangeEvent(CType(e.Row,Promo_Info_TypeRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.Promo_Info_TypeRowDeletingEvent) Is Nothing) Then
-                RaiseEvent Promo_Info_TypeRowDeleting(Me, New Promo_Info_TypeRowChangeEvent(CType(e.Row,Promo_Info_TypeRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemovePromo_Info_TypeRow(ByVal row As Promo_Info_TypeRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As GEDataSet = New GEDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "Promo_Info_TypeDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class Promoted_ProductsDataTable
         Inherits Global.System.Data.TypedTableBase(Of Promoted_ProductsRow)
         
@@ -8422,14 +8835,11 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddPromotionsRow(ByVal promotionID As Integer, ByVal parentMarketing_CampaignsRowByFK__Promotion__campa__72C60C4A As Marketing_CampaignsRow, ByVal parentPromo_Info_TypeRowByFK__Promotion__promo__73BA3083 As Promo_Info_TypeRow, ByVal title As String, ByVal description As String, ByVal startDate As Date, ByVal endDate As Date) As PromotionsRow
+        Public Overloads Function AddPromotionsRow(ByVal promotionID As Integer, ByVal parentMarketing_CampaignsRowByFK__Promotion__campa__56E8E7AB As Marketing_CampaignsRow, ByVal promoInfoID As Integer, ByVal title As String, ByVal description As String, ByVal startDate As Date, ByVal endDate As Date) As PromotionsRow
             Dim rowPromotionsRow As PromotionsRow = CType(Me.NewRow,PromotionsRow)
-            Dim columnValuesArray() As Object = New Object() {promotionID, Nothing, Nothing, title, description, startDate, endDate}
-            If (Not (parentMarketing_CampaignsRowByFK__Promotion__campa__72C60C4A) Is Nothing) Then
-                columnValuesArray(1) = parentMarketing_CampaignsRowByFK__Promotion__campa__72C60C4A(0)
-            End If
-            If (Not (parentPromo_Info_TypeRowByFK__Promotion__promo__73BA3083) Is Nothing) Then
-                columnValuesArray(2) = parentPromo_Info_TypeRowByFK__Promotion__promo__73BA3083(0)
+            Dim columnValuesArray() As Object = New Object() {promotionID, Nothing, promoInfoID, title, description, startDate, endDate}
+            If (Not (parentMarketing_CampaignsRowByFK__Promotion__campa__56E8E7AB) Is Nothing) Then
+                columnValuesArray(1) = parentMarketing_CampaignsRowByFK__Promotion__campa__56E8E7AB(0)
             End If
             rowPromotionsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPromotionsRow)
@@ -12492,26 +12902,26 @@ Partial Public Class GEDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class Campaign_TargetsRow
+    Partial Public Class Campaign_Opt_InsRow
         Inherits Global.System.Data.DataRow
         
-        Private tableCampaign_Targets As Campaign_TargetsDataTable
+        Private tableCampaign_Opt_Ins As Campaign_Opt_InsDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableCampaign_Targets = CType(Me.Table,Campaign_TargetsDataTable)
+            Me.tableCampaign_Opt_Ins = CType(Me.Table,Campaign_Opt_InsDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property campaignID() As Integer
+        Public Property campaignTypeID() As Integer
             Get
-                Return CType(Me(Me.tableCampaign_Targets.campaignIDColumn),Integer)
+                Return CType(Me(Me.tableCampaign_Opt_Ins.campaignTypeIDColumn),Integer)
             End Get
             Set
-                Me(Me.tableCampaign_Targets.campaignIDColumn) = value
+                Me(Me.tableCampaign_Opt_Ins.campaignTypeIDColumn) = value
             End Set
         End Property
         
@@ -12519,21 +12929,21 @@ Partial Public Class GEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property customerID() As Integer
             Get
-                Return CType(Me(Me.tableCampaign_Targets.customerIDColumn),Integer)
+                Return CType(Me(Me.tableCampaign_Opt_Ins.customerIDColumn),Integer)
             End Get
             Set
-                Me(Me.tableCampaign_Targets.customerIDColumn) = value
+                Me(Me.tableCampaign_Opt_Ins.customerIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Marketing_CampaignsRow() As Marketing_CampaignsRow
+        Public Property Campaign_TypesRow() As Campaign_TypesRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__Campaign___campa__66603565")),Marketing_CampaignsRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__Campaign___campa__5AB9788F")),Campaign_TypesRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK__Campaign___campa__66603565"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK__Campaign___campa__5AB9788F"))
             End Set
         End Property
         
@@ -12541,12 +12951,70 @@ Partial Public Class GEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property CustomersRow() As CustomersRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__Campaign___custo__6754599E")),CustomersRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__Campaign___custo__5BAD9CC8")),CustomersRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK__Campaign___custo__6754599E"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK__Campaign___custo__5BAD9CC8"))
             End Set
         End Property
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class Campaign_TypesRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableCampaign_Types As Campaign_TypesDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableCampaign_Types = CType(Me.Table,Campaign_TypesDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property campaignTypeID() As Integer
+            Get
+                Return CType(Me(Me.tableCampaign_Types.campaignTypeIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableCampaign_Types.campaignTypeIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property title() As String
+            Get
+                Return CType(Me(Me.tableCampaign_Types.titleColumn),String)
+            End Get
+            Set
+                Me(Me.tableCampaign_Types.titleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GetCampaign_Opt_InsRows() As Campaign_Opt_InsRow()
+            If (Me.Table.ChildRelations("FK__Campaign___campa__5AB9788F") Is Nothing) Then
+                Return New Campaign_Opt_InsRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK__Campaign___campa__5AB9788F")),Campaign_Opt_InsRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GetMarketing_CampaignsRows() As Marketing_CampaignsRow()
+            If (Me.Table.ChildRelations("FK__Marketing__campa__57DD0BE4") Is Nothing) Then
+                Return New Marketing_CampaignsRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK__Marketing__campa__57DD0BE4")),Marketing_CampaignsRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -12742,6 +13210,137 @@ Partial Public Class GEDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
+    Partial Public Class CreditAuditRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableCreditAudit As CreditAuditDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableCreditAudit = CType(Me.Table,CreditAuditDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property AuditId() As Integer
+            Get
+                Return CType(Me(Me.tableCreditAudit.AuditIdColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableCreditAudit.AuditIdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property EmployeeId() As Integer
+            Get
+                Return CType(Me(Me.tableCreditAudit.EmployeeIdColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableCreditAudit.EmployeeIdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CustomerId() As Integer
+            Get
+                Return CType(Me(Me.tableCreditAudit.CustomerIdColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableCreditAudit.CustomerIdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property startamount() As Decimal
+            Get
+                Return CType(Me(Me.tableCreditAudit.startamountColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableCreditAudit.startamountColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property newAmount() As Decimal
+            Get
+                Return CType(Me(Me.tableCreditAudit.newAmountColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableCreditAudit.newAmountColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ChangedOn() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableCreditAudit.ChangedOnColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ChangedOn' in table 'CreditAudit' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableCreditAudit.ChangedOnColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property reason() As String
+            Get
+                Return CType(Me(Me.tableCreditAudit.reasonColumn),String)
+            End Get
+            Set
+                Me(Me.tableCreditAudit.reasonColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CustomersRow() As CustomersRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__CreditAud__Custo__40F9A68C")),CustomersRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK__CreditAud__Custo__40F9A68C"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property EmployeesRow() As EmployeesRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__CreditAud__Emplo__40058253")),EmployeesRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK__CreditAud__Emplo__40058253"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsChangedOnNull() As Boolean
+            Return Me.IsNull(Me.tableCreditAudit.ChangedOnColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetChangedOnNull()
+            Me(Me.tableCreditAudit.ChangedOnColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
     Partial Public Class CustomersRow
         Inherits Global.System.Data.DataRow
         
@@ -12806,7 +13405,11 @@ Partial Public Class GEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property primaryPhone() As String
             Get
-                Return CType(Me(Me.tableCustomers.primaryPhoneColumn),String)
+                Try 
+                    Return CType(Me(Me.tableCustomers.primaryPhoneColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'primaryPhone' in table 'Customers' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableCustomers.primaryPhoneColumn) = value
@@ -12901,6 +13504,18 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsprimaryPhoneNull() As Boolean
+            Return Me.IsNull(Me.tableCustomers.primaryPhoneColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetprimaryPhoneNull()
+            Me(Me.tableCustomers.primaryPhoneColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IssecondaryPhoneNull() As Boolean
             Return Me.IsNull(Me.tableCustomers.secondaryPhoneColumn)
         End Function
@@ -12935,11 +13550,21 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function GetCampaign_TargetsRows() As Campaign_TargetsRow()
-            If (Me.Table.ChildRelations("FK__Campaign___custo__6754599E") Is Nothing) Then
-                Return New Campaign_TargetsRow(-1) {}
+        Public Function GetCampaign_Opt_InsRows() As Campaign_Opt_InsRow()
+            If (Me.Table.ChildRelations("FK__Campaign___custo__5BAD9CC8") Is Nothing) Then
+                Return New Campaign_Opt_InsRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK__Campaign___custo__6754599E")),Campaign_TargetsRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK__Campaign___custo__5BAD9CC8")),Campaign_Opt_InsRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GetCreditAuditRows() As CreditAuditRow()
+            If (Me.Table.ChildRelations("FK__CreditAud__Custo__40F9A68C") Is Nothing) Then
+                Return New CreditAuditRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK__CreditAud__Custo__40F9A68C")),CreditAuditRow())
             End If
         End Function
         
@@ -13366,6 +13991,16 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GetCreditAuditRows() As CreditAuditRow()
+            If (Me.Table.ChildRelations("FK__CreditAud__Emplo__40058253") Is Nothing) Then
+                Return New CreditAuditRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK__CreditAud__Emplo__40058253")),CreditAuditRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function GetOrdersRows() As OrdersRow()
             If (Me.Table.ChildRelations("FK__Orders__employee__4316F928") Is Nothing) Then
                 Return New OrdersRow(-1) {}
@@ -13701,6 +14336,21 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property campaignTypeID() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableMarketing_Campaigns.campaignTypeIDColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'campaignTypeID' in table 'Marketing_Campaigns' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableMarketing_Campaigns.campaignTypeIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property title() As String
             Get
                 Return CType(Me(Me.tableMarketing_Campaigns.titleColumn),String)
@@ -13749,6 +14399,29 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Campaign_TypesRow() As Campaign_TypesRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__Marketing__campa__57DD0BE4")),Campaign_TypesRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK__Marketing__campa__57DD0BE4"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IscampaignTypeIDNull() As Boolean
+            Return Me.IsNull(Me.tableMarketing_Campaigns.campaignTypeIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetcampaignTypeIDNull()
+            Me(Me.tableMarketing_Campaigns.campaignTypeIDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsdescriptionNull() As Boolean
             Return Me.IsNull(Me.tableMarketing_Campaigns.descriptionColumn)
         End Function
@@ -13761,21 +14434,11 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function GetCampaign_TargetsRows() As Campaign_TargetsRow()
-            If (Me.Table.ChildRelations("FK__Campaign___campa__66603565") Is Nothing) Then
-                Return New Campaign_TargetsRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK__Campaign___campa__66603565")),Campaign_TargetsRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function GetPromotionsRows() As PromotionsRow()
-            If (Me.Table.ChildRelations("FK__Promotion__campa__72C60C4A") Is Nothing) Then
+            If (Me.Table.ChildRelations("FK__Promotion__campa__56E8E7AB") Is Nothing) Then
                 Return New PromotionsRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK__Promotion__campa__72C60C4A")),PromotionsRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK__Promotion__campa__56E8E7AB")),PromotionsRow())
             End If
         End Function
     End Class
@@ -14520,54 +15183,6 @@ Partial Public Class GEDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class Promo_Info_TypeRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tablePromo_Info_Type As Promo_Info_TypeDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tablePromo_Info_Type = CType(Me.Table,Promo_Info_TypeDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property promoInfoID() As Integer
-            Get
-                Return CType(Me(Me.tablePromo_Info_Type.promoInfoIDColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablePromo_Info_Type.promoInfoIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property campaignType() As String
-            Get
-                Return CType(Me(Me.tablePromo_Info_Type.campaignTypeColumn),String)
-            End Get
-            Set
-                Me(Me.tablePromo_Info_Type.campaignTypeColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function GetPromotionsRows() As PromotionsRow()
-            If (Me.Table.ChildRelations("FK__Promotion__promo__73BA3083") Is Nothing) Then
-                Return New PromotionsRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK__Promotion__promo__73BA3083")),PromotionsRow())
-            End If
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
     Partial Public Class Promoted_ProductsRow
         Inherits Global.System.Data.DataRow
         
@@ -14725,21 +15340,10 @@ Partial Public Class GEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Marketing_CampaignsRow() As Marketing_CampaignsRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__Promotion__campa__72C60C4A")),Marketing_CampaignsRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__Promotion__campa__56E8E7AB")),Marketing_CampaignsRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK__Promotion__campa__72C60C4A"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Promo_Info_TypeRow() As Promo_Info_TypeRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK__Promotion__promo__73BA3083")),Promo_Info_TypeRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK__Promotion__promo__73BA3083"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK__Promotion__campa__56E8E7AB"))
             End Set
         End Property
         
@@ -16102,16 +16706,16 @@ Partial Public Class GEDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class Campaign_TargetsRowChangeEvent
+    Public Class Campaign_Opt_InsRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As Campaign_TargetsRow
+        Private eventRow As Campaign_Opt_InsRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As Campaign_TargetsRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As Campaign_Opt_InsRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -16119,7 +16723,43 @@ Partial Public Class GEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As Campaign_TargetsRow
+        Public ReadOnly Property Row() As Campaign_Opt_InsRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class Campaign_TypesRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As Campaign_TypesRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As Campaign_TypesRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As Campaign_TypesRow
             Get
                 Return Me.eventRow
             End Get
@@ -16192,6 +16832,42 @@ Partial Public Class GEDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As CouponsRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class CreditAuditRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As CreditAuditRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As CreditAuditRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As CreditAuditRow
             Get
                 Return Me.eventRow
             End Get
@@ -16732,42 +17408,6 @@ Partial Public Class GEDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As ProductsRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class Promo_Info_TypeRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As Promo_Info_TypeRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As Promo_Info_TypeRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As Promo_Info_TypeRow
             Get
                 Return Me.eventRow
             End Get
@@ -17704,7 +18344,7 @@ Namespace GEDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class Campaign_TargetsTableAdapter
+    Partial Public Class Campaign_Opt_InsTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -17821,35 +18461,36 @@ Namespace GEDataSetTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Campaign_Targets"
-            tableMapping.ColumnMappings.Add("campaignID", "campaignID")
+            tableMapping.DataSetTable = "Campaign_Opt_Ins"
+            tableMapping.ColumnMappings.Add("campaignTypeID", "campaignTypeID")
             tableMapping.ColumnMappings.Add("customerID", "customerID")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Campaign_Targets] WHERE (([campaignID] = @Original_campaignID)"& _ 
-                " AND ([customerID] = @Original_customerID))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Campaign_Opt_Ins] WHERE (([campaignTypeID] = @Original_campaig"& _ 
+                "nTypeID) AND ([customerID] = @Original_customerID))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_customerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "customerID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Campaign_Targets] ([campaignID], [customerID]) VALUES (@campai"& _ 
-                "gnID, @customerID);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT campaignID, customerID FROM Campaign_Targets WHERE ("& _ 
-                "campaignID = @campaignID) AND (customerID = @customerID)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Campaign_Opt_Ins] ([campaignTypeID], [customerID]) VALUES (@ca"& _ 
+                "mpaignTypeID, @customerID);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT campaignTypeID, customerID FROM Campaign_Opt"& _ 
+                "_Ins WHERE (campaignTypeID = @campaignTypeID) AND (customerID = @customerID)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@customerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "customerID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Campaign_Targets] SET [campaignID] = @campaignID, [customerID] = @c"& _ 
-                "ustomerID WHERE (([campaignID] = @Original_campaignID) AND ([customerID] = @Orig"& _ 
-                "inal_customerID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT campaignID, customerID FROM Campaign_Targets WHERE (c"& _ 
-                "ampaignID = @campaignID) AND (customerID = @customerID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Campaign_Opt_Ins] SET [campaignTypeID] = @campaignTypeID, [customer"& _ 
+                "ID] = @customerID WHERE (([campaignTypeID] = @Original_campaignTypeID) AND ([cus"& _ 
+                "tomerID] = @Original_customerID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT campaignTypeID, customerID FROM Campa"& _ 
+                "ign_Opt_Ins WHERE (campaignTypeID = @campaignTypeID) AND (customerID = @customer"& _ 
+                "ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@customerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "customerID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_customerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "customerID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -17866,7 +18507,7 @@ Namespace GEDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT campaignID, customerID FROM dbo.Campaign_Targets"
+            Me._commandCollection(0).CommandText = "SELECT campaignTypeID, customerID FROM dbo.Campaign_Opt_Ins"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -17874,7 +18515,7 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As GEDataSet.Campaign_TargetsDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As GEDataSet.Campaign_Opt_InsDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -17887,9 +18528,9 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As GEDataSet.Campaign_TargetsDataTable
+        Public Overloads Overridable Function GetData() As GEDataSet.Campaign_Opt_InsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GEDataSet.Campaign_TargetsDataTable = New GEDataSet.Campaign_TargetsDataTable()
+            Dim dataTable As GEDataSet.Campaign_Opt_InsDataTable = New GEDataSet.Campaign_Opt_InsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -17897,7 +18538,7 @@ Namespace GEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As GEDataSet.Campaign_TargetsDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As GEDataSet.Campaign_Opt_InsDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -17905,7 +18546,7 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As GEDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "Campaign_Targets")
+            Return Me.Adapter.Update(dataSet, "Campaign_Opt_Ins")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17926,8 +18567,8 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_campaignID As Integer, ByVal Original_customerID As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_campaignID,Integer)
+        Public Overloads Overridable Function Delete(ByVal Original_campaignTypeID As Integer, ByVal Original_customerID As Integer) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_campaignTypeID,Integer)
             Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_customerID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -17948,8 +18589,8 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal campaignID As Integer, ByVal customerID As Integer) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(campaignID,Integer)
+        Public Overloads Overridable Function Insert(ByVal campaignTypeID As Integer, ByVal customerID As Integer) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(campaignTypeID,Integer)
             Me.Adapter.InsertCommand.Parameters(1).Value = CType(customerID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -17970,10 +18611,10 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal campaignID As Integer, ByVal customerID As Integer, ByVal Original_campaignID As Integer, ByVal Original_customerID As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(campaignID,Integer)
+        Public Overloads Overridable Function Update(ByVal campaignTypeID As Integer, ByVal customerID As Integer, ByVal Original_campaignTypeID As Integer, ByVal Original_customerID As Integer) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(campaignTypeID,Integer)
             Me.Adapter.UpdateCommand.Parameters(1).Value = CType(customerID,Integer)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_campaignID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_campaignTypeID,Integer)
             Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_customerID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -17994,8 +18635,328 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Original_campaignID As Integer, ByVal Original_customerID As Integer) As Integer
-            Return Me.Update(Original_campaignID, Original_customerID, Original_campaignID, Original_customerID)
+        Public Overloads Overridable Function Update(ByVal Original_campaignTypeID As Integer, ByVal Original_customerID As Integer) As Integer
+            Return Me.Update(Original_campaignTypeID, Original_customerID, Original_campaignTypeID, Original_customerID)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class Campaign_TypesTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "Campaign_Types"
+            tableMapping.ColumnMappings.Add("campaignTypeID", "campaignTypeID")
+            tableMapping.ColumnMappings.Add("title", "title")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Campaign_Types] WHERE (([campaignTypeID] = @Original_campaignT"& _ 
+                "ypeID) AND ([title] = @Original_title))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Campaign_Types] ([campaignTypeID], [title]) VALUES (@campaignT"& _ 
+                "ypeID, @title);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT campaignTypeID, title FROM Campaign_Types WHERE (campaig"& _ 
+                "nTypeID = @campaignTypeID)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Campaign_Types] SET [campaignTypeID] = @campaignTypeID, [title] = @"& _ 
+                "title WHERE (([campaignTypeID] = @Original_campaignTypeID) AND ([title] = @Origi"& _ 
+                "nal_title));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT campaignTypeID, title FROM Campaign_Types WHERE (campaignTy"& _ 
+                "peID = @campaignTypeID)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.GroceryGUI.My.MySettings.Default.GEConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT campaignTypeID, title FROM dbo.Campaign_Types"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As GEDataSet.Campaign_TypesDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As GEDataSet.Campaign_TypesDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As GEDataSet.Campaign_TypesDataTable = New GEDataSet.Campaign_TypesDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As GEDataSet.Campaign_TypesDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As GEDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "Campaign_Types")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_campaignTypeID As Integer, ByVal Original_title As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_campaignTypeID,Integer)
+            If (Original_title Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_title")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_title,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal campaignTypeID As Integer, ByVal title As String) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(campaignTypeID,Integer)
+            If (title Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("title")
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(title,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal campaignTypeID As Integer, ByVal title As String, ByVal Original_campaignTypeID As Integer, ByVal Original_title As String) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(campaignTypeID,Integer)
+            If (title Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("title")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(title,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_campaignTypeID,Integer)
+            If (Original_title Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_title")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_title,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal title As String, ByVal Original_campaignTypeID As Integer, ByVal Original_title As String) As Integer
+            Return Me.Update(Original_campaignTypeID, title, Original_campaignTypeID, Original_title)
         End Function
     End Class
     
@@ -18730,6 +19691,402 @@ Namespace GEDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class CreditAuditTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "CreditAudit"
+            tableMapping.ColumnMappings.Add("AuditId", "AuditId")
+            tableMapping.ColumnMappings.Add("EmployeeId", "EmployeeId")
+            tableMapping.ColumnMappings.Add("CustomerId", "CustomerId")
+            tableMapping.ColumnMappings.Add("startamount", "startamount")
+            tableMapping.ColumnMappings.Add("newAmount", "newAmount")
+            tableMapping.ColumnMappings.Add("ChangedOn", "ChangedOn")
+            tableMapping.ColumnMappings.Add("reason", "reason")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[CreditAudit] WHERE (([AuditId] = @Original_AuditId) AND ([Empl"& _ 
+                "oyeeId] = @Original_EmployeeId) AND ([CustomerId] = @Original_CustomerId) AND (["& _ 
+                "startamount] = @Original_startamount) AND ([newAmount] = @Original_newAmount) AN"& _ 
+                "D ((@IsNull_ChangedOn = 1 AND [ChangedOn] IS NULL) OR ([ChangedOn] = @Original_C"& _ 
+                "hangedOn)) AND ([reason] = @Original_reason))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AuditId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AuditId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmployeeId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustomerId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_startamount", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 19, 4, "startamount", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_newAmount", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 19, 4, "newAmount", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChangedOn", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChangedOn", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChangedOn", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChangedOn", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_reason", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "reason", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[CreditAudit] ([EmployeeId], [CustomerId], [startamount], [newA"& _ 
+                "mount], [ChangedOn], [reason]) VALUES (@EmployeeId, @CustomerId, @startamount, @"& _ 
+                "newAmount, @ChangedOn, @reason);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT AuditId, EmployeeId, CustomerId, starta"& _ 
+                "mount, newAmount, ChangedOn, reason FROM CreditAudit WHERE (AuditId = SCOPE_IDEN"& _ 
+                "TITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmployeeId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustomerId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startamount", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 19, 4, "startamount", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@newAmount", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 19, 4, "newAmount", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChangedOn", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChangedOn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@reason", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "reason", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[CreditAudit] SET [EmployeeId] = @EmployeeId, [CustomerId] = @Custom"& _ 
+                "erId, [startamount] = @startamount, [newAmount] = @newAmount, [ChangedOn] = @Cha"& _ 
+                "ngedOn, [reason] = @reason WHERE (([AuditId] = @Original_AuditId) AND ([Employee"& _ 
+                "Id] = @Original_EmployeeId) AND ([CustomerId] = @Original_CustomerId) AND ([star"& _ 
+                "tamount] = @Original_startamount) AND ([newAmount] = @Original_newAmount) AND (("& _ 
+                "@IsNull_ChangedOn = 1 AND [ChangedOn] IS NULL) OR ([ChangedOn] = @Original_Chang"& _ 
+                "edOn)) AND ([reason] = @Original_reason));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT AuditId, EmployeeId, Customer"& _ 
+                "Id, startamount, newAmount, ChangedOn, reason FROM CreditAudit WHERE (AuditId = "& _ 
+                "@AuditId)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmployeeId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustomerId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startamount", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 19, 4, "startamount", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@newAmount", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 19, 4, "newAmount", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChangedOn", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChangedOn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@reason", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "reason", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AuditId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AuditId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmployeeId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustomerId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_startamount", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 19, 4, "startamount", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_newAmount", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 19, 4, "newAmount", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChangedOn", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChangedOn", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChangedOn", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChangedOn", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_reason", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "reason", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AuditId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "AuditId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.GroceryGUI.My.MySettings.Default.GEConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT AuditId, EmployeeId, CustomerId, startamount, newAmount, ChangedOn, reason"& _ 
+                " FROM dbo.CreditAudit"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As GEDataSet.CreditAuditDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As GEDataSet.CreditAuditDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As GEDataSet.CreditAuditDataTable = New GEDataSet.CreditAuditDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As GEDataSet.CreditAuditDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As GEDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "CreditAudit")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_AuditId As Integer, ByVal Original_EmployeeId As Integer, ByVal Original_CustomerId As Integer, ByVal Original_startamount As Decimal, ByVal Original_newAmount As Decimal, ByVal Original_ChangedOn As Global.System.Nullable(Of Date), ByVal Original_reason As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_AuditId,Integer)
+            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_EmployeeId,Integer)
+            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_CustomerId,Integer)
+            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_startamount,Decimal)
+            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_newAmount,Decimal)
+            If (Original_ChangedOn.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_ChangedOn.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_reason Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_reason")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_reason,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal EmployeeId As Integer, ByVal CustomerId As Integer, ByVal startamount As Decimal, ByVal newAmount As Decimal, ByVal ChangedOn As Global.System.Nullable(Of Date), ByVal reason As String) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(EmployeeId,Integer)
+            Me.Adapter.InsertCommand.Parameters(1).Value = CType(CustomerId,Integer)
+            Me.Adapter.InsertCommand.Parameters(2).Value = CType(startamount,Decimal)
+            Me.Adapter.InsertCommand.Parameters(3).Value = CType(newAmount,Decimal)
+            If (ChangedOn.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(ChangedOn.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (reason Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("reason")
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(reason,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal EmployeeId As Integer, ByVal CustomerId As Integer, ByVal startamount As Decimal, ByVal newAmount As Decimal, ByVal ChangedOn As Global.System.Nullable(Of Date), ByVal reason As String, ByVal Original_AuditId As Integer, ByVal Original_EmployeeId As Integer, ByVal Original_CustomerId As Integer, ByVal Original_startamount As Decimal, ByVal Original_newAmount As Decimal, ByVal Original_ChangedOn As Global.System.Nullable(Of Date), ByVal Original_reason As String, ByVal AuditId As Integer) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(EmployeeId,Integer)
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(CustomerId,Integer)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(startamount,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(newAmount,Decimal)
+            If (ChangedOn.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(ChangedOn.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (reason Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("reason")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(reason,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_AuditId,Integer)
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_EmployeeId,Integer)
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_CustomerId,Integer)
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_startamount,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_newAmount,Decimal)
+            If (Original_ChangedOn.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ChangedOn.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_reason Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_reason")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_reason,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(AuditId,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal EmployeeId As Integer, ByVal CustomerId As Integer, ByVal startamount As Decimal, ByVal newAmount As Decimal, ByVal ChangedOn As Global.System.Nullable(Of Date), ByVal reason As String, ByVal Original_AuditId As Integer, ByVal Original_EmployeeId As Integer, ByVal Original_CustomerId As Integer, ByVal Original_startamount As Decimal, ByVal Original_newAmount As Decimal, ByVal Original_ChangedOn As Global.System.Nullable(Of Date), ByVal Original_reason As String) As Integer
+            Return Me.Update(EmployeeId, CustomerId, startamount, newAmount, ChangedOn, reason, Original_AuditId, Original_EmployeeId, Original_CustomerId, Original_startamount, Original_newAmount, Original_ChangedOn, Original_reason, Original_AuditId)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
     Partial Public Class CustomersTableAdapter
         Inherits Global.System.ComponentModel.Component
         
@@ -18865,18 +20222,20 @@ Namespace GEDataSetTableAdapters
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Customers] WHERE (([customerID] = @Original_customerID) AND (["& _ 
                 "firstName] = @Original_firstName) AND ([lastName] = @Original_lastName) AND ((@I"& _ 
                 "sNull_customerDOB = 1 AND [customerDOB] IS NULL) OR ([customerDOB] = @Original_c"& _ 
-                "ustomerDOB)) AND ([primaryPhone] = @Original_primaryPhone) AND ((@IsNull_seconda"& _ 
-                "ryPhone = 1 AND [secondaryPhone] IS NULL) OR ([secondaryPhone] = @Original_secon"& _ 
-                "daryPhone)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original"& _ 
-                "_email)) AND ([lineOfCredit] = @Original_lineOfCredit) AND ([usedLineOfCredit] ="& _ 
-                " @Original_usedLineOfCredit) AND ([wholeSale] = @Original_wholeSale) AND ([taxEx"& _ 
-                "empt] = @Original_taxExempt))"
+                "ustomerDOB)) AND ((@IsNull_primaryPhone = 1 AND [primaryPhone] IS NULL) OR ([pri"& _ 
+                "maryPhone] = @Original_primaryPhone)) AND ((@IsNull_secondaryPhone = 1 AND [seco"& _ 
+                "ndaryPhone] IS NULL) OR ([secondaryPhone] = @Original_secondaryPhone)) AND ((@Is"& _ 
+                "Null_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ([lineOf"& _ 
+                "Credit] = @Original_lineOfCredit) AND ([usedLineOfCredit] = @Original_usedLineOf"& _ 
+                "Credit) AND ([wholeSale] = @Original_wholeSale) AND ([taxExempt] = @Original_tax"& _ 
+                "Exempt))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_customerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "customerID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_firstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_lastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lastName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_customerDOB", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "customerDOB", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_customerDOB", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "customerDOB", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_primaryPhone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "primaryPhone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_primaryPhone", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "primaryPhone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_secondaryPhone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "secondaryPhone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_secondaryPhone", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "secondaryPhone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -18916,14 +20275,15 @@ Namespace GEDataSetTableAdapters
                 "[taxExempt] = @taxExempt WHERE (([customerID] = @Original_customerID) AND ([firs"& _ 
                 "tName] = @Original_firstName) AND ([lastName] = @Original_lastName) AND ((@IsNul"& _ 
                 "l_customerDOB = 1 AND [customerDOB] IS NULL) OR ([customerDOB] = @Original_custo"& _ 
-                "merDOB)) AND ([primaryPhone] = @Original_primaryPhone) AND ((@IsNull_secondaryPh"& _ 
-                "one = 1 AND [secondaryPhone] IS NULL) OR ([secondaryPhone] = @Original_secondary"& _ 
-                "Phone)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_ema"& _ 
-                "il)) AND ([lineOfCredit] = @Original_lineOfCredit) AND ([usedLineOfCredit] = @Or"& _ 
-                "iginal_usedLineOfCredit) AND ([wholeSale] = @Original_wholeSale) AND ([taxExempt"& _ 
-                "] = @Original_taxExempt));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT customerID, firstName, lastName, customerDOB,"& _ 
-                " primaryPhone, secondaryPhone, email, lineOfCredit, usedLineOfCredit, wholeSale,"& _ 
-                " taxExempt FROM Customers WHERE (customerID = @customerID)"
+                "merDOB)) AND ((@IsNull_primaryPhone = 1 AND [primaryPhone] IS NULL) OR ([primary"& _ 
+                "Phone] = @Original_primaryPhone)) AND ((@IsNull_secondaryPhone = 1 AND [secondar"& _ 
+                "yPhone] IS NULL) OR ([secondaryPhone] = @Original_secondaryPhone)) AND ((@IsNull"& _ 
+                "_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ([lineOfCred"& _ 
+                "it] = @Original_lineOfCredit) AND ([usedLineOfCredit] = @Original_usedLineOfCred"& _ 
+                "it) AND ([wholeSale] = @Original_wholeSale) AND ([taxExempt] = @Original_taxExem"& _ 
+                "pt));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT customerID, firstName, lastName, customerDOB, primaryPhone, second"& _ 
+                "aryPhone, email, lineOfCredit, usedLineOfCredit, wholeSale, taxExempt FROM Custo"& _ 
+                "mers WHERE (customerID = @customerID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@customerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "customerID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -18941,6 +20301,7 @@ Namespace GEDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_lastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lastName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_customerDOB", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "customerDOB", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_customerDOB", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "customerDOB", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_primaryPhone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "primaryPhone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_primaryPhone", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "primaryPhone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_secondaryPhone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "secondaryPhone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_secondaryPhone", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "secondaryPhone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -19068,28 +20429,30 @@ Namespace GEDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             If (Original_primaryPhone Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_primaryPhone")
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_primaryPhone,String)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_primaryPhone,String)
             End If
             If (Original_secondaryPhone Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_secondaryPhone,String)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_secondaryPhone,String)
             End If
             If (Original_email Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_email,String)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_email,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_lineOfCredit,Decimal)
-            Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_usedLineOfCredit,Decimal)
-            Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_wholeSale,Boolean)
-            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_taxExempt,Boolean)
+            Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_lineOfCredit,Decimal)
+            Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_usedLineOfCredit,Decimal)
+            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_wholeSale,Boolean)
+            Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_taxExempt,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -19127,7 +20490,7 @@ Namespace GEDataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
             If (primaryPhone Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("primaryPhone")
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = CType(primaryPhone,String)
             End If
@@ -19204,7 +20567,7 @@ Namespace GEDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
             If (primaryPhone Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("primaryPhone")
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(primaryPhone,String)
             End If
@@ -19241,28 +20604,30 @@ Namespace GEDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
             If (Original_primaryPhone Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_primaryPhone")
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_primaryPhone,String)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_primaryPhone,String)
             End If
             If (Original_secondaryPhone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_secondaryPhone,String)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_secondaryPhone,String)
             End If
             If (Original_email Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_email,String)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_email,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_lineOfCredit,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_usedLineOfCredit,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_wholeSale,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_taxExempt,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_lineOfCredit,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_usedLineOfCredit,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_wholeSale,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_taxExempt,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -20584,12 +21949,18 @@ Namespace GEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT employeeID, firstName, lastName, middleInitial, primaryPhone, secondaryPho"& _ 
                 "ne, employeeDOB FROM dbo.Employees"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT employeeID, firstName, lastName, middleInitial, primaryPhone, secondaryPho"& _ 
+                "ne, employeeDOB "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM dbo.Employees"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where employeeID = @EmployeeID"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmployeeID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "employeeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -20611,6 +21982,32 @@ Namespace GEDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GEDataSet.EmployeesDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As GEDataSet.EmployeesDataTable = New GEDataSet.EmployeesDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function EmployeeID(ByVal dataTable As GEDataSet.EmployeesDataTable, ByVal EmployeeID1 As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(EmployeeID1,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy(ByVal EmployeeID As Integer) As GEDataSet.EmployeesDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(EmployeeID,Integer)
             Dim dataTable As GEDataSet.EmployeesDataTable = New GEDataSet.EmployeesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -22086,6 +23483,7 @@ Namespace GEDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "Marketing_Campaigns"
             tableMapping.ColumnMappings.Add("campaignID", "campaignID")
+            tableMapping.ColumnMappings.Add("campaignTypeID", "campaignTypeID")
             tableMapping.ColumnMappings.Add("title", "title")
             tableMapping.ColumnMappings.Add("description", "description")
             tableMapping.ColumnMappings.Add("startDate", "startDate")
@@ -22094,11 +23492,15 @@ Namespace GEDataSetTableAdapters
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Marketing_Campaigns] WHERE (([campaignID] = @Original_campaign"& _ 
-                "ID) AND ([title] = @Original_title) AND ((@IsNull_description = 1 AND [descripti"& _ 
-                "on] IS NULL) OR ([description] = @Original_description)) AND ([startDate] = @Ori"& _ 
-                "ginal_startDate) AND ([endDate] = @Original_endDate))"
+                "ID) AND ((@IsNull_campaignTypeID = 1 AND [campaignTypeID] IS NULL) OR ([campaign"& _ 
+                "TypeID] = @Original_campaignTypeID)) AND ([title] = @Original_title) AND ((@IsNu"& _ 
+                "ll_description = 1 AND [description] IS NULL) OR ([description] = @Original_desc"& _ 
+                "ription)) AND ([startDate] = @Original_startDate) AND ([endDate] = @Original_end"& _ 
+                "Date))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_description", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "description", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_description", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "description", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -22106,32 +23508,39 @@ Namespace GEDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_endDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "endDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Marketing_Campaigns] ([campaignID], [title], [description], [s"& _ 
-                "tartDate], [endDate]) VALUES (@campaignID, @title, @description, @startDate, @en"& _ 
-                "dDate);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT campaignID, title, description, startDate, endDate FROM Marketin"& _ 
-                "g_Campaigns WHERE (campaignID = @campaignID)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Marketing_Campaigns] ([campaignID], [campaignTypeID], [title],"& _ 
+                " [description], [startDate], [endDate]) VALUES (@campaignID, @campaignTypeID, @t"& _ 
+                "itle, @description, @startDate, @endDate);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT campaignID, campaignTypeID, t"& _ 
+                "itle, description, startDate, endDate FROM Marketing_Campaigns WHERE (campaignID"& _ 
+                " = @campaignID)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@description", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "description", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "startDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@endDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "endDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Marketing_Campaigns] SET [campaignID] = @campaignID, [title] = @tit"& _ 
-                "le, [description] = @description, [startDate] = @startDate, [endDate] = @endDate"& _ 
-                " WHERE (([campaignID] = @Original_campaignID) AND ([title] = @Original_title) AN"& _ 
-                "D ((@IsNull_description = 1 AND [description] IS NULL) OR ([description] = @Orig"& _ 
-                "inal_description)) AND ([startDate] = @Original_startDate) AND ([endDate] = @Ori"& _ 
-                "ginal_endDate));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT campaignID, title, description, startDate, endDate FROM"& _ 
-                " Marketing_Campaigns WHERE (campaignID = @campaignID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Marketing_Campaigns] SET [campaignID] = @campaignID, [campaignTypeI"& _ 
+                "D] = @campaignTypeID, [title] = @title, [description] = @description, [startDate"& _ 
+                "] = @startDate, [endDate] = @endDate WHERE (([campaignID] = @Original_campaignID"& _ 
+                ") AND ((@IsNull_campaignTypeID = 1 AND [campaignTypeID] IS NULL) OR ([campaignTy"& _ 
+                "peID] = @Original_campaignTypeID)) AND ([title] = @Original_title) AND ((@IsNull"& _ 
+                "_description = 1 AND [description] IS NULL) OR ([description] = @Original_descri"& _ 
+                "ption)) AND ([startDate] = @Original_startDate) AND ([endDate] = @Original_endDa"& _ 
+                "te));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT campaignID, campaignTypeID, title, description, startDate, endDate"& _ 
+                " FROM Marketing_Campaigns WHERE (campaignID = @campaignID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@description", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "description", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "startDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@endDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "endDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignTypeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_description", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "description", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_description", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "description", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -22149,12 +23558,20 @@ Namespace GEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT campaignID, title, description, startDate, endDate FROM dbo.Marketing_Camp"& _ 
-                "aigns"
+            Me._commandCollection(0).CommandText = "SELECT campaignID, campaignTypeID, title, description, startDate, endDate FROM db"& _ 
+                "o.Marketing_Campaigns"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        Marketing_Campaigns.campaignID, Campaign_Types.title, Marketing_Cam"& _ 
+                "paigns.title AS Expr1, Marketing_Campaigns.description, Marketing_Campaigns.star"& _ 
+                "tDate, Marketing_Campaigns.endDate"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Marketing_Campaigns INNER JO"& _ 
+                "IN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Campaign_Types ON Marketing_Campaigns.campaignTypeI"& _ 
+                "D = Campaign_Types.campaignTypeID"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -22176,6 +23593,30 @@ Namespace GEDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GEDataSet.Marketing_CampaignsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As GEDataSet.Marketing_CampaignsDataTable = New GEDataSet.Marketing_CampaignsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As GEDataSet.Marketing_CampaignsDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy() As GEDataSet.Marketing_CampaignsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
             Dim dataTable As GEDataSet.Marketing_CampaignsDataTable = New GEDataSet.Marketing_CampaignsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -22213,22 +23654,29 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_campaignID As Integer, ByVal Original_title As String, ByVal Original_description As String, ByVal Original_startDate As Date, ByVal Original_endDate As Date) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_campaignID As Integer, ByVal Original_campaignTypeID As Global.System.Nullable(Of Integer), ByVal Original_title As String, ByVal Original_description As String, ByVal Original_startDate As Date, ByVal Original_endDate As Date) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_campaignID,Integer)
+            If (Original_campaignTypeID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_campaignTypeID.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             If (Original_title Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_title")
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_title,String)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_title,String)
             End If
             If (Original_description Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_description,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_description,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_startDate,Date)
-            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_endDate,Date)
+            Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_startDate,Date)
+            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_endDate,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -22248,20 +23696,25 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal campaignID As Integer, ByVal title As String, ByVal description As String, ByVal startDate As Date, ByVal endDate As Date) As Integer
+        Public Overloads Overridable Function Insert(ByVal campaignID As Integer, ByVal campaignTypeID As Global.System.Nullable(Of Integer), ByVal title As String, ByVal description As String, ByVal startDate As Date, ByVal endDate As Date) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(campaignID,Integer)
+            If (campaignTypeID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(campaignTypeID.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             If (title Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("title")
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(title,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(title,String)
             End If
             If (description Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(description,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(description,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(startDate,Date)
-            Me.Adapter.InsertCommand.Parameters(4).Value = CType(endDate,Date)
+            Me.Adapter.InsertCommand.Parameters(4).Value = CType(startDate,Date)
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(endDate,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -22281,35 +23734,47 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal campaignID As Integer, ByVal title As String, ByVal description As String, ByVal startDate As Date, ByVal endDate As Date, ByVal Original_campaignID As Integer, ByVal Original_title As String, ByVal Original_description As String, ByVal Original_startDate As Date, ByVal Original_endDate As Date) As Integer
+        Public Overloads Overridable Function Update(ByVal campaignID As Integer, ByVal campaignTypeID As Global.System.Nullable(Of Integer), ByVal title As String, ByVal description As String, ByVal startDate As Date, ByVal endDate As Date, ByVal Original_campaignID As Integer, ByVal Original_campaignTypeID As Global.System.Nullable(Of Integer), ByVal Original_title As String, ByVal Original_description As String, ByVal Original_startDate As Date, ByVal Original_endDate As Date) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(campaignID,Integer)
+            If (campaignTypeID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(campaignTypeID.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             If (title Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("title")
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(title,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(title,String)
             End If
             If (description Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(description,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(description,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(startDate,Date)
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(endDate,Date)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_campaignID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(startDate,Date)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(endDate,Date)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_campaignID,Integer)
+            If (Original_campaignTypeID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_campaignTypeID.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
             If (Original_title Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_title")
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_title,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_title,String)
             End If
             If (Original_description Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_description,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_description,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_startDate,Date)
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_endDate,Date)
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_startDate,Date)
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_endDate,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -22329,8 +23794,8 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal title As String, ByVal description As String, ByVal startDate As Date, ByVal endDate As Date, ByVal Original_campaignID As Integer, ByVal Original_title As String, ByVal Original_description As String, ByVal Original_startDate As Date, ByVal Original_endDate As Date) As Integer
-            Return Me.Update(Original_campaignID, title, description, startDate, endDate, Original_campaignID, Original_title, Original_description, Original_startDate, Original_endDate)
+        Public Overloads Overridable Function Update(ByVal campaignTypeID As Global.System.Nullable(Of Integer), ByVal title As String, ByVal description As String, ByVal startDate As Date, ByVal endDate As Date, ByVal Original_campaignID As Integer, ByVal Original_campaignTypeID As Global.System.Nullable(Of Integer), ByVal Original_title As String, ByVal Original_description As String, ByVal Original_startDate As Date, ByVal Original_endDate As Date) As Integer
+            Return Me.Update(Original_campaignID, campaignTypeID, title, description, startDate, endDate, Original_campaignID, Original_campaignTypeID, Original_title, Original_description, Original_startDate, Original_endDate)
         End Function
     End Class
     
@@ -22528,17 +23993,20 @@ Namespace GEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT orderDetailID, orderID, SKU, quantity, price, paid FROM dbo.Order_Details"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        orderDetailID, orderID, SKU, quantity, price, paid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " Order_Details"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (orderID LIKE @orderID)"
+            Me._commandCollection(1).CommandText = "SELECT        Order_Details.orderDetailID, Order_Details.OrderID, Order_Details.S"& _ 
+                "KU, Order_Details.quantity, Order_Details.price, order_Details.paid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM       "& _ 
+                "     Order_Details INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Orders ON Order_Details."& _ 
+                "orderID = Orders.orderID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Customers ON Order"& _ 
+                "s.customerID = Customers.customerID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE         (Orders.orderID = @OrderId)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@orderID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "orderID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OrderId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "orderID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT        orderDetailID, orderID, SKU, quantity, price, paid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
@@ -22547,13 +24015,19 @@ Namespace GEDataSetTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@orderID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "orderID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        Order_Details.orderDetailID, Order_Details.OrderID, Order_Details.S"& _ 
+            Me._commandCollection(3).CommandText = "SELECT        orderDetailID, orderID, SKU, quantity, price, paid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
+                " Order_Details"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (orderID LIKE @orderID)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@orderID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "orderID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT        Order_Details.orderDetailID, Order_Details.OrderID, Order_Details.S"& _ 
                 "KU, Order_Details.quantity, Order_Details.price, order_Details.paid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM       "& _ 
                 "     Order_Details INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Orders ON Order_Details."& _ 
                 "orderID = Orders.orderID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Customers ON Order"& _ 
                 "s.customerID = Customers.customerID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE         (Orders.orderID = @OrderId)"
-            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OrderId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "orderID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OrderId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "orderID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -22584,8 +24058,34 @@ Namespace GEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function orderID(ByVal dataTable As GEDataSet.Order_DetailsDataTable, ByVal orderID1 As Integer) As Integer
+        Public Overloads Overridable Function orderHistory(ByVal dataTable As GEDataSet.Order_DetailsDataTable, ByVal OrderId As Integer) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(OrderId,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy3(ByVal OrderId As Integer) As GEDataSet.Order_DetailsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(OrderId,Integer)
+            Dim dataTable As GEDataSet.Order_DetailsDataTable = New GEDataSet.Order_DetailsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function orderID(ByVal dataTable As GEDataSet.Order_DetailsDataTable, ByVal orderID1 As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(orderID1,Integer)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -22599,7 +24099,7 @@ Namespace GEDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function orderID1(ByVal dataTable As GEDataSet.Order_DetailsDataTable, ByVal orderID As Integer) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(orderID,Integer)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -22613,7 +24113,7 @@ Namespace GEDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function OrderIDHistory(ByVal dataTable As GEDataSet.Order_DetailsDataTable, ByVal OrderId As Integer) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(OrderId,Integer)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -22627,7 +24127,7 @@ Namespace GEDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetDataBy2(ByVal OrderId As Integer) As GEDataSet.Order_DetailsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(OrderId,Integer)
             Dim dataTable As GEDataSet.Order_DetailsDataTable = New GEDataSet.Order_DetailsDataTable()
             Me.Adapter.Fill(dataTable)
@@ -24708,326 +26208,6 @@ Namespace GEDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class Promo_Info_TypeTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Promo_Info_Type"
-            tableMapping.ColumnMappings.Add("promoInfoID", "promoInfoID")
-            tableMapping.ColumnMappings.Add("campaignType", "campaignType")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Promo_Info_Type] WHERE (([promoInfoID] = @Original_promoInfoID"& _ 
-                ") AND ([campaignType] = @Original_campaignType))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promoInfoID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoInfoID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Promo_Info_Type] ([promoInfoID], [campaignType]) VALUES (@prom"& _ 
-                "oInfoID, @campaignType);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT promoInfoID, campaignType FROM Promo_Info_Type "& _ 
-                "WHERE (promoInfoID = @promoInfoID)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promoInfoID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoInfoID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Promo_Info_Type] SET [promoInfoID] = @promoInfoID, [campaignType] ="& _ 
-                " @campaignType WHERE (([promoInfoID] = @Original_promoInfoID) AND ([campaignType"& _ 
-                "] = @Original_campaignType));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT promoInfoID, campaignType FROM Promo_Info_"& _ 
-                "Type WHERE (promoInfoID = @promoInfoID)"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promoInfoID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoInfoID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@campaignType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promoInfoID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoInfoID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_campaignType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "campaignType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GroceryGUI.My.MySettings.Default.GEConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT promoInfoID, campaignType FROM dbo.Promo_Info_Type"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As GEDataSet.Promo_Info_TypeDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As GEDataSet.Promo_Info_TypeDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GEDataSet.Promo_Info_TypeDataTable = New GEDataSet.Promo_Info_TypeDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As GEDataSet.Promo_Info_TypeDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As GEDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "Promo_Info_Type")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_promoInfoID As Integer, ByVal Original_campaignType As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_promoInfoID,Integer)
-            If (Original_campaignType Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_campaignType")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_campaignType,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal promoInfoID As Integer, ByVal campaignType As String) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(promoInfoID,Integer)
-            If (campaignType Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("campaignType")
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(campaignType,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal promoInfoID As Integer, ByVal campaignType As String, ByVal Original_promoInfoID As Integer, ByVal Original_campaignType As String) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(promoInfoID,Integer)
-            If (campaignType Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("campaignType")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(campaignType,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_promoInfoID,Integer)
-            If (Original_campaignType Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_campaignType")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_campaignType,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal campaignType As String, ByVal Original_promoInfoID As Integer, ByVal Original_campaignType As String) As Integer
-            Return Me.Update(Original_promoInfoID, campaignType, Original_promoInfoID, Original_campaignType)
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
     Partial Public Class Promoted_ProductsTableAdapter
         Inherits Global.System.ComponentModel.Component
         
@@ -25947,12 +27127,26 @@ Namespace GEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT purchaseOrderID, supplierID, orderTotal, orderDate, statusID FROM dbo.Purc"& _ 
                 "hase_Order"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT purchaseOrderID, supplierID, orderTotal, orderDate, statusID "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM dbo.Pu"& _ 
+                "rchase_Order"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Where orderDate between @d1 and @d2 and supplierID = @supplier"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@d1", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "orderDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@d2", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "orderDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@supplier", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "supplierID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT purchaseOrderID, supplierID, orderTotal, orderDate, statusID "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM dbo.Pu"& _ 
+                "rchase_Order"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE supplierID = @supplierID"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@supplierID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "supplierID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -25974,6 +27168,78 @@ Namespace GEDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GEDataSet.Purchase_OrderDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As GEDataSet.Purchase_OrderDataTable = New GEDataSet.Purchase_OrderDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function datefilter(ByVal dataTable As GEDataSet.Purchase_OrderDataTable, ByVal d1 As String, ByVal d2 As String, ByVal supplier As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (d1 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("d1")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(d1,String)
+            End If
+            If (d2 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("d2")
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(d2,String)
+            End If
+            Me.Adapter.SelectCommand.Parameters(2).Value = CType(supplier,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy1(ByVal d1 As String, ByVal d2 As String, ByVal supplier As Integer) As GEDataSet.Purchase_OrderDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (d1 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("d1")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(d1,String)
+            End If
+            If (d2 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("d2")
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(d2,String)
+            End If
+            Me.Adapter.SelectCommand.Parameters(2).Value = CType(supplier,Integer)
+            Dim dataTable As GEDataSet.Purchase_OrderDataTable = New GEDataSet.Purchase_OrderDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function PurchaseHistory(ByVal dataTable As GEDataSet.Purchase_OrderDataTable, ByVal supplierID As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(supplierID,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy(ByVal supplierID As Integer) As GEDataSet.Purchase_OrderDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(supplierID,Integer)
             Dim dataTable As GEDataSet.Purchase_OrderDataTable = New GEDataSet.Purchase_OrderDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -26301,12 +27567,18 @@ Namespace GEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT orderDetailID, purchaseOrderID, SKU, quantity, statusID, unit, note FROM d"& _ 
                 "bo.Purchase_Order_Details"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        orderDetailID, purchaseOrderID, SKU, quantity, statusID, unit, note"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Purchase_Order_Details"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (purchaseOrderID = @id)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "purchaseOrderID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -26331,6 +27603,20 @@ Namespace GEDataSetTableAdapters
             Dim dataTable As GEDataSet.Purchase_Order_DetailsDataTable = New GEDataSet.Purchase_Order_DetailsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function PurchaseOrderHistory(ByVal dataTable As GEDataSet.Purchase_Order_DetailsDataTable, ByVal id As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(id,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -30236,11 +31522,15 @@ Namespace GEDataSetTableAdapters
         
         Private _billing_AddressesTableAdapter As Billing_AddressesTableAdapter
         
-        Private _campaign_TargetsTableAdapter As Campaign_TargetsTableAdapter
+        Private _campaign_Opt_InsTableAdapter As Campaign_Opt_InsTableAdapter
+        
+        Private _campaign_TypesTableAdapter As Campaign_TypesTableAdapter
         
         Private _categoriesTableAdapter As CategoriesTableAdapter
         
         Private _couponsTableAdapter As CouponsTableAdapter
+        
+        Private _creditAuditTableAdapter As CreditAuditTableAdapter
         
         Private _customersTableAdapter As CustomersTableAdapter
         
@@ -30271,8 +31561,6 @@ Namespace GEDataSetTableAdapters
         Private _paymentsTableAdapter As PaymentsTableAdapter
         
         Private _productsTableAdapter As ProductsTableAdapter
-        
-        Private _promo_Info_TypeTableAdapter As Promo_Info_TypeTableAdapter
         
         Private _promoted_ProductsTableAdapter As Promoted_ProductsTableAdapter
         
@@ -30334,12 +31622,26 @@ Namespace GEDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property Campaign_TargetsTableAdapter() As Campaign_TargetsTableAdapter
+        Public Property Campaign_Opt_InsTableAdapter() As Campaign_Opt_InsTableAdapter
             Get
-                Return Me._campaign_TargetsTableAdapter
+                Return Me._campaign_Opt_InsTableAdapter
             End Get
             Set
-                Me._campaign_TargetsTableAdapter = value
+                Me._campaign_Opt_InsTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property Campaign_TypesTableAdapter() As Campaign_TypesTableAdapter
+            Get
+                Return Me._campaign_TypesTableAdapter
+            End Get
+            Set
+                Me._campaign_TypesTableAdapter = value
             End Set
         End Property
         
@@ -30368,6 +31670,20 @@ Namespace GEDataSetTableAdapters
             End Get
             Set
                 Me._couponsTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property CreditAuditTableAdapter() As CreditAuditTableAdapter
+            Get
+                Return Me._creditAuditTableAdapter
+            End Get
+            Set
+                Me._creditAuditTableAdapter = value
             End Set
         End Property
         
@@ -30586,20 +31902,6 @@ Namespace GEDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property Promo_Info_TypeTableAdapter() As Promo_Info_TypeTableAdapter
-            Get
-                Return Me._promo_Info_TypeTableAdapter
-            End Get
-            Set
-                Me._promo_Info_TypeTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property Promoted_ProductsTableAdapter() As Promoted_ProductsTableAdapter
             Get
                 Return Me._promoted_ProductsTableAdapter
@@ -30800,9 +32102,13 @@ Namespace GEDataSetTableAdapters
                             AndAlso (Not (Me._billing_AddressesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._billing_AddressesTableAdapter.Connection
                 End If
-                If ((Not (Me._campaign_TargetsTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._campaign_TargetsTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._campaign_TargetsTableAdapter.Connection
+                If ((Not (Me._campaign_Opt_InsTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._campaign_Opt_InsTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._campaign_Opt_InsTableAdapter.Connection
+                End If
+                If ((Not (Me._campaign_TypesTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._campaign_TypesTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._campaign_TypesTableAdapter.Connection
                 End If
                 If ((Not (Me._categoriesTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._categoriesTableAdapter.Connection) Is Nothing)) Then
@@ -30811,6 +32117,10 @@ Namespace GEDataSetTableAdapters
                 If ((Not (Me._couponsTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._couponsTableAdapter.Connection) Is Nothing)) Then
                     Return Me._couponsTableAdapter.Connection
+                End If
+                If ((Not (Me._creditAuditTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._creditAuditTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._creditAuditTableAdapter.Connection
                 End If
                 If ((Not (Me._customersTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._customersTableAdapter.Connection) Is Nothing)) Then
@@ -30871,10 +32181,6 @@ Namespace GEDataSetTableAdapters
                 If ((Not (Me._productsTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._productsTableAdapter.Connection) Is Nothing)) Then
                     Return Me._productsTableAdapter.Connection
-                End If
-                If ((Not (Me._promo_Info_TypeTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._promo_Info_TypeTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._promo_Info_TypeTableAdapter.Connection
                 End If
                 If ((Not (Me._promoted_ProductsTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._promoted_ProductsTableAdapter.Connection) Is Nothing)) Then
@@ -30944,13 +32250,19 @@ Namespace GEDataSetTableAdapters
                 If (Not (Me._billing_AddressesTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._campaign_TargetsTableAdapter) Is Nothing) Then
+                If (Not (Me._campaign_Opt_InsTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._campaign_TypesTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 If (Not (Me._categoriesTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 If (Not (Me._couponsTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._creditAuditTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 If (Not (Me._customersTableAdapter) Is Nothing) Then
@@ -30996,9 +32308,6 @@ Namespace GEDataSetTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._productsTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
-                If (Not (Me._promo_Info_TypeTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 If (Not (Me._promoted_ProductsTableAdapter) Is Nothing) Then
@@ -31060,12 +32369,12 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._employeesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Employees.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._campaign_TypesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Campaign_Types.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._employeesTableAdapter.Update(updatedRows))
+                    result = (result + Me._campaign_TypesTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -31087,6 +32396,33 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._employeesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Employees.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._employeesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._shippersTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Shippers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._shippersTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._statusTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Status.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._statusTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._productsTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Products.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -31096,21 +32432,21 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._promo_Info_TypeTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Promo_Info_Type.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._shipping_AddressesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Shipping_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._promo_Info_TypeTableAdapter.Update(updatedRows))
+                    result = (result + Me._shipping_AddressesTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._marketing_CampaignsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Marketing_Campaigns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._discount_TypeTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Discount_Type.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._marketing_CampaignsTableAdapter.Update(updatedRows))
+                    result = (result + Me._discount_TypeTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -31132,75 +32468,12 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._discount_TypeTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Discount_Type.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._marketing_CampaignsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Marketing_Campaigns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._discount_TypeTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._shipping_AddressesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Shipping_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._shipping_AddressesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._statusTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Status.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._statusTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._shippersTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Shippers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._shippersTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._shipmentTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Shipment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._shipmentTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._purchase_OrderTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Purchase_Order.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._purchase_OrderTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._promotionsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Promotions.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._promotionsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._billing_AddressesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Billing_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._billing_AddressesTableAdapter.Update(updatedRows))
+                    result = (result + Me._marketing_CampaignsTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -31222,12 +32495,84 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._billing_AddressesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Billing_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._billing_AddressesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._promotionsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Promotions.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._promotionsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._discountsTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Discounts.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._discountsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._shipmentTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Shipment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._shipmentTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._purchase_OrderTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Purchase_Order.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._purchase_OrderTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._shipment_DetailsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Shipment_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._shipment_DetailsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._returnsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Returns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._returnsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._shrinkageTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Shrinkage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._shrinkageTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._purchase_Order_DetailsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Purchase_Order_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._purchase_Order_DetailsTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -31240,12 +32585,12 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._promoted_ProductsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Promoted_Products.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._paymentsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Payments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._promoted_ProductsTableAdapter.Update(updatedRows))
+                    result = (result + Me._paymentsTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -31267,24 +32612,6 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._purchase_Order_DetailsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Purchase_Order_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._purchase_Order_DetailsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._returnsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Returns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._returnsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._gift_CardsTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Gift_Cards.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -31294,12 +32621,12 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._shipment_DetailsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Shipment_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._creditAuditTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.CreditAudit.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._shipment_DetailsTableAdapter.Update(updatedRows))
+                    result = (result + Me._creditAuditTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -31312,30 +32639,21 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._shrinkageTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Shrinkage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._campaign_Opt_InsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Campaign_Opt_Ins.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._shrinkageTableAdapter.Update(updatedRows))
+                    result = (result + Me._campaign_Opt_InsTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._campaign_TargetsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Campaign_Targets.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._promoted_ProductsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Promoted_Products.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._campaign_TargetsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._paymentsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Payments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._paymentsTableAdapter.Update(updatedRows))
+                    result = (result + Me._promoted_ProductsTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -31366,11 +32684,11 @@ Namespace GEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._employeesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Employees.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._campaign_TypesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Campaign_Types.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._employeesTableAdapter.Update(addedRows))
+                    result = (result + Me._campaign_TypesTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -31390,6 +32708,30 @@ Namespace GEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._employeesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Employees.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._employeesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._shippersTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Shippers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._shippersTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._statusTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Status.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._statusTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._productsTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Products.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -31398,19 +32740,19 @@ Namespace GEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._promo_Info_TypeTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Promo_Info_Type.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._shipping_AddressesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Shipping_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._promo_Info_TypeTableAdapter.Update(addedRows))
+                    result = (result + Me._shipping_AddressesTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._marketing_CampaignsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Marketing_Campaigns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._discount_TypeTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Discount_Type.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._marketing_CampaignsTableAdapter.Update(addedRows))
+                    result = (result + Me._discount_TypeTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -31430,67 +32772,11 @@ Namespace GEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._discount_TypeTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Discount_Type.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._marketing_CampaignsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Marketing_Campaigns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._discount_TypeTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._shipping_AddressesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Shipping_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._shipping_AddressesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._statusTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Status.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._statusTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._shippersTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Shippers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._shippersTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._shipmentTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Shipment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._shipmentTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._purchase_OrderTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Purchase_Order.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._purchase_OrderTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._promotionsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Promotions.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._promotionsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._billing_AddressesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Billing_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._billing_AddressesTableAdapter.Update(addedRows))
+                    result = (result + Me._marketing_CampaignsTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -31510,11 +32796,75 @@ Namespace GEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._billing_AddressesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Billing_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._billing_AddressesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._promotionsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Promotions.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._promotionsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._discountsTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Discounts.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._discountsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._shipmentTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Shipment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._shipmentTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._purchase_OrderTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Purchase_Order.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._purchase_OrderTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._shipment_DetailsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Shipment_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._shipment_DetailsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._returnsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Returns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._returnsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._shrinkageTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Shrinkage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._shrinkageTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._purchase_Order_DetailsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Purchase_Order_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._purchase_Order_DetailsTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -31526,11 +32876,11 @@ Namespace GEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._promoted_ProductsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Promoted_Products.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._paymentsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Payments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._promoted_ProductsTableAdapter.Update(addedRows))
+                    result = (result + Me._paymentsTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -31550,22 +32900,6 @@ Namespace GEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._purchase_Order_DetailsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Purchase_Order_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._purchase_Order_DetailsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._returnsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Returns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._returnsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._gift_CardsTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Gift_Cards.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -31574,11 +32908,11 @@ Namespace GEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._shipment_DetailsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Shipment_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._creditAuditTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.CreditAudit.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._shipment_DetailsTableAdapter.Update(addedRows))
+                    result = (result + Me._creditAuditTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -31590,27 +32924,19 @@ Namespace GEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._shrinkageTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Shrinkage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._campaign_Opt_InsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Campaign_Opt_Ins.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._shrinkageTableAdapter.Update(addedRows))
+                    result = (result + Me._campaign_Opt_InsTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._campaign_TargetsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Campaign_Targets.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._promoted_ProductsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Promoted_Products.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._campaign_TargetsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._paymentsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Payments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._paymentsTableAdapter.Update(addedRows))
+                    result = (result + Me._promoted_ProductsTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -31640,27 +32966,19 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._paymentsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Payments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._promoted_ProductsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Promoted_Products.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._paymentsTableAdapter.Update(deletedRows))
+                    result = (result + Me._promoted_ProductsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._campaign_TargetsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Campaign_Targets.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._campaign_Opt_InsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Campaign_Opt_Ins.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._campaign_TargetsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._shrinkageTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Shrinkage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._shrinkageTableAdapter.Update(deletedRows))
+                    result = (result + Me._campaign_Opt_InsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -31672,11 +32990,11 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._shipment_DetailsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Shipment_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._creditAuditTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.CreditAudit.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._shipment_DetailsTableAdapter.Update(deletedRows))
+                    result = (result + Me._creditAuditTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -31685,22 +33003,6 @@ Namespace GEDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._gift_CardsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._returnsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Returns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._returnsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._purchase_Order_DetailsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Purchase_Order_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._purchase_Order_DetailsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -31720,11 +33022,11 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._promoted_ProductsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Promoted_Products.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._paymentsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Payments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._promoted_ProductsTableAdapter.Update(deletedRows))
+                    result = (result + Me._paymentsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -31736,43 +33038,35 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._discountsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Discounts.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._purchase_Order_DetailsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Purchase_Order_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._discountsTableAdapter.Update(deletedRows))
+                    result = (result + Me._purchase_Order_DetailsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._order_DetailsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Order_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._shrinkageTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Shrinkage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._order_DetailsTableAdapter.Update(deletedRows))
+                    result = (result + Me._shrinkageTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._payment_TypesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Payment_Types.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._returnsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Returns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._payment_TypesTableAdapter.Update(deletedRows))
+                    result = (result + Me._returnsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._billing_AddressesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Billing_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._shipment_DetailsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Shipment_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._billing_AddressesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._promotionsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Promotions.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._promotionsTableAdapter.Update(deletedRows))
+                    result = (result + Me._shipment_DetailsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -31792,35 +33086,51 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._shippersTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Shippers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._discountsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Discounts.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._shippersTableAdapter.Update(deletedRows))
+                    result = (result + Me._discountsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._statusTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Status.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._promotionsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Promotions.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._statusTableAdapter.Update(deletedRows))
+                    result = (result + Me._promotionsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._shipping_AddressesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Shipping_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._billing_AddressesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Billing_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._shipping_AddressesTableAdapter.Update(deletedRows))
+                    result = (result + Me._billing_AddressesTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._discount_TypeTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Discount_Type.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._order_DetailsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Order_Details.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._discount_TypeTableAdapter.Update(deletedRows))
+                    result = (result + Me._order_DetailsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._payment_TypesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Payment_Types.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._payment_TypesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._marketing_CampaignsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Marketing_Campaigns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._marketing_CampaignsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -31840,19 +33150,19 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._marketing_CampaignsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Marketing_Campaigns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._discount_TypeTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Discount_Type.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._marketing_CampaignsTableAdapter.Update(deletedRows))
+                    result = (result + Me._discount_TypeTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._promo_Info_TypeTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Promo_Info_Type.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._shipping_AddressesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Shipping_Addresses.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._promo_Info_TypeTableAdapter.Update(deletedRows))
+                    result = (result + Me._shipping_AddressesTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -31861,6 +33171,30 @@ Namespace GEDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._productsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._statusTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Status.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._statusTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._shippersTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Shippers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._shippersTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._employeesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Employees.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._employeesTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -31880,11 +33214,11 @@ Namespace GEDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._employeesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Employees.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._campaign_TypesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Campaign_Types.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._employeesTableAdapter.Update(deletedRows))
+                    result = (result + Me._campaign_TypesTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -31942,8 +33276,13 @@ Namespace GEDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._campaign_TargetsTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._campaign_TargetsTableAdapter.Connection) = false)) Then
+            If ((Not (Me._campaign_Opt_InsTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._campaign_Opt_InsTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._campaign_TypesTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._campaign_TypesTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -31954,6 +33293,11 @@ Namespace GEDataSetTableAdapters
             End If
             If ((Not (Me._couponsTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._couponsTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._creditAuditTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._creditAuditTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -32029,11 +33373,6 @@ Namespace GEDataSetTableAdapters
             End If
             If ((Not (Me._productsTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._productsTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
-            If ((Not (Me._promo_Info_TypeTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._promo_Info_TypeTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -32143,13 +33482,22 @@ Namespace GEDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._billing_AddressesTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._campaign_TargetsTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._campaign_TargetsTableAdapter, Me._campaign_TargetsTableAdapter.Connection)
-                    Me._campaign_TargetsTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._campaign_TargetsTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._campaign_TargetsTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._campaign_TargetsTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._campaign_TargetsTableAdapter.Adapter)
+                If (Not (Me._campaign_Opt_InsTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._campaign_Opt_InsTableAdapter, Me._campaign_Opt_InsTableAdapter.Connection)
+                    Me._campaign_Opt_InsTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._campaign_Opt_InsTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._campaign_Opt_InsTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._campaign_Opt_InsTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._campaign_Opt_InsTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._campaign_TypesTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._campaign_TypesTableAdapter, Me._campaign_TypesTableAdapter.Connection)
+                    Me._campaign_TypesTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._campaign_TypesTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._campaign_TypesTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._campaign_TypesTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._campaign_TypesTableAdapter.Adapter)
                     End If
                 End If
                 If (Not (Me._categoriesTableAdapter) Is Nothing) Then
@@ -32168,6 +33516,15 @@ Namespace GEDataSetTableAdapters
                     If Me._couponsTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._couponsTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._couponsTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._creditAuditTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._creditAuditTableAdapter, Me._creditAuditTableAdapter.Connection)
+                    Me._creditAuditTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._creditAuditTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._creditAuditTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._creditAuditTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._creditAuditTableAdapter.Adapter)
                     End If
                 End If
                 If (Not (Me._customersTableAdapter) Is Nothing) Then
@@ -32303,15 +33660,6 @@ Namespace GEDataSetTableAdapters
                     If Me._productsTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._productsTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._productsTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._promo_Info_TypeTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._promo_Info_TypeTableAdapter, Me._promo_Info_TypeTableAdapter.Connection)
-                    Me._promo_Info_TypeTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._promo_Info_TypeTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._promo_Info_TypeTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._promo_Info_TypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._promo_Info_TypeTableAdapter.Adapter)
                     End If
                 End If
                 If (Not (Me._promoted_ProductsTableAdapter) Is Nothing) Then
@@ -32495,9 +33843,13 @@ Namespace GEDataSetTableAdapters
                     Me._billing_AddressesTableAdapter.Connection = CType(revertConnections(Me._billing_AddressesTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._billing_AddressesTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._campaign_TargetsTableAdapter) Is Nothing) Then
-                    Me._campaign_TargetsTableAdapter.Connection = CType(revertConnections(Me._campaign_TargetsTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._campaign_TargetsTableAdapter.Transaction = Nothing
+                If (Not (Me._campaign_Opt_InsTableAdapter) Is Nothing) Then
+                    Me._campaign_Opt_InsTableAdapter.Connection = CType(revertConnections(Me._campaign_Opt_InsTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._campaign_Opt_InsTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._campaign_TypesTableAdapter) Is Nothing) Then
+                    Me._campaign_TypesTableAdapter.Connection = CType(revertConnections(Me._campaign_TypesTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._campaign_TypesTableAdapter.Transaction = Nothing
                 End If
                 If (Not (Me._categoriesTableAdapter) Is Nothing) Then
                     Me._categoriesTableAdapter.Connection = CType(revertConnections(Me._categoriesTableAdapter),Global.System.Data.SqlClient.SqlConnection)
@@ -32506,6 +33858,10 @@ Namespace GEDataSetTableAdapters
                 If (Not (Me._couponsTableAdapter) Is Nothing) Then
                     Me._couponsTableAdapter.Connection = CType(revertConnections(Me._couponsTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._couponsTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._creditAuditTableAdapter) Is Nothing) Then
+                    Me._creditAuditTableAdapter.Connection = CType(revertConnections(Me._creditAuditTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._creditAuditTableAdapter.Transaction = Nothing
                 End If
                 If (Not (Me._customersTableAdapter) Is Nothing) Then
                     Me._customersTableAdapter.Connection = CType(revertConnections(Me._customersTableAdapter),Global.System.Data.SqlClient.SqlConnection)
@@ -32566,10 +33922,6 @@ Namespace GEDataSetTableAdapters
                 If (Not (Me._productsTableAdapter) Is Nothing) Then
                     Me._productsTableAdapter.Connection = CType(revertConnections(Me._productsTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._productsTableAdapter.Transaction = Nothing
-                End If
-                If (Not (Me._promo_Info_TypeTableAdapter) Is Nothing) Then
-                    Me._promo_Info_TypeTableAdapter.Connection = CType(revertConnections(Me._promo_Info_TypeTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._promo_Info_TypeTableAdapter.Transaction = Nothing
                 End If
                 If (Not (Me._promoted_ProductsTableAdapter) Is Nothing) Then
                     Me._promoted_ProductsTableAdapter.Connection = CType(revertConnections(Me._promoted_ProductsTableAdapter),Global.System.Data.SqlClient.SqlConnection)

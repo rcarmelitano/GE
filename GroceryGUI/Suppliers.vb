@@ -34,7 +34,7 @@ Public Class frmSuppliers
 		NewSupplier.txtCompanyName.Text = selectedrow.Cells(1).Value.ToString()
 		NewSupplier.txtFirstName.Text = selectedrow.Cells(2).Value.ToString()
 		NewSupplier.txtLastName.Text = selectedrow.Cells(3).Value.ToString()
-		NewSupplier.txtPhone.Text = selectedrow.Cells(4).Value.ToString()
+		NewSupplier.txtFax.Text = selectedrow.Cells(4).Value.ToString()
 		NewSupplier.txtFax.Text = selectedrow.Cells(5).Value.ToString()
 		NewSupplier.txtEmail.Text = selectedrow.Cells(6).Value.ToString()
 		NewSupplier.txtAddressOne.Text = selectedrow.Cells(7).Value.ToString()
@@ -52,10 +52,11 @@ Public Class frmSuppliers
 		'---------------------------------------------make forms readable, and enabled 
 		NewSupplier.txtCompanyName.Enabled = True
 		NewSupplier.txtSupplierID.Enabled = False
-		NewSupplier.mnuhistory.Enabled = False
-		NewSupplier.txtFirstName.Enabled = True
+        NewSupplier.mnuhistory.Enabled = False
+        NewSupplier.UpdateToolStripMenuItem.Enabled = False
+        NewSupplier.txtFirstName.Enabled = True
 		NewSupplier.txtLastName.Enabled = True
-		NewSupplier.txtPhone.Enabled = True
+		NewSupplier.txtFax.Enabled = True
 		NewSupplier.txtFax.Enabled = True
 		NewSupplier.txtEmail.Enabled = True
 		NewSupplier.txtAddressOne.Enabled = True
@@ -63,23 +64,26 @@ Public Class frmSuppliers
 		NewSupplier.txtCity.Enabled = True
 		NewSupplier.txtstate.Enabled = True
 		NewSupplier.txtZip.Enabled = True
-		NewSupplier.txtNotes.Enabled = True
+        NewSupplier.txtNotes.Enabled = True
+        NewSupplier.btnsave2.Enabled = True
 
-		NewSupplier.txtCompanyName.ReadOnly = False
+        NewSupplier.txtCompanyName.ReadOnly = False
 		NewSupplier.txtSupplierID.ReadOnly = True
 		NewSupplier.txtFirstName.ReadOnly = False
 		NewSupplier.txtLastName.ReadOnly = False
-		NewSupplier.txtPhone.ReadOnly = False
+		NewSupplier.txtFax.ReadOnly = False
 		NewSupplier.txtFax.ReadOnly = False
 		NewSupplier.txtEmail.ReadOnly = False
 		NewSupplier.txtAddressOne.ReadOnly = False
 		NewSupplier.txtAddressTwo.ReadOnly = False
 		NewSupplier.txtCity.ReadOnly = False
-		NewSupplier.txtstate.ReadOnly = False
 		NewSupplier.txtZip.ReadOnly = False
-		NewSupplier.txtNotes.ReadOnly = False
-		'------------------------------------------------------------------------------------------------------------
-		NewSupplier.Show()
+        NewSupplier.txtNotes.ReadOnly = False
+        NewSupplier.txtPhone.Enabled = True
+        NewSupplier.txtPhone.ReadOnly = False
+
+        '------------------------------------------------------------------------------------------------------------
+        NewSupplier.Show()
 		Me.Close()
 	End Sub
 
