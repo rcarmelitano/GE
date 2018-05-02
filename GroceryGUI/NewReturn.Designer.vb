@@ -36,28 +36,34 @@ Partial Class frmNewReturn
         Me.txtOrderDetailID = New System.Windows.Forms.TextBox()
         Me.txtReason = New System.Windows.Forms.TextBox()
         Me.dgvOrderDetails = New System.Windows.Forms.DataGridView()
+        Me.OrderDetailsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.nudQuantity = New System.Windows.Forms.NumericUpDown()
+        Me.dtpReturnDate = New System.Windows.Forms.DateTimePicker()
+        Me.txtOrderID = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Order_DetailsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Order_DetailsTableAdapter()
+        Me.ReturnsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ReturnsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ReturnsTableAdapter()
+        Me.GeDataSet1 = New GroceryGUI.GEDataSet()
+        Me.btnOrderID = New System.Windows.Forms.Button()
         Me.OrderDetailIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OrderDetailsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.Order_DetailsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Order_DetailsTableAdapter()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.nudQuantity = New System.Windows.Forms.NumericUpDown()
-        Me.txtReturnDate = New System.Windows.Forms.TextBox()
-        Me.ReturnsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ReturnsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ReturnsTableAdapter()
+        Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAddID = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvOrderDetails, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OrderDetailsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReturnsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GeDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnFinalizeReturn
         '
-        Me.btnFinalizeReturn.Location = New System.Drawing.Point(88, 377)
+        Me.btnFinalizeReturn.Location = New System.Drawing.Point(88, 416)
         Me.btnFinalizeReturn.Name = "btnFinalizeReturn"
         Me.btnFinalizeReturn.Size = New System.Drawing.Size(142, 43)
         Me.btnFinalizeReturn.TabIndex = 0
@@ -88,7 +94,7 @@ Partial Class frmNewReturn
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(50, 42)
+        Me.Label1.Location = New System.Drawing.Point(154, 31)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 13)
         Me.Label1.TabIndex = 2
@@ -97,7 +103,7 @@ Partial Class frmNewReturn
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(26, 77)
+        Me.Label2.Location = New System.Drawing.Point(26, 116)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(80, 13)
         Me.Label2.TabIndex = 3
@@ -106,7 +112,7 @@ Partial Class frmNewReturn
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(9, 269)
+        Me.Label3.Location = New System.Drawing.Point(9, 308)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(97, 13)
         Me.Label3.TabIndex = 4
@@ -115,7 +121,7 @@ Partial Class frmNewReturn
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(57, 305)
+        Me.Label4.Location = New System.Drawing.Point(57, 344)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 5
@@ -124,7 +130,7 @@ Partial Class frmNewReturn
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(73, 341)
+        Me.Label5.Location = New System.Drawing.Point(73, 380)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(33, 13)
         Me.Label5.TabIndex = 6
@@ -132,7 +138,7 @@ Partial Class frmNewReturn
         '
         'txtReturnID
         '
-        Me.txtReturnID.Location = New System.Drawing.Point(112, 39)
+        Me.txtReturnID.Location = New System.Drawing.Point(216, 28)
         Me.txtReturnID.Name = "txtReturnID"
         Me.txtReturnID.ReadOnly = True
         Me.txtReturnID.Size = New System.Drawing.Size(100, 20)
@@ -140,7 +146,7 @@ Partial Class frmNewReturn
         '
         'txtOrderDetailID
         '
-        Me.txtOrderDetailID.Location = New System.Drawing.Point(112, 74)
+        Me.txtOrderDetailID.Location = New System.Drawing.Point(112, 113)
         Me.txtOrderDetailID.Name = "txtOrderDetailID"
         Me.txtOrderDetailID.ReadOnly = True
         Me.txtOrderDetailID.Size = New System.Drawing.Size(100, 20)
@@ -148,9 +154,9 @@ Partial Class frmNewReturn
         '
         'txtReason
         '
-        Me.txtReason.Location = New System.Drawing.Point(112, 266)
+        Me.txtReason.Location = New System.Drawing.Point(112, 305)
         Me.txtReason.Name = "txtReason"
-        Me.txtReason.Size = New System.Drawing.Size(190, 20)
+        Me.txtReason.Size = New System.Drawing.Size(195, 20)
         Me.txtReason.TabIndex = 9
         '
         'dgvOrderDetails
@@ -158,44 +164,16 @@ Partial Class frmNewReturn
         Me.dgvOrderDetails.AllowUserToAddRows = False
         Me.dgvOrderDetails.AllowUserToDeleteRows = False
         Me.dgvOrderDetails.AutoGenerateColumns = False
-        Me.dgvOrderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvOrderDetails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OrderDetailIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.quantity})
+        Me.dgvOrderDetails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OrderDetailIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.quantity, Me.price, Me.btnAddID})
         Me.dgvOrderDetails.DataSource = Me.OrderDetailsBindingSource
-        Me.dgvOrderDetails.Location = New System.Drawing.Point(12, 106)
+        Me.dgvOrderDetails.Location = New System.Drawing.Point(12, 145)
         Me.dgvOrderDetails.MultiSelect = False
         Me.dgvOrderDetails.Name = "dgvOrderDetails"
         Me.dgvOrderDetails.ReadOnly = True
         Me.dgvOrderDetails.RowHeadersVisible = False
-        Me.dgvOrderDetails.Size = New System.Drawing.Size(290, 145)
+        Me.dgvOrderDetails.Size = New System.Drawing.Size(295, 145)
         Me.dgvOrderDetails.TabIndex = 13
-        '
-        'OrderDetailIDDataGridViewTextBoxColumn
-        '
-        Me.OrderDetailIDDataGridViewTextBoxColumn.DataPropertyName = "orderDetailID"
-        Me.OrderDetailIDDataGridViewTextBoxColumn.HeaderText = "orderDetailID"
-        Me.OrderDetailIDDataGridViewTextBoxColumn.Name = "OrderDetailIDDataGridViewTextBoxColumn"
-        Me.OrderDetailIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.OrderDetailIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.OrderDetailIDDataGridViewTextBoxColumn.Width = 75
-        '
-        'SKUDataGridViewTextBoxColumn
-        '
-        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
-        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
-        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
-        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SKUDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.SKUDataGridViewTextBoxColumn.Width = 35
-        '
-        'quantity
-        '
-        Me.quantity.DataPropertyName = "quantity"
-        Me.quantity.HeaderText = "quantity"
-        Me.quantity.Name = "quantity"
-        Me.quantity.ReadOnly = True
-        Me.quantity.Visible = False
-        Me.quantity.Width = 69
         '
         'OrderDetailsBindingSource
         '
@@ -207,32 +185,39 @@ Partial Class frmNewReturn
         Me.GEDataSet.DataSetName = "GEDataSet"
         Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'Order_DetailsTableAdapter
-        '
-        Me.Order_DetailsTableAdapter.ClearBeforeFill = True
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(227, 70)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 26)
-        Me.btnAdd.TabIndex = 14
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
         'nudQuantity
         '
-        Me.nudQuantity.Location = New System.Drawing.Point(112, 303)
+        Me.nudQuantity.Location = New System.Drawing.Point(112, 342)
         Me.nudQuantity.Name = "nudQuantity"
         Me.nudQuantity.Size = New System.Drawing.Size(100, 20)
         Me.nudQuantity.TabIndex = 16
         '
-        'txtReturnDate
+        'dtpReturnDate
         '
-        Me.txtReturnDate.Location = New System.Drawing.Point(112, 338)
-        Me.txtReturnDate.Name = "txtReturnDate"
-        Me.txtReturnDate.Size = New System.Drawing.Size(190, 20)
-        Me.txtReturnDate.TabIndex = 17
+        Me.dtpReturnDate.Location = New System.Drawing.Point(112, 377)
+        Me.dtpReturnDate.Name = "dtpReturnDate"
+        Me.dtpReturnDate.Size = New System.Drawing.Size(195, 20)
+        Me.dtpReturnDate.TabIndex = 18
+        '
+        'txtOrderID
+        '
+        Me.txtOrderID.Location = New System.Drawing.Point(112, 77)
+        Me.txtOrderID.Name = "txtOrderID"
+        Me.txtOrderID.Size = New System.Drawing.Size(100, 20)
+        Me.txtOrderID.TabIndex = 20
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(56, 80)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(50, 13)
+        Me.Label6.TabIndex = 19
+        Me.Label6.Text = "Order ID:"
+        '
+        'Order_DetailsTableAdapter
+        '
+        Me.Order_DetailsTableAdapter.ClearBeforeFill = True
         '
         'ReturnsBindingSource
         '
@@ -243,14 +228,77 @@ Partial Class frmNewReturn
         '
         Me.ReturnsTableAdapter.ClearBeforeFill = True
         '
+        'GeDataSet1
+        '
+        Me.GeDataSet1.DataSetName = "GEDataSet"
+        Me.GeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'btnOrderID
+        '
+        Me.btnOrderID.Location = New System.Drawing.Point(227, 73)
+        Me.btnOrderID.Name = "btnOrderID"
+        Me.btnOrderID.Size = New System.Drawing.Size(75, 26)
+        Me.btnOrderID.TabIndex = 21
+        Me.btnOrderID.Text = "Enter ID"
+        Me.btnOrderID.UseVisualStyleBackColor = True
+        '
+        'OrderDetailIDDataGridViewTextBoxColumn
+        '
+        Me.OrderDetailIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.OrderDetailIDDataGridViewTextBoxColumn.DataPropertyName = "orderDetailID"
+        Me.OrderDetailIDDataGridViewTextBoxColumn.HeaderText = "orderDetailID"
+        Me.OrderDetailIDDataGridViewTextBoxColumn.Name = "OrderDetailIDDataGridViewTextBoxColumn"
+        Me.OrderDetailIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.OrderDetailIDDataGridViewTextBoxColumn.Width = 94
+        '
+        'SKUDataGridViewTextBoxColumn
+        '
+        Me.SKUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
+        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SKUDataGridViewTextBoxColumn.Width = 54
+        '
+        'quantity
+        '
+        Me.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.quantity.DataPropertyName = "quantity"
+        Me.quantity.HeaderText = "quantity"
+        Me.quantity.Name = "quantity"
+        Me.quantity.ReadOnly = True
+        Me.quantity.Visible = False
+        Me.quantity.Width = 69
+        '
+        'price
+        '
+        Me.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.price.DataPropertyName = "price"
+        Me.price.HeaderText = "price"
+        Me.price.Name = "price"
+        Me.price.ReadOnly = True
+        Me.price.Width = 55
+        '
+        'btnAddID
+        '
+        Me.btnAddID.HeaderText = ""
+        Me.btnAddID.Name = "btnAddID"
+        Me.btnAddID.ReadOnly = True
+        Me.btnAddID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.btnAddID.Text = "Add"
+        Me.btnAddID.UseColumnTextForButtonValue = True
+        Me.btnAddID.Width = 63
+        '
         'frmNewReturn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(319, 427)
-        Me.Controls.Add(Me.txtReturnDate)
+        Me.ClientSize = New System.Drawing.Size(319, 466)
+        Me.Controls.Add(Me.btnOrderID)
+        Me.Controls.Add(Me.txtOrderID)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.dtpReturnDate)
         Me.Controls.Add(Me.nudQuantity)
-        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.dgvOrderDetails)
         Me.Controls.Add(Me.txtReason)
         Me.Controls.Add(Me.txtOrderDetailID)
@@ -275,6 +323,7 @@ Partial Class frmNewReturn
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudQuantity, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReturnsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GeDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -296,12 +345,17 @@ Partial Class frmNewReturn
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents OrderDetailsBindingSource As BindingSource
     Friend WithEvents Order_DetailsTableAdapter As GEDataSetTableAdapters.Order_DetailsTableAdapter
-    Friend WithEvents btnAdd As Button
+    Friend WithEvents nudQuantity As NumericUpDown
+    Friend WithEvents ReturnsBindingSource As BindingSource
+    Friend WithEvents ReturnsTableAdapter As GEDataSetTableAdapters.ReturnsTableAdapter
+    Friend WithEvents GeDataSet1 As GEDataSet
+    Friend WithEvents dtpReturnDate As DateTimePicker
+    Friend WithEvents txtOrderID As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents btnOrderID As Button
     Friend WithEvents OrderDetailIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SKUDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents quantity As DataGridViewTextBoxColumn
-    Friend WithEvents nudQuantity As NumericUpDown
-    Friend WithEvents txtReturnDate As TextBox
-    Friend WithEvents ReturnsBindingSource As BindingSource
-    Friend WithEvents ReturnsTableAdapter As GEDataSetTableAdapters.ReturnsTableAdapter
+    Friend WithEvents price As DataGridViewTextBoxColumn
+    Friend WithEvents btnAddID As DataGridViewButtonColumn
 End Class
