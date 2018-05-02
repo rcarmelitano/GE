@@ -647,3 +647,5 @@ C:\Users\rc0083\source\repos\GE1\GroceryGUI\bin\Debug\GroceryGUI.exe.config
 C:\Users\rc0083\source\repos\GE1\GroceryGUI\bin\Debug\GroceryGUI.exe
 C:\Users\rc0083\source\repos\GE1\GroceryGUI\bin\Debug\GroceryGUI.pdb
 C:\Users\rc0083\source\repos\GE1\GroceryGUI\bin\Debug\GroceryGUI.xml
+C:\Users\rc0083\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.MarketingCampaigns.resources
+C:\Users\rc0083\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.CampaignsView.resources

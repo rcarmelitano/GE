@@ -121,8 +121,6 @@ Partial Public Class GEDataSet
     
     Private relationFK__Item_Disc__order__02084FDA As Global.System.Data.DataRelation
     
-    Private relationFK__Marketing__campa__57DD0BE4 As Global.System.Data.DataRelation
-    
     Private relationFK__Order_Det__order__534D60F1 As Global.System.Data.DataRelation
     
     Private relationFK__Order_Detai__SKU__5441852A As Global.System.Data.DataRelation
@@ -180,6 +178,8 @@ Partial Public Class GEDataSet
     Private relationFK__Shrinkage__SKU__0B91BA14 As Global.System.Data.DataRelation
     
     Private relationFK__Shrinkage__statu__0C85DE4D As Global.System.Data.DataRelation
+    
+    Private relationFK__Marketing__campa__57DD0BE4 As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -1088,7 +1088,6 @@ Partial Public Class GEDataSet
         Me.relationFK__Inventory__suppl__06CD04F7 = Me.Relations("FK__Inventory__suppl__06CD04F7")
         Me.relationFK__Item_Disc__disco__02FC7413 = Me.Relations("FK__Item_Disc__disco__02FC7413")
         Me.relationFK__Item_Disc__order__02084FDA = Me.Relations("FK__Item_Disc__order__02084FDA")
-        Me.relationFK__Marketing__campa__57DD0BE4 = Me.Relations("FK__Marketing__campa__57DD0BE4")
         Me.relationFK__Order_Det__order__534D60F1 = Me.Relations("FK__Order_Det__order__534D60F1")
         Me.relationFK__Order_Detai__SKU__5441852A = Me.Relations("FK__Order_Detai__SKU__5441852A")
         Me.relationFK__Order_Dis__disco__7B5B524B = Me.Relations("FK__Order_Dis__disco__7B5B524B")
@@ -1118,6 +1117,7 @@ Partial Public Class GEDataSet
         Me.relationFK__Shrinkage__emplo__0A9D95DB = Me.Relations("FK__Shrinkage__emplo__0A9D95DB")
         Me.relationFK__Shrinkage__SKU__0B91BA14 = Me.Relations("FK__Shrinkage__SKU__0B91BA14")
         Me.relationFK__Shrinkage__statu__0C85DE4D = Me.Relations("FK__Shrinkage__statu__0C85DE4D")
+        Me.relationFK__Marketing__campa__57DD0BE4 = Me.Relations("FK__Marketing__campa__57DD0BE4")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1224,8 +1224,6 @@ Partial Public Class GEDataSet
         Me.Relations.Add(Me.relationFK__Item_Disc__disco__02FC7413)
         Me.relationFK__Item_Disc__order__02084FDA = New Global.System.Data.DataRelation("FK__Item_Disc__order__02084FDA", New Global.System.Data.DataColumn() {Me.tableOrder_Details.orderDetailIDColumn}, New Global.System.Data.DataColumn() {Me.tableItem_Discount.orderDetailIDColumn}, false)
         Me.Relations.Add(Me.relationFK__Item_Disc__order__02084FDA)
-        Me.relationFK__Marketing__campa__57DD0BE4 = New Global.System.Data.DataRelation("FK__Marketing__campa__57DD0BE4", New Global.System.Data.DataColumn() {Me.tableCampaign_Types.campaignTypeIDColumn}, New Global.System.Data.DataColumn() {Me.tableMarketing_Campaigns.campaignTypeIDColumn}, false)
-        Me.Relations.Add(Me.relationFK__Marketing__campa__57DD0BE4)
         Me.relationFK__Order_Det__order__534D60F1 = New Global.System.Data.DataRelation("FK__Order_Det__order__534D60F1", New Global.System.Data.DataColumn() {Me.tableOrders.orderIDColumn}, New Global.System.Data.DataColumn() {Me.tableOrder_Details.orderIDColumn}, false)
         Me.Relations.Add(Me.relationFK__Order_Det__order__534D60F1)
         Me.relationFK__Order_Detai__SKU__5441852A = New Global.System.Data.DataRelation("FK__Order_Detai__SKU__5441852A", New Global.System.Data.DataColumn() {Me.tableProducts.SKUColumn}, New Global.System.Data.DataColumn() {Me.tableOrder_Details.SKUColumn}, false)
@@ -1284,6 +1282,8 @@ Partial Public Class GEDataSet
         Me.Relations.Add(Me.relationFK__Shrinkage__SKU__0B91BA14)
         Me.relationFK__Shrinkage__statu__0C85DE4D = New Global.System.Data.DataRelation("FK__Shrinkage__statu__0C85DE4D", New Global.System.Data.DataColumn() {Me.tableStatus.statusIDColumn}, New Global.System.Data.DataColumn() {Me.tableShrinkage.statusIDColumn}, false)
         Me.Relations.Add(Me.relationFK__Shrinkage__statu__0C85DE4D)
+        Me.relationFK__Marketing__campa__57DD0BE4 = New Global.System.Data.DataRelation("FK__Marketing__campa__57DD0BE4", New Global.System.Data.DataColumn() {Me.tableCampaign_Types.campaignTypeIDColumn}, New Global.System.Data.DataColumn() {Me.tableMarketing_Campaigns.campaignTypeIDColumn}, false)
+        Me.Relations.Add(Me.relationFK__Marketing__campa__57DD0BE4)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -23558,12 +23558,20 @@ Namespace GEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT campaignID, campaignTypeID, title, description, startDate, endDate FROM db"& _ 
                 "o.Marketing_Campaigns"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        Marketing_Campaigns.campaignID, Campaign_Types.title, Marketing_Cam"& _ 
+                "paigns.title AS Expr1, Marketing_Campaigns.description, Marketing_Campaigns.star"& _ 
+                "tDate, Marketing_Campaigns.endDate"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Marketing_Campaigns INNER JO"& _ 
+                "IN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Campaign_Types ON Marketing_Campaigns.campaignTypeI"& _ 
+                "D = Campaign_Types.campaignTypeID"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -23585,6 +23593,30 @@ Namespace GEDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GEDataSet.Marketing_CampaignsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As GEDataSet.Marketing_CampaignsDataTable = New GEDataSet.Marketing_CampaignsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As GEDataSet.Marketing_CampaignsDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy() As GEDataSet.Marketing_CampaignsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
             Dim dataTable As GEDataSet.Marketing_CampaignsDataTable = New GEDataSet.Marketing_CampaignsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
