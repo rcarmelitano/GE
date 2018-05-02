@@ -1,6 +1,15 @@
 ﻿Public Class supplierhistory
     Dim intid As Integer
 
+
+
+
+    Public Sub LoadDataGrid(ByVal id As Integer)
+        intid = id
+        Me.Purchase_OrderTableAdapter.PurchaseHistory(Me.GEDataSet.Purchase_Order, id)
+    End Sub
+
+
     Private Sub Purchase_OrderBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.Purchase_OrderBindingSource.EndEdit()
@@ -37,7 +46,7 @@
     End Sub
     '------------------------------------------------------------------------------------------filter by date
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Purchase_OrderTableAdapter.Datefilter(Me.GEDataSet.Purchase_Order, DateTimePicker1.Value, DateTimePicker2.Value, intid)
+        Me.Purchase_OrderTableAdapter.datefilter(Me.GEDataSet.Purchase_Order, DateTimePicker1.Value, DateTimePicker2.Value, intid)
     End Sub
 
     Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click

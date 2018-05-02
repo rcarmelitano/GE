@@ -70,6 +70,7 @@ Partial Class Employees
         Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
+        Me.TableAdapterManager.CreditAuditTableAdapter = Nothing
         Me.TableAdapterManager.CustomersTableAdapter = Nothing
         Me.TableAdapterManager.DepartmentsTableAdapter = Nothing
         Me.TableAdapterManager.Discount_TypeTableAdapter = Nothing
@@ -226,7 +227,7 @@ Partial Class Employees
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(858, 533)
+        Me.ClientSize = New System.Drawing.Size(858, 534)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.EmployeesDataGridView)

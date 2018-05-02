@@ -193,7 +193,7 @@ Partial Class Employeesupdate
         'Button2
         '
         Me.Button2.Enabled = False
-        Me.Button2.Location = New System.Drawing.Point(12, 249)
+        Me.Button2.Location = New System.Drawing.Point(12, 265)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(264, 39)
         Me.Button2.TabIndex = 17

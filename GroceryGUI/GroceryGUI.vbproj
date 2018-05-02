@@ -67,6 +67,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -202,6 +203,12 @@
       <DependentUpon>NewReturn.vb</DependentUpon>
     </Compile>
     <Compile Include="NewReturn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewShinpping.Designer.vb">
+      <DependentUpon>NewShinpping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewShinpping.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewSupplier.designer.vb">
@@ -432,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewReturn.resx">
       <DependentUpon>NewReturn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewShinpping.resx">
+      <DependentUpon>NewShinpping.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewSupplier.resx">
       <DependentUpon>NewSupplier.vb</DependentUpon>

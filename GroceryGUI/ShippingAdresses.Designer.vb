@@ -57,73 +57,72 @@ Partial Class ShippingAdresses
 		'TableAdapterManager
 		'
 		Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-		Me.TableAdapterManager.Billing_Addresses1TableAdapter = Nothing
-		Me.TableAdapterManager.Billing_AddressesTableAdapter = Me.Billing_AddressesTableAdapter
-		Me.TableAdapterManager.Campaign_Targets1TableAdapter = Nothing
-		Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
-		Me.TableAdapterManager.Categories1TableAdapter = Nothing
-		Me.TableAdapterManager.CategoriesTableAdapter = Nothing
-		Me.TableAdapterManager.Coupons1TableAdapter = Nothing
-		Me.TableAdapterManager.CouponsTableAdapter = Nothing
-		Me.TableAdapterManager.CreditAuditTableAdapter = Nothing
-		Me.TableAdapterManager.Customers1TableAdapter = Nothing
-		Me.TableAdapterManager.CustomersTableAdapter = Nothing
-		Me.TableAdapterManager.Departments1TableAdapter = Nothing
-		Me.TableAdapterManager.DepartmentsTableAdapter = Nothing
-		Me.TableAdapterManager.Discount_Type1TableAdapter = Nothing
-		Me.TableAdapterManager.Discount_TypeTableAdapter = Nothing
-		Me.TableAdapterManager.Discounts1TableAdapter = Nothing
-		Me.TableAdapterManager.DiscountsTableAdapter = Nothing
-		Me.TableAdapterManager.Employees1TableAdapter = Nothing
-		Me.TableAdapterManager.EmployeesTableAdapter = Nothing
-		Me.TableAdapterManager.Gift_Cards1TableAdapter = Nothing
-		Me.TableAdapterManager.Gift_CardsTableAdapter = Nothing
-		Me.TableAdapterManager.Inventory1TableAdapter = Nothing
-		Me.TableAdapterManager.InventoryTableAdapter = Nothing
-		Me.TableAdapterManager.Item_Discount1TableAdapter = Nothing
-		Me.TableAdapterManager.Item_DiscountTableAdapter = Nothing
-		Me.TableAdapterManager.Marketing_Campaigns1TableAdapter = Nothing
-		Me.TableAdapterManager.Marketing_CampaignsTableAdapter = Nothing
-		Me.TableAdapterManager.Order_Details1TableAdapter = Nothing
-		Me.TableAdapterManager.Order_DetailsTableAdapter = Nothing
-		Me.TableAdapterManager.Order_Discount1TableAdapter = Nothing
-		Me.TableAdapterManager.Order_DiscountTableAdapter = Nothing
-		Me.TableAdapterManager.Orders1TableAdapter = Nothing
-		Me.TableAdapterManager.OrdersTableAdapter = Nothing
-		Me.TableAdapterManager.Payment_Types1TableAdapter = Nothing
-		Me.TableAdapterManager.Payment_TypesTableAdapter = Nothing
-		Me.TableAdapterManager.Payments1TableAdapter = Nothing
-		Me.TableAdapterManager.PaymentsTableAdapter = Nothing
-		Me.TableAdapterManager.Products1TableAdapter = Nothing
-		Me.TableAdapterManager.ProductsTableAdapter = Nothing
-		Me.TableAdapterManager.Promo_Info_Type1TableAdapter = Nothing
-		Me.TableAdapterManager.Promo_Info_TypeTableAdapter = Nothing
-		Me.TableAdapterManager.Promoted_Products1TableAdapter = Nothing
-		Me.TableAdapterManager.Promoted_ProductsTableAdapter = Nothing
-		Me.TableAdapterManager.Promotions1TableAdapter = Nothing
-		Me.TableAdapterManager.PromotionsTableAdapter = Nothing
-		Me.TableAdapterManager.Purchase_Order_Details1TableAdapter = Nothing
-		Me.TableAdapterManager.Purchase_Order_DetailsTableAdapter = Nothing
-		Me.TableAdapterManager.Purchase_Order1TableAdapter = Nothing
-		Me.TableAdapterManager.Purchase_OrderTableAdapter = Nothing
-		Me.TableAdapterManager.Returns1TableAdapter = Nothing
-		Me.TableAdapterManager.ReturnsTableAdapter = Nothing
-		Me.TableAdapterManager.Shipment_Details1TableAdapter = Nothing
-		Me.TableAdapterManager.Shipment_DetailsTableAdapter = Nothing
-		Me.TableAdapterManager.Shipment1TableAdapter = Nothing
-		Me.TableAdapterManager.ShipmentTableAdapter = Nothing
-		Me.TableAdapterManager.Shippers1TableAdapter = Nothing
-		Me.TableAdapterManager.ShippersTableAdapter = Nothing
-		Me.TableAdapterManager.Shipping_Addresses1TableAdapter = Nothing
-		Me.TableAdapterManager.Shipping_AddressesTableAdapter = Nothing
-		Me.TableAdapterManager.Shrinkage1TableAdapter = Nothing
-		Me.TableAdapterManager.ShrinkageTableAdapter = Nothing
-		Me.TableAdapterManager.Status1TableAdapter = Nothing
-		Me.TableAdapterManager.StatusTableAdapter = Nothing
-		Me.TableAdapterManager.Suppliers1TableAdapter = Nothing
-		Me.TableAdapterManager.SuppliersTableAdapter = Nothing
-		Me.TableAdapterManager.Trade_Shows1TableAdapter = Nothing
-		Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
+
+        Me.TableAdapterManager.Billing_AddressesTableAdapter = Me.Billing_AddressesTableAdapter
+
+        Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
+
+        Me.TableAdapterManager.CategoriesTableAdapter = Nothing
+
+        Me.TableAdapterManager.CouponsTableAdapter = Nothing
+
+        Me.TableAdapterManager.CustomersTableAdapter = Nothing
+
+        Me.TableAdapterManager.DepartmentsTableAdapter = Nothing
+
+        Me.TableAdapterManager.Discount_TypeTableAdapter = Nothing
+
+        Me.TableAdapterManager.DiscountsTableAdapter = Nothing
+
+        Me.TableAdapterManager.EmployeesTableAdapter = Nothing
+
+        Me.TableAdapterManager.Gift_CardsTableAdapter = Nothing
+
+        Me.TableAdapterManager.InventoryTableAdapter = Nothing
+
+        Me.TableAdapterManager.Item_DiscountTableAdapter = Nothing
+
+        Me.TableAdapterManager.Marketing_CampaignsTableAdapter = Nothing
+
+        Me.TableAdapterManager.Order_DetailsTableAdapter = Nothing
+
+        Me.TableAdapterManager.Order_DiscountTableAdapter = Nothing
+
+        Me.TableAdapterManager.OrdersTableAdapter = Nothing
+
+        Me.TableAdapterManager.Payment_TypesTableAdapter = Nothing
+
+        Me.TableAdapterManager.PaymentsTableAdapter = Nothing
+
+        Me.TableAdapterManager.ProductsTableAdapter = Nothing
+
+        Me.TableAdapterManager.Promo_Info_TypeTableAdapter = Nothing
+
+        Me.TableAdapterManager.Promoted_ProductsTableAdapter = Nothing
+
+        Me.TableAdapterManager.PromotionsTableAdapter = Nothing
+
+        Me.TableAdapterManager.Purchase_Order_DetailsTableAdapter = Nothing
+
+        Me.TableAdapterManager.Purchase_OrderTableAdapter = Nothing
+
+        Me.TableAdapterManager.ReturnsTableAdapter = Nothing
+
+        Me.TableAdapterManager.Shipment_DetailsTableAdapter = Nothing
+
+        Me.TableAdapterManager.ShipmentTableAdapter = Nothing
+
+        Me.TableAdapterManager.ShippersTableAdapter = Nothing
+
+        Me.TableAdapterManager.Shipping_AddressesTableAdapter = Nothing
+
+        Me.TableAdapterManager.ShrinkageTableAdapter = Nothing
+
+        Me.TableAdapterManager.StatusTableAdapter = Nothing
+
+        Me.TableAdapterManager.SuppliersTableAdapter = Nothing
+
+        Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
 		Me.TableAdapterManager.UpdateOrder = GroceryGUI.GEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
 		'
 		'Billing_AddressesDataGridView

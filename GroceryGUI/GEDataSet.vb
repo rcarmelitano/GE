@@ -2,9 +2,10 @@
 End Class
 
 Namespace GEDataSetTableAdapters
-    Partial Public Class EmployeesTableAdapter
-    End Class
+
 End Namespace
 
 Namespace GEDataSetTableAdapters
+    Partial Public Class Order_DetailsTableAdapter
+    End Class
 End Namespace

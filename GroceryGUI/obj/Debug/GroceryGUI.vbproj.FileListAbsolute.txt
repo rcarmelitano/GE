@@ -559,3 +559,14 @@ D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSPhoneSearch.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.supplierHisoryInfo.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POScustumerInfo.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSEmailSearch.resources
+E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSCustomerSearch.resources
+E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POScustumerInfo.resources
+E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSEmailSearch.resources
+E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSPhoneSearch.resources
+E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.supplierHisoryInfo.resources
+E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.NewShinpping.resources
+F:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.NewShinpping.resources
+F:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSCustomerSearch.resources
+F:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POScustumerInfo.resources
+F:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSEmailSearch.resources
+F:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSPhoneSearch.resources

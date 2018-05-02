@@ -76,9 +76,32 @@
         MainFormEmployeeSearch.ShowDialog()
     End Sub
 
-    '----------------------------------------------------------------------------------------------------selecting a employee ID
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+    Private Sub TextBox1_EnabledChanged(sender As Object, e As EventArgs) Handles TextBox1.EnabledChanged
+        If TextBox1.Text <> "" Then
 
+            btnCheckout.Enabled = True
+            btnSupplierInfo.Enabled = True
+            btnItemReturns.Enabled = True
+            btnCustomers.Enabled = True
+            btnInventory.Enabled = True
+            btnGiftCards.Enabled = True
+            btnEmployees.Enabled = True
+            btnDeliveries.Enabled = True
+            btnReports.Enabled = True
+            btnPromotions.Enabled = True
+
+        End If
     End Sub
 
+    Private Sub frmPrimaryForm_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
+        If TextBox1.Text = "" Then
+
+            MessageBox.Show("please select an employee")
+
+        End If
+    End Sub
+
+	Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+		NewShinpping.ShowDialog()
+	End Sub
 End Class

@@ -7,6 +7,7 @@ Public Class frmCustomerHistory
 
     Dim something As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GE.mdf;Integrated Security=True")
     Dim intid As Integer
+
     '-----------------------------------------------------------------------------------------------------------------------------
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
         ' Close the form
@@ -19,9 +20,10 @@ Public Class frmCustomerHistory
         Me.TableAdapterManager.UpdateAll(Me.GEDataSet)
     End Sub
 
-    Public Sub LoadDataGrid(ByVal id As Integer)
+	'--------------------------------------------------------sub to load datagrid
+	Public Sub LoadDataGrid(ByVal id As Integer)
         intid = id
-		Me.OrdersTableAdapter.CustomerHistory(Me.GEDataSet.Orders, id)
+        Me.OrdersTableAdapter.CustomerHistory(Me.GEDataSet.Orders, id)
 	End Sub
     '------------------------------------------------------------------------------------------------------------------------
     Private Sub btnsearch_Click(sender As Object, e As EventArgs) Handles btnsearch.Click
