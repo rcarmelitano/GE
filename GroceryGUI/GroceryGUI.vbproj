@@ -153,9 +153,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GEDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GEDataSet.vb">
-      <DependentUpon>GEDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="GiftCards.Designer.vb">
       <DependentUpon>GiftCards.vb</DependentUpon>
     </Compile>

@@ -67,7 +67,6 @@ Partial Class Employees
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Billing_AddressesTableAdapter = Nothing
-        Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
         Me.TableAdapterManager.CreditAuditTableAdapter = Nothing
@@ -86,7 +85,6 @@ Partial Class Employees
         Me.TableAdapterManager.Payment_TypesTableAdapter = Nothing
         Me.TableAdapterManager.PaymentsTableAdapter = Nothing
         Me.TableAdapterManager.ProductsTableAdapter = Nothing
-        Me.TableAdapterManager.Promo_Info_TypeTableAdapter = Nothing
         Me.TableAdapterManager.Promoted_ProductsTableAdapter = Nothing
         Me.TableAdapterManager.PromotionsTableAdapter = Nothing
         Me.TableAdapterManager.Purchase_Order_DetailsTableAdapter = Nothing

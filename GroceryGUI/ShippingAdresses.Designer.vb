@@ -60,8 +60,6 @@ Partial Class ShippingAdresses
 
         Me.TableAdapterManager.Billing_AddressesTableAdapter = Me.Billing_AddressesTableAdapter
 
-        Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
-
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
 
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
@@ -95,8 +93,6 @@ Partial Class ShippingAdresses
         Me.TableAdapterManager.PaymentsTableAdapter = Nothing
 
         Me.TableAdapterManager.ProductsTableAdapter = Nothing
-
-        Me.TableAdapterManager.Promo_Info_TypeTableAdapter = Nothing
 
         Me.TableAdapterManager.Promoted_ProductsTableAdapter = Nothing
 

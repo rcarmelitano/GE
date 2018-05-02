@@ -86,7 +86,6 @@ Partial Class frmCustomerHistory
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Billing_AddressesTableAdapter = Nothing
-        Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
         Me.TableAdapterManager.CustomersTableAdapter = Nothing
@@ -118,8 +117,6 @@ Partial Class frmCustomerHistory
         Me.TableAdapterManager.PaymentsTableAdapter = Nothing
 
         Me.TableAdapterManager.ProductsTableAdapter = Nothing
-
-        Me.TableAdapterManager.Promo_Info_TypeTableAdapter = Nothing
 
         Me.TableAdapterManager.Promoted_ProductsTableAdapter = Nothing
 
