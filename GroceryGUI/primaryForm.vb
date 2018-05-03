@@ -108,4 +108,9 @@
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         MarketingCampaigns.Show()
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        'opens the categories and departments menuuuuuuuu
+        frmCategoriesAndDepartments.Show()
+    End Sub
 End Class
