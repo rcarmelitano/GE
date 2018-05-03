@@ -39,7 +39,7 @@ Public Class frmNewReturn
                 ' Fill the returnID textbox with the next value through the use of the getMaxReturnIDAndIncrement command above
                 returnsConnection.Close()
 
-                ' Increment the Return ID and prepare for a new return--------------
+                ' Increment the Return ID and prepare for a new return
                 ' Get the max id number currently in the database and then add 1
                 Dim returnID As Integer = 0
                 Dim getMaxReturnIDAndIncrement As New SqlCommand("select max(ReturnId) + 1 from Returns", returnsConnection)

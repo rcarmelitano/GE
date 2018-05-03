@@ -41,6 +41,7 @@ Partial Class frmNewProduct
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuUpdate = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CategoryIDToolStrip = New System.Windows.Forms.ToolStrip()
         Me.CategoryIDToolStripLabel = New System.Windows.Forms.ToolStripLabel()
@@ -77,6 +78,8 @@ Partial Class frmNewProduct
         Me.Label9 = New System.Windows.Forms.Label()
         Me.mtxtSKU = New System.Windows.Forms.MaskedTextBox()
         Me.mtxtUPC = New System.Windows.Forms.MaskedTextBox()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.txtSKU = New System.Windows.Forms.TextBox()
         CType(Me.dgvDepartments, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DepartmentsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,20 +96,22 @@ Partial Class frmNewProduct
         '
         'txtDepartmentID
         '
+        Me.txtDepartmentID.Enabled = False
         Me.txtDepartmentID.Location = New System.Drawing.Point(129, 270)
         Me.txtDepartmentID.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDepartmentID.Name = "txtDepartmentID"
         Me.txtDepartmentID.ReadOnly = True
-        Me.txtDepartmentID.Size = New System.Drawing.Size(128, 22)
+        Me.txtDepartmentID.Size = New System.Drawing.Size(139, 22)
         Me.txtDepartmentID.TabIndex = 104
         '
         'txtCategoryID
         '
-        Me.txtCategoryID.Location = New System.Drawing.Point(580, 270)
+        Me.txtCategoryID.Enabled = False
+        Me.txtCategoryID.Location = New System.Drawing.Point(588, 270)
         Me.txtCategoryID.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCategoryID.Name = "txtCategoryID"
         Me.txtCategoryID.ReadOnly = True
-        Me.txtCategoryID.Size = New System.Drawing.Size(128, 22)
+        Me.txtCategoryID.Size = New System.Drawing.Size(139, 22)
         Me.txtCategoryID.TabIndex = 103
         '
         'dgvDepartments
@@ -232,7 +237,7 @@ Partial Class frmNewProduct
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuClose, Me.ViewProductsToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuClose, Me.ViewProductsToolStripMenuItem, Me.mnuUpdate, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
@@ -251,6 +256,13 @@ Partial Class frmNewProduct
         Me.ViewProductsToolStripMenuItem.Name = "ViewProductsToolStripMenuItem"
         Me.ViewProductsToolStripMenuItem.Size = New System.Drawing.Size(114, 24)
         Me.ViewProductsToolStripMenuItem.Text = "View Products"
+        '
+        'mnuUpdate
+        '
+        Me.mnuUpdate.Name = "mnuUpdate"
+        Me.mnuUpdate.Size = New System.Drawing.Size(70, 24)
+        Me.mnuUpdate.Text = "Update"
+        Me.mnuUpdate.Visible = False
         '
         'HelpToolStripMenuItem
         '
@@ -383,7 +395,7 @@ Partial Class frmNewProduct
         Me.txtProductName.Location = New System.Drawing.Point(129, 169)
         Me.txtProductName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtProductName.Name = "txtProductName"
-        Me.txtProductName.Size = New System.Drawing.Size(132, 22)
+        Me.txtProductName.Size = New System.Drawing.Size(139, 22)
         Me.txtProductName.TabIndex = 112
         '
         'Label3
@@ -418,7 +430,7 @@ Partial Class frmNewProduct
         '
         Me.cbTaxable.AutoSize = True
         Me.cbTaxable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cbTaxable.Location = New System.Drawing.Point(501, 127)
+        Me.cbTaxable.Location = New System.Drawing.Point(513, 127)
         Me.cbTaxable.Margin = New System.Windows.Forms.Padding(4)
         Me.cbTaxable.Name = "cbTaxable"
         Me.cbTaxable.Size = New System.Drawing.Size(84, 21)
@@ -438,16 +450,16 @@ Partial Class frmNewProduct
         '
         'txtRetailUnit
         '
-        Me.txtRetailUnit.Location = New System.Drawing.Point(572, 57)
+        Me.txtRetailUnit.Location = New System.Drawing.Point(580, 57)
         Me.txtRetailUnit.Margin = New System.Windows.Forms.Padding(4)
         Me.txtRetailUnit.Name = "txtRetailUnit"
-        Me.txtRetailUnit.Size = New System.Drawing.Size(132, 22)
+        Me.txtRetailUnit.Size = New System.Drawing.Size(147, 22)
         Me.txtRetailUnit.TabIndex = 120
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(485, 60)
+        Me.Label6.Location = New System.Drawing.Point(495, 60)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(77, 17)
@@ -460,7 +472,8 @@ Partial Class frmNewProduct
         Me.cbStatus.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cbStatus.Checked = True
         Me.cbStatus.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbStatus.Location = New System.Drawing.Point(512, 92)
+        Me.cbStatus.Enabled = False
+        Me.cbStatus.Location = New System.Drawing.Point(524, 92)
         Me.cbStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.cbStatus.Name = "cbStatus"
         Me.cbStatus.Size = New System.Drawing.Size(74, 21)
@@ -480,16 +493,16 @@ Partial Class frmNewProduct
         '
         'txtRetailCost
         '
-        Me.txtRetailCost.Location = New System.Drawing.Point(572, 164)
+        Me.txtRetailCost.Location = New System.Drawing.Point(580, 164)
         Me.txtRetailCost.Margin = New System.Windows.Forms.Padding(4)
         Me.txtRetailCost.Name = "txtRetailCost"
-        Me.txtRetailCost.Size = New System.Drawing.Size(132, 22)
+        Me.txtRetailCost.Size = New System.Drawing.Size(147, 22)
         Me.txtRetailCost.TabIndex = 124
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(485, 167)
+        Me.Label7.Location = New System.Drawing.Point(495, 167)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(80, 17)
@@ -538,7 +551,7 @@ Partial Class frmNewProduct
         Me.mtxtSKU.Margin = New System.Windows.Forms.Padding(4)
         Me.mtxtSKU.Mask = "AAAAAA-000-000"
         Me.mtxtSKU.Name = "mtxtSKU"
-        Me.mtxtSKU.Size = New System.Drawing.Size(132, 22)
+        Me.mtxtSKU.Size = New System.Drawing.Size(139, 22)
         Me.mtxtSKU.TabIndex = 128
         '
         'mtxtUPC
@@ -548,14 +561,35 @@ Partial Class frmNewProduct
         Me.mtxtUPC.Mask = "0000000000000000"
         Me.mtxtUPC.Name = "mtxtUPC"
         Me.mtxtUPC.ReadOnly = True
-        Me.mtxtUPC.Size = New System.Drawing.Size(132, 22)
+        Me.mtxtUPC.Size = New System.Drawing.Size(139, 22)
         Me.mtxtUPC.TabIndex = 129
+        '
+        'btnSave
+        '
+        Me.btnSave.Location = New System.Drawing.Point(304, 503)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(253, 55)
+        Me.btnSave.TabIndex = 130
+        Me.btnSave.Text = "Continue"
+        Me.btnSave.UseVisualStyleBackColor = True
+        Me.btnSave.Visible = False
+        '
+        'txtSKU
+        '
+        Me.txtSKU.Location = New System.Drawing.Point(129, 57)
+        Me.txtSKU.Name = "txtSKU"
+        Me.txtSKU.Size = New System.Drawing.Size(139, 22)
+        Me.txtSKU.TabIndex = 131
+        Me.txtSKU.Visible = False
         '
         'frmNewProduct
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(865, 567)
+        Me.Controls.Add(Me.txtSKU)
+        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.mtxtUPC)
         Me.Controls.Add(Me.mtxtSKU)
         Me.Controls.Add(Me.Label9)
@@ -666,4 +700,7 @@ Partial Class frmNewProduct
     Friend WithEvents Label9 As Label
     Friend WithEvents mtxtSKU As MaskedTextBox
     Friend WithEvents mtxtUPC As MaskedTextBox
+    Friend WithEvents mnuUpdate As ToolStripMenuItem
+    Friend WithEvents btnSave As Button
+    Friend WithEvents txtSKU As TextBox
 End Class

@@ -60,9 +60,52 @@
         frmProductsAndInventoryMenu.Show()
     End Sub
 
-	'---------------------------closing form and opening suppliers form
-	Private Sub btnSupplierInfo_Click(sender As Object, e As EventArgs) Handles btnSupplierInfo.Click
+    '----------------------------------------------------------------------------------------------------------closing form and opening suppliers form
+    Private Sub btnSupplierInfo_Click(sender As Object, e As EventArgs) Handles btnSupplierInfo.Click
 		Me.Hide()
 		frmSuppliers.Show()
 	End Sub
+    '-------------------------------------------------------------------------------------------------------------employee button clicked 
+    Private Sub btnEmployees_Click(sender As Object, e As EventArgs) Handles btnEmployees.Click
+        Employees.Show()
+        Me.Hide()
+    End Sub
+
+    '-----------------------------------------------------------------------------------------------------search for an employee by name or ID
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        MainFormEmployeeSearch.ShowDialog()
+    End Sub
+
+    Private Sub TextBox1_EnabledChanged(sender As Object, e As EventArgs) Handles TextBox1.EnabledChanged
+        If TextBox1.Text <> "" Then
+
+            btnCheckout.Enabled = True
+            btnSupplierInfo.Enabled = True
+            btnItemReturns.Enabled = True
+            btnCustomers.Enabled = True
+            btnInventory.Enabled = True
+            btnGiftCards.Enabled = True
+            btnEmployees.Enabled = True
+            btnDeliveries.Enabled = True
+            btnReports.Enabled = True
+            btnPromotions.Enabled = True
+
+        End If
+    End Sub
+
+    Private Sub frmPrimaryForm_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
+        If TextBox1.Text = "" Then
+
+            MessageBox.Show("please select an employee")
+
+        End If
+    End Sub
+
+	Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+		NewShinpping.ShowDialog()
+	End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        MarketingCampaigns.Show()
+    End Sub
 End Class
