@@ -19,6 +19,7 @@ Public Class frmNewProduct
         If MessageBox.Show("Are you sure you want to cancel?", "Cancel",
            MessageBoxButtons.YesNo) = DialogResult.Yes Then
             ' Display the menu for Products and Inventory
+            Me.Close()
             frmProductsAndInventoryMenu.Show()
         End If
     End Sub
@@ -162,6 +163,8 @@ Public Class frmNewProduct
         ' Enable the UPC box
         mtxtUPC.Enabled = True
         mtxtUPC.ReadOnly = False
+        frmNewInventory.txtUnitCost.Enabled = True
+        frmNewInventory.txtUnitCost.ReadOnly = False
     End Sub
 
     Private Sub rbYes_CheckedChanged(sender As Object, e As EventArgs) Handles rbYes.CheckedChanged
@@ -169,6 +172,9 @@ Public Class frmNewProduct
         mtxtUPC.Clear()
         mtxtUPC.Enabled = False
         mtxtUPC.ReadOnly = True
+        frmNewInventory.txtUnitCost.Enabled = False
+        frmNewInventory.txtUnitCost.ReadOnly = True
+        frmNewInventory.txtUnitCost.Text = "0.0000"
     End Sub
 
     Private Sub mnuUpdate_Click(sender As Object, e As EventArgs) Handles mnuUpdate.Click

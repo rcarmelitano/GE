@@ -36,6 +36,11 @@ Partial Class frmNewReturn
         Me.txtOrderDetailID = New System.Windows.Forms.TextBox()
         Me.txtReason = New System.Windows.Forms.TextBox()
         Me.dgvOrderDetails = New System.Windows.Forms.DataGridView()
+        Me.OrderDetailIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAddID = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.OrderDetailsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.nudQuantity = New System.Windows.Forms.NumericUpDown()
@@ -47,11 +52,6 @@ Partial Class frmNewReturn
         Me.ReturnsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ReturnsTableAdapter()
         Me.GeDataSet1 = New GroceryGUI.GEDataSet()
         Me.btnOrderID = New System.Windows.Forms.Button()
-        Me.OrderDetailIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAddID = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvOrderDetails, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OrderDetailsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,6 +175,52 @@ Partial Class frmNewReturn
         Me.dgvOrderDetails.Size = New System.Drawing.Size(295, 145)
         Me.dgvOrderDetails.TabIndex = 13
         '
+        'OrderDetailIDDataGridViewTextBoxColumn
+        '
+        Me.OrderDetailIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.OrderDetailIDDataGridViewTextBoxColumn.DataPropertyName = "orderDetailID"
+        Me.OrderDetailIDDataGridViewTextBoxColumn.HeaderText = "orderDetailID"
+        Me.OrderDetailIDDataGridViewTextBoxColumn.Name = "OrderDetailIDDataGridViewTextBoxColumn"
+        Me.OrderDetailIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.OrderDetailIDDataGridViewTextBoxColumn.Width = 94
+        '
+        'SKUDataGridViewTextBoxColumn
+        '
+        Me.SKUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
+        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SKUDataGridViewTextBoxColumn.Width = 54
+        '
+        'quantity
+        '
+        Me.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.quantity.DataPropertyName = "quantity"
+        Me.quantity.HeaderText = "quantity"
+        Me.quantity.Name = "quantity"
+        Me.quantity.ReadOnly = True
+        Me.quantity.Visible = False
+        '
+        'price
+        '
+        Me.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.price.DataPropertyName = "price"
+        Me.price.HeaderText = "price"
+        Me.price.Name = "price"
+        Me.price.ReadOnly = True
+        Me.price.Width = 55
+        '
+        'btnAddID
+        '
+        Me.btnAddID.HeaderText = ""
+        Me.btnAddID.Name = "btnAddID"
+        Me.btnAddID.ReadOnly = True
+        Me.btnAddID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.btnAddID.Text = "Add"
+        Me.btnAddID.UseColumnTextForButtonValue = True
+        Me.btnAddID.Width = 63
+        '
         'OrderDetailsBindingSource
         '
         Me.OrderDetailsBindingSource.DataMember = "Order_Details"
@@ -241,53 +287,6 @@ Partial Class frmNewReturn
         Me.btnOrderID.TabIndex = 21
         Me.btnOrderID.Text = "Enter ID"
         Me.btnOrderID.UseVisualStyleBackColor = True
-        '
-        'OrderDetailIDDataGridViewTextBoxColumn
-        '
-        Me.OrderDetailIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.OrderDetailIDDataGridViewTextBoxColumn.DataPropertyName = "orderDetailID"
-        Me.OrderDetailIDDataGridViewTextBoxColumn.HeaderText = "orderDetailID"
-        Me.OrderDetailIDDataGridViewTextBoxColumn.Name = "OrderDetailIDDataGridViewTextBoxColumn"
-        Me.OrderDetailIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.OrderDetailIDDataGridViewTextBoxColumn.Width = 94
-        '
-        'SKUDataGridViewTextBoxColumn
-        '
-        Me.SKUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
-        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
-        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
-        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SKUDataGridViewTextBoxColumn.Width = 54
-        '
-        'quantity
-        '
-        Me.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.quantity.DataPropertyName = "quantity"
-        Me.quantity.HeaderText = "quantity"
-        Me.quantity.Name = "quantity"
-        Me.quantity.ReadOnly = True
-        Me.quantity.Visible = False
-        Me.quantity.Width = 69
-        '
-        'price
-        '
-        Me.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.price.DataPropertyName = "price"
-        Me.price.HeaderText = "price"
-        Me.price.Name = "price"
-        Me.price.ReadOnly = True
-        Me.price.Width = 55
-        '
-        'btnAddID
-        '
-        Me.btnAddID.HeaderText = ""
-        Me.btnAddID.Name = "btnAddID"
-        Me.btnAddID.ReadOnly = True
-        Me.btnAddID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.btnAddID.Text = "Add"
-        Me.btnAddID.UseColumnTextForButtonValue = True
-        Me.btnAddID.Width = 63
         '
         'frmNewReturn
         '

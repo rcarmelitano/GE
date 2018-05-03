@@ -29,8 +29,9 @@ Public Class frmNewReturn
                 addReturn.Parameters.AddWithValue("@quantity", nudQuantity.Text)
                 addReturn.Parameters.AddWithValue("@returnDate", dtpReturnDate.Text)
 
+                ' Open the connection and run the query
                 returnsConnection.Open()
-                Dim rowsAffected As Integer = addReturn.ExecuteNonQuery()
+                addReturn.ExecuteNonQuery()
 
                 ' Close the form and display the primary form
                 Me.Close()
