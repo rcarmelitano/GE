@@ -48,7 +48,7 @@ Partial Class frmInventory
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuClose})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(946, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(810, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -69,7 +69,7 @@ Partial Class frmInventory
         Me.dgvInventory.Location = New System.Drawing.Point(12, 27)
         Me.dgvInventory.Name = "dgvInventory"
         Me.dgvInventory.RowHeadersVisible = False
-        Me.dgvInventory.Size = New System.Drawing.Size(922, 367)
+        Me.dgvInventory.Size = New System.Drawing.Size(786, 367)
         Me.dgvInventory.TabIndex = 1
         '
         'InventoryIDDataGridViewTextBoxColumn
@@ -147,7 +147,7 @@ Partial Class frmInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(946, 406)
+        Me.ClientSize = New System.Drawing.Size(810, 403)
         Me.Controls.Add(Me.dgvInventory)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

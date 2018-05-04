@@ -52,6 +52,7 @@ Public Class frmUpdateGiftCard
         dtpDateOfPurchase.CustomFormat = "MM/dd/yyyy"
 
         'Calculate the minimum and output it
+        txtCurrentTotal.Text = newMinimum
         newMinimum += 5
         nudCardTotal.Minimum = newMinimum
     End Sub

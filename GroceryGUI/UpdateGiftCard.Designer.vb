@@ -33,6 +33,8 @@ Partial Class frmUpdateGiftCard
         Me.Label8 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtCurrentTotal = New System.Windows.Forms.TextBox()
         CType(Me.nudCardTotal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -59,7 +61,7 @@ Partial Class frmUpdateGiftCard
         '
         Me.nudCardTotal.DecimalPlaces = 2
         Me.nudCardTotal.Increment = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.nudCardTotal.Location = New System.Drawing.Point(110, 167)
+        Me.nudCardTotal.Location = New System.Drawing.Point(110, 191)
         Me.nudCardTotal.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
         Me.nudCardTotal.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.nudCardTotal.Name = "nudCardTotal"
@@ -70,7 +72,7 @@ Partial Class frmUpdateGiftCard
         '
         'btnRefillGiftCard
         '
-        Me.btnRefillGiftCard.Location = New System.Drawing.Point(122, 209)
+        Me.btnRefillGiftCard.Location = New System.Drawing.Point(122, 233)
         Me.btnRefillGiftCard.Name = "btnRefillGiftCard"
         Me.btnRefillGiftCard.Size = New System.Drawing.Size(134, 33)
         Me.btnRefillGiftCard.TabIndex = 79
@@ -80,11 +82,11 @@ Partial Class frmUpdateGiftCard
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(45, 169)
+        Me.Label2.Location = New System.Drawing.Point(20, 193)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 13)
+        Me.Label2.Size = New System.Drawing.Size(84, 13)
         Me.Label2.TabIndex = 78
-        Me.Label2.Text = "Card Total:"
+        Me.Label2.Text = "New Card Total:"
         '
         'Label1
         '
@@ -136,11 +138,31 @@ Partial Class frmUpdateGiftCard
         Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(8, 162)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(96, 13)
+        Me.Label3.TabIndex = 87
+        Me.Label3.Text = "Current Card Total:"
+        '
+        'txtCurrentTotal
+        '
+        Me.txtCurrentTotal.Enabled = False
+        Me.txtCurrentTotal.Location = New System.Drawing.Point(110, 159)
+        Me.txtCurrentTotal.Name = "txtCurrentTotal"
+        Me.txtCurrentTotal.ReadOnly = True
+        Me.txtCurrentTotal.Size = New System.Drawing.Size(213, 20)
+        Me.txtCurrentTotal.TabIndex = 88
+        '
         'frmUpdateGiftCard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(378, 247)
+        Me.ClientSize = New System.Drawing.Size(378, 278)
+        Me.Controls.Add(Me.txtCurrentTotal)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtGiftCardID)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.nudCardTotal)
@@ -176,4 +198,6 @@ Partial Class frmUpdateGiftCard
     Friend WithEvents Label8 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtCurrentTotal As TextBox
 End Class
