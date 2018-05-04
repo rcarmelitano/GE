@@ -24,6 +24,11 @@ Partial Class CustomerView
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CustomersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CustomersTableAdapter()
         Me.CustomerIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -35,11 +40,6 @@ Partial Class CustomerView
         Me.UsedLineOfCreditDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WholeSaleDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.TaxExemptDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CustomersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CustomersTableAdapter()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,83 +60,6 @@ Partial Class CustomerView
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(1156, 302)
         Me.DataGridView1.TabIndex = 0
-        '
-        'CustomerIDDataGridViewTextBoxColumn
-        '
-        Me.CustomerIDDataGridViewTextBoxColumn.DataPropertyName = "customerID"
-        Me.CustomerIDDataGridViewTextBoxColumn.HeaderText = "customerID"
-        Me.CustomerIDDataGridViewTextBoxColumn.Name = "CustomerIDDataGridViewTextBoxColumn"
-        Me.CustomerIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'FirstNameDataGridViewTextBoxColumn
-        '
-        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
-        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "firstName"
-        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
-        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'LastNameDataGridViewTextBoxColumn
-        '
-        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName"
-        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "lastName"
-        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
-        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CustomerDOBDataGridViewTextBoxColumn
-        '
-        Me.CustomerDOBDataGridViewTextBoxColumn.DataPropertyName = "customerDOB"
-        Me.CustomerDOBDataGridViewTextBoxColumn.HeaderText = "customerDOB"
-        Me.CustomerDOBDataGridViewTextBoxColumn.Name = "CustomerDOBDataGridViewTextBoxColumn"
-        Me.CustomerDOBDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PrimaryPhoneDataGridViewTextBoxColumn
-        '
-        Me.PrimaryPhoneDataGridViewTextBoxColumn.DataPropertyName = "primaryPhone"
-        Me.PrimaryPhoneDataGridViewTextBoxColumn.HeaderText = "primaryPhone"
-        Me.PrimaryPhoneDataGridViewTextBoxColumn.Name = "PrimaryPhoneDataGridViewTextBoxColumn"
-        Me.PrimaryPhoneDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SecondaryPhoneDataGridViewTextBoxColumn
-        '
-        Me.SecondaryPhoneDataGridViewTextBoxColumn.DataPropertyName = "secondaryPhone"
-        Me.SecondaryPhoneDataGridViewTextBoxColumn.HeaderText = "secondaryPhone"
-        Me.SecondaryPhoneDataGridViewTextBoxColumn.Name = "SecondaryPhoneDataGridViewTextBoxColumn"
-        Me.SecondaryPhoneDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EmailDataGridViewTextBoxColumn
-        '
-        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
-        Me.EmailDataGridViewTextBoxColumn.HeaderText = "email"
-        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
-        Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'LineOfCreditDataGridViewTextBoxColumn
-        '
-        Me.LineOfCreditDataGridViewTextBoxColumn.DataPropertyName = "lineOfCredit"
-        Me.LineOfCreditDataGridViewTextBoxColumn.HeaderText = "lineOfCredit"
-        Me.LineOfCreditDataGridViewTextBoxColumn.Name = "LineOfCreditDataGridViewTextBoxColumn"
-        Me.LineOfCreditDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UsedLineOfCreditDataGridViewTextBoxColumn
-        '
-        Me.UsedLineOfCreditDataGridViewTextBoxColumn.DataPropertyName = "usedLineOfCredit"
-        Me.UsedLineOfCreditDataGridViewTextBoxColumn.HeaderText = "usedLineOfCredit"
-        Me.UsedLineOfCreditDataGridViewTextBoxColumn.Name = "UsedLineOfCreditDataGridViewTextBoxColumn"
-        Me.UsedLineOfCreditDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'WholeSaleDataGridViewCheckBoxColumn
-        '
-        Me.WholeSaleDataGridViewCheckBoxColumn.DataPropertyName = "wholeSale"
-        Me.WholeSaleDataGridViewCheckBoxColumn.HeaderText = "wholeSale"
-        Me.WholeSaleDataGridViewCheckBoxColumn.Name = "WholeSaleDataGridViewCheckBoxColumn"
-        Me.WholeSaleDataGridViewCheckBoxColumn.ReadOnly = True
-        '
-        'TaxExemptDataGridViewCheckBoxColumn
-        '
-        Me.TaxExemptDataGridViewCheckBoxColumn.DataPropertyName = "taxExempt"
-        Me.TaxExemptDataGridViewCheckBoxColumn.HeaderText = "taxExempt"
-        Me.TaxExemptDataGridViewCheckBoxColumn.Name = "TaxExemptDataGridViewCheckBoxColumn"
-        Me.TaxExemptDataGridViewCheckBoxColumn.ReadOnly = True
         '
         'CustomersBindingSource
         '
@@ -167,6 +90,83 @@ Partial Class CustomerView
         '
         Me.CustomersTableAdapter.ClearBeforeFill = True
         '
+        'CustomerIDDataGridViewTextBoxColumn
+        '
+        Me.CustomerIDDataGridViewTextBoxColumn.DataPropertyName = "customerID"
+        Me.CustomerIDDataGridViewTextBoxColumn.HeaderText = "Customer ID"
+        Me.CustomerIDDataGridViewTextBoxColumn.Name = "CustomerIDDataGridViewTextBoxColumn"
+        Me.CustomerIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FirstNameDataGridViewTextBoxColumn
+        '
+        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
+        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "First Name"
+        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
+        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'LastNameDataGridViewTextBoxColumn
+        '
+        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName"
+        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "Last Name"
+        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
+        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustomerDOBDataGridViewTextBoxColumn
+        '
+        Me.CustomerDOBDataGridViewTextBoxColumn.DataPropertyName = "customerDOB"
+        Me.CustomerDOBDataGridViewTextBoxColumn.HeaderText = "Customer DOB"
+        Me.CustomerDOBDataGridViewTextBoxColumn.Name = "CustomerDOBDataGridViewTextBoxColumn"
+        Me.CustomerDOBDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PrimaryPhoneDataGridViewTextBoxColumn
+        '
+        Me.PrimaryPhoneDataGridViewTextBoxColumn.DataPropertyName = "primaryPhone"
+        Me.PrimaryPhoneDataGridViewTextBoxColumn.HeaderText = "Primary Phone"
+        Me.PrimaryPhoneDataGridViewTextBoxColumn.Name = "PrimaryPhoneDataGridViewTextBoxColumn"
+        Me.PrimaryPhoneDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SecondaryPhoneDataGridViewTextBoxColumn
+        '
+        Me.SecondaryPhoneDataGridViewTextBoxColumn.DataPropertyName = "secondaryPhone"
+        Me.SecondaryPhoneDataGridViewTextBoxColumn.HeaderText = "Secondary Phone"
+        Me.SecondaryPhoneDataGridViewTextBoxColumn.Name = "SecondaryPhoneDataGridViewTextBoxColumn"
+        Me.SecondaryPhoneDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmailDataGridViewTextBoxColumn
+        '
+        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
+        Me.EmailDataGridViewTextBoxColumn.HeaderText = "Email"
+        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
+        Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'LineOfCreditDataGridViewTextBoxColumn
+        '
+        Me.LineOfCreditDataGridViewTextBoxColumn.DataPropertyName = "lineOfCredit"
+        Me.LineOfCreditDataGridViewTextBoxColumn.HeaderText = "Line Of Credit"
+        Me.LineOfCreditDataGridViewTextBoxColumn.Name = "LineOfCreditDataGridViewTextBoxColumn"
+        Me.LineOfCreditDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UsedLineOfCreditDataGridViewTextBoxColumn
+        '
+        Me.UsedLineOfCreditDataGridViewTextBoxColumn.DataPropertyName = "usedLineOfCredit"
+        Me.UsedLineOfCreditDataGridViewTextBoxColumn.HeaderText = "Used Line Of Credit"
+        Me.UsedLineOfCreditDataGridViewTextBoxColumn.Name = "UsedLineOfCreditDataGridViewTextBoxColumn"
+        Me.UsedLineOfCreditDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'WholeSaleDataGridViewCheckBoxColumn
+        '
+        Me.WholeSaleDataGridViewCheckBoxColumn.DataPropertyName = "wholeSale"
+        Me.WholeSaleDataGridViewCheckBoxColumn.HeaderText = "Whole Sale"
+        Me.WholeSaleDataGridViewCheckBoxColumn.Name = "WholeSaleDataGridViewCheckBoxColumn"
+        Me.WholeSaleDataGridViewCheckBoxColumn.ReadOnly = True
+        '
+        'TaxExemptDataGridViewCheckBoxColumn
+        '
+        Me.TaxExemptDataGridViewCheckBoxColumn.DataPropertyName = "taxExempt"
+        Me.TaxExemptDataGridViewCheckBoxColumn.HeaderText = "Tax Exempt"
+        Me.TaxExemptDataGridViewCheckBoxColumn.Name = "TaxExemptDataGridViewCheckBoxColumn"
+        Me.TaxExemptDataGridViewCheckBoxColumn.ReadOnly = True
+        '
         'CustomerView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -179,7 +179,7 @@ Partial Class CustomerView
         Me.MaximizeBox = False
         Me.Name = "CustomerView"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CustomerView"
+        Me.Text = "Customers List"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()

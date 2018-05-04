@@ -88,10 +88,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="audit.Designer.vb">
-      <DependentUpon>audit.vb</DependentUpon>
+    <Compile Include="CreditChangeReason.Designer.vb">
+      <DependentUpon>CreditChangeReason.vb</DependentUpon>
     </Compile>
-    <Compile Include="audit.vb">
+    <Compile Include="CreditChangeReason.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="billingAdresses.Designer.vb">
@@ -311,9 +311,11 @@
     </Compile>
     <Compile Include="Promotion.Designer.vb">
       <DependentUpon>Promotion.vb</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Promotion.vb">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ReportsMenu.Designer.vb">
       <DependentUpon>ReportsMenu.vb</DependentUpon>
@@ -321,10 +323,10 @@
     <Compile Include="ReportsMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewShipping.designer.vb">
-      <DependentUpon>NewShipping.vb</DependentUpon>
+    <Compile Include="NewShippingAddress.designer.vb">
+      <DependentUpon>NewShippingAddress.vb</DependentUpon>
     </Compile>
-    <Compile Include="NewShipping.vb">
+    <Compile Include="NewShippingAddress.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ShipmentConfirmation.Designer.vb">
@@ -369,10 +371,10 @@
     <Compile Include="Suppliers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="testing.Designer.vb">
-      <DependentUpon>testing.vb</DependentUpon>
+    <Compile Include="AuditTable.Designer.vb">
+      <DependentUpon>AuditTable.vb</DependentUpon>
     </Compile>
-    <Compile Include="testing.vb">
+    <Compile Include="AuditTable.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="updateCustomer.Designer.vb">
@@ -389,8 +391,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="audit.resx">
-      <DependentUpon>audit.vb</DependentUpon>
+    <EmbeddedResource Include="billingAdresses.resx">
+      <DependentUpon>billingAdresses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditChangeReason.resx">
+      <DependentUpon>CreditChangeReason.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="coupons.resx">
       <DependentUpon>coupons.vb</DependentUpon>
@@ -493,12 +498,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Promotion.resx">
       <DependentUpon>Promotion.vb</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsMenu.resx">
       <DependentUpon>ReportsMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewShipping.resx">
-      <DependentUpon>NewShipping.vb</DependentUpon>
+    <EmbeddedResource Include="NewShippingAddress.resx">
+      <DependentUpon>NewShippingAddress.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShipmentConfirmation.resx">
       <DependentUpon>ShipmentConfirmation.vb</DependentUpon>
@@ -521,8 +527,8 @@
     <EmbeddedResource Include="Suppliers.resx">
       <DependentUpon>Suppliers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="testing.resx">
-      <DependentUpon>testing.vb</DependentUpon>
+    <EmbeddedResource Include="AuditTable.resx">
+      <DependentUpon>AuditTable.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="updateCustomer.resx">
       <DependentUpon>updateCustomer.vb</DependentUpon>

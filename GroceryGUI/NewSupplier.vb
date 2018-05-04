@@ -266,4 +266,8 @@ email=@email,address1=@address1,address2=@address2,city= @city,[state]= @state,z
 
     End Sub
 
+    Private Sub NewSupplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Disable the form controls
+        Me.ControlBox = False
+    End Sub
 End Class

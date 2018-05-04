@@ -30,4 +30,9 @@
         ' Display the promotions view form
         frmPromotionsView.Show()
     End Sub
+
+    Private Sub frmPromotion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Disable the form controls
+        Me.ControlBox = False
+    End Sub
 End Class

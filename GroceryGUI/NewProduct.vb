@@ -14,6 +14,10 @@ Public Class frmNewProduct
 
         ' Disable the Status checkbox
         cbStatus.Enabled = False
+
+
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuClose.Click

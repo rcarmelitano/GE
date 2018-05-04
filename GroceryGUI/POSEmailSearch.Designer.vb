@@ -38,7 +38,9 @@ Partial Class POSEmailSearch
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(211, 22)
         Me.Controls.Add(Me.TextBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "POSEmailSearch"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "POSEmailSearch"
         Me.ResumeLayout(False)
         Me.PerformLayout()

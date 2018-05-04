@@ -51,8 +51,10 @@ Partial Class POSCustomerSearch
         Me.ClientSize = New System.Drawing.Size(283, 99)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "POSCustomerSearch"
-        Me.Text = "POSCustomerSearch"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "POS Customer Search"
         Me.ResumeLayout(False)
 
     End Sub

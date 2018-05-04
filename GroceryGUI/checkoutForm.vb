@@ -56,7 +56,9 @@
 		'TODO: This line of code loads data into the 'GEDataSet.Products' table. You can move, or remove it, as needed.
 		Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
 
-	End Sub
+        ' Disable the form controls
+        Me.ControlBox = False
+    End Sub
 
 	'-----------------------------------------------------------------------------------------------------------------------setting employee ID
 	Private Sub txtEmployeeID_TextChanged(sender As Object, e As EventArgs) Handles txtEmployeeID.TextChanged

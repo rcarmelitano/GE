@@ -35,6 +35,7 @@ Partial Class MainFormEmployeeSearch
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +62,7 @@ Partial Class MainFormEmployeeSearch
         Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
+        Me.TableAdapterManager.CreditAuditTableAdapter = Nothing
         Me.TableAdapterManager.CustomersTableAdapter = Nothing
         Me.TableAdapterManager.DepartmentsTableAdapter = Nothing
         Me.TableAdapterManager.Discount_TypeTableAdapter = Nothing
@@ -98,9 +100,10 @@ Partial Class MainFormEmployeeSearch
         Me.EmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.EmployeesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.Column1})
         Me.EmployeesDataGridView.DataSource = Me.EmployeesBindingSource
-        Me.EmployeesDataGridView.Location = New System.Drawing.Point(12, 93)
+        Me.EmployeesDataGridView.Location = New System.Drawing.Point(8, 93)
         Me.EmployeesDataGridView.Name = "EmployeesDataGridView"
-        Me.EmployeesDataGridView.Size = New System.Drawing.Size(447, 220)
+        Me.EmployeesDataGridView.RowHeadersVisible = False
+        Me.EmployeesDataGridView.Size = New System.Drawing.Size(423, 206)
         Me.EmployeesDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
@@ -132,7 +135,7 @@ Partial Class MainFormEmployeeSearch
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1, 0)
+        Me.Button1.Location = New System.Drawing.Point(0, 0)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 2
@@ -141,25 +144,35 @@ Partial Class MainFormEmployeeSearch
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 67)
+        Me.TextBox1.Location = New System.Drawing.Point(81, 69)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 3
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(118, 67)
+        Me.Button2.Location = New System.Drawing.Point(187, 67)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "Search"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(5, 72)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(70, 13)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Employee ID:"
+        '
         'MainFormEmployeeSearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(458, 311)
+        Me.ClientSize = New System.Drawing.Size(439, 306)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button1)
@@ -168,7 +181,7 @@ Partial Class MainFormEmployeeSearch
         Me.MaximizeBox = False
         Me.Name = "MainFormEmployeeSearch"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "MainFormEmployeeSearch"
+        Me.Text = "Employee Search and Selection"
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -189,4 +202,5 @@ Partial Class MainFormEmployeeSearch
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewButtonColumn
+    Friend WithEvents Label1 As Label
 End Class

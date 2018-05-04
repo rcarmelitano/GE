@@ -35,11 +35,15 @@ Public Class frmUpdateCustomer
 
 	'----------------------------------------------------------------------------------------------------------------------------------form loader
 	Private Sub frmUpdateCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+		Me.ControlBox = False
 		total = txtAvailableCredit.Text
 		txtFirst.Select()
 		Me.Gift_CardsTableAdapter.CustomerGiftCards(Me.GEDataSet.Gift_Cards, CustomerIDTextBox.Text)
 
 		'select max(id) from invoicetable
+
+
+		' Disable the form controls
 
 	End Sub
 
@@ -147,8 +151,8 @@ Public Class frmUpdateCustomer
         '------------------------------------------------checking to see if the line of credit has been changed 
         If txtAvailableCredit.Text <> total Then
 
-			audit.ShowDialog()
-			Dim reason As String = audit.RichTextBox1.Text
+			CreditChangeReason.ShowDialog()
+			Dim reason As String = CreditChangeReason.RichTextBox1.Text
 			MessageBox.Show(reason)
 			Dim command2 As New SqlCommand("INSERT INTO CreditAudit (EmployeeId,CustomerId,startamount,newAmount,ChangedOn,reason) 
 Values (@EmployeeID, @CustomerId, @Start, @new, @date, @reason)", something)
@@ -160,7 +164,7 @@ Values (@EmployeeID, @CustomerId, @Start, @new, @date, @reason)", something)
 			command2.Parameters.AddWithValue("@new", txtAvailableCredit.Text)
 			command2.Parameters.AddWithValue("@date", DateTime.Now)
 			command2.Parameters.AddWithValue("@reason", reason)
-			audit.Close()
+			CreditChangeReason.Close()
 
 
 			Try
@@ -199,7 +203,7 @@ Values (@EmployeeID, @CustomerId, @Start, @new, @date, @reason)", something)
 		Command.Parameters.AddWithValue("@customerID", CustomerIDTextBox.Text)
 
 		Try
-			testing.Show()
+			AuditTable.Show()
 			something.Open()
 			Dim rowsaffected As Integer = Command.ExecuteNonQuery()
 
@@ -231,7 +235,7 @@ Values (@EmployeeID, @CustomerId, @Start, @new, @date, @reason)", something)
         If txtAvailableCredit.Text > total Or txtAvailableCredit.Text < total Then
 
 			something.Close()
-			audit.ShowDialog()
+			CreditChangeReason.ShowDialog()
 		End If
 
 
@@ -286,9 +290,9 @@ Values (@EmployeeID, @CustomerId, @Start, @new, @date, @reason)", something)
 	End Sub
 
 	Private Sub AddressToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddressToolStripMenuItem.Click
-		ShippingAdresses.Show()
+        ShippingAdresses.ShowDialog()
 
-	End Sub
+    End Sub
 End Class
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

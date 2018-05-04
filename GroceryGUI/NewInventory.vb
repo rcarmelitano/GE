@@ -25,6 +25,8 @@ Public Class frmNewInventory
         ' Display the new ID
         txtInventoryID.Text = inventoryID
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 
     Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click

@@ -39,7 +39,9 @@ Partial Class frmShipmentConfirmation
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(454, 393)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmShipmentConfirmation"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Shipment Confirmation"
         Me.ResumeLayout(False)
         Me.PerformLayout()

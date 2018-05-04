@@ -11,6 +11,9 @@
 
     Private Sub frmDiscounts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnAddDiscount.Enabled = False
+
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 
     Private Sub Discounts_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

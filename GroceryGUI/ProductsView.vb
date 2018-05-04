@@ -8,5 +8,7 @@
         'TODO: This line of code loads data into the 'GEDataSet.Products' table. You can move, or remove it, as needed.
         Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 End Class

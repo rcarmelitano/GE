@@ -22,9 +22,16 @@ Partial Class billingAdresses
 	'Do not modify it using the code editor.
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
-		components = New System.ComponentModel.Container
-		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(800, 450)
-		Me.Text = "billingAdresses"
-	End Sub
+        Me.SuspendLayout()
+        '
+        'billingAdresses
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Name = "billingAdresses"
+        Me.Text = "billingAdresses"
+        Me.ResumeLayout(False)
+
+    End Sub
 End Class

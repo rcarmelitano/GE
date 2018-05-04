@@ -8,6 +8,8 @@
         'TODO: This line of code loads data into the 'GEDataSet.Shipment' table. You can move, or remove it, as needed.
         Me.ShipmentTableAdapter.Fill(Me.GEDataSet.Shipment)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 
     Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click

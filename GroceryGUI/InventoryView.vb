@@ -8,5 +8,7 @@
         'TODO: This line of code loads data into the 'GEDataSet.Inventory' table. You can move, or remove it, as needed.
         Me.InventoryTableAdapter.Fill(Me.GEDataSet.Inventory)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 End Class

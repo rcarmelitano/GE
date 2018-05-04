@@ -52,4 +52,9 @@
     Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
         Me.Purchase_OrderTableAdapter.PurchaseHistory(Me.GEDataSet.Purchase_Order, intid)
     End Sub
+
+    Private Sub supplierhistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Disable the form controls
+        Me.ControlBox = False
+    End Sub
 End Class

@@ -37,19 +37,23 @@ Public Class frmCustomerHistory
     End Sub
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     Private Sub OrdersDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles OrdersDataGridView.CellContentClick
-        If e.ColumnIndex <> 6 Then
-            Exit Sub
-        End If
-        frmorderHIstory.Show()
-        Me.Hide()
+		If e.ColumnIndex <> 6 Then
+			Exit Sub
+		End If
 
-        Try
-            frmorderHIstory.loadDetails(OrdersDataGridView.Rows(e.RowIndex).Cells(0).Value)
-        Catch ex As Exception
+		Try
+			frmorderHIstory.loadDetails(OrdersDataGridView.Rows(e.RowIndex).Cells(0).Value)
+			frmorderHIstory.ShowDialog()
+		Catch ex As Exception
 
-        End Try
-
+		End Try
 
 
+
+    End Sub
+
+    Private Sub frmCustomerHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 End Class

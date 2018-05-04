@@ -26,14 +26,14 @@ Partial Class frmDiscountsView
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DiscountsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.DiscountsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DiscountsTableAdapter()
         Me.DiscountIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DiscountTypeIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BuyOneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GetOneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DiscountAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DiscountsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.DiscountsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DiscountsTableAdapter()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DiscountsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,41 +70,6 @@ Partial Class frmDiscountsView
         Me.DataGridView1.Size = New System.Drawing.Size(523, 279)
         Me.DataGridView1.TabIndex = 1
         '
-        'DiscountIDDataGridViewTextBoxColumn
-        '
-        Me.DiscountIDDataGridViewTextBoxColumn.DataPropertyName = "discountID"
-        Me.DiscountIDDataGridViewTextBoxColumn.HeaderText = "discountID"
-        Me.DiscountIDDataGridViewTextBoxColumn.Name = "DiscountIDDataGridViewTextBoxColumn"
-        Me.DiscountIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DiscountTypeIDDataGridViewTextBoxColumn
-        '
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.DataPropertyName = "discountTypeID"
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.HeaderText = "discountTypeID"
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.Name = "DiscountTypeIDDataGridViewTextBoxColumn"
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'BuyOneDataGridViewTextBoxColumn
-        '
-        Me.BuyOneDataGridViewTextBoxColumn.DataPropertyName = "buyOne"
-        Me.BuyOneDataGridViewTextBoxColumn.HeaderText = "buyOne"
-        Me.BuyOneDataGridViewTextBoxColumn.Name = "BuyOneDataGridViewTextBoxColumn"
-        Me.BuyOneDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'GetOneDataGridViewTextBoxColumn
-        '
-        Me.GetOneDataGridViewTextBoxColumn.DataPropertyName = "getOne"
-        Me.GetOneDataGridViewTextBoxColumn.HeaderText = "getOne"
-        Me.GetOneDataGridViewTextBoxColumn.Name = "GetOneDataGridViewTextBoxColumn"
-        Me.GetOneDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DiscountAmountDataGridViewTextBoxColumn
-        '
-        Me.DiscountAmountDataGridViewTextBoxColumn.DataPropertyName = "discountAmount"
-        Me.DiscountAmountDataGridViewTextBoxColumn.HeaderText = "discountAmount"
-        Me.DiscountAmountDataGridViewTextBoxColumn.Name = "DiscountAmountDataGridViewTextBoxColumn"
-        Me.DiscountAmountDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'DiscountsBindingSource
         '
         Me.DiscountsBindingSource.DataMember = "Discounts"
@@ -118,6 +83,41 @@ Partial Class frmDiscountsView
         'DiscountsTableAdapter
         '
         Me.DiscountsTableAdapter.ClearBeforeFill = True
+        '
+        'DiscountIDDataGridViewTextBoxColumn
+        '
+        Me.DiscountIDDataGridViewTextBoxColumn.DataPropertyName = "discountID"
+        Me.DiscountIDDataGridViewTextBoxColumn.HeaderText = "Discount ID"
+        Me.DiscountIDDataGridViewTextBoxColumn.Name = "DiscountIDDataGridViewTextBoxColumn"
+        Me.DiscountIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DiscountTypeIDDataGridViewTextBoxColumn
+        '
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.DataPropertyName = "discountTypeID"
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.HeaderText = "Discount Type ID"
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.Name = "DiscountTypeIDDataGridViewTextBoxColumn"
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'BuyOneDataGridViewTextBoxColumn
+        '
+        Me.BuyOneDataGridViewTextBoxColumn.DataPropertyName = "buyOne"
+        Me.BuyOneDataGridViewTextBoxColumn.HeaderText = "Buy One"
+        Me.BuyOneDataGridViewTextBoxColumn.Name = "BuyOneDataGridViewTextBoxColumn"
+        Me.BuyOneDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'GetOneDataGridViewTextBoxColumn
+        '
+        Me.GetOneDataGridViewTextBoxColumn.DataPropertyName = "getOne"
+        Me.GetOneDataGridViewTextBoxColumn.HeaderText = "Get One"
+        Me.GetOneDataGridViewTextBoxColumn.Name = "GetOneDataGridViewTextBoxColumn"
+        Me.GetOneDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DiscountAmountDataGridViewTextBoxColumn
+        '
+        Me.DiscountAmountDataGridViewTextBoxColumn.DataPropertyName = "discountAmount"
+        Me.DiscountAmountDataGridViewTextBoxColumn.HeaderText = "Discount Amount"
+        Me.DiscountAmountDataGridViewTextBoxColumn.Name = "DiscountAmountDataGridViewTextBoxColumn"
+        Me.DiscountAmountDataGridViewTextBoxColumn.ReadOnly = True
         '
         'frmDiscountsView
         '

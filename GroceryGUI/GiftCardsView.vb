@@ -10,5 +10,7 @@
         'TODO: This line of code loads data into the 'GEDataSet.Discounts' table. You can move, or remove it, as needed.
         Me.DiscountsTableAdapter.Fill(Me.GEDataSet.Discounts)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 End Class

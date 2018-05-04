@@ -21,6 +21,10 @@
         Else
             btnActivateGiftCard.Enabled = True
         End If
+
+
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 
     ' Grab the information of the selected cell for the customer id and store it in the text box for customer id

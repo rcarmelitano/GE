@@ -10,5 +10,7 @@
         'TODO: This line of code loads data into the 'GEDataSet.Purchase_Order_Details' table. You can move, or remove it, as needed.
         Me.Purchase_Order_DetailsTableAdapter.Fill(Me.GEDataSet.Purchase_Order_Details)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 End Class

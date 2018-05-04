@@ -8,5 +8,7 @@
         'TODO: This line of code loads data into the 'GEDataSet.Coupons' table. You can move, or remove it, as needed.
         Me.CouponsTableAdapter.Fill(Me.GEDataSet.Coupons)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 End Class

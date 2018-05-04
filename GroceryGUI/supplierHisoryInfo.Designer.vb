@@ -57,71 +57,39 @@ Partial Class supplierHisoryInfo
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-
         Me.TableAdapterManager.Billing_AddressesTableAdapter = Nothing
-
         Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
-
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
-
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
-
+        Me.TableAdapterManager.CreditAuditTableAdapter = Nothing
         Me.TableAdapterManager.CustomersTableAdapter = Nothing
-
         Me.TableAdapterManager.DepartmentsTableAdapter = Nothing
-
         Me.TableAdapterManager.Discount_TypeTableAdapter = Nothing
-
         Me.TableAdapterManager.DiscountsTableAdapter = Nothing
-
         Me.TableAdapterManager.EmployeesTableAdapter = Nothing
-
         Me.TableAdapterManager.Gift_CardsTableAdapter = Nothing
-
         Me.TableAdapterManager.InventoryTableAdapter = Nothing
-
         Me.TableAdapterManager.Item_DiscountTableAdapter = Nothing
-
         Me.TableAdapterManager.Marketing_CampaignsTableAdapter = Nothing
-
         Me.TableAdapterManager.Order_DetailsTableAdapter = Nothing
-
         Me.TableAdapterManager.Order_DiscountTableAdapter = Nothing
-
         Me.TableAdapterManager.OrdersTableAdapter = Nothing
-
         Me.TableAdapterManager.Payment_TypesTableAdapter = Nothing
-
         Me.TableAdapterManager.PaymentsTableAdapter = Nothing
-
         Me.TableAdapterManager.ProductsTableAdapter = Nothing
-
         Me.TableAdapterManager.Promo_Info_TypeTableAdapter = Nothing
-
         Me.TableAdapterManager.Promoted_ProductsTableAdapter = Nothing
-
         Me.TableAdapterManager.PromotionsTableAdapter = Nothing
-
         Me.TableAdapterManager.Purchase_Order_DetailsTableAdapter = Me.Purchase_Order_DetailsTableAdapter
-
         Me.TableAdapterManager.Purchase_OrderTableAdapter = Nothing
-
         Me.TableAdapterManager.ReturnsTableAdapter = Nothing
-
         Me.TableAdapterManager.Shipment_DetailsTableAdapter = Nothing
-
         Me.TableAdapterManager.ShipmentTableAdapter = Nothing
-
         Me.TableAdapterManager.ShippersTableAdapter = Nothing
-
         Me.TableAdapterManager.Shipping_AddressesTableAdapter = Nothing
-
         Me.TableAdapterManager.ShrinkageTableAdapter = Nothing
-
         Me.TableAdapterManager.StatusTableAdapter = Nothing
-
         Me.TableAdapterManager.SuppliersTableAdapter = Nothing
-
         Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = GroceryGUI.GEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -133,6 +101,7 @@ Partial Class supplierHisoryInfo
         Me.Purchase_Order_DetailsDataGridView.DataSource = Me.Purchase_Order_DetailsBindingSource
         Me.Purchase_Order_DetailsDataGridView.Location = New System.Drawing.Point(0, 90)
         Me.Purchase_Order_DetailsDataGridView.Name = "Purchase_Order_DetailsDataGridView"
+        Me.Purchase_Order_DetailsDataGridView.RowHeadersVisible = False
         Me.Purchase_Order_DetailsDataGridView.Size = New System.Drawing.Size(767, 220)
         Me.Purchase_Order_DetailsDataGridView.TabIndex = 1
         '
@@ -184,7 +153,9 @@ Partial Class supplierHisoryInfo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(837, 307)
         Me.Controls.Add(Me.Purchase_Order_DetailsDataGridView)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "supplierHisoryInfo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "supplierHisoryInfo"
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Purchase_Order_DetailsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

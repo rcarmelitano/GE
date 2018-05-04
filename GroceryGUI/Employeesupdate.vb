@@ -111,4 +111,52 @@ secondaryPhone = @phone2, employeeDOB =@DOB where employeeID = @employeeID", som
         frmPrimaryForm.Show()
 
     End Sub
+
+    Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
+        ' Ask the user if they are sure they want to cancel
+        If MessageBox.Show("Are you sure you want to cancel the update?", "Employee Update Cancellation",
+        MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Me.Close()
+            Employees.Show()
+        End If
+    End Sub
+
+    Private Sub Employeesupdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Disable the form controls
+        Me.ControlBox = False
+    End Sub
+
+	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+		'----------------------------checking to see if all the required information is done 
+		If Not validation() Then
+			Exit Sub
+		End If
+
+		'-----------------------------message box to see if you whant to save 
+		If MessageBox.Show("are you sure you whant to save the changes", "saving",
+				MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+			Exit Sub
+		End If
+
+		'-------CHECKING TO SEE IF TEXTBOX HAS ONLY LETTERS 
+		If System.Text.RegularExpressions.Regex.IsMatch(TextBox2.Text, "^[A-Za-z]+$") Or System.Text.RegularExpressions.Regex.IsMatch(TextBox3.Text, "^[A-Za-z]+$") Then
+			MessageBox.Show("letter")
+		Else
+			MessageBox.Show("letters only")
+			Exit Sub
+		End If
+
+		Dim Command As New SqlCommand("insert into Employees (employeeID, firstName,lastName, middleInitial, primaryPhone, secondaryPhone, employeeDOB)
+values (@empID, @First, @Last, @Middle, @primary, @secondary, @EmDOB)", something)
+
+		Try
+			something.Open()
+			Command.ExecuteNonQuery()
+		Catch
+
+		End Try
+		Me.Close()
+		frmPrimaryForm.Show()
+	End Sub
+
 End Class

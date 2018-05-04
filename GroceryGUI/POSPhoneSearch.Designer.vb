@@ -39,7 +39,9 @@ Partial Class POSPhoneSearch
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(120, 24)
         Me.Controls.Add(Me.MaskedTextBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "POSPhoneSearch"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "POSPhoneSearch"
         Me.ResumeLayout(False)
         Me.PerformLayout()

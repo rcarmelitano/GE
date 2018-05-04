@@ -77,7 +77,8 @@ Public Class frmNewReturn
     End Sub
 
     Private Sub frmNewReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        ' Disable the form controls
+        Me.ControlBox = False
 
         ' Converts the date and time of the datetimepicker to a usable string format
         dtpReturnDate.Format = DateTimePickerFormat.Custom

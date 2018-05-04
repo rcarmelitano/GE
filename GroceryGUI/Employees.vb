@@ -15,6 +15,8 @@ Public Class Employees
         'TODO: This line of code loads data into the 'GEDataSet.Employees' table. You can move, or remove it, as needed.
         Me.EmployeesTableAdapter.Fill(Me.GEDataSet.Employees)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
     '-------------------------------------------------------------------------------------------search when the search button is clicked
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

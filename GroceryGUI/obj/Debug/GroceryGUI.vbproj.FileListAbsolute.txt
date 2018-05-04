@@ -436,7 +436,6 @@ E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.vbproj.CoreCompileInputs.cache
 E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.exe
 E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.xml
 E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.pdb
-E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.audit.resources
 G:\GEneedtofix\GroceryGUI\bin\Debug\GE.mdf
 G:\GEneedtofix\GroceryGUI\bin\Debug\GE_log.ldf
 G:\GEneedtofix\GroceryGUI\bin\Debug\GroceryGUI.exe.config
@@ -483,7 +482,6 @@ G:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.vbproj.GenerateResource.Cache
 G:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.exe
 G:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.xml
 G:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.pdb
-D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.audit.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmorderHIstory.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.Employees.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.Employeesupdate.resources
@@ -543,9 +541,7 @@ E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.Employees.resources
 E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.Employeesupdate.resources
 E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.MainFormEmployeeSearch.resources
 E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.frmorderHIstory.resources
-E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.testing.resources
 F:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.testing.resources
-D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.testing.resources
 D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.supplierhistory.resources
 E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.supplierhistory.resources
 E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.ShippingAdresses.resources
@@ -570,3 +566,16 @@ F:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSCustomerSearch.resources
 F:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POScustumerInfo.resources
 F:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSEmailSearch.resources
 F:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.POSPhoneSearch.resources
+D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.NewShinpping.resources
+D:\GEneedtofix\GroceryGUI\bin\Debug\Promotion.resx
+D:\GEneedtofix\GroceryGUI\bin\Debug\Promotion.Designer.vb
+D:\GEneedtofix\GroceryGUI\bin\Debug\Promotion.vb
+D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.CreditChangeReason.resources
+D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.AuditTable.resources
+D:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.billingAdresses.resources
+E:\GEneedtofix\GroceryGUI\bin\Debug\Promotion.resx
+E:\GEneedtofix\GroceryGUI\bin\Debug\Promotion.Designer.vb
+E:\GEneedtofix\GroceryGUI\bin\Debug\Promotion.vb
+E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.billingAdresses.resources
+E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.CreditChangeReason.resources
+E:\GEneedtofix\GroceryGUI\obj\Debug\GroceryGUI.AuditTable.resources

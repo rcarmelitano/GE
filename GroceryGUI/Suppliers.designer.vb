@@ -58,7 +58,7 @@ Partial Class frmSuppliers
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuClose, Me.mnuNewSupplier})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1468, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1431, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -82,7 +82,7 @@ Partial Class frmSuppliers
         Me.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSuppliers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SupplierIDDataGridViewTextBoxColumn, Me.SupplierNameDataGridViewTextBoxColumn, Me.PocFirstNameDataGridViewTextBoxColumn, Me.PocLastNameDataGridViewTextBoxColumn, Me.PhoneNumberDataGridViewTextBoxColumn, Me.FaxNumberDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.Address1DataGridViewTextBoxColumn, Me.Address2DataGridViewTextBoxColumn, Me.CityDataGridViewTextBoxColumn, Me.StateDataGridViewTextBoxColumn, Me.ZIPDataGridViewTextBoxColumn, Me.NotesDataGridViewTextBoxColumn, Me.btnUpdate})
         Me.dgvSuppliers.DataSource = Me.SuppliersBindingSource
-        Me.dgvSuppliers.Location = New System.Drawing.Point(0, 81)
+        Me.dgvSuppliers.Location = New System.Drawing.Point(5, 27)
         Me.dgvSuppliers.Name = "dgvSuppliers"
         Me.dgvSuppliers.ReadOnly = True
         Me.dgvSuppliers.RowHeadersVisible = False
@@ -215,7 +215,7 @@ Partial Class frmSuppliers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1468, 454)
+        Me.ClientSize = New System.Drawing.Size(1431, 404)
         Me.Controls.Add(Me.dgvSuppliers)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
