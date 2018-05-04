@@ -37,6 +37,9 @@ Partial Class frmPrimaryForm
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnEmployees = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnCheckout
@@ -201,11 +204,42 @@ Partial Class frmPrimaryForm
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(425, 369)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(142, 51)
+        Me.Button2.TabIndex = 15
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(425, 463)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(142, 51)
+        Me.Button3.TabIndex = 16
+        Me.Button3.Text = "MARKETING CAMPAIGNS"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(330, 9)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(39, 23)
+        Me.Button4.TabIndex = 17
+        Me.Button4.Text = "Button4"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'frmPrimaryForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(790, 529)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnEmployees)
         Me.Controls.Add(Me.btnSearch)
@@ -246,4 +280,7 @@ Partial Class frmPrimaryForm
     Friend WithEvents btnSearch As Button
     Friend WithEvents btnEmployees As Button
 	Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class

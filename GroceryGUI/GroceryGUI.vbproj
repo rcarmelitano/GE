@@ -88,16 +88,46 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreditChangeReason.Designer.vb">
-      <DependentUpon>CreditChangeReason.vb</DependentUpon>
+    <Compile Include="AddCategories.Designer.vb">
+      <DependentUpon>AddCategories.vb</DependentUpon>
     </Compile>
-    <Compile Include="CreditChangeReason.vb">
+    <Compile Include="AddCategories.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDepartment.Designer.vb">
+      <DependentUpon>AddDepartment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddDepartment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="audit.Designer.vb">
+      <DependentUpon>audit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="audit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="billingAdresses.Designer.vb">
       <DependentUpon>billingAdresses.vb</DependentUpon>
     </Compile>
     <Compile Include="billingAdresses.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CampaignsView.Designer.vb">
+      <DependentUpon>CampaignsView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CampaignsView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories.Designer.vb">
+      <DependentUpon>Categories.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Categories.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriesAndDepartmentsMenu.Designer.vb">
+      <DependentUpon>CategoriesAndDepartmentsMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriesAndDepartmentsMenu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="coupons.Designer.vb">
@@ -122,6 +152,12 @@
       <DependentUpon>CustomerView.vb</DependentUpon>
     </Compile>
     <Compile Include="CustomerView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departments.Designer.vb">
+      <DependentUpon>Departments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Departments.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Discounts.designer.vb">
@@ -162,6 +198,12 @@
     <Compile Include="GiftCards.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NewGiftCard.Designer.vb">
+      <DependentUpon>NewGiftCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewGiftCard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GiftCardsView.Designer.vb">
       <DependentUpon>GiftCardsView.vb</DependentUpon>
     </Compile>
@@ -178,6 +220,12 @@
       <DependentUpon>MainFormEmployeeSearch.vb</DependentUpon>
     </Compile>
     <Compile Include="MainFormEmployeeSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketingCampaigns.Designer.vb">
+      <DependentUpon>MarketingCampaigns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MarketingCampaigns.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -311,11 +359,9 @@
     </Compile>
     <Compile Include="Promotion.Designer.vb">
       <DependentUpon>Promotion.vb</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Promotion.vb">
       <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ReportsMenu.Designer.vb">
       <DependentUpon>ReportsMenu.vb</DependentUpon>
@@ -323,10 +369,10 @@
     <Compile Include="ReportsMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewShippingAddress.designer.vb">
-      <DependentUpon>NewShippingAddress.vb</DependentUpon>
+    <Compile Include="NewShipping.designer.vb">
+      <DependentUpon>NewShipping.vb</DependentUpon>
     </Compile>
-    <Compile Include="NewShippingAddress.vb">
+    <Compile Include="NewShipping.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ShipmentConfirmation.Designer.vb">
@@ -353,6 +399,12 @@
     <Compile Include="ShippingAdresses.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Shrinkage.Designer.vb">
+      <DependentUpon>Shrinkage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shrinkage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="supplierHisoryInfo.Designer.vb">
       <DependentUpon>supplierHisoryInfo.vb</DependentUpon>
     </Compile>
@@ -371,16 +423,28 @@
     <Compile Include="Suppliers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuditTable.Designer.vb">
-      <DependentUpon>AuditTable.vb</DependentUpon>
+    <Compile Include="testing.Designer.vb">
+      <DependentUpon>testing.vb</DependentUpon>
     </Compile>
-    <Compile Include="AuditTable.vb">
+    <Compile Include="testing.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="updateCustomer.Designer.vb">
       <DependentUpon>updateCustomer.vb</DependentUpon>
     </Compile>
     <Compile Include="updateCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateGiftCard.Designer.vb">
+      <DependentUpon>UpdateGiftCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateGiftCard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateInventory.Designer.vb">
+      <DependentUpon>UpdateInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateInventory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpdateShipping.Designer.vb">
@@ -391,11 +455,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="billingAdresses.resx">
-      <DependentUpon>billingAdresses.vb</DependentUpon>
+    <EmbeddedResource Include="AddDepartment.resx">
+      <DependentUpon>AddDepartment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreditChangeReason.resx">
-      <DependentUpon>CreditChangeReason.vb</DependentUpon>
+    <EmbeddedResource Include="audit.resx">
+      <DependentUpon>audit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CampaignsView.resx">
+      <DependentUpon>CampaignsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categories.resx">
+      <DependentUpon>Categories.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoriesAndDepartmentsMenu.resx">
+      <DependentUpon>CategoriesAndDepartmentsMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="coupons.resx">
       <DependentUpon>coupons.vb</DependentUpon>
@@ -408,6 +481,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerView.resx">
       <DependentUpon>CustomerView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Departments.resx">
+      <DependentUpon>Departments.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Discounts.resx">
       <DependentUpon>Discounts.vb</DependentUpon>
@@ -424,6 +500,9 @@
     <EmbeddedResource Include="GiftCards.resx">
       <DependentUpon>GiftCards.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewGiftCard.resx">
+      <DependentUpon>NewGiftCard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiftCardsView.resx">
       <DependentUpon>GiftCardsView.vb</DependentUpon>
     </EmbeddedResource>
@@ -432,6 +511,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainFormEmployeeSearch.resx">
       <DependentUpon>MainFormEmployeeSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketingCampaigns.resx">
+      <DependentUpon>MarketingCampaigns.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewInventory.resx">
       <DependentUpon>NewInventory.vb</DependentUpon>
@@ -498,13 +580,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Promotion.resx">
       <DependentUpon>Promotion.vb</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsMenu.resx">
       <DependentUpon>ReportsMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewShippingAddress.resx">
-      <DependentUpon>NewShippingAddress.vb</DependentUpon>
+    <EmbeddedResource Include="NewShipping.resx">
+      <DependentUpon>NewShipping.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShipmentConfirmation.resx">
       <DependentUpon>ShipmentConfirmation.vb</DependentUpon>
@@ -518,6 +599,9 @@
     <EmbeddedResource Include="ShippingAdresses.resx">
       <DependentUpon>ShippingAdresses.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Shrinkage.resx">
+      <DependentUpon>Shrinkage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="supplierHisoryInfo.resx">
       <DependentUpon>supplierHisoryInfo.vb</DependentUpon>
     </EmbeddedResource>
@@ -527,11 +611,17 @@
     <EmbeddedResource Include="Suppliers.resx">
       <DependentUpon>Suppliers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AuditTable.resx">
-      <DependentUpon>AuditTable.vb</DependentUpon>
+    <EmbeddedResource Include="testing.resx">
+      <DependentUpon>testing.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="updateCustomer.resx">
       <DependentUpon>updateCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateGiftCard.resx">
+      <DependentUpon>UpdateGiftCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateInventory.resx">
+      <DependentUpon>UpdateInventory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateShipping.resx">
       <DependentUpon>UpdateShipping.vb</DependentUpon>

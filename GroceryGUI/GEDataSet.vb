@@ -2,10 +2,6 @@
 End Class
 
 Namespace GEDataSetTableAdapters
-
-End Namespace
-
-Namespace GEDataSetTableAdapters
-    Partial Public Class Order_DetailsTableAdapter
+    Partial Public Class Marketing_CampaignsTableAdapter
     End Class
 End Namespace

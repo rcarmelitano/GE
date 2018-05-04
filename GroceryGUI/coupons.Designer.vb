@@ -37,28 +37,20 @@ Partial Class frmCoupons
         Me.ViewPromotionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.txtPromotionTitle = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.dgvPromotions = New System.Windows.Forms.DataGridView()
-        Me.PromotionIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.description = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TitleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PromotionsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.btnPromotionIDSearch = New System.Windows.Forms.Button()
+        Me.btnPromotionTitleSearch = New System.Windows.Forms.Button()
         Me.txtPromotionID = New System.Windows.Forms.TextBox()
-        Me.btnRemoveID = New System.Windows.Forms.Button()
-        Me.btnAddPromotion = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnRemoveDiscountID = New System.Windows.Forms.Button()
-        Me.btnAddDiscount = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtDiscountIDSearch = New System.Windows.Forms.TextBox()
         Me.btnDiscountIDSearch = New System.Windows.Forms.Button()
         Me.txtDiscountID = New System.Windows.Forms.TextBox()
         Me.dgvDiscounts = New System.Windows.Forms.DataGridView()
-        Me.DiscountIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DiscountTypeIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BuyOneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GetOneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DiscountAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DiscountsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dtpStartDate = New System.Windows.Forms.DateTimePicker()
@@ -71,8 +63,28 @@ Partial Class frmCoupons
         Me.DiscountIDToolStripLabel = New System.Windows.Forms.ToolStripLabel()
         Me.DiscountIDToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
         Me.DiscountIDToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtCouponID = New System.Windows.Forms.TextBox()
+        Me.SearchPromotionNameToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.TitleToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.TitleToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.SearchPromotionNameToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.PromotionsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.PromotionsTableAdapter()
         Me.DiscountsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DiscountsTableAdapter()
+        Me.DiscountIDToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.DiscountIDToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.DiscountIDToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.DiscountIDToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.DiscountIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DiscountTypeIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BuyOneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GetOneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DiscountAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAddDiscountID = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.PromotionIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TitleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.description = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAddPromotionID = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -84,6 +96,8 @@ Partial Class frmCoupons
         CType(Me.DiscountsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PromotionIDToolStrip.SuspendLayout()
         Me.DiscountIDToolStrip.SuspendLayout()
+        Me.SearchPromotionNameToolStrip1.SuspendLayout()
+        Me.DiscountIDToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -127,7 +141,7 @@ Partial Class frmCoupons
         '
         'txtDescription
         '
-        Me.txtDescription.Location = New System.Drawing.Point(236, 123)
+        Me.txtDescription.Location = New System.Drawing.Point(236, 163)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(200, 20)
         Me.txtDescription.TabIndex = 3
@@ -135,7 +149,7 @@ Partial Class frmCoupons
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(172, 56)
+        Me.Label1.Location = New System.Drawing.Point(172, 96)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(58, 13)
         Me.Label1.TabIndex = 5
@@ -144,7 +158,7 @@ Partial Class frmCoupons
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(172, 126)
+        Me.Label3.Location = New System.Drawing.Point(172, 166)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 13)
         Me.Label3.TabIndex = 7
@@ -153,7 +167,7 @@ Partial Class frmCoupons
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(175, 91)
+        Me.Label4.Location = New System.Drawing.Point(175, 131)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 8
@@ -161,7 +175,7 @@ Partial Class frmCoupons
         '
         'btnCreateCoupon
         '
-        Me.btnCreateCoupon.Location = New System.Drawing.Point(191, 464)
+        Me.btnCreateCoupon.Location = New System.Drawing.Point(191, 507)
         Me.btnCreateCoupon.Name = "btnCreateCoupon"
         Me.btnCreateCoupon.Size = New System.Drawing.Size(238, 41)
         Me.btnCreateCoupon.TabIndex = 9
@@ -178,7 +192,7 @@ Partial Class frmCoupons
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(6, 157)
+        Me.TabControl1.Location = New System.Drawing.Point(6, 195)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(609, 301)
@@ -187,11 +201,11 @@ Partial Class frmCoupons
         'TabPage1
         '
         Me.TabPage1.AutoScroll = True
+        Me.TabPage1.Controls.Add(Me.txtPromotionTitle)
+        Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.dgvPromotions)
-        Me.TabPage1.Controls.Add(Me.btnPromotionIDSearch)
+        Me.TabPage1.Controls.Add(Me.btnPromotionTitleSearch)
         Me.TabPage1.Controls.Add(Me.txtPromotionID)
-        Me.TabPage1.Controls.Add(Me.btnRemoveID)
-        Me.TabPage1.Controls.Add(Me.btnAddPromotion)
         Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -201,46 +215,36 @@ Partial Class frmCoupons
         Me.TabPage1.Text = "Promotion"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'txtPromotionTitle
+        '
+        Me.txtPromotionTitle.Location = New System.Drawing.Point(384, 10)
+        Me.txtPromotionTitle.Name = "txtPromotionTitle"
+        Me.txtPromotionTitle.Size = New System.Drawing.Size(121, 20)
+        Me.txtPromotionTitle.TabIndex = 100
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(290, 13)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(88, 13)
+        Me.Label5.TabIndex = 99
+        Me.Label5.Text = "Promotion Name:"
+        '
         'dgvPromotions
         '
         Me.dgvPromotions.AllowUserToAddRows = False
         Me.dgvPromotions.AllowUserToDeleteRows = False
         Me.dgvPromotions.AutoGenerateColumns = False
-        Me.dgvPromotions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgvPromotions.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvPromotions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPromotions.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PromotionIDDataGridViewTextBoxColumn, Me.description, Me.TitleDataGridViewTextBoxColumn})
+        Me.dgvPromotions.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PromotionIDDataGridViewTextBoxColumn, Me.TitleDataGridViewTextBoxColumn, Me.description, Me.btnAddPromotionID})
         Me.dgvPromotions.DataSource = Me.PromotionsBindingSource
         Me.dgvPromotions.Location = New System.Drawing.Point(15, 37)
         Me.dgvPromotions.Name = "dgvPromotions"
         Me.dgvPromotions.ReadOnly = True
         Me.dgvPromotions.RowHeadersVisible = False
-        Me.dgvPromotions.Size = New System.Drawing.Size(571, 192)
+        Me.dgvPromotions.Size = New System.Drawing.Size(571, 232)
         Me.dgvPromotions.TabIndex = 98
-        '
-        'PromotionIDDataGridViewTextBoxColumn
-        '
-        Me.PromotionIDDataGridViewTextBoxColumn.DataPropertyName = "promotionID"
-        Me.PromotionIDDataGridViewTextBoxColumn.HeaderText = "promotionID"
-        Me.PromotionIDDataGridViewTextBoxColumn.Name = "PromotionIDDataGridViewTextBoxColumn"
-        Me.PromotionIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PromotionIDDataGridViewTextBoxColumn.Width = 89
-        '
-        'description
-        '
-        Me.description.DataPropertyName = "description"
-        Me.description.HeaderText = "description"
-        Me.description.Name = "description"
-        Me.description.ReadOnly = True
-        Me.description.Width = 83
-        '
-        'TitleDataGridViewTextBoxColumn
-        '
-        Me.TitleDataGridViewTextBoxColumn.DataPropertyName = "title"
-        Me.TitleDataGridViewTextBoxColumn.HeaderText = "title"
-        Me.TitleDataGridViewTextBoxColumn.Name = "TitleDataGridViewTextBoxColumn"
-        Me.TitleDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TitleDataGridViewTextBoxColumn.Width = 48
         '
         'PromotionsBindingSource
         '
@@ -252,39 +256,23 @@ Partial Class frmCoupons
         Me.GEDataSet.DataSetName = "GEDataSet"
         Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'btnPromotionIDSearch
+        'btnPromotionTitleSearch
         '
-        Me.btnPromotionIDSearch.Location = New System.Drawing.Point(216, 10)
-        Me.btnPromotionIDSearch.Name = "btnPromotionIDSearch"
-        Me.btnPromotionIDSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnPromotionIDSearch.TabIndex = 97
-        Me.btnPromotionIDSearch.Text = "Search"
-        Me.btnPromotionIDSearch.UseVisualStyleBackColor = True
+        Me.btnPromotionTitleSearch.Location = New System.Drawing.Point(511, 8)
+        Me.btnPromotionTitleSearch.Name = "btnPromotionTitleSearch"
+        Me.btnPromotionTitleSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnPromotionTitleSearch.TabIndex = 97
+        Me.btnPromotionTitleSearch.Text = "Search"
+        Me.btnPromotionTitleSearch.UseVisualStyleBackColor = True
         '
         'txtPromotionID
         '
+        Me.txtPromotionID.Enabled = False
         Me.txtPromotionID.Location = New System.Drawing.Point(89, 11)
         Me.txtPromotionID.Name = "txtPromotionID"
+        Me.txtPromotionID.ReadOnly = True
         Me.txtPromotionID.Size = New System.Drawing.Size(121, 20)
         Me.txtPromotionID.TabIndex = 95
-        '
-        'btnRemoveID
-        '
-        Me.btnRemoveID.Location = New System.Drawing.Point(310, 235)
-        Me.btnRemoveID.Name = "btnRemoveID"
-        Me.btnRemoveID.Size = New System.Drawing.Size(276, 33)
-        Me.btnRemoveID.TabIndex = 94
-        Me.btnRemoveID.Text = "Remove"
-        Me.btnRemoveID.UseVisualStyleBackColor = True
-        '
-        'btnAddPromotion
-        '
-        Me.btnAddPromotion.Location = New System.Drawing.Point(15, 235)
-        Me.btnAddPromotion.Name = "btnAddPromotion"
-        Me.btnAddPromotion.Size = New System.Drawing.Size(276, 33)
-        Me.btnAddPromotion.TabIndex = 93
-        Me.btnAddPromotion.Text = "Add"
-        Me.btnAddPromotion.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -298,8 +286,8 @@ Partial Class frmCoupons
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
-        Me.TabPage2.Controls.Add(Me.btnRemoveDiscountID)
-        Me.TabPage2.Controls.Add(Me.btnAddDiscount)
+        Me.TabPage2.Controls.Add(Me.Label6)
+        Me.TabPage2.Controls.Add(Me.txtDiscountIDSearch)
         Me.TabPage2.Controls.Add(Me.btnDiscountIDSearch)
         Me.TabPage2.Controls.Add(Me.txtDiscountID)
         Me.TabPage2.Controls.Add(Me.dgvDiscounts)
@@ -312,27 +300,25 @@ Partial Class frmCoupons
         Me.TabPage2.Text = "Discount"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'btnRemoveDiscountID
+        'Label6
         '
-        Me.btnRemoveDiscountID.Location = New System.Drawing.Point(249, 235)
-        Me.btnRemoveDiscountID.Name = "btnRemoveDiscountID"
-        Me.btnRemoveDiscountID.Size = New System.Drawing.Size(222, 33)
-        Me.btnRemoveDiscountID.TabIndex = 106
-        Me.btnRemoveDiscountID.Text = "Remove"
-        Me.btnRemoveDiscountID.UseVisualStyleBackColor = True
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(312, 14)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(66, 13)
+        Me.Label6.TabIndex = 95
+        Me.Label6.Text = "Discount ID:"
         '
-        'btnAddDiscount
+        'txtDiscountIDSearch
         '
-        Me.btnAddDiscount.Location = New System.Drawing.Point(15, 235)
-        Me.btnAddDiscount.Name = "btnAddDiscount"
-        Me.btnAddDiscount.Size = New System.Drawing.Size(222, 33)
-        Me.btnAddDiscount.TabIndex = 105
-        Me.btnAddDiscount.Text = "Add"
-        Me.btnAddDiscount.UseVisualStyleBackColor = True
+        Me.txtDiscountIDSearch.Location = New System.Drawing.Point(384, 11)
+        Me.txtDiscountIDSearch.Name = "txtDiscountIDSearch"
+        Me.txtDiscountIDSearch.Size = New System.Drawing.Size(121, 20)
+        Me.txtDiscountIDSearch.TabIndex = 94
         '
         'btnDiscountIDSearch
         '
-        Me.btnDiscountIDSearch.Location = New System.Drawing.Point(211, 10)
+        Me.btnDiscountIDSearch.Location = New System.Drawing.Point(511, 9)
         Me.btnDiscountIDSearch.Name = "btnDiscountIDSearch"
         Me.btnDiscountIDSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnDiscountIDSearch.TabIndex = 93
@@ -341,8 +327,10 @@ Partial Class frmCoupons
         '
         'txtDiscountID
         '
+        Me.txtDiscountID.Enabled = False
         Me.txtDiscountID.Location = New System.Drawing.Point(84, 11)
         Me.txtDiscountID.Name = "txtDiscountID"
+        Me.txtDiscountID.ReadOnly = True
         Me.txtDiscountID.Size = New System.Drawing.Size(121, 20)
         Me.txtDiscountID.TabIndex = 92
         '
@@ -351,61 +339,15 @@ Partial Class frmCoupons
         Me.dgvDiscounts.AllowUserToAddRows = False
         Me.dgvDiscounts.AllowUserToDeleteRows = False
         Me.dgvDiscounts.AutoGenerateColumns = False
-        Me.dgvDiscounts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvDiscounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDiscounts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DiscountIDDataGridViewTextBoxColumn, Me.DiscountTypeIDDataGridViewTextBoxColumn, Me.BuyOneDataGridViewTextBoxColumn, Me.GetOneDataGridViewTextBoxColumn, Me.DiscountAmountDataGridViewTextBoxColumn})
+        Me.dgvDiscounts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DiscountIDDataGridViewTextBoxColumn, Me.DiscountTypeIDDataGridViewTextBoxColumn, Me.BuyOneDataGridViewTextBoxColumn, Me.GetOneDataGridViewTextBoxColumn, Me.DiscountAmountDataGridViewTextBoxColumn, Me.btnAddDiscountID})
         Me.dgvDiscounts.DataSource = Me.DiscountsBindingSource
         Me.dgvDiscounts.Location = New System.Drawing.Point(15, 37)
         Me.dgvDiscounts.Name = "dgvDiscounts"
         Me.dgvDiscounts.ReadOnly = True
         Me.dgvDiscounts.RowHeadersVisible = False
-        Me.dgvDiscounts.Size = New System.Drawing.Size(456, 192)
+        Me.dgvDiscounts.Size = New System.Drawing.Size(571, 232)
         Me.dgvDiscounts.TabIndex = 90
-        '
-        'DiscountIDDataGridViewTextBoxColumn
-        '
-        Me.DiscountIDDataGridViewTextBoxColumn.DataPropertyName = "discountID"
-        Me.DiscountIDDataGridViewTextBoxColumn.FillWeight = 178.1116!
-        Me.DiscountIDDataGridViewTextBoxColumn.HeaderText = "discountID"
-        Me.DiscountIDDataGridViewTextBoxColumn.Name = "DiscountIDDataGridViewTextBoxColumn"
-        Me.DiscountIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DiscountIDDataGridViewTextBoxColumn.Width = 83
-        '
-        'DiscountTypeIDDataGridViewTextBoxColumn
-        '
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.DataPropertyName = "discountTypeID"
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.FillWeight = 157.4129!
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.HeaderText = "discountTypeID"
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.Name = "DiscountTypeIDDataGridViewTextBoxColumn"
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.Width = 107
-        '
-        'BuyOneDataGridViewTextBoxColumn
-        '
-        Me.BuyOneDataGridViewTextBoxColumn.DataPropertyName = "buyOne"
-        Me.BuyOneDataGridViewTextBoxColumn.FillWeight = 59.493!
-        Me.BuyOneDataGridViewTextBoxColumn.HeaderText = "buyOne"
-        Me.BuyOneDataGridViewTextBoxColumn.Name = "BuyOneDataGridViewTextBoxColumn"
-        Me.BuyOneDataGridViewTextBoxColumn.ReadOnly = True
-        Me.BuyOneDataGridViewTextBoxColumn.Width = 69
-        '
-        'GetOneDataGridViewTextBoxColumn
-        '
-        Me.GetOneDataGridViewTextBoxColumn.DataPropertyName = "getOne"
-        Me.GetOneDataGridViewTextBoxColumn.FillWeight = 45.26747!
-        Me.GetOneDataGridViewTextBoxColumn.HeaderText = "getOne"
-        Me.GetOneDataGridViewTextBoxColumn.Name = "GetOneDataGridViewTextBoxColumn"
-        Me.GetOneDataGridViewTextBoxColumn.ReadOnly = True
-        Me.GetOneDataGridViewTextBoxColumn.Width = 67
-        '
-        'DiscountAmountDataGridViewTextBoxColumn
-        '
-        Me.DiscountAmountDataGridViewTextBoxColumn.DataPropertyName = "discountAmount"
-        Me.DiscountAmountDataGridViewTextBoxColumn.FillWeight = 59.71498!
-        Me.DiscountAmountDataGridViewTextBoxColumn.HeaderText = "discountAmount"
-        Me.DiscountAmountDataGridViewTextBoxColumn.Name = "DiscountAmountDataGridViewTextBoxColumn"
-        Me.DiscountAmountDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DiscountAmountDataGridViewTextBoxColumn.Width = 108
         '
         'DiscountsBindingSource
         '
@@ -423,7 +365,7 @@ Partial Class frmCoupons
         '
         'dtpStartDate
         '
-        Me.dtpStartDate.Location = New System.Drawing.Point(236, 52)
+        Me.dtpStartDate.Location = New System.Drawing.Point(236, 92)
         Me.dtpStartDate.MinDate = New Date(2018, 1, 1, 0, 0, 0, 0)
         Me.dtpStartDate.Name = "dtpStartDate"
         Me.dtpStartDate.Size = New System.Drawing.Size(200, 20)
@@ -431,7 +373,7 @@ Partial Class frmCoupons
         '
         'dtpEndDate
         '
-        Me.dtpEndDate.Location = New System.Drawing.Point(236, 88)
+        Me.dtpEndDate.Location = New System.Drawing.Point(236, 128)
         Me.dtpEndDate.MinDate = New Date(2018, 1, 1, 0, 0, 0, 0)
         Me.dtpEndDate.Name = "dtpEndDate"
         Me.dtpEndDate.Size = New System.Drawing.Size(200, 20)
@@ -493,6 +435,52 @@ Partial Class frmCoupons
         Me.DiscountIDToolStripButton.Size = New System.Drawing.Size(68, 22)
         Me.DiscountIDToolStripButton.Text = "discountID"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(169, 60)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.TabIndex = 88
+        Me.Label2.Text = "Coupon ID:"
+        '
+        'txtCouponID
+        '
+        Me.txtCouponID.Enabled = False
+        Me.txtCouponID.Location = New System.Drawing.Point(236, 57)
+        Me.txtCouponID.Name = "txtCouponID"
+        Me.txtCouponID.ReadOnly = True
+        Me.txtCouponID.Size = New System.Drawing.Size(121, 20)
+        Me.txtCouponID.TabIndex = 87
+        '
+        'SearchPromotionNameToolStrip1
+        '
+        Me.SearchPromotionNameToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TitleToolStripLabel1, Me.TitleToolStripTextBox1, Me.SearchPromotionNameToolStripButton1})
+        Me.SearchPromotionNameToolStrip1.Location = New System.Drawing.Point(0, 24)
+        Me.SearchPromotionNameToolStrip1.Name = "SearchPromotionNameToolStrip1"
+        Me.SearchPromotionNameToolStrip1.Size = New System.Drawing.Size(620, 25)
+        Me.SearchPromotionNameToolStrip1.TabIndex = 90
+        Me.SearchPromotionNameToolStrip1.Text = "SearchPromotionNameToolStrip1"
+        Me.SearchPromotionNameToolStrip1.Visible = False
+        '
+        'TitleToolStripLabel1
+        '
+        Me.TitleToolStripLabel1.Name = "TitleToolStripLabel1"
+        Me.TitleToolStripLabel1.Size = New System.Drawing.Size(30, 22)
+        Me.TitleToolStripLabel1.Text = "title:"
+        '
+        'TitleToolStripTextBox1
+        '
+        Me.TitleToolStripTextBox1.Name = "TitleToolStripTextBox1"
+        Me.TitleToolStripTextBox1.Size = New System.Drawing.Size(100, 25)
+        '
+        'SearchPromotionNameToolStripButton1
+        '
+        Me.SearchPromotionNameToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.SearchPromotionNameToolStripButton1.Name = "SearchPromotionNameToolStripButton1"
+        Me.SearchPromotionNameToolStripButton1.Size = New System.Drawing.Size(134, 22)
+        Me.SearchPromotionNameToolStripButton1.Text = "searchPromotionName"
+        '
         'PromotionsTableAdapter
         '
         Me.PromotionsTableAdapter.ClearBeforeFill = True
@@ -501,11 +489,129 @@ Partial Class frmCoupons
         '
         Me.DiscountsTableAdapter.ClearBeforeFill = True
         '
+        'DiscountIDToolStrip1
+        '
+        Me.DiscountIDToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DiscountIDToolStripLabel1, Me.DiscountIDToolStripTextBox1, Me.DiscountIDToolStripButton1})
+        Me.DiscountIDToolStrip1.Location = New System.Drawing.Point(0, 24)
+        Me.DiscountIDToolStrip1.Name = "DiscountIDToolStrip1"
+        Me.DiscountIDToolStrip1.Size = New System.Drawing.Size(620, 25)
+        Me.DiscountIDToolStrip1.TabIndex = 91
+        Me.DiscountIDToolStrip1.Text = "DiscountIDToolStrip1"
+        Me.DiscountIDToolStrip1.Visible = False
+        '
+        'DiscountIDToolStripLabel1
+        '
+        Me.DiscountIDToolStripLabel1.Name = "DiscountIDToolStripLabel1"
+        Me.DiscountIDToolStripLabel1.Size = New System.Drawing.Size(67, 22)
+        Me.DiscountIDToolStripLabel1.Text = "discountID:"
+        '
+        'DiscountIDToolStripTextBox1
+        '
+        Me.DiscountIDToolStripTextBox1.Name = "DiscountIDToolStripTextBox1"
+        Me.DiscountIDToolStripTextBox1.Size = New System.Drawing.Size(100, 25)
+        '
+        'DiscountIDToolStripButton1
+        '
+        Me.DiscountIDToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.DiscountIDToolStripButton1.Name = "DiscountIDToolStripButton1"
+        Me.DiscountIDToolStripButton1.Size = New System.Drawing.Size(68, 22)
+        Me.DiscountIDToolStripButton1.Text = "discountID"
+        '
+        'DiscountIDDataGridViewTextBoxColumn
+        '
+        Me.DiscountIDDataGridViewTextBoxColumn.DataPropertyName = "discountID"
+        Me.DiscountIDDataGridViewTextBoxColumn.FillWeight = 178.1116!
+        Me.DiscountIDDataGridViewTextBoxColumn.HeaderText = "Discount ID"
+        Me.DiscountIDDataGridViewTextBoxColumn.Name = "DiscountIDDataGridViewTextBoxColumn"
+        Me.DiscountIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DiscountIDDataGridViewTextBoxColumn.Width = 83
+        '
+        'DiscountTypeIDDataGridViewTextBoxColumn
+        '
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.DataPropertyName = "discountTypeID"
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.FillWeight = 157.4129!
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.HeaderText = "Discount Type ID"
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.Name = "DiscountTypeIDDataGridViewTextBoxColumn"
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.Width = 107
+        '
+        'BuyOneDataGridViewTextBoxColumn
+        '
+        Me.BuyOneDataGridViewTextBoxColumn.DataPropertyName = "buyOne"
+        Me.BuyOneDataGridViewTextBoxColumn.FillWeight = 59.493!
+        Me.BuyOneDataGridViewTextBoxColumn.HeaderText = "Buy One"
+        Me.BuyOneDataGridViewTextBoxColumn.Name = "BuyOneDataGridViewTextBoxColumn"
+        Me.BuyOneDataGridViewTextBoxColumn.ReadOnly = True
+        Me.BuyOneDataGridViewTextBoxColumn.Width = 69
+        '
+        'GetOneDataGridViewTextBoxColumn
+        '
+        Me.GetOneDataGridViewTextBoxColumn.DataPropertyName = "getOne"
+        Me.GetOneDataGridViewTextBoxColumn.FillWeight = 45.26747!
+        Me.GetOneDataGridViewTextBoxColumn.HeaderText = "Get One"
+        Me.GetOneDataGridViewTextBoxColumn.Name = "GetOneDataGridViewTextBoxColumn"
+        Me.GetOneDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GetOneDataGridViewTextBoxColumn.Width = 67
+        '
+        'DiscountAmountDataGridViewTextBoxColumn
+        '
+        Me.DiscountAmountDataGridViewTextBoxColumn.DataPropertyName = "discountAmount"
+        Me.DiscountAmountDataGridViewTextBoxColumn.FillWeight = 59.71498!
+        Me.DiscountAmountDataGridViewTextBoxColumn.HeaderText = "Discount Amount"
+        Me.DiscountAmountDataGridViewTextBoxColumn.Name = "DiscountAmountDataGridViewTextBoxColumn"
+        Me.DiscountAmountDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DiscountAmountDataGridViewTextBoxColumn.Width = 108
+        '
+        'btnAddDiscountID
+        '
+        Me.btnAddDiscountID.HeaderText = ""
+        Me.btnAddDiscountID.Name = "btnAddDiscountID"
+        Me.btnAddDiscountID.ReadOnly = True
+        Me.btnAddDiscountID.Text = "Add"
+        Me.btnAddDiscountID.UseColumnTextForButtonValue = True
+        '
+        'PromotionIDDataGridViewTextBoxColumn
+        '
+        Me.PromotionIDDataGridViewTextBoxColumn.DataPropertyName = "promotionID"
+        Me.PromotionIDDataGridViewTextBoxColumn.HeaderText = "Promotion ID"
+        Me.PromotionIDDataGridViewTextBoxColumn.Name = "PromotionIDDataGridViewTextBoxColumn"
+        Me.PromotionIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PromotionIDDataGridViewTextBoxColumn.Width = 89
+        '
+        'TitleDataGridViewTextBoxColumn
+        '
+        Me.TitleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.TitleDataGridViewTextBoxColumn.DataPropertyName = "title"
+        Me.TitleDataGridViewTextBoxColumn.HeaderText = "Title"
+        Me.TitleDataGridViewTextBoxColumn.Name = "TitleDataGridViewTextBoxColumn"
+        Me.TitleDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TitleDataGridViewTextBoxColumn.Width = 52
+        '
+        'description
+        '
+        Me.description.DataPropertyName = "description"
+        Me.description.HeaderText = "Description"
+        Me.description.Name = "description"
+        Me.description.ReadOnly = True
+        Me.description.Width = 230
+        '
+        'btnAddPromotionID
+        '
+        Me.btnAddPromotionID.HeaderText = ""
+        Me.btnAddPromotionID.Name = "btnAddPromotionID"
+        Me.btnAddPromotionID.ReadOnly = True
+        Me.btnAddPromotionID.Text = "Add"
+        Me.btnAddPromotionID.UseColumnTextForButtonValue = True
+        '
         'frmCoupons
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(620, 514)
+        Me.ClientSize = New System.Drawing.Size(620, 553)
+        Me.Controls.Add(Me.SearchPromotionNameToolStrip1)
+        Me.Controls.Add(Me.DiscountIDToolStrip1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtCouponID)
         Me.Controls.Add(Me.PromotionIDToolStrip)
         Me.Controls.Add(Me.DiscountIDToolStrip)
         Me.Controls.Add(Me.dtpEndDate)
@@ -539,6 +645,10 @@ Partial Class frmCoupons
         Me.PromotionIDToolStrip.PerformLayout()
         Me.DiscountIDToolStrip.ResumeLayout(False)
         Me.DiscountIDToolStrip.PerformLayout()
+        Me.SearchPromotionNameToolStrip1.ResumeLayout(False)
+        Me.SearchPromotionNameToolStrip1.PerformLayout()
+        Me.DiscountIDToolStrip1.ResumeLayout(False)
+        Me.DiscountIDToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -561,31 +671,19 @@ Partial Class frmCoupons
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents dgvPromotions As DataGridView
-    Friend WithEvents btnPromotionIDSearch As Button
+    Friend WithEvents btnPromotionTitleSearch As Button
     Friend WithEvents txtPromotionID As TextBox
-    Friend WithEvents btnRemoveID As Button
-    Friend WithEvents btnAddPromotion As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents btnDiscountIDSearch As Button
     Friend WithEvents txtDiscountID As TextBox
     Friend WithEvents dgvDiscounts As DataGridView
-    Friend WithEvents DiscountIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DiscountTypeIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents BuyOneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents GetOneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DiscountAmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Label9 As Label
-    Friend WithEvents PromotionIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents description As DataGridViewTextBoxColumn
-    Friend WithEvents TitleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents mnuViewPromotions As ToolStripMenuItem
     Friend WithEvents mnuViewDiscounts As ToolStripMenuItem
     Friend WithEvents mnuHelp As ToolStripMenuItem
     Friend WithEvents dtpStartDate As DateTimePicker
     Friend WithEvents dtpEndDate As DateTimePicker
-    Friend WithEvents btnRemoveDiscountID As Button
-    Friend WithEvents btnAddDiscount As Button
     Friend WithEvents PromotionIDToolStrip As ToolStrip
     Friend WithEvents PromotionIDToolStripLabel As ToolStripLabel
     Friend WithEvents PromotionIDToolStripTextBox As ToolStripTextBox
@@ -594,4 +692,28 @@ Partial Class frmCoupons
     Friend WithEvents DiscountIDToolStripLabel As ToolStripLabel
     Friend WithEvents DiscountIDToolStripTextBox As ToolStripTextBox
     Friend WithEvents DiscountIDToolStripButton As ToolStripButton
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtCouponID As TextBox
+    Friend WithEvents txtPromotionTitle As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtDiscountIDSearch As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents SearchPromotionNameToolStrip1 As ToolStrip
+    Friend WithEvents TitleToolStripLabel1 As ToolStripLabel
+    Friend WithEvents TitleToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents SearchPromotionNameToolStripButton1 As ToolStripButton
+    Friend WithEvents DiscountIDToolStrip1 As ToolStrip
+    Friend WithEvents DiscountIDToolStripLabel1 As ToolStripLabel
+    Friend WithEvents DiscountIDToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents DiscountIDToolStripButton1 As ToolStripButton
+    Friend WithEvents DiscountIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DiscountTypeIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BuyOneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GetOneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DiscountAmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnAddDiscountID As DataGridViewButtonColumn
+    Friend WithEvents PromotionIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TitleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents description As DataGridViewTextBoxColumn
+    Friend WithEvents btnAddPromotionID As DataGridViewButtonColumn
 End Class

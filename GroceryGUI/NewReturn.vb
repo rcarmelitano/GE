@@ -29,8 +29,9 @@ Public Class frmNewReturn
                 addReturn.Parameters.AddWithValue("@quantity", nudQuantity.Text)
                 addReturn.Parameters.AddWithValue("@returnDate", dtpReturnDate.Text)
 
+                ' Open the connection and run the query
                 returnsConnection.Open()
-                Dim rowsAffected As Integer = addReturn.ExecuteNonQuery()
+                addReturn.ExecuteNonQuery()
 
                 ' Close the form and display the primary form
                 Me.Close()
@@ -39,7 +40,7 @@ Public Class frmNewReturn
                 ' Fill the returnID textbox with the next value through the use of the getMaxReturnIDAndIncrement command above
                 returnsConnection.Close()
 
-                ' Increment the Return ID and prepare for a new return--------------
+                ' Increment the Return ID and prepare for a new return
                 ' Get the max id number currently in the database and then add 1
                 Dim returnID As Integer = 0
                 Dim getMaxReturnIDAndIncrement As New SqlCommand("select max(ReturnId) + 1 from Returns", returnsConnection)
@@ -77,8 +78,6 @@ Public Class frmNewReturn
     End Sub
 
     Private Sub frmNewReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Disable the form controls
-        Me.ControlBox = False
 
         ' Converts the date and time of the datetimepicker to a usable string format
         dtpReturnDate.Format = DateTimePickerFormat.Custom
@@ -114,7 +113,6 @@ Public Class frmNewReturn
             ' Display a message to the user and clear the order id textbox and the datagrid
             MessageBox.Show("You cannot enter a invalid Order ID. Please try again.")
             txtOrderID.Clear()
-
         End Try
     End Sub
 

@@ -41,7 +41,6 @@ Partial Class supplierhistory
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Purchase_OrderTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Purchase_OrderTableAdapter()
         Me.TableAdapterManager = New GroceryGUI.GEDataSetTableAdapters.TableAdapterManager()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.Purchase_OrderDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Purchase_OrderBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,7 +58,6 @@ Partial Class supplierhistory
         Me.Purchase_OrderDataGridView.Location = New System.Drawing.Point(1, 56)
         Me.Purchase_OrderDataGridView.Name = "Purchase_OrderDataGridView"
         Me.Purchase_OrderDataGridView.ReadOnly = True
-        Me.Purchase_OrderDataGridView.RowHeadersVisible = False
         Me.Purchase_OrderDataGridView.Size = New System.Drawing.Size(643, 220)
         Me.Purchase_OrderDataGridView.TabIndex = 2
         '
@@ -145,23 +143,23 @@ Partial Class supplierhistory
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(98, 30)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(132, 27)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 4
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(328, 30)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(338, 26)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker2.TabIndex = 5
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(549, 30)
+        Me.Button1.Location = New System.Drawing.Point(558, 24)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(84, 23)
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Search"
         Me.Button1.UseVisualStyleBackColor = True
@@ -173,66 +171,82 @@ Partial Class supplierhistory
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+
         Me.TableAdapterManager.Billing_AddressesTableAdapter = Nothing
-        Me.TableAdapterManager.Campaign_TargetsTableAdapter = Nothing
+
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
+
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
-        Me.TableAdapterManager.CreditAuditTableAdapter = Nothing
+
         Me.TableAdapterManager.CustomersTableAdapter = Nothing
+
         Me.TableAdapterManager.DepartmentsTableAdapter = Nothing
+
         Me.TableAdapterManager.Discount_TypeTableAdapter = Nothing
+
         Me.TableAdapterManager.DiscountsTableAdapter = Nothing
+
         Me.TableAdapterManager.EmployeesTableAdapter = Nothing
+
         Me.TableAdapterManager.Gift_CardsTableAdapter = Nothing
+
         Me.TableAdapterManager.InventoryTableAdapter = Nothing
+
         Me.TableAdapterManager.Item_DiscountTableAdapter = Nothing
+
         Me.TableAdapterManager.Marketing_CampaignsTableAdapter = Nothing
+
         Me.TableAdapterManager.Order_DetailsTableAdapter = Nothing
+
         Me.TableAdapterManager.Order_DiscountTableAdapter = Nothing
+
         Me.TableAdapterManager.OrdersTableAdapter = Nothing
+
         Me.TableAdapterManager.Payment_TypesTableAdapter = Nothing
+
         Me.TableAdapterManager.PaymentsTableAdapter = Nothing
+
         Me.TableAdapterManager.ProductsTableAdapter = Nothing
-        Me.TableAdapterManager.Promo_Info_TypeTableAdapter = Nothing
+
         Me.TableAdapterManager.Promoted_ProductsTableAdapter = Nothing
+
         Me.TableAdapterManager.PromotionsTableAdapter = Nothing
+
         Me.TableAdapterManager.Purchase_Order_DetailsTableAdapter = Nothing
+
         Me.TableAdapterManager.Purchase_OrderTableAdapter = Me.Purchase_OrderTableAdapter
+
         Me.TableAdapterManager.ReturnsTableAdapter = Nothing
+
         Me.TableAdapterManager.Shipment_DetailsTableAdapter = Nothing
+
         Me.TableAdapterManager.ShipmentTableAdapter = Nothing
+
         Me.TableAdapterManager.ShippersTableAdapter = Nothing
+
         Me.TableAdapterManager.Shipping_AddressesTableAdapter = Nothing
+
         Me.TableAdapterManager.ShrinkageTableAdapter = Nothing
+
         Me.TableAdapterManager.StatusTableAdapter = Nothing
+
         Me.TableAdapterManager.SuppliersTableAdapter = Nothing
+
         Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = GroceryGUI.GEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 33)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 13)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Date Range:"
         '
         'supplierhistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(645, 273)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Purchase_OrderDataGridView)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "supplierhistory"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "supplierhistory"
         CType(Me.Purchase_OrderDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Purchase_OrderBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -262,5 +276,4 @@ Partial Class supplierhistory
 	Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
 	Friend WithEvents view As DataGridViewButtonColumn
 	Friend WithEvents HelpToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents Label1 As Label
 End Class

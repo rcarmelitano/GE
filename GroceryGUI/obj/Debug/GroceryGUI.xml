@@ -32,7 +32,12 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSet.Campaign_TargetsDataTable">
+<member name="T:GroceryGUI.GEDataSet.Campaign_Opt_InsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.Campaign_TypesDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -43,6 +48,11 @@ Represents the strongly named DataTable class.
 </summary>
 </member>
 <member name="T:GroceryGUI.GEDataSet.CouponsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.CreditAuditDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -122,11 +132,6 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSet.Promo_Info_TypeDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
 <member name="T:GroceryGUI.GEDataSet.Promoted_ProductsDataTable">
 <summary>
 Represents the strongly named DataTable class.
@@ -192,17 +197,17 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSet.CreditAuditDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
 <member name="T:GroceryGUI.GEDataSet.Billing_AddressesRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSet.Campaign_TargetsRow">
+<member name="T:GroceryGUI.GEDataSet.Campaign_Opt_InsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.Campaign_TypesRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -213,6 +218,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:GroceryGUI.GEDataSet.CouponsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.CreditAuditRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -292,11 +302,6 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSet.Promo_Info_TypeRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
 <member name="T:GroceryGUI.GEDataSet.Promoted_ProductsRow">
 <summary>
 Represents strongly named DataRow class.
@@ -362,17 +367,17 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSet.CreditAuditRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
 <member name="T:GroceryGUI.GEDataSet.Billing_AddressesRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSet.Campaign_TargetsRowChangeEvent">
+<member name="T:GroceryGUI.GEDataSet.Campaign_Opt_InsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.Campaign_TypesRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -383,6 +388,11 @@ Row event argument class
 </summary>
 </member>
 <member name="T:GroceryGUI.GEDataSet.CouponsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.CreditAuditRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -462,11 +472,6 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSet.Promo_Info_TypeRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
 <member name="T:GroceryGUI.GEDataSet.Promoted_ProductsRowChangeEvent">
 <summary>
 Row event argument class
@@ -532,17 +537,17 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSet.CreditAuditRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
 <member name="T:GroceryGUI.GEDataSetTableAdapters.Billing_AddressesTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSetTableAdapters.Campaign_TargetsTableAdapter">
+<member name="T:GroceryGUI.GEDataSetTableAdapters.Campaign_Opt_InsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSetTableAdapters.Campaign_TypesTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -553,6 +558,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:GroceryGUI.GEDataSetTableAdapters.CouponsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSetTableAdapters.CreditAuditTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -632,11 +642,6 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:GroceryGUI.GEDataSetTableAdapters.Promo_Info_TypeTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
 <member name="T:GroceryGUI.GEDataSetTableAdapters.Promoted_ProductsTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -698,11 +703,6 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:GroceryGUI.GEDataSetTableAdapters.Trade_ShowsTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:GroceryGUI.GEDataSetTableAdapters.CreditAuditTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
