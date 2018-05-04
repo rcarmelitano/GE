@@ -79,7 +79,6 @@ Public Class frmNewReturn
 
     Private Sub frmNewReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
         ' Converts the date and time of the datetimepicker to a usable string format
         dtpReturnDate.Format = DateTimePickerFormat.Custom
         dtpReturnDate.CustomFormat = "MM/dd/yyyy hh:mm"
@@ -114,7 +113,6 @@ Public Class frmNewReturn
             ' Display a message to the user and clear the order id textbox and the datagrid
             MessageBox.Show("You cannot enter a invalid Order ID. Please try again.")
             txtOrderID.Clear()
-
         End Try
     End Sub
 

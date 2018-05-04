@@ -198,6 +198,12 @@
     <Compile Include="GiftCards.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NewGiftCard.Designer.vb">
+      <DependentUpon>NewGiftCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewGiftCard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GiftCardsView.Designer.vb">
       <DependentUpon>GiftCardsView.vb</DependentUpon>
     </Compile>
@@ -429,6 +435,12 @@
     <Compile Include="updateCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UpdateGiftCard.Designer.vb">
+      <DependentUpon>UpdateGiftCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateGiftCard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UpdateInventory.Designer.vb">
       <DependentUpon>UpdateInventory.vb</DependentUpon>
     </Compile>
@@ -487,6 +499,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiftCards.resx">
       <DependentUpon>GiftCards.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewGiftCard.resx">
+      <DependentUpon>NewGiftCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiftCardsView.resx">
       <DependentUpon>GiftCardsView.vb</DependentUpon>
@@ -601,6 +616,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="updateCustomer.resx">
       <DependentUpon>updateCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateGiftCard.resx">
+      <DependentUpon>UpdateGiftCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateInventory.resx">
       <DependentUpon>UpdateInventory.vb</DependentUpon>

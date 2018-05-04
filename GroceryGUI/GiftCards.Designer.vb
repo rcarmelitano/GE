@@ -23,40 +23,56 @@ Partial Class frmGiftCards
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Me.dgvGiftCards = New System.Windows.Forms.DataGridView()
+        Me.GiftCardsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewGiftCardsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btnClearID = New System.Windows.Forms.Button()
-        Me.dgvCustomers = New System.Windows.Forms.DataGridView()
-        Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.btnAddID = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtCustomerID = New System.Windows.Forms.TextBox()
-        Me.btnSearch = New System.Windows.Forms.Button()
-        Me.dtpDateOfPurchase = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.CustomersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CustomersTableAdapter()
-        Me.txtCardTotal = New System.Windows.Forms.TextBox()
-        Me.btnActivateGiftCard = New System.Windows.Forms.Button()
+        Me.NewGiftCardToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Gift_CardsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Gift_CardsTableAdapter()
+        Me.GiftCardIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustomerIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MenuStrip1.SuspendLayout()
-        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DateOfPurchaseDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CardTotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAdd = New System.Windows.Forms.DataGridViewButtonColumn()
+        CType(Me.dgvGiftCards, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GiftCardsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'dgvGiftCards
+        '
+        Me.dgvGiftCards.AllowUserToAddRows = False
+        Me.dgvGiftCards.AllowUserToDeleteRows = False
+        Me.dgvGiftCards.AutoGenerateColumns = False
+        Me.dgvGiftCards.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvGiftCards.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.GiftCardIDDataGridViewTextBoxColumn, Me.CustomerIDDataGridViewTextBoxColumn, Me.DateOfPurchaseDataGridViewTextBoxColumn, Me.CardTotalDataGridViewTextBoxColumn, Me.btnAdd})
+        Me.dgvGiftCards.DataSource = Me.GiftCardsBindingSource
+        Me.dgvGiftCards.Location = New System.Drawing.Point(12, 27)
+        Me.dgvGiftCards.Name = "dgvGiftCards"
+        Me.dgvGiftCards.ReadOnly = True
+        Me.dgvGiftCards.RowHeadersVisible = False
+        Me.dgvGiftCards.Size = New System.Drawing.Size(453, 333)
+        Me.dgvGiftCards.TabIndex = 0
+        '
+        'GiftCardsBindingSource
+        '
+        Me.GiftCardsBindingSource.DataMember = "Gift_Cards"
+        Me.GiftCardsBindingSource.DataSource = Me.GEDataSet
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.ViewGiftCardsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.NewGiftCardToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(376, 24)
-        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Size = New System.Drawing.Size(476, 24)
+        Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'CloseToolStripMenuItem
@@ -65,173 +81,67 @@ Partial Class frmGiftCards
         Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
-        'ViewGiftCardsToolStripMenuItem
+        'NewGiftCardToolStripMenuItem
         '
-        Me.ViewGiftCardsToolStripMenuItem.Name = "ViewGiftCardsToolStripMenuItem"
-        Me.ViewGiftCardsToolStripMenuItem.Size = New System.Drawing.Size(99, 20)
-        Me.ViewGiftCardsToolStripMenuItem.Text = "View Gift Cards"
+        Me.NewGiftCardToolStripMenuItem.Name = "NewGiftCardToolStripMenuItem"
+        Me.NewGiftCardToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
+        Me.NewGiftCardToolStripMenuItem.Text = "New Gift Card"
         '
-        'btnClearID
+        'Gift_CardsTableAdapter
         '
-        Me.btnClearID.Location = New System.Drawing.Point(193, 239)
-        Me.btnClearID.Name = "btnClearID"
-        Me.btnClearID.Size = New System.Drawing.Size(171, 33)
-        Me.btnClearID.TabIndex = 59
-        Me.btnClearID.Text = "Clear"
-        Me.btnClearID.UseVisualStyleBackColor = True
+        Me.Gift_CardsTableAdapter.ClearBeforeFill = True
         '
-        'dgvCustomers
+        'GiftCardIDDataGridViewTextBoxColumn
         '
-        Me.dgvCustomers.AllowUserToAddRows = False
-        Me.dgvCustomers.AllowUserToDeleteRows = False
-        Me.dgvCustomers.AutoGenerateColumns = False
-        Me.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCustomers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustomerIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn})
-        Me.dgvCustomers.DataSource = Me.CustomersBindingSource
-        Me.dgvCustomers.Location = New System.Drawing.Point(12, 78)
-        Me.dgvCustomers.MultiSelect = False
-        Me.dgvCustomers.Name = "dgvCustomers"
-        Me.dgvCustomers.ReadOnly = True
-        Me.dgvCustomers.RowHeadersVisible = False
-        Me.dgvCustomers.Size = New System.Drawing.Size(352, 155)
-        Me.dgvCustomers.TabIndex = 58
-        '
-        'CustomersBindingSource
-        '
-        Me.CustomersBindingSource.DataMember = "Customers"
-        Me.CustomersBindingSource.DataSource = Me.GEDataSet
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'btnAddID
-        '
-        Me.btnAddID.Location = New System.Drawing.Point(12, 239)
-        Me.btnAddID.Name = "btnAddID"
-        Me.btnAddID.Size = New System.Drawing.Size(171, 33)
-        Me.btnAddID.TabIndex = 57
-        Me.btnAddID.Text = "Add"
-        Me.btnAddID.UseVisualStyleBackColor = True
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(9, 48)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(68, 13)
-        Me.Label8.TabIndex = 55
-        Me.Label8.Text = "Customer ID:"
-        '
-        'txtCustomerID
-        '
-        Me.txtCustomerID.Location = New System.Drawing.Point(86, 47)
-        Me.txtCustomerID.Name = "txtCustomerID"
-        Me.txtCustomerID.ReadOnly = True
-        Me.txtCustomerID.Size = New System.Drawing.Size(180, 20)
-        Me.txtCustomerID.TabIndex = 60
-        '
-        'btnSearch
-        '
-        Me.btnSearch.Location = New System.Drawing.Point(272, 44)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(92, 25)
-        Me.btnSearch.TabIndex = 61
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
-        'dtpDateOfPurchase
-        '
-        Me.dtpDateOfPurchase.Location = New System.Drawing.Point(119, 288)
-        Me.dtpDateOfPurchase.Name = "dtpDateOfPurchase"
-        Me.dtpDateOfPurchase.Size = New System.Drawing.Size(213, 20)
-        Me.dtpDateOfPurchase.TabIndex = 62
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(20, 291)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(93, 13)
-        Me.Label1.TabIndex = 63
-        Me.Label1.Text = "Date of Purchase:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(9, 326)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(104, 26)
-        Me.Label2.TabIndex = 64
-        Me.Label2.Text = "(Starting) Card Total:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "     (2.50 minimum)"
-        '
-        'CustomersTableAdapter
-        '
-        Me.CustomersTableAdapter.ClearBeforeFill = True
-        '
-        'txtCardTotal
-        '
-        Me.txtCardTotal.Location = New System.Drawing.Point(119, 323)
-        Me.txtCardTotal.Name = "txtCardTotal"
-        Me.txtCardTotal.Size = New System.Drawing.Size(213, 20)
-        Me.txtCardTotal.TabIndex = 65
-        Me.txtCardTotal.Text = "2.50"
-        '
-        'btnActivateGiftCard
-        '
-        Me.btnActivateGiftCard.Enabled = False
-        Me.btnActivateGiftCard.Location = New System.Drawing.Point(121, 366)
-        Me.btnActivateGiftCard.Name = "btnActivateGiftCard"
-        Me.btnActivateGiftCard.Size = New System.Drawing.Size(134, 33)
-        Me.btnActivateGiftCard.TabIndex = 66
-        Me.btnActivateGiftCard.Text = "Activate Gift Card"
-        Me.btnActivateGiftCard.UseVisualStyleBackColor = True
+        Me.GiftCardIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.GiftCardIDDataGridViewTextBoxColumn.DataPropertyName = "giftCardID"
+        Me.GiftCardIDDataGridViewTextBoxColumn.HeaderText = "Gift Card ID"
+        Me.GiftCardIDDataGridViewTextBoxColumn.Name = "GiftCardIDDataGridViewTextBoxColumn"
+        Me.GiftCardIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GiftCardIDDataGridViewTextBoxColumn.Width = 87
         '
         'CustomerIDDataGridViewTextBoxColumn
         '
+        Me.CustomerIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.CustomerIDDataGridViewTextBoxColumn.DataPropertyName = "customerID"
-        Me.CustomerIDDataGridViewTextBoxColumn.HeaderText = "customerID"
+        Me.CustomerIDDataGridViewTextBoxColumn.HeaderText = "Customer ID"
         Me.CustomerIDDataGridViewTextBoxColumn.Name = "CustomerIDDataGridViewTextBoxColumn"
         Me.CustomerIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CustomerIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.CustomerIDDataGridViewTextBoxColumn.Width = 67
+        Me.CustomerIDDataGridViewTextBoxColumn.Width = 90
         '
-        'FirstNameDataGridViewTextBoxColumn
+        'DateOfPurchaseDataGridViewTextBoxColumn
         '
-        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
-        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "firstName"
-        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
-        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FirstNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.FirstNameDataGridViewTextBoxColumn.Width = 57
+        Me.DateOfPurchaseDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DateOfPurchaseDataGridViewTextBoxColumn.DataPropertyName = "dateOfPurchase"
+        Me.DateOfPurchaseDataGridViewTextBoxColumn.HeaderText = "Date Of Purchase"
+        Me.DateOfPurchaseDataGridViewTextBoxColumn.Name = "DateOfPurchaseDataGridViewTextBoxColumn"
+        Me.DateOfPurchaseDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DateOfPurchaseDataGridViewTextBoxColumn.Width = 107
         '
-        'LastNameDataGridViewTextBoxColumn
+        'CardTotalDataGridViewTextBoxColumn
         '
-        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName"
-        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "lastName"
-        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
-        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LastNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.LastNameDataGridViewTextBoxColumn.Width = 57
+        Me.CardTotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.CardTotalDataGridViewTextBoxColumn.DataPropertyName = "cardTotal"
+        Me.CardTotalDataGridViewTextBoxColumn.HeaderText = "Card Total"
+        Me.CardTotalDataGridViewTextBoxColumn.Name = "CardTotalDataGridViewTextBoxColumn"
+        Me.CardTotalDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CardTotalDataGridViewTextBoxColumn.Width = 75
+        '
+        'btnAdd
+        '
+        Me.btnAdd.HeaderText = ""
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.ReadOnly = True
+        Me.btnAdd.Text = "Refill"
+        Me.btnAdd.UseColumnTextForButtonValue = True
+        Me.btnAdd.Width = 61
         '
         'frmGiftCards
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(376, 407)
-        Me.Controls.Add(Me.btnActivateGiftCard)
-        Me.Controls.Add(Me.txtCardTotal)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.dtpDateOfPurchase)
-        Me.Controls.Add(Me.btnSearch)
-        Me.Controls.Add(Me.txtCustomerID)
-        Me.Controls.Add(Me.btnClearID)
-        Me.Controls.Add(Me.dgvCustomers)
-        Me.Controls.Add(Me.btnAddID)
-        Me.Controls.Add(Me.Label8)
+        Me.ClientSize = New System.Drawing.Size(476, 367)
+        Me.Controls.Add(Me.dgvGiftCards)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
@@ -239,34 +149,26 @@ Partial Class frmGiftCards
         Me.Name = "frmGiftCards"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gift Cards"
+        CType(Me.dgvGiftCards, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GiftCardsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents dgvGiftCards As DataGridView
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ViewGiftCardsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents btnClearID As Button
-    Friend WithEvents dgvCustomers As DataGridView
-    Friend WithEvents btnAddID As Button
-    Friend WithEvents Label8 As Label
-    Friend WithEvents txtCustomerID As TextBox
-    Friend WithEvents btnSearch As Button
-    Friend WithEvents dtpDateOfPurchase As DateTimePicker
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents GEDataSet As GEDataSet
-    Friend WithEvents CustomersBindingSource As BindingSource
-    Friend WithEvents CustomersTableAdapter As GEDataSetTableAdapters.CustomersTableAdapter
-    Friend WithEvents txtCardTotal As TextBox
-    Friend WithEvents btnActivateGiftCard As Button
+    Friend WithEvents GiftCardsBindingSource As BindingSource
+    Friend WithEvents Gift_CardsTableAdapter As GEDataSetTableAdapters.Gift_CardsTableAdapter
+    Friend WithEvents NewGiftCardToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GiftCardIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CustomerIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DateOfPurchaseDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CardTotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnAdd As DataGridViewButtonColumn
 End Class

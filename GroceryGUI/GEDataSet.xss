@@ -12,7 +12,7 @@
     <Shape ID="DesignTable:Categories" ZOrder="75" X="336" Y="4004" Height="153" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Coupons" ZOrder="74" X="947" Y="3482" Height="191" Width="195" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:CreditAudit" ZOrder="73" X="912" Y="910" Height="210" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignTable:Customers" ZOrder="72" X="985" Y="1655" Height="305" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignTable:Customers" ZOrder="72" X="985" Y="1655" Height="324" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
     <Shape ID="DesignTable:Departments" ZOrder="71" X="336" Y="4227" Height="134" Width="231" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Discount_Type" ZOrder="70" X="1224" Y="2960" Height="115" Width="229" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Discounts" ZOrder="69" X="953" Y="2960" Height="191" Width="201" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
@@ -70,7 +70,7 @@
       <RoutePoints>
         <Point>
           <X>1174</X>
-          <Y>1960</Y>
+          <Y>1979</Y>
         </Point>
         <Point>
           <X>1174</X>
@@ -578,7 +578,7 @@
       <RoutePoints>
         <Point>
           <X>1166</X>
-          <Y>1960</Y>
+          <Y>1979</Y>
         </Point>
         <Point>
           <X>1166</X>
