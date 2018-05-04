@@ -20,10 +20,6 @@ Public Class ShippingAdresses
         Me.Shipping_AddressesTableAdapter.CustomerAddress(Me.GEDataSet.Shipping_Addresses, frmUpdateCustomer.CustomerIDTextBox.Text)
     End Sub
 
-    Private Sub Shipping_AddressesDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Shipping_AddressesDataGridView.CellContentClick
-
-    End Sub
-
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
         ' Close the form
         Me.Close()

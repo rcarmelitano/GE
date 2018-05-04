@@ -100,10 +100,10 @@
     <Compile Include="AddDepartment.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="audit.Designer.vb">
-      <DependentUpon>audit.vb</DependentUpon>
+    <Compile Include="AuditTable.Designer.vb">
+      <DependentUpon>AuditTable.vb</DependentUpon>
     </Compile>
-    <Compile Include="audit.vb">
+    <Compile Include="AuditTable.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="billingAdresses.Designer.vb">
@@ -140,6 +140,12 @@
       <DependentUpon>couponsView.vb</DependentUpon>
     </Compile>
     <Compile Include="couponsView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditChangeReason.Designer.vb">
+      <DependentUpon>CreditChangeReason.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreditChangeReason.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerHistory.Designer.vb">
@@ -253,10 +259,16 @@
     <Compile Include="NewReturn.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewShinpping.Designer.vb">
+    <Compile Include="NewShinpping.designer.vb">
       <DependentUpon>NewShinpping.vb</DependentUpon>
     </Compile>
     <Compile Include="NewShinpping.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewShippingAddress.designer.vb">
+      <DependentUpon>NewShippingAddress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewShippingAddress.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewSupplier.designer.vb">
@@ -369,12 +381,6 @@
     <Compile Include="ReportsMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewShipping.designer.vb">
-      <DependentUpon>NewShipping.vb</DependentUpon>
-    </Compile>
-    <Compile Include="NewShipping.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ShipmentConfirmation.Designer.vb">
       <DependentUpon>ShipmentConfirmation.vb</DependentUpon>
     </Compile>
@@ -423,12 +429,6 @@
     <Compile Include="Suppliers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="testing.Designer.vb">
-      <DependentUpon>testing.vb</DependentUpon>
-    </Compile>
-    <Compile Include="testing.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="updateCustomer.Designer.vb">
       <DependentUpon>updateCustomer.vb</DependentUpon>
     </Compile>
@@ -458,8 +458,8 @@
     <EmbeddedResource Include="AddDepartment.resx">
       <DependentUpon>AddDepartment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="audit.resx">
-      <DependentUpon>audit.vb</DependentUpon>
+    <EmbeddedResource Include="AuditTable.resx">
+      <DependentUpon>AuditTable.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CampaignsView.resx">
       <DependentUpon>CampaignsView.vb</DependentUpon>
@@ -475,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="couponsView.resx">
       <DependentUpon>couponsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditChangeReason.resx">
+      <DependentUpon>CreditChangeReason.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerHistory.resx">
       <DependentUpon>CustomerHistory.vb</DependentUpon>
@@ -530,6 +533,9 @@
     <EmbeddedResource Include="NewShinpping.resx">
       <DependentUpon>NewShinpping.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewShippingAddress.resx">
+      <DependentUpon>NewShippingAddress.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewSupplier.resx">
       <DependentUpon>NewSupplier.vb</DependentUpon>
     </EmbeddedResource>
@@ -584,9 +590,6 @@
     <EmbeddedResource Include="ReportsMenu.resx">
       <DependentUpon>ReportsMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewShipping.resx">
-      <DependentUpon>NewShipping.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ShipmentConfirmation.resx">
       <DependentUpon>ShipmentConfirmation.vb</DependentUpon>
     </EmbeddedResource>
@@ -610,9 +613,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Suppliers.resx">
       <DependentUpon>Suppliers.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="testing.resx">
-      <DependentUpon>testing.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="updateCustomer.resx">
       <DependentUpon>updateCustomer.vb</DependentUpon>

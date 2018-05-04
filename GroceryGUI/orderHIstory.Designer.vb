@@ -33,7 +33,7 @@ Partial Class frmorderHIstory
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.Order_DetailsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Order_DetailsTableAdapter()
         Me.TableAdapterManager = New GroceryGUI.GEDataSetTableAdapters.TableAdapterManager()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
         CType(Me.Order_DetailsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Order_DetailsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,8 +100,11 @@ Partial Class frmorderHIstory
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Billing_AddressesTableAdapter = Nothing
+        Me.TableAdapterManager.Campaign_Opt_InsTableAdapter = Nothing
+        Me.TableAdapterManager.Campaign_TypesTableAdapter = Nothing
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
+        Me.TableAdapterManager.CreditAuditTableAdapter = Nothing
         Me.TableAdapterManager.CustomersTableAdapter = Nothing
         Me.TableAdapterManager.DepartmentsTableAdapter = Nothing
         Me.TableAdapterManager.Discount_TypeTableAdapter = Nothing
@@ -132,21 +135,21 @@ Partial Class frmorderHIstory
         Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = GroceryGUI.GEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'Button1
+        'btnClose
         '
-        Me.Button1.Location = New System.Drawing.Point(0, -1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnClose.Location = New System.Drawing.Point(0, -1)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(75, 23)
+        Me.btnClose.TabIndex = 2
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'frmorderHIstory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(574, 266)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Order_DetailsDataGridView)
         Me.Name = "frmorderHIstory"
         Me.Text = "orderHIstory"
@@ -167,5 +170,5 @@ Partial Class frmorderHIstory
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents paid As DataGridViewCheckBoxColumn
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnClose As Button
 End Class

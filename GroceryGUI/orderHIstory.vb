@@ -14,7 +14,7 @@
 	End Sub
 
 
-	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         ' Close the form and display the customer history form
         Me.Close()
         frmCustomerHistory.Show()
