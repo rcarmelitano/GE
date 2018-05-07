@@ -27,4 +27,10 @@
         ' Disable the form controls
         Me.ControlBox = False
     End Sub
+
+    Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
+        ' Display a help message to the user
+        MessageBox.Show("This is the selection menu for Products and Inventory. To create a product, click ""Create a Product"", click ""View Products"" to see a list
+of pre-existing products or to update a product. Click ""View Inventory"" to view a list of pre-existing inventory for existing products or to update an instance of inventory.")
+    End Sub
 End Class

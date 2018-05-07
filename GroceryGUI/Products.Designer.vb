@@ -27,9 +27,6 @@ Partial Class frmProducts
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewProductToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvProducts = New System.Windows.Forms.DataGridView()
-        Me.ProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.ProductsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ProductsTableAdapter()
         Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CategoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DepartmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,6 +38,9 @@ Partial Class frmProducts
         Me.RetailCostDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.UpdateProduct = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.ProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.ProductsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ProductsTableAdapter()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,7 +53,7 @@ Partial Class frmProducts
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.NewProductToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(977, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1019, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -81,8 +81,106 @@ Partial Class frmProducts
         Me.dgvProducts.Name = "dgvProducts"
         Me.dgvProducts.ReadOnly = True
         Me.dgvProducts.RowHeadersVisible = False
-        Me.dgvProducts.Size = New System.Drawing.Size(953, 411)
+        Me.dgvProducts.Size = New System.Drawing.Size(995, 411)
         Me.dgvProducts.TabIndex = 1
+        '
+        'SKUDataGridViewTextBoxColumn
+        '
+        Me.SKUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
+        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SKUDataGridViewTextBoxColumn.Width = 54
+        '
+        'CategoryIDDataGridViewTextBoxColumn
+        '
+        Me.CategoryIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.CategoryIDDataGridViewTextBoxColumn.DataPropertyName = "categoryID"
+        Me.CategoryIDDataGridViewTextBoxColumn.HeaderText = "Category ID"
+        Me.CategoryIDDataGridViewTextBoxColumn.Name = "CategoryIDDataGridViewTextBoxColumn"
+        Me.CategoryIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CategoryIDDataGridViewTextBoxColumn.Width = 88
+        '
+        'DepartmentIDDataGridViewTextBoxColumn
+        '
+        Me.DepartmentIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DepartmentIDDataGridViewTextBoxColumn.DataPropertyName = "departmentID"
+        Me.DepartmentIDDataGridViewTextBoxColumn.HeaderText = "Department ID"
+        Me.DepartmentIDDataGridViewTextBoxColumn.Name = "DepartmentIDDataGridViewTextBoxColumn"
+        Me.DepartmentIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DepartmentIDDataGridViewTextBoxColumn.Width = 101
+        '
+        'ProductNameDataGridViewTextBoxColumn
+        '
+        Me.ProductNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "productName"
+        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
+        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
+        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DescriptionDataGridViewTextBoxColumn
+        '
+        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "description"
+        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
+        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
+        Me.DescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DescriptionDataGridViewTextBoxColumn.Width = 70
+        '
+        'TaxableDataGridViewCheckBoxColumn
+        '
+        Me.TaxableDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.TaxableDataGridViewCheckBoxColumn.DataPropertyName = "taxable"
+        Me.TaxableDataGridViewCheckBoxColumn.HeaderText = "Taxable"
+        Me.TaxableDataGridViewCheckBoxColumn.Name = "TaxableDataGridViewCheckBoxColumn"
+        Me.TaxableDataGridViewCheckBoxColumn.ReadOnly = True
+        Me.TaxableDataGridViewCheckBoxColumn.Width = 51
+        '
+        'UPCDataGridViewTextBoxColumn
+        '
+        Me.UPCDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.UPCDataGridViewTextBoxColumn.DataPropertyName = "UPC"
+        Me.UPCDataGridViewTextBoxColumn.HeaderText = "UPC"
+        Me.UPCDataGridViewTextBoxColumn.Name = "UPCDataGridViewTextBoxColumn"
+        Me.UPCDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UPCDataGridViewTextBoxColumn.Width = 54
+        '
+        'RetailUnitDataGridViewTextBoxColumn
+        '
+        Me.RetailUnitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.RetailUnitDataGridViewTextBoxColumn.DataPropertyName = "retailUnit"
+        Me.RetailUnitDataGridViewTextBoxColumn.HeaderText = "Retail Unit"
+        Me.RetailUnitDataGridViewTextBoxColumn.Name = "RetailUnitDataGridViewTextBoxColumn"
+        Me.RetailUnitDataGridViewTextBoxColumn.ReadOnly = True
+        Me.RetailUnitDataGridViewTextBoxColumn.Width = 81
+        '
+        'RetailCostDataGridViewTextBoxColumn
+        '
+        Me.RetailCostDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.RetailCostDataGridViewTextBoxColumn.DataPropertyName = "retailCost"
+        Me.RetailCostDataGridViewTextBoxColumn.HeaderText = "Retail Cost"
+        Me.RetailCostDataGridViewTextBoxColumn.Name = "RetailCostDataGridViewTextBoxColumn"
+        Me.RetailCostDataGridViewTextBoxColumn.ReadOnly = True
+        Me.RetailCostDataGridViewTextBoxColumn.Width = 83
+        '
+        'StatusDataGridViewCheckBoxColumn
+        '
+        Me.StatusDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.StatusDataGridViewCheckBoxColumn.DataPropertyName = "status"
+        Me.StatusDataGridViewCheckBoxColumn.HeaderText = "Status"
+        Me.StatusDataGridViewCheckBoxColumn.Name = "StatusDataGridViewCheckBoxColumn"
+        Me.StatusDataGridViewCheckBoxColumn.ReadOnly = True
+        Me.StatusDataGridViewCheckBoxColumn.Width = 43
+        '
+        'UpdateProduct
+        '
+        Me.UpdateProduct.HeaderText = ""
+        Me.UpdateProduct.Name = "UpdateProduct"
+        Me.UpdateProduct.ReadOnly = True
+        Me.UpdateProduct.Text = "Update"
+        Me.UpdateProduct.ToolTipText = "Update Product"
+        Me.UpdateProduct.UseColumnTextForButtonValue = True
+        Me.UpdateProduct.Width = 51
         '
         'ProductsBindingSource
         '
@@ -98,110 +196,11 @@ Partial Class frmProducts
         '
         Me.ProductsTableAdapter.ClearBeforeFill = True
         '
-        'SKUDataGridViewTextBoxColumn
-        '
-        Me.SKUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
-        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
-        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
-        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SKUDataGridViewTextBoxColumn.Width = 54
-        '
-        'CategoryIDDataGridViewTextBoxColumn
-        '
-        Me.CategoryIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.CategoryIDDataGridViewTextBoxColumn.DataPropertyName = "categoryID"
-        Me.CategoryIDDataGridViewTextBoxColumn.HeaderText = "categoryID"
-        Me.CategoryIDDataGridViewTextBoxColumn.Name = "CategoryIDDataGridViewTextBoxColumn"
-        Me.CategoryIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CategoryIDDataGridViewTextBoxColumn.Width = 84
-        '
-        'DepartmentIDDataGridViewTextBoxColumn
-        '
-        Me.DepartmentIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DepartmentIDDataGridViewTextBoxColumn.DataPropertyName = "departmentID"
-        Me.DepartmentIDDataGridViewTextBoxColumn.HeaderText = "departmentID"
-        Me.DepartmentIDDataGridViewTextBoxColumn.Name = "DepartmentIDDataGridViewTextBoxColumn"
-        Me.DepartmentIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DepartmentIDDataGridViewTextBoxColumn.Width = 96
-        '
-        'ProductNameDataGridViewTextBoxColumn
-        '
-        Me.ProductNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "productName"
-        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "productName"
-        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
-        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ProductNameDataGridViewTextBoxColumn.Width = 96
-        '
-        'DescriptionDataGridViewTextBoxColumn
-        '
-        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "description"
-        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "description"
-        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
-        Me.DescriptionDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DescriptionDataGridViewTextBoxColumn.Width = 70
-        '
-        'TaxableDataGridViewCheckBoxColumn
-        '
-        Me.TaxableDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.TaxableDataGridViewCheckBoxColumn.DataPropertyName = "taxable"
-        Me.TaxableDataGridViewCheckBoxColumn.HeaderText = "taxable"
-        Me.TaxableDataGridViewCheckBoxColumn.Name = "TaxableDataGridViewCheckBoxColumn"
-        Me.TaxableDataGridViewCheckBoxColumn.ReadOnly = True
-        Me.TaxableDataGridViewCheckBoxColumn.Width = 47
-        '
-        'UPCDataGridViewTextBoxColumn
-        '
-        Me.UPCDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.UPCDataGridViewTextBoxColumn.DataPropertyName = "UPC"
-        Me.UPCDataGridViewTextBoxColumn.HeaderText = "UPC"
-        Me.UPCDataGridViewTextBoxColumn.Name = "UPCDataGridViewTextBoxColumn"
-        Me.UPCDataGridViewTextBoxColumn.ReadOnly = True
-        Me.UPCDataGridViewTextBoxColumn.Width = 54
-        '
-        'RetailUnitDataGridViewTextBoxColumn
-        '
-        Me.RetailUnitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.RetailUnitDataGridViewTextBoxColumn.DataPropertyName = "retailUnit"
-        Me.RetailUnitDataGridViewTextBoxColumn.HeaderText = "retailUnit"
-        Me.RetailUnitDataGridViewTextBoxColumn.Name = "RetailUnitDataGridViewTextBoxColumn"
-        Me.RetailUnitDataGridViewTextBoxColumn.ReadOnly = True
-        Me.RetailUnitDataGridViewTextBoxColumn.Width = 73
-        '
-        'RetailCostDataGridViewTextBoxColumn
-        '
-        Me.RetailCostDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.RetailCostDataGridViewTextBoxColumn.DataPropertyName = "retailCost"
-        Me.RetailCostDataGridViewTextBoxColumn.HeaderText = "retailCost"
-        Me.RetailCostDataGridViewTextBoxColumn.Name = "RetailCostDataGridViewTextBoxColumn"
-        Me.RetailCostDataGridViewTextBoxColumn.ReadOnly = True
-        Me.RetailCostDataGridViewTextBoxColumn.Width = 75
-        '
-        'StatusDataGridViewCheckBoxColumn
-        '
-        Me.StatusDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.StatusDataGridViewCheckBoxColumn.DataPropertyName = "status"
-        Me.StatusDataGridViewCheckBoxColumn.HeaderText = "status"
-        Me.StatusDataGridViewCheckBoxColumn.Name = "StatusDataGridViewCheckBoxColumn"
-        Me.StatusDataGridViewCheckBoxColumn.ReadOnly = True
-        Me.StatusDataGridViewCheckBoxColumn.Width = 41
-        '
-        'UpdateProduct
-        '
-        Me.UpdateProduct.HeaderText = ""
-        Me.UpdateProduct.Name = "UpdateProduct"
-        Me.UpdateProduct.ReadOnly = True
-        Me.UpdateProduct.Text = "Update"
-        Me.UpdateProduct.ToolTipText = "Update Product"
-        Me.UpdateProduct.UseColumnTextForButtonValue = True
-        Me.UpdateProduct.Width = 51
-        '
         'frmProducts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(977, 450)
+        Me.ClientSize = New System.Drawing.Size(1019, 450)
         Me.Controls.Add(Me.dgvProducts)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

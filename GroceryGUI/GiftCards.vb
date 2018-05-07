@@ -3,6 +3,8 @@
         'TODO: This line of code loads data into the 'GEDataSet.Gift_Cards' table. You can move, or remove it, as needed.
         Me.Gift_CardsTableAdapter.Fill(Me.GEDataSet.Gift_Cards)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click

@@ -56,6 +56,8 @@ Public Class frmCoupons
         ' Display the new ID
         txtCouponID.Text = couponID
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 
     Private Sub ViewPromotionsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles mnuViewPromotions.Click

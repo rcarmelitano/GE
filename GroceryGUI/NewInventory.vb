@@ -83,7 +83,16 @@ Public Class frmNewInventory
                 ' Open the connection to the database and pass in the information
                 inventoryConnection.Open()
                 addInventory.ExecuteNonQuery()
+
+                ' Close the form and return to the menu
+                Me.Close()
+                frmProductsAndInventoryMenu.Show()
             End If
         End If
+    End Sub
+
+    Private Sub ViewInventoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewInventoryToolStripMenuItem.Click
+        ' Show the list of current inventory
+        frmInventoryView.ShowDialog()
     End Sub
 End Class

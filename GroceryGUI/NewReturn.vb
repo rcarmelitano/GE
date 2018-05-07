@@ -79,6 +79,9 @@ Public Class frmNewReturn
 
     Private Sub frmNewReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        ' Disable the form controls
+        Me.ControlBox = False
+
         ' Converts the date and time of the datetimepicker to a usable string format
         dtpReturnDate.Format = DateTimePickerFormat.Custom
         dtpReturnDate.CustomFormat = "MM/dd/yyyy hh:mm"
@@ -137,5 +140,10 @@ Public Class frmNewReturn
 
         ' Convert the string to an int
         Integer.TryParse(nudQuantity.Text, quantityMax)
+    End Sub
+
+    Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
+        ' Display a help message to the user
+        MessageBox.Show("To make a return, enter an Order ID and click the ""Enter"" button. After doing so a list of order details and their information will be displayed where you can click the ""Add"" button for the order detail that you would like to return.")
     End Sub
 End Class

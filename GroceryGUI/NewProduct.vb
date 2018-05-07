@@ -12,6 +12,8 @@ Public Class frmNewProduct
         Me.DepartmentsTableAdapter.Fill(Me.GEDataSet.Departments)
         Me.CategoriesTableAdapter.Fill(Me.GEDataSet.Categories)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuClose.Click
@@ -190,5 +192,10 @@ Public Class frmNewProduct
         btnContinue.Enabled = True
         btnAddCategory.Visible = True
         btnAddDepartment.Visible = True
+    End Sub
+
+    Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
+        ' Display a message to the user
+        MessageBox.Show("Creating a product is a two step process, fill out the information seen here and once finished, press the ""Continue"" button to proceed to the second step.")
     End Sub
 End Class

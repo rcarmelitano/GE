@@ -31,6 +31,8 @@ Public Class frmUpdateInventory
         'TODO: This line of code loads data into the 'GEDataSet.Suppliers' table. You can move, or remove it, as needed.
         Me.SuppliersTableAdapter.Fill(Me.GEDataSet.Suppliers)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 
     Private Sub dgvSuppliers_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSuppliers.CellContentClick
@@ -79,5 +81,11 @@ Public Class frmUpdateInventory
             ' Display an error message to the user
             MessageBox.Show("You must fill out all of the required information to Update. Please try again.")
         End If
+    End Sub
+
+    Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
+        ' Display a message to the user for help
+        MessageBox.Show("Here, you can update the data for an instance of inventory for a product. If you wish to change a supplier, click the ""Add"" button next to
+the supplier's name.")
     End Sub
 End Class

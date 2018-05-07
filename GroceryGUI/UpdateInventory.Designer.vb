@@ -244,7 +244,7 @@ Partial Class frmUpdateInventory
         'supplierID
         '
         Me.supplierID.DataPropertyName = "supplierID"
-        Me.supplierID.HeaderText = "supplierID"
+        Me.supplierID.HeaderText = "Supplier ID"
         Me.supplierID.Name = "supplierID"
         Me.supplierID.ReadOnly = True
         '
@@ -252,10 +252,10 @@ Partial Class frmUpdateInventory
         '
         Me.supplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.supplierName.DataPropertyName = "supplierName"
-        Me.supplierName.HeaderText = "supplierName"
+        Me.supplierName.HeaderText = "Supplier Name"
         Me.supplierName.Name = "supplierName"
         Me.supplierName.ReadOnly = True
-        Me.supplierName.Width = 96
+        Me.supplierName.Width = 101
         '
         'btnAdd
         '
@@ -265,7 +265,7 @@ Partial Class frmUpdateInventory
         Me.btnAdd.ReadOnly = True
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseColumnTextForButtonValue = True
-        Me.btnAdd.Width = 70
+        Me.btnAdd.Width = 58
         '
         'frmUpdateInventory
         '
@@ -294,7 +294,7 @@ Partial Class frmUpdateInventory
         Me.MaximizeBox = False
         Me.Name = "frmUpdateInventory"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "UpdateInventory"
+        Me.Text = "Update Inventory"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.dgvSuppliers, System.ComponentModel.ISupportInitialize).EndInit()

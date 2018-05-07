@@ -70,7 +70,7 @@ Partial Class frmProductsAndInventoryMenu
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Size = New System.Drawing.Size(132, 56)
         Me.btnInventory.TabIndex = 3
-        Me.btnInventory.Text = "Inventory"
+        Me.btnInventory.Text = "View Inventory"
         Me.btnInventory.UseVisualStyleBackColor = True
         '
         'btnProducts
@@ -103,7 +103,7 @@ Partial Class frmProductsAndInventoryMenu
         Me.MaximizeBox = False
         Me.Name = "frmProductsAndInventoryMenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ProductsAndInventoryMenu"
+        Me.Text = "Products & Inventory Menu"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)

@@ -1,4 +1,4 @@
-﻿Public Class InventoryView
+﻿Public Class frmInventoryView
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
         ' Close the form
         Me.Close()

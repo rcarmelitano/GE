@@ -216,7 +216,6 @@ C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmDiscountsView
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmGiftCardsView.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmInventory.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewInventory.resources
-C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.InventoryView.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewProduct.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.NewSupplier.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmProducts.resources
@@ -741,3 +740,4 @@ C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateGiftCar
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.CreditChangeReason.resources
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.AuditTable.resources
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewShrinkage.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmInventoryView.resources

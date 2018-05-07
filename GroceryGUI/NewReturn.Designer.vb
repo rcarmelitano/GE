@@ -179,10 +179,10 @@ Partial Class frmNewReturn
         '
         Me.OrderDetailIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.OrderDetailIDDataGridViewTextBoxColumn.DataPropertyName = "orderDetailID"
-        Me.OrderDetailIDDataGridViewTextBoxColumn.HeaderText = "orderDetailID"
+        Me.OrderDetailIDDataGridViewTextBoxColumn.HeaderText = "Order Detail ID"
         Me.OrderDetailIDDataGridViewTextBoxColumn.Name = "OrderDetailIDDataGridViewTextBoxColumn"
         Me.OrderDetailIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.OrderDetailIDDataGridViewTextBoxColumn.Width = 94
+        Me.OrderDetailIDDataGridViewTextBoxColumn.Width = 102
         '
         'SKUDataGridViewTextBoxColumn
         '
@@ -197,7 +197,7 @@ Partial Class frmNewReturn
         '
         Me.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.quantity.DataPropertyName = "quantity"
-        Me.quantity.HeaderText = "quantity"
+        Me.quantity.HeaderText = "Quantity"
         Me.quantity.Name = "quantity"
         Me.quantity.ReadOnly = True
         Me.quantity.Visible = False
@@ -206,10 +206,10 @@ Partial Class frmNewReturn
         '
         Me.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.price.DataPropertyName = "price"
-        Me.price.HeaderText = "price"
+        Me.price.HeaderText = "Price"
         Me.price.Name = "price"
         Me.price.ReadOnly = True
-        Me.price.Width = 55
+        Me.price.Width = 56
         '
         'btnAddID
         '

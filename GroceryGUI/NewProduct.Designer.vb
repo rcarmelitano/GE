@@ -130,7 +130,7 @@ Partial Class frmNewProduct
         'DepartmentIDDataGridViewTextBoxColumn
         '
         Me.DepartmentIDDataGridViewTextBoxColumn.DataPropertyName = "departmentID"
-        Me.DepartmentIDDataGridViewTextBoxColumn.HeaderText = "departmentID"
+        Me.DepartmentIDDataGridViewTextBoxColumn.HeaderText = "Department ID"
         Me.DepartmentIDDataGridViewTextBoxColumn.Name = "DepartmentIDDataGridViewTextBoxColumn"
         Me.DepartmentIDDataGridViewTextBoxColumn.ReadOnly = True
         Me.DepartmentIDDataGridViewTextBoxColumn.Width = 76
@@ -139,10 +139,10 @@ Partial Class frmNewProduct
         '
         Me.NameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.NameDataGridViewTextBoxColumn1.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn1.HeaderText = "name"
+        Me.NameDataGridViewTextBoxColumn1.HeaderText = "Name"
         Me.NameDataGridViewTextBoxColumn1.Name = "NameDataGridViewTextBoxColumn1"
         Me.NameDataGridViewTextBoxColumn1.ReadOnly = True
-        Me.NameDataGridViewTextBoxColumn1.Width = 58
+        Me.NameDataGridViewTextBoxColumn1.Width = 60
         '
         'btnAddDepartment
         '
@@ -190,7 +190,7 @@ Partial Class frmNewProduct
         'CategoryIDDataGridViewTextBoxColumn
         '
         Me.CategoryIDDataGridViewTextBoxColumn.DataPropertyName = "categoryID"
-        Me.CategoryIDDataGridViewTextBoxColumn.HeaderText = "categoryID"
+        Me.CategoryIDDataGridViewTextBoxColumn.HeaderText = "Category ID"
         Me.CategoryIDDataGridViewTextBoxColumn.Name = "CategoryIDDataGridViewTextBoxColumn"
         Me.CategoryIDDataGridViewTextBoxColumn.ReadOnly = True
         Me.CategoryIDDataGridViewTextBoxColumn.Width = 76
@@ -199,10 +199,10 @@ Partial Class frmNewProduct
         '
         Me.NameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "Name"
         Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
         Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NameDataGridViewTextBoxColumn.Width = 58
+        Me.NameDataGridViewTextBoxColumn.Width = 60
         '
         'btnAddCategory
         '
@@ -418,7 +418,7 @@ Partial Class frmNewProduct
         '
         Me.cbTaxable.AutoSize = True
         Me.cbTaxable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cbTaxable.Location = New System.Drawing.Point(385, 103)
+        Me.cbTaxable.Location = New System.Drawing.Point(382, 103)
         Me.cbTaxable.Name = "cbTaxable"
         Me.cbTaxable.Size = New System.Drawing.Size(67, 17)
         Me.cbTaxable.TabIndex = 116
@@ -457,7 +457,7 @@ Partial Class frmNewProduct
         Me.cbStatus.Checked = True
         Me.cbStatus.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cbStatus.Enabled = False
-        Me.cbStatus.Location = New System.Drawing.Point(393, 75)
+        Me.cbStatus.Location = New System.Drawing.Point(390, 75)
         Me.cbStatus.Name = "cbStatus"
         Me.cbStatus.Size = New System.Drawing.Size(59, 17)
         Me.cbStatus.TabIndex = 121
@@ -535,7 +535,7 @@ Partial Class frmNewProduct
         '
         Me.mtxtUPC.Enabled = False
         Me.mtxtUPC.Location = New System.Drawing.Point(97, 102)
-        Me.mtxtUPC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.mtxtUPC.Margin = New System.Windows.Forms.Padding(2)
         Me.mtxtUPC.Mask = "0000000000000000"
         Me.mtxtUPC.Name = "mtxtUPC"
         Me.mtxtUPC.ReadOnly = True
@@ -555,7 +555,7 @@ Partial Class frmNewProduct
         'txtSKU
         '
         Me.txtSKU.Location = New System.Drawing.Point(97, 46)
-        Me.txtSKU.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtSKU.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSKU.Name = "txtSKU"
         Me.txtSKU.Size = New System.Drawing.Size(105, 20)
         Me.txtSKU.TabIndex = 131
@@ -601,7 +601,7 @@ Partial Class frmNewProduct
         Me.MaximizeBox = False
         Me.Name = "frmNewProduct"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "NewProduct"
+        Me.Text = "New Product"
         CType(Me.dgvDepartments, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DepartmentsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -666,12 +666,6 @@ Partial Class frmNewProduct
     Friend WithEvents btnContinue As Button
     Friend WithEvents txtRetailCost As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents DepartmentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NameDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents btnAddDepartment As DataGridViewButtonColumn
-    Friend WithEvents CategoryIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents btnAddCategory As DataGridViewButtonColumn
     Friend WithEvents rbYes As RadioButton
     Friend WithEvents rbNo As RadioButton
     Friend WithEvents Label9 As Label
@@ -680,4 +674,10 @@ Partial Class frmNewProduct
     Friend WithEvents mnuUpdate As ToolStripMenuItem
     Friend WithEvents btnSave As Button
     Friend WithEvents txtSKU As TextBox
+    Friend WithEvents DepartmentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NameDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents btnAddDepartment As DataGridViewButtonColumn
+    Friend WithEvents CategoryIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnAddCategory As DataGridViewButtonColumn
 End Class

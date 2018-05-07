@@ -35,9 +35,6 @@ Partial Class frmNewInventory
         Me.txtPurchaseUnit = New System.Windows.Forms.TextBox()
         Me.txtSupplierID = New System.Windows.Forms.TextBox()
         Me.dgvSuppliers = New System.Windows.Forms.DataGridView()
-        Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.supplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAdd = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.SuppliersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -46,6 +43,9 @@ Partial Class frmNewInventory
         Me.SuppliersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.SuppliersTableAdapter()
         Me.DepartmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DepartmentsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DepartmentsTableAdapter()
+        Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.supplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAdd = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvSuppliers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SuppliersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,29 +60,27 @@ Partial Class frmNewInventory
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.ViewInventoryToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(505, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(379, 24)
         Me.MenuStrip1.TabIndex = 60
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'BackToolStripMenuItem
         '
         Me.BackToolStripMenuItem.Name = "BackToolStripMenuItem"
-        Me.BackToolStripMenuItem.Size = New System.Drawing.Size(52, 24)
+        Me.BackToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.BackToolStripMenuItem.Text = "Back"
         '
         'ViewInventoryToolStripMenuItem
         '
         Me.ViewInventoryToolStripMenuItem.Name = "ViewInventoryToolStripMenuItem"
-        Me.ViewInventoryToolStripMenuItem.Size = New System.Drawing.Size(118, 24)
+        Me.ViewInventoryToolStripMenuItem.Size = New System.Drawing.Size(97, 20)
         Me.ViewInventoryToolStripMenuItem.Text = "View Inventory"
         '
         'btnCreateProduct
         '
-        Me.btnCreateProduct.Location = New System.Drawing.Point(135, 405)
-        Me.btnCreateProduct.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCreateProduct.Location = New System.Drawing.Point(101, 329)
         Me.btnCreateProduct.Name = "btnCreateProduct"
-        Me.btnCreateProduct.Size = New System.Drawing.Size(239, 53)
+        Me.btnCreateProduct.Size = New System.Drawing.Size(179, 43)
         Me.btnCreateProduct.TabIndex = 66
         Me.btnCreateProduct.Text = "Create Product"
         Me.btnCreateProduct.UseVisualStyleBackColor = True
@@ -90,65 +88,58 @@ Partial Class frmNewInventory
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(87, 138)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(65, 112)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(101, 17)
+        Me.Label3.Size = New System.Drawing.Size(77, 13)
         Me.Label3.TabIndex = 68
         Me.Label3.Text = "Purchase Unit:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(99, 54)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(74, 44)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(87, 17)
+        Me.Label5.Size = New System.Drawing.Size(68, 13)
         Me.Label5.TabIndex = 70
         Me.Label5.Text = "Inventory ID:"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(119, 96)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(89, 78)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(69, 17)
+        Me.Label9.Size = New System.Drawing.Size(53, 13)
         Me.Label9.TabIndex = 73
         Me.Label9.Text = "Unit Cost:"
         '
         'txtInventoryID
         '
-        Me.txtInventoryID.Location = New System.Drawing.Point(217, 50)
-        Me.txtInventoryID.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtInventoryID.Location = New System.Drawing.Point(163, 41)
         Me.txtInventoryID.Name = "txtInventoryID"
         Me.txtInventoryID.ReadOnly = True
-        Me.txtInventoryID.Size = New System.Drawing.Size(192, 22)
+        Me.txtInventoryID.Size = New System.Drawing.Size(145, 20)
         Me.txtInventoryID.TabIndex = 90
         '
         'txtUnitCost
         '
-        Me.txtUnitCost.Location = New System.Drawing.Point(217, 92)
-        Me.txtUnitCost.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtUnitCost.Location = New System.Drawing.Point(163, 75)
         Me.txtUnitCost.Name = "txtUnitCost"
-        Me.txtUnitCost.Size = New System.Drawing.Size(192, 22)
+        Me.txtUnitCost.Size = New System.Drawing.Size(145, 20)
         Me.txtUnitCost.TabIndex = 91
         '
         'txtPurchaseUnit
         '
-        Me.txtPurchaseUnit.Location = New System.Drawing.Point(217, 134)
-        Me.txtPurchaseUnit.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPurchaseUnit.Location = New System.Drawing.Point(163, 109)
         Me.txtPurchaseUnit.Name = "txtPurchaseUnit"
-        Me.txtPurchaseUnit.Size = New System.Drawing.Size(192, 22)
+        Me.txtPurchaseUnit.Size = New System.Drawing.Size(145, 20)
         Me.txtPurchaseUnit.TabIndex = 92
         '
         'txtSupplierID
         '
-        Me.txtSupplierID.Location = New System.Drawing.Point(107, 183)
-        Me.txtSupplierID.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSupplierID.Location = New System.Drawing.Point(80, 149)
         Me.txtSupplierID.Name = "txtSupplierID"
         Me.txtSupplierID.ReadOnly = True
-        Me.txtSupplierID.Size = New System.Drawing.Size(128, 22)
+        Me.txtSupplierID.Size = New System.Drawing.Size(97, 20)
         Me.txtSupplierID.TabIndex = 99
         '
         'dgvSuppliers
@@ -159,40 +150,12 @@ Partial Class frmNewInventory
         Me.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSuppliers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SupplierIDDataGridViewTextBoxColumn, Me.supplierName, Me.btnAdd})
         Me.dgvSuppliers.DataSource = Me.SuppliersBindingSource
-        Me.dgvSuppliers.Location = New System.Drawing.Point(20, 215)
-        Me.dgvSuppliers.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvSuppliers.Location = New System.Drawing.Point(15, 175)
         Me.dgvSuppliers.Name = "dgvSuppliers"
         Me.dgvSuppliers.ReadOnly = True
         Me.dgvSuppliers.RowHeadersVisible = False
-        Me.dgvSuppliers.Size = New System.Drawing.Size(469, 174)
+        Me.dgvSuppliers.Size = New System.Drawing.Size(352, 141)
         Me.dgvSuppliers.TabIndex = 97
-        '
-        'SupplierIDDataGridViewTextBoxColumn
-        '
-        Me.SupplierIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "supplierID"
-        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "supplierID"
-        Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
-        Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'supplierName
-        '
-        Me.supplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.supplierName.DataPropertyName = "supplierName"
-        Me.supplierName.HeaderText = "supplierName"
-        Me.supplierName.Name = "supplierName"
-        Me.supplierName.ReadOnly = True
-        Me.supplierName.Width = 124
-        '
-        'btnAdd
-        '
-        Me.btnAdd.DataPropertyName = "supplierID"
-        Me.btnAdd.HeaderText = ""
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.ReadOnly = True
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseColumnTextForButtonValue = True
-        Me.btnAdd.Width = 70
         '
         'SuppliersBindingSource
         '
@@ -207,10 +170,9 @@ Partial Class frmNewInventory
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(16, 187)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label16.Location = New System.Drawing.Point(12, 152)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(81, 17)
+        Me.Label16.Size = New System.Drawing.Size(62, 13)
         Me.Label16.TabIndex = 95
         Me.Label16.Text = "Supplier ID:"
         '
@@ -236,11 +198,39 @@ Partial Class frmNewInventory
         '
         Me.DepartmentsTableAdapter.ClearBeforeFill = True
         '
+        'SupplierIDDataGridViewTextBoxColumn
+        '
+        Me.SupplierIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "supplierID"
+        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "Supplier ID"
+        Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
+        Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SupplierIDDataGridViewTextBoxColumn.Width = 84
+        '
+        'supplierName
+        '
+        Me.supplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.supplierName.DataPropertyName = "supplierName"
+        Me.supplierName.HeaderText = "Supplier Name"
+        Me.supplierName.Name = "supplierName"
+        Me.supplierName.ReadOnly = True
+        Me.supplierName.Width = 101
+        '
+        'btnAdd
+        '
+        Me.btnAdd.DataPropertyName = "supplierID"
+        Me.btnAdd.HeaderText = ""
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.ReadOnly = True
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseColumnTextForButtonValue = True
+        Me.btnAdd.Width = 70
+        '
         'frmNewInventory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(505, 464)
+        Me.ClientSize = New System.Drawing.Size(379, 377)
         Me.Controls.Add(Me.txtSupplierID)
         Me.Controls.Add(Me.dgvSuppliers)
         Me.Controls.Add(Me.Label16)
@@ -254,10 +244,10 @@ Partial Class frmNewInventory
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "frmNewInventory"
-        Me.Text = "Inventory"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "New Inventory"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.dgvSuppliers, System.ComponentModel.ISupportInitialize).EndInit()
