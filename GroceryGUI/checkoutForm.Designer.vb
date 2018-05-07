@@ -68,6 +68,7 @@ Partial Class frmCheckoutForm
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.NewCustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ProductsTableAdapter()
+        Me.checkoutButton = New System.Windows.Forms.Button()
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -237,7 +238,7 @@ Partial Class frmCheckoutForm
         '
         Me.btnAccount.Enabled = False
         Me.btnAccount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnAccount.Location = New System.Drawing.Point(365, 658)
+        Me.btnAccount.Location = New System.Drawing.Point(819, 658)
         Me.btnAccount.Name = "btnAccount"
         Me.btnAccount.Size = New System.Drawing.Size(81, 37)
         Me.btnAccount.TabIndex = 12
@@ -248,7 +249,7 @@ Partial Class frmCheckoutForm
         '
         Me.btnGiftCard.BackColor = System.Drawing.SystemColors.ControlLight
         Me.btnGiftCard.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnGiftCard.Location = New System.Drawing.Point(278, 616)
+        Me.btnGiftCard.Location = New System.Drawing.Point(918, 610)
         Me.btnGiftCard.Name = "btnGiftCard"
         Me.btnGiftCard.Size = New System.Drawing.Size(81, 37)
         Me.btnGiftCard.TabIndex = 13
@@ -259,7 +260,7 @@ Partial Class frmCheckoutForm
         '
         Me.btnVoid.BackColor = System.Drawing.SystemColors.ControlLight
         Me.btnVoid.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnVoid.Location = New System.Drawing.Point(191, 615)
+        Me.btnVoid.Location = New System.Drawing.Point(250, 610)
         Me.btnVoid.Name = "btnVoid"
         Me.btnVoid.Size = New System.Drawing.Size(81, 37)
         Me.btnVoid.TabIndex = 14
@@ -269,7 +270,7 @@ Partial Class frmCheckoutForm
         'btnCheck
         '
         Me.btnCheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnCheck.Location = New System.Drawing.Point(365, 615)
+        Me.btnCheck.Location = New System.Drawing.Point(819, 610)
         Me.btnCheck.Name = "btnCheck"
         Me.btnCheck.Size = New System.Drawing.Size(81, 37)
         Me.btnCheck.TabIndex = 15
@@ -279,7 +280,7 @@ Partial Class frmCheckoutForm
         'btnCredit
         '
         Me.btnCredit.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnCredit.Location = New System.Drawing.Point(452, 615)
+        Me.btnCredit.Location = New System.Drawing.Point(716, 610)
         Me.btnCredit.Name = "btnCredit"
         Me.btnCredit.Size = New System.Drawing.Size(81, 37)
         Me.btnCredit.TabIndex = 16
@@ -289,7 +290,7 @@ Partial Class frmCheckoutForm
         'btnRemove
         '
         Me.btnRemove.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnRemove.Location = New System.Drawing.Point(191, 659)
+        Me.btnRemove.Location = New System.Drawing.Point(250, 658)
         Me.btnRemove.Name = "btnRemove"
         Me.btnRemove.Size = New System.Drawing.Size(81, 37)
         Me.btnRemove.TabIndex = 17
@@ -299,7 +300,7 @@ Partial Class frmCheckoutForm
         'btnCash
         '
         Me.btnCash.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnCash.Location = New System.Drawing.Point(278, 659)
+        Me.btnCash.Location = New System.Drawing.Point(918, 658)
         Me.btnCash.Name = "btnCash"
         Me.btnCash.Size = New System.Drawing.Size(81, 37)
         Me.btnCash.TabIndex = 18
@@ -322,7 +323,7 @@ Partial Class frmCheckoutForm
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.GroupBox1.Location = New System.Drawing.Point(716, 40)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(283, 655)
+        Me.GroupBox1.Size = New System.Drawing.Size(283, 564)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Total"
@@ -336,7 +337,7 @@ Partial Class frmCheckoutForm
         Me.lbCart.ItemHeight = 16
         Me.lbCart.Location = New System.Drawing.Point(7, 48)
         Me.lbCart.Name = "lbCart"
-        Me.lbCart.Size = New System.Drawing.Size(270, 432)
+        Me.lbCart.Size = New System.Drawing.Size(270, 368)
         Me.lbCart.TabIndex = 28
         '
         'Label9
@@ -387,7 +388,7 @@ Partial Class frmCheckoutForm
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(21, 500)
+        Me.Label8.Location = New System.Drawing.Point(15, 428)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(76, 20)
         Me.Label8.TabIndex = 3
@@ -396,7 +397,7 @@ Partial Class frmCheckoutForm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(53, 578)
+        Me.Label7.Location = New System.Drawing.Point(47, 502)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(38, 20)
         Me.Label7.TabIndex = 2
@@ -405,7 +406,7 @@ Partial Class frmCheckoutForm
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(43, 620)
+        Me.Label6.Location = New System.Drawing.Point(43, 539)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 20)
         Me.Label6.TabIndex = 1
@@ -414,7 +415,7 @@ Partial Class frmCheckoutForm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(15, 540)
+        Me.Label5.Location = New System.Drawing.Point(9, 464)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(82, 20)
         Me.Label5.TabIndex = 0
@@ -423,7 +424,7 @@ Partial Class frmCheckoutForm
         'btnDiscount
         '
         Me.btnDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnDiscount.Location = New System.Drawing.Point(539, 659)
+        Me.btnDiscount.Location = New System.Drawing.Point(370, 658)
         Me.btnDiscount.Name = "btnDiscount"
         Me.btnDiscount.Size = New System.Drawing.Size(81, 37)
         Me.btnDiscount.TabIndex = 20
@@ -443,7 +444,7 @@ Partial Class frmCheckoutForm
         'btnHotKeys
         '
         Me.btnHotKeys.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.btnHotKeys.Location = New System.Drawing.Point(539, 616)
+        Me.btnHotKeys.Location = New System.Drawing.Point(370, 610)
         Me.btnHotKeys.Name = "btnHotKeys"
         Me.btnHotKeys.Size = New System.Drawing.Size(81, 37)
         Me.btnHotKeys.TabIndex = 23
@@ -453,7 +454,7 @@ Partial Class frmCheckoutForm
         'btnPayPal
         '
         Me.btnPayPal.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnPayPal.Location = New System.Drawing.Point(452, 659)
+        Me.btnPayPal.Location = New System.Drawing.Point(716, 658)
         Me.btnPayPal.Name = "btnPayPal"
         Me.btnPayPal.Size = New System.Drawing.Size(81, 37)
         Me.btnPayPal.TabIndex = 24
@@ -499,11 +500,22 @@ Partial Class frmCheckoutForm
         '
         Me.ProductsTableAdapter.ClearBeforeFill = True
         '
+        'checkoutButton
+        '
+        Me.checkoutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkoutButton.Location = New System.Drawing.Point(489, 610)
+        Me.checkoutButton.Name = "checkoutButton"
+        Me.checkoutButton.Size = New System.Drawing.Size(153, 85)
+        Me.checkoutButton.TabIndex = 30
+        Me.checkoutButton.Text = "Checkout"
+        Me.checkoutButton.UseVisualStyleBackColor = True
+        '
         'frmCheckoutForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1019, 716)
+        Me.Controls.Add(Me.checkoutButton)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtEmployeeID)
         Me.Controls.Add(Me.btnPayPal)
@@ -593,4 +605,5 @@ Partial Class frmCheckoutForm
     Friend WithEvents UPCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents retailCost As DataGridViewTextBoxColumn
     Friend WithEvents btnAddToCart As DataGridViewButtonColumn
+    Friend WithEvents checkoutButton As Button
 End Class
