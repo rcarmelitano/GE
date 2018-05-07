@@ -37,8 +37,7 @@ Partial Class frmShrinkage
         Me.ShrinkDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DetailsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UnitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnDelete = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.NewShrinkageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuClose.SuspendLayout()
         CType(Me.dgvShrinkage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ShrinkageBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,10 +46,10 @@ Partial Class frmShrinkage
         '
         'mnuClose
         '
-        Me.mnuClose.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem})
+        Me.mnuClose.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.NewShrinkageToolStripMenuItem})
         Me.mnuClose.Location = New System.Drawing.Point(0, 0)
         Me.mnuClose.Name = "mnuClose"
-        Me.mnuClose.Size = New System.Drawing.Size(1171, 24)
+        Me.mnuClose.Size = New System.Drawing.Size(1048, 24)
         Me.mnuClose.TabIndex = 0
         Me.mnuClose.Text = "MenuStrip1"
         '
@@ -66,13 +65,13 @@ Partial Class frmShrinkage
         Me.dgvShrinkage.AllowUserToDeleteRows = False
         Me.dgvShrinkage.AutoGenerateColumns = False
         Me.dgvShrinkage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvShrinkage.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShrinkageIDDataGridViewTextBoxColumn, Me.EmployeeIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.StatusIDDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.ShrinkDateDataGridViewTextBoxColumn, Me.DetailsDataGridViewTextBoxColumn, Me.UnitDataGridViewTextBoxColumn, Me.btnUpdate, Me.btnDelete})
+        Me.dgvShrinkage.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShrinkageIDDataGridViewTextBoxColumn, Me.EmployeeIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.StatusIDDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.ShrinkDateDataGridViewTextBoxColumn, Me.DetailsDataGridViewTextBoxColumn, Me.UnitDataGridViewTextBoxColumn})
         Me.dgvShrinkage.DataSource = Me.ShrinkageBindingSource
         Me.dgvShrinkage.Location = New System.Drawing.Point(13, 28)
         Me.dgvShrinkage.Name = "dgvShrinkage"
         Me.dgvShrinkage.ReadOnly = True
         Me.dgvShrinkage.RowHeadersVisible = False
-        Me.dgvShrinkage.Size = New System.Drawing.Size(1144, 371)
+        Me.dgvShrinkage.Size = New System.Drawing.Size(1022, 371)
         Me.dgvShrinkage.TabIndex = 1
         '
         'ShrinkageBindingSource
@@ -146,29 +145,17 @@ Partial Class frmShrinkage
         Me.UnitDataGridViewTextBoxColumn.Name = "UnitDataGridViewTextBoxColumn"
         Me.UnitDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'btnUpdate
+        'NewShrinkageToolStripMenuItem
         '
-        Me.btnUpdate.HeaderText = ""
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.ReadOnly = True
-        Me.btnUpdate.Text = "Update"
-        Me.btnUpdate.UseColumnTextForButtonValue = True
-        Me.btnUpdate.Width = 61
-        '
-        'btnDelete
-        '
-        Me.btnDelete.HeaderText = ""
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.ReadOnly = True
-        Me.btnDelete.Text = "Update"
-        Me.btnDelete.UseColumnTextForButtonValue = True
-        Me.btnDelete.Width = 61
+        Me.NewShrinkageToolStripMenuItem.Name = "NewShrinkageToolStripMenuItem"
+        Me.NewShrinkageToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
+        Me.NewShrinkageToolStripMenuItem.Text = "New Shrinkage"
         '
         'frmShrinkage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1171, 414)
+        Me.ClientSize = New System.Drawing.Size(1048, 414)
         Me.Controls.Add(Me.dgvShrinkage)
         Me.Controls.Add(Me.mnuClose)
         Me.MainMenuStrip = Me.mnuClose
@@ -198,6 +185,5 @@ Partial Class frmShrinkage
     Friend WithEvents ShrinkDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DetailsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents UnitDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents btnUpdate As DataGridViewButtonColumn
-    Friend WithEvents btnDelete As DataGridViewButtonColumn
+    Friend WithEvents NewShrinkageToolStripMenuItem As ToolStripMenuItem
 End Class

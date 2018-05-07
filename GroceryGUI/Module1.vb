@@ -1,4 +1,7 @@
 ﻿Module Module1
-    Public trying As String
 
+    ' Declare global variables
+    Public trying As String
+    Public employeeID As String
+    Public Const TAX As Double = 0.082
 End Module

@@ -4,4 +4,15 @@
         Me.ShrinkageTableAdapter.Fill(Me.GEDataSet.Shrinkage)
 
     End Sub
+
+    Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
+        ' Close the form and display the primary form
+        Me.Close()
+        frmPrimaryForm.Show()
+    End Sub
+
+    Private Sub NewShrinkageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewShrinkageToolStripMenuItem.Click
+        ' Close the current form and display the NewShrinkage form
+        frmNewShrinkage.Show()
+    End Sub
 End Class

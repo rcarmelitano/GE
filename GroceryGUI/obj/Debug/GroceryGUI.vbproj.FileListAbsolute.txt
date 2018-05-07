@@ -740,3 +740,4 @@ C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewGiftCard.r
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateGiftCard.resources
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.CreditChangeReason.resources
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.AuditTable.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewShrinkage.resources
