@@ -756,3 +756,4 @@ C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateGiftCar
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateInventory.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmAddCategories.resources
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmAddCategories.resources
+C:\Users\rc0083\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmAddCategories.resources

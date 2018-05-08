@@ -116,11 +116,11 @@ Partial Class frmPrimaryForm
         Me.btnInventory.BackColor = System.Drawing.SystemColors.Highlight
         Me.btnInventory.Enabled = False
         Me.btnInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnInventory.Location = New System.Drawing.Point(227, 363)
+        Me.btnInventory.Location = New System.Drawing.Point(227, 369)
         Me.btnInventory.Name = "btnInventory"
-        Me.btnInventory.Size = New System.Drawing.Size(142, 62)
+        Me.btnInventory.Size = New System.Drawing.Size(142, 51)
         Me.btnInventory.TabIndex = 5
-        Me.btnInventory.Text = "PRODUCTS " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "&& " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INVENTORY"
+        Me.btnInventory.Text = "INVENTORY"
         Me.btnInventory.UseVisualStyleBackColor = False
         '
         'btnPromotions
@@ -206,11 +206,12 @@ Partial Class frmPrimaryForm
         '
         'Button2
         '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.Button2.Location = New System.Drawing.Point(425, 369)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(142, 51)
         Me.Button2.TabIndex = 15
-        Me.Button2.Text = "Button2"
+        Me.Button2.Text = "DISCOUNTS"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
