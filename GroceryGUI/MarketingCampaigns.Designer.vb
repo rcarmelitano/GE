@@ -22,27 +22,36 @@ Partial Class MarketingCampaigns
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.BackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ManageCampaignsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewCampaignsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtCampaignName = New System.Windows.Forms.TextBox()
+        Me.txtDescription = New System.Windows.Forms.TextBox()
         Me.btnAddPromotion = New System.Windows.Forms.Button()
+        Me.CampaignTypesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.Campaign_TypesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Campaign_TypesTableAdapter()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.campaignID = New System.Windows.Forms.TextBox()
+        Me.startDatePicker = New System.Windows.Forms.DateTimePicker()
+        Me.endDatePicker = New System.Windows.Forms.DateTimePicker()
+        Me.campaignTypeID = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.CampaignTypesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GEDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.ManageCampaignsToolStripMenuItem, Me.ViewCampaignsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.ViewCampaignsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(424, 24)
@@ -55,12 +64,6 @@ Partial Class MarketingCampaigns
         Me.BackToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.BackToolStripMenuItem.Text = "Back"
         '
-        'ManageCampaignsToolStripMenuItem
-        '
-        Me.ManageCampaignsToolStripMenuItem.Name = "ManageCampaignsToolStripMenuItem"
-        Me.ManageCampaignsToolStripMenuItem.Size = New System.Drawing.Size(125, 20)
-        Me.ManageCampaignsToolStripMenuItem.Text = "Manage Campaigns"
-        '
         'ViewCampaignsToolStripMenuItem
         '
         Me.ViewCampaignsToolStripMenuItem.Name = "ViewCampaignsToolStripMenuItem"
@@ -71,7 +74,7 @@ Partial Class MarketingCampaigns
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.Label1.Location = New System.Drawing.Point(73, 42)
+        Me.Label1.Location = New System.Drawing.Point(73, 62)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(113, 16)
         Me.Label1.TabIndex = 1
@@ -81,7 +84,7 @@ Partial Class MarketingCampaigns
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.Label2.Location = New System.Drawing.Point(78, 74)
+        Me.Label2.Location = New System.Drawing.Point(78, 98)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(108, 16)
         Me.Label2.TabIndex = 2
@@ -91,7 +94,7 @@ Partial Class MarketingCampaigns
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.Label3.Location = New System.Drawing.Point(107, 109)
+        Me.Label3.Location = New System.Drawing.Point(107, 134)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 16)
         Me.Label3.TabIndex = 3
@@ -101,7 +104,7 @@ Partial Class MarketingCampaigns
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.Label4.Location = New System.Drawing.Point(116, 143)
+        Me.Label4.Location = New System.Drawing.Point(116, 171)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(70, 16)
         Me.Label4.TabIndex = 4
@@ -111,46 +114,25 @@ Partial Class MarketingCampaigns
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.Label5.Location = New System.Drawing.Point(119, 176)
+        Me.Label5.Location = New System.Drawing.Point(119, 207)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(67, 16)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "End Date:"
         '
-        'TextBox1
+        'txtCampaignName
         '
-        Me.TextBox1.Location = New System.Drawing.Point(192, 42)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 6
+        Me.txtCampaignName.Location = New System.Drawing.Point(192, 62)
+        Me.txtCampaignName.Name = "txtCampaignName"
+        Me.txtCampaignName.Size = New System.Drawing.Size(195, 20)
+        Me.txtCampaignName.TabIndex = 6
         '
-        'TextBox2
+        'txtDescription
         '
-        Me.TextBox2.Location = New System.Drawing.Point(192, 73)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 7
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(192, 109)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 8
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(192, 142)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 9
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(192, 176)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox5.TabIndex = 10
+        Me.txtDescription.Location = New System.Drawing.Point(192, 134)
+        Me.txtDescription.Name = "txtDescription"
+        Me.txtDescription.Size = New System.Drawing.Size(195, 20)
+        Me.txtDescription.TabIndex = 8
         '
         'btnAddPromotion
         '
@@ -162,17 +144,80 @@ Partial Class MarketingCampaigns
         Me.btnAddPromotion.Text = "Add Campaign"
         Me.btnAddPromotion.UseVisualStyleBackColor = True
         '
+        'CampaignTypesBindingSource
+        '
+        Me.CampaignTypesBindingSource.DataMember = "Campaign_Types"
+        Me.CampaignTypesBindingSource.DataSource = Me.GEDataSetBindingSource
+        '
+        'GEDataSetBindingSource
+        '
+        Me.GEDataSetBindingSource.DataSource = Me.GEDataSet
+        Me.GEDataSetBindingSource.Position = 0
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Campaign_TypesTableAdapter
+        '
+        Me.Campaign_TypesTableAdapter.ClearBeforeFill = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label6.Location = New System.Drawing.Point(94, 33)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(92, 16)
+        Me.Label6.TabIndex = 21
+        Me.Label6.Text = "Campaign ID: "
+        '
+        'campaignID
+        '
+        Me.campaignID.Location = New System.Drawing.Point(192, 29)
+        Me.campaignID.Name = "campaignID"
+        Me.campaignID.Size = New System.Drawing.Size(195, 20)
+        Me.campaignID.TabIndex = 22
+        '
+        'startDatePicker
+        '
+        Me.startDatePicker.CustomFormat = "mm/dd/yyyy"
+        Me.startDatePicker.Location = New System.Drawing.Point(192, 171)
+        Me.startDatePicker.Name = "startDatePicker"
+        Me.startDatePicker.Size = New System.Drawing.Size(200, 20)
+        Me.startDatePicker.TabIndex = 23
+        Me.startDatePicker.Value = New Date(2018, 5, 8, 0, 0, 0, 0)
+        '
+        'endDatePicker
+        '
+        Me.endDatePicker.CustomFormat = "mm/dd/yyyy"
+        Me.endDatePicker.Location = New System.Drawing.Point(192, 203)
+        Me.endDatePicker.Name = "endDatePicker"
+        Me.endDatePicker.Size = New System.Drawing.Size(200, 20)
+        Me.endDatePicker.TabIndex = 24
+        Me.endDatePicker.Value = New Date(2018, 5, 8, 0, 0, 0, 0)
+        '
+        'campaignTypeID
+        '
+        Me.campaignTypeID.Location = New System.Drawing.Point(192, 94)
+        Me.campaignTypeID.Name = "campaignTypeID"
+        Me.campaignTypeID.Size = New System.Drawing.Size(195, 20)
+        Me.campaignTypeID.TabIndex = 25
+        '
         'MarketingCampaigns
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(424, 304)
+        Me.Controls.Add(Me.campaignTypeID)
+        Me.Controls.Add(Me.endDatePicker)
+        Me.Controls.Add(Me.startDatePicker)
+        Me.Controls.Add(Me.campaignID)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnAddPromotion)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtDescription)
+        Me.Controls.Add(Me.txtCampaignName)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -184,6 +229,9 @@ Partial Class MarketingCampaigns
         Me.Text = "Marketing Campaigns"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.CampaignTypesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GEDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -191,17 +239,22 @@ Partial Class MarketingCampaigns
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents BackToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ManageCampaignsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewCampaignsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txtCampaignName As TextBox
+    Friend WithEvents txtDescription As TextBox
     Friend WithEvents btnAddPromotion As Button
+    Friend WithEvents GEDataSetBindingSource As BindingSource
+    Friend WithEvents GEDataSet As GEDataSet
+    Friend WithEvents CampaignTypesBindingSource As BindingSource
+    Friend WithEvents Campaign_TypesTableAdapter As GEDataSetTableAdapters.Campaign_TypesTableAdapter
+    Friend WithEvents Label6 As Label
+    Friend WithEvents campaignID As TextBox
+    Friend WithEvents startDatePicker As DateTimePicker
+    Friend WithEvents endDatePicker As DateTimePicker
+    Friend WithEvents campaignTypeID As TextBox
 End Class
