@@ -1,20 +1,20 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 
-Public Class frmAddAndUpdateCategories
+Public Class frmAddCategories
     Dim categoryConnection As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GE.mdf;Integrated Security=True")
 
 
     Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click
         If MessageBox.Show("Are you sure you want to cancel creating a Category?", "Category Cancellation",
                         MessageBoxButtons.YesNo) = DialogResult.Yes Then
-            frmDepartments.Show()
+            frmCategories.Show()
             Me.Close()
         End If
     End Sub
 
     Private Sub frmAddAndUpdateCategories_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.ControlBox = False
         Dim categoryID As Integer = 0
         Dim getMaxReturnIDAndIncrement As New SqlCommand("select max(categoryID) + 1 from Categories", categoryConnection)
 
@@ -43,12 +43,19 @@ Public Class frmAddAndUpdateCategories
             categoryConnection.Open()
             createCategory.ExecuteNonQuery()
 
-            MessageBox.Show("You have successfully created a new Department.")
+            MessageBox.Show("You have successfully created a new Category.")
             categoryConnection.Close()
             frmCategories.Show()
             Me.Close()
         Else
-            MessageBox.Show("All fields must be filled to create a department. Please try again.")
+            MessageBox.Show("All fields must be filled to create a category. Please try again.")
         End If
+    End Sub
+
+    Private Sub mnuUpdate_Click(sender As Object, e As EventArgs) Handles mnuUpdate.Click
+        txtCategoryID.Enabled = False
+        txtCategoryName.Enabled = True
+        txtDepartmentID.Enabled = True
+        btnUpdateCategory.Enabled = True
     End Sub
 End Class

@@ -27,14 +27,14 @@ Partial Class frmCategories
         Me.ClsoeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuNewCategory = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvCategories = New System.Windows.Forms.DataGridView()
-        Me.CategoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.CategoriesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CategoriesTableAdapter()
         Me.CategoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DepartmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.CategoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.CategoriesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CategoriesTableAdapter()
         Me.mnuClose.SuspendLayout()
         CType(Me.dgvCategories, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,25 +77,6 @@ Partial Class frmCategories
         Me.dgvCategories.Size = New System.Drawing.Size(398, 343)
         Me.dgvCategories.TabIndex = 1
         '
-        'CategoriesBindingSource
-        '
-        Me.CategoriesBindingSource.DataMember = "Categories"
-        Me.CategoriesBindingSource.DataSource = Me.GEDataSetBindingSource
-        '
-        'GEDataSetBindingSource
-        '
-        Me.GEDataSetBindingSource.DataSource = Me.GEDataSet
-        Me.GEDataSetBindingSource.Position = 0
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CategoriesTableAdapter
-        '
-        Me.CategoriesTableAdapter.ClearBeforeFill = True
-        '
         'CategoryIDDataGridViewTextBoxColumn
         '
         Me.CategoryIDDataGridViewTextBoxColumn.DataPropertyName = "categoryID"
@@ -126,6 +107,25 @@ Partial Class frmCategories
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseColumnTextForButtonValue = True
         Me.btnUpdate.Width = 61
+        '
+        'CategoriesBindingSource
+        '
+        Me.CategoriesBindingSource.DataMember = "Categories"
+        Me.CategoriesBindingSource.DataSource = Me.GEDataSetBindingSource
+        '
+        'GEDataSetBindingSource
+        '
+        Me.GEDataSetBindingSource.DataSource = Me.GEDataSet
+        Me.GEDataSetBindingSource.Position = 0
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CategoriesTableAdapter
+        '
+        Me.CategoriesTableAdapter.ClearBeforeFill = True
         '
         'frmCategories
         '

@@ -14,7 +14,7 @@ Public Class frmAddDepartment
     End Sub
 
     Private Sub frmAddDepartment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.ControlBox = False
 
         If txtDepartmentID.Text = String.Empty Then
             Dim departmentID As Integer = 0

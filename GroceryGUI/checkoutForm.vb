@@ -268,4 +268,17 @@ Public Class frmCheckoutForm
             dgvProducts_CellContentClick(Me.dgvProducts, arg)
         End If
     End Sub
+
+    Private Sub checkoutButton_Click(sender As Object, e As EventArgs) Handles checkoutButton.Click
+        'Enabling payment buttons
+        btnGiftCard.Enabled = True
+        btnCash.Enabled = True
+        btnCheck.Enabled = True
+        btnCredit.Enabled = True
+        btnPayPal.Enabled = True
+        'Disabling further edit buttons
+        btnVoid.Enabled = False
+        btnRemove.Enabled = False
+        btnHotKeys.Enabled = False
+    End Sub
 End Class

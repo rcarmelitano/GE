@@ -2,7 +2,7 @@
     Private Sub Departments_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GEDataSet.Departments' table. You can move, or remove it, as needed.
         Me.DepartmentsTableAdapter.Fill(Me.GEDataSet.Departments)
-
+        Me.ControlBox = False
     End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click

@@ -461,6 +461,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddCategories.resx">
+      <DependentUpon>AddCategories.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDepartment.resx">
       <DependentUpon>AddDepartment.vb</DependentUpon>
     </EmbeddedResource>

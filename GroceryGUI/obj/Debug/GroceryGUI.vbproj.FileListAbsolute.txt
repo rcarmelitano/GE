@@ -647,7 +647,6 @@ C:\Users\rc0083\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.CampaignsView.re
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.vbprojResolveAssemblyReference.cache
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\Interop.ADODB.dll
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.vbproj.ResolveComReference.cache
-C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.audit.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.CampaignsView.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmCoupons.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmCouponsView.resources
@@ -663,7 +662,6 @@ C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmInventory.res
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.MainFormEmployeeSearch.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.MarketingCampaigns.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewInventory.resources
-C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.InventoryView.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewProduct.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewReturn.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.NewShinpping.resources
@@ -692,7 +690,6 @@ C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.ShippingAdresses
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.supplierHisoryInfo.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.supplierhistory.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmSuppliers.resources
-C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.testing.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateCustomer.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateShipping.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.vbproj.GenerateResource.cache
@@ -750,3 +747,11 @@ C:\Users\rc0083\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewShrinkage.
 C:\Users\rc0083\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmShrinkage.resources
 C:\Users\rc0083\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateGiftCard.resources
 C:\Users\rc0083\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateInventory.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.AuditTable.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.CreditChangeReason.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewGiftCard.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmInventoryView.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewShrinkage.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateGiftCard.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateInventory.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmAddCategories.resources
