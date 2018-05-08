@@ -116,12 +116,28 @@ Public Class frmCheckoutForm
 
     '--------------------------------------------------------------------------------------------------------------------------search through inventory
     Private Sub btnProductSearch_Click(sender As Object, e As EventArgs) Handles btnProductSearch.Click
-        ' Perform a search for a product name
-        Try
-            Me.ProductsTableAdapter.productNameSearchCheckout(Me.GEDataSet.Products, txtProduct.Text)
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show("You can only search for a valid product name, please try again.")
-        End Try
+
+        If (cmbSearchType.Text = "Name") Then
+            ' Perform a search for a product name
+            Try
+                Me.ProductsTableAdapter.productNameSearchCheckout(Me.GEDataSet.Products, txtProduct.Text)
+            Catch ex As System.Exception
+                System.Windows.Forms.MessageBox.Show("You can only search for a valid product name, please try again.")
+            End Try
+        ElseIf (cmbSearchType.Text = "SKU") Then
+            Try
+                Me.ProductsTableAdapter.SKUCheckoutSearch(Me.GEDataSet.Products, txtProduct.Text)
+            Catch ex As System.Exception
+                System.Windows.Forms.MessageBox.Show("You can only search for a valid product SKU, please try again.")
+            End Try
+        ElseIf (cmbSearchType.Text = "UPC") Then
+            Try
+                Me.ProductsTableAdapter.FillBy(Me.GEDataSet.Products, txtProduct.Text)
+            Catch ex As System.Exception
+                System.Windows.Forms.MessageBox.Show("You can only search for a valid product UPC, please try again.")
+            End Try
+        End If
+
     End Sub
 
     '-----------------------------------------------------------------------------------------------------------------------form loader
@@ -235,7 +251,7 @@ Public Class frmCheckoutForm
 
             ' Reset the controls
             txtQuantity.Text = String.Empty
-            txtBarcode.Text = String.Empty
+            'txtBarcode.Text = String.Empty
             txtCustomerID.Text = String.Empty
             lbCart.Items.Clear()
             lblDiscountAmount.Text = String.Empty
@@ -256,18 +272,18 @@ Public Class frmCheckoutForm
         End If
     End Sub
 
-    Private Sub txtBarcode_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBarcode.KeyDown
-        ' Make sure the UPC is 12 digits in length
-        If txtBarcode.Text.Length = 12 Then
+    '  Private Sub txtBarcode_KeyDown(sender As Object, e As KeyEventArgs)
+    ' Make sure the UPC is 12 digits in length
+    ' If txtBarcode.Text.Length = 12 Then
 
-            UPCString = txtBarcode.Text
+    '        UPCString = txtBarcode.Text
+    '
+    'Integer.TryParse(txtBarcode.Text, UPCInt)
 
-            Integer.TryParse(txtBarcode.Text, UPCInt)
-
-            Dim arg = New DataGridViewCellEventArgs(Nothing, Nothing)
-            dgvProducts_CellContentClick(Me.dgvProducts, arg)
-        End If
-    End Sub
+    'Dim arg = New DataGridViewCellEventArgs(Nothing, Nothing)
+    '        dgvProducts_CellContentClick(Me.dgvProducts, arg)
+    'End If
+    'End Sub
 
     Private Sub checkoutButton_Click(sender As Object, e As EventArgs) Handles checkoutButton.Click
         ' Ask the user if they are sure they want to close the current form
@@ -293,5 +309,16 @@ Public Class frmCheckoutForm
 
     Private Sub btnCredit_Click(sender As Object, e As EventArgs) Handles btnCredit.Click
 
+    End Sub
+
+    Private Sub cmbSearchType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchType.SelectedIndexChanged
+        If (cmbSearchType.Text <> String.Empty) Then
+            txtProduct.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        'Refreshes the table.
+        Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
     End Sub
 End Class
