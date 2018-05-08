@@ -270,15 +270,28 @@ Public Class frmCheckoutForm
     End Sub
 
     Private Sub checkoutButton_Click(sender As Object, e As EventArgs) Handles checkoutButton.Click
-        'Enabling payment buttons
-        btnGiftCard.Enabled = True
-        btnCash.Enabled = True
-        btnCheck.Enabled = True
-        btnCredit.Enabled = True
-        btnPayPal.Enabled = True
-        'Disabling further edit buttons
-        btnVoid.Enabled = False
-        btnRemove.Enabled = False
-        btnHotKeys.Enabled = False
+        ' Ask the user if they are sure they want to close the current form
+        If MessageBox.Show("Are you sure you want to checkout?", "Checkout Cancellation",
+           MessageBoxButtons.YesNo) = DialogResult.Yes Then
+
+            MessageBox.Show("Please select a payment option")
+
+            'Enabling payment buttons
+            btnGiftCard.Enabled = True
+            btnCash.Enabled = True
+            btnCheck.Enabled = True
+            btnCredit.Enabled = True
+            btnPayPal.Enabled = True
+            'Disabling further edit buttons
+            btnVoid.Enabled = False
+            btnRemove.Enabled = False
+            btnHotKeys.Enabled = False
+
+        End If
+
+    End Sub
+
+    Private Sub btnCredit_Click(sender As Object, e As EventArgs) Handles btnCredit.Click
+
     End Sub
 End Class

@@ -514,7 +514,7 @@ Partial Class frmCheckoutForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1019, 716)
+        Me.ClientSize = New System.Drawing.Size(1019, 752)
         Me.Controls.Add(Me.checkoutButton)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtEmployeeID)
