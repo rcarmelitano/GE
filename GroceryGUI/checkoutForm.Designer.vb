@@ -238,7 +238,7 @@ Partial Class frmCheckoutForm
         '
         Me.btnAccount.Enabled = False
         Me.btnAccount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnAccount.Location = New System.Drawing.Point(819, 658)
+        Me.btnAccount.Location = New System.Drawing.Point(819, 672)
         Me.btnAccount.Name = "btnAccount"
         Me.btnAccount.Size = New System.Drawing.Size(81, 37)
         Me.btnAccount.TabIndex = 12
@@ -249,7 +249,7 @@ Partial Class frmCheckoutForm
         '
         Me.btnGiftCard.BackColor = System.Drawing.SystemColors.ControlLight
         Me.btnGiftCard.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnGiftCard.Location = New System.Drawing.Point(918, 610)
+        Me.btnGiftCard.Location = New System.Drawing.Point(918, 624)
         Me.btnGiftCard.Name = "btnGiftCard"
         Me.btnGiftCard.Size = New System.Drawing.Size(81, 37)
         Me.btnGiftCard.TabIndex = 13
@@ -270,7 +270,7 @@ Partial Class frmCheckoutForm
         'btnCheck
         '
         Me.btnCheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnCheck.Location = New System.Drawing.Point(819, 610)
+        Me.btnCheck.Location = New System.Drawing.Point(819, 624)
         Me.btnCheck.Name = "btnCheck"
         Me.btnCheck.Size = New System.Drawing.Size(81, 37)
         Me.btnCheck.TabIndex = 15
@@ -280,7 +280,7 @@ Partial Class frmCheckoutForm
         'btnCredit
         '
         Me.btnCredit.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnCredit.Location = New System.Drawing.Point(716, 610)
+        Me.btnCredit.Location = New System.Drawing.Point(716, 624)
         Me.btnCredit.Name = "btnCredit"
         Me.btnCredit.Size = New System.Drawing.Size(81, 37)
         Me.btnCredit.TabIndex = 16
@@ -300,7 +300,7 @@ Partial Class frmCheckoutForm
         'btnCash
         '
         Me.btnCash.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnCash.Location = New System.Drawing.Point(918, 658)
+        Me.btnCash.Location = New System.Drawing.Point(918, 672)
         Me.btnCash.Name = "btnCash"
         Me.btnCash.Size = New System.Drawing.Size(81, 37)
         Me.btnCash.TabIndex = 18
@@ -323,7 +323,7 @@ Partial Class frmCheckoutForm
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.GroupBox1.Location = New System.Drawing.Point(716, 40)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(283, 564)
+        Me.GroupBox1.Size = New System.Drawing.Size(283, 578)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Total"
@@ -353,7 +353,7 @@ Partial Class frmCheckoutForm
         '
         Me.lblTotalAmount.AutoSize = True
         Me.lblTotalAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.lblTotalAmount.Location = New System.Drawing.Point(110, 620)
+        Me.lblTotalAmount.Location = New System.Drawing.Point(110, 543)
         Me.lblTotalAmount.Name = "lblTotalAmount"
         Me.lblTotalAmount.Size = New System.Drawing.Size(0, 18)
         Me.lblTotalAmount.TabIndex = 23
@@ -362,7 +362,7 @@ Partial Class frmCheckoutForm
         '
         Me.lblTaxAmount.AutoSize = True
         Me.lblTaxAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.lblTaxAmount.Location = New System.Drawing.Point(110, 579)
+        Me.lblTaxAmount.Location = New System.Drawing.Point(110, 502)
         Me.lblTaxAmount.Name = "lblTaxAmount"
         Me.lblTaxAmount.Size = New System.Drawing.Size(0, 18)
         Me.lblTaxAmount.TabIndex = 24
@@ -371,7 +371,7 @@ Partial Class frmCheckoutForm
         '
         Me.lblSubTotalAmount.AutoSize = True
         Me.lblSubTotalAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.lblSubTotalAmount.Location = New System.Drawing.Point(110, 541)
+        Me.lblSubTotalAmount.Location = New System.Drawing.Point(110, 464)
         Me.lblSubTotalAmount.Name = "lblSubTotalAmount"
         Me.lblSubTotalAmount.Size = New System.Drawing.Size(0, 18)
         Me.lblSubTotalAmount.TabIndex = 25
@@ -380,7 +380,7 @@ Partial Class frmCheckoutForm
         '
         Me.lblDiscountAmount.AutoSize = True
         Me.lblDiscountAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.lblDiscountAmount.Location = New System.Drawing.Point(110, 502)
+        Me.lblDiscountAmount.Location = New System.Drawing.Point(110, 425)
         Me.lblDiscountAmount.Name = "lblDiscountAmount"
         Me.lblDiscountAmount.Size = New System.Drawing.Size(0, 18)
         Me.lblDiscountAmount.TabIndex = 26
@@ -454,7 +454,7 @@ Partial Class frmCheckoutForm
         'btnPayPal
         '
         Me.btnPayPal.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnPayPal.Location = New System.Drawing.Point(716, 658)
+        Me.btnPayPal.Location = New System.Drawing.Point(716, 672)
         Me.btnPayPal.Name = "btnPayPal"
         Me.btnPayPal.Size = New System.Drawing.Size(81, 37)
         Me.btnPayPal.TabIndex = 24
