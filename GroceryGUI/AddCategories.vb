@@ -54,8 +54,34 @@ Public Class frmAddCategories
 
     Private Sub mnuUpdate_Click(sender As Object, e As EventArgs) Handles mnuUpdate.Click
         txtCategoryID.Enabled = False
+        txtCategoryName.ReadOnly = False
+        txtDepartmentID.ReadOnly = False
         txtCategoryName.Enabled = True
         txtDepartmentID.Enabled = True
         btnUpdateCategory.Enabled = True
+    End Sub
+
+    Private Sub btnUpdateCategory_Click(sender As Object, e As EventArgs) Handles btnUpdateCategory.Click
+        If txtCategoryName.Text <> String.Empty And txtDepartmentID.Text <> String.Empty Then
+
+            categoryConnection.Close()
+
+
+            Dim updateCategory As New SqlCommand("UPDATE Categories SET categoryID =@categoryID, departmentID =@departmentID,name =@name WHERE categoryID = @categoryID", categoryConnection)
+
+            updateCategory.Parameters.AddWithValue("@categoryID", txtCategoryID.Text)
+            updateCategory.Parameters.AddWithValue("@departmentID", txtDepartmentID.Text)
+            updateCategory.Parameters.AddWithValue("@name", txtCategoryName.Text)
+
+            categoryConnection.Open()
+            updateCategory.ExecuteNonQuery()
+
+            MessageBox.Show("You have successfully updated a Category.")
+            categoryConnection.Close()
+            frmCategories.Show()
+            Me.Close()
+        Else
+            MessageBox.Show("All fields must be filled to update a category. Please try again.")
+        End If
     End Sub
 End Class

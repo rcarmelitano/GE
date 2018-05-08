@@ -14,5 +14,6 @@
     Private Sub NewShrinkageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewShrinkageToolStripMenuItem.Click
         ' Close the current form and display the NewShrinkage form
         frmNewShrinkage.Show()
+        Me.Hide()
     End Sub
 End Class
