@@ -26,7 +26,6 @@ Partial Class frmPrimaryForm
         Me.btnCustomers = New System.Windows.Forms.Button()
         Me.btnDeliveries = New System.Windows.Forms.Button()
         Me.btnSupplierInfo = New System.Windows.Forms.Button()
-        Me.btnItemReturns = New System.Windows.Forms.Button()
         Me.btnReports = New System.Windows.Forms.Button()
         Me.btnInventory = New System.Windows.Forms.Button()
         Me.btnPromotions = New System.Windows.Forms.Button()
@@ -40,6 +39,7 @@ Partial Class frmPrimaryForm
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnItemReturns = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnCheckout
@@ -87,18 +87,6 @@ Partial Class frmPrimaryForm
         Me.btnSupplierInfo.TabIndex = 4
         Me.btnSupplierInfo.Text = "SUPPLIER INFO"
         Me.btnSupplierInfo.UseVisualStyleBackColor = False
-        '
-        'btnItemReturns
-        '
-        Me.btnItemReturns.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btnItemReturns.Enabled = False
-        Me.btnItemReturns.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnItemReturns.Location = New System.Drawing.Point(30, 463)
-        Me.btnItemReturns.Name = "btnItemReturns"
-        Me.btnItemReturns.Size = New System.Drawing.Size(142, 51)
-        Me.btnItemReturns.TabIndex = 7
-        Me.btnItemReturns.Text = "ITEM RETURNS"
-        Me.btnItemReturns.UseVisualStyleBackColor = False
         '
         'btnReports
         '
@@ -211,7 +199,7 @@ Partial Class frmPrimaryForm
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(142, 51)
         Me.Button2.TabIndex = 15
-        Me.Button2.Text = "DISCOUNTS"
+        Me.Button2.Text = "PURCHASE ORDERS"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
@@ -232,6 +220,18 @@ Partial Class frmPrimaryForm
         Me.Button4.TabIndex = 17
         Me.Button4.Text = "Button4"
         Me.Button4.UseVisualStyleBackColor = True
+        '
+        'btnItemReturns
+        '
+        Me.btnItemReturns.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnItemReturns.Enabled = False
+        Me.btnItemReturns.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.btnItemReturns.Location = New System.Drawing.Point(30, 463)
+        Me.btnItemReturns.Name = "btnItemReturns"
+        Me.btnItemReturns.Size = New System.Drawing.Size(142, 51)
+        Me.btnItemReturns.TabIndex = 7
+        Me.btnItemReturns.Text = "ITEM RETURNS"
+        Me.btnItemReturns.UseVisualStyleBackColor = False
         '
         'frmPrimaryForm
         '
@@ -270,7 +270,6 @@ Partial Class frmPrimaryForm
     Friend WithEvents btnCustomers As Button
     Friend WithEvents btnDeliveries As Button
     Friend WithEvents btnSupplierInfo As Button
-    Friend WithEvents btnItemReturns As Button
     Friend WithEvents btnReports As Button
     Friend WithEvents btnInventory As Button
     Friend WithEvents btnPromotions As Button
@@ -280,8 +279,9 @@ Partial Class frmPrimaryForm
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents btnSearch As Button
     Friend WithEvents btnEmployees As Button
-	Friend WithEvents Button1 As Button
+    Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents btnItemReturns As Button
 End Class

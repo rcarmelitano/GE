@@ -119,6 +119,8 @@
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        frmDiscounts.Show()
+        ' Display the purchase orders form
+        Me.Hide()
+        frmPurchaseOrders.Show()
     End Sub
 End Class

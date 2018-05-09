@@ -253,6 +253,18 @@
     <Compile Include="NewProduct.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NewPurchaseOrder.Designer.vb">
+      <DependentUpon>NewPurchaseOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewPurchaseOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPurchaseOrderDetails.Designer.vb">
+      <DependentUpon>NewPurchaseOrderDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewPurchaseOrderDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NewReturn.Designer.vb">
       <DependentUpon>NewReturn.vb</DependentUpon>
     </Compile>
@@ -336,6 +348,12 @@
       <DependentUpon>PromotionsView.vb</DependentUpon>
     </Compile>
     <Compile Include="PromotionsView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseOrders.Designer.vb">
+      <DependentUpon>PurchaseOrders.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrders.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="quickKeyMenu.vb">
@@ -536,6 +554,12 @@
     <EmbeddedResource Include="NewProduct.resx">
       <DependentUpon>NewProduct.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewPurchaseOrder.resx">
+      <DependentUpon>NewPurchaseOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPurchaseOrderDetails.resx">
+      <DependentUpon>NewPurchaseOrderDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewReturn.resx">
       <DependentUpon>NewReturn.vb</DependentUpon>
     </EmbeddedResource>
@@ -577,6 +601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PromotionsView.resx">
       <DependentUpon>PromotionsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseOrders.resx">
+      <DependentUpon>PurchaseOrders.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="quickKeyMenu.resx">
       <DependentUpon>quickKeyMenu.vb</DependentUpon>
