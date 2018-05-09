@@ -24,6 +24,12 @@ Partial Class frmPromotionsView
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.PromotionsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PromotionsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.PromotionsTableAdapter()
+        Me.PromotionsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.PromotionIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CampaignIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PromoInfoIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -31,15 +37,11 @@ Partial Class frmPromotionsView
         Me.DescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StartDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EndDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PromotionsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PromotionsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.PromotionsTableAdapter()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PromotionsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.PromotionsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -48,61 +50,12 @@ Partial Class frmPromotionsView
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PromotionIDDataGridViewTextBoxColumn, Me.CampaignIDDataGridViewTextBoxColumn, Me.PromoInfoIDDataGridViewTextBoxColumn, Me.TitleDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.StartDateDataGridViewTextBoxColumn, Me.EndDateDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.PromotionsBindingSource
+        Me.DataGridView1.DataSource = Me.PromotionsBindingSource1
         Me.DataGridView1.Location = New System.Drawing.Point(12, 27)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(935, 301)
         Me.DataGridView1.TabIndex = 0
-        '
-        'PromotionIDDataGridViewTextBoxColumn
-        '
-        Me.PromotionIDDataGridViewTextBoxColumn.DataPropertyName = "promotionID"
-        Me.PromotionIDDataGridViewTextBoxColumn.HeaderText = "promotionID"
-        Me.PromotionIDDataGridViewTextBoxColumn.Name = "PromotionIDDataGridViewTextBoxColumn"
-        Me.PromotionIDDataGridViewTextBoxColumn.Width = 89
-        '
-        'CampaignIDDataGridViewTextBoxColumn
-        '
-        Me.CampaignIDDataGridViewTextBoxColumn.DataPropertyName = "campaignID"
-        Me.CampaignIDDataGridViewTextBoxColumn.HeaderText = "campaignID"
-        Me.CampaignIDDataGridViewTextBoxColumn.Name = "CampaignIDDataGridViewTextBoxColumn"
-        Me.CampaignIDDataGridViewTextBoxColumn.Width = 89
-        '
-        'PromoInfoIDDataGridViewTextBoxColumn
-        '
-        Me.PromoInfoIDDataGridViewTextBoxColumn.DataPropertyName = "promoInfoID"
-        Me.PromoInfoIDDataGridViewTextBoxColumn.HeaderText = "promoInfoID"
-        Me.PromoInfoIDDataGridViewTextBoxColumn.Name = "PromoInfoIDDataGridViewTextBoxColumn"
-        Me.PromoInfoIDDataGridViewTextBoxColumn.Width = 90
-        '
-        'TitleDataGridViewTextBoxColumn
-        '
-        Me.TitleDataGridViewTextBoxColumn.DataPropertyName = "title"
-        Me.TitleDataGridViewTextBoxColumn.HeaderText = "title"
-        Me.TitleDataGridViewTextBoxColumn.Name = "TitleDataGridViewTextBoxColumn"
-        Me.TitleDataGridViewTextBoxColumn.Width = 48
-        '
-        'DescriptionDataGridViewTextBoxColumn
-        '
-        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "description"
-        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "description"
-        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
-        Me.DescriptionDataGridViewTextBoxColumn.Width = 83
-        '
-        'StartDateDataGridViewTextBoxColumn
-        '
-        Me.StartDateDataGridViewTextBoxColumn.DataPropertyName = "startDate"
-        Me.StartDateDataGridViewTextBoxColumn.HeaderText = "startDate"
-        Me.StartDateDataGridViewTextBoxColumn.Name = "StartDateDataGridViewTextBoxColumn"
-        Me.StartDateDataGridViewTextBoxColumn.Width = 75
-        '
-        'EndDateDataGridViewTextBoxColumn
-        '
-        Me.EndDateDataGridViewTextBoxColumn.DataPropertyName = "endDate"
-        Me.EndDateDataGridViewTextBoxColumn.HeaderText = "endDate"
-        Me.EndDateDataGridViewTextBoxColumn.Name = "EndDateDataGridViewTextBoxColumn"
-        Me.EndDateDataGridViewTextBoxColumn.Width = 73
         '
         'PromotionsBindingSource
         '
@@ -133,6 +86,61 @@ Partial Class frmPromotionsView
         '
         Me.PromotionsTableAdapter.ClearBeforeFill = True
         '
+        'PromotionsBindingSource1
+        '
+        Me.PromotionsBindingSource1.DataMember = "Promotions"
+        Me.PromotionsBindingSource1.DataSource = Me.GEDataSet
+        '
+        'PromotionIDDataGridViewTextBoxColumn
+        '
+        Me.PromotionIDDataGridViewTextBoxColumn.DataPropertyName = "promotionID"
+        Me.PromotionIDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.PromotionIDDataGridViewTextBoxColumn.Name = "PromotionIDDataGridViewTextBoxColumn"
+        Me.PromotionIDDataGridViewTextBoxColumn.Width = 43
+        '
+        'CampaignIDDataGridViewTextBoxColumn
+        '
+        Me.CampaignIDDataGridViewTextBoxColumn.DataPropertyName = "campaignID"
+        Me.CampaignIDDataGridViewTextBoxColumn.HeaderText = "Campaign"
+        Me.CampaignIDDataGridViewTextBoxColumn.Name = "CampaignIDDataGridViewTextBoxColumn"
+        Me.CampaignIDDataGridViewTextBoxColumn.Width = 79
+        '
+        'PromoInfoIDDataGridViewTextBoxColumn
+        '
+        Me.PromoInfoIDDataGridViewTextBoxColumn.DataPropertyName = "promoInfoID"
+        Me.PromoInfoIDDataGridViewTextBoxColumn.HeaderText = "promoInfoID"
+        Me.PromoInfoIDDataGridViewTextBoxColumn.Name = "PromoInfoIDDataGridViewTextBoxColumn"
+        Me.PromoInfoIDDataGridViewTextBoxColumn.Visible = False
+        Me.PromoInfoIDDataGridViewTextBoxColumn.Width = 90
+        '
+        'TitleDataGridViewTextBoxColumn
+        '
+        Me.TitleDataGridViewTextBoxColumn.DataPropertyName = "title"
+        Me.TitleDataGridViewTextBoxColumn.HeaderText = "Title"
+        Me.TitleDataGridViewTextBoxColumn.Name = "TitleDataGridViewTextBoxColumn"
+        Me.TitleDataGridViewTextBoxColumn.Width = 52
+        '
+        'DescriptionDataGridViewTextBoxColumn
+        '
+        Me.DescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "description"
+        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
+        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
+        '
+        'StartDateDataGridViewTextBoxColumn
+        '
+        Me.StartDateDataGridViewTextBoxColumn.DataPropertyName = "startDate"
+        Me.StartDateDataGridViewTextBoxColumn.HeaderText = "Start Date"
+        Me.StartDateDataGridViewTextBoxColumn.Name = "StartDateDataGridViewTextBoxColumn"
+        Me.StartDateDataGridViewTextBoxColumn.Width = 80
+        '
+        'EndDateDataGridViewTextBoxColumn
+        '
+        Me.EndDateDataGridViewTextBoxColumn.DataPropertyName = "endDate"
+        Me.EndDateDataGridViewTextBoxColumn.HeaderText = "End Date"
+        Me.EndDateDataGridViewTextBoxColumn.Name = "EndDateDataGridViewTextBoxColumn"
+        Me.EndDateDataGridViewTextBoxColumn.Width = 77
+        '
         'frmPromotionsView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -151,6 +159,7 @@ Partial Class frmPromotionsView
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.PromotionsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -169,4 +178,5 @@ Partial Class frmPromotionsView
     Friend WithEvents DescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StartDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EndDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PromotionsBindingSource1 As BindingSource
 End Class

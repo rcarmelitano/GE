@@ -8945,7 +8945,6 @@ Partial Public Class GEDataSet
             Me.columnpromotionID.Unique = true
             Me.columncampaignID.AllowDBNull = false
             Me.columnpromoInfoID.AllowDBNull = false
-            Me.columntitle.AllowDBNull = false
             Me.columntitle.MaxLength = 40
             Me.columndescription.MaxLength = 512
             Me.columnstartDate.AllowDBNull = false
@@ -15661,7 +15660,11 @@ Partial Public Class GEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property title() As String
             Get
-                Return CType(Me(Me.tablePromotions.titleColumn),String)
+                Try 
+                    Return CType(Me(Me.tablePromotions.titleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'title' in table 'Promotions' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablePromotions.titleColumn) = value
@@ -15715,6 +15718,18 @@ Partial Public Class GEDataSet
                 Me.SetParentRow(value, Me.Table.ParentRelations("FK__Promotion__campa__56E8E7AB"))
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IstitleNull() As Boolean
+            Return Me.IsNull(Me.tablePromotions.titleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SettitleNull()
+            Me(Me.tablePromotions.titleColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -27441,7 +27456,7 @@ Namespace GEDataSetTableAdapters
         Public Overloads Overridable Function searchPromotionName(ByVal dataTable As GEDataSet.PromotionsDataTable, ByVal title As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
             If (title Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("title")
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(title,String)
             End If
@@ -27489,7 +27504,7 @@ Namespace GEDataSetTableAdapters
             Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_campaignID,Integer)
             Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_promoInfoID,Integer)
             If (Original_title Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_title")
+                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_title,String)
             End If
@@ -27526,7 +27541,7 @@ Namespace GEDataSetTableAdapters
             Me.Adapter.InsertCommand.Parameters(1).Value = CType(campaignID,Integer)
             Me.Adapter.InsertCommand.Parameters(2).Value = CType(promoInfoID,Integer)
             If (title Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("title")
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(title,String)
             End If
@@ -27561,7 +27576,7 @@ Namespace GEDataSetTableAdapters
             Me.Adapter.UpdateCommand.Parameters(1).Value = CType(campaignID,Integer)
             Me.Adapter.UpdateCommand.Parameters(2).Value = CType(promoInfoID,Integer)
             If (title Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("title")
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(title,String)
             End If
@@ -27576,7 +27591,7 @@ Namespace GEDataSetTableAdapters
             Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_campaignID,Integer)
             Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_promoInfoID,Integer)
             If (Original_title Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_title")
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_title,String)
             End If

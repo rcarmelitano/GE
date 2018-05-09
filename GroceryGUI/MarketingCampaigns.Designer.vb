@@ -39,14 +39,16 @@ Partial Class MarketingCampaigns
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.Campaign_TypesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Campaign_TypesTableAdapter()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.campaignID = New System.Windows.Forms.TextBox()
+        Me.txtCampaignID = New System.Windows.Forms.TextBox()
         Me.startDatePicker = New System.Windows.Forms.DateTimePicker()
         Me.endDatePicker = New System.Windows.Forms.DateTimePicker()
-        Me.campaignTypeID = New System.Windows.Forms.TextBox()
+        Me.comboCampType = New System.Windows.Forms.ComboBox()
+        Me.CampaignTypesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.MenuStrip1.SuspendLayout()
         CType(Me.CampaignTypesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CampaignTypesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -173,12 +175,12 @@ Partial Class MarketingCampaigns
         Me.Label6.TabIndex = 21
         Me.Label6.Text = "Campaign ID: "
         '
-        'campaignID
+        'txtCampaignID
         '
-        Me.campaignID.Location = New System.Drawing.Point(192, 29)
-        Me.campaignID.Name = "campaignID"
-        Me.campaignID.Size = New System.Drawing.Size(195, 20)
-        Me.campaignID.TabIndex = 22
+        Me.txtCampaignID.Location = New System.Drawing.Point(192, 29)
+        Me.txtCampaignID.Name = "txtCampaignID"
+        Me.txtCampaignID.Size = New System.Drawing.Size(195, 20)
+        Me.txtCampaignID.TabIndex = 22
         '
         'startDatePicker
         '
@@ -198,22 +200,31 @@ Partial Class MarketingCampaigns
         Me.endDatePicker.TabIndex = 24
         Me.endDatePicker.Value = New Date(2018, 5, 8, 0, 0, 0, 0)
         '
-        'campaignTypeID
+        'comboCampType
         '
-        Me.campaignTypeID.Location = New System.Drawing.Point(192, 94)
-        Me.campaignTypeID.Name = "campaignTypeID"
-        Me.campaignTypeID.Size = New System.Drawing.Size(195, 20)
-        Me.campaignTypeID.TabIndex = 25
+        Me.comboCampType.DataSource = Me.CampaignTypesBindingSource1
+        Me.comboCampType.DisplayMember = "title"
+        Me.comboCampType.FormattingEnabled = True
+        Me.comboCampType.Location = New System.Drawing.Point(192, 97)
+        Me.comboCampType.Name = "comboCampType"
+        Me.comboCampType.Size = New System.Drawing.Size(195, 21)
+        Me.comboCampType.TabIndex = 26
+        Me.comboCampType.ValueMember = "campaignTypeID"
+        '
+        'CampaignTypesBindingSource1
+        '
+        Me.CampaignTypesBindingSource1.DataMember = "Campaign_Types"
+        Me.CampaignTypesBindingSource1.DataSource = Me.GEDataSetBindingSource
         '
         'MarketingCampaigns
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(424, 304)
-        Me.Controls.Add(Me.campaignTypeID)
+        Me.Controls.Add(Me.comboCampType)
         Me.Controls.Add(Me.endDatePicker)
         Me.Controls.Add(Me.startDatePicker)
-        Me.Controls.Add(Me.campaignID)
+        Me.Controls.Add(Me.txtCampaignID)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnAddPromotion)
         Me.Controls.Add(Me.txtDescription)
@@ -232,6 +243,7 @@ Partial Class MarketingCampaigns
         CType(Me.CampaignTypesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CampaignTypesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -253,8 +265,9 @@ Partial Class MarketingCampaigns
     Friend WithEvents CampaignTypesBindingSource As BindingSource
     Friend WithEvents Campaign_TypesTableAdapter As GEDataSetTableAdapters.Campaign_TypesTableAdapter
     Friend WithEvents Label6 As Label
-    Friend WithEvents campaignID As TextBox
+    Friend WithEvents txtCampaignID As TextBox
     Friend WithEvents startDatePicker As DateTimePicker
     Friend WithEvents endDatePicker As DateTimePicker
-    Friend WithEvents campaignTypeID As TextBox
+    Friend WithEvents comboCampType As ComboBox
+    Friend WithEvents CampaignTypesBindingSource1 As BindingSource
 End Class

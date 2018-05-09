@@ -22,26 +22,33 @@ Partial Class frmPromotion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.BackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DiscountsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CouponsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewPromotionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnAddPromotion = New System.Windows.Forms.Button()
         Me.txtPromotionName = New System.Windows.Forms.TextBox()
-        Me.txtPromotionType = New System.Windows.Forms.TextBox()
         Me.txtDescription = New System.Windows.Forms.TextBox()
-        Me.txtAppliesTo = New System.Windows.Forms.TextBox()
-        Me.txtStartDate = New System.Windows.Forms.TextBox()
-        Me.txtEndDate = New System.Windows.Forms.TextBox()
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.PromotionsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PromotionsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.PromotionsTableAdapter()
+        Me.startDatePicker = New System.Windows.Forms.DateTimePicker()
+        Me.endDatePicker = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtPromoID = New System.Windows.Forms.TextBox()
+        Me.CategoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CategoriesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CategoriesTableAdapter()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PromotionsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -84,21 +91,11 @@ Partial Class frmPromotion
         Me.ViewPromotionsToolStripMenuItem.Size = New System.Drawing.Size(109, 20)
         Me.ViewPromotionsToolStripMenuItem.Text = "View Promotions"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(78, 74)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(107, 16)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Promotion Type:"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(73, 42)
+        Me.Label2.Location = New System.Drawing.Point(74, 87)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(112, 16)
         Me.Label2.TabIndex = 2
@@ -108,27 +105,17 @@ Partial Class frmPromotion
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(107, 106)
+        Me.Label3.Location = New System.Drawing.Point(106, 123)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 16)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Description:"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(109, 138)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(77, 16)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Applies To:"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(115, 170)
+        Me.Label5.Location = New System.Drawing.Point(115, 164)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(70, 16)
         Me.Label5.TabIndex = 6
@@ -156,64 +143,88 @@ Partial Class frmPromotion
         '
         'txtPromotionName
         '
-        Me.txtPromotionName.Location = New System.Drawing.Point(192, 42)
+        Me.txtPromotionName.Location = New System.Drawing.Point(191, 87)
         Me.txtPromotionName.Name = "txtPromotionName"
         Me.txtPromotionName.Size = New System.Drawing.Size(149, 20)
         Me.txtPromotionName.TabIndex = 8
         '
-        'txtPromotionType
-        '
-        Me.txtPromotionType.Location = New System.Drawing.Point(191, 74)
-        Me.txtPromotionType.Name = "txtPromotionType"
-        Me.txtPromotionType.Size = New System.Drawing.Size(149, 20)
-        Me.txtPromotionType.TabIndex = 9
-        '
         'txtDescription
         '
-        Me.txtDescription.Location = New System.Drawing.Point(191, 106)
+        Me.txtDescription.Location = New System.Drawing.Point(191, 123)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(149, 20)
         Me.txtDescription.TabIndex = 10
         '
-        'txtAppliesTo
+        'GEDataSet
         '
-        Me.txtAppliesTo.Location = New System.Drawing.Point(191, 138)
-        Me.txtAppliesTo.Name = "txtAppliesTo"
-        Me.txtAppliesTo.Size = New System.Drawing.Size(149, 20)
-        Me.txtAppliesTo.TabIndex = 11
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'txtStartDate
+        'PromotionsBindingSource
         '
-        Me.txtStartDate.Location = New System.Drawing.Point(191, 170)
-        Me.txtStartDate.Name = "txtStartDate"
-        Me.txtStartDate.Size = New System.Drawing.Size(149, 20)
-        Me.txtStartDate.TabIndex = 12
+        Me.PromotionsBindingSource.DataMember = "Promotions"
+        Me.PromotionsBindingSource.DataSource = Me.GEDataSet
         '
-        'txtEndDate
+        'PromotionsTableAdapter
         '
-        Me.txtEndDate.Location = New System.Drawing.Point(191, 202)
-        Me.txtEndDate.Name = "txtEndDate"
-        Me.txtEndDate.Size = New System.Drawing.Size(149, 20)
-        Me.txtEndDate.TabIndex = 13
+        Me.PromotionsTableAdapter.ClearBeforeFill = True
+        '
+        'startDatePicker
+        '
+        Me.startDatePicker.Location = New System.Drawing.Point(191, 164)
+        Me.startDatePicker.Name = "startDatePicker"
+        Me.startDatePicker.Size = New System.Drawing.Size(200, 20)
+        Me.startDatePicker.TabIndex = 12
+        '
+        'endDatePicker
+        '
+        Me.endDatePicker.Location = New System.Drawing.Point(191, 202)
+        Me.endDatePicker.Name = "endDatePicker"
+        Me.endDatePicker.Size = New System.Drawing.Size(200, 20)
+        Me.endDatePicker.TabIndex = 13
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(97, 53)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(88, 16)
+        Me.Label1.TabIndex = 14
+        Me.Label1.Text = "Promotion ID:"
+        '
+        'txtPromoID
+        '
+        Me.txtPromoID.Location = New System.Drawing.Point(191, 49)
+        Me.txtPromoID.Name = "txtPromoID"
+        Me.txtPromoID.Size = New System.Drawing.Size(149, 20)
+        Me.txtPromoID.TabIndex = 15
+        '
+        'CategoriesBindingSource
+        '
+        Me.CategoriesBindingSource.DataMember = "Categories"
+        Me.CategoriesBindingSource.DataSource = Me.GEDataSet
+        '
+        'CategoriesTableAdapter
+        '
+        Me.CategoriesTableAdapter.ClearBeforeFill = True
         '
         'frmPromotion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(424, 304)
-        Me.Controls.Add(Me.txtEndDate)
-        Me.Controls.Add(Me.txtStartDate)
-        Me.Controls.Add(Me.txtAppliesTo)
+        Me.Controls.Add(Me.txtPromoID)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.endDatePicker)
+        Me.Controls.Add(Me.startDatePicker)
         Me.Controls.Add(Me.txtDescription)
-        Me.Controls.Add(Me.txtPromotionType)
         Me.Controls.Add(Me.txtPromotionName)
         Me.Controls.Add(Me.btnAddPromotion)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
@@ -223,6 +234,9 @@ Partial Class frmPromotion
         Me.Text = "Promotion"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PromotionsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -233,18 +247,21 @@ Partial Class frmPromotion
     Friend WithEvents ManageToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DiscountsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CouponsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents btnAddPromotion As Button
     Friend WithEvents txtPromotionName As TextBox
-    Friend WithEvents txtPromotionType As TextBox
     Friend WithEvents txtDescription As TextBox
-    Friend WithEvents txtAppliesTo As TextBox
-    Friend WithEvents txtStartDate As TextBox
-    Friend WithEvents txtEndDate As TextBox
     Friend WithEvents ViewPromotionsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GEDataSet As GEDataSet
+    Friend WithEvents PromotionsBindingSource As BindingSource
+    Friend WithEvents PromotionsTableAdapter As GEDataSetTableAdapters.PromotionsTableAdapter
+    Friend WithEvents startDatePicker As DateTimePicker
+    Friend WithEvents endDatePicker As DateTimePicker
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtPromoID As TextBox
+    Friend WithEvents CategoriesBindingSource As BindingSource
+    Friend WithEvents CategoriesTableAdapter As GEDataSetTableAdapters.CategoriesTableAdapter
 End Class
