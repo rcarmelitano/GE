@@ -115,6 +115,7 @@
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnDepartments.Click
         'opens the categories and departments menuuuuuuuu
+        Me.Hide()
         frmCategoriesAndDepartments.Show()
     End Sub
 
