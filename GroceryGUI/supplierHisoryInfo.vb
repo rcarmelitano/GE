@@ -6,11 +6,10 @@
 
     End Sub
 
-    Private Sub supplierHisoryInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GEDataSet.Purchase_Order_Details' table. You can move, or remove it, as needed.
-        Me.Purchase_Order_DetailsTableAdapter.Fill(Me.GEDataSet.Purchase_Order_Details)
-
-        ' Disable the form controls
+    Public Sub loadDetails(ByVal orderID As Integer)
         Me.ControlBox = False
+        Me.Purchase_Order_DetailsTableAdapter.PurchaseOrderHistory(Me.GEDataSet.Purchase_Order_Details, orderID)
     End Sub
+
+
 End Class

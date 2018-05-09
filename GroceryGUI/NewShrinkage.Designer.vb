@@ -33,26 +33,28 @@ Partial Class frmNewShrinkage
         Me.Label8 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtShrinkageID = New System.Windows.Forms.TextBox()
+        Me.txtDetails = New System.Windows.Forms.TextBox()
+        Me.txtUnit = New System.Windows.Forms.TextBox()
+        Me.txtQuantity = New System.Windows.Forms.TextBox()
+        Me.txtStatusID = New System.Windows.Forms.TextBox()
+        Me.txtSKU = New System.Windows.Forms.TextBox()
+        Me.txtEmployeeID = New System.Windows.Forms.TextBox()
+        Me.btnAddToShrinkage = New System.Windows.Forms.Button()
         Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvInventory = New System.Windows.Forms.DataGridView()
         Me.InventoryBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.InventoryTableAdapter = New GroceryGUI.GEDataSetTableAdapters.InventoryTableAdapter()
         Me.InventoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InventoryCountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAddShrinkage = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.txtQuantityStorage = New System.Windows.Forms.TextBox()
+        Me.dtpShrinkDate = New System.Windows.Forms.DateTimePicker()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventoryBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -60,7 +62,7 @@ Partial Class frmNewShrinkage
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(23, 51)
+        Me.Label1.Location = New System.Drawing.Point(65, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(72, 13)
         Me.Label1.TabIndex = 0
@@ -69,7 +71,7 @@ Partial Class frmNewShrinkage
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(23, 92)
+        Me.Label2.Location = New System.Drawing.Point(65, 85)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 13)
         Me.Label2.TabIndex = 1
@@ -78,7 +80,7 @@ Partial Class frmNewShrinkage
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(57, 133)
+        Me.Label3.Location = New System.Drawing.Point(99, 126)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(32, 13)
         Me.Label3.TabIndex = 2
@@ -87,16 +89,16 @@ Partial Class frmNewShrinkage
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(53, 289)
+        Me.Label4.Location = New System.Drawing.Point(83, 294)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.Size = New System.Drawing.Size(54, 13)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Status:"
+        Me.Label4.Text = "Status ID:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(44, 330)
+        Me.Label5.Location = New System.Drawing.Point(86, 335)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 13)
         Me.Label5.TabIndex = 4
@@ -105,7 +107,7 @@ Partial Class frmNewShrinkage
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(27, 370)
+        Me.Label6.Location = New System.Drawing.Point(69, 375)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 13)
         Me.Label6.TabIndex = 5
@@ -114,7 +116,7 @@ Partial Class frmNewShrinkage
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(64, 453)
+        Me.Label7.Location = New System.Drawing.Point(106, 458)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(29, 13)
         Me.Label7.TabIndex = 6
@@ -123,7 +125,7 @@ Partial Class frmNewShrinkage
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(51, 411)
+        Me.Label8.Location = New System.Drawing.Point(93, 416)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(42, 13)
         Me.Label8.TabIndex = 7
@@ -134,7 +136,7 @@ Partial Class frmNewShrinkage
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(307, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(408, 24)
         Me.MenuStrip1.TabIndex = 8
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -144,96 +146,94 @@ Partial Class frmNewShrinkage
         Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
-        'TextBox1
+        'txtShrinkageID
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(101, 48)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(137, 20)
-        Me.TextBox1.TabIndex = 9
+        Me.txtShrinkageID.Enabled = False
+        Me.txtShrinkageID.Location = New System.Drawing.Point(143, 41)
+        Me.txtShrinkageID.Name = "txtShrinkageID"
+        Me.txtShrinkageID.ReadOnly = True
+        Me.txtShrinkageID.Size = New System.Drawing.Size(137, 20)
+        Me.txtShrinkageID.TabIndex = 9
         '
-        'TextBox2
+        'txtDetails
         '
-        Me.TextBox2.Location = New System.Drawing.Point(101, 408)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(137, 20)
-        Me.TextBox2.TabIndex = 10
+        Me.txtDetails.Enabled = False
+        Me.txtDetails.Location = New System.Drawing.Point(143, 413)
+        Me.txtDetails.Name = "txtDetails"
+        Me.txtDetails.Size = New System.Drawing.Size(137, 20)
+        Me.txtDetails.TabIndex = 10
         '
-        'TextBox3
+        'txtUnit
         '
-        Me.TextBox3.Location = New System.Drawing.Point(101, 367)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(137, 20)
-        Me.TextBox3.TabIndex = 11
+        Me.txtUnit.Enabled = False
+        Me.txtUnit.Location = New System.Drawing.Point(143, 455)
+        Me.txtUnit.Name = "txtUnit"
+        Me.txtUnit.Size = New System.Drawing.Size(137, 20)
+        Me.txtUnit.TabIndex = 12
         '
-        'TextBox4
+        'txtQuantity
         '
-        Me.TextBox4.Location = New System.Drawing.Point(101, 450)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(137, 20)
-        Me.TextBox4.TabIndex = 12
+        Me.txtQuantity.Enabled = False
+        Me.txtQuantity.Location = New System.Drawing.Point(143, 332)
+        Me.txtQuantity.Name = "txtQuantity"
+        Me.txtQuantity.Size = New System.Drawing.Size(137, 20)
+        Me.txtQuantity.TabIndex = 13
         '
-        'TextBox5
+        'txtStatusID
         '
-        Me.TextBox5.Location = New System.Drawing.Point(101, 327)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(137, 20)
-        Me.TextBox5.TabIndex = 13
+        Me.txtStatusID.Enabled = False
+        Me.txtStatusID.Location = New System.Drawing.Point(143, 291)
+        Me.txtStatusID.Name = "txtStatusID"
+        Me.txtStatusID.Size = New System.Drawing.Size(137, 20)
+        Me.txtStatusID.TabIndex = 14
         '
-        'TextBox6
+        'txtSKU
         '
-        Me.TextBox6.Location = New System.Drawing.Point(101, 286)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(137, 20)
-        Me.TextBox6.TabIndex = 14
+        Me.txtSKU.Enabled = False
+        Me.txtSKU.Location = New System.Drawing.Point(143, 123)
+        Me.txtSKU.Name = "txtSKU"
+        Me.txtSKU.ReadOnly = True
+        Me.txtSKU.Size = New System.Drawing.Size(137, 20)
+        Me.txtSKU.TabIndex = 15
         '
-        'TextBox7
+        'txtEmployeeID
         '
-        Me.TextBox7.Enabled = False
-        Me.TextBox7.Location = New System.Drawing.Point(101, 130)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(137, 20)
-        Me.TextBox7.TabIndex = 15
+        Me.txtEmployeeID.Enabled = False
+        Me.txtEmployeeID.Location = New System.Drawing.Point(143, 82)
+        Me.txtEmployeeID.Name = "txtEmployeeID"
+        Me.txtEmployeeID.ReadOnly = True
+        Me.txtEmployeeID.Size = New System.Drawing.Size(137, 20)
+        Me.txtEmployeeID.TabIndex = 16
         '
-        'TextBox8
+        'btnAddToShrinkage
         '
-        Me.TextBox8.Enabled = False
-        Me.TextBox8.Location = New System.Drawing.Point(101, 89)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(137, 20)
-        Me.TextBox8.TabIndex = 16
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(30, 495)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(246, 36)
-        Me.Button1.TabIndex = 17
-        Me.Button1.Text = "Add to Shrinkage"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnAddToShrinkage.Enabled = False
+        Me.btnAddToShrinkage.Location = New System.Drawing.Point(85, 486)
+        Me.btnAddToShrinkage.Name = "btnAddToShrinkage"
+        Me.btnAddToShrinkage.Size = New System.Drawing.Size(246, 36)
+        Me.btnAddToShrinkage.TabIndex = 17
+        Me.btnAddToShrinkage.Text = "Add to Shrinkage"
+        Me.btnAddToShrinkage.UseVisualStyleBackColor = True
         '
         'GEDataSet
         '
         Me.GEDataSet.DataSetName = "GEDataSet"
         Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'DataGridView1
+        'dgvInventory
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InventoryIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.InventoryCountDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.InventoryBindingSource1
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 160)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(283, 117)
-        Me.DataGridView1.TabIndex = 18
+        Me.dgvInventory.AllowUserToAddRows = False
+        Me.dgvInventory.AllowUserToDeleteRows = False
+        Me.dgvInventory.AutoGenerateColumns = False
+        Me.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvInventory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InventoryIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.InventoryCountDataGridViewTextBoxColumn, Me.btnAddShrinkage})
+        Me.dgvInventory.DataSource = Me.InventoryBindingSource1
+        Me.dgvInventory.Location = New System.Drawing.Point(12, 160)
+        Me.dgvInventory.Name = "dgvInventory"
+        Me.dgvInventory.ReadOnly = True
+        Me.dgvInventory.RowHeadersVisible = False
+        Me.dgvInventory.Size = New System.Drawing.Size(384, 117)
+        Me.dgvInventory.TabIndex = 18
         '
         'InventoryBindingSource1
         '
@@ -274,21 +274,46 @@ Partial Class frmNewShrinkage
         Me.InventoryCountDataGridViewTextBoxColumn.ReadOnly = True
         Me.InventoryCountDataGridViewTextBoxColumn.Width = 103
         '
+        'btnAddShrinkage
+        '
+        Me.btnAddShrinkage.HeaderText = ""
+        Me.btnAddShrinkage.Name = "btnAddShrinkage"
+        Me.btnAddShrinkage.ReadOnly = True
+        Me.btnAddShrinkage.Text = "Add Item"
+        Me.btnAddShrinkage.UseColumnTextForButtonValue = True
+        '
+        'txtQuantityStorage
+        '
+        Me.txtQuantityStorage.Location = New System.Drawing.Point(296, 102)
+        Me.txtQuantityStorage.Name = "txtQuantityStorage"
+        Me.txtQuantityStorage.Size = New System.Drawing.Size(100, 20)
+        Me.txtQuantityStorage.TabIndex = 19
+        Me.txtQuantityStorage.Visible = False
+        '
+        'dtpShrinkDate
+        '
+        Me.dtpShrinkDate.Enabled = False
+        Me.dtpShrinkDate.Location = New System.Drawing.Point(141, 373)
+        Me.dtpShrinkDate.Name = "dtpShrinkDate"
+        Me.dtpShrinkDate.Size = New System.Drawing.Size(195, 20)
+        Me.dtpShrinkDate.TabIndex = 20
+        '
         'frmNewShrinkage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(307, 534)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(408, 534)
+        Me.Controls.Add(Me.dtpShrinkDate)
+        Me.Controls.Add(Me.txtQuantityStorage)
+        Me.Controls.Add(Me.dgvInventory)
+        Me.Controls.Add(Me.btnAddToShrinkage)
+        Me.Controls.Add(Me.txtEmployeeID)
+        Me.Controls.Add(Me.txtSKU)
+        Me.Controls.Add(Me.txtStatusID)
+        Me.Controls.Add(Me.txtQuantity)
+        Me.Controls.Add(Me.txtUnit)
+        Me.Controls.Add(Me.txtDetails)
+        Me.Controls.Add(Me.txtShrinkageID)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -306,7 +331,7 @@ Partial Class frmNewShrinkage
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InventoryBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -324,21 +349,23 @@ Partial Class frmNewShrinkage
     Friend WithEvents Label8 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents txtShrinkageID As TextBox
+    Friend WithEvents txtDetails As TextBox
+    Friend WithEvents txtUnit As TextBox
+    Friend WithEvents txtQuantity As TextBox
+    Friend WithEvents txtStatusID As TextBox
+    Friend WithEvents txtSKU As TextBox
+    Friend WithEvents txtEmployeeID As TextBox
+    Friend WithEvents btnAddToShrinkage As Button
     Friend WithEvents GEDataSet As GEDataSet
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvInventory As DataGridView
     Friend WithEvents InventoryBindingSource As BindingSource
     Friend WithEvents InventoryTableAdapter As GEDataSetTableAdapters.InventoryTableAdapter
     Friend WithEvents InventoryBindingSource1 As BindingSource
     Friend WithEvents InventoryIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SKUDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents InventoryCountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnAddShrinkage As DataGridViewButtonColumn
+    Friend WithEvents txtQuantityStorage As TextBox
+    Friend WithEvents dtpShrinkDate As DateTimePicker
 End Class

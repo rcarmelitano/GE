@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmNewShipping
+Partial Class frmNewAddress
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -62,7 +62,7 @@ Partial Class frmNewShipping
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(44, 54)
+        Me.Label1.Location = New System.Drawing.Point(45, 80)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 1
@@ -116,7 +116,7 @@ Partial Class frmNewShipping
         'txtOrderID
         '
         Me.txtOrderID.Enabled = False
-        Me.txtOrderID.Location = New System.Drawing.Point(120, 51)
+        Me.txtOrderID.Location = New System.Drawing.Point(121, 77)
         Me.txtOrderID.Name = "txtOrderID"
         Me.txtOrderID.Size = New System.Drawing.Size(166, 20)
         Me.txtOrderID.TabIndex = 17
@@ -171,7 +171,7 @@ Partial Class frmNewShipping
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"", "Shipping Address", "Billing Address"})
-        Me.ComboBox1.Location = New System.Drawing.Point(120, 77)
+        Me.ComboBox1.Location = New System.Drawing.Point(121, 26)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(166, 21)
         Me.ComboBox1.TabIndex = 36
@@ -179,7 +179,7 @@ Partial Class frmNewShipping
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(37, 80)
+        Me.Label5.Location = New System.Drawing.Point(37, 26)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(75, 13)
         Me.Label5.TabIndex = 37
@@ -188,7 +188,7 @@ Partial Class frmNewShipping
         'TextBox1
         '
         Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(120, 27)
+        Me.TextBox1.Location = New System.Drawing.Point(121, 53)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(166, 20)
         Me.TextBox1.TabIndex = 39
@@ -196,13 +196,13 @@ Partial Class frmNewShipping
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(47, 30)
+        Me.Label6.Location = New System.Drawing.Point(48, 56)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 38
         Me.Label6.Text = "Shipping ID:"
         '
-        'frmNewShipping
+        'frmNewAddress
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -228,7 +228,7 @@ Partial Class frmNewShipping
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
-        Me.Name = "frmNewShipping"
+        Me.Name = "frmNewAddress"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "New Shipment"
         Me.MenuStrip1.ResumeLayout(False)

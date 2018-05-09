@@ -24,11 +24,9 @@ Partial Class frmCheckoutForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.txtCustomerID = New System.Windows.Forms.TextBox()
-        Me.txtBarcode = New System.Windows.Forms.TextBox()
         Me.txtQuantity = New System.Windows.Forms.TextBox()
         Me.txtProduct = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCustomerSearch = New System.Windows.Forms.Button()
         Me.dgvProducts = New System.Windows.Forms.DataGridView()
@@ -69,32 +67,38 @@ Partial Class frmCheckoutForm
         Me.NewCustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ProductsTableAdapter()
         Me.checkoutButton = New System.Windows.Forms.Button()
+        Me.cmbSearchType = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.SKUCheckoutSearchToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.SKUToolStripLabel = New System.Windows.Forms.ToolStripLabel()
+        Me.SKUToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
+        Me.SKUCheckoutSearchToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.FillByToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.UPCToolStripLabel = New System.Windows.Forms.ToolStripLabel()
+        Me.UPCToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
+        Me.FillByToolStripButton = New System.Windows.Forms.ToolStripButton()
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.SKUCheckoutSearchToolStrip.SuspendLayout()
+        Me.FillByToolStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtCustomerID
         '
         Me.txtCustomerID.Enabled = False
-        Me.txtCustomerID.Location = New System.Drawing.Point(127, 74)
+        Me.txtCustomerID.Location = New System.Drawing.Point(128, 544)
         Me.txtCustomerID.Name = "txtCustomerID"
         Me.txtCustomerID.ReadOnly = True
         Me.txtCustomerID.Size = New System.Drawing.Size(117, 20)
         Me.txtCustomerID.TabIndex = 0
         '
-        'txtBarcode
-        '
-        Me.txtBarcode.Location = New System.Drawing.Point(99, 538)
-        Me.txtBarcode.Name = "txtBarcode"
-        Me.txtBarcode.Size = New System.Drawing.Size(145, 20)
-        Me.txtBarcode.TabIndex = 1
-        '
         'txtQuantity
         '
-        Me.txtQuantity.Location = New System.Drawing.Point(539, 538)
+        Me.txtQuantity.Location = New System.Drawing.Point(537, 541)
         Me.txtQuantity.Name = "txtQuantity"
         Me.txtQuantity.Size = New System.Drawing.Size(145, 20)
         Me.txtQuantity.TabIndex = 2
@@ -102,36 +106,27 @@ Partial Class frmCheckoutForm
         '
         'txtProduct
         '
-        Me.txtProduct.Location = New System.Drawing.Point(476, 73)
+        Me.txtProduct.Enabled = False
+        Me.txtProduct.Location = New System.Drawing.Point(147, 75)
         Me.txtProduct.Name = "txtProduct"
-        Me.txtProduct.Size = New System.Drawing.Size(117, 20)
+        Me.txtProduct.Size = New System.Drawing.Size(304, 20)
         Me.txtProduct.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.Label1.Location = New System.Drawing.Point(25, 73)
+        Me.Label1.Location = New System.Drawing.Point(26, 542)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(96, 18)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Customer ID:"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.Label2.Location = New System.Drawing.Point(25, 538)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 18)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Barcode:"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.Label3.Location = New System.Drawing.Point(348, 76)
+        Me.Label3.Location = New System.Drawing.Point(26, 75)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(115, 18)
         Me.Label3.TabIndex = 7
@@ -140,7 +135,7 @@ Partial Class frmCheckoutForm
         'btnCustomerSearch
         '
         Me.btnCustomerSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnCustomerSearch.Location = New System.Drawing.Point(250, 69)
+        Me.btnCustomerSearch.Location = New System.Drawing.Point(251, 536)
         Me.btnCustomerSearch.Name = "btnCustomerSearch"
         Me.btnCustomerSearch.Size = New System.Drawing.Size(80, 31)
         Me.btnCustomerSearch.TabIndex = 8
@@ -434,9 +429,9 @@ Partial Class frmCheckoutForm
         'btnProductSearch
         '
         Me.btnProductSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnProductSearch.Location = New System.Drawing.Point(604, 69)
+        Me.btnProductSearch.Location = New System.Drawing.Point(468, 69)
         Me.btnProductSearch.Name = "btnProductSearch"
-        Me.btnProductSearch.Size = New System.Drawing.Size(80, 31)
+        Me.btnProductSearch.Size = New System.Drawing.Size(128, 31)
         Me.btnProductSearch.TabIndex = 22
         Me.btnProductSearch.Text = "Search"
         Me.btnProductSearch.UseVisualStyleBackColor = True
@@ -510,11 +505,102 @@ Partial Class frmCheckoutForm
         Me.checkoutButton.Text = "Checkout"
         Me.checkoutButton.UseVisualStyleBackColor = True
         '
+        'cmbSearchType
+        '
+        Me.cmbSearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSearchType.FormattingEnabled = True
+        Me.cmbSearchType.Items.AddRange(New Object() {"Name", "SKU", "UPC"})
+        Me.cmbSearchType.Location = New System.Drawing.Point(147, 48)
+        Me.cmbSearchType.Name = "cmbSearchType"
+        Me.cmbSearchType.Size = New System.Drawing.Size(144, 21)
+        Me.cmbSearchType.TabIndex = 31
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.Label2.Location = New System.Drawing.Point(46, 51)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(95, 18)
+        Me.Label2.TabIndex = 32
+        Me.Label2.Text = "Search Type:"
+        '
+        'SKUCheckoutSearchToolStrip
+        '
+        Me.SKUCheckoutSearchToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SKUToolStripLabel, Me.SKUToolStripTextBox, Me.SKUCheckoutSearchToolStripButton})
+        Me.SKUCheckoutSearchToolStrip.Location = New System.Drawing.Point(0, 24)
+        Me.SKUCheckoutSearchToolStrip.Name = "SKUCheckoutSearchToolStrip"
+        Me.SKUCheckoutSearchToolStrip.Size = New System.Drawing.Size(1019, 25)
+        Me.SKUCheckoutSearchToolStrip.TabIndex = 33
+        Me.SKUCheckoutSearchToolStrip.Text = "SKUCheckoutSearchToolStrip"
+        Me.SKUCheckoutSearchToolStrip.Visible = False
+        '
+        'SKUToolStripLabel
+        '
+        Me.SKUToolStripLabel.Name = "SKUToolStripLabel"
+        Me.SKUToolStripLabel.Size = New System.Drawing.Size(31, 22)
+        Me.SKUToolStripLabel.Text = "SKU:"
+        '
+        'SKUToolStripTextBox
+        '
+        Me.SKUToolStripTextBox.Name = "SKUToolStripTextBox"
+        Me.SKUToolStripTextBox.Size = New System.Drawing.Size(100, 25)
+        '
+        'SKUCheckoutSearchToolStripButton
+        '
+        Me.SKUCheckoutSearchToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.SKUCheckoutSearchToolStripButton.Name = "SKUCheckoutSearchToolStripButton"
+        Me.SKUCheckoutSearchToolStripButton.Size = New System.Drawing.Size(118, 22)
+        Me.SKUCheckoutSearchToolStripButton.Text = "SKUCheckoutSearch"
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.btnRefresh.Location = New System.Drawing.Point(602, 68)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(80, 31)
+        Me.btnRefresh.TabIndex = 34
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
+        'FillByToolStrip
+        '
+        Me.FillByToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UPCToolStripLabel, Me.UPCToolStripTextBox, Me.FillByToolStripButton})
+        Me.FillByToolStrip.Location = New System.Drawing.Point(0, 24)
+        Me.FillByToolStrip.Name = "FillByToolStrip"
+        Me.FillByToolStrip.Size = New System.Drawing.Size(1019, 25)
+        Me.FillByToolStrip.TabIndex = 35
+        Me.FillByToolStrip.Text = "FillByToolStrip"
+        Me.FillByToolStrip.Visible = False
+        '
+        'UPCToolStripLabel
+        '
+        Me.UPCToolStripLabel.Name = "UPCToolStripLabel"
+        Me.UPCToolStripLabel.Size = New System.Drawing.Size(33, 22)
+        Me.UPCToolStripLabel.Text = "UPC:"
+        '
+        'UPCToolStripTextBox
+        '
+        Me.UPCToolStripTextBox.Name = "UPCToolStripTextBox"
+        Me.UPCToolStripTextBox.Size = New System.Drawing.Size(100, 25)
+        '
+        'FillByToolStripButton
+        '
+        Me.FillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.FillByToolStripButton.Name = "FillByToolStripButton"
+        Me.FillByToolStripButton.Size = New System.Drawing.Size(39, 22)
+        Me.FillByToolStripButton.Text = "FillBy"
+        '
         'frmCheckoutForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1019, 752)
+        Me.Controls.Add(Me.FillByToolStrip)
+        Me.Controls.Add(Me.btnRefresh)
+        Me.Controls.Add(Me.SKUCheckoutSearchToolStrip)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.cmbSearchType)
         Me.Controls.Add(Me.checkoutButton)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtEmployeeID)
@@ -535,11 +621,9 @@ Partial Class frmCheckoutForm
         Me.Controls.Add(Me.dgvProducts)
         Me.Controls.Add(Me.btnCustomerSearch)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtProduct)
         Me.Controls.Add(Me.txtQuantity)
-        Me.Controls.Add(Me.txtBarcode)
         Me.Controls.Add(Me.txtCustomerID)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -555,17 +639,19 @@ Partial Class frmCheckoutForm
         Me.GroupBox1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.SKUCheckoutSearchToolStrip.ResumeLayout(False)
+        Me.SKUCheckoutSearchToolStrip.PerformLayout()
+        Me.FillByToolStrip.ResumeLayout(False)
+        Me.FillByToolStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents txtCustomerID As TextBox
-    Friend WithEvents txtBarcode As TextBox
     Friend WithEvents txtQuantity As TextBox
     Friend WithEvents txtProduct As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnCustomerSearch As Button
     Friend WithEvents dgvProducts As DataGridView
@@ -606,4 +692,15 @@ Partial Class frmCheckoutForm
     Friend WithEvents retailCost As DataGridViewTextBoxColumn
     Friend WithEvents btnAddToCart As DataGridViewButtonColumn
     Friend WithEvents checkoutButton As Button
+    Friend WithEvents cmbSearchType As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents SKUCheckoutSearchToolStrip As ToolStrip
+    Friend WithEvents SKUToolStripLabel As ToolStripLabel
+    Friend WithEvents SKUToolStripTextBox As ToolStripTextBox
+    Friend WithEvents SKUCheckoutSearchToolStripButton As ToolStripButton
+    Friend WithEvents btnRefresh As Button
+    Friend WithEvents FillByToolStrip As ToolStrip
+    Friend WithEvents UPCToolStripLabel As ToolStripLabel
+    Friend WithEvents UPCToolStripTextBox As ToolStripTextBox
+    Friend WithEvents FillByToolStripButton As ToolStripButton
 End Class

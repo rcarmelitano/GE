@@ -24,6 +24,7 @@ Partial Class frmAddCategories
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.BackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuUpdate = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCategoryName = New System.Windows.Forms.TextBox()
         Me.btnCreateCategory = New System.Windows.Forms.Button()
@@ -31,7 +32,6 @@ Partial Class frmAddCategories
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCategoryID = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.mnuUpdate = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnUpdateCategory = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -50,6 +50,13 @@ Partial Class frmAddCategories
         Me.BackToolStripMenuItem.Name = "BackToolStripMenuItem"
         Me.BackToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.BackToolStripMenuItem.Text = "Back"
+        '
+        'mnuUpdate
+        '
+        Me.mnuUpdate.Name = "mnuUpdate"
+        Me.mnuUpdate.Size = New System.Drawing.Size(57, 20)
+        Me.mnuUpdate.Text = "Update"
+        Me.mnuUpdate.Visible = False
         '
         'Label2
         '
@@ -109,13 +116,6 @@ Partial Class frmAddCategories
         Me.Label1.Size = New System.Drawing.Size(66, 13)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Category ID:"
-        '
-        'mnuUpdate
-        '
-        Me.mnuUpdate.Name = "mnuUpdate"
-        Me.mnuUpdate.Size = New System.Drawing.Size(57, 20)
-        Me.mnuUpdate.Text = "Update"
-        Me.mnuUpdate.Visible = False
         '
         'btnUpdateCategory
         '
