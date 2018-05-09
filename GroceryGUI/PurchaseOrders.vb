@@ -19,4 +19,10 @@
         NewPurchaseOrder.Show()
         Me.Close()
     End Sub
+
+    Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
+        ' Close the form and display the primary form
+        Me.Close()
+        frmPrimaryForm.Show()
+    End Sub
 End Class

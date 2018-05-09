@@ -12,6 +12,9 @@ Public Class NewPurchaseOrderDetails
         'TODO: This line of code loads data into the 'GEDataSet.Products' table. You can move, or remove it, as needed.
         Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
 
+        ' Get rid of form control buttons
+        Me.ControlBox = False
+
         ' Get the max id number currently in the database and then add 1
         Dim orderDetailID As Integer = 0
         Dim getMaxOrderDetailIDAndIncrement As New SqlCommand("select max(orderDetailID) + 1 from Purchase_Order_Details", PurchaseOrderConnection)

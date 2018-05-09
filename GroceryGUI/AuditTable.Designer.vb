@@ -58,6 +58,8 @@ Partial Class AuditTable
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Billing_AddressesTableAdapter = Nothing
+        Me.TableAdapterManager.Campaign_Opt_InsTableAdapter = Nothing
+        Me.TableAdapterManager.Campaign_TypesTableAdapter = Nothing
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
         Me.TableAdapterManager.CreditAuditTableAdapter = Me.CreditAuditTableAdapter
@@ -85,6 +87,7 @@ Partial Class AuditTable
         Me.TableAdapterManager.ShipmentTableAdapter = Nothing
         Me.TableAdapterManager.ShippersTableAdapter = Nothing
         Me.TableAdapterManager.Shipping_AddressesTableAdapter = Nothing
+        Me.TableAdapterManager.Shipping_MethodsTableAdapter = Nothing
         Me.TableAdapterManager.ShrinkageTableAdapter = Nothing
         Me.TableAdapterManager.StatusTableAdapter = Nothing
         Me.TableAdapterManager.SuppliersTableAdapter = Nothing
@@ -97,9 +100,10 @@ Partial Class AuditTable
         Me.CreditAuditDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CreditAuditDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.CreditAuditDataGridView.DataSource = Me.CreditAuditBindingSource
-        Me.CreditAuditDataGridView.Location = New System.Drawing.Point(0, 116)
+        Me.CreditAuditDataGridView.Location = New System.Drawing.Point(0, 143)
+        Me.CreditAuditDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CreditAuditDataGridView.Name = "CreditAuditDataGridView"
-        Me.CreditAuditDataGridView.Size = New System.Drawing.Size(744, 335)
+        Me.CreditAuditDataGridView.Size = New System.Drawing.Size(992, 412)
         Me.CreditAuditDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
@@ -145,13 +149,16 @@ Partial Class AuditTable
         Me.DataGridViewTextBoxColumn7.HeaderText = "reason"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         '
-        'testing
+        'AuditTable
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(743, 450)
+        Me.ClientSize = New System.Drawing.Size(991, 554)
         Me.Controls.Add(Me.CreditAuditDataGridView)
-        Me.Name = "testing"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Name = "AuditTable"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "testing"
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CreditAuditBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

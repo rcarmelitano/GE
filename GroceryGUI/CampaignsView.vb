@@ -3,6 +3,8 @@
         'TODO: This line of code loads data into the 'GEDataSet.Marketing_Campaigns' table. You can move, or remove it, as needed.
         Me.Marketing_CampaignsTableAdapter.Fill(Me.GEDataSet.Marketing_Campaigns)
 
+        ' Disable the form controls
+        Me.ControlBox = False
     End Sub
 
     Private Sub FillByToolStripButton_Click(sender As Object, e As EventArgs)

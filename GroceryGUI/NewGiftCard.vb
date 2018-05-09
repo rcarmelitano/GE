@@ -26,6 +26,9 @@ Public Class frmNewGiftCard
         'TODO: This line of code loads data into the 'GEDataSet.Customers' table. You can move, or remove it, as needed.
         Me.CustomersTableAdapter.Fill(Me.GEDataSet.Customers)
 
+        ' Disable the control form buttons
+        Me.ControlBox = False
+
         ' Converts the date and time of the datetimepicker to a usable string format
         dtpDateOfPurchase.Format = DateTimePickerFormat.Custom
         dtpDateOfPurchase.CustomFormat = "MM/dd/yyyy"

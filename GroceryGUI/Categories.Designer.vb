@@ -44,23 +44,25 @@ Partial Class frmCategories
         '
         'mnuClose
         '
+        Me.mnuClose.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.mnuClose.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClsoeToolStripMenuItem, Me.mnuNewCategory})
         Me.mnuClose.Location = New System.Drawing.Point(0, 0)
         Me.mnuClose.Name = "mnuClose"
-        Me.mnuClose.Size = New System.Drawing.Size(422, 24)
+        Me.mnuClose.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.mnuClose.Size = New System.Drawing.Size(563, 28)
         Me.mnuClose.TabIndex = 0
         Me.mnuClose.Text = "MenuStrip1"
         '
         'ClsoeToolStripMenuItem
         '
         Me.ClsoeToolStripMenuItem.Name = "ClsoeToolStripMenuItem"
-        Me.ClsoeToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.ClsoeToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
         Me.ClsoeToolStripMenuItem.Text = "Close"
         '
         'mnuNewCategory
         '
         Me.mnuNewCategory.Name = "mnuNewCategory"
-        Me.mnuNewCategory.Size = New System.Drawing.Size(94, 20)
+        Me.mnuNewCategory.Size = New System.Drawing.Size(115, 24)
         Me.mnuNewCategory.Text = "New Category"
         '
         'dgvCategories
@@ -71,10 +73,11 @@ Partial Class frmCategories
         Me.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCategories.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CategoryIDDataGridViewTextBoxColumn, Me.DepartmentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.btnUpdate})
         Me.dgvCategories.DataSource = Me.CategoriesBindingSource
-        Me.dgvCategories.Location = New System.Drawing.Point(12, 28)
+        Me.dgvCategories.Location = New System.Drawing.Point(16, 34)
+        Me.dgvCategories.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvCategories.Name = "dgvCategories"
         Me.dgvCategories.RowHeadersVisible = False
-        Me.dgvCategories.Size = New System.Drawing.Size(398, 343)
+        Me.dgvCategories.Size = New System.Drawing.Size(531, 422)
         Me.dgvCategories.TabIndex = 1
         '
         'CategoryIDDataGridViewTextBoxColumn
@@ -98,7 +101,7 @@ Partial Class frmCategories
         Me.NameDataGridViewTextBoxColumn.HeaderText = "Category Name"
         Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
         Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NameDataGridViewTextBoxColumn.Width = 96
+        Me.NameDataGridViewTextBoxColumn.Width = 124
         '
         'btnUpdate
         '
@@ -129,13 +132,16 @@ Partial Class frmCategories
         '
         'frmCategories
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(422, 383)
+        Me.ClientSize = New System.Drawing.Size(563, 471)
         Me.Controls.Add(Me.dgvCategories)
         Me.Controls.Add(Me.mnuClose)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.mnuClose
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmCategories"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Categories"
         Me.mnuClose.ResumeLayout(False)
         Me.mnuClose.PerformLayout()

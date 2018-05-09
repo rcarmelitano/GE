@@ -72,6 +72,7 @@
         frmNewProduct.txtRetailUnit.Text = selectedRow.Cells(7).Value.ToString()
         frmNewProduct.txtRetailCost.Text = selectedRow.Cells(8).Value.ToString()
         frmNewProduct.cbStatus.Checked = selectedRow.Cells(9).Value.ToString()
+        frmNewProduct.btnSave.Text = "Save Changes"
 
         ' Close this form and display the update product form
         frmNewProduct.Show()

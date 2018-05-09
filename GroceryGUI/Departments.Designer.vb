@@ -27,12 +27,12 @@ Partial Class frmDepartments
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuNewDepartments = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvDepartments = New System.Windows.Forms.DataGridView()
-        Me.DepartmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.DepartmentsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DepartmentsTableAdapter()
         Me.DepartmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.DepartmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.DepartmentsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DepartmentsTableAdapter()
         Me.mnuClose.SuspendLayout()
         CType(Me.dgvDepartments, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,23 +41,25 @@ Partial Class frmDepartments
         '
         'mnuClose
         '
+        Me.mnuClose.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.mnuClose.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.mnuNewDepartments})
         Me.mnuClose.Location = New System.Drawing.Point(0, 0)
         Me.mnuClose.Name = "mnuClose"
-        Me.mnuClose.Size = New System.Drawing.Size(314, 24)
+        Me.mnuClose.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.mnuClose.Size = New System.Drawing.Size(419, 28)
         Me.mnuClose.TabIndex = 0
         Me.mnuClose.Text = "MenuStrip1"
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'mnuNewDepartments
         '
         Me.mnuNewDepartments.Name = "mnuNewDepartments"
-        Me.mnuNewDepartments.Size = New System.Drawing.Size(109, 20)
+        Me.mnuNewDepartments.Size = New System.Drawing.Size(135, 24)
         Me.mnuNewDepartments.Text = "New Department"
         '
         'dgvDepartments
@@ -68,25 +70,12 @@ Partial Class frmDepartments
         Me.dgvDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDepartments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DepartmentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.btnUpdate})
         Me.dgvDepartments.DataSource = Me.DepartmentsBindingSource
-        Me.dgvDepartments.Location = New System.Drawing.Point(12, 27)
+        Me.dgvDepartments.Location = New System.Drawing.Point(16, 33)
+        Me.dgvDepartments.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvDepartments.Name = "dgvDepartments"
         Me.dgvDepartments.RowHeadersVisible = False
-        Me.dgvDepartments.Size = New System.Drawing.Size(290, 250)
+        Me.dgvDepartments.Size = New System.Drawing.Size(387, 308)
         Me.dgvDepartments.TabIndex = 1
-        '
-        'DepartmentsBindingSource
-        '
-        Me.DepartmentsBindingSource.DataMember = "Departments"
-        Me.DepartmentsBindingSource.DataSource = Me.GEDataSet
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DepartmentsTableAdapter
-        '
-        Me.DepartmentsTableAdapter.ClearBeforeFill = True
         '
         'DepartmentIDDataGridViewTextBoxColumn
         '
@@ -102,7 +91,7 @@ Partial Class frmDepartments
         Me.NameDataGridViewTextBoxColumn.HeaderText = "Department Name"
         Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
         Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NameDataGridViewTextBoxColumn.Width = 108
+        Me.NameDataGridViewTextBoxColumn.Width = 139
         '
         'btnUpdate
         '
@@ -112,15 +101,32 @@ Partial Class frmDepartments
         Me.btnUpdate.UseColumnTextForButtonValue = True
         Me.btnUpdate.Width = 61
         '
+        'DepartmentsBindingSource
+        '
+        Me.DepartmentsBindingSource.DataMember = "Departments"
+        Me.DepartmentsBindingSource.DataSource = Me.GEDataSet
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DepartmentsTableAdapter
+        '
+        Me.DepartmentsTableAdapter.ClearBeforeFill = True
+        '
         'frmDepartments
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(314, 289)
+        Me.ClientSize = New System.Drawing.Size(419, 356)
         Me.Controls.Add(Me.dgvDepartments)
         Me.Controls.Add(Me.mnuClose)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.mnuClose
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmDepartments"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Departments"
         Me.mnuClose.ResumeLayout(False)
         Me.mnuClose.PerformLayout()

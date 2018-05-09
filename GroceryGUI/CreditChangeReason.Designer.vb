@@ -29,38 +29,43 @@ Partial Class CreditChangeReason
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(12, 39)
+        Me.RichTextBox1.Location = New System.Drawing.Point(16, 48)
+        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(275, 235)
+        Me.RichTextBox1.Size = New System.Drawing.Size(365, 288)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(16, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(133, 13)
+        Me.Label1.Size = New System.Drawing.Size(177, 17)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Credit Change Description:"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(212, 280)
+        Me.Button1.Location = New System.Drawing.Point(283, 345)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(100, 28)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "OK"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'CreditChangeReason
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(303, 311)
+        Me.ClientSize = New System.Drawing.Size(404, 383)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.RichTextBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "CreditChangeReason"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "audit"

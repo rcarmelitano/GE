@@ -33,9 +33,10 @@ Partial Class frmCategoriesAndDepartments
         'btnCategories
         '
         Me.btnCategories.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnCategories.Location = New System.Drawing.Point(72, 171)
+        Me.btnCategories.Location = New System.Drawing.Point(96, 210)
+        Me.btnCategories.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCategories.Name = "btnCategories"
-        Me.btnCategories.Size = New System.Drawing.Size(132, 56)
+        Me.btnCategories.Size = New System.Drawing.Size(176, 69)
         Me.btnCategories.TabIndex = 6
         Me.btnCategories.Text = "Categories"
         Me.btnCategories.UseVisualStyleBackColor = True
@@ -43,43 +44,49 @@ Partial Class frmCategoriesAndDepartments
         'btnDepartments
         '
         Me.btnDepartments.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnDepartments.Location = New System.Drawing.Point(72, 61)
+        Me.btnDepartments.Location = New System.Drawing.Point(96, 75)
+        Me.btnDepartments.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnDepartments.Name = "btnDepartments"
-        Me.btnDepartments.Size = New System.Drawing.Size(132, 56)
+        Me.btnDepartments.Size = New System.Drawing.Size(176, 69)
         Me.btnDepartments.TabIndex = 5
         Me.btnDepartments.Text = "Departments"
         Me.btnDepartments.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuBack, Me.mnuHelp})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(282, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(376, 28)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'mnuBack
         '
         Me.mnuBack.Name = "mnuBack"
-        Me.mnuBack.Size = New System.Drawing.Size(44, 20)
+        Me.mnuBack.Size = New System.Drawing.Size(52, 24)
         Me.mnuBack.Text = "Back"
         '
         'mnuHelp
         '
         Me.mnuHelp.Name = "mnuHelp"
-        Me.mnuHelp.Size = New System.Drawing.Size(44, 20)
+        Me.mnuHelp.Size = New System.Drawing.Size(53, 24)
         Me.mnuHelp.Text = "Help"
         '
         'frmCategoriesAndDepartments
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(282, 266)
+        Me.ClientSize = New System.Drawing.Size(376, 327)
         Me.Controls.Add(Me.btnCategories)
         Me.Controls.Add(Me.btnDepartments)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmCategoriesAndDepartments"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CategoriesAndDepartmentsMenu"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

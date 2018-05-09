@@ -30,7 +30,8 @@ Public Class NewPurchaseOrder
         ' Display the new ID
         txtPurchaseOrderID.Text = purchaseOrderID
 
-
+        ' Get rid of form control buttons
+        Me.ControlBox = False
     End Sub
 
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
@@ -90,5 +91,13 @@ Public Class NewPurchaseOrder
         ' Grab the selected ID and stick it in the txtOrderDetailsID textbox
         txtSupplierID.Text = selectedSupplierRow.Cells(0).Value.ToString()
 
+    End Sub
+
+    Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
+        If MessageBox.Show("Are you sure you want to cancel placing a purchase order?", "Cancel Purchase Order",
+   MessageBoxButtons.YesNo) = DialogResult.Yes Then
+            Me.Close()
+            frmPurchaseOrders.Show()
+        End If
     End Sub
 End Class

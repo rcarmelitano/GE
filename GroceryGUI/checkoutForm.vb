@@ -321,4 +321,85 @@ Public Class frmCheckoutForm
         'Refreshes the table.
         Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
     End Sub
+
+    Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
+
+        Try
+            If lbCart.SelectedIndex > -1 Then
+                Dim costOfProductSelected As Double = 0
+                productSKU = String.Empty
+                Dim selectedProduct As String = String.Empty
+                Dim subTotal2 As Double = 0
+
+                Dim newQuantity As Integer = 0
+
+                selectedProduct = productSKU
+
+                Dim selectedLength As Integer = selectedProduct.Length
+
+                Dim newProductSubstringed As String = selectedProduct.Substring(selectedLength)
+
+
+
+                'Dim removeQuantity As Double = CInt(selectedProduct.Substring(0, selectedProduct.IndexOf("           ")))
+                Dim newSKU As String = lbCart.SelectedItem.ToString().Split("           ")(0)
+
+
+
+                ' Create a query to grab the cost of the selected product by SKU from the click event when this function is called
+                Dim removeCostAmount As New SqlCommand("SELECT retailCost FROM Products WHERE SKU = @SKU",
+                                                         productConnection)
+
+                removeCostAmount.Parameters.AddWithValue("@SKU", newSKU)
+
+                ' Fill the returnID textbox with the next value through the use of the getMaxReturnIDAndIncrement command above
+                productConnection.Open()
+
+                removeCostAmount.ExecuteNonQuery()
+
+                costOfProductSelected = removeCostAmount.ExecuteScalar()
+
+
+                newQuantity = lbCart.SelectedItem.ToString.Split("           ").Last
+
+
+
+                ' Close the connection
+                productConnection.Close()
+
+                If subTotalFinal > 0 Then
+
+                    If subTotalFinal > 0 Then
+                        ' Update the totals and redisplay them to the user
+                        subTotalFinal -= (costOfProductSelected * newQuantity)
+
+
+
+                        ' Remove a selected item from the user's Cart
+                        lbCart.Items.RemoveAt(lbCart.SelectedIndex)
+
+
+                        taxTotal -= (costOfProductSelected * TAX)
+
+                        total = (subTotalFinal + taxTotal)
+
+
+                        If subTotalFinal < 0 Or taxTotal < 0 Or total < 0 Then
+                            subTotalFinal = 0
+                            taxTotal = 0
+                            total = 0
+                        End If
+
+                        lblSubTotalAmount.Text = subTotalFinal.ToString
+                        lblTaxAmount.Text = taxTotal.ToString
+                        lblTotalAmount.Text = total.ToString
+                    End If
+                Else
+                    MessageBox.Show("Your cart is empty, you cannot remove any products from a empty cart.")
+                End If
+            End If
+        Catch
+            MessageBox.Show("IF you wish to remove products from your cart, select the product from the right hand side list and then click the ""Remove"" button.")
+        End Try
+    End Sub
 End Class

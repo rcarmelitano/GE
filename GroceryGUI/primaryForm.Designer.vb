@@ -35,213 +35,263 @@ Partial Class frmPrimaryForm
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnEmployees = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnShipments = New System.Windows.Forms.Button()
+        Me.btnPurchaseOrders = New System.Windows.Forms.Button()
+        Me.btnMarketingCampaigns = New System.Windows.Forms.Button()
+        Me.btnDepartments = New System.Windows.Forms.Button()
         Me.btnItemReturns = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnCheckout
         '
+        Me.btnCheckout.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnCheckout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCheckout.Enabled = False
         Me.btnCheckout.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnCheckout.Location = New System.Drawing.Point(30, 277)
+        Me.btnCheckout.Location = New System.Drawing.Point(37, 341)
+        Me.btnCheckout.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCheckout.Name = "btnCheckout"
-        Me.btnCheckout.Size = New System.Drawing.Size(142, 51)
+        Me.btnCheckout.Size = New System.Drawing.Size(189, 63)
         Me.btnCheckout.TabIndex = 1
         Me.btnCheckout.Text = "CHECKOUT"
-        Me.btnCheckout.UseVisualStyleBackColor = True
+        Me.btnCheckout.UseVisualStyleBackColor = False
         '
         'btnCustomers
         '
-        Me.btnCustomers.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnCustomers.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCustomers.Enabled = False
         Me.btnCustomers.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnCustomers.Location = New System.Drawing.Point(227, 277)
+        Me.btnCustomers.Location = New System.Drawing.Point(300, 341)
+        Me.btnCustomers.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCustomers.Name = "btnCustomers"
-        Me.btnCustomers.Size = New System.Drawing.Size(142, 51)
+        Me.btnCustomers.Size = New System.Drawing.Size(189, 63)
         Me.btnCustomers.TabIndex = 2
         Me.btnCustomers.Text = "CUSTOMERS"
         Me.btnCustomers.UseVisualStyleBackColor = False
         '
         'btnDeliveries
         '
+        Me.btnDeliveries.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnDeliveries.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnDeliveries.Enabled = False
         Me.btnDeliveries.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnDeliveries.Location = New System.Drawing.Point(623, 277)
+        Me.btnDeliveries.Location = New System.Drawing.Point(828, 341)
+        Me.btnDeliveries.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDeliveries.Name = "btnDeliveries"
-        Me.btnDeliveries.Size = New System.Drawing.Size(142, 51)
+        Me.btnDeliveries.Size = New System.Drawing.Size(189, 63)
         Me.btnDeliveries.TabIndex = 3
         Me.btnDeliveries.Text = "DELIVERIES"
-        Me.btnDeliveries.UseVisualStyleBackColor = True
+        Me.btnDeliveries.UseVisualStyleBackColor = False
         '
         'btnSupplierInfo
         '
-        Me.btnSupplierInfo.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnSupplierInfo.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnSupplierInfo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSupplierInfo.Enabled = False
         Me.btnSupplierInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnSupplierInfo.Location = New System.Drawing.Point(30, 369)
+        Me.btnSupplierInfo.Location = New System.Drawing.Point(37, 454)
+        Me.btnSupplierInfo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSupplierInfo.Name = "btnSupplierInfo"
-        Me.btnSupplierInfo.Size = New System.Drawing.Size(142, 51)
+        Me.btnSupplierInfo.Size = New System.Drawing.Size(189, 63)
         Me.btnSupplierInfo.TabIndex = 4
         Me.btnSupplierInfo.Text = "SUPPLIER INFO"
         Me.btnSupplierInfo.UseVisualStyleBackColor = False
         '
         'btnReports
         '
+        Me.btnReports.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnReports.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnReports.Enabled = False
         Me.btnReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnReports.Location = New System.Drawing.Point(623, 369)
+        Me.btnReports.Location = New System.Drawing.Point(828, 454)
+        Me.btnReports.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReports.Name = "btnReports"
-        Me.btnReports.Size = New System.Drawing.Size(142, 51)
+        Me.btnReports.Size = New System.Drawing.Size(189, 63)
         Me.btnReports.TabIndex = 6
         Me.btnReports.Text = "REPORTS"
-        Me.btnReports.UseVisualStyleBackColor = True
+        Me.btnReports.UseVisualStyleBackColor = False
         '
         'btnInventory
         '
-        Me.btnInventory.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnInventory.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnInventory.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnInventory.Enabled = False
         Me.btnInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnInventory.Location = New System.Drawing.Point(227, 369)
+        Me.btnInventory.Location = New System.Drawing.Point(300, 454)
+        Me.btnInventory.Margin = New System.Windows.Forms.Padding(4)
         Me.btnInventory.Name = "btnInventory"
-        Me.btnInventory.Size = New System.Drawing.Size(142, 51)
+        Me.btnInventory.Size = New System.Drawing.Size(189, 63)
         Me.btnInventory.TabIndex = 5
         Me.btnInventory.Text = "INVENTORY"
         Me.btnInventory.UseVisualStyleBackColor = False
         '
         'btnPromotions
         '
+        Me.btnPromotions.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnPromotions.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPromotions.Enabled = False
         Me.btnPromotions.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnPromotions.Location = New System.Drawing.Point(623, 463)
+        Me.btnPromotions.Location = New System.Drawing.Point(828, 570)
+        Me.btnPromotions.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPromotions.Name = "btnPromotions"
-        Me.btnPromotions.Size = New System.Drawing.Size(142, 51)
+        Me.btnPromotions.Size = New System.Drawing.Size(189, 63)
         Me.btnPromotions.TabIndex = 9
         Me.btnPromotions.Text = "PROMOTIONS"
-        Me.btnPromotions.UseVisualStyleBackColor = True
+        Me.btnPromotions.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 40.0!)
-        Me.Label1.Location = New System.Drawing.Point(74, 64)
+        Me.Label1.Font = New System.Drawing.Font("Felix Titling", 34.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(60, 99)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(634, 189)
+        Me.Label1.Size = New System.Drawing.Size(883, 204)
         Me.Label1.TabIndex = 8
-        Me.Label1.Text = "ONLINE GOODS" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "&&" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " DISCOUNT EMPORIUM"
+        Me.Label1.Text = "ONLINE DISCOUNT GROCERY" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "&&" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "GOODS EMPORIUM"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnExit
         '
+        Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnExit.Location = New System.Drawing.Point(-2, -2)
+        Me.btnExit.Location = New System.Drawing.Point(-3, -2)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(140, 51)
+        Me.btnExit.Size = New System.Drawing.Size(187, 63)
         Me.btnExit.TabIndex = 10
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
         'btnGiftCards
         '
+        Me.btnGiftCards.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnGiftCards.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnGiftCards.Enabled = False
         Me.btnGiftCards.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnGiftCards.Location = New System.Drawing.Point(227, 463)
+        Me.btnGiftCards.Location = New System.Drawing.Point(300, 570)
+        Me.btnGiftCards.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGiftCards.Name = "btnGiftCards"
-        Me.btnGiftCards.Size = New System.Drawing.Size(142, 51)
+        Me.btnGiftCards.Size = New System.Drawing.Size(189, 63)
         Me.btnGiftCards.TabIndex = 8
         Me.btnGiftCards.Text = "GIFT CARDS"
-        Me.btnGiftCards.UseVisualStyleBackColor = True
+        Me.btnGiftCards.UseVisualStyleBackColor = False
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(597, 12)
+        Me.TextBox1.Location = New System.Drawing.Point(796, 15)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(132, 22)
         Me.TextBox1.TabIndex = 11
         '
         'btnSearch
         '
-        Me.btnSearch.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btnSearch.Location = New System.Drawing.Point(703, 10)
+        Me.btnSearch.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearch.Location = New System.Drawing.Point(937, 12)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnSearch.Size = New System.Drawing.Size(100, 28)
         Me.btnSearch.TabIndex = 12
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = False
         '
         'btnEmployees
         '
-        Me.btnEmployees.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnEmployees.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnEmployees.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEmployees.Enabled = False
         Me.btnEmployees.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnEmployees.Location = New System.Drawing.Point(425, 277)
+        Me.btnEmployees.Location = New System.Drawing.Point(564, 341)
+        Me.btnEmployees.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEmployees.Name = "btnEmployees"
-        Me.btnEmployees.Size = New System.Drawing.Size(142, 51)
+        Me.btnEmployees.Size = New System.Drawing.Size(189, 63)
         Me.btnEmployees.TabIndex = 13
         Me.btnEmployees.Text = "EMPLOYEES"
         Me.btnEmployees.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnShipments
         '
-        Me.Button1.Location = New System.Drawing.Point(63, 117)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnShipments.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnShipments.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnShipments.Enabled = False
+        Me.btnShipments.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.btnShipments.Location = New System.Drawing.Point(564, 674)
+        Me.btnShipments.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnShipments.Name = "btnShipments"
+        Me.btnShipments.Size = New System.Drawing.Size(189, 63)
+        Me.btnShipments.TabIndex = 14
+        Me.btnShipments.Text = "SHIPMENTS"
+        Me.btnShipments.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btnPurchaseOrders
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.Button2.Location = New System.Drawing.Point(425, 369)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(142, 51)
-        Me.Button2.TabIndex = 15
-        Me.Button2.Text = "PURCHASE ORDERS"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnPurchaseOrders.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnPurchaseOrders.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPurchaseOrders.Enabled = False
+        Me.btnPurchaseOrders.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.btnPurchaseOrders.Location = New System.Drawing.Point(564, 454)
+        Me.btnPurchaseOrders.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnPurchaseOrders.Name = "btnPurchaseOrders"
+        Me.btnPurchaseOrders.Size = New System.Drawing.Size(189, 63)
+        Me.btnPurchaseOrders.TabIndex = 15
+        Me.btnPurchaseOrders.Text = "PURCHASE ORDERS"
+        Me.btnPurchaseOrders.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btnMarketingCampaigns
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(425, 463)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(142, 51)
-        Me.Button3.TabIndex = 16
-        Me.Button3.Text = "MARKETING CAMPAIGNS"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnMarketingCampaigns.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnMarketingCampaigns.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMarketingCampaigns.Enabled = False
+        Me.btnMarketingCampaigns.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMarketingCampaigns.Location = New System.Drawing.Point(564, 570)
+        Me.btnMarketingCampaigns.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnMarketingCampaigns.Name = "btnMarketingCampaigns"
+        Me.btnMarketingCampaigns.Size = New System.Drawing.Size(189, 63)
+        Me.btnMarketingCampaigns.TabIndex = 16
+        Me.btnMarketingCampaigns.Text = "MARKETING CAMPAIGNS"
+        Me.btnMarketingCampaigns.UseVisualStyleBackColor = False
         '
-        'Button4
+        'btnDepartments
         '
-        Me.Button4.Location = New System.Drawing.Point(330, 9)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(39, 23)
-        Me.Button4.TabIndex = 17
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnDepartments.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnDepartments.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDepartments.Enabled = False
+        Me.btnDepartments.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.btnDepartments.Location = New System.Drawing.Point(300, 674)
+        Me.btnDepartments.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDepartments.Name = "btnDepartments"
+        Me.btnDepartments.Size = New System.Drawing.Size(189, 63)
+        Me.btnDepartments.TabIndex = 17
+        Me.btnDepartments.Text = "DEPARTMENTS"
+        Me.btnDepartments.UseVisualStyleBackColor = False
         '
         'btnItemReturns
         '
-        Me.btnItemReturns.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnItemReturns.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnItemReturns.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnItemReturns.Enabled = False
         Me.btnItemReturns.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnItemReturns.Location = New System.Drawing.Point(30, 463)
+        Me.btnItemReturns.Location = New System.Drawing.Point(37, 570)
+        Me.btnItemReturns.Margin = New System.Windows.Forms.Padding(4)
         Me.btnItemReturns.Name = "btnItemReturns"
-        Me.btnItemReturns.Size = New System.Drawing.Size(142, 51)
+        Me.btnItemReturns.Size = New System.Drawing.Size(189, 63)
         Me.btnItemReturns.TabIndex = 7
         Me.btnItemReturns.Text = "ITEM RETURNS"
         Me.btnItemReturns.UseVisualStyleBackColor = False
         '
         'frmPrimaryForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(790, 529)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(1053, 750)
+        Me.Controls.Add(Me.btnDepartments)
+        Me.Controls.Add(Me.btnMarketingCampaigns)
+        Me.Controls.Add(Me.btnPurchaseOrders)
+        Me.Controls.Add(Me.btnShipments)
         Me.Controls.Add(Me.btnEmployees)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.TextBox1)
@@ -257,6 +307,7 @@ Partial Class frmPrimaryForm
         Me.Controls.Add(Me.btnCustomers)
         Me.Controls.Add(Me.btnCheckout)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "frmPrimaryForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -279,9 +330,9 @@ Partial Class frmPrimaryForm
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents btnSearch As Button
     Friend WithEvents btnEmployees As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnShipments As Button
+    Friend WithEvents btnPurchaseOrders As Button
+    Friend WithEvents btnMarketingCampaigns As Button
+    Friend WithEvents btnDepartments As Button
     Friend WithEvents btnItemReturns As Button
 End Class

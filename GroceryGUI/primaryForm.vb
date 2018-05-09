@@ -89,6 +89,10 @@
             btnDeliveries.Enabled = True
             btnReports.Enabled = True
             btnPromotions.Enabled = True
+            btnDepartments.Enabled = True
+            btnShipments.Enabled = True
+            btnPurchaseOrders.Enabled = True
+            btnMarketingCampaigns.Enabled = True
 
         End If
     End Sub
@@ -101,15 +105,15 @@
         End If
     End Sub
 
-	Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-		NewShinpping.ShowDialog()
-	End Sub
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnShipments.Click
+        NewShinpping.ShowDialog()
+    End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnMarketingCampaigns.Click
         MarketingCampaigns.Show()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnDepartments.Click
         'opens the categories and departments menuuuuuuuu
         frmCategoriesAndDepartments.Show()
     End Sub
@@ -118,7 +122,7 @@
 
     End Sub
 
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles btnPurchaseOrders.Click
         ' Display the purchase orders form
         Me.Hide()
         frmPurchaseOrders.Show()
