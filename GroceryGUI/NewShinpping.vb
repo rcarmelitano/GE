@@ -81,8 +81,8 @@ Public Class NewShinpping
     End Sub
 
 	Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-		frmNewShipping.txtOrderID.Text = TextBox1.Text
-		frmNewShipping.ShowDialog()
+		frmNewAddress.txtOrderID.Text = TextBox1.Text
+		frmNewAddress.ShowDialog()
 
 	End Sub
 End Class

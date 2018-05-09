@@ -18,6 +18,8 @@ Public Class ShippingAdresses
         ID = frmUpdateCustomer.CustomerIDTextBox.Text
         Me.ControlBox = False
         Me.Shipping_AddressesTableAdapter.CustomerAddress(Me.GEDataSet.Shipping_Addresses, frmUpdateCustomer.CustomerIDTextBox.Text)
+        Me.Billing_AddressesTableAdapter.CustomerAddress(Me.GEDataSet.Billing_Addresses, frmUpdateCustomer.CustomerIDTextBox.Text)
+        Me.Billing_AddressesDataGridView.Visible = False
     End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
@@ -26,6 +28,20 @@ Public Class ShippingAdresses
     End Sub
 
     Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
-        frmNewShipping.ShowDialog()
+        frmNewAddress.ShowDialog()
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        If RadioButton2.Checked = True Then
+            Shipping_AddressesDataGridView.Visible = True
+            Billing_AddressesDataGridView.Visible = False
+        End If
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        If RadioButton1.Checked = True Then
+            Billing_AddressesDataGridView.Visible = True
+            Shipping_AddressesDataGridView.Visible = False
+        End If
     End Sub
 End Class

@@ -39,7 +39,7 @@
     Private Sub btnDeliveries_Click(sender As Object, e As EventArgs) Handles btnDeliveries.Click
         ' Hide the current form and show the shipping form
         Me.Hide()
-        frmNewShipping.Show()
+        frmNewAddress.Show()
     End Sub
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
