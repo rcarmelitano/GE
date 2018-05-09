@@ -10,6 +10,7 @@ Public Class MarketingCampaigns
     Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click
         'Exit
         Me.Close()
+        frmPrimaryForm.Show()
     End Sub
 
     Private Sub ViewCampaignsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewCampaignsToolStripMenuItem.Click

@@ -9,6 +9,7 @@ Public Class frmPromotion
     Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click
         ' Ensure that the user wants to close the form
         Me.Close()
+        frmPrimaryForm.Show()
     End Sub
 
     Private Sub DiscountsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DiscountsToolStripMenuItem.Click

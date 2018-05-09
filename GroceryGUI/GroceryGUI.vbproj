@@ -172,6 +172,12 @@
     <Compile Include="Discounts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Discounts1.Designer.vb">
+      <DependentUpon>Discounts1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Discounts1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DiscountsView.Designer.vb">
       <DependentUpon>DiscountsView.vb</DependentUpon>
     </Compile>
@@ -517,6 +523,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Discounts.resx">
       <DependentUpon>Discounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Discounts1.resx">
+      <DependentUpon>Discounts1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DiscountsView.resx">
       <DependentUpon>DiscountsView.vb</DependentUpon>
