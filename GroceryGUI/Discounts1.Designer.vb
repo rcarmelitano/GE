@@ -38,6 +38,10 @@ Partial Class Discounts1
         Me.txtGet = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.lblAmount = New System.Windows.Forms.Label()
+        Me.txtAmount = New System.Windows.Forms.TextBox()
+        Me.ViewDiscountsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DiscountsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DiscountTypeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -137,7 +141,7 @@ Partial Class Discounts1
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.ViewDiscountsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(524, 24)
@@ -150,11 +154,45 @@ Partial Class Discounts1
         Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(232, 209)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(103, 30)
+        Me.btnAdd.TabIndex = 10
+        Me.btnAdd.Text = "Add Discount"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'lblAmount
+        '
+        Me.lblAmount.AutoSize = True
+        Me.lblAmount.Location = New System.Drawing.Point(70, 151)
+        Me.lblAmount.Name = "lblAmount"
+        Me.lblAmount.Size = New System.Drawing.Size(155, 13)
+        Me.lblAmount.TabIndex = 11
+        Me.lblAmount.Text = "Percent(in decimal) or Flat Rate"
+        '
+        'txtAmount
+        '
+        Me.txtAmount.Location = New System.Drawing.Point(231, 148)
+        Me.txtAmount.Name = "txtAmount"
+        Me.txtAmount.Size = New System.Drawing.Size(122, 20)
+        Me.txtAmount.TabIndex = 12
+        '
+        'ViewDiscountsToolStripMenuItem
+        '
+        Me.ViewDiscountsToolStripMenuItem.Name = "ViewDiscountsToolStripMenuItem"
+        Me.ViewDiscountsToolStripMenuItem.Size = New System.Drawing.Size(99, 20)
+        Me.ViewDiscountsToolStripMenuItem.Text = "View Discounts"
+        '
         'Discounts1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(524, 340)
+        Me.Controls.Add(Me.txtAmount)
+        Me.Controls.Add(Me.lblAmount)
+        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.txtGet)
         Me.Controls.Add(Me.txtBuy)
         Me.Controls.Add(Me.lblGet)
@@ -192,4 +230,8 @@ Partial Class Discounts1
     Friend WithEvents txtGet As TextBox
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents lblAmount As Label
+    Friend WithEvents txtAmount As TextBox
+    Friend WithEvents ViewDiscountsToolStripMenuItem As ToolStripMenuItem
 End Class
