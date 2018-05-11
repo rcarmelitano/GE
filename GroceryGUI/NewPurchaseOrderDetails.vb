@@ -5,6 +5,8 @@ Public Class NewPurchaseOrderDetails
     Dim productSKU As String
     Dim costOfProduct As Double = 0
     Dim finalTotal As Double = 0
+    ' counter
+    Dim count As Integer = 0
 
     Dim PurchaseOrderConnection As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GE.mdf;Integrated Security=True")
 
@@ -53,9 +55,17 @@ Public Class NewPurchaseOrderDetails
         ' Close the connection
         PurchaseOrderConnection.Close()
 
-        ' Calculate total
-        finalTotal = (nupQuantity.Text * costOfProduct)
-        txtOrderTotal.Text = finalTotal
+
+        If count = 0 Then
+            ' Calculate total
+            finalTotal += (nupQuantity.Text * costOfProduct)
+            txtOrderTotal.Text = finalTotal
+
+            count = 1
+        Else
+            finalTotal = (nupQuantity.Text * costOfProduct)
+            txtOrderTotal.Text = finalTotal
+        End If
 
         txtSKU.Text = selectedRow.Cells(0).Value.ToString()
     End Sub
@@ -63,55 +73,109 @@ Public Class NewPurchaseOrderDetails
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnPlacePurchaseOrder.Click
 
         If txtSKU.Text <> String.Empty And txtUnitOfPurchase.Text <> String.Empty Then
-            Dim addProduct As New SqlCommand("UPDATE Purchase_Order SET orderTotal = @orderTotal where purchaseOrderID = @purchaseOrderID", PurchaseOrderConnection)
-
-            addProduct.Parameters.AddWithValue("@orderTotal", finalTotal)
-            addProduct.Parameters.AddWithValue("@purchaseOrderID", txtPurchaseOrderID.Text)
-
-
-            ' Open the connection to the database and pass in the information
-            PurchaseOrderConnection.Open()
-            addProduct.ExecuteNonQuery()
+            ' Show a message to the user
+            If MessageBox.Show("The purchase order has been placed." & vbCrLf & "Would you like to add another product to this same purchase order?", "Purchase Order Confirmation",
+                           MessageBoxButtons.YesNo) = DialogResult.No Then
+                PurchaseOrderConnection.Close()
 
 
-            ' Add the new return and set the values entered to the attributes of the returns table
-            Dim addPurchaseOrder As New SqlCommand("INSERT INTO Purchase_Order_Details (orderDetailID, purchaseOrderID, SKU, quantity, statusID, unit, note)
+
+                Dim addProduct As New SqlCommand("UPDATE Purchase_Order SET orderTotal = @orderTotal where purchaseOrderID = @purchaseOrderID", PurchaseOrderConnection)
+
+                addProduct.Parameters.AddWithValue("@orderTotal", finalTotal)
+                addProduct.Parameters.AddWithValue("@purchaseOrderID", txtPurchaseOrderID.Text)
+
+                PurchaseOrderConnection.Open()
+                ' Open the connection to the database and pass in the information
+                addProduct.ExecuteNonQuery()
+
+
+                ' Add the new return and set the values entered to the attributes of the returns table
+                Dim addPurchaseOrder As New SqlCommand("INSERT INTO Purchase_Order_Details (orderDetailID, purchaseOrderID, SKU, quantity, statusID, unit, note)
                                                 VALUES(@orderDetailID, @purchaseOrderID, @SKU, @quantity, @statusID, @unit, @note)", PurchaseOrderConnection)
-            Dim statusINT As Integer = 0
+                Dim statusINT As Integer = 0
 
 
-            PurchaseOrderConnection.Close()
+                PurchaseOrderConnection.Close()
 
 
-            If cmbStatusID.Text = "Order Placed" Then
-                statusINT = "6"
+                If cmbStatusID.Text = "Order Placed" Then
+                    statusINT = "6"
+                End If
+
+                addPurchaseOrder.Parameters.AddWithValue("@orderDetailID", txtOrderDetailID.Text)
+                addPurchaseOrder.Parameters.AddWithValue("@purchaseOrderID", txtPurchaseOrderID.Text)
+                addPurchaseOrder.Parameters.AddWithValue("@SKU", txtSKU.Text)
+                addPurchaseOrder.Parameters.AddWithValue("@quantity", nupQuantity.Text)
+                addPurchaseOrder.Parameters.AddWithValue("@statusID", statusINT)
+                addPurchaseOrder.Parameters.AddWithValue("@unit", txtUnitOfPurchase.Text)
+                addPurchaseOrder.Parameters.AddWithValue("@note", txtNote.Text)
+
+                ' Open the connection and run the query
+                PurchaseOrderConnection.Open()
+                addPurchaseOrder.ExecuteNonQuery()
+
+                ' Fill the returnID textbox with the next value through the use of the getMaxReturnIDAndIncrement command above
+                PurchaseOrderConnection.Close()
+
+                ' Close the form and display the primary form
+                frmPurchaseOrders.Show()
+                Me.Close()
+
+            Else
+                count = 0
+
+                PurchaseOrderConnection.Open()
+
+
+                ' Add the new return and set the values entered to the attributes of the returns table
+                Dim addPurchaseOrder As New SqlCommand("INSERT INTO Purchase_Order_Details (orderDetailID, purchaseOrderID, SKU, quantity, statusID, unit, note)
+                                                VALUES(@orderDetailID, @purchaseOrderID, @SKU, @quantity, @statusID, @unit, @note)", PurchaseOrderConnection)
+                Dim statusINT As Integer = 0
+
+
+
+
+                If cmbStatusID.Text = "Order Placed" Then
+                    statusINT = "6"
+                End If
+
+                addPurchaseOrder.Parameters.AddWithValue("@orderDetailID", txtOrderDetailID.Text)
+                addPurchaseOrder.Parameters.AddWithValue("@purchaseOrderID", txtPurchaseOrderID.Text)
+                addPurchaseOrder.Parameters.AddWithValue("@SKU", txtSKU.Text)
+                addPurchaseOrder.Parameters.AddWithValue("@quantity", nupQuantity.Text)
+                addPurchaseOrder.Parameters.AddWithValue("@statusID", statusINT)
+                addPurchaseOrder.Parameters.AddWithValue("@unit", txtUnitOfPurchase.Text)
+                addPurchaseOrder.Parameters.AddWithValue("@note", txtNote.Text)
+
+                ' Open the connection and run the query
+                addPurchaseOrder.ExecuteNonQuery()
+
+
+                ' Reset the form controls
+                txtOrderDetailID.Clear()
+                txtNote.Clear()
+                txtOrderTotal.Clear()
+                txtSKU.Clear()
+                txtUnitOfPurchase.Clear()
+                nupQuantity.Text = 0
+
+                ' Grab the current max ID and increment it by 1 for the next product to be added to the purchase order
+                Dim orderDetailID As Integer = 0
+                Dim getMaxReturnIDAndIncrement As New SqlCommand("select max(orderDetailID) + 1 from Purchase_Order_Details", PurchaseOrderConnection)
+
+                getMaxReturnIDAndIncrement.ExecuteNonQuery()
+                orderDetailID = getMaxReturnIDAndIncrement.ExecuteScalar()
+
+                ' Display the new ID
+                txtOrderDetailID.Text = orderDetailID
+
+                ' Fill the returnID textbox with the next value through the use of the getMaxReturnIDAndIncrement command above
+                PurchaseOrderConnection.Close()
             End If
-
-            addPurchaseOrder.Parameters.AddWithValue("@orderDetailID", txtOrderDetailID.Text)
-            addPurchaseOrder.Parameters.AddWithValue("@purchaseOrderID", txtPurchaseOrderID.Text)
-            addPurchaseOrder.Parameters.AddWithValue("@SKU", txtSKU.Text)
-            addPurchaseOrder.Parameters.AddWithValue("@quantity", nupQuantity.Text)
-            addPurchaseOrder.Parameters.AddWithValue("@statusID", statusINT)
-            addPurchaseOrder.Parameters.AddWithValue("@unit", txtUnitOfPurchase.Text)
-            addPurchaseOrder.Parameters.AddWithValue("@note", txtNote.Text)
-
-            ' Open the connection and run the query
-            PurchaseOrderConnection.Open()
-            addPurchaseOrder.ExecuteNonQuery()
-
-            ' Fill the returnID textbox with the next value through the use of the getMaxReturnIDAndIncrement command above
-            PurchaseOrderConnection.Close()
-
-            ' Close the form and display the primary form
-            frmPurchaseOrders.Show()
-            Me.Close()
-
-
-            MessageBox.Show("The purchase order has been placed.")
-            frmPurchaseOrders.Show()
-            Me.Close()
         Else
-            MessageBox.Show("Please enter all required information.")
+            ' Output a message to the user
+            MessageBox.Show("All fields must be filled to complete the purchase order. Please try again.")
         End If
     End Sub
 End Class

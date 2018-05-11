@@ -226,7 +226,6 @@ C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Resources.resour
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPrimaryForm.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPromotion.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReportsMenu.resources
-C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewShipping.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmShipmentConfirmation.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmSuppliers.resources
 C:\Users\ls0057\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmUpdateCustomer.resources
@@ -979,3 +978,9 @@ C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.vbproj.CoreCompil
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.exe
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.xml
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.pdb
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Discounts1.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.NewPurchaseOrder.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.NewPurchaseOrderDetails.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewAddress.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPurchaseOrders.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPurchaseOrderDetails.resources

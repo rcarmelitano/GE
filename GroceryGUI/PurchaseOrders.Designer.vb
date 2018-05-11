@@ -27,15 +27,16 @@ Partial Class frmPurchaseOrders
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewPurchaseOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvPurchaseOrders = New System.Windows.Forms.DataGridView()
+        Me.PurchaseOrderBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.Purchase_OrderTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Purchase_OrderTableAdapter()
         Me.PurchaseOrderIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OrderTotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OrderDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.PurchaseOrderBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.Purchase_OrderTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Purchase_OrderTableAdapter()
+        Me.btnDetails = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvPurchaseOrders, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PurchaseOrderBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,21 +49,20 @@ Partial Class frmPurchaseOrders
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.NewPurchaseOrderToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(881, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(746, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'NewPurchaseOrderToolStripMenuItem
         '
         Me.NewPurchaseOrderToolStripMenuItem.Name = "NewPurchaseOrderToolStripMenuItem"
-        Me.NewPurchaseOrderToolStripMenuItem.Size = New System.Drawing.Size(155, 24)
+        Me.NewPurchaseOrderToolStripMenuItem.Size = New System.Drawing.Size(127, 20)
         Me.NewPurchaseOrderToolStripMenuItem.Text = "New Purchase Order"
         '
         'dgvPurchaseOrders
@@ -71,15 +71,28 @@ Partial Class frmPurchaseOrders
         Me.dgvPurchaseOrders.AllowUserToDeleteRows = False
         Me.dgvPurchaseOrders.AutoGenerateColumns = False
         Me.dgvPurchaseOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPurchaseOrders.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PurchaseOrderIDDataGridViewTextBoxColumn, Me.SupplierIDDataGridViewTextBoxColumn, Me.OrderTotalDataGridViewTextBoxColumn, Me.OrderDateDataGridViewTextBoxColumn, Me.StatusIDDataGridViewTextBoxColumn, Me.btnUpdate})
+        Me.dgvPurchaseOrders.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PurchaseOrderIDDataGridViewTextBoxColumn, Me.SupplierIDDataGridViewTextBoxColumn, Me.OrderTotalDataGridViewTextBoxColumn, Me.OrderDateDataGridViewTextBoxColumn, Me.StatusIDDataGridViewTextBoxColumn, Me.btnUpdate, Me.btnDetails})
         Me.dgvPurchaseOrders.DataSource = Me.PurchaseOrderBindingSource
-        Me.dgvPurchaseOrders.Location = New System.Drawing.Point(16, 33)
-        Me.dgvPurchaseOrders.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvPurchaseOrders.Location = New System.Drawing.Point(12, 27)
         Me.dgvPurchaseOrders.Name = "dgvPurchaseOrders"
         Me.dgvPurchaseOrders.ReadOnly = True
         Me.dgvPurchaseOrders.RowHeadersVisible = False
-        Me.dgvPurchaseOrders.Size = New System.Drawing.Size(849, 422)
+        Me.dgvPurchaseOrders.Size = New System.Drawing.Size(722, 343)
         Me.dgvPurchaseOrders.TabIndex = 1
+        '
+        'PurchaseOrderBindingSource
+        '
+        Me.PurchaseOrderBindingSource.DataMember = "Purchase_Order"
+        Me.PurchaseOrderBindingSource.DataSource = Me.GEDataSet
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Purchase_OrderTableAdapter
+        '
+        Me.Purchase_OrderTableAdapter.ClearBeforeFill = True
         '
         'PurchaseOrderIDDataGridViewTextBoxColumn
         '
@@ -124,30 +137,23 @@ Partial Class frmPurchaseOrders
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseColumnTextForButtonValue = True
         '
-        'PurchaseOrderBindingSource
+        'btnDetails
         '
-        Me.PurchaseOrderBindingSource.DataMember = "Purchase_Order"
-        Me.PurchaseOrderBindingSource.DataSource = Me.GEDataSet
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Purchase_OrderTableAdapter
-        '
-        Me.Purchase_OrderTableAdapter.ClearBeforeFill = True
+        Me.btnDetails.HeaderText = ""
+        Me.btnDetails.Name = "btnDetails"
+        Me.btnDetails.ReadOnly = True
+        Me.btnDetails.Text = "Details"
+        Me.btnDetails.UseColumnTextForButtonValue = True
         '
         'frmPurchaseOrders
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(881, 466)
+        Me.ClientSize = New System.Drawing.Size(746, 379)
         Me.Controls.Add(Me.dgvPurchaseOrders)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPurchaseOrders"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Purchase Orders"
@@ -167,11 +173,12 @@ Partial Class frmPurchaseOrders
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents PurchaseOrderBindingSource As BindingSource
     Friend WithEvents Purchase_OrderTableAdapter As GEDataSetTableAdapters.Purchase_OrderTableAdapter
+    Friend WithEvents NewPurchaseOrderToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PurchaseOrderIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SupplierIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents OrderTotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents OrderDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StatusIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnUpdate As DataGridViewButtonColumn
-    Friend WithEvents NewPurchaseOrderToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnDetails As DataGridViewButtonColumn
 End Class

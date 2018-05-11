@@ -26,6 +26,8 @@ Partial Class frmUpdateCustomer
         Dim CustomerIDLabel As System.Windows.Forms.Label
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Gift_CardsDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Gift_CardsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
@@ -62,8 +64,6 @@ Partial Class frmUpdateCustomer
         Me.txtbirthdate = New System.Windows.Forms.MaskedTextBox()
         Me.txtprimary = New System.Windows.Forms.MaskedTextBox()
         Me.txtSecondary = New System.Windows.Forms.MaskedTextBox()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustomersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CustomersTableAdapter()
         Me.Gift_CardsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Gift_CardsTableAdapter()
         CustomerIDLabel = New System.Windows.Forms.Label()
@@ -110,6 +110,22 @@ Partial Class frmUpdateCustomer
         Me.Gift_CardsDataGridView.RowHeadersVisible = False
         Me.Gift_CardsDataGridView.Size = New System.Drawing.Size(188, 188)
         Me.Gift_CardsDataGridView.TabIndex = 0
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "giftCardID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "giftCardID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 79
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "cardTotal"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "cardTotal"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 77
         '
         'Gift_CardsBindingSource
         '
@@ -388,6 +404,7 @@ Partial Class frmUpdateCustomer
         Me.TableAdapterManager.ShipmentTableAdapter = Nothing
         Me.TableAdapterManager.ShippersTableAdapter = Nothing
         Me.TableAdapterManager.Shipping_AddressesTableAdapter = Nothing
+        Me.TableAdapterManager.Shipping_MethodsTableAdapter = Nothing
         Me.TableAdapterManager.ShrinkageTableAdapter = Nothing
         Me.TableAdapterManager.StatusTableAdapter = Nothing
         Me.TableAdapterManager.SuppliersTableAdapter = Nothing
@@ -477,22 +494,6 @@ Partial Class frmUpdateCustomer
         Me.txtSecondary.Size = New System.Drawing.Size(155, 20)
         Me.txtSecondary.TabIndex = 6
         '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "cardTotal"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "cardTotal"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Width = 77
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "giftCardID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "giftCardID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 79
-        '
         'CustomersTableAdapter
         '
         Me.CustomersTableAdapter.ClearBeforeFill = True
@@ -537,6 +538,7 @@ Partial Class frmUpdateCustomer
         Me.MaximizeBox = False
         Me.Name = "frmUpdateCustomer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Customer Update"
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.Gift_CardsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Gift_CardsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

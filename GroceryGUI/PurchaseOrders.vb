@@ -8,10 +8,16 @@
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPurchaseOrders.CellContentClick
-        If e.ColumnIndex <> 5 Then
+        If e.ColumnIndex <> 5 And e.ColumnIndex <> 6 Then
             Exit Sub
         End If
 
+        If e.ColumnIndex = 6 Then
+            frmPurchaseOrderDetails.getPurchaseOrderDetails(dgvPurchaseOrders.Rows(e.RowIndex).Cells(0).Value)
+
+            Me.Hide()
+            frmPurchaseOrderDetails.Show()
+        End If
 
     End Sub
 

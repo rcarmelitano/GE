@@ -356,6 +356,12 @@
     <Compile Include="PromotionsView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PurchaseOrderDetails.Designer.vb">
+      <DependentUpon>PurchaseOrderDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrderDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PurchaseOrders.Designer.vb">
       <DependentUpon>PurchaseOrders.vb</DependentUpon>
     </Compile>
@@ -610,6 +616,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PromotionsView.resx">
       <DependentUpon>PromotionsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseOrderDetails.resx">
+      <DependentUpon>PurchaseOrderDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseOrders.resx">
       <DependentUpon>PurchaseOrders.vb</DependentUpon>
