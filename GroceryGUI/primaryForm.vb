@@ -16,7 +16,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub btnPromotions_Click(sender As Object, e As EventArgs) Handles btnPromotions.Click
+    Private Sub btnPromotions_Click(sender As Object, e As EventArgs)
         ' Hide the primaryForm and display the promotions form
         frmPromotion.Show()
         Me.Hide()
@@ -88,7 +88,7 @@
             btnEmployees.Enabled = True
             btnDeliveries.Enabled = True
             btnReports.Enabled = True
-            btnPromotions.Enabled = True
+            'btnPromotions.Enabled = True
             btnDepartments.Enabled = True
             btnShipments.Enabled = True
             btnPurchaseOrders.Enabled = True
@@ -100,7 +100,7 @@
     Private Sub frmPrimaryForm_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
         If TextBox1.Text = "" Then
 
-            MessageBox.Show("please select an employee")
+            MessageBox.Show("An employee must be selected to continue")
 
         End If
     End Sub
@@ -110,7 +110,7 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnMarketingCampaigns.Click
-        MarketingCampaigns.Show()
+        Marketing.Show()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnDepartments.Click

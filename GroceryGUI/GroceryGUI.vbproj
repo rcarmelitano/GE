@@ -350,6 +350,12 @@
     <Compile Include="ProductsView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Marketing.Designer.vb">
+      <DependentUpon>Marketing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PromotionsView.Designer.vb">
       <DependentUpon>PromotionsView.vb</DependentUpon>
     </Compile>
@@ -613,6 +619,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsView.resx">
       <DependentUpon>ProductsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing.resx">
+      <DependentUpon>Marketing.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PromotionsView.resx">
       <DependentUpon>PromotionsView.vb</DependentUpon>

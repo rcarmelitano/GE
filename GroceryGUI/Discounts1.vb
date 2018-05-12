@@ -57,7 +57,7 @@ Public Class Discounts1
             'Add values 
             Dim addDiscount As New SqlCommand("INSERT INTO Discounts (discountID,discountTypeID,buyOne,getOne,discountAmount)
                                                                         VALUES(@discountID,@discountTypeID,@buyOne,@getOne,@discountAmount)", DisConnection)
-            addDiscount.Parameters.AddWithValue("@discountID", disID)
+
             addDiscount.Parameters.AddWithValue("@discountTypeID", ComboBox1.SelectedValue)
             addDiscount.Parameters.AddWithValue("@buyOne", txtBuy.Text)
             addDiscount.Parameters.AddWithValue("@getOne", txtGet.Text)
@@ -76,7 +76,7 @@ Public Class Discounts1
             'Add values 
             Dim addDiscount As New SqlCommand("INSERT INTO Discounts (discountID,discountTypeID,buyOne,getOne,discountAmount)
                                                                         VALUES(@discountID,@discountTypeID,@buyOne,@getOne,@discountAmount)", DisConnection)
-            addDiscount.Parameters.AddWithValue("@discountID", disID)
+
             addDiscount.Parameters.AddWithValue("@discountTypeID", ComboBox1.SelectedValue)
             addDiscount.Parameters.AddWithValue("@buyOne", txtBuy.Text)
             addDiscount.Parameters.AddWithValue("@getOne", txtGet.Text)
