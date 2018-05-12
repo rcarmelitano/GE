@@ -28,14 +28,14 @@ Partial Class MainFormEmployeeSearch
         Me.EmployeesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.EmployeesTableAdapter()
         Me.TableAdapterManager = New GroceryGUI.GEDataSetTableAdapters.TableAdapterManager()
         Me.EmployeesDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,6 +59,8 @@ Partial Class MainFormEmployeeSearch
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Billing_AddressesTableAdapter = Nothing
+        Me.TableAdapterManager.Campaign_Opt_InsTableAdapter = Nothing
+        Me.TableAdapterManager.Campaign_TypesTableAdapter = Nothing
         Me.TableAdapterManager.CategoriesTableAdapter = Nothing
         Me.TableAdapterManager.CouponsTableAdapter = Nothing
         Me.TableAdapterManager.CreditAuditTableAdapter = Nothing
@@ -86,6 +88,7 @@ Partial Class MainFormEmployeeSearch
         Me.TableAdapterManager.ShipmentTableAdapter = Nothing
         Me.TableAdapterManager.ShippersTableAdapter = Nothing
         Me.TableAdapterManager.Shipping_AddressesTableAdapter = Nothing
+        Me.TableAdapterManager.Shipping_MethodsTableAdapter = Nothing
         Me.TableAdapterManager.ShrinkageTableAdapter = Nothing
         Me.TableAdapterManager.StatusTableAdapter = Nothing
         Me.TableAdapterManager.SuppliersTableAdapter = Nothing
@@ -94,46 +97,24 @@ Partial Class MainFormEmployeeSearch
         '
         'EmployeesDataGridView
         '
+        Me.EmployeesDataGridView.AllowUserToAddRows = False
+        Me.EmployeesDataGridView.AllowUserToDeleteRows = False
+        Me.EmployeesDataGridView.AllowUserToResizeColumns = False
+        Me.EmployeesDataGridView.AllowUserToResizeRows = False
         Me.EmployeesDataGridView.AutoGenerateColumns = False
         Me.EmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.EmployeesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.Column1})
         Me.EmployeesDataGridView.DataSource = Me.EmployeesBindingSource
-        Me.EmployeesDataGridView.Location = New System.Drawing.Point(8, 93)
+        Me.EmployeesDataGridView.Location = New System.Drawing.Point(8, 41)
         Me.EmployeesDataGridView.Name = "EmployeesDataGridView"
+        Me.EmployeesDataGridView.ReadOnly = True
         Me.EmployeesDataGridView.RowHeadersVisible = False
-        Me.EmployeesDataGridView.Size = New System.Drawing.Size(423, 206)
+        Me.EmployeesDataGridView.Size = New System.Drawing.Size(423, 258)
         Me.EmployeesDataGridView.TabIndex = 1
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "employeeID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "employeeID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "firstName"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "firstName"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "lastName"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "lastName"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Select"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column1.Text = "Select"
-        Me.Column1.UseColumnTextForButtonValue = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(0, 0)
+        Me.Button1.Location = New System.Drawing.Point(356, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 2
@@ -142,14 +123,14 @@ Partial Class MainFormEmployeeSearch
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(81, 69)
+        Me.TextBox1.Location = New System.Drawing.Point(83, 12)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 3
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(187, 67)
+        Me.Button2.Location = New System.Drawing.Point(189, 12)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 4
@@ -159,11 +140,45 @@ Partial Class MainFormEmployeeSearch
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(5, 72)
+        Me.Label1.Location = New System.Drawing.Point(5, 15)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(70, 13)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Employee ID:"
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "employeeID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 50
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "firstName"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "First Name"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 120
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "lastName"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 130
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Select"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column1.Text = "Select"
+        Me.Column1.UseColumnTextForButtonValue = True
         '
         'MainFormEmployeeSearch
         '
@@ -196,9 +211,9 @@ Partial Class MainFormEmployeeSearch
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label1 As Label
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewButtonColumn
-    Friend WithEvents Label1 As Label
 End Class

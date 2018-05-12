@@ -28,7 +28,7 @@
         frmPrimaryForm.TextBox1.Text = trying
         frmPrimaryForm.TextBox1.ReadOnly = True
         frmPrimaryForm.TextBox1.Enabled = False
-        MessageBox.Show(trying)
+        MessageBox.Show("Employee " + trying + " selected")
         employeeID = trying
         Me.Close()
     End Sub
