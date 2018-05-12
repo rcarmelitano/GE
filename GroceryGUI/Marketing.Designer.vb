@@ -47,6 +47,7 @@ Partial Class Marketing
         Me.EndDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MarketingCampaignsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tabPromotions = New System.Windows.Forms.TabPage()
+        Me.chkCampAssociation = New System.Windows.Forms.CheckBox()
         Me.cmbCampPicker = New System.Windows.Forms.ComboBox()
         Me.btnAddPromotion = New System.Windows.Forms.Button()
         Me.promoEDate = New System.Windows.Forms.DateTimePicker()
@@ -60,13 +61,26 @@ Partial Class Marketing
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.PromotionIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CampaignIDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PromoInfoIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TitleDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescriptionDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StartDateDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EndDateDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PromotionsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tabDiscounts = New System.Windows.Forms.TabPage()
+        Me.lblGetOne = New System.Windows.Forms.Label()
+        Me.txtGetOne = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.cmbPromo = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.cmbDiscountType = New System.Windows.Forms.ComboBox()
+        Me.DiscountTypeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.txtBuyOne = New System.Windows.Forms.TextBox()
+        Me.lblBuyOne = New System.Windows.Forms.Label()
+        Me.lblFlatDiscount = New System.Windows.Forms.Label()
+        Me.txtFlatDiscount = New System.Windows.Forms.TextBox()
+        Me.lblPercentageDiscount = New System.Windows.Forms.Label()
+        Me.txtPercentage = New System.Windows.Forms.TextBox()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.DiscountIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DiscountTypeIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -78,7 +92,7 @@ Partial Class Marketing
         Me.PromotionsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.PromotionsTableAdapter()
         Me.DiscountsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DiscountsTableAdapter()
         Me.Campaign_TypesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Campaign_TypesTableAdapter()
-        Me.chkCampAssociation = New System.Windows.Forms.CheckBox()
+        Me.Discount_TypeTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Discount_TypeTableAdapter()
         Me.tabControl.SuspendLayout()
         Me.tabCampaigns.SuspendLayout()
         CType(Me.CampaignTypesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +103,7 @@ Partial Class Marketing
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PromotionsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabDiscounts.SuspendLayout()
+        CType(Me.DiscountTypeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DiscountsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -98,6 +113,7 @@ Partial Class Marketing
         Me.tabControl.Controls.Add(Me.tabCampaigns)
         Me.tabControl.Controls.Add(Me.tabPromotions)
         Me.tabControl.Controls.Add(Me.tabDiscounts)
+        Me.tabControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tabControl.Location = New System.Drawing.Point(0, 0)
         Me.tabControl.Name = "tabControl"
         Me.tabControl.SelectedIndex = 0
@@ -118,10 +134,10 @@ Partial Class Marketing
         Me.tabCampaigns.Controls.Add(Me.Label2)
         Me.tabCampaigns.Controls.Add(Me.Label1)
         Me.tabCampaigns.Controls.Add(Me.datagridCampaign)
-        Me.tabCampaigns.Location = New System.Drawing.Point(4, 22)
+        Me.tabCampaigns.Location = New System.Drawing.Point(4, 27)
         Me.tabCampaigns.Name = "tabCampaigns"
         Me.tabCampaigns.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabCampaigns.Size = New System.Drawing.Size(916, 584)
+        Me.tabCampaigns.Size = New System.Drawing.Size(916, 579)
         Me.tabCampaigns.TabIndex = 0
         Me.tabCampaigns.Text = "Campaigns"
         Me.tabCampaigns.UseVisualStyleBackColor = True
@@ -143,7 +159,7 @@ Partial Class Marketing
         Me.comboCampType.FormattingEnabled = True
         Me.comboCampType.Location = New System.Drawing.Point(139, 62)
         Me.comboCampType.Name = "comboCampType"
-        Me.comboCampType.Size = New System.Drawing.Size(200, 21)
+        Me.comboCampType.Size = New System.Drawing.Size(200, 26)
         Me.comboCampType.TabIndex = 36
         Me.comboCampType.ValueMember = "campaignTypeID"
         '
@@ -162,7 +178,7 @@ Partial Class Marketing
         Me.campEDatePicker.CustomFormat = "mm/dd/yyyy"
         Me.campEDatePicker.Location = New System.Drawing.Point(139, 168)
         Me.campEDatePicker.Name = "campEDatePicker"
-        Me.campEDatePicker.Size = New System.Drawing.Size(200, 20)
+        Me.campEDatePicker.Size = New System.Drawing.Size(200, 24)
         Me.campEDatePicker.TabIndex = 35
         Me.campEDatePicker.Value = New Date(2018, 5, 8, 0, 0, 0, 0)
         '
@@ -171,7 +187,7 @@ Partial Class Marketing
         Me.campSDatePicker.CustomFormat = "mm/dd/yyyy"
         Me.campSDatePicker.Location = New System.Drawing.Point(139, 136)
         Me.campSDatePicker.Name = "campSDatePicker"
-        Me.campSDatePicker.Size = New System.Drawing.Size(200, 20)
+        Me.campSDatePicker.Size = New System.Drawing.Size(200, 24)
         Me.campSDatePicker.TabIndex = 34
         Me.campSDatePicker.Value = New Date(2018, 5, 8, 0, 0, 0, 0)
         '
@@ -179,14 +195,14 @@ Partial Class Marketing
         '
         Me.txtCampDescription.Location = New System.Drawing.Point(139, 99)
         Me.txtCampDescription.Name = "txtCampDescription"
-        Me.txtCampDescription.Size = New System.Drawing.Size(200, 20)
+        Me.txtCampDescription.Size = New System.Drawing.Size(200, 24)
         Me.txtCampDescription.TabIndex = 33
         '
         'txtCampaignName
         '
         Me.txtCampaignName.Location = New System.Drawing.Point(139, 27)
         Me.txtCampaignName.Name = "txtCampaignName"
-        Me.txtCampaignName.Size = New System.Drawing.Size(200, 20)
+        Me.txtCampaignName.Size = New System.Drawing.Size(200, 24)
         Me.txtCampaignName.TabIndex = 32
         '
         'Label5
@@ -245,9 +261,9 @@ Partial Class Marketing
         Me.datagridCampaign.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.datagridCampaign.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CampaignIDDataGridViewTextBoxColumn, Me.CampaignTypeIDDataGridViewTextBoxColumn, Me.TitleDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.StartDateDataGridViewTextBoxColumn, Me.EndDateDataGridViewTextBoxColumn})
         Me.datagridCampaign.DataSource = Me.MarketingCampaignsBindingSource
-        Me.datagridCampaign.Location = New System.Drawing.Point(0, 271)
+        Me.datagridCampaign.Location = New System.Drawing.Point(0, 257)
         Me.datagridCampaign.Name = "datagridCampaign"
-        Me.datagridCampaign.Size = New System.Drawing.Size(916, 310)
+        Me.datagridCampaign.Size = New System.Drawing.Size(916, 324)
         Me.datagridCampaign.TabIndex = 0
         '
         'CampaignIDDataGridViewTextBoxColumn
@@ -305,13 +321,24 @@ Partial Class Marketing
         Me.tabPromotions.Controls.Add(Me.Label9)
         Me.tabPromotions.Controls.Add(Me.Label10)
         Me.tabPromotions.Controls.Add(Me.DataGridView2)
-        Me.tabPromotions.Location = New System.Drawing.Point(4, 22)
+        Me.tabPromotions.Location = New System.Drawing.Point(4, 27)
         Me.tabPromotions.Name = "tabPromotions"
         Me.tabPromotions.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPromotions.Size = New System.Drawing.Size(916, 584)
+        Me.tabPromotions.Size = New System.Drawing.Size(916, 579)
         Me.tabPromotions.TabIndex = 1
         Me.tabPromotions.Text = "Promotions"
         Me.tabPromotions.UseVisualStyleBackColor = True
+        '
+        'chkCampAssociation
+        '
+        Me.chkCampAssociation.AutoSize = True
+        Me.chkCampAssociation.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.chkCampAssociation.Location = New System.Drawing.Point(35, 63)
+        Me.chkCampAssociation.Name = "chkCampAssociation"
+        Me.chkCampAssociation.Size = New System.Drawing.Size(89, 20)
+        Me.chkCampAssociation.TabIndex = 27
+        Me.chkCampAssociation.Text = "Campaign"
+        Me.chkCampAssociation.UseVisualStyleBackColor = True
         '
         'cmbCampPicker
         '
@@ -319,16 +346,16 @@ Partial Class Marketing
         Me.cmbCampPicker.DisplayMember = "title"
         Me.cmbCampPicker.Enabled = False
         Me.cmbCampPicker.FormattingEnabled = True
-        Me.cmbCampPicker.Location = New System.Drawing.Point(124, 69)
+        Me.cmbCampPicker.Location = New System.Drawing.Point(139, 62)
         Me.cmbCampPicker.Name = "cmbCampPicker"
-        Me.cmbCampPicker.Size = New System.Drawing.Size(199, 21)
+        Me.cmbCampPicker.Size = New System.Drawing.Size(195, 26)
         Me.cmbCampPicker.TabIndex = 26
         Me.cmbCampPicker.ValueMember = "campaignID"
         '
         'btnAddPromotion
         '
         Me.btnAddPromotion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddPromotion.Location = New System.Drawing.Point(55, 216)
+        Me.btnAddPromotion.Location = New System.Drawing.Point(71, 206)
         Me.btnAddPromotion.Name = "btnAddPromotion"
         Me.btnAddPromotion.Size = New System.Drawing.Size(268, 45)
         Me.btnAddPromotion.TabIndex = 24
@@ -337,37 +364,37 @@ Partial Class Marketing
         '
         'promoEDate
         '
-        Me.promoEDate.Location = New System.Drawing.Point(124, 186)
+        Me.promoEDate.Location = New System.Drawing.Point(139, 178)
         Me.promoEDate.Name = "promoEDate"
-        Me.promoEDate.Size = New System.Drawing.Size(195, 20)
+        Me.promoEDate.Size = New System.Drawing.Size(195, 24)
         Me.promoEDate.TabIndex = 23
         '
         'promoSDate
         '
-        Me.promoSDate.Location = New System.Drawing.Point(124, 148)
+        Me.promoSDate.Location = New System.Drawing.Point(139, 140)
         Me.promoSDate.Name = "promoSDate"
-        Me.promoSDate.Size = New System.Drawing.Size(195, 20)
+        Me.promoSDate.Size = New System.Drawing.Size(195, 24)
         Me.promoSDate.TabIndex = 22
         '
         'txtPromoDesc
         '
-        Me.txtPromoDesc.Location = New System.Drawing.Point(124, 107)
+        Me.txtPromoDesc.Location = New System.Drawing.Point(139, 99)
         Me.txtPromoDesc.Name = "txtPromoDesc"
-        Me.txtPromoDesc.Size = New System.Drawing.Size(195, 20)
+        Me.txtPromoDesc.Size = New System.Drawing.Size(195, 24)
         Me.txtPromoDesc.TabIndex = 21
         '
         'txtPromotionName
         '
-        Me.txtPromotionName.Location = New System.Drawing.Point(124, 30)
+        Me.txtPromotionName.Location = New System.Drawing.Point(139, 27)
         Me.txtPromotionName.Name = "txtPromotionName"
-        Me.txtPromotionName.Size = New System.Drawing.Size(195, 20)
+        Me.txtPromotionName.Size = New System.Drawing.Size(195, 24)
         Me.txtPromotionName.TabIndex = 20
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(43, 148)
+        Me.Label7.Location = New System.Drawing.Point(46, 140)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(75, 16)
         Me.Label7.TabIndex = 19
@@ -377,7 +404,7 @@ Partial Class Marketing
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(52, 186)
+        Me.Label8.Location = New System.Drawing.Point(46, 178)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(72, 16)
         Me.Label8.TabIndex = 18
@@ -387,7 +414,7 @@ Partial Class Marketing
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(39, 107)
+        Me.Label9.Location = New System.Drawing.Point(40, 99)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(84, 16)
         Me.Label9.TabIndex = 17
@@ -407,11 +434,11 @@ Partial Class Marketing
         '
         Me.DataGridView2.AutoGenerateColumns = False
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PromotionIDDataGridViewTextBoxColumn, Me.CampaignIDDataGridViewTextBoxColumn1, Me.PromoInfoIDDataGridViewTextBoxColumn, Me.TitleDataGridViewTextBoxColumn1, Me.DescriptionDataGridViewTextBoxColumn1, Me.StartDateDataGridViewTextBoxColumn1, Me.EndDateDataGridViewTextBoxColumn1})
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PromotionIDDataGridViewTextBoxColumn, Me.CampaignIDDataGridViewTextBoxColumn1, Me.TitleDataGridViewTextBoxColumn1, Me.DescriptionDataGridViewTextBoxColumn1, Me.StartDateDataGridViewTextBoxColumn1, Me.EndDateDataGridViewTextBoxColumn1})
         Me.DataGridView2.DataSource = Me.PromotionsBindingSource
-        Me.DataGridView2.Location = New System.Drawing.Point(0, 267)
+        Me.DataGridView2.Location = New System.Drawing.Point(0, 257)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(908, 317)
+        Me.DataGridView2.Size = New System.Drawing.Size(916, 335)
         Me.DataGridView2.TabIndex = 0
         '
         'PromotionIDDataGridViewTextBoxColumn
@@ -425,12 +452,6 @@ Partial Class Marketing
         Me.CampaignIDDataGridViewTextBoxColumn1.DataPropertyName = "campaignID"
         Me.CampaignIDDataGridViewTextBoxColumn1.HeaderText = "campaignID"
         Me.CampaignIDDataGridViewTextBoxColumn1.Name = "CampaignIDDataGridViewTextBoxColumn1"
-        '
-        'PromoInfoIDDataGridViewTextBoxColumn
-        '
-        Me.PromoInfoIDDataGridViewTextBoxColumn.DataPropertyName = "promoInfoID"
-        Me.PromoInfoIDDataGridViewTextBoxColumn.HeaderText = "promoInfoID"
-        Me.PromoInfoIDDataGridViewTextBoxColumn.Name = "PromoInfoIDDataGridViewTextBoxColumn"
         '
         'TitleDataGridViewTextBoxColumn1
         '
@@ -463,14 +484,156 @@ Partial Class Marketing
         '
         'tabDiscounts
         '
+        Me.tabDiscounts.Controls.Add(Me.lblGetOne)
+        Me.tabDiscounts.Controls.Add(Me.txtGetOne)
+        Me.tabDiscounts.Controls.Add(Me.Label15)
+        Me.tabDiscounts.Controls.Add(Me.cmbPromo)
+        Me.tabDiscounts.Controls.Add(Me.Button1)
+        Me.tabDiscounts.Controls.Add(Me.Label14)
+        Me.tabDiscounts.Controls.Add(Me.cmbDiscountType)
+        Me.tabDiscounts.Controls.Add(Me.txtBuyOne)
+        Me.tabDiscounts.Controls.Add(Me.lblBuyOne)
+        Me.tabDiscounts.Controls.Add(Me.lblFlatDiscount)
+        Me.tabDiscounts.Controls.Add(Me.txtFlatDiscount)
+        Me.tabDiscounts.Controls.Add(Me.lblPercentageDiscount)
+        Me.tabDiscounts.Controls.Add(Me.txtPercentage)
         Me.tabDiscounts.Controls.Add(Me.DataGridView3)
-        Me.tabDiscounts.Location = New System.Drawing.Point(4, 22)
+        Me.tabDiscounts.Location = New System.Drawing.Point(4, 27)
         Me.tabDiscounts.Name = "tabDiscounts"
         Me.tabDiscounts.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabDiscounts.Size = New System.Drawing.Size(916, 584)
+        Me.tabDiscounts.Size = New System.Drawing.Size(916, 579)
         Me.tabDiscounts.TabIndex = 2
         Me.tabDiscounts.Text = "Discounts"
         Me.tabDiscounts.UseVisualStyleBackColor = True
+        '
+        'lblGetOne
+        '
+        Me.lblGetOne.AutoSize = True
+        Me.lblGetOne.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.lblGetOne.Location = New System.Drawing.Point(212, 135)
+        Me.lblGetOne.Name = "lblGetOne"
+        Me.lblGetOne.Size = New System.Drawing.Size(91, 16)
+        Me.lblGetOne.TabIndex = 62
+        Me.lblGetOne.Text = "Get this many:"
+        '
+        'txtGetOne
+        '
+        Me.txtGetOne.Location = New System.Drawing.Point(309, 131)
+        Me.txtGetOne.Name = "txtGetOne"
+        Me.txtGetOne.Size = New System.Drawing.Size(67, 24)
+        Me.txtGetOne.TabIndex = 61
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!)
+        Me.Label15.Location = New System.Drawing.Point(49, 63)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(69, 16)
+        Me.Label15.TabIndex = 60
+        Me.Label15.Text = "Promotion"
+        '
+        'cmbPromo
+        '
+        Me.cmbPromo.DataSource = Me.PromotionsBindingSource
+        Me.cmbPromo.DisplayMember = "title"
+        Me.cmbPromo.FormattingEnabled = True
+        Me.cmbPromo.Location = New System.Drawing.Point(139, 62)
+        Me.cmbPromo.Name = "cmbPromo"
+        Me.cmbPromo.Size = New System.Drawing.Size(195, 26)
+        Me.cmbPromo.TabIndex = 59
+        Me.cmbPromo.ValueMember = "promotionID"
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
+        Me.Button1.Location = New System.Drawing.Point(66, 197)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(268, 45)
+        Me.Button1.TabIndex = 58
+        Me.Button1.Text = "Add Discount"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.Label14.Location = New System.Drawing.Point(27, 100)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(95, 16)
+        Me.Label14.TabIndex = 57
+        Me.Label14.Text = "Discount Type"
+        '
+        'cmbDiscountType
+        '
+        Me.cmbDiscountType.DataSource = Me.DiscountTypeBindingSource
+        Me.cmbDiscountType.DisplayMember = "discountType"
+        Me.cmbDiscountType.FormattingEnabled = True
+        Me.cmbDiscountType.Location = New System.Drawing.Point(139, 99)
+        Me.cmbDiscountType.Name = "cmbDiscountType"
+        Me.cmbDiscountType.Size = New System.Drawing.Size(195, 26)
+        Me.cmbDiscountType.TabIndex = 56
+        Me.cmbDiscountType.ValueMember = "discountTypeID"
+        '
+        'DiscountTypeBindingSource
+        '
+        Me.DiscountTypeBindingSource.DataMember = "Discount_Type"
+        Me.DiscountTypeBindingSource.DataSource = Me.GEDataSet
+        '
+        'txtBuyOne
+        '
+        Me.txtBuyOne.Location = New System.Drawing.Point(139, 131)
+        Me.txtBuyOne.Name = "txtBuyOne"
+        Me.txtBuyOne.Size = New System.Drawing.Size(67, 24)
+        Me.txtBuyOne.TabIndex = 49
+        '
+        'lblBuyOne
+        '
+        Me.lblBuyOne.AutoSize = True
+        Me.lblBuyOne.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.lblBuyOne.Location = New System.Drawing.Point(34, 135)
+        Me.lblBuyOne.Name = "lblBuyOne"
+        Me.lblBuyOne.Size = New System.Drawing.Size(93, 16)
+        Me.lblBuyOne.TabIndex = 48
+        Me.lblBuyOne.Text = "Buy this many:"
+        '
+        'lblFlatDiscount
+        '
+        Me.lblFlatDiscount.AutoSize = True
+        Me.lblFlatDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.lblFlatDiscount.Location = New System.Drawing.Point(34, 135)
+        Me.lblFlatDiscount.Name = "lblFlatDiscount"
+        Me.lblFlatDiscount.Size = New System.Drawing.Size(88, 16)
+        Me.lblFlatDiscount.TabIndex = 50
+        Me.lblFlatDiscount.Text = "Flat Discount:"
+        Me.lblFlatDiscount.Visible = False
+        '
+        'txtFlatDiscount
+        '
+        Me.txtFlatDiscount.Location = New System.Drawing.Point(139, 131)
+        Me.txtFlatDiscount.Name = "txtFlatDiscount"
+        Me.txtFlatDiscount.Size = New System.Drawing.Size(195, 24)
+        Me.txtFlatDiscount.TabIndex = 51
+        Me.txtFlatDiscount.Visible = False
+        '
+        'lblPercentageDiscount
+        '
+        Me.lblPercentageDiscount.AutoSize = True
+        Me.lblPercentageDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.lblPercentageDiscount.Location = New System.Drawing.Point(34, 135)
+        Me.lblPercentageDiscount.Name = "lblPercentageDiscount"
+        Me.lblPercentageDiscount.Size = New System.Drawing.Size(81, 16)
+        Me.lblPercentageDiscount.TabIndex = 52
+        Me.lblPercentageDiscount.Text = "Percentage:"
+        Me.lblPercentageDiscount.Visible = False
+        '
+        'txtPercentage
+        '
+        Me.txtPercentage.Location = New System.Drawing.Point(139, 131)
+        Me.txtPercentage.Name = "txtPercentage"
+        Me.txtPercentage.Size = New System.Drawing.Size(195, 24)
+        Me.txtPercentage.TabIndex = 53
+        Me.txtPercentage.Visible = False
         '
         'DataGridView3
         '
@@ -478,9 +641,9 @@ Partial Class Marketing
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DiscountIDDataGridViewTextBoxColumn, Me.DiscountTypeIDDataGridViewTextBoxColumn, Me.BuyOneDataGridViewTextBoxColumn, Me.GetOneDataGridViewTextBoxColumn, Me.DiscountAmountDataGridViewTextBoxColumn})
         Me.DataGridView3.DataSource = Me.DiscountsBindingSource
-        Me.DataGridView3.Location = New System.Drawing.Point(3, 248)
+        Me.DataGridView3.Location = New System.Drawing.Point(0, 257)
         Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(906, 293)
+        Me.DataGridView3.Size = New System.Drawing.Size(916, 324)
         Me.DataGridView3.TabIndex = 0
         '
         'DiscountIDDataGridViewTextBoxColumn
@@ -534,16 +697,9 @@ Partial Class Marketing
         '
         Me.Campaign_TypesTableAdapter.ClearBeforeFill = True
         '
-        'chkCampAssociation
+        'Discount_TypeTableAdapter
         '
-        Me.chkCampAssociation.AutoSize = True
-        Me.chkCampAssociation.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.chkCampAssociation.Location = New System.Drawing.Point(29, 69)
-        Me.chkCampAssociation.Name = "chkCampAssociation"
-        Me.chkCampAssociation.Size = New System.Drawing.Size(89, 20)
-        Me.chkCampAssociation.TabIndex = 27
-        Me.chkCampAssociation.Text = "Campaign"
-        Me.chkCampAssociation.UseVisualStyleBackColor = True
+        Me.Discount_TypeTableAdapter.ClearBeforeFill = True
         '
         'Marketing
         '
@@ -565,6 +721,8 @@ Partial Class Marketing
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PromotionsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabDiscounts.ResumeLayout(False)
+        Me.tabDiscounts.PerformLayout()
+        CType(Me.DiscountTypeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DiscountsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -627,4 +785,19 @@ Partial Class Marketing
     Friend WithEvents btnAddPromotion As Button
     Friend WithEvents cmbCampPicker As ComboBox
     Friend WithEvents chkCampAssociation As CheckBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents cmbDiscountType As ComboBox
+    Friend WithEvents txtBuyOne As TextBox
+    Friend WithEvents lblBuyOne As Label
+    Friend WithEvents lblFlatDiscount As Label
+    Friend WithEvents txtFlatDiscount As TextBox
+    Friend WithEvents lblPercentageDiscount As Label
+    Friend WithEvents txtPercentage As TextBox
+    Friend WithEvents DiscountTypeBindingSource As BindingSource
+    Friend WithEvents Discount_TypeTableAdapter As GEDataSetTableAdapters.Discount_TypeTableAdapter
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label15 As Label
+    Friend WithEvents cmbPromo As ComboBox
+    Friend WithEvents lblGetOne As Label
+    Friend WithEvents txtGetOne As TextBox
 End Class
