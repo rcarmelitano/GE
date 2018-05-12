@@ -9,4 +9,28 @@
         ' Disable the form controls
         Me.ControlBox = False
     End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        'Opens the Report 12 Form
+        Me.Close()
+        frmReport12.Show()
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        'Opens the Report 13 Form
+        Me.Close()
+        frmReport13.Show()
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        'Opens the Report 14 Form
+        Me.Close()
+        frmReport14.Show()
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        'Opens the Report 15 Form
+        Me.Close()
+        frmReport15.Show()
+    End Sub
 End Class

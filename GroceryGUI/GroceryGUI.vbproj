@@ -196,6 +196,12 @@
     <Compile Include="Employeesupdate.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Report13.Designer.vb">
+      <DependentUpon>Report13.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report13.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GEDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -417,6 +423,24 @@
     <Compile Include="Promotion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Report12.Designer.vb">
+      <DependentUpon>Report12.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report12.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report14.Designer.vb">
+      <DependentUpon>Report14.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report14.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report15.Designer.vb">
+      <DependentUpon>Report15.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report15.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ReportsMenu.Designer.vb">
       <DependentUpon>ReportsMenu.vb</DependentUpon>
     </Compile>
@@ -548,6 +572,9 @@
     <EmbeddedResource Include="Employeesupdate.resx">
       <DependentUpon>Employeesupdate.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report13.resx">
+      <DependentUpon>Report13.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiftCards.resx">
       <DependentUpon>GiftCards.vb</DependentUpon>
     </EmbeddedResource>
@@ -652,6 +679,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Promotion.resx">
       <DependentUpon>Promotion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report12.resx">
+      <DependentUpon>Report12.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report14.resx">
+      <DependentUpon>Report14.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report15.resx">
+      <DependentUpon>Report15.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsMenu.resx">
       <DependentUpon>ReportsMenu.vb</DependentUpon>

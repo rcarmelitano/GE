@@ -6,14 +6,14 @@
     End Sub
 
     Private Sub Categories_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GEDataSet.Categories' table. You can move, or remove it, as needed.
         Me.CategoriesTableAdapter.Fill(Me.GEDataSet.Categories)
+        'Disables the control box
         Me.ControlBox = False
     End Sub
 
     Private Sub mnuNewCategory_Click(sender As Object, e As EventArgs) Handles mnuNewCategory.Click
         frmAddCategories.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub dgvCategories_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCategories.CellContentClick
