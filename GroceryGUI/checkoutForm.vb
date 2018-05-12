@@ -258,6 +258,16 @@ Public Class frmCheckoutForm
             lblSubTotalAmount.Text = String.Empty
             lblTaxAmount.Text = String.Empty
             lblTotalAmount.Text = String.Empty
+            dgvProducts.Enabled = True
+            btnRefresh.Enabled = True
+            btnCustomerSearch.Enabled = True
+            checkoutButton.Enabled = True
+            cmbSearchType.Enabled = True
+            txtProduct.Enabled = True
+            txtQuantity.Enabled = True
+            btnProductSearch.Enabled = True
+            btnHotKeys.Enabled = True
+            btnRemove.Enabled = True
 
             ' Reset values
             quantity = 0
@@ -266,6 +276,12 @@ Public Class frmCheckoutForm
             discount = 0
             taxTotal = 0
             total = 0
+            productSKU = String.Empty
+            UPCString = String.Empty
+            UPCInt = 0
+
+            ' Reset the initial cost of the product
+            Dim costOfProduct As Double = 0
 
             'TODO: This line of code loads data into the 'GEDataSet.Products' table. You can move, or remove it, as needed.
             Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
@@ -287,10 +303,13 @@ Public Class frmCheckoutForm
 
     Private Sub checkoutButton_Click(sender As Object, e As EventArgs) Handles checkoutButton.Click
         ' Ask the user if they are sure they want to close the current form
-        If MessageBox.Show("Are you sure you want to checkout?", "Checkout Cancellation",
+        If MessageBox.Show("Are you sure you want to checkout?", "Checkout",
            MessageBoxButtons.YesNo) = DialogResult.Yes Then
 
             MessageBox.Show("Please select a payment option")
+
+            'Refreshes the table.
+            Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
 
             'Enabling payment buttons
             btnGiftCard.Enabled = True
@@ -299,10 +318,19 @@ Public Class frmCheckoutForm
             btnCredit.Enabled = True
             btnPayPal.Enabled = True
             'Disabling further edit buttons
-            btnVoid.Enabled = False
             btnRemove.Enabled = False
             btnHotKeys.Enabled = False
-
+            dgvProducts.Enabled = False
+            txtProduct.Clear()
+            txtProduct.Enabled = False
+            cmbSearchType.SelectedIndex = -1
+            cmbSearchType.Enabled = False
+            checkoutButton.Enabled = False
+            btnCustomerSearch.Enabled = False
+            btnRefresh.Enabled = False
+            txtQuantity.Clear()
+            txtQuantity.Enabled = False
+            btnProductSearch.Enabled = False
         End If
 
     End Sub
