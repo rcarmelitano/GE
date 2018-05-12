@@ -681,7 +681,6 @@ C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Resources.resour
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPrimaryForm.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPromotion.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReportsMenu.resources
-C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewShipping.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmShipmentConfirmation.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmShipmentDetailsView.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmShipmentView.resources
@@ -987,3 +986,14 @@ C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPurchaseOrder
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Marketing.resources
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPurchaseOrderDetails.resources
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Marketing.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Discounts1.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.NewPurchaseOrder.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.NewPurchaseOrderDetails.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmNewAddress.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Marketing.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPurchaseOrderDetails.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPurchaseOrders.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport12.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport13.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport14.resources
+C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport15.resources

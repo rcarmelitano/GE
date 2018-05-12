@@ -1,13 +1,13 @@
 ﻿Public Class frmCategoriesAndDepartments
     Private Sub btnDepartments_Click(sender As Object, e As EventArgs) Handles btnDepartments.Click
-        ' Hide the form and display the Departments form
-        Me.Hide()
+        ' Close the form and display the Departments form
+        Me.Close()
         frmDepartments.Show()
     End Sub
 
     Private Sub btnCategories_Click(sender As Object, e As EventArgs) Handles btnCategories.Click
-        ' Hide the form and display the Categories form
-        Me.Hide()
+        ' Close the form and display the Categories form
+        Me.Close()
         frmCategories.Show()
     End Sub
 
