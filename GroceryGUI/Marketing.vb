@@ -160,7 +160,7 @@ Public Class Marketing
             txtGetOne.Hide()
             lblGetOne.Hide()
         ElseIf ((cmbDiscountType.SelectedValue = PercentageOrder) Or (cmbDiscountType.SelectedValue = PercentageItem)) Then
-            MessageBox.Show("When creating a percent off discount please input a number representing the percent. For example for 10.5% enter 10.5")
+            MessageBox.Show("When creating a percent off discount please input a decimal representing the percent off. For example 10.5% would be .150")
             txtFlatDiscount.Hide()
             lblFlatDiscount.Hide()
             txtBuyOne.Hide()
@@ -186,18 +186,14 @@ Public Class Marketing
         Dim discountID As Integer = getDiscountID()
 
         'Pass in appropraite amount value 
-        Dim discountAmount As Integer = 0
+        Dim discountAmount As Decimal = 0
 
         'Whole number for flat rate
         If ((cmbDiscountType.SelectedValue = FlatRateOrder) Or (cmbDiscountType.SelectedValue = FlatRateItem)) Then
             discountAmount = txtFlatDiscount.Text
-            'Decimals for percent, have them enter whole numbers for usability
+            'Decimals for percent
         ElseIf ((cmbDiscountType.SelectedValue = PercentageOrder) Or (cmbDiscountType.SelectedValue = PercentageItem)) Then
-            Try
-                discountAmount = CDec(Val(txtPercentage.Text) / 100)
-            Catch ex As Exception
-                MessageBox.Show("When creating a percent off discount please input a number representing the percent. For example for 10.5% enter 10.5")
-            End Try
+            discountAmount = txtPercentage.Text
         ElseIf (cmbDiscountType.SelectedValue = BOGO) Then
             'Amount is always 0 for BOGO
             discountAmount = 0

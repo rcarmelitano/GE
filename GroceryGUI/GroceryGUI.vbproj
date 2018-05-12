@@ -536,9 +536,6 @@
     <EmbeddedResource Include="Discounts.resx">
       <DependentUpon>Discounts.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Discounts1.resx">
-      <DependentUpon>Discounts1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DiscountsView.resx">
       <DependentUpon>DiscountsView.vb</DependentUpon>
     </EmbeddedResource>
