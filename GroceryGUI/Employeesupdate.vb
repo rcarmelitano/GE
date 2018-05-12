@@ -5,6 +5,7 @@ Imports System.Data.SqlClient
 
 Public Class Employeesupdate
 
+
     Dim something As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GE.mdf;Integrated Security=True")
 
     '-----------------------------------------------------------------------------------------------------phone number fomating function
@@ -14,7 +15,7 @@ Public Class Employeesupdate
 
     '------------------------------------------------------------------------------------------------------------update button click
     Private Sub UpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateToolStripMenuItem.Click
-
+        Button2.Enabled = True
         TextBox2.Enabled = True
         TextBox3.Enabled = True
         TextBox4.Enabled = True
@@ -122,41 +123,65 @@ secondaryPhone = @phone2, employeeDOB =@DOB where employeeID = @employeeID", som
     End Sub
 
     Private Sub Employeesupdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         ' Disable the form controls
         Me.ControlBox = False
     End Sub
 
-	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-		'----------------------------checking to see if all the required information is done 
-		If Not validation() Then
-			Exit Sub
-		End If
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        '----------------------------checking to see if all the required information is done 
+        If Not validation() Then
+            Exit Sub
+        End If
 
-		'-----------------------------message box to see if you whant to save 
-		If MessageBox.Show("are you sure you whant to save the changes", "saving",
-				MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
-			Exit Sub
-		End If
+        '-----------------------------message box to see if you whant to save 
+        If MessageBox.Show("are you sure you whant to save the changes", "saving",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            Exit Sub
+        End If
 
-		'-------CHECKING TO SEE IF TEXTBOX HAS ONLY LETTERS 
-		If System.Text.RegularExpressions.Regex.IsMatch(TextBox2.Text, "^[A-Za-z]+$") Or System.Text.RegularExpressions.Regex.IsMatch(TextBox3.Text, "^[A-Za-z]+$") Then
-			MessageBox.Show("letter")
-		Else
-			MessageBox.Show("letters only")
-			Exit Sub
-		End If
+        '-------CHECKING TO SEE IF TEXTBOX HAS ONLY LETTERS 
+        If System.Text.RegularExpressions.Regex.IsMatch(TextBox2.Text, "^[A-Za-z]+$") Or System.Text.RegularExpressions.Regex.IsMatch(TextBox3.Text, "^[A-Za-z]+$") Then
+            MessageBox.Show("letter")
+        Else
+            MessageBox.Show("letters only")
+            Exit Sub
+        End If
 
-		Dim Command As New SqlCommand("insert into Employees (employeeID, firstName,lastName, middleInitial, primaryPhone, secondaryPhone, employeeDOB)
-values (@empID, @First, @Last, @Middle, @primary, @secondary, @EmDOB)", something)
 
-		Try
-			something.Open()
-			Command.ExecuteNonQuery()
-		Catch
+        Dim dblId As Integer = 0
+        Dim Command2 As New SqlCommand("select max(EmployeeID) +1 from Employees", something)
 
-		End Try
-		Me.Close()
-		frmPrimaryForm.Show()
-	End Sub
+        Try
+            something.Open()
+            Dim rowsaffected As Integer = Command2.ExecuteNonQuery()
+            dblId = Command2.ExecuteScalar()
+        Catch
+
+        End Try
+        something.Close()
+        TextBox1.Text = dblId
+
+
+        Dim Command As New SqlCommand("insert into Employees (employeeID, firstName,lastName, middleInitial, primaryPhone, secondaryPhone, employeeDOB)
+		values (@empID, @First, @Last, @Middle, @primary, @secondary, @EmDOB)", something)
+
+        Command.Parameters.AddWithValue("@empID", TextBox1.Text)
+        Command.Parameters.AddWithValue("@First", TextBox2.Text)
+        Command.Parameters.AddWithValue("@Last", TextBox3.Text)
+        Command.Parameters.AddWithValue("@Middle", TextBox7.Text)
+        Command.Parameters.AddWithValue("@primary", phonenumber(TextBox4.Text))
+        Command.Parameters.AddWithValue("@secondary", phonenumber(TextBox5.Text))
+        Command.Parameters.AddWithValue("@EmDOB", TextBox6.Text)
+
+        Try
+            something.Open()
+            Command.ExecuteNonQuery()
+        Catch
+
+        End Try
+        Me.Close()
+        frmPrimaryForm.Show()
+    End Sub
 
 End Class

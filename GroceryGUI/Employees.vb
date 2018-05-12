@@ -52,7 +52,8 @@ Public Class Employees
 
     '----------------------------------------------------------------------------------------------------------controls what happens when a newCustomer is clicked
     Private Sub NewCustomerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewCustomerToolStripMenuItem.Click
-
+        Employeesupdate.Button2.Visible = False
+        Employeesupdate.Button1.Visible = True
         '-------------------------------------------enable the textbox to become editable 
 
         Employeesupdate.TextBox2.ReadOnly = False
@@ -80,7 +81,8 @@ Public Class Employees
         If e.ColumnIndex <> 7 Then
             Exit Sub
         End If
-
+        Employeesupdate.Button2.Visible = True
+        Employeesupdate.Button1.Visible = False
         Dim V As String = EmployeesDataGridView.Rows(e.RowIndex).Cells(0).Value
         Dim index As Integer
         index = e.RowIndex

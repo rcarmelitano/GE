@@ -987,3 +987,4 @@ C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPurchaseOrder
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Discounts1.resources
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Marketing.resources
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPurchaseOrderDetails.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Marketing.resources
