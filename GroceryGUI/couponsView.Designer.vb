@@ -29,7 +29,10 @@ Partial Class frmCouponsView
         Me.CouponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.CouponsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CouponsTableAdapter()
+        Me.PromotionsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PromotionsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.PromotionsTableAdapter()
         Me.CouponIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.promotionName = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DiscountIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PromotionIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,6 +42,7 @@ Partial Class frmCouponsView
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CouponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PromotionsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -62,7 +66,7 @@ Partial Class frmCouponsView
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CouponIDDataGridViewTextBoxColumn, Me.DiscountIDDataGridViewTextBoxColumn, Me.PromotionIDDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.CouponStartDateDataGridViewTextBoxColumn, Me.CouponEndDateDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CouponIDDataGridViewTextBoxColumn, Me.promotionName, Me.DiscountIDDataGridViewTextBoxColumn, Me.PromotionIDDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.CouponStartDateDataGridViewTextBoxColumn, Me.CouponEndDateDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.CouponsBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(8, 27)
         Me.DataGridView1.Name = "DataGridView1"
@@ -85,12 +89,32 @@ Partial Class frmCouponsView
         '
         Me.CouponsTableAdapter.ClearBeforeFill = True
         '
+        'PromotionsBindingSource
+        '
+        Me.PromotionsBindingSource.DataMember = "Promotions"
+        Me.PromotionsBindingSource.DataSource = Me.GEDataSet
+        '
+        'PromotionsTableAdapter
+        '
+        Me.PromotionsTableAdapter.ClearBeforeFill = True
+        '
         'CouponIDDataGridViewTextBoxColumn
         '
         Me.CouponIDDataGridViewTextBoxColumn.DataPropertyName = "couponID"
         Me.CouponIDDataGridViewTextBoxColumn.HeaderText = "Coupon ID"
         Me.CouponIDDataGridViewTextBoxColumn.Name = "CouponIDDataGridViewTextBoxColumn"
         Me.CouponIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'promotionName
+        '
+        Me.promotionName.DataPropertyName = "promotionID"
+        Me.promotionName.DataSource = Me.PromotionsBindingSource
+        Me.promotionName.DisplayMember = "title"
+        Me.promotionName.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.promotionName.HeaderText = "Promotion"
+        Me.promotionName.Name = "promotionName"
+        Me.promotionName.ReadOnly = True
+        Me.promotionName.ValueMember = "promotionID"
         '
         'DiscountIDDataGridViewTextBoxColumn
         '
@@ -105,6 +129,7 @@ Partial Class frmCouponsView
         Me.PromotionIDDataGridViewTextBoxColumn.HeaderText = "Promotion ID"
         Me.PromotionIDDataGridViewTextBoxColumn.Name = "PromotionIDDataGridViewTextBoxColumn"
         Me.PromotionIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PromotionIDDataGridViewTextBoxColumn.Visible = False
         '
         'DescriptionDataGridViewTextBoxColumn
         '
@@ -146,6 +171,7 @@ Partial Class frmCouponsView
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CouponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PromotionsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -157,7 +183,10 @@ Partial Class frmCouponsView
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents CouponsBindingSource As BindingSource
     Friend WithEvents CouponsTableAdapter As GEDataSetTableAdapters.CouponsTableAdapter
+    Friend WithEvents PromotionsBindingSource As BindingSource
+    Friend WithEvents PromotionsTableAdapter As GEDataSetTableAdapters.PromotionsTableAdapter
     Friend WithEvents CouponIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents promotionName As DataGridViewComboBoxColumn
     Friend WithEvents DiscountIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PromotionIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

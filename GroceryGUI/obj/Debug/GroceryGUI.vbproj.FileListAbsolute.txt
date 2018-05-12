@@ -997,3 +997,8 @@ C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport12.reso
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport13.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport14.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport15.resources
+C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.NewCampType.resources
+C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport13.resources
+C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport12.resources
+C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport14.resources
+C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport15.resources
