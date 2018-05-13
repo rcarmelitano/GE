@@ -1008,3 +1008,7 @@ C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport13.reso
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport12.resources
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport14.resources
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport15.resources
+C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmCCCPayment.resources
+C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteCat.resources
+C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteProducts.resources
+C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteDept.resources

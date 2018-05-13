@@ -208,6 +208,24 @@
     <Compile Include="NewCampType.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PromoteCat.Designer.vb">
+      <DependentUpon>PromoteCat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PromoteCat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromoteDept.Designer.vb">
+      <DependentUpon>PromoteDept.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PromoteDept.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromoteProducts.Designer.vb">
+      <DependentUpon>PromoteProducts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PromoteProducts.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Report13.Designer.vb">
       <DependentUpon>Report13.vb</DependentUpon>
     </Compile>
@@ -586,6 +604,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewCampType.resx">
       <DependentUpon>NewCampType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromoteCat.resx">
+      <DependentUpon>PromoteCat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromoteDept.resx">
+      <DependentUpon>PromoteDept.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromoteProducts.resx">
+      <DependentUpon>PromoteProducts.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report13.resx">
       <DependentUpon>Report13.vb</DependentUpon>

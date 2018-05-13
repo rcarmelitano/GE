@@ -96,6 +96,7 @@ Partial Class Marketing
         Me.DiscountAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DiscountsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.txtCpnDescription = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -133,7 +134,9 @@ Partial Class Marketing
         Me.DiscountsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DiscountsTableAdapter()
         Me.Campaign_TypesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Campaign_TypesTableAdapter()
         Me.Discount_TypeTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Discount_TypeTableAdapter()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnPromoProducts = New System.Windows.Forms.Button()
+        Me.btnPromoteCat = New System.Windows.Forms.Button()
+        Me.btnPromoteDept = New System.Windows.Forms.Button()
         Me.tabControl.SuspendLayout()
         Me.tabCampaigns.SuspendLayout()
         CType(Me.CampaignTypesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -168,7 +171,7 @@ Partial Class Marketing
         Me.tabControl.Location = New System.Drawing.Point(0, 0)
         Me.tabControl.Name = "tabControl"
         Me.tabControl.SelectedIndex = 0
-        Me.tabControl.Size = New System.Drawing.Size(924, 610)
+        Me.tabControl.Size = New System.Drawing.Size(1129, 610)
         Me.tabControl.TabIndex = 0
         '
         'tabCampaigns
@@ -189,7 +192,7 @@ Partial Class Marketing
         Me.tabCampaigns.Location = New System.Drawing.Point(4, 27)
         Me.tabCampaigns.Name = "tabCampaigns"
         Me.tabCampaigns.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabCampaigns.Size = New System.Drawing.Size(916, 579)
+        Me.tabCampaigns.Size = New System.Drawing.Size(1121, 579)
         Me.tabCampaigns.TabIndex = 0
         Me.tabCampaigns.Text = "Campaigns"
         Me.tabCampaigns.UseVisualStyleBackColor = True
@@ -325,7 +328,7 @@ Partial Class Marketing
         Me.datagridCampaign.DataSource = Me.MarketingCampaignsBindingSource
         Me.datagridCampaign.Location = New System.Drawing.Point(0, 257)
         Me.datagridCampaign.Name = "datagridCampaign"
-        Me.datagridCampaign.Size = New System.Drawing.Size(916, 324)
+        Me.datagridCampaign.Size = New System.Drawing.Size(1118, 324)
         Me.datagridCampaign.TabIndex = 0
         '
         'CampaignIDDataGridViewTextBoxColumn
@@ -390,6 +393,9 @@ Partial Class Marketing
         '
         'tabPromotions
         '
+        Me.tabPromotions.Controls.Add(Me.btnPromoteDept)
+        Me.tabPromotions.Controls.Add(Me.btnPromoteCat)
+        Me.tabPromotions.Controls.Add(Me.btnPromoProducts)
         Me.tabPromotions.Controls.Add(Me.chkCampAssociation)
         Me.tabPromotions.Controls.Add(Me.cmbCampPicker)
         Me.tabPromotions.Controls.Add(Me.btnAddPromotion)
@@ -405,7 +411,7 @@ Partial Class Marketing
         Me.tabPromotions.Location = New System.Drawing.Point(4, 27)
         Me.tabPromotions.Name = "tabPromotions"
         Me.tabPromotions.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPromotions.Size = New System.Drawing.Size(916, 579)
+        Me.tabPromotions.Size = New System.Drawing.Size(1121, 579)
         Me.tabPromotions.TabIndex = 1
         Me.tabPromotions.Text = "Promotions"
         Me.tabPromotions.UseVisualStyleBackColor = True
@@ -436,7 +442,7 @@ Partial Class Marketing
         'btnAddPromotion
         '
         Me.btnAddPromotion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddPromotion.Location = New System.Drawing.Point(71, 206)
+        Me.btnAddPromotion.Location = New System.Drawing.Point(10, 208)
         Me.btnAddPromotion.Name = "btnAddPromotion"
         Me.btnAddPromotion.Size = New System.Drawing.Size(268, 45)
         Me.btnAddPromotion.TabIndex = 24
@@ -519,7 +525,7 @@ Partial Class Marketing
         Me.DataGridView2.DataSource = Me.PromotionsBindingSource
         Me.DataGridView2.Location = New System.Drawing.Point(0, 257)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(916, 335)
+        Me.DataGridView2.Size = New System.Drawing.Size(1121, 335)
         Me.DataGridView2.TabIndex = 0
         '
         'PromotionIDDataGridViewTextBoxColumn
@@ -602,7 +608,7 @@ Partial Class Marketing
         Me.tabDiscounts.Location = New System.Drawing.Point(4, 27)
         Me.tabDiscounts.Name = "tabDiscounts"
         Me.tabDiscounts.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabDiscounts.Size = New System.Drawing.Size(916, 579)
+        Me.tabDiscounts.Size = New System.Drawing.Size(1121, 579)
         Me.tabDiscounts.TabIndex = 2
         Me.tabDiscounts.Text = "Discounts"
         Me.tabDiscounts.UseVisualStyleBackColor = True
@@ -744,7 +750,7 @@ Partial Class Marketing
         Me.DataGridView3.DataSource = Me.DiscountsBindingSource
         Me.DataGridView3.Location = New System.Drawing.Point(0, 257)
         Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(916, 324)
+        Me.DataGridView3.Size = New System.Drawing.Size(1121, 324)
         Me.DataGridView3.TabIndex = 0
         '
         'DiscountIDDataGridViewTextBoxColumn
@@ -813,14 +819,23 @@ Partial Class Marketing
         Me.TabPage1.Location = New System.Drawing.Point(4, 27)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(916, 579)
+        Me.TabPage1.Size = New System.Drawing.Size(1121, 579)
         Me.TabPage1.TabIndex = 3
         Me.TabPage1.Text = "Coupons"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(765, 507)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(268, 45)
+        Me.Button3.TabIndex = 102
+        Me.Button3.Text = "View Coupons"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(116, 507)
+        Me.Button2.Location = New System.Drawing.Point(82, 507)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(268, 45)
         Me.Button2.TabIndex = 96
@@ -885,7 +900,7 @@ Partial Class Marketing
         Me.TabControl1.Location = New System.Drawing.Point(5, 120)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(905, 371)
+        Me.TabControl1.Size = New System.Drawing.Size(1108, 371)
         Me.TabControl1.TabIndex = 83
         '
         'TabPage2
@@ -900,14 +915,14 @@ Partial Class Marketing
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(897, 340)
+        Me.TabPage2.Size = New System.Drawing.Size(1100, 340)
         Me.TabPage2.TabIndex = 0
         Me.TabPage2.Text = "Promotion"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'txtPromotionTitle
         '
-        Me.txtPromotionTitle.Location = New System.Drawing.Point(689, 7)
+        Me.txtPromotionTitle.Location = New System.Drawing.Point(881, 7)
         Me.txtPromotionTitle.Name = "txtPromotionTitle"
         Me.txtPromotionTitle.Size = New System.Drawing.Size(121, 24)
         Me.txtPromotionTitle.TabIndex = 100
@@ -915,7 +930,7 @@ Partial Class Marketing
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(557, 8)
+        Me.Label6.Location = New System.Drawing.Point(749, 10)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(126, 18)
         Me.Label6.TabIndex = 99
@@ -933,7 +948,7 @@ Partial Class Marketing
         Me.dgvPromotions.Name = "dgvPromotions"
         Me.dgvPromotions.ReadOnly = True
         Me.dgvPromotions.RowHeadersVisible = False
-        Me.dgvPromotions.Size = New System.Drawing.Size(879, 303)
+        Me.dgvPromotions.Size = New System.Drawing.Size(1079, 303)
         Me.dgvPromotions.TabIndex = 98
         '
         'DataGridViewTextBoxColumn1
@@ -971,7 +986,7 @@ Partial Class Marketing
         '
         'btnPromotionTitleSearch
         '
-        Me.btnPromotionTitleSearch.Location = New System.Drawing.Point(816, 6)
+        Me.btnPromotionTitleSearch.Location = New System.Drawing.Point(1008, 8)
         Me.btnPromotionTitleSearch.Name = "btnPromotionTitleSearch"
         Me.btnPromotionTitleSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnPromotionTitleSearch.TabIndex = 97
@@ -1008,7 +1023,7 @@ Partial Class Marketing
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(897, 340)
+        Me.TabPage3.Size = New System.Drawing.Size(1100, 340)
         Me.TabPage3.TabIndex = 1
         Me.TabPage3.Text = "Discount"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1016,7 +1031,7 @@ Partial Class Marketing
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(562, 7)
+        Me.Label12.Location = New System.Drawing.Point(797, 10)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(89, 18)
         Me.Label12.TabIndex = 95
@@ -1024,14 +1039,14 @@ Partial Class Marketing
         '
         'txtDiscountIDSearch
         '
-        Me.txtDiscountIDSearch.Location = New System.Drawing.Point(657, 5)
+        Me.txtDiscountIDSearch.Location = New System.Drawing.Point(892, 6)
         Me.txtDiscountIDSearch.Name = "txtDiscountIDSearch"
         Me.txtDiscountIDSearch.Size = New System.Drawing.Size(121, 24)
         Me.txtDiscountIDSearch.TabIndex = 94
         '
         'btnDiscountIDSearch
         '
-        Me.btnDiscountIDSearch.Location = New System.Drawing.Point(786, 6)
+        Me.btnDiscountIDSearch.Location = New System.Drawing.Point(1019, 8)
         Me.btnDiscountIDSearch.Name = "btnDiscountIDSearch"
         Me.btnDiscountIDSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnDiscountIDSearch.TabIndex = 93
@@ -1059,7 +1074,7 @@ Partial Class Marketing
         Me.dgvDiscounts.Name = "dgvDiscounts"
         Me.dgvDiscounts.ReadOnly = True
         Me.dgvDiscounts.RowHeadersVisible = False
-        Me.dgvDiscounts.Size = New System.Drawing.Size(879, 301)
+        Me.dgvDiscounts.Size = New System.Drawing.Size(1082, 301)
         Me.dgvDiscounts.TabIndex = 90
         '
         'DataGridViewTextBoxColumn3
@@ -1144,20 +1159,38 @@ Partial Class Marketing
         '
         Me.Discount_TypeTableAdapter.ClearBeforeFill = True
         '
-        'Button3
+        'btnPromoProducts
         '
-        Me.Button3.Location = New System.Drawing.Point(471, 507)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(268, 45)
-        Me.Button3.TabIndex = 102
-        Me.Button3.Text = "View Coupons"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnPromoProducts.Location = New System.Drawing.Point(299, 208)
+        Me.btnPromoProducts.Name = "btnPromoProducts"
+        Me.btnPromoProducts.Size = New System.Drawing.Size(268, 45)
+        Me.btnPromoProducts.TabIndex = 28
+        Me.btnPromoProducts.Text = "Promote Products"
+        Me.btnPromoProducts.UseVisualStyleBackColor = True
+        '
+        'btnPromoteCat
+        '
+        Me.btnPromoteCat.Location = New System.Drawing.Point(586, 208)
+        Me.btnPromoteCat.Name = "btnPromoteCat"
+        Me.btnPromoteCat.Size = New System.Drawing.Size(255, 45)
+        Me.btnPromoteCat.TabIndex = 29
+        Me.btnPromoteCat.Text = "Promote Categories"
+        Me.btnPromoteCat.UseVisualStyleBackColor = True
+        '
+        'btnPromoteDept
+        '
+        Me.btnPromoteDept.Location = New System.Drawing.Point(858, 208)
+        Me.btnPromoteDept.Name = "btnPromoteDept"
+        Me.btnPromoteDept.Size = New System.Drawing.Size(255, 45)
+        Me.btnPromoteDept.TabIndex = 30
+        Me.btnPromoteDept.Text = "Promote Departments"
+        Me.btnPromoteDept.UseVisualStyleBackColor = True
         '
         'Marketing
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(925, 607)
+        Me.ClientSize = New System.Drawing.Size(1129, 618)
         Me.Controls.Add(Me.tabControl)
         Me.Name = "Marketing"
         Me.Text = "Marketing"
@@ -1305,4 +1338,7 @@ Partial Class Marketing
     Friend WithEvents Label16 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents btnPromoteDept As Button
+    Friend WithEvents btnPromoteCat As Button
+    Friend WithEvents btnPromoProducts As Button
 End Class

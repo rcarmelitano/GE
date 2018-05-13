@@ -340,4 +340,16 @@ Public Class Marketing
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         frmCouponsView.Show()
     End Sub
+
+    Private Sub btnPromoProducts_Click(sender As Object, e As EventArgs) Handles btnPromoProducts.Click
+        PromoteProducts.Show()
+    End Sub
+
+    Private Sub btnPromoteCat_Click(sender As Object, e As EventArgs) Handles btnPromoteCat.Click
+        PromoteCat.Show()
+    End Sub
+
+    Private Sub btnPromoteDept_Click(sender As Object, e As EventArgs) Handles btnPromoteDept.Click
+        PromoteDept.Show()
+    End Sub
 End Class
