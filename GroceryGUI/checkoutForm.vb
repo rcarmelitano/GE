@@ -17,6 +17,9 @@ Public Class frmCheckoutForm
     Dim total As Double = 0
     Dim productSKU As String
     Dim checkoutCounter As Integer = 0
+    Dim productStockAmount As Integer = 0
+    Dim productStockCounterForSubExit As Integer = 0
+
 
     Public UPCString As String
     Public UPCInt As Integer = 0
@@ -36,15 +39,8 @@ Public Class frmCheckoutForm
         quantity = CInt(txtQuantity.Text)
 
 
-
-
-
+        ' Add to the Quantity String List
         QuantityList.Add(quantity)
-
-
-
-
-
 
         ' Create a query to grab the cost of the selected product by SKU from the click event when this function is called
         Dim getProductCost As New SqlCommand("SELECT retailCost FROM Products WHERE SKU = @SKU",
@@ -61,10 +57,8 @@ Public Class frmCheckoutForm
         ' Close the connection
         productConnection.Close()
 
-
-
+        ' Add to the Price String List
         PriceList.Add(costOfProduct)
-
 
 
         ' Multiply the cost of the selected product by the quantity and then pass it into a constant subTotalFinal variable
@@ -243,11 +237,39 @@ Public Class frmCheckoutForm
 
 
 
+        ' Create a query to get the product inventorycount
+        Dim getStockAmount As New SqlCommand("SELECT inventoryCount FROM Inventory WHERE SKU = @SKU",
+                                                 productConnection)
 
-        SKUList.Add(productSKU)  
+        getStockAmount.Parameters.AddWithValue("@SKU", productSKU)
+
+        ' Open the connection
+        productConnection.Open()
+
+        getStockAmount.ExecuteNonQuery()
+        productStockAmount = getStockAmount.ExecuteScalar()
+
+        ' Close the connection
+        productConnection.Close()
+
+        If productStockAmount = 0 Then
+            ' Display a message and reset the quantity
+            MessageBox.Show("This product is out of stock.")
+            productStockCounterForSubExit = 1
+        ElseIf CInt(txtQuantity.Text) > productStockAmount Then
+            ' Reset the quantity and display a message
+            MessageBox.Show("There isn't enough stock to support this product purchase." & vbCrLf & "The current product stock is " & productStockAmount.ToString())
+            productStockCounterForSubExit = 1
+        End If
+
+        If productStockCounterForSubExit = 1 Then
+            productStockCounterForSubExit = 0
+            Exit Sub
+        End If
 
 
-
+        ' Add to the SKU String List
+        SKUList.Add(productSKU)
 
 
         ' Try to get the information for the selected product
@@ -411,6 +433,12 @@ Public Class frmCheckoutForm
 
 
 
+
+
+
+
+
+
                     If MessageBox.Show("Would you like to print a receipt?", "Order Receipt",
                     MessageBoxButtons.YesNo) = DialogResult.Yes Then
 
@@ -422,8 +450,6 @@ Public Class frmCheckoutForm
                             PrintDocument1.Print()
                         End If
                     End If
-
-
 
                     ' AFTER EVERYTHING ABOVE IS DONE, CALL VOID TO CLEAR THE ENTIRE FORM -------------------------------------------------------
                     btnVoid.PerformClick()

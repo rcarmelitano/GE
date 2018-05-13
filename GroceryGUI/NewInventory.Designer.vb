@@ -24,7 +24,6 @@ Partial Class frmNewInventory
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.BackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewInventoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnCreateProduct = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -35,6 +34,9 @@ Partial Class frmNewInventory
         Me.txtPurchaseUnit = New System.Windows.Forms.TextBox()
         Me.txtSupplierID = New System.Windows.Forms.TextBox()
         Me.dgvSuppliers = New System.Windows.Forms.DataGridView()
+        Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.supplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAdd = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.SuppliersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -43,9 +45,6 @@ Partial Class frmNewInventory
         Me.SuppliersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.SuppliersTableAdapter()
         Me.DepartmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DepartmentsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DepartmentsTableAdapter()
-        Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.supplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAdd = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvSuppliers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SuppliersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,18 +56,12 @@ Partial Class frmNewInventory
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackToolStripMenuItem, Me.ViewInventoryToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewInventoryToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(379, 24)
         Me.MenuStrip1.TabIndex = 60
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'BackToolStripMenuItem
-        '
-        Me.BackToolStripMenuItem.Name = "BackToolStripMenuItem"
-        Me.BackToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.BackToolStripMenuItem.Text = "Back"
         '
         'ViewInventoryToolStripMenuItem
         '
@@ -157,6 +150,34 @@ Partial Class frmNewInventory
         Me.dgvSuppliers.Size = New System.Drawing.Size(352, 141)
         Me.dgvSuppliers.TabIndex = 97
         '
+        'SupplierIDDataGridViewTextBoxColumn
+        '
+        Me.SupplierIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "supplierID"
+        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "Supplier ID"
+        Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
+        Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SupplierIDDataGridViewTextBoxColumn.Width = 84
+        '
+        'supplierName
+        '
+        Me.supplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.supplierName.DataPropertyName = "supplierName"
+        Me.supplierName.HeaderText = "Supplier Name"
+        Me.supplierName.Name = "supplierName"
+        Me.supplierName.ReadOnly = True
+        Me.supplierName.Width = 101
+        '
+        'btnAdd
+        '
+        Me.btnAdd.DataPropertyName = "supplierID"
+        Me.btnAdd.HeaderText = ""
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.ReadOnly = True
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseColumnTextForButtonValue = True
+        Me.btnAdd.Width = 70
+        '
         'SuppliersBindingSource
         '
         Me.SuppliersBindingSource.DataMember = "Suppliers"
@@ -198,34 +219,6 @@ Partial Class frmNewInventory
         '
         Me.DepartmentsTableAdapter.ClearBeforeFill = True
         '
-        'SupplierIDDataGridViewTextBoxColumn
-        '
-        Me.SupplierIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "supplierID"
-        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "Supplier ID"
-        Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
-        Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SupplierIDDataGridViewTextBoxColumn.Width = 84
-        '
-        'supplierName
-        '
-        Me.supplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.supplierName.DataPropertyName = "supplierName"
-        Me.supplierName.HeaderText = "Supplier Name"
-        Me.supplierName.Name = "supplierName"
-        Me.supplierName.ReadOnly = True
-        Me.supplierName.Width = 101
-        '
-        'btnAdd
-        '
-        Me.btnAdd.DataPropertyName = "supplierID"
-        Me.btnAdd.HeaderText = ""
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.ReadOnly = True
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseColumnTextForButtonValue = True
-        Me.btnAdd.Width = 70
-        '
         'frmNewInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -260,7 +253,6 @@ Partial Class frmNewInventory
 
     End Sub
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents BackToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnCreateProduct As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label

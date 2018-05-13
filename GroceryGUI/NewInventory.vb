@@ -38,7 +38,7 @@ Public Class frmNewInventory
         Me.ControlBox = False
     End Sub
 
-    Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click
+    Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         ' Hide the current form and display the new product form
         Me.Hide()
         frmNewProduct.Show()
