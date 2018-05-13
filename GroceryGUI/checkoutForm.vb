@@ -20,6 +20,12 @@ Public Class frmCheckoutForm
 
     Public UPCString As String
     Public UPCInt As Integer = 0
+    Dim printOrderID As String = String.Empty
+
+    ' Lists used for printing/orders
+    Public SKUList As New List(Of String)  
+    Public PriceList As New List(Of Double)
+    Public QuantityList As New List(Of Integer)
 
     ' Set the initial cost of the product to 0
     Dim costOfProduct As Double = 0
@@ -28,6 +34,17 @@ Public Class frmCheckoutForm
 
         ' Store the entered quantity in the quantity variable
         quantity = CInt(txtQuantity.Text)
+
+
+
+
+
+        QuantityList.Add(quantity)
+
+
+
+
+
 
         ' Create a query to grab the cost of the selected product by SKU from the click event when this function is called
         Dim getProductCost As New SqlCommand("SELECT retailCost FROM Products WHERE SKU = @SKU",
@@ -43,6 +60,12 @@ Public Class frmCheckoutForm
 
         ' Close the connection
         productConnection.Close()
+
+
+
+        PriceList.Add(costOfProduct)
+
+
 
         ' Multiply the cost of the selected product by the quantity and then pass it into a constant subTotalFinal variable
         subTotal += (costOfProduct * quantity)
@@ -218,6 +241,15 @@ Public Class frmCheckoutForm
         ' Grab the selected ID and stick it in the txtOrderDetailsID textbox
         productSKU = selectedRow.Cells(0).Value.ToString()
 
+
+
+
+        SKUList.Add(productSKU)  
+
+
+
+
+
         ' Try to get the information for the selected product
         Try
             ' Check if the quantity entered is 1 or greater
@@ -379,11 +411,25 @@ Public Class frmCheckoutForm
 
 
 
+                    If MessageBox.Show("Would you like to print a receipt?", "Order Receipt",
+                    MessageBoxButtons.YesNo) = DialogResult.Yes Then
+
+                        ' Open print dialog window to print
+                        If PrintDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                            ' Set printer settings
+                            PrintDocument1.PrinterSettings = PrintDialog1.PrinterSettings
+                            ' Print Receipt
+                            PrintDocument1.Print()
+                        End If
+                    End If
+
+
+
                     ' AFTER EVERYTHING ABOVE IS DONE, CALL VOID TO CLEAR THE ENTIRE FORM -------------------------------------------------------
                     btnVoid.PerformClick()
                 End If
             End If
-            Else
+        Else
             MessageBox.Show("You cannot checkout with no products.")
         End If
     End Sub
@@ -534,5 +580,77 @@ Public Class frmCheckoutForm
         frmCCCPayment.cbEmail.Location = New Point(150, 132)
         'Displays CCCPayment
         frmCCCPayment.Show()
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+
+        Dim intVerticalPosition As Integer = 0          ' Vertical position for printing
+        Dim finalVerticalPosition As Integer = 0        ' Final vertical position for printing
+
+        ' Print Confirmation Report Header
+        e.Graphics.DrawString("Receipt", New Font("Courier New", 12, FontStyle.Bold), Brushes.Black, 150, 10)
+
+        ' Print Time and Date
+        e.Graphics.DrawString("Date and Time: " & Now.ToString(), New Font("Courier New", 12, FontStyle.Bold), Brushes.Black, 10, 38)
+
+        ' Print Column Heading for Products, Price, and Quantity
+        e.Graphics.DrawString(String.Format("{0, 5} ", "Products"), New Font("Courier New", 12, FontStyle.Bold), Brushes.Black, 10, 66)
+        e.Graphics.DrawString(String.Format("{0, 5} ", "Price"), New Font("Courier New", 12, FontStyle.Bold), Brushes.Black, 160, 66)
+        e.Graphics.DrawString(String.Format("{0, 5} ", "Qty."), New Font("Courier New", 12, FontStyle.Bold), Brushes.Black, 290, 66)
+
+        intVerticalPosition = 90
+
+        ' DO FOR EACH LIST BUT CHANGE THE X AXIS SO THEY CAN ALL DO THIS NO MATTER WHAT
+
+        For Each SKU As String In SKUList
+
+
+            ' Print SKU's
+            e.Graphics.DrawString(String.Format("{0, 3} ", SKU), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, intVerticalPosition)
+
+            intVerticalPosition += 28
+
+        Next
+
+        intVerticalPosition = 90
+
+        For Each Price As String In PriceList
+            ' Print Price
+            e.Graphics.DrawString(String.Format("{0, 3} ", Price), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 160, intVerticalPosition)
+
+            intVerticalPosition += 28
+        Next
+
+        intVerticalPosition = 90
+
+        For Each Quantity As String In QuantityList
+            ' Print Quantity
+            e.Graphics.DrawString(String.Format("{0, 3} ", Quantity), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 290, intVerticalPosition)
+
+            intVerticalPosition += 28
+
+            finalVerticalPosition = intVerticalPosition
+        Next
+
+        ' Print the Total
+        e.Graphics.DrawString(String.Format("{0, 3} ", "Total: " & FinalTotalCost), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, finalVerticalPosition + 64)
+
+        finalVerticalPosition += 14
+
+
+        ' Create query to grab the max orderID (the order just made)
+        Dim getOrderID As New SqlCommand("SELECT max(orderID) FROM Orders", productConnection)
+
+        ' Open the connection
+        productConnection.Open()
+
+        getOrderID.ExecuteNonQuery()
+        printOrderID = getOrderID.ExecuteScalar()
+
+        ' Close the connection
+        productConnection.Close()
+
+
+        e.Graphics.DrawString(String.Format("{0, 3} ", "Order Number: " & printOrderID), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, finalVerticalPosition)
     End Sub
 End Class
