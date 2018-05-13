@@ -1,4 +1,11 @@
-﻿Public Class frmCCCPayment
+﻿' Include imports for the form
+Imports System.Data.SqlClient
+Imports System.Data
+
+Public Class frmCCCPayment
+
+    ' Create a new connection to the database for this form
+    Dim customerConnection As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GE.mdf;Integrated Security=True")
 
     ' String to be shown in the list box
     Dim thisPaymentAndAmount As String
@@ -12,8 +19,30 @@
     End Sub
 
     Private Sub frmCCCPayment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GEDataSet.Customers' table. You can move, or remove it, as needed.
+        Me.CustomersTableAdapter.Fill(Me.GEDataSet.Customers)
         ' Disable form controls
         Me.ControlBox = False
+
+        If lblTitle.Text = "PayPal" Then
+
+            ' Get the emails for the customer---------------------------------------CHANGE THIS SO IT ISN'T HERE BUT COMES FROM THE CHECKOUT FORM FOR THE SELECTED CUSTOMER
+            Dim customerID As Integer = 2
+
+            ' Create the query to get the customer's email
+            Dim getEmail As New SqlCommand("select email from Customers WHERE customerID = @customerID", customerConnection)
+
+            ' Pass in the customer ID as a parameter
+            getEmail.Parameters.AddWithValue("@customerID", customerID)
+
+            ' Fill the returnID textbox with the next value through the use of the getMaxReturnIDAndIncrement command above
+            customerConnection.Open()
+            getEmail.ExecuteNonQuery()
+            cbEmail.Text = getEmail.ExecuteScalar()
+
+            ' Close the connection
+            customerConnection.Close()
+        End If
     End Sub
 
     Public Function SubtractOffPayment()
@@ -54,7 +83,7 @@
            MessageBoxButtons.YesNo) = DialogResult.Yes Then
 
             ' Call the subtract function if any of the CCC payment types are clicked
-            If lblTitle.Text = "Check" Or lblTitle.Text = "Credit/Debit Card" Or lblTitle.Text = "Cash" Then
+            If lblTitle.Text = "Check" Or lblTitle.Text = "Credit/Debit Card" Or lblTitle.Text = "Cash" Or lblTitle.Text = "PayPal" Then
                 If nudPayment.Value > 0 Then
                     SubtractOffPayment()
 

@@ -519,4 +519,20 @@ Public Class frmCheckoutForm
         'Displays CCCPayment
         frmCCCPayment.Show()
     End Sub
+
+    Private Sub btnPayPal_Click(sender As Object, e As EventArgs) Handles btnPayPal.Click
+        ' Change the title of the CCCPayment form
+        frmCCCPayment.lblTitle.Text = "PayPal"
+
+        frmCCCPayment.txtTotalCost.Text = DegradingTotalCost
+        frmCCCPayment.nudPayment.Maximum = DegradingTotalCost
+        frmCCCPayment.cbEmail.Visible = True
+        frmCCCPayment.lblEmail.Visible = True
+        frmCCCPayment.nudPayment.Location = New Point(150, 167)
+        frmCCCPayment.lblPaymentAmount.Location = New Point(94, 168)
+        frmCCCPayment.lblEmail.Location = New Point(107, 138)
+        frmCCCPayment.cbEmail.Location = New Point(150, 132)
+        'Displays CCCPayment
+        frmCCCPayment.Show()
+    End Sub
 End Class
