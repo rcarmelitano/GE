@@ -222,7 +222,7 @@ Partial Class frmPrimaryForm
         Me.btnMarketingCampaigns.Name = "btnMarketingCampaigns"
         Me.btnMarketingCampaigns.Size = New System.Drawing.Size(142, 51)
         Me.btnMarketingCampaigns.TabIndex = 16
-        Me.btnMarketingCampaigns.Text = "MARKETING CAMPAIGNS"
+        Me.btnMarketingCampaigns.Text = "MARKETING"
         Me.btnMarketingCampaigns.UseVisualStyleBackColor = False
         '
         'btnDepartments

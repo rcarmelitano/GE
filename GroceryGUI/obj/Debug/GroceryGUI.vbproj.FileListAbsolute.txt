@@ -1012,3 +1012,4 @@ C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmCCCPayment.res
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteCat.resources
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteProducts.resources
 C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteDept.resources
+C:\Users\bl3s5\source\repos\GE\GroceryGUI\obj\Debug\GroceryGUI.View_Promoted_Products.resources

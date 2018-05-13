@@ -549,6 +549,12 @@
     <Compile Include="UpdateShipping.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View_Promoted_Products.Designer.vb">
+      <DependentUpon>View_Promoted_Products.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View_Promoted_Products.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddCategories.resx">
@@ -769,6 +775,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateShipping.resx">
       <DependentUpon>UpdateShipping.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Promoted_Products.resx">
+      <DependentUpon>View_Promoted_Products.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

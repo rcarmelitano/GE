@@ -24,7 +24,7 @@ Partial Class PromoteProducts
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.cmbPromotion = New System.Windows.Forms.ComboBox()
+        Me.cmbPromoSel = New System.Windows.Forms.ComboBox()
         Me.lblSelPromo = New System.Windows.Forms.Label()
         Me.lblSelProd = New System.Windows.Forms.Label()
         Me.btnPromote = New System.Windows.Forms.Button()
@@ -34,16 +34,18 @@ Partial Class PromoteProducts
         Me.PromotionsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.PromotionsTableAdapter()
         Me.ProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ProductsTableAdapter()
-        Me.StatusDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.RetailCostDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RetailUnitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TaxableDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DepartmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CategoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmbProductSel = New System.Windows.Forms.ComboBox()
+        Me.btnView = New System.Windows.Forms.Button()
         Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DepartmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TaxableDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.UPCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RetailUnitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RetailCostDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PromotionsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,16 +66,16 @@ Partial Class PromoteProducts
         Me.DataGridView1.Size = New System.Drawing.Size(908, 293)
         Me.DataGridView1.TabIndex = 0
         '
-        'cmbPromotion
+        'cmbPromoSel
         '
-        Me.cmbPromotion.DataSource = Me.PromotionsBindingSource
-        Me.cmbPromotion.DisplayMember = "title"
-        Me.cmbPromotion.FormattingEnabled = True
-        Me.cmbPromotion.Location = New System.Drawing.Point(131, 8)
-        Me.cmbPromotion.Name = "cmbPromotion"
-        Me.cmbPromotion.Size = New System.Drawing.Size(204, 21)
-        Me.cmbPromotion.TabIndex = 1
-        Me.cmbPromotion.ValueMember = "promotionID"
+        Me.cmbPromoSel.DataSource = Me.PromotionsBindingSource
+        Me.cmbPromoSel.DisplayMember = "title"
+        Me.cmbPromoSel.FormattingEnabled = True
+        Me.cmbPromoSel.Location = New System.Drawing.Point(131, 8)
+        Me.cmbPromoSel.Name = "cmbPromoSel"
+        Me.cmbPromoSel.Size = New System.Drawing.Size(204, 21)
+        Me.cmbPromoSel.TabIndex = 1
+        Me.cmbPromoSel.ValueMember = "promotionID"
         '
         'lblSelPromo
         '
@@ -91,14 +93,14 @@ Partial Class PromoteProducts
         Me.lblSelProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.lblSelProd.Location = New System.Drawing.Point(12, 44)
         Me.lblSelProd.Name = "lblSelProd"
-        Me.lblSelProd.Size = New System.Drawing.Size(105, 16)
+        Me.lblSelProd.Size = New System.Drawing.Size(98, 16)
         Me.lblSelProd.TabIndex = 3
-        Me.lblSelProd.Text = "Select Products:"
+        Me.lblSelProd.Text = "Select Product:"
         '
         'btnPromote
         '
         Me.btnPromote.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
-        Me.btnPromote.Location = New System.Drawing.Point(12, 395)
+        Me.btnPromote.Location = New System.Drawing.Point(363, 12)
         Me.btnPromote.Name = "btnPromote"
         Me.btnPromote.Size = New System.Drawing.Size(184, 43)
         Me.btnPromote.TabIndex = 4
@@ -138,64 +140,33 @@ Partial Class PromoteProducts
         '
         Me.ProductsTableAdapter.ClearBeforeFill = True
         '
-        'StatusDataGridViewCheckBoxColumn
+        'cmbProductSel
         '
-        Me.StatusDataGridViewCheckBoxColumn.DataPropertyName = "status"
-        Me.StatusDataGridViewCheckBoxColumn.HeaderText = "Status"
-        Me.StatusDataGridViewCheckBoxColumn.Name = "StatusDataGridViewCheckBoxColumn"
-        Me.StatusDataGridViewCheckBoxColumn.ReadOnly = True
-        Me.StatusDataGridViewCheckBoxColumn.Width = 50
+        Me.cmbProductSel.DataSource = Me.ProductsBindingSource
+        Me.cmbProductSel.DisplayMember = "productName"
+        Me.cmbProductSel.FormattingEnabled = True
+        Me.cmbProductSel.Location = New System.Drawing.Point(131, 43)
+        Me.cmbProductSel.Name = "cmbProductSel"
+        Me.cmbProductSel.Size = New System.Drawing.Size(204, 21)
+        Me.cmbProductSel.TabIndex = 6
+        Me.cmbProductSel.ValueMember = "SKU"
         '
-        'RetailCostDataGridViewTextBoxColumn
+        'btnView
         '
-        Me.RetailCostDataGridViewTextBoxColumn.DataPropertyName = "retailCost"
-        Me.RetailCostDataGridViewTextBoxColumn.HeaderText = "Retail Cost"
-        Me.RetailCostDataGridViewTextBoxColumn.Name = "RetailCostDataGridViewTextBoxColumn"
-        Me.RetailCostDataGridViewTextBoxColumn.ReadOnly = True
+        Me.btnView.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
+        Me.btnView.Location = New System.Drawing.Point(15, 395)
+        Me.btnView.Name = "btnView"
+        Me.btnView.Size = New System.Drawing.Size(184, 43)
+        Me.btnView.TabIndex = 7
+        Me.btnView.Text = "View Promoted Products"
+        Me.btnView.UseVisualStyleBackColor = True
         '
-        'RetailUnitDataGridViewTextBoxColumn
+        'SKUDataGridViewTextBoxColumn
         '
-        Me.RetailUnitDataGridViewTextBoxColumn.DataPropertyName = "retailUnit"
-        Me.RetailUnitDataGridViewTextBoxColumn.HeaderText = "Retail Unit"
-        Me.RetailUnitDataGridViewTextBoxColumn.Name = "RetailUnitDataGridViewTextBoxColumn"
-        Me.RetailUnitDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UPCDataGridViewTextBoxColumn
-        '
-        Me.UPCDataGridViewTextBoxColumn.DataPropertyName = "UPC"
-        Me.UPCDataGridViewTextBoxColumn.HeaderText = "UPC"
-        Me.UPCDataGridViewTextBoxColumn.Name = "UPCDataGridViewTextBoxColumn"
-        Me.UPCDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TaxableDataGridViewCheckBoxColumn
-        '
-        Me.TaxableDataGridViewCheckBoxColumn.DataPropertyName = "taxable"
-        Me.TaxableDataGridViewCheckBoxColumn.HeaderText = "Taxable"
-        Me.TaxableDataGridViewCheckBoxColumn.Name = "TaxableDataGridViewCheckBoxColumn"
-        Me.TaxableDataGridViewCheckBoxColumn.ReadOnly = True
-        Me.TaxableDataGridViewCheckBoxColumn.Width = 55
-        '
-        'DescriptionDataGridViewTextBoxColumn
-        '
-        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "description"
-        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
-        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
-        Me.DescriptionDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ProductNameDataGridViewTextBoxColumn
-        '
-        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "productName"
-        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "Name"
-        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
-        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DepartmentIDDataGridViewTextBoxColumn
-        '
-        Me.DepartmentIDDataGridViewTextBoxColumn.DataPropertyName = "departmentID"
-        Me.DepartmentIDDataGridViewTextBoxColumn.HeaderText = "departmentID"
-        Me.DepartmentIDDataGridViewTextBoxColumn.Name = "DepartmentIDDataGridViewTextBoxColumn"
-        Me.DepartmentIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DepartmentIDDataGridViewTextBoxColumn.Visible = False
+        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
+        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
+        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
         '
         'CategoryIDDataGridViewTextBoxColumn
         '
@@ -205,23 +176,77 @@ Partial Class PromoteProducts
         Me.CategoryIDDataGridViewTextBoxColumn.ReadOnly = True
         Me.CategoryIDDataGridViewTextBoxColumn.Visible = False
         '
-        'SKUDataGridViewTextBoxColumn
+        'DepartmentIDDataGridViewTextBoxColumn
         '
-        Me.SKUDataGridViewTextBoxColumn.DataPropertyName = "SKU"
-        Me.SKUDataGridViewTextBoxColumn.HeaderText = "SKU"
-        Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
-        Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DepartmentIDDataGridViewTextBoxColumn.DataPropertyName = "departmentID"
+        Me.DepartmentIDDataGridViewTextBoxColumn.HeaderText = "departmentID"
+        Me.DepartmentIDDataGridViewTextBoxColumn.Name = "DepartmentIDDataGridViewTextBoxColumn"
+        Me.DepartmentIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DepartmentIDDataGridViewTextBoxColumn.Visible = False
+        '
+        'ProductNameDataGridViewTextBoxColumn
+        '
+        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "productName"
+        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "Name"
+        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
+        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DescriptionDataGridViewTextBoxColumn
+        '
+        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "description"
+        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
+        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
+        Me.DescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TaxableDataGridViewCheckBoxColumn
+        '
+        Me.TaxableDataGridViewCheckBoxColumn.DataPropertyName = "taxable"
+        Me.TaxableDataGridViewCheckBoxColumn.HeaderText = "Taxable"
+        Me.TaxableDataGridViewCheckBoxColumn.Name = "TaxableDataGridViewCheckBoxColumn"
+        Me.TaxableDataGridViewCheckBoxColumn.ReadOnly = True
+        Me.TaxableDataGridViewCheckBoxColumn.Width = 55
+        '
+        'UPCDataGridViewTextBoxColumn
+        '
+        Me.UPCDataGridViewTextBoxColumn.DataPropertyName = "UPC"
+        Me.UPCDataGridViewTextBoxColumn.HeaderText = "UPC"
+        Me.UPCDataGridViewTextBoxColumn.Name = "UPCDataGridViewTextBoxColumn"
+        Me.UPCDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RetailUnitDataGridViewTextBoxColumn
+        '
+        Me.RetailUnitDataGridViewTextBoxColumn.DataPropertyName = "retailUnit"
+        Me.RetailUnitDataGridViewTextBoxColumn.HeaderText = "Retail Unit"
+        Me.RetailUnitDataGridViewTextBoxColumn.Name = "RetailUnitDataGridViewTextBoxColumn"
+        Me.RetailUnitDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RetailCostDataGridViewTextBoxColumn
+        '
+        Me.RetailCostDataGridViewTextBoxColumn.DataPropertyName = "retailCost"
+        Me.RetailCostDataGridViewTextBoxColumn.HeaderText = "Retail Cost"
+        Me.RetailCostDataGridViewTextBoxColumn.Name = "RetailCostDataGridViewTextBoxColumn"
+        Me.RetailCostDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'StatusDataGridViewCheckBoxColumn
+        '
+        Me.StatusDataGridViewCheckBoxColumn.DataPropertyName = "status"
+        Me.StatusDataGridViewCheckBoxColumn.HeaderText = "Status"
+        Me.StatusDataGridViewCheckBoxColumn.Name = "StatusDataGridViewCheckBoxColumn"
+        Me.StatusDataGridViewCheckBoxColumn.ReadOnly = True
+        Me.StatusDataGridViewCheckBoxColumn.Width = 50
         '
         'PromoteProducts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(934, 450)
+        Me.Controls.Add(Me.btnView)
+        Me.Controls.Add(Me.cmbProductSel)
         Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.btnPromote)
         Me.Controls.Add(Me.lblSelProd)
         Me.Controls.Add(Me.lblSelPromo)
-        Me.Controls.Add(Me.cmbPromotion)
+        Me.Controls.Add(Me.cmbPromoSel)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "PromoteProducts"
         Me.Text = "Promote Products"
@@ -235,7 +260,7 @@ Partial Class PromoteProducts
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents cmbPromotion As ComboBox
+    Friend WithEvents cmbPromoSel As ComboBox
     Friend WithEvents lblSelPromo As Label
     Friend WithEvents lblSelProd As Label
     Friend WithEvents btnPromote As Button
@@ -245,6 +270,8 @@ Partial Class PromoteProducts
     Friend WithEvents PromotionsTableAdapter As GEDataSetTableAdapters.PromotionsTableAdapter
     Friend WithEvents ProductsBindingSource As BindingSource
     Friend WithEvents ProductsTableAdapter As GEDataSetTableAdapters.ProductsTableAdapter
+    Friend WithEvents cmbProductSel As ComboBox
+    Friend WithEvents btnView As Button
     Friend WithEvents SKUDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CategoryIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DepartmentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
