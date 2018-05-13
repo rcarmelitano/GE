@@ -31,20 +31,26 @@ Partial Class frmCustomerHistory
         Me.OrdersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.OrdersTableAdapter()
         Me.TableAdapterManager = New GroceryGUI.GEDataSetTableAdapters.TableAdapterManager()
         Me.OrdersDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DPdate1 = New System.Windows.Forms.DateTimePicker()
+        Me.DPdate2 = New System.Windows.Forms.DateTimePicker()
+        Me.btnsearch = New System.Windows.Forms.Button()
+        Me.GEDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.EmployeesTableAdapter()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Employee = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.btnView = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.DPdate1 = New System.Windows.Forms.DateTimePicker()
-        Me.DPdate2 = New System.Windows.Forms.DateTimePicker()
-        Me.btnsearch = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OrdersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OrdersDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GEDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmployeesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -53,21 +59,20 @@ Partial Class frmCustomerHistory
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.BackToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(755, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(646, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'BackToolStripMenuItem
         '
         Me.BackToolStripMenuItem.Name = "BackToolStripMenuItem"
-        Me.BackToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
+        Me.BackToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
         Me.BackToolStripMenuItem.Text = "Reset"
         '
         'GEDataSet
@@ -130,15 +135,51 @@ Partial Class frmCustomerHistory
         Me.OrdersDataGridView.AllowUserToDeleteRows = False
         Me.OrdersDataGridView.AutoGenerateColumns = False
         Me.OrdersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.OrdersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewCheckBoxColumn1, Me.btnView})
+        Me.OrdersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Employee, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewCheckBoxColumn1, Me.btnView})
         Me.OrdersDataGridView.DataSource = Me.OrdersBindingSource
-        Me.OrdersDataGridView.Location = New System.Drawing.Point(0, 84)
-        Me.OrdersDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.OrdersDataGridView.Location = New System.Drawing.Point(0, 68)
         Me.OrdersDataGridView.Name = "OrdersDataGridView"
         Me.OrdersDataGridView.ReadOnly = True
         Me.OrdersDataGridView.RowHeadersVisible = False
-        Me.OrdersDataGridView.Size = New System.Drawing.Size(755, 271)
+        Me.OrdersDataGridView.Size = New System.Drawing.Size(646, 220)
         Me.OrdersDataGridView.TabIndex = 2
+        '
+        'DPdate1
+        '
+        Me.DPdate1.Location = New System.Drawing.Point(59, 42)
+        Me.DPdate1.Name = "DPdate1"
+        Me.DPdate1.Size = New System.Drawing.Size(186, 20)
+        Me.DPdate1.TabIndex = 3
+        '
+        'DPdate2
+        '
+        Me.DPdate2.Location = New System.Drawing.Point(283, 42)
+        Me.DPdate2.Name = "DPdate2"
+        Me.DPdate2.Size = New System.Drawing.Size(186, 20)
+        Me.DPdate2.TabIndex = 4
+        '
+        'btnsearch
+        '
+        Me.btnsearch.Location = New System.Drawing.Point(488, 42)
+        Me.btnsearch.Name = "btnsearch"
+        Me.btnsearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnsearch.TabIndex = 5
+        Me.btnsearch.Text = "Search"
+        Me.btnsearch.UseVisualStyleBackColor = True
+        '
+        'GEDataSetBindingSource
+        '
+        Me.GEDataSetBindingSource.DataSource = Me.GEDataSet
+        Me.GEDataSetBindingSource.Position = 0
+        '
+        'EmployeesBindingSource
+        '
+        Me.EmployeesBindingSource.DataMember = "Employees"
+        Me.EmployeesBindingSource.DataSource = Me.GEDataSet
+        '
+        'EmployeesTableAdapter
+        '
+        Me.EmployeesTableAdapter.ClearBeforeFill = True
         '
         'DataGridViewTextBoxColumn1
         '
@@ -147,7 +188,18 @@ Partial Class frmCustomerHistory
         Me.DataGridViewTextBoxColumn1.HeaderText = "Order ID"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 84
+        Me.DataGridViewTextBoxColumn1.Width = 72
+        '
+        'Employee
+        '
+        Me.Employee.DataPropertyName = "employeeID"
+        Me.Employee.DataSource = Me.EmployeesBindingSource
+        Me.Employee.DisplayMember = "lastName"
+        Me.Employee.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.Employee.HeaderText = "Employee"
+        Me.Employee.Name = "Employee"
+        Me.Employee.ReadOnly = True
+        Me.Employee.ValueMember = "employeeID"
         '
         'DataGridViewTextBoxColumn2
         '
@@ -156,7 +208,7 @@ Partial Class frmCustomerHistory
         Me.DataGridViewTextBoxColumn2.HeaderText = "Customer ID"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 105
+        Me.DataGridViewTextBoxColumn2.Width = 90
         '
         'DataGridViewTextBoxColumn3
         '
@@ -165,7 +217,7 @@ Partial Class frmCustomerHistory
         Me.DataGridViewTextBoxColumn3.HeaderText = "Employee ID"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 107
+        Me.DataGridViewTextBoxColumn3.Width = 92
         '
         'DataGridViewTextBoxColumn4
         '
@@ -174,7 +226,7 @@ Partial Class frmCustomerHistory
         Me.DataGridViewTextBoxColumn4.HeaderText = "Purchase Location"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Width = 142
+        Me.DataGridViewTextBoxColumn4.Width = 111
         '
         'DataGridViewTextBoxColumn5
         '
@@ -183,6 +235,7 @@ Partial Class frmCustomerHistory
         Me.DataGridViewTextBoxColumn5.HeaderText = "Order Date"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 78
         '
         'DataGridViewCheckBoxColumn1
         '
@@ -191,7 +244,7 @@ Partial Class frmCustomerHistory
         Me.DataGridViewCheckBoxColumn1.HeaderText = "Status"
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
-        Me.DataGridViewCheckBoxColumn1.Width = 54
+        Me.DataGridViewCheckBoxColumn1.Width = 43
         '
         'btnView
         '
@@ -202,37 +255,11 @@ Partial Class frmCustomerHistory
         Me.btnView.UseColumnTextForButtonValue = True
         Me.btnView.Width = 65
         '
-        'DPdate1
-        '
-        Me.DPdate1.Location = New System.Drawing.Point(79, 52)
-        Me.DPdate1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.DPdate1.Name = "DPdate1"
-        Me.DPdate1.Size = New System.Drawing.Size(247, 22)
-        Me.DPdate1.TabIndex = 3
-        '
-        'DPdate2
-        '
-        Me.DPdate2.Location = New System.Drawing.Point(377, 52)
-        Me.DPdate2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.DPdate2.Name = "DPdate2"
-        Me.DPdate2.Size = New System.Drawing.Size(247, 22)
-        Me.DPdate2.TabIndex = 4
-        '
-        'btnsearch
-        '
-        Me.btnsearch.Location = New System.Drawing.Point(651, 52)
-        Me.btnsearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnsearch.Name = "btnsearch"
-        Me.btnsearch.Size = New System.Drawing.Size(100, 28)
-        Me.btnsearch.TabIndex = 5
-        Me.btnsearch.Text = "Search"
-        Me.btnsearch.UseVisualStyleBackColor = True
-        '
         'frmCustomerHistory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(755, 354)
+        Me.ClientSize = New System.Drawing.Size(646, 288)
         Me.Controls.Add(Me.btnsearch)
         Me.Controls.Add(Me.DPdate2)
         Me.Controls.Add(Me.DPdate1)
@@ -240,7 +267,6 @@ Partial Class frmCustomerHistory
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "frmCustomerHistory"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -250,6 +276,8 @@ Partial Class frmCustomerHistory
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OrdersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OrdersDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GEDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmployeesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -261,15 +289,19 @@ Partial Class frmCustomerHistory
     Friend WithEvents OrdersTableAdapter As GEDataSetTableAdapters.OrdersTableAdapter
     Friend WithEvents TableAdapterManager As GEDataSetTableAdapters.TableAdapterManager
     Friend WithEvents OrdersDataGridView As DataGridView
+    Friend WithEvents DPdate1 As DateTimePicker
+    Friend WithEvents DPdate2 As DateTimePicker
+    Friend WithEvents btnsearch As Button
+    Friend WithEvents BackToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GEDataSetBindingSource As BindingSource
+    Friend WithEvents EmployeesBindingSource As BindingSource
+    Friend WithEvents EmployeesTableAdapter As GEDataSetTableAdapters.EmployeesTableAdapter
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents Employee As DataGridViewComboBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
     Friend WithEvents btnView As DataGridViewButtonColumn
-	Friend WithEvents DPdate1 As DateTimePicker
-	Friend WithEvents DPdate2 As DateTimePicker
-	Friend WithEvents btnsearch As Button
-    Friend WithEvents BackToolStripMenuItem As ToolStripMenuItem
 End Class

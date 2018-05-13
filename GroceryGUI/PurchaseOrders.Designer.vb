@@ -30,10 +30,16 @@ Partial Class frmPurchaseOrders
         Me.PurchaseOrderBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.Purchase_OrderTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Purchase_OrderTableAdapter()
+        Me.StatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StatusTableAdapter = New GroceryGUI.GEDataSetTableAdapters.StatusTableAdapter()
+        Me.SuppliersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SuppliersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.SuppliersTableAdapter()
         Me.PurchaseOrderIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Supplier = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OrderTotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OrderDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Status = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.StatusIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnDetails = New System.Windows.Forms.DataGridViewButtonColumn()
@@ -41,6 +47,8 @@ Partial Class frmPurchaseOrders
         CType(Me.dgvPurchaseOrders, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PurchaseOrderBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SuppliersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -71,7 +79,7 @@ Partial Class frmPurchaseOrders
         Me.dgvPurchaseOrders.AllowUserToDeleteRows = False
         Me.dgvPurchaseOrders.AutoGenerateColumns = False
         Me.dgvPurchaseOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPurchaseOrders.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PurchaseOrderIDDataGridViewTextBoxColumn, Me.SupplierIDDataGridViewTextBoxColumn, Me.OrderTotalDataGridViewTextBoxColumn, Me.OrderDateDataGridViewTextBoxColumn, Me.StatusIDDataGridViewTextBoxColumn, Me.btnUpdate, Me.btnDetails})
+        Me.dgvPurchaseOrders.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PurchaseOrderIDDataGridViewTextBoxColumn, Me.Supplier, Me.SupplierIDDataGridViewTextBoxColumn, Me.OrderTotalDataGridViewTextBoxColumn, Me.OrderDateDataGridViewTextBoxColumn, Me.Status, Me.StatusIDDataGridViewTextBoxColumn, Me.btnUpdate, Me.btnDetails})
         Me.dgvPurchaseOrders.DataSource = Me.PurchaseOrderBindingSource
         Me.dgvPurchaseOrders.Location = New System.Drawing.Point(12, 27)
         Me.dgvPurchaseOrders.Name = "dgvPurchaseOrders"
@@ -94,6 +102,24 @@ Partial Class frmPurchaseOrders
         '
         Me.Purchase_OrderTableAdapter.ClearBeforeFill = True
         '
+        'StatusBindingSource
+        '
+        Me.StatusBindingSource.DataMember = "Status"
+        Me.StatusBindingSource.DataSource = Me.GEDataSet
+        '
+        'StatusTableAdapter
+        '
+        Me.StatusTableAdapter.ClearBeforeFill = True
+        '
+        'SuppliersBindingSource
+        '
+        Me.SuppliersBindingSource.DataMember = "Suppliers"
+        Me.SuppliersBindingSource.DataSource = Me.GEDataSet
+        '
+        'SuppliersTableAdapter
+        '
+        Me.SuppliersTableAdapter.ClearBeforeFill = True
+        '
         'PurchaseOrderIDDataGridViewTextBoxColumn
         '
         Me.PurchaseOrderIDDataGridViewTextBoxColumn.DataPropertyName = "purchaseOrderID"
@@ -101,12 +127,24 @@ Partial Class frmPurchaseOrders
         Me.PurchaseOrderIDDataGridViewTextBoxColumn.Name = "PurchaseOrderIDDataGridViewTextBoxColumn"
         Me.PurchaseOrderIDDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'Supplier
+        '
+        Me.Supplier.DataPropertyName = "supplierID"
+        Me.Supplier.DataSource = Me.SuppliersBindingSource
+        Me.Supplier.DisplayMember = "supplierName"
+        Me.Supplier.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.Supplier.HeaderText = "Supplier"
+        Me.Supplier.Name = "Supplier"
+        Me.Supplier.ReadOnly = True
+        Me.Supplier.ValueMember = "supplierID"
+        '
         'SupplierIDDataGridViewTextBoxColumn
         '
         Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "supplierID"
         Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "Supplier ID"
         Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
         Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SupplierIDDataGridViewTextBoxColumn.Visible = False
         '
         'OrderTotalDataGridViewTextBoxColumn
         '
@@ -122,12 +160,24 @@ Partial Class frmPurchaseOrders
         Me.OrderDateDataGridViewTextBoxColumn.Name = "OrderDateDataGridViewTextBoxColumn"
         Me.OrderDateDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'Status
+        '
+        Me.Status.DataPropertyName = "statusID"
+        Me.Status.DataSource = Me.StatusBindingSource
+        Me.Status.DisplayMember = "status"
+        Me.Status.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.Status.HeaderText = "Status"
+        Me.Status.Name = "Status"
+        Me.Status.ReadOnly = True
+        Me.Status.ValueMember = "statusID"
+        '
         'StatusIDDataGridViewTextBoxColumn
         '
         Me.StatusIDDataGridViewTextBoxColumn.DataPropertyName = "statusID"
         Me.StatusIDDataGridViewTextBoxColumn.HeaderText = "Status ID"
         Me.StatusIDDataGridViewTextBoxColumn.Name = "StatusIDDataGridViewTextBoxColumn"
         Me.StatusIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StatusIDDataGridViewTextBoxColumn.Visible = False
         '
         'btnUpdate
         '
@@ -162,6 +212,8 @@ Partial Class frmPurchaseOrders
         CType(Me.dgvPurchaseOrders, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PurchaseOrderBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StatusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SuppliersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -174,10 +226,16 @@ Partial Class frmPurchaseOrders
     Friend WithEvents PurchaseOrderBindingSource As BindingSource
     Friend WithEvents Purchase_OrderTableAdapter As GEDataSetTableAdapters.Purchase_OrderTableAdapter
     Friend WithEvents NewPurchaseOrderToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents StatusBindingSource As BindingSource
+    Friend WithEvents StatusTableAdapter As GEDataSetTableAdapters.StatusTableAdapter
+    Friend WithEvents SuppliersBindingSource As BindingSource
+    Friend WithEvents SuppliersTableAdapter As GEDataSetTableAdapters.SuppliersTableAdapter
     Friend WithEvents PurchaseOrderIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Supplier As DataGridViewComboBoxColumn
     Friend WithEvents SupplierIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents OrderTotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents OrderDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Status As DataGridViewComboBoxColumn
     Friend WithEvents StatusIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnUpdate As DataGridViewButtonColumn
     Friend WithEvents btnDetails As DataGridViewButtonColumn

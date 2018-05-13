@@ -6,6 +6,8 @@
     End Sub
 
     Private Sub Categories_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GEDataSet.Departments' table. You can move, or remove it, as needed.
+        Me.DepartmentsTableAdapter.Fill(Me.GEDataSet.Departments)
         Me.CategoriesTableAdapter.Fill(Me.GEDataSet.Categories)
         'Disables the control box
         Me.ControlBox = False

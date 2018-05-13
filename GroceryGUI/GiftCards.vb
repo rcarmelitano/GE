@@ -1,5 +1,7 @@
 ﻿Public Class frmGiftCards
     Private Sub frmGiftCards_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GEDataSet.Customers' table. You can move, or remove it, as needed.
+        Me.CustomersTableAdapter.Fill(Me.GEDataSet.Customers)
         'TODO: This line of code loads data into the 'GEDataSet.Gift_Cards' table. You can move, or remove it, as needed.
         Me.Gift_CardsTableAdapter.Fill(Me.GEDataSet.Gift_Cards)
 

@@ -27,7 +27,16 @@ Partial Class frmProducts
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewProductToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvProducts = New System.Windows.Forms.DataGridView()
+        Me.ProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.ProductsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ProductsTableAdapter()
+        Me.CategoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CategoriesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CategoriesTableAdapter()
+        Me.DepartmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DepartmentsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DepartmentsTableAdapter()
         Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Category = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.Department = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.CategoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DepartmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,13 +47,12 @@ Partial Class frmProducts
         Me.RetailCostDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.UpdateProduct = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.ProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.ProductsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ProductsTableAdapter()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -75,7 +83,7 @@ Partial Class frmProducts
         Me.dgvProducts.AllowUserToDeleteRows = False
         Me.dgvProducts.AutoGenerateColumns = False
         Me.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProducts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SKUDataGridViewTextBoxColumn, Me.CategoryIDDataGridViewTextBoxColumn, Me.DepartmentIDDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.TaxableDataGridViewCheckBoxColumn, Me.UPCDataGridViewTextBoxColumn, Me.RetailUnitDataGridViewTextBoxColumn, Me.RetailCostDataGridViewTextBoxColumn, Me.StatusDataGridViewCheckBoxColumn, Me.UpdateProduct})
+        Me.dgvProducts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SKUDataGridViewTextBoxColumn, Me.Category, Me.Department, Me.CategoryIDDataGridViewTextBoxColumn, Me.DepartmentIDDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.TaxableDataGridViewCheckBoxColumn, Me.UPCDataGridViewTextBoxColumn, Me.RetailUnitDataGridViewTextBoxColumn, Me.RetailCostDataGridViewTextBoxColumn, Me.StatusDataGridViewCheckBoxColumn, Me.UpdateProduct})
         Me.dgvProducts.DataSource = Me.ProductsBindingSource
         Me.dgvProducts.Location = New System.Drawing.Point(12, 27)
         Me.dgvProducts.Name = "dgvProducts"
@@ -83,6 +91,38 @@ Partial Class frmProducts
         Me.dgvProducts.RowHeadersVisible = False
         Me.dgvProducts.Size = New System.Drawing.Size(995, 411)
         Me.dgvProducts.TabIndex = 1
+        '
+        'ProductsBindingSource
+        '
+        Me.ProductsBindingSource.DataMember = "Products"
+        Me.ProductsBindingSource.DataSource = Me.GEDataSet
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ProductsTableAdapter
+        '
+        Me.ProductsTableAdapter.ClearBeforeFill = True
+        '
+        'CategoriesBindingSource
+        '
+        Me.CategoriesBindingSource.DataMember = "Categories"
+        Me.CategoriesBindingSource.DataSource = Me.GEDataSet
+        '
+        'CategoriesTableAdapter
+        '
+        Me.CategoriesTableAdapter.ClearBeforeFill = True
+        '
+        'DepartmentsBindingSource
+        '
+        Me.DepartmentsBindingSource.DataMember = "Departments"
+        Me.DepartmentsBindingSource.DataSource = Me.GEDataSet
+        '
+        'DepartmentsTableAdapter
+        '
+        Me.DepartmentsTableAdapter.ClearBeforeFill = True
         '
         'SKUDataGridViewTextBoxColumn
         '
@@ -93,6 +133,28 @@ Partial Class frmProducts
         Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
         Me.SKUDataGridViewTextBoxColumn.Width = 54
         '
+        'Category
+        '
+        Me.Category.DataPropertyName = "categoryID"
+        Me.Category.DataSource = Me.CategoriesBindingSource
+        Me.Category.DisplayMember = "name"
+        Me.Category.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.Category.HeaderText = "Category"
+        Me.Category.Name = "Category"
+        Me.Category.ReadOnly = True
+        Me.Category.ValueMember = "categoryID"
+        '
+        'Department
+        '
+        Me.Department.DataPropertyName = "departmentID"
+        Me.Department.DataSource = Me.DepartmentsBindingSource
+        Me.Department.DisplayMember = "name"
+        Me.Department.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.Department.HeaderText = "Department"
+        Me.Department.Name = "Department"
+        Me.Department.ReadOnly = True
+        Me.Department.ValueMember = "departmentID"
+        '
         'CategoryIDDataGridViewTextBoxColumn
         '
         Me.CategoryIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -100,6 +162,7 @@ Partial Class frmProducts
         Me.CategoryIDDataGridViewTextBoxColumn.HeaderText = "Category ID"
         Me.CategoryIDDataGridViewTextBoxColumn.Name = "CategoryIDDataGridViewTextBoxColumn"
         Me.CategoryIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CategoryIDDataGridViewTextBoxColumn.Visible = False
         Me.CategoryIDDataGridViewTextBoxColumn.Width = 88
         '
         'DepartmentIDDataGridViewTextBoxColumn
@@ -109,6 +172,7 @@ Partial Class frmProducts
         Me.DepartmentIDDataGridViewTextBoxColumn.HeaderText = "Department ID"
         Me.DepartmentIDDataGridViewTextBoxColumn.Name = "DepartmentIDDataGridViewTextBoxColumn"
         Me.DepartmentIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DepartmentIDDataGridViewTextBoxColumn.Visible = False
         Me.DepartmentIDDataGridViewTextBoxColumn.Width = 101
         '
         'ProductNameDataGridViewTextBoxColumn
@@ -182,20 +246,6 @@ Partial Class frmProducts
         Me.UpdateProduct.UseColumnTextForButtonValue = True
         Me.UpdateProduct.Width = 51
         '
-        'ProductsBindingSource
-        '
-        Me.ProductsBindingSource.DataMember = "Products"
-        Me.ProductsBindingSource.DataSource = Me.GEDataSet
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ProductsTableAdapter
-        '
-        Me.ProductsTableAdapter.ClearBeforeFill = True
-        '
         'frmProducts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -214,6 +264,8 @@ Partial Class frmProducts
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -226,7 +278,13 @@ Partial Class frmProducts
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents ProductsBindingSource As BindingSource
     Friend WithEvents ProductsTableAdapter As GEDataSetTableAdapters.ProductsTableAdapter
+    Friend WithEvents CategoriesBindingSource As BindingSource
+    Friend WithEvents CategoriesTableAdapter As GEDataSetTableAdapters.CategoriesTableAdapter
+    Friend WithEvents DepartmentsBindingSource As BindingSource
+    Friend WithEvents DepartmentsTableAdapter As GEDataSetTableAdapters.DepartmentsTableAdapter
     Friend WithEvents SKUDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Category As DataGridViewComboBoxColumn
+    Friend WithEvents Department As DataGridViewComboBoxColumn
     Friend WithEvents CategoryIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DepartmentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProductNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

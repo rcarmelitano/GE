@@ -26,7 +26,13 @@ Partial Class frmInventory
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvInventory = New System.Windows.Forms.DataGridView()
+        Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
+        Me.InventoryTableAdapter = New GroceryGUI.GEDataSetTableAdapters.InventoryTableAdapter()
+        Me.SuppliersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SuppliersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.SuppliersTableAdapter()
         Me.InventoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Supplier = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UnitCostDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,13 +40,11 @@ Partial Class frmInventory
         Me.ReorderAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InventoryCountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.InventoryTableAdapter = New GroceryGUI.GEDataSetTableAdapters.InventoryTableAdapter()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SuppliersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -64,13 +68,36 @@ Partial Class frmInventory
         Me.dgvInventory.AllowUserToDeleteRows = False
         Me.dgvInventory.AutoGenerateColumns = False
         Me.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvInventory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InventoryIDDataGridViewTextBoxColumn, Me.SupplierIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.UnitCostDataGridViewTextBoxColumn, Me.PurchaseUnitDataGridViewTextBoxColumn, Me.ReorderAmountDataGridViewTextBoxColumn, Me.InventoryCountDataGridViewTextBoxColumn, Me.btnUpdate})
+        Me.dgvInventory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InventoryIDDataGridViewTextBoxColumn, Me.Supplier, Me.SupplierIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.UnitCostDataGridViewTextBoxColumn, Me.PurchaseUnitDataGridViewTextBoxColumn, Me.ReorderAmountDataGridViewTextBoxColumn, Me.InventoryCountDataGridViewTextBoxColumn, Me.btnUpdate})
         Me.dgvInventory.DataSource = Me.InventoryBindingSource
         Me.dgvInventory.Location = New System.Drawing.Point(12, 27)
         Me.dgvInventory.Name = "dgvInventory"
         Me.dgvInventory.RowHeadersVisible = False
         Me.dgvInventory.Size = New System.Drawing.Size(786, 367)
         Me.dgvInventory.TabIndex = 1
+        '
+        'InventoryBindingSource
+        '
+        Me.InventoryBindingSource.DataMember = "Inventory"
+        Me.InventoryBindingSource.DataSource = Me.GEDataSet
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'InventoryTableAdapter
+        '
+        Me.InventoryTableAdapter.ClearBeforeFill = True
+        '
+        'SuppliersBindingSource
+        '
+        Me.SuppliersBindingSource.DataMember = "Suppliers"
+        Me.SuppliersBindingSource.DataSource = Me.GEDataSet
+        '
+        'SuppliersTableAdapter
+        '
+        Me.SuppliersTableAdapter.ClearBeforeFill = True
         '
         'InventoryIDDataGridViewTextBoxColumn
         '
@@ -79,12 +106,23 @@ Partial Class frmInventory
         Me.InventoryIDDataGridViewTextBoxColumn.Name = "InventoryIDDataGridViewTextBoxColumn"
         Me.InventoryIDDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'Supplier
+        '
+        Me.Supplier.DataPropertyName = "supplierID"
+        Me.Supplier.DataSource = Me.SuppliersBindingSource
+        Me.Supplier.DisplayMember = "supplierName"
+        Me.Supplier.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.Supplier.HeaderText = "Supplier"
+        Me.Supplier.Name = "Supplier"
+        Me.Supplier.ValueMember = "supplierID"
+        '
         'SupplierIDDataGridViewTextBoxColumn
         '
         Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "supplierID"
         Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "Supplier ID"
         Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
         Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SupplierIDDataGridViewTextBoxColumn.Visible = False
         '
         'SKUDataGridViewTextBoxColumn
         '
@@ -129,20 +167,6 @@ Partial Class frmInventory
         Me.btnUpdate.UseColumnTextForButtonValue = True
         Me.btnUpdate.Width = 65
         '
-        'InventoryBindingSource
-        '
-        Me.InventoryBindingSource.DataMember = "Inventory"
-        Me.InventoryBindingSource.DataSource = Me.GEDataSet
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'InventoryTableAdapter
-        '
-        Me.InventoryTableAdapter.ClearBeforeFill = True
-        '
         'frmInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -161,6 +185,7 @@ Partial Class frmInventory
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SuppliersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -172,7 +197,10 @@ Partial Class frmInventory
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents InventoryBindingSource As BindingSource
     Friend WithEvents InventoryTableAdapter As GEDataSetTableAdapters.InventoryTableAdapter
+    Friend WithEvents SuppliersBindingSource As BindingSource
+    Friend WithEvents SuppliersTableAdapter As GEDataSetTableAdapters.SuppliersTableAdapter
     Friend WithEvents InventoryIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Supplier As DataGridViewComboBoxColumn
     Friend WithEvents SupplierIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SKUDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents UnitCostDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

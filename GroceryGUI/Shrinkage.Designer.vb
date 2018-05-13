@@ -25,23 +25,27 @@ Partial Class frmShrinkage
         Me.components = New System.ComponentModel.Container()
         Me.mnuClose = New System.Windows.Forms.MenuStrip()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewShrinkageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvShrinkage = New System.Windows.Forms.DataGridView()
         Me.ShrinkageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.ShrinkageTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ShrinkageTableAdapter()
+        Me.StatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StatusTableAdapter = New GroceryGUI.GEDataSetTableAdapters.StatusTableAdapter()
         Me.ShrinkageIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeeIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Status = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.StatusIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.QuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ShrinkDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DetailsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UnitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NewShrinkageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuClose.SuspendLayout()
         CType(Me.dgvShrinkage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ShrinkageBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mnuClose
@@ -59,13 +63,19 @@ Partial Class frmShrinkage
         Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
+        'NewShrinkageToolStripMenuItem
+        '
+        Me.NewShrinkageToolStripMenuItem.Name = "NewShrinkageToolStripMenuItem"
+        Me.NewShrinkageToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
+        Me.NewShrinkageToolStripMenuItem.Text = "New Shrinkage"
+        '
         'dgvShrinkage
         '
         Me.dgvShrinkage.AllowUserToAddRows = False
         Me.dgvShrinkage.AllowUserToDeleteRows = False
         Me.dgvShrinkage.AutoGenerateColumns = False
         Me.dgvShrinkage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvShrinkage.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShrinkageIDDataGridViewTextBoxColumn, Me.EmployeeIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.StatusIDDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.ShrinkDateDataGridViewTextBoxColumn, Me.DetailsDataGridViewTextBoxColumn, Me.UnitDataGridViewTextBoxColumn})
+        Me.dgvShrinkage.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShrinkageIDDataGridViewTextBoxColumn, Me.EmployeeIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.Status, Me.StatusIDDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.ShrinkDateDataGridViewTextBoxColumn, Me.DetailsDataGridViewTextBoxColumn, Me.UnitDataGridViewTextBoxColumn})
         Me.dgvShrinkage.DataSource = Me.ShrinkageBindingSource
         Me.dgvShrinkage.Location = New System.Drawing.Point(13, 28)
         Me.dgvShrinkage.Name = "dgvShrinkage"
@@ -88,6 +98,15 @@ Partial Class frmShrinkage
         '
         Me.ShrinkageTableAdapter.ClearBeforeFill = True
         '
+        'StatusBindingSource
+        '
+        Me.StatusBindingSource.DataMember = "Status"
+        Me.StatusBindingSource.DataSource = Me.GEDataSet
+        '
+        'StatusTableAdapter
+        '
+        Me.StatusTableAdapter.ClearBeforeFill = True
+        '
         'ShrinkageIDDataGridViewTextBoxColumn
         '
         Me.ShrinkageIDDataGridViewTextBoxColumn.DataPropertyName = "shrinkageID"
@@ -109,12 +128,24 @@ Partial Class frmShrinkage
         Me.SKUDataGridViewTextBoxColumn.Name = "SKUDataGridViewTextBoxColumn"
         Me.SKUDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'Status
+        '
+        Me.Status.DataPropertyName = "statusID"
+        Me.Status.DataSource = Me.StatusBindingSource
+        Me.Status.DisplayMember = "status"
+        Me.Status.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.Status.HeaderText = "Status"
+        Me.Status.Name = "Status"
+        Me.Status.ReadOnly = True
+        Me.Status.ValueMember = "statusID"
+        '
         'StatusIDDataGridViewTextBoxColumn
         '
         Me.StatusIDDataGridViewTextBoxColumn.DataPropertyName = "statusID"
         Me.StatusIDDataGridViewTextBoxColumn.HeaderText = "Status ID"
         Me.StatusIDDataGridViewTextBoxColumn.Name = "StatusIDDataGridViewTextBoxColumn"
         Me.StatusIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StatusIDDataGridViewTextBoxColumn.Visible = False
         '
         'QuantityDataGridViewTextBoxColumn
         '
@@ -145,12 +176,6 @@ Partial Class frmShrinkage
         Me.UnitDataGridViewTextBoxColumn.Name = "UnitDataGridViewTextBoxColumn"
         Me.UnitDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'NewShrinkageToolStripMenuItem
-        '
-        Me.NewShrinkageToolStripMenuItem.Name = "NewShrinkageToolStripMenuItem"
-        Me.NewShrinkageToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
-        Me.NewShrinkageToolStripMenuItem.Text = "New Shrinkage"
-        '
         'frmShrinkage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -166,6 +191,7 @@ Partial Class frmShrinkage
         CType(Me.dgvShrinkage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ShrinkageBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StatusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -177,13 +203,16 @@ Partial Class frmShrinkage
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents ShrinkageBindingSource As BindingSource
     Friend WithEvents ShrinkageTableAdapter As GEDataSetTableAdapters.ShrinkageTableAdapter
+    Friend WithEvents NewShrinkageToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents StatusBindingSource As BindingSource
+    Friend WithEvents StatusTableAdapter As GEDataSetTableAdapters.StatusTableAdapter
     Friend WithEvents ShrinkageIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EmployeeIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SKUDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Status As DataGridViewComboBoxColumn
     Friend WithEvents StatusIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents QuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ShrinkDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DetailsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents UnitDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NewShrinkageToolStripMenuItem As ToolStripMenuItem
 End Class

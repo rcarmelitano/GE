@@ -26,20 +26,24 @@ Partial Class frmPurchaseOrderDetails
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvPurchaseOrderDetails = New System.Windows.Forms.DataGridView()
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.PurchaseOrderDetailsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.Purchase_Order_DetailsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Purchase_Order_DetailsTableAdapter()
+        Me.StatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StatusTableAdapter = New GroceryGUI.GEDataSetTableAdapters.StatusTableAdapter()
         Me.OrderDetailIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PurchaseOrderIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SKUDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.QuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Status = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.StatusIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UnitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NoteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvPurchaseOrderDetails, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PurchaseOrderDetailsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -63,7 +67,7 @@ Partial Class frmPurchaseOrderDetails
         Me.dgvPurchaseOrderDetails.AllowUserToDeleteRows = False
         Me.dgvPurchaseOrderDetails.AutoGenerateColumns = False
         Me.dgvPurchaseOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPurchaseOrderDetails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OrderDetailIDDataGridViewTextBoxColumn, Me.PurchaseOrderIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.StatusIDDataGridViewTextBoxColumn, Me.UnitDataGridViewTextBoxColumn, Me.NoteDataGridViewTextBoxColumn})
+        Me.dgvPurchaseOrderDetails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OrderDetailIDDataGridViewTextBoxColumn, Me.PurchaseOrderIDDataGridViewTextBoxColumn, Me.SKUDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.Status, Me.StatusIDDataGridViewTextBoxColumn, Me.UnitDataGridViewTextBoxColumn, Me.NoteDataGridViewTextBoxColumn})
         Me.dgvPurchaseOrderDetails.DataSource = Me.PurchaseOrderDetailsBindingSource
         Me.dgvPurchaseOrderDetails.Location = New System.Drawing.Point(12, 27)
         Me.dgvPurchaseOrderDetails.Name = "dgvPurchaseOrderDetails"
@@ -72,19 +76,28 @@ Partial Class frmPurchaseOrderDetails
         Me.dgvPurchaseOrderDetails.Size = New System.Drawing.Size(755, 340)
         Me.dgvPurchaseOrderDetails.TabIndex = 1
         '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'PurchaseOrderDetailsBindingSource
         '
         Me.PurchaseOrderDetailsBindingSource.DataMember = "Purchase_Order_Details"
         Me.PurchaseOrderDetailsBindingSource.DataSource = Me.GEDataSet
         '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Purchase_Order_DetailsTableAdapter
         '
         Me.Purchase_Order_DetailsTableAdapter.ClearBeforeFill = True
+        '
+        'StatusBindingSource
+        '
+        Me.StatusBindingSource.DataMember = "Status"
+        Me.StatusBindingSource.DataSource = Me.GEDataSet
+        '
+        'StatusTableAdapter
+        '
+        Me.StatusTableAdapter.ClearBeforeFill = True
         '
         'OrderDetailIDDataGridViewTextBoxColumn
         '
@@ -121,6 +134,17 @@ Partial Class frmPurchaseOrderDetails
         Me.QuantityDataGridViewTextBoxColumn.ReadOnly = True
         Me.QuantityDataGridViewTextBoxColumn.Width = 71
         '
+        'Status
+        '
+        Me.Status.DataPropertyName = "statusID"
+        Me.Status.DataSource = Me.StatusBindingSource
+        Me.Status.DisplayMember = "status"
+        Me.Status.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.Status.HeaderText = "Status"
+        Me.Status.Name = "Status"
+        Me.Status.ReadOnly = True
+        Me.Status.ValueMember = "statusID"
+        '
         'StatusIDDataGridViewTextBoxColumn
         '
         Me.StatusIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -128,6 +152,7 @@ Partial Class frmPurchaseOrderDetails
         Me.StatusIDDataGridViewTextBoxColumn.HeaderText = "Status ID"
         Me.StatusIDDataGridViewTextBoxColumn.Name = "StatusIDDataGridViewTextBoxColumn"
         Me.StatusIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StatusIDDataGridViewTextBoxColumn.Visible = False
         Me.StatusIDDataGridViewTextBoxColumn.Width = 70
         '
         'UnitDataGridViewTextBoxColumn
@@ -160,8 +185,9 @@ Partial Class frmPurchaseOrderDetails
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.dgvPurchaseOrderDetails, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PurchaseOrderDetailsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StatusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -173,10 +199,13 @@ Partial Class frmPurchaseOrderDetails
     Friend WithEvents GEDataSet As GEDataSet
     Friend WithEvents PurchaseOrderDetailsBindingSource As BindingSource
     Friend WithEvents Purchase_Order_DetailsTableAdapter As GEDataSetTableAdapters.Purchase_Order_DetailsTableAdapter
+    Friend WithEvents StatusBindingSource As BindingSource
+    Friend WithEvents StatusTableAdapter As GEDataSetTableAdapters.StatusTableAdapter
     Friend WithEvents OrderDetailIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PurchaseOrderIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SKUDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents QuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Status As DataGridViewComboBoxColumn
     Friend WithEvents StatusIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents UnitDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NoteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

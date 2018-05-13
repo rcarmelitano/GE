@@ -27,19 +27,23 @@ Partial Class frmCategories
         Me.ClsoeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuNewCategory = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvCategories = New System.Windows.Forms.DataGridView()
-        Me.CategoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DepartmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.CategoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.CategoriesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CategoriesTableAdapter()
+        Me.DepartmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DepartmentsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DepartmentsTableAdapter()
+        Me.CategoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DepartmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Department = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.mnuClose.SuspendLayout()
         CType(Me.dgvCategories, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mnuClose
@@ -48,21 +52,20 @@ Partial Class frmCategories
         Me.mnuClose.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClsoeToolStripMenuItem, Me.mnuNewCategory})
         Me.mnuClose.Location = New System.Drawing.Point(0, 0)
         Me.mnuClose.Name = "mnuClose"
-        Me.mnuClose.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.mnuClose.Size = New System.Drawing.Size(563, 28)
+        Me.mnuClose.Size = New System.Drawing.Size(422, 24)
         Me.mnuClose.TabIndex = 0
         Me.mnuClose.Text = "MenuStrip1"
         '
         'ClsoeToolStripMenuItem
         '
         Me.ClsoeToolStripMenuItem.Name = "ClsoeToolStripMenuItem"
-        Me.ClsoeToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
+        Me.ClsoeToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.ClsoeToolStripMenuItem.Text = "Close"
         '
         'mnuNewCategory
         '
         Me.mnuNewCategory.Name = "mnuNewCategory"
-        Me.mnuNewCategory.Size = New System.Drawing.Size(115, 24)
+        Me.mnuNewCategory.Size = New System.Drawing.Size(94, 20)
         Me.mnuNewCategory.Text = "New Category"
         '
         'dgvCategories
@@ -71,45 +74,13 @@ Partial Class frmCategories
         Me.dgvCategories.AllowUserToDeleteRows = False
         Me.dgvCategories.AutoGenerateColumns = False
         Me.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCategories.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CategoryIDDataGridViewTextBoxColumn, Me.DepartmentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.btnUpdate})
+        Me.dgvCategories.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CategoryIDDataGridViewTextBoxColumn, Me.DepartmentIDDataGridViewTextBoxColumn, Me.Department, Me.NameDataGridViewTextBoxColumn, Me.btnUpdate})
         Me.dgvCategories.DataSource = Me.CategoriesBindingSource
-        Me.dgvCategories.Location = New System.Drawing.Point(16, 34)
-        Me.dgvCategories.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvCategories.Location = New System.Drawing.Point(12, 28)
         Me.dgvCategories.Name = "dgvCategories"
         Me.dgvCategories.RowHeadersVisible = False
-        Me.dgvCategories.Size = New System.Drawing.Size(531, 422)
+        Me.dgvCategories.Size = New System.Drawing.Size(398, 343)
         Me.dgvCategories.TabIndex = 1
-        '
-        'CategoryIDDataGridViewTextBoxColumn
-        '
-        Me.CategoryIDDataGridViewTextBoxColumn.DataPropertyName = "categoryID"
-        Me.CategoryIDDataGridViewTextBoxColumn.HeaderText = "Category ID"
-        Me.CategoryIDDataGridViewTextBoxColumn.Name = "CategoryIDDataGridViewTextBoxColumn"
-        Me.CategoryIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DepartmentIDDataGridViewTextBoxColumn
-        '
-        Me.DepartmentIDDataGridViewTextBoxColumn.DataPropertyName = "departmentID"
-        Me.DepartmentIDDataGridViewTextBoxColumn.HeaderText = "Department ID"
-        Me.DepartmentIDDataGridViewTextBoxColumn.Name = "DepartmentIDDataGridViewTextBoxColumn"
-        Me.DepartmentIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "Category Name"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NameDataGridViewTextBoxColumn.Width = 124
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.HeaderText = ""
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Text = "Update"
-        Me.btnUpdate.UseColumnTextForButtonValue = True
-        Me.btnUpdate.Width = 61
         '
         'CategoriesBindingSource
         '
@@ -130,16 +101,66 @@ Partial Class frmCategories
         '
         Me.CategoriesTableAdapter.ClearBeforeFill = True
         '
+        'DepartmentsBindingSource
+        '
+        Me.DepartmentsBindingSource.DataMember = "Departments"
+        Me.DepartmentsBindingSource.DataSource = Me.GEDataSet
+        '
+        'DepartmentsTableAdapter
+        '
+        Me.DepartmentsTableAdapter.ClearBeforeFill = True
+        '
+        'CategoryIDDataGridViewTextBoxColumn
+        '
+        Me.CategoryIDDataGridViewTextBoxColumn.DataPropertyName = "categoryID"
+        Me.CategoryIDDataGridViewTextBoxColumn.HeaderText = "Category ID"
+        Me.CategoryIDDataGridViewTextBoxColumn.Name = "CategoryIDDataGridViewTextBoxColumn"
+        Me.CategoryIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DepartmentIDDataGridViewTextBoxColumn
+        '
+        Me.DepartmentIDDataGridViewTextBoxColumn.DataPropertyName = "departmentID"
+        Me.DepartmentIDDataGridViewTextBoxColumn.HeaderText = "Department ID"
+        Me.DepartmentIDDataGridViewTextBoxColumn.Name = "DepartmentIDDataGridViewTextBoxColumn"
+        Me.DepartmentIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DepartmentIDDataGridViewTextBoxColumn.Visible = False
+        '
+        'Department
+        '
+        Me.Department.DataPropertyName = "departmentID"
+        Me.Department.DataSource = Me.DepartmentsBindingSource
+        Me.Department.DisplayMember = "name"
+        Me.Department.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.Department.HeaderText = "Department"
+        Me.Department.Name = "Department"
+        Me.Department.ValueMember = "departmentID"
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "Category Name"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NameDataGridViewTextBoxColumn.Width = 96
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.HeaderText = ""
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseColumnTextForButtonValue = True
+        Me.btnUpdate.Width = 61
+        '
         'frmCategories
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(563, 471)
+        Me.ClientSize = New System.Drawing.Size(422, 383)
         Me.Controls.Add(Me.dgvCategories)
         Me.Controls.Add(Me.mnuClose)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.mnuClose
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmCategories"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Categories"
@@ -149,6 +170,7 @@ Partial Class frmCategories
         CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -162,8 +184,11 @@ Partial Class frmCategories
     Friend WithEvents CategoriesBindingSource As BindingSource
     Friend WithEvents CategoriesTableAdapter As GEDataSetTableAdapters.CategoriesTableAdapter
     Friend WithEvents mnuNewCategory As ToolStripMenuItem
+    Friend WithEvents DepartmentsBindingSource As BindingSource
+    Friend WithEvents DepartmentsTableAdapter As GEDataSetTableAdapters.DepartmentsTableAdapter
     Friend WithEvents CategoryIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DepartmentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Department As DataGridViewComboBoxColumn
     Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnUpdate As DataGridViewButtonColumn
 End Class
