@@ -130,6 +130,12 @@
     <Compile Include="CategoriesAndDepartmentsMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CCCPayment.Designer.vb">
+      <DependentUpon>CCCPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CCCPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="coupons.Designer.vb">
       <DependentUpon>coupons.vb</DependentUpon>
     </Compile>
@@ -544,6 +550,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CategoriesAndDepartmentsMenu.resx">
       <DependentUpon>CategoriesAndDepartmentsMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CCCPayment.resx">
+      <DependentUpon>CCCPayment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="coupons.resx">
       <DependentUpon>coupons.vb</DependentUpon>

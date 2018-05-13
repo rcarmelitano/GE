@@ -16,6 +16,7 @@ Public Class frmCheckoutForm
     Dim taxTotal As Double = 0
     Dim total As Double = 0
     Dim productSKU As String
+    Dim checkoutCounter As Integer = 0
 
     Public UPCString As String
     Public UPCInt As Integer = 0
@@ -244,47 +245,68 @@ Public Class frmCheckoutForm
         lbCart.Items.Add(productSKU.ToString().PadRight(15, " ") & vbTab & costOfProduct & vbTab & "           " & quantity)
     End Sub
 
+    Public Function voidFunction()
+        ' Reset the controls
+        txtQuantity.Text = String.Empty
+        'txtBarcode.Text = String.Empty
+        txtCustomerID.Text = String.Empty
+        lbCart.Items.Clear()
+        lblDiscountAmount.Text = String.Empty
+        lblSubTotalAmount.Text = String.Empty
+        lblTaxAmount.Text = String.Empty
+        lblTotalAmount.Text = String.Empty
+        dgvProducts.Enabled = True
+        btnRefresh.Enabled = True
+        btnCustomerSearch.Enabled = True
+        btnCheckout.Enabled = True
+        cmbSearchType.Enabled = True
+        txtProduct.Enabled = True
+        txtQuantity.Enabled = True
+        btnProductSearch.Enabled = True
+        btnHotKeys.Enabled = True
+        btnRemove.Enabled = True
+        btnCheckout.Text = "Checkout"
+
+        btnGiftCard.Enabled = False
+        btnCash.Enabled = False
+        btnCheck.Enabled = False
+        btnCredit.Enabled = False
+        btnPayPal.Enabled = False
+
+        ' Reset values
+        quantity = 0
+        subTotal = 0
+        subTotalFinal = 0
+        discount = 0
+        taxTotal = 0
+        total = 0
+        productSKU = String.Empty
+        UPCString = String.Empty
+        UPCInt = 0
+        checkoutCounter = 0
+
+        FinalTotalCost = 0
+        DegradingTotalCost = 0
+
+        ' Reset the initial cost of the product
+        Dim costOfProduct As Double = 0
+
+        'TODO: This line of code loads data into the 'GEDataSet.Products' table. You can move, or remove it, as needed.
+        Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
+    End Function
+
     Private Sub btnVoid_Click(sender As Object, e As EventArgs) Handles btnVoid.Click
-        ' Ask the user if they are sure that they want to void the order
-        If MessageBox.Show("Are you sure you want to void the order?", "Checkout Void",
+
+        If btnCheckout.Text = "Checkout" Then
+            ' Ask the user if they are sure that they want to void the order
+            If MessageBox.Show("Are you sure you want to void the order?", "Checkout Void",
            MessageBoxButtons.YesNo) = DialogResult.Yes Then
-
-            ' Reset the controls
-            txtQuantity.Text = String.Empty
-            'txtBarcode.Text = String.Empty
-            txtCustomerID.Text = String.Empty
-            lbCart.Items.Clear()
-            lblDiscountAmount.Text = String.Empty
-            lblSubTotalAmount.Text = String.Empty
-            lblTaxAmount.Text = String.Empty
-            lblTotalAmount.Text = String.Empty
-            dgvProducts.Enabled = True
-            btnRefresh.Enabled = True
-            btnCustomerSearch.Enabled = True
-            checkoutButton.Enabled = True
-            cmbSearchType.Enabled = True
-            txtProduct.Enabled = True
-            txtQuantity.Enabled = True
-            btnProductSearch.Enabled = True
-            btnHotKeys.Enabled = True
-            btnRemove.Enabled = True
-
-            ' Reset values
-            quantity = 0
-            subTotal = 0
-            subTotalFinal = 0
-            discount = 0
-            taxTotal = 0
-            total = 0
-            productSKU = String.Empty
-            UPCString = String.Empty
-            UPCInt = 0
-
-            ' Reset the initial cost of the product
-            Dim costOfProduct As Double = 0
-
-            'TODO: This line of code loads data into the 'GEDataSet.Products' table. You can move, or remove it, as needed.
-            Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
+                ' Call the void function
+                voidFunction()
+            End If
+        ElseIf btnCheckout.Text = "Complete Order" Then
+            ' Do not ask to void and just call the void function
+            voidFunction()
         End If
     End Sub
 
@@ -301,42 +323,87 @@ Public Class frmCheckoutForm
     'End If
     'End Sub
 
-    Private Sub checkoutButton_Click(sender As Object, e As EventArgs) Handles checkoutButton.Click
+    Private Sub checkoutButton_Click(sender As Object, e As EventArgs) Handles btnCheckout.Click
         ' Ask the user if they are sure they want to close the current form
-        If MessageBox.Show("Are you sure you want to checkout?", "Checkout",
+        If lblTotalAmount.Text <> "0" And lblTotalAmount.Text <> String.Empty Then
+            If MessageBox.Show("Are you sure you want to checkout?", "Checkout",
            MessageBoxButtons.YesNo) = DialogResult.Yes Then
 
-            MessageBox.Show("Please select a payment option")
+                If checkoutCounter = 0 Then
+                    MessageBox.Show("Please select a payment option")
 
-            'Refreshes the table.
-            Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
 
-            'Enabling payment buttons
-            btnGiftCard.Enabled = True
-            btnCash.Enabled = True
-            btnCheck.Enabled = True
-            btnCredit.Enabled = True
-            btnPayPal.Enabled = True
-            'Disabling further edit buttons
-            btnRemove.Enabled = False
-            btnHotKeys.Enabled = False
-            dgvProducts.Enabled = False
-            txtProduct.Clear()
-            txtProduct.Enabled = False
-            cmbSearchType.SelectedIndex = -1
-            cmbSearchType.Enabled = False
-            checkoutButton.Enabled = False
-            btnCustomerSearch.Enabled = False
-            btnRefresh.Enabled = False
-            txtQuantity.Clear()
-            txtQuantity.Enabled = False
-            btnProductSearch.Enabled = False
+                    'Global total for use in other forms
+                    FinalTotalCost = lblTotalAmount.Text
+
+                    'Degrading total cost
+                    DegradingTotalCost = FinalTotalCost
+
+
+                    'Refreshes the table.
+                    Me.ProductsTableAdapter.Fill(Me.GEDataSet.Products)
+
+                    'Enabling payment buttons
+                    btnGiftCard.Enabled = True
+                    btnCash.Enabled = True
+                    btnCheck.Enabled = True
+                    If DegradingTotalCost >= 20 Then
+                        btnCredit.Enabled = True
+                    End If
+                    btnPayPal.Enabled = True
+                    'Disabling further edit buttons
+                    btnRemove.Enabled = False
+                    btnHotKeys.Enabled = False
+                    dgvProducts.Enabled = False
+                    txtProduct.Clear()
+                    txtProduct.Enabled = False
+                    cmbSearchType.SelectedIndex = -1
+                    cmbSearchType.Enabled = False
+                    btnCheckout.Enabled = False
+                    btnCustomerSearch.Enabled = False
+                    btnRefresh.Enabled = False
+                    txtQuantity.Clear()
+                    txtQuantity.Enabled = False
+                    btnProductSearch.Enabled = False
+
+                    ' Increment the checkout counter
+                    checkoutCounter = 1
+                    btnCheckout.Text = "Complete Order"
+                ElseIf checkoutCounter = 1 Then
+
+                    MessageBox.Show("Order Complete.")
+                    checkoutCounter = 0
+
+                    ' Do the printing and adding the order to order details and orders here --------------------------
+
+
+
+
+                    ' AFTER EVERYTHING ABOVE IS DONE, CALL VOID TO CLEAR THE ENTIRE FORM -------------------------------------------------------
+                    btnVoid.PerformClick()
+                End If
+            End If
+            Else
+            MessageBox.Show("You cannot checkout with no products.")
         End If
-
     End Sub
 
     Private Sub btnCredit_Click(sender As Object, e As EventArgs) Handles btnCredit.Click
 
+        ' Change the title of the CCCPayment form
+        frmCCCPayment.lblTitle.Text = "Credit/Debit Card"
+
+        If frmCCCPayment.lblTitle.Text = "Credit/Debit Card" Then
+            frmCCCPayment.lblTitle.Location = New Point(100, 37)
+        End If
+
+        frmCCCPayment.txtTotalCost.Text = DegradingTotalCost
+
+        frmCCCPayment.nudPayment.Minimum = 20
+        frmCCCPayment.nudPayment.Maximum = DegradingTotalCost
+
+        'Displays CCCPayment
+        frmCCCPayment.Show()
     End Sub
 
     Private Sub cmbSearchType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSearchType.SelectedIndexChanged
@@ -429,5 +496,27 @@ Public Class frmCheckoutForm
         Catch
             MessageBox.Show("IF you wish to remove products from your cart, select the product from the right hand side list and then click the ""Remove"" button.")
         End Try
+    End Sub
+
+    Private Sub btnCheck_Click(sender As Object, e As EventArgs) Handles btnCheck.Click
+
+        ' Change the title of the CCCPayment form
+        frmCCCPayment.lblTitle.Text = "Check"
+
+        frmCCCPayment.txtTotalCost.Text = DegradingTotalCost
+        frmCCCPayment.nudPayment.Maximum = DegradingTotalCost
+        'Displays CCCPayment
+        frmCCCPayment.Show()
+    End Sub
+
+    Private Sub btnCash_Click(sender As Object, e As EventArgs) Handles btnCash.Click
+
+        ' Change the title of the CCCPayment form
+        frmCCCPayment.lblTitle.Text = "Cash"
+
+        frmCCCPayment.txtTotalCost.Text = DegradingTotalCost
+        frmCCCPayment.nudPayment.Maximum = DegradingTotalCost
+        'Displays CCCPayment
+        frmCCCPayment.Show()
     End Sub
 End Class

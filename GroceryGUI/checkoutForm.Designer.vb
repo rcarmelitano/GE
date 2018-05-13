@@ -66,7 +66,7 @@ Partial Class frmCheckoutForm
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.NewCustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.ProductsTableAdapter()
-        Me.checkoutButton = New System.Windows.Forms.Button()
+        Me.btnCheckout = New System.Windows.Forms.Button()
         Me.cmbSearchType = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SKUCheckoutSearchToolStrip = New System.Windows.Forms.ToolStrip()
@@ -243,6 +243,7 @@ Partial Class frmCheckoutForm
         'btnGiftCard
         '
         Me.btnGiftCard.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnGiftCard.Enabled = False
         Me.btnGiftCard.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnGiftCard.Location = New System.Drawing.Point(918, 624)
         Me.btnGiftCard.Name = "btnGiftCard"
@@ -264,6 +265,7 @@ Partial Class frmCheckoutForm
         '
         'btnCheck
         '
+        Me.btnCheck.Enabled = False
         Me.btnCheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnCheck.Location = New System.Drawing.Point(819, 624)
         Me.btnCheck.Name = "btnCheck"
@@ -274,6 +276,7 @@ Partial Class frmCheckoutForm
         '
         'btnCredit
         '
+        Me.btnCredit.Enabled = False
         Me.btnCredit.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnCredit.Location = New System.Drawing.Point(716, 624)
         Me.btnCredit.Name = "btnCredit"
@@ -294,6 +297,7 @@ Partial Class frmCheckoutForm
         '
         'btnCash
         '
+        Me.btnCash.Enabled = False
         Me.btnCash.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnCash.Location = New System.Drawing.Point(918, 672)
         Me.btnCash.Name = "btnCash"
@@ -448,6 +452,7 @@ Partial Class frmCheckoutForm
         '
         'btnPayPal
         '
+        Me.btnPayPal.Enabled = False
         Me.btnPayPal.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnPayPal.Location = New System.Drawing.Point(716, 672)
         Me.btnPayPal.Name = "btnPayPal"
@@ -496,15 +501,15 @@ Partial Class frmCheckoutForm
         '
         Me.ProductsTableAdapter.ClearBeforeFill = True
         '
-        'checkoutButton
+        'btnCheckout
         '
-        Me.checkoutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.checkoutButton.Location = New System.Drawing.Point(489, 624)
-        Me.checkoutButton.Name = "checkoutButton"
-        Me.checkoutButton.Size = New System.Drawing.Size(153, 85)
-        Me.checkoutButton.TabIndex = 30
-        Me.checkoutButton.Text = "Checkout"
-        Me.checkoutButton.UseVisualStyleBackColor = True
+        Me.btnCheckout.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheckout.Location = New System.Drawing.Point(489, 624)
+        Me.btnCheckout.Name = "btnCheckout"
+        Me.btnCheckout.Size = New System.Drawing.Size(153, 85)
+        Me.btnCheckout.TabIndex = 30
+        Me.btnCheckout.Text = "Checkout"
+        Me.btnCheckout.UseVisualStyleBackColor = True
         '
         'cmbSearchType
         '
@@ -604,7 +609,7 @@ Partial Class frmCheckoutForm
         Me.Controls.Add(Me.SKUCheckoutSearchToolStrip)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cmbSearchType)
-        Me.Controls.Add(Me.checkoutButton)
+        Me.Controls.Add(Me.btnCheckout)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtEmployeeID)
         Me.Controls.Add(Me.btnPayPal)
@@ -694,7 +699,7 @@ Partial Class frmCheckoutForm
     Friend WithEvents UPCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents retailCost As DataGridViewTextBoxColumn
     Friend WithEvents btnAddToCart As DataGridViewButtonColumn
-    Friend WithEvents checkoutButton As Button
+    Friend WithEvents btnCheckout As Button
     Friend WithEvents cmbSearchType As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents SKUCheckoutSearchToolStrip As ToolStrip
