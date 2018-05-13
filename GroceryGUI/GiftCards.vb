@@ -17,16 +17,16 @@
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGiftCards.CellContentClick
         ' Check if the button is clicked or not
-        If e.ColumnIndex <> 4 Then
+        If e.ColumnIndex <> 6 Then
             Exit Sub
         End If
 
         Dim selectedRow As DataGridViewRow
         selectedRow = dgvGiftCards.Rows(e.RowIndex)
         frmUpdateGiftCard.txtGiftCardID.Text = selectedRow.Cells(0).Value.ToString()
-        frmUpdateGiftCard.txtCustomerID.Text = selectedRow.Cells(1).Value.ToString()
-        frmUpdateGiftCard.dtpDateOfPurchase.Text = selectedRow.Cells(2).Value.ToString()
-        frmUpdateGiftCard.newMinimum = selectedRow.Cells(3).Value.ToString()
+        frmUpdateGiftCard.txtCustomerID.Text = selectedRow.Cells(3).Value.ToString()
+        frmUpdateGiftCard.dtpDateOfPurchase.Text = selectedRow.Cells(4).Value.ToString()
+        frmUpdateGiftCard.newMinimum = selectedRow.Cells(5).Value.ToString()
 
         ' Show the update giftcard form
         Me.Close()

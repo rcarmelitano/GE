@@ -21,7 +21,7 @@ Public Class frmInventory
     End Sub
 
     Private Sub dgvInventory_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvInventory.CellContentClick
-        If e.ColumnIndex <> 7 Then
+        If e.ColumnIndex <> 8 Then
             Exit Sub
         End If
 
@@ -29,12 +29,12 @@ Public Class frmInventory
         Dim selectedRow As DataGridViewRow
         selectedRow = dgvInventory.Rows(e.RowIndex)
         frmUpdateInventory.txtInventoryID.Text = selectedRow.Cells(0).Value.ToString()
-        frmUpdateInventory.txtSupplierID.Text = selectedRow.Cells(1).Value.ToString()
-        frmUpdateInventory.txtSKU.Text = selectedRow.Cells(2).Value.ToString()
-        frmUpdateInventory.txtUnitCost.Text = selectedRow.Cells(3).Value.ToString()
-        frmUpdateInventory.txtPurchaseUnit.Text = selectedRow.Cells(4).Value.ToString()
-        frmUpdateInventory.txtReorderAmount.Text = selectedRow.Cells(5).Value.ToString()
-        frmUpdateInventory.txtInventoryCount.Text = selectedRow.Cells(6).Value.ToString()
+        frmUpdateInventory.txtSupplierID.Text = selectedRow.Cells(2).Value.ToString()
+        frmUpdateInventory.txtSKU.Text = selectedRow.Cells(3).Value.ToString()
+        frmUpdateInventory.txtUnitCost.Text = selectedRow.Cells(4).Value.ToString()
+        frmUpdateInventory.txtPurchaseUnit.Text = selectedRow.Cells(5).Value.ToString()
+        frmUpdateInventory.txtReorderAmount.Text = selectedRow.Cells(6).Value.ToString()
+        frmUpdateInventory.txtInventoryCount.Text = selectedRow.Cells(7).Value.ToString()
 
         ' Alter the properties of certain controls
         frmUpdateInventory.txtUnitCost.Enabled = False

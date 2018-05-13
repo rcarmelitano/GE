@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmUpdateGiftCard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmUpdateGiftCard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.txtGiftCardID = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -35,8 +35,6 @@ Partial Class frmUpdateGiftCard
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCurrentTotal = New System.Windows.Forms.TextBox()
-        Me.txtCustomerName = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.nudCardTotal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -63,7 +61,7 @@ Partial Class frmUpdateGiftCard
         '
         Me.nudCardTotal.DecimalPlaces = 2
         Me.nudCardTotal.Increment = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.nudCardTotal.Location = New System.Drawing.Point(110, 226)
+        Me.nudCardTotal.Location = New System.Drawing.Point(110, 183)
         Me.nudCardTotal.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
         Me.nudCardTotal.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.nudCardTotal.Name = "nudCardTotal"
@@ -74,7 +72,7 @@ Partial Class frmUpdateGiftCard
         '
         'btnRefillGiftCard
         '
-        Me.btnRefillGiftCard.Location = New System.Drawing.Point(122, 268)
+        Me.btnRefillGiftCard.Location = New System.Drawing.Point(122, 225)
         Me.btnRefillGiftCard.Name = "btnRefillGiftCard"
         Me.btnRefillGiftCard.Size = New System.Drawing.Size(134, 33)
         Me.btnRefillGiftCard.TabIndex = 79
@@ -84,7 +82,7 @@ Partial Class frmUpdateGiftCard
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(20, 228)
+        Me.Label2.Location = New System.Drawing.Point(20, 185)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(84, 13)
         Me.Label2.TabIndex = 78
@@ -93,7 +91,7 @@ Partial Class frmUpdateGiftCard
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 161)
+        Me.Label1.Location = New System.Drawing.Point(11, 118)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(93, 13)
         Me.Label1.TabIndex = 77
@@ -102,7 +100,7 @@ Partial Class frmUpdateGiftCard
         'dtpDateOfPurchase
         '
         Me.dtpDateOfPurchase.Enabled = False
-        Me.dtpDateOfPurchase.Location = New System.Drawing.Point(110, 160)
+        Me.dtpDateOfPurchase.Location = New System.Drawing.Point(110, 117)
         Me.dtpDateOfPurchase.Name = "dtpDateOfPurchase"
         Me.dtpDateOfPurchase.Size = New System.Drawing.Size(213, 20)
         Me.dtpDateOfPurchase.TabIndex = 76
@@ -143,7 +141,7 @@ Partial Class frmUpdateGiftCard
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 197)
+        Me.Label3.Location = New System.Drawing.Point(8, 154)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(96, 13)
         Me.Label3.TabIndex = 87
@@ -152,37 +150,17 @@ Partial Class frmUpdateGiftCard
         'txtCurrentTotal
         '
         Me.txtCurrentTotal.Enabled = False
-        Me.txtCurrentTotal.Location = New System.Drawing.Point(110, 194)
+        Me.txtCurrentTotal.Location = New System.Drawing.Point(110, 151)
         Me.txtCurrentTotal.Name = "txtCurrentTotal"
         Me.txtCurrentTotal.ReadOnly = True
         Me.txtCurrentTotal.Size = New System.Drawing.Size(213, 20)
         Me.txtCurrentTotal.TabIndex = 88
         '
-        'txtCustomerName
-        '
-        Me.txtCustomerName.Enabled = False
-        Me.txtCustomerName.Location = New System.Drawing.Point(110, 124)
-        Me.txtCustomerName.Name = "txtCustomerName"
-        Me.txtCustomerName.ReadOnly = True
-        Me.txtCustomerName.Size = New System.Drawing.Size(113, 20)
-        Me.txtCustomerName.TabIndex = 90
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(19, 127)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(85, 13)
-        Me.Label5.TabIndex = 89
-        Me.Label5.Text = "Customer Name:"
-        '
         'frmUpdateGiftCard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(378, 307)
-        Me.Controls.Add(Me.txtCustomerName)
-        Me.Controls.Add(Me.Label5)
+        Me.ClientSize = New System.Drawing.Size(378, 264)
         Me.Controls.Add(Me.txtCurrentTotal)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtGiftCardID)
@@ -222,6 +200,4 @@ Partial Class frmUpdateGiftCard
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label3 As Label
     Friend WithEvents txtCurrentTotal As TextBox
-    Friend WithEvents txtCustomerName As TextBox
-    Friend WithEvents Label5 As Label
 End Class

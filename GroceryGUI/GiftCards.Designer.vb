@@ -24,28 +24,28 @@ Partial Class frmGiftCards
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.dgvGiftCards = New System.Windows.Forms.DataGridView()
-        Me.GiftCardsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewGiftCardToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Gift_CardsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Gift_CardsTableAdapter()
-        Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CustomersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CustomersTableAdapter()
-        Me.CustomersBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.GiftCardIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustomerFirstName = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.CustomerLastName = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.CustomersBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomerIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateOfPurchaseDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CardTotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAdd = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.GiftCardsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewGiftCardToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Gift_CardsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Gift_CardsTableAdapter()
+        Me.CustomersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CustomersTableAdapter()
         CType(Me.dgvGiftCards, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GiftCardsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomersBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GiftCardsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvGiftCards
@@ -60,57 +60,8 @@ Partial Class frmGiftCards
         Me.dgvGiftCards.Name = "dgvGiftCards"
         Me.dgvGiftCards.ReadOnly = True
         Me.dgvGiftCards.RowHeadersVisible = False
-        Me.dgvGiftCards.Size = New System.Drawing.Size(602, 333)
+        Me.dgvGiftCards.Size = New System.Drawing.Size(653, 333)
         Me.dgvGiftCards.TabIndex = 0
-        '
-        'GiftCardsBindingSource
-        '
-        Me.GiftCardsBindingSource.DataMember = "Gift_Cards"
-        Me.GiftCardsBindingSource.DataSource = Me.GEDataSet
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.NewGiftCardToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(614, 24)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'CloseToolStripMenuItem
-        '
-        Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
-        Me.CloseToolStripMenuItem.Text = "Close"
-        '
-        'NewGiftCardToolStripMenuItem
-        '
-        Me.NewGiftCardToolStripMenuItem.Name = "NewGiftCardToolStripMenuItem"
-        Me.NewGiftCardToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
-        Me.NewGiftCardToolStripMenuItem.Text = "New Gift Card"
-        '
-        'Gift_CardsTableAdapter
-        '
-        Me.Gift_CardsTableAdapter.ClearBeforeFill = True
-        '
-        'CustomersBindingSource
-        '
-        Me.CustomersBindingSource.DataMember = "Customers"
-        Me.CustomersBindingSource.DataSource = Me.GEDataSet
-        '
-        'CustomersTableAdapter
-        '
-        Me.CustomersTableAdapter.ClearBeforeFill = True
-        '
-        'CustomersBindingSource1
-        '
-        Me.CustomersBindingSource1.DataMember = "Customers"
-        Me.CustomersBindingSource1.DataSource = Me.GEDataSet
         '
         'GiftCardIDDataGridViewTextBoxColumn
         '
@@ -119,7 +70,7 @@ Partial Class frmGiftCards
         Me.GiftCardIDDataGridViewTextBoxColumn.HeaderText = "Gift Card ID"
         Me.GiftCardIDDataGridViewTextBoxColumn.Name = "GiftCardIDDataGridViewTextBoxColumn"
         Me.GiftCardIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.GiftCardIDDataGridViewTextBoxColumn.Width = 87
+        Me.GiftCardIDDataGridViewTextBoxColumn.Width = 70
         '
         'CustomerFirstName
         '
@@ -132,6 +83,16 @@ Partial Class frmGiftCards
         Me.CustomerFirstName.ReadOnly = True
         Me.CustomerFirstName.ValueMember = "customerID"
         '
+        'CustomersBindingSource
+        '
+        Me.CustomersBindingSource.DataMember = "Customers"
+        Me.CustomersBindingSource.DataSource = Me.GEDataSet
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'CustomerLastName
         '
         Me.CustomerLastName.DataPropertyName = "customerID"
@@ -143,6 +104,11 @@ Partial Class frmGiftCards
         Me.CustomerLastName.ReadOnly = True
         Me.CustomerLastName.ValueMember = "customerID"
         '
+        'CustomersBindingSource1
+        '
+        Me.CustomersBindingSource1.DataMember = "Customers"
+        Me.CustomersBindingSource1.DataSource = Me.GEDataSet
+        '
         'CustomerIDDataGridViewTextBoxColumn
         '
         Me.CustomerIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -150,7 +116,7 @@ Partial Class frmGiftCards
         Me.CustomerIDDataGridViewTextBoxColumn.HeaderText = "Customer ID"
         Me.CustomerIDDataGridViewTextBoxColumn.Name = "CustomerIDDataGridViewTextBoxColumn"
         Me.CustomerIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CustomerIDDataGridViewTextBoxColumn.Width = 90
+        Me.CustomerIDDataGridViewTextBoxColumn.Width = 83
         '
         'DateOfPurchaseDataGridViewTextBoxColumn
         '
@@ -179,11 +145,45 @@ Partial Class frmGiftCards
         Me.btnAdd.UseColumnTextForButtonValue = True
         Me.btnAdd.Width = 61
         '
+        'GiftCardsBindingSource
+        '
+        Me.GiftCardsBindingSource.DataMember = "Gift_Cards"
+        Me.GiftCardsBindingSource.DataSource = Me.GEDataSet
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.NewGiftCardToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(677, 24)
+        Me.MenuStrip1.TabIndex = 1
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'CloseToolStripMenuItem
+        '
+        Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.CloseToolStripMenuItem.Text = "Close"
+        '
+        'NewGiftCardToolStripMenuItem
+        '
+        Me.NewGiftCardToolStripMenuItem.Name = "NewGiftCardToolStripMenuItem"
+        Me.NewGiftCardToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
+        Me.NewGiftCardToolStripMenuItem.Text = "New Gift Card"
+        '
+        'Gift_CardsTableAdapter
+        '
+        Me.Gift_CardsTableAdapter.ClearBeforeFill = True
+        '
+        'CustomersTableAdapter
+        '
+        Me.CustomersTableAdapter.ClearBeforeFill = True
+        '
         'frmGiftCards
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(614, 367)
+        Me.ClientSize = New System.Drawing.Size(677, 367)
         Me.Controls.Add(Me.dgvGiftCards)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -193,12 +193,12 @@ Partial Class frmGiftCards
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gift Cards"
         CType(Me.dgvGiftCards, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GiftCardsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomersBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GiftCardsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CustomersBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
