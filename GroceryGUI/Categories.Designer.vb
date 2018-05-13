@@ -27,23 +27,23 @@ Partial Class frmCategories
         Me.ClsoeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuNewCategory = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvCategories = New System.Windows.Forms.DataGridView()
-        Me.CategoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.CategoriesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CategoriesTableAdapter()
-        Me.DepartmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DepartmentsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DepartmentsTableAdapter()
         Me.CategoryIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DepartmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Department = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.DepartmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.CategoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CategoriesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.CategoriesTableAdapter()
+        Me.DepartmentsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DepartmentsTableAdapter()
         Me.mnuClose.SuspendLayout()
         CType(Me.dgvCategories, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mnuClose
@@ -78,37 +78,10 @@ Partial Class frmCategories
         Me.dgvCategories.DataSource = Me.CategoriesBindingSource
         Me.dgvCategories.Location = New System.Drawing.Point(12, 28)
         Me.dgvCategories.Name = "dgvCategories"
+        Me.dgvCategories.ReadOnly = True
         Me.dgvCategories.RowHeadersVisible = False
         Me.dgvCategories.Size = New System.Drawing.Size(398, 343)
         Me.dgvCategories.TabIndex = 1
-        '
-        'CategoriesBindingSource
-        '
-        Me.CategoriesBindingSource.DataMember = "Categories"
-        Me.CategoriesBindingSource.DataSource = Me.GEDataSetBindingSource
-        '
-        'GEDataSetBindingSource
-        '
-        Me.GEDataSetBindingSource.DataSource = Me.GEDataSet
-        Me.GEDataSetBindingSource.Position = 0
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CategoriesTableAdapter
-        '
-        Me.CategoriesTableAdapter.ClearBeforeFill = True
-        '
-        'DepartmentsBindingSource
-        '
-        Me.DepartmentsBindingSource.DataMember = "Departments"
-        Me.DepartmentsBindingSource.DataSource = Me.GEDataSet
-        '
-        'DepartmentsTableAdapter
-        '
-        Me.DepartmentsTableAdapter.ClearBeforeFill = True
         '
         'CategoryIDDataGridViewTextBoxColumn
         '
@@ -133,7 +106,18 @@ Partial Class frmCategories
         Me.Department.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
         Me.Department.HeaderText = "Department"
         Me.Department.Name = "Department"
+        Me.Department.ReadOnly = True
         Me.Department.ValueMember = "departmentID"
+        '
+        'DepartmentsBindingSource
+        '
+        Me.DepartmentsBindingSource.DataMember = "Departments"
+        Me.DepartmentsBindingSource.DataSource = Me.GEDataSet
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'NameDataGridViewTextBoxColumn
         '
@@ -148,9 +132,28 @@ Partial Class frmCategories
         '
         Me.btnUpdate.HeaderText = ""
         Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.ReadOnly = True
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseColumnTextForButtonValue = True
         Me.btnUpdate.Width = 61
+        '
+        'CategoriesBindingSource
+        '
+        Me.CategoriesBindingSource.DataMember = "Categories"
+        Me.CategoriesBindingSource.DataSource = Me.GEDataSetBindingSource
+        '
+        'GEDataSetBindingSource
+        '
+        Me.GEDataSetBindingSource.DataSource = Me.GEDataSet
+        Me.GEDataSetBindingSource.Position = 0
+        '
+        'CategoriesTableAdapter
+        '
+        Me.CategoriesTableAdapter.ClearBeforeFill = True
+        '
+        'DepartmentsTableAdapter
+        '
+        Me.DepartmentsTableAdapter.ClearBeforeFill = True
         '
         'frmCategories
         '
@@ -167,10 +170,10 @@ Partial Class frmCategories
         Me.mnuClose.ResumeLayout(False)
         Me.mnuClose.PerformLayout()
         CType(Me.dgvCategories, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CategoriesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DepartmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

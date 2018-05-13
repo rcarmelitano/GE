@@ -19,7 +19,7 @@
     End Sub
 
     Private Sub dgvCategories_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCategories.CellContentClick
-        If e.ColumnIndex <> 3 Then
+        If e.ColumnIndex <> 4 Then
             Exit Sub
         End If
 
@@ -27,7 +27,7 @@
         selectedrow = dgvCategories.Rows(e.RowIndex)
         frmAddCategories.txtCategoryID.Text = selectedrow.Cells(0).Value.ToString()
         frmAddCategories.txtDepartmentID.Text = selectedrow.Cells(1).Value.ToString()
-        frmAddCategories.txtCategoryName.Text = selectedrow.Cells(2).Value.ToString()
+        frmAddCategories.txtCategoryName.Text = selectedrow.Cells(3).Value.ToString()
 
         'Control property changes
         frmAddCategories.txtCategoryID.Enabled = False
