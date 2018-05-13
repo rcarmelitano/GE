@@ -37,11 +37,11 @@ Public Class frmCustomerHistory
     End Sub
     '-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     Private Sub OrdersDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles OrdersDataGridView.CellContentClick
-		If e.ColumnIndex <> 6 Then
-			Exit Sub
-		End If
+        If e.ColumnIndex <> 7 Then
+            Exit Sub
+        End If
 
-		Try
+        Try
 			frmorderHIstory.loadDetails(OrdersDataGridView.Rows(e.RowIndex).Cells(0).Value)
 			frmorderHIstory.ShowDialog()
 		Catch ex As Exception

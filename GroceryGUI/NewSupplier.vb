@@ -15,7 +15,7 @@ Public Class NewSupplier
     '-----------------------------------------------------back button ask if they are sure they want to quick
     Private Sub mnuBack_Click(sender As Object, e As EventArgs) Handles mnuBack.Click
 
-        Dim res = MessageBox.Show("are you sure that you whant to close", "error",
+        Dim res = MessageBox.Show("Are you sure that you want to cancel", "Cancellation",
         MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
         Me.Close()

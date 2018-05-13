@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub dgvProducts_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducts.CellContentClick
-        If e.ColumnIndex <> 10 Then
+        If e.ColumnIndex <> 12 Then
             Exit Sub
         End If
 
@@ -67,15 +67,15 @@
         Dim selectedRow As DataGridViewRow
         selectedRow = dgvProducts.Rows(e.RowIndex)
         frmNewProduct.txtSKU.Text = selectedRow.Cells(0).Value.ToString()
-        frmNewProduct.txtCategoryID.Text = selectedRow.Cells(1).Value.ToString()
-        frmNewProduct.txtDepartmentID.Text = selectedRow.Cells(2).Value.ToString()
-        frmNewProduct.txtProductName.Text = selectedRow.Cells(3).Value.ToString()
-        frmNewProduct.txtDescription.Text = selectedRow.Cells(4).Value.ToString()
-        frmNewProduct.cbTaxable.Checked = selectedRow.Cells(5).Value.ToString()
-        frmNewProduct.mtxtUPC.Text = selectedRow.Cells(6).Value.ToString()
-        frmNewProduct.txtRetailUnit.Text = selectedRow.Cells(7).Value.ToString()
-        frmNewProduct.txtRetailCost.Text = selectedRow.Cells(8).Value.ToString()
-        frmNewProduct.cbStatus.Checked = selectedRow.Cells(9).Value.ToString()
+        frmNewProduct.txtCategoryID.Text = selectedRow.Cells(3).Value.ToString()
+        frmNewProduct.txtDepartmentID.Text = selectedRow.Cells(4).Value.ToString()
+        frmNewProduct.txtProductName.Text = selectedRow.Cells(5).Value.ToString()
+        frmNewProduct.txtDescription.Text = selectedRow.Cells(6).Value.ToString()
+        frmNewProduct.cbTaxable.Checked = selectedRow.Cells(7).Value.ToString()
+        frmNewProduct.mtxtUPC.Text = selectedRow.Cells(8).Value.ToString()
+        frmNewProduct.txtRetailUnit.Text = selectedRow.Cells(9).Value.ToString()
+        frmNewProduct.txtRetailCost.Text = selectedRow.Cells(10).Value.ToString()
+        frmNewProduct.cbStatus.Checked = selectedRow.Cells(11).Value.ToString()
         frmNewProduct.btnSave.Text = "Save Changes"
 
         ' Close this form and display the update product form
