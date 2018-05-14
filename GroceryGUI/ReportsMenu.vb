@@ -33,4 +33,22 @@
         Me.Close()
         frmReport15.Show()
     End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        'Opens the Report 9 Form
+        Me.Close()
+        frmReport9.Show()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        'Opens the Report 2 Form
+        Me.Close()
+        frmReport2.Show()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        'Opens the Report 11 Form
+        Me.Close()
+        frmReport11.Show()
+    End Sub
 End Class

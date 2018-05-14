@@ -202,6 +202,11 @@
     <Compile Include="Employeesupdate.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GEStoredProcedures.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GEStoredProcedures.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NewCampType.Designer.vb">
       <DependentUpon>NewCampType.vb</DependentUpon>
     </Compile>
@@ -224,6 +229,18 @@
       <DependentUpon>PromoteProducts.vb</DependentUpon>
     </Compile>
     <Compile Include="PromoteProducts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report 9.Designer.vb">
+      <DependentUpon>Report 9.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report 9.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report11.Designer.vb">
+      <DependentUpon>Report11.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report11.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report13.Designer.vb">
@@ -471,6 +488,12 @@
     <Compile Include="Report15.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Report2.Designer.vb">
+      <DependentUpon>Report2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ReportsMenu.Designer.vb">
       <DependentUpon>ReportsMenu.vb</DependentUpon>
     </Compile>
@@ -620,6 +643,12 @@
     <EmbeddedResource Include="PromoteProducts.resx">
       <DependentUpon>PromoteProducts.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report 9.resx">
+      <DependentUpon>Report 9.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report11.resx">
+      <DependentUpon>Report11.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report13.resx">
       <DependentUpon>Report13.vb</DependentUpon>
     </EmbeddedResource>
@@ -737,6 +766,9 @@
     <EmbeddedResource Include="Report15.resx">
       <DependentUpon>Report15.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report2.resx">
+      <DependentUpon>Report2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportsMenu.resx">
       <DependentUpon>ReportsMenu.vb</DependentUpon>
     </EmbeddedResource>
@@ -791,6 +823,17 @@
     </None>
     <None Include="GEDataSet.xss">
       <DependentUpon>GEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GEStoredProcedures.xsc">
+      <DependentUpon>GEStoredProcedures.xsd</DependentUpon>
+    </None>
+    <None Include="GEStoredProcedures.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GEStoredProcedures.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GEStoredProcedures.xss">
+      <DependentUpon>GEStoredProcedures.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

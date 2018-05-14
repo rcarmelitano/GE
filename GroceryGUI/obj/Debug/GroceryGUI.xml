@@ -22,6 +22,871 @@ GroceryGUI
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:GroceryGUI.GEStoredProcedures">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Sales_per_locationDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Billing_AddressesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Campaign_Opt_InsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Campaign_TypesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CategoriesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CouponsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CreditAuditDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CustomersDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.DepartmentsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Discount_TypeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.DiscountsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.EmployeesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Gift_CardsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.InventoryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Item_DiscountDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Marketing_CampaignsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Order_DetailsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Order_DiscountDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.OrdersDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Payment_TypesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.PaymentsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ProductsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Promoted_CategoriesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Promoted_DepartmentsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Promoted_ProductsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.PromotionsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Purchase_OrderDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Purchase_Order_DetailsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ReturnsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ShipmentDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Shipment_DetailsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ShippersDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Shipping_AddressesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Shipping_MethodsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ShrinkageDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.StatusDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.SuppliersDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Trade_ShowsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.TOP_TEN_PRODUCTSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.spInventoryOnHandDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.SALES_CROSSTABDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Sales_per_locationRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Billing_AddressesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Campaign_Opt_InsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Campaign_TypesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CategoriesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CouponsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CreditAuditRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CustomersRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.DepartmentsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Discount_TypeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.DiscountsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.EmployeesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Gift_CardsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.InventoryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Item_DiscountRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Marketing_CampaignsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Order_DetailsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Order_DiscountRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.OrdersRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Payment_TypesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.PaymentsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ProductsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Promoted_CategoriesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Promoted_DepartmentsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Promoted_ProductsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.PromotionsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Purchase_OrderRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Purchase_Order_DetailsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ReturnsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ShipmentRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Shipment_DetailsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ShippersRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Shipping_AddressesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Shipping_MethodsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ShrinkageRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.StatusRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.SuppliersRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Trade_ShowsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.TOP_TEN_PRODUCTSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.spInventoryOnHandRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.SALES_CROSSTABRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Sales_per_locationRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Billing_AddressesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Campaign_Opt_InsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Campaign_TypesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CategoriesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CouponsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CreditAuditRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.CustomersRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.DepartmentsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Discount_TypeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.DiscountsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.EmployeesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Gift_CardsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.InventoryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Item_DiscountRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Marketing_CampaignsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Order_DetailsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Order_DiscountRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.OrdersRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Payment_TypesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.PaymentsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ProductsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Promoted_CategoriesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Promoted_DepartmentsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Promoted_ProductsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.PromotionsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Purchase_OrderRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Purchase_Order_DetailsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ReturnsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ShipmentRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Shipment_DetailsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ShippersRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Shipping_AddressesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Shipping_MethodsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.ShrinkageRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.StatusRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.SuppliersRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.Trade_ShowsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.TOP_TEN_PRODUCTSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.spInventoryOnHandRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProcedures.SALES_CROSSTABRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Sales_per_locationTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Billing_AddressesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Campaign_Opt_InsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Campaign_TypesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.CategoriesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.CouponsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.CreditAuditTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.CustomersTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.DepartmentsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Discount_TypeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.DiscountsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.EmployeesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Gift_CardsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.InventoryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Item_DiscountTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Marketing_CampaignsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Order_DetailsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Order_DiscountTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.OrdersTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Payment_TypesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.PaymentsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.ProductsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Promoted_CategoriesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Promoted_DepartmentsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Promoted_ProductsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.PromotionsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Purchase_OrderTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Purchase_Order_DetailsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.ReturnsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.ShipmentTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Shipment_DetailsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.ShippersTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Shipping_AddressesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Shipping_MethodsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.ShrinkageTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.StatusTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.SuppliersTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.Trade_ShowsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.TOP_TEN_PRODUCTSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.spInventoryOnHandTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.SALES_CROSSTABTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:GroceryGUI.GEStoredProceduresTableAdapters.TableAdapterManager.UpdateUpdatedRows(GroceryGUI.GEStoredProcedures,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:GroceryGUI.GEStoredProceduresTableAdapters.TableAdapterManager.UpdateInsertedRows(GroceryGUI.GEStoredProcedures,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:GroceryGUI.GEStoredProceduresTableAdapters.TableAdapterManager.UpdateDeletedRows(GroceryGUI.GEStoredProcedures,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:GroceryGUI.GEStoredProceduresTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:GroceryGUI.GEStoredProceduresTableAdapters.TableAdapterManager.UpdateAll(GroceryGUI.GEStoredProcedures)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:GroceryGUI.GEStoredProceduresTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 <member name="T:GroceryGUI.GEDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.

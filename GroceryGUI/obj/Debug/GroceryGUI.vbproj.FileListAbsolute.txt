@@ -1017,3 +1017,10 @@ C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteCat.resou
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteDept.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteProducts.resources
 C:\Users\jb0196\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.View_Promoted_Products.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteCat.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteDept.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteProducts.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.View_Promoted_Products.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport9.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport2.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport11.resources
