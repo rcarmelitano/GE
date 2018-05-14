@@ -1024,3 +1024,18 @@ C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.View_Promoted_Pr
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport9.resources
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport2.resources
 C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport11.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmCCCPayment.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.NewCampType.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteCat.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteDept.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.PromoteProducts.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport9.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport11.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport13.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.Marketing.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmPurchaseOrderDetails.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport12.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport14.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport15.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport2.resources
+C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.View_Promoted_Products.resources

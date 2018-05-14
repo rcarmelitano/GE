@@ -104,23 +104,25 @@ Public Class frmCheckoutForm
     '--------------------------------------------------------------------------------------------------------back button clicked 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBack.Click
 
-        ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
-        For i As Integer = 0 To SKUList.Count - 1
-            ' Create query to update inventory count based on SKU
-            Dim updateInventory As New SqlCommand("UPDATE Inventory SET inventoryCount = inventoryCount + @inventoryCount WHERE SKU = @SKU", productConnection)
+        If lbCart.Items.Count > 0 Then
+            ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
+            For i As Integer = 0 To SKUList.Count - 1
+                ' Create query to update inventory count based on SKU
+                Dim updateInventory As New SqlCommand("UPDATE Inventory SET inventoryCount = inventoryCount + @inventoryCount WHERE SKU = @SKU", productConnection)
 
-            ' Pass in parameter using the list
-            updateInventory.Parameters.AddWithValue("@SKU", SKUList.Item(i))
-            updateInventory.Parameters.AddWithValue("@inventoryCount", QuantityList.Item(i))
+                ' Pass in parameter using the list
+                updateInventory.Parameters.AddWithValue("@SKU", SKUList.Item(i))
+                updateInventory.Parameters.AddWithValue("@inventoryCount", QuantityList.Item(i))
 
 
-            ' Open the connection to the database and pass in the information
-            productConnection.Open()
-            updateInventory.ExecuteNonQuery()
+                ' Open the connection to the database and pass in the information
+                productConnection.Open()
+                updateInventory.ExecuteNonQuery()
 
-            ' Close the connection
-            productConnection.Close()
-        Next
+                ' Close the connection
+                productConnection.Close()
+            Next
+        End If
 
 
         ' Close the form.
