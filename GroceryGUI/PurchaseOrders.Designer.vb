@@ -27,34 +27,36 @@ Partial Class frmPurchaseOrders
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewPurchaseOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvPurchaseOrders = New System.Windows.Forms.DataGridView()
-        Me.PurchaseOrderBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GEDataSet = New GroceryGUI.GEDataSet()
-        Me.Purchase_OrderTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Purchase_OrderTableAdapter()
-        Me.StatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StatusTableAdapter = New GroceryGUI.GEDataSetTableAdapters.StatusTableAdapter()
-        Me.SuppliersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SuppliersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.SuppliersTableAdapter()
         Me.PurchaseOrderIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Supplier = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.SuppliersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GEDataSet = New GroceryGUI.GEDataSet()
         Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OrderTotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OrderDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Status = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.StatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StatusIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnUpdate = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnDetails = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.PurchaseOrderBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Purchase_OrderTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Purchase_OrderTableAdapter()
+        Me.StatusTableAdapter = New GroceryGUI.GEDataSetTableAdapters.StatusTableAdapter()
+        Me.SuppliersTableAdapter = New GroceryGUI.GEDataSetTableAdapters.SuppliersTableAdapter()
+        Me.ShipmentsReceivedLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckInProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvPurchaseOrders, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PurchaseOrderBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SuppliersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SuppliersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PurchaseOrderBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.NewPurchaseOrderToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem, Me.NewPurchaseOrderToolStripMenuItem, Me.ShipmentsReceivedLogToolStripMenuItem, Me.CheckInProductsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(746, 24)
@@ -88,38 +90,6 @@ Partial Class frmPurchaseOrders
         Me.dgvPurchaseOrders.Size = New System.Drawing.Size(722, 343)
         Me.dgvPurchaseOrders.TabIndex = 1
         '
-        'PurchaseOrderBindingSource
-        '
-        Me.PurchaseOrderBindingSource.DataMember = "Purchase_Order"
-        Me.PurchaseOrderBindingSource.DataSource = Me.GEDataSet
-        '
-        'GEDataSet
-        '
-        Me.GEDataSet.DataSetName = "GEDataSet"
-        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Purchase_OrderTableAdapter
-        '
-        Me.Purchase_OrderTableAdapter.ClearBeforeFill = True
-        '
-        'StatusBindingSource
-        '
-        Me.StatusBindingSource.DataMember = "Status"
-        Me.StatusBindingSource.DataSource = Me.GEDataSet
-        '
-        'StatusTableAdapter
-        '
-        Me.StatusTableAdapter.ClearBeforeFill = True
-        '
-        'SuppliersBindingSource
-        '
-        Me.SuppliersBindingSource.DataMember = "Suppliers"
-        Me.SuppliersBindingSource.DataSource = Me.GEDataSet
-        '
-        'SuppliersTableAdapter
-        '
-        Me.SuppliersTableAdapter.ClearBeforeFill = True
-        '
         'PurchaseOrderIDDataGridViewTextBoxColumn
         '
         Me.PurchaseOrderIDDataGridViewTextBoxColumn.DataPropertyName = "purchaseOrderID"
@@ -137,6 +107,16 @@ Partial Class frmPurchaseOrders
         Me.Supplier.Name = "Supplier"
         Me.Supplier.ReadOnly = True
         Me.Supplier.ValueMember = "supplierID"
+        '
+        'SuppliersBindingSource
+        '
+        Me.SuppliersBindingSource.DataMember = "Suppliers"
+        Me.SuppliersBindingSource.DataSource = Me.GEDataSet
+        '
+        'GEDataSet
+        '
+        Me.GEDataSet.DataSetName = "GEDataSet"
+        Me.GEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'SupplierIDDataGridViewTextBoxColumn
         '
@@ -171,6 +151,11 @@ Partial Class frmPurchaseOrders
         Me.Status.ReadOnly = True
         Me.Status.ValueMember = "statusID"
         '
+        'StatusBindingSource
+        '
+        Me.StatusBindingSource.DataMember = "Status"
+        Me.StatusBindingSource.DataSource = Me.GEDataSet
+        '
         'StatusIDDataGridViewTextBoxColumn
         '
         Me.StatusIDDataGridViewTextBoxColumn.DataPropertyName = "statusID"
@@ -195,6 +180,35 @@ Partial Class frmPurchaseOrders
         Me.btnDetails.Text = "Details"
         Me.btnDetails.UseColumnTextForButtonValue = True
         '
+        'PurchaseOrderBindingSource
+        '
+        Me.PurchaseOrderBindingSource.DataMember = "Purchase_Order"
+        Me.PurchaseOrderBindingSource.DataSource = Me.GEDataSet
+        '
+        'Purchase_OrderTableAdapter
+        '
+        Me.Purchase_OrderTableAdapter.ClearBeforeFill = True
+        '
+        'StatusTableAdapter
+        '
+        Me.StatusTableAdapter.ClearBeforeFill = True
+        '
+        'SuppliersTableAdapter
+        '
+        Me.SuppliersTableAdapter.ClearBeforeFill = True
+        '
+        'ShipmentsReceivedLogToolStripMenuItem
+        '
+        Me.ShipmentsReceivedLogToolStripMenuItem.Name = "ShipmentsReceivedLogToolStripMenuItem"
+        Me.ShipmentsReceivedLogToolStripMenuItem.Size = New System.Drawing.Size(148, 20)
+        Me.ShipmentsReceivedLogToolStripMenuItem.Text = "Shipments Received Log"
+        '
+        'CheckInProductsToolStripMenuItem
+        '
+        Me.CheckInProductsToolStripMenuItem.Name = "CheckInProductsToolStripMenuItem"
+        Me.CheckInProductsToolStripMenuItem.Size = New System.Drawing.Size(115, 20)
+        Me.CheckInProductsToolStripMenuItem.Text = "Check In Products"
+        '
         'frmPurchaseOrders
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -210,10 +224,10 @@ Partial Class frmPurchaseOrders
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.dgvPurchaseOrders, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PurchaseOrderBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SuppliersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StatusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SuppliersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PurchaseOrderBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -239,4 +253,6 @@ Partial Class frmPurchaseOrders
     Friend WithEvents StatusIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnUpdate As DataGridViewButtonColumn
     Friend WithEvents btnDetails As DataGridViewButtonColumn
+    Friend WithEvents ShipmentsReceivedLogToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckInProductsToolStripMenuItem As ToolStripMenuItem
 End Class

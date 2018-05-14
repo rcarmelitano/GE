@@ -19,26 +19,30 @@ Public Class NewCampType
         End If
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        checkConnection()
-        'Get new id
-        Dim campID As Integer = getNewID("campaignTypeID", "Campaign_Types")
-        'set up insert
-        Dim addCampaignType As New SqlCommand("INSERT INTO Campaign_Types (campaignTypeID,title)
+        If (txtCampTypeName.Text = "") Then
+            MessageBox.Show("Please enter a name for your campaign type")
+        Else
+            checkConnection()
+            'Get new id
+            Dim campID As Integer = getNewID("campaignTypeID", "Campaign_Types")
+            'set up insert
+            Dim addCampaignType As New SqlCommand("INSERT INTO Campaign_Types (campaignTypeID,title)
                                                                         VALUES(@campaignTypeID,@title)", CampTypeConnection)
 
-        addCampaignType.Parameters.AddWithValue("@campaignTypeID", campID)
-        addCampaignType.Parameters.AddWithValue("@title", txtCampTypeName.Text)
-        ' Open the connection and run the query
-        Try
-            CampTypeConnection.Open()
-            addCampaignType.ExecuteNonQuery()
-            CampTypeConnection.Close()
-            MessageBox.Show("New campaign type " + txtCampTypeName.Text + " added successfully.")
-            'Clear forms
-            txtCampTypeName.Text = ""
-        Catch ex As Exception
-            MessageBox.Show("Invalid Input")
-        End Try
+            addCampaignType.Parameters.AddWithValue("@campaignTypeID", campID)
+            addCampaignType.Parameters.AddWithValue("@title", txtCampTypeName.Text)
+            ' Open the connection and run the query
+            Try
+                CampTypeConnection.Open()
+                addCampaignType.ExecuteNonQuery()
+                CampTypeConnection.Close()
+                MessageBox.Show("New campaign type " + txtCampTypeName.Text + " added successfully.")
+                'Clear forms
+                txtCampTypeName.Text = ""
+            Catch ex As Exception
+                MessageBox.Show("Invalid Input")
+            End Try
+        End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
