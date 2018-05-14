@@ -19,11 +19,14 @@ Public Class frmCheckoutForm
     Dim checkoutCounter As Integer = 0
     Dim productStockAmount As Integer = 0
     Dim productStockCounterForSubExit As Integer = 0
-
+    Dim inStoreString As String = "In_Store"
 
     Public UPCString As String
     Public UPCInt As Integer = 0
     Dim printOrderID As String = String.Empty
+    Dim nextOrderID As Integer = 0
+    Dim newOrderDetailID As Integer = 0
+
 
     ' Lists used for printing/orders
     Public SKUList As New List(Of String)  
@@ -168,6 +171,8 @@ Public Class frmCheckoutForm
 
         ' Autofill in the employeeID for whichever employee signed into the program at the start
         txtEmployeeID.Text = employeeID
+
+        txtCustomerID.Text = 1
     End Sub
 
     '-----------------------------------------------------------------------------------------------------------------------setting employee ID
@@ -431,6 +436,121 @@ Public Class frmCheckoutForm
                     ' Do the printing and adding the order to order details and orders here --------------------------
 
 
+                    ' Create query to grab the max orderID + 1 (the order just made)------------------------
+                    Dim getOrderIDForTable As New SqlCommand("SELECT max(orderID) + 1 FROM Orders", productConnection)
+
+                    ' Open the connection
+                    productConnection.Open()
+
+                    getOrderIDForTable.ExecuteNonQuery()
+                    nextOrderID = getOrderIDForTable.ExecuteScalar()
+
+                    ' Create a coupon
+                    Dim addOrder As New SqlCommand("INSERT INTO Orders (orderID, customerID, employeeID, purchaseLocation, orderDate, status)
+                    VALUES(@orderID, @customerID, @employeeID, @purchaseLocation, @orderDate, @status)", productConnection)
+
+                    ' Pass in the values from the controls
+                    addOrder.Parameters.AddWithValue("@orderID", nextOrderID)
+                    addOrder.Parameters.AddWithValue("@customerID", txtCustomerID.Text)
+                    addOrder.Parameters.AddWithValue("@employeeID", txtEmployeeID.Text)
+                    addOrder.Parameters.AddWithValue("@purchaseLocation", inStoreString)
+                    addOrder.Parameters.AddWithValue("@orderDate", DateTime.Now.ToString())
+                    addOrder.Parameters.AddWithValue("@status", "1")
+
+                    ' Run the query
+                    addOrder.ExecuteNonQuery()
+
+                    ' Close the connection
+                    productConnection.Close()
+
+
+
+
+
+
+                    ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
+                    ' For Each SKU As String In SKUList
+                    ' Create query to update inventory count based on SKU
+                    'Dim updateInventory As New SqlCommand("UPDATE Inventory SET inventoryCount = @inventoryCount WHERE SKU = @SKU", productConnection)
+
+                    ' Pass in parameter using the list
+                    'updateInventory.Parameters.AddWithValue("@SKU", SKU)
+
+                    ' Open the connection to the database and pass in the information
+                    'productConnection.Open()
+                    'updateInventory.ExecuteNonQuery()
+
+                    ' Close the connection
+                    'productConnection.Close()
+                    'Next
+
+
+
+                    '
+                    '
+                    'DONE
+                    '
+                    ' Need to get max + 1 order detail ID for this below--
+                    Dim getMaxAndNextOrderDetailID As New SqlCommand("SELECT max(orderDetailID) + 1 FROM Order_Details", productConnection)
+
+                    ' Open the connection
+                    productConnection.Open()
+                    MessageBox.Show(getMaxAndNextOrderDetailID.ExecuteScalar)
+                    getMaxAndNextOrderDetailID.ExecuteNonQuery()
+
+                    ' Pass in Order Detail ID to use for creating a new order detail -------------------------------------vvvv
+                    newOrderDetailID = getMaxAndNextOrderDetailID.ExecuteScalar()
+
+                    ' Close the connection
+                    productConnection.Close()
+
+
+
+
+
+
+                    'Dim quantityArray() As String
+                    '
+                    ' For Each Quantityy As String In QuantityList
+                    ' quantityArray
+                    ' Next
+
+
+
+                    'Dim joinedAllLists = From SKU In SKUList
+                    'Join Quantityy In QuantityList
+                    'On SKU.ToString Equals Quantityy.ToString
+                    'Join Price In PriceList
+                    'On Quantityy.ToString Equals Price
+                    'Select Case New With {SKUList, PriceList, QuantityList}
+
+
+                    ' Add query for Order Details here----------------------
+
+                    For i As Integer = 0 To SKUList.Count - 1
+                        ' Create query to add data into order details
+                        Dim addData As New SqlCommand("INSERT INTO Order_Details (orderDetailID, orderID, SKU, quantity, price, paid)
+                    VALUES(@orderDetailID, @orderID, @SKU, @quantity, @price, @paid)", productConnection)
+
+                        ' Pass in parameter using the list
+                        addData.Parameters.AddWithValue("@orderDetailID", newOrderDetailID.ToString)
+                        addData.Parameters.AddWithValue("@orderID", nextOrderID.ToString)
+                        addData.Parameters.AddWithValue("@SKU", SKUList.Item(i))
+                        addData.Parameters.AddWithValue("@quantity", QuantityList.Item(i))
+                        addData.Parameters.AddWithValue("@price", PriceList.Item(i))
+                        addData.Parameters.AddWithValue("@paid", "1")
+
+
+                        ' Open the connection to the database and pass in the information
+                        productConnection.Open()
+                        addData.ExecuteNonQuery()
+
+                        ' Close the connection
+                        productConnection.Close()
+
+                        ' Increment the Order Detail ID to the next ID number
+                        newOrderDetailID += 1
+                    Next
 
 
 
