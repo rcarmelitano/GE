@@ -27,7 +27,7 @@ Public Class frmCheckoutForm
     Dim nextOrderID As Integer = 0
     Dim newOrderDetailID As Integer = 0
     Dim employeeName As String = String.Empty
-
+    Dim customerUsedLineAmount As Double = 0
 
     ' Lists used for printing/orders
     Public SKUList As New List(Of String)  
@@ -891,5 +891,35 @@ Public Class frmCheckoutForm
             'btnAccount.Enabled = True
             lbCart.Enabled = True
         End If
+    End Sub
+
+    Private Sub btnAccount_Click(sender As Object, e As EventArgs) Handles btnAccount.Click
+        ' Change the title of the CCCPayment form
+        frmCCCPayment.lblTitle.Text = "Account"
+
+        ' Set value for total in textbox in CCCPayment
+        frmCCCPayment.txtTotalCost.Text = DegradingTotalCost
+
+        ' Add query to grab the amount for wholesale where customerid is = to customerid
+        Dim getAccountAmount As New SqlCommand("SELECT usedLineOfCredit FROM Customers WHERE customerID = @customerID",
+                                                 productConnection)
+
+        getAccountAmount.Parameters.AddWithValue("@customerID", txtCustomerID.Text)
+
+        ' Open the connection
+        productConnection.Open()
+
+        getAccountAmount.ExecuteNonQuery()
+        customerUsedLineAmount = getAccountAmount.ExecuteScalar()
+
+        ' Close the connection
+        productConnection.Close()
+
+
+
+        ' SET MAX TO THE AMOUNT IN ACCOUNT
+        frmCCCPayment.nudPayment.Maximum = customerUsedLineAmount
+        'Displays CCCPayment
+        frmCCCPayment.Show()
     End Sub
 End Class

@@ -15,9 +15,6 @@ Public Class frmUpdateCustomer
 	Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click
         ' Close the form
         Me.Close()
-        Me.Controls.Clear()
-        InitializeComponent()
-        Me.frmUpdateCustomer_Load(e, e)
         frmCustomers.Show()
 
     End Sub
@@ -179,12 +176,6 @@ Values (@EmployeeID, @CustomerId, @Start, @new, @date, @reason)", something)
 
             End Try
             something.Close()
-            Me.Close()
-            Me.Controls.Clear()
-            InitializeComponent()
-            Me.frmUpdateCustomer_Load(e, e)
-
-
         End If
 
         '--------------------------------------------------------------------------------------asking if they are sure they whant to save the changes 
@@ -220,12 +211,9 @@ Values (@EmployeeID, @CustomerId, @Start, @new, @date, @reason)", something)
 
         End Try
 
-
-        frmPrimaryForm.Show()
         Me.Close()
-        Me.Controls.Clear()
-        InitializeComponent()
-        Me.frmUpdateCustomer_Load(e, e)
+        frmPrimaryForm.Show()
+
     End Sub
 
     '------------------------------------------------------------------------------------------query to add a new customer to the database 
@@ -255,10 +243,7 @@ Values (@EmployeeID, @CustomerId, @Start, @new, @date, @reason)", something)
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
 
             Exit Sub
-            Me.Close()
-            Me.Controls.Clear()
-            InitializeComponent()
-            Me.frmUpdateCustomer_Load(e, e)
+
         End If
 
         '--------------------------------------------------------------------------------------asking if they are sure they whant to save the changes 
@@ -302,9 +287,6 @@ Values (@EmployeeID, @CustomerId, @Start, @new, @date, @reason)", something)
         End Try
         something.Close()
         Me.Close()
-        Me.Controls.Clear()
-        InitializeComponent()
-        Me.frmUpdateCustomer_Load(e, e)
     End Sub
 
     Private Sub AddressToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddressToolStripMenuItem.Click
