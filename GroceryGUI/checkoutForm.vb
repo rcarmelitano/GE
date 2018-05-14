@@ -26,6 +26,7 @@ Public Class frmCheckoutForm
     Dim printOrderID As String = String.Empty
     Dim nextOrderID As Integer = 0
     Dim newOrderDetailID As Integer = 0
+    Dim employeeName As String = String.Empty
 
 
     ' Lists used for printing/orders
@@ -70,6 +71,7 @@ Public Class frmCheckoutForm
 
         lblSubTotalAmount.Text = subTotalFinal.ToString("C2")
 
+
         ' Return the price of the product
         Return subTotal
 
@@ -101,6 +103,26 @@ Public Class frmCheckoutForm
 
     '--------------------------------------------------------------------------------------------------------back button clicked 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+
+        ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
+        For i As Integer = 0 To SKUList.Count - 1
+            ' Create query to update inventory count based on SKU
+            Dim updateInventory As New SqlCommand("UPDATE Inventory SET inventoryCount = inventoryCount + @inventoryCount WHERE SKU = @SKU", productConnection)
+
+            ' Pass in parameter using the list
+            updateInventory.Parameters.AddWithValue("@SKU", SKUList.Item(i))
+            updateInventory.Parameters.AddWithValue("@inventoryCount", QuantityList.Item(i))
+
+
+            ' Open the connection to the database and pass in the information
+            productConnection.Open()
+            updateInventory.ExecuteNonQuery()
+
+            ' Close the connection
+            productConnection.Close()
+        Next
+
+
         ' Close the form.
         Me.Close()
         frmPrimaryForm.Show()
@@ -283,6 +305,26 @@ Public Class frmCheckoutForm
             If txtQuantity.Text >= 1 Then
                 ' Call the function ProductPrice to get the price of the selected product
                 ProductPrice()
+
+
+
+                ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
+                For i As Integer = 0 To SKUList.Count - 1
+                    ' Create query to update inventory count based on SKU
+                    Dim updateInventory As New SqlCommand("UPDATE Inventory SET inventoryCount = inventoryCount - @inventoryCount WHERE SKU = @SKU", productConnection)
+
+                    ' Pass in parameter using the list
+                    updateInventory.Parameters.AddWithValue("@SKU", SKUList.Item(i))
+                    updateInventory.Parameters.AddWithValue("@inventoryCount", QuantityList.Item(i))
+
+
+                    ' Open the connection to the database and pass in the information
+                    productConnection.Open()
+                    updateInventory.ExecuteNonQuery()
+
+                    ' Close the connection
+                    productConnection.Close()
+                Next
             Else
                 ' Display an error message to the user
                 MessageBox.Show("You must purchase at least one of a selected product to add the product to your cart, please try again.")
@@ -360,10 +402,32 @@ Public Class frmCheckoutForm
             ' Ask the user if they are sure that they want to void the order
             If MessageBox.Show("Are you sure you want to void the order?", "Checkout Void",
            MessageBoxButtons.YesNo) = DialogResult.Yes Then
+
+                If lbCart.Items.Count > 0 Then
+                    ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
+                    ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
+                    For i As Integer = 0 To SKUList.Count - 1
+                        ' Create query to update inventory count based on SKU
+                        Dim updateInventory As New SqlCommand("UPDATE Inventory SET inventoryCount = inventoryCount + @inventoryCount WHERE SKU = @SKU", productConnection)
+
+                        ' Pass in parameter using the list
+                        updateInventory.Parameters.AddWithValue("@SKU", SKUList.Item(i))
+                        updateInventory.Parameters.AddWithValue("@inventoryCount", QuantityList.Item(i))
+
+
+                        ' Open the connection to the database and pass in the information
+                        productConnection.Open()
+                        updateInventory.ExecuteNonQuery()
+
+                        ' Close the connection
+                        productConnection.Close()
+                    Next
+                End If
+
                 ' Call the void function
                 voidFunction()
-            End If
-        ElseIf btnCheckout.Text = "Complete Order" Then
+                End If
+            ElseIf btnCheckout.Text = "Complete Order" Then
             ' Do not ask to void and just call the void function
             voidFunction()
         End If
@@ -465,27 +529,6 @@ Public Class frmCheckoutForm
 
 
 
-
-
-
-                    ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
-                    ' For Each SKU As String In SKUList
-                    ' Create query to update inventory count based on SKU
-                    'Dim updateInventory As New SqlCommand("UPDATE Inventory SET inventoryCount = @inventoryCount WHERE SKU = @SKU", productConnection)
-
-                    ' Pass in parameter using the list
-                    'updateInventory.Parameters.AddWithValue("@SKU", SKU)
-
-                    ' Open the connection to the database and pass in the information
-                    'productConnection.Open()
-                    'updateInventory.ExecuteNonQuery()
-
-                    ' Close the connection
-                    'productConnection.Close()
-                    'Next
-
-
-
                     '
                     '
                     'DONE
@@ -495,7 +538,6 @@ Public Class frmCheckoutForm
 
                     ' Open the connection
                     productConnection.Open()
-                    MessageBox.Show(getMaxAndNextOrderDetailID.ExecuteScalar)
                     getMaxAndNextOrderDetailID.ExecuteNonQuery()
 
                     ' Pass in Order Detail ID to use for creating a new order detail -------------------------------------vvvv
@@ -526,7 +568,6 @@ Public Class frmCheckoutForm
 
 
                     ' Add query for Order Details here----------------------
-
                     For i As Integer = 0 To SKUList.Count - 1
                         ' Create query to add data into order details
                         Dim addData As New SqlCommand("INSERT INTO Order_Details (orderDetailID, orderID, SKU, quantity, price, paid)
@@ -798,5 +839,23 @@ Public Class frmCheckoutForm
 
 
         e.Graphics.DrawString(String.Format("{0, 3} ", "Order Number: " & printOrderID), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, finalVerticalPosition)
+
+        e.Graphics.DrawString(String.Format("{0, 3} ", "Cashier ID: " & txtEmployeeID.Text), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, finalVerticalPosition + 14)
+
+        ' Create query to grab the max orderID (the order just made)
+        Dim getEmployeeID As New SqlCommand("SELECT firstName FROM Employees WHERE employeeID = @employeeID", productConnection)
+
+        getEmployeeID.Parameters.AddWithValue("@employeeID", txtEmployeeID.Text)
+
+        ' Open the connection
+        productConnection.Open()
+        employeeName = getEmployeeID.ExecuteScalar()
+
+        ' Close the connection
+        productConnection.Close()
+
+        e.Graphics.DrawString(String.Format("{0, 3} ", "Employee: " & employeeName), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, finalVerticalPosition + 28)
+
+
     End Sub
 End Class

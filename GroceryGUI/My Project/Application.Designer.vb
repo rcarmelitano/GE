@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.GroceryGUI.frmPrimaryForm
+            Me.MainForm = Global.GroceryGUI.NewShinpping
         End Sub
     End Class
 End Namespace
