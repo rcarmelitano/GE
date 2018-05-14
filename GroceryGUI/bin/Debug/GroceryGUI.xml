@@ -202,6 +202,16 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:GroceryGUI.GEDataSet.Promoted_CategoriesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.Promoted_DepartmentsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:GroceryGUI.GEDataSet.Billing_AddressesRow">
 <summary>
 Represents strongly named DataRow class.
@@ -373,6 +383,16 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:GroceryGUI.GEDataSet.Shipping_MethodsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.Promoted_CategoriesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.Promoted_DepartmentsRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -552,6 +572,16 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:GroceryGUI.GEDataSet.Promoted_CategoriesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.Promoted_DepartmentsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:GroceryGUI.GEDataSetTableAdapters.Billing_AddressesTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -723,6 +753,16 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:GroceryGUI.GEDataSetTableAdapters.Shipping_MethodsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSetTableAdapters.Promoted_CategoriesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSetTableAdapters.Promoted_DepartmentsTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

@@ -78,6 +78,8 @@ Partial Class frmCheckoutForm
         Me.UPCToolStripLabel = New System.Windows.Forms.ToolStripLabel()
         Me.UPCToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
         Me.FillByToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -599,6 +601,13 @@ Partial Class frmCheckoutForm
         Me.FillByToolStripButton.Size = New System.Drawing.Size(39, 22)
         Me.FillByToolStripButton.Text = "FillBy"
         '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
+        'PrintDocument1
+        '
+        '
         'frmCheckoutForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -711,4 +720,6 @@ Partial Class frmCheckoutForm
     Friend WithEvents UPCToolStripLabel As ToolStripLabel
     Friend WithEvents UPCToolStripTextBox As ToolStripTextBox
     Friend WithEvents FillByToolStripButton As ToolStripButton
+    Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class

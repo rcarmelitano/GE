@@ -71,75 +71,86 @@ Public Class Marketing
     End Sub
 
     Private Sub btnAddPromotion_Click(sender As Object, e As EventArgs) Handles btnAddCamp.Click
-        CheckConnection()
-        'Get ID of new campaign
-        Dim campID As Integer = getNewID("campaignID", "Marketing_Campaigns")
-        'Set up query to pass it into the DB
-        Dim addCampaign As New SqlCommand("INSERT INTO Marketing_Campaigns (campaignID,campaignTypeID,title,description,startDate,endDate)
-                                                                        VALUES(@campaignID,@campaignTypeID,@title,@description,@startDate,@endDate)", MarketingConnection)
-        addCampaign.Parameters.AddWithValue("@campaignID", campID)
-        addCampaign.Parameters.AddWithValue("@campaignTypeID", comboCampType.SelectedValue)
-        addCampaign.Parameters.AddWithValue("@title", txtCampaignName.Text)
-        addCampaign.Parameters.AddWithValue("@description", txtCampDescription.Text)
-        addCampaign.Parameters.AddWithValue("@startDate", campSDatePicker.Text)
-        addCampaign.Parameters.AddWithValue("@endDate", campEDatePicker.Text)
+        If (txtCampaignName.Text = "") Then
+            MessageBox.Show("Please enter a name for the campaign.")
+        ElseIf (txtCampDescription.Text = "") Then
+            MessageBox.Show("Please enter a description for the campaign")
+        Else
+            CheckConnection()
+            'Get ID of new campaign
+            Dim campID As Integer = getNewID("campaignID", "Marketing_Campaigns")
+            'Set up query to pass it into the DB
+            Dim addCampaign As New SqlCommand("INSERT INTO Marketing_Campaigns (campaignID, CampaignTypeID, title, description, startDate, endDate)
+            VALUES(@campaignID,@campaignTypeID,@title,@description,@startDate,@endDate)", MarketingConnection)
+            addCampaign.Parameters.AddWithValue("@campaignID", campID)
+            addCampaign.Parameters.AddWithValue("@campaignTypeID", comboCampType.SelectedValue)
+            addCampaign.Parameters.AddWithValue("@title", txtCampaignName.Text)
+            addCampaign.Parameters.AddWithValue("@description", txtCampDescription.Text)
+            addCampaign.Parameters.AddWithValue("@startDate", campSDatePicker.Text)
+            addCampaign.Parameters.AddWithValue("@endDate", campEDatePicker.Text)
 
-        ' Open the connection and run the query
-        Try
-            MarketingConnection.Open()
-            addCampaign.ExecuteNonQuery()
-            Me.Campaign_TypesTableAdapter.Fill(Me.GEDataSet.Campaign_Types)
-            Me.Marketing_CampaignsTableAdapter.Fill(Me.GEDataSet.Marketing_Campaigns)
-            MarketingConnection.Close()
-            ConfirmBox(txtCampaignName.Text)
-            'Clear forms
-            txtCampaignName.Text = ""
-            txtCampDescription.Text = ""
-            campSDatePicker.ResetText()
-            campEDatePicker.ResetText()
-        Catch ex As Exception
-            MessageBox.Show("Invalid Inputs")
-        End Try
-
+            ' Open the connection and run the query
+            Try
+                MarketingConnection.Open()
+                addCampaign.ExecuteNonQuery()
+                Me.Campaign_TypesTableAdapter.Fill(Me.GEDataSet.Campaign_Types)
+                Me.Marketing_CampaignsTableAdapter.Fill(Me.GEDataSet.Marketing_Campaigns)
+                MarketingConnection.Close()
+                ConfirmBox(txtCampaignName.Text)
+                'Clear forms
+                txtCampaignName.Text = ""
+                txtCampDescription.Text = ""
+                campSDatePicker.ResetText()
+                campEDatePicker.ResetText()
+            Catch ex As Exception
+                MessageBox.Show("Invalid Inputs")
+            End Try
+        End If
     End Sub
 
     Private Sub btnAddPromotion_Click_1(sender As Object, e As EventArgs) Handles btnAddPromotion.Click
-        CheckConnection()
-        'Get the id of the new promotion
-        Dim promoID As Integer = getNewID("promotionID", "Promotions")
-        'Get campaign ID if they want one or set null 
-        Dim selectedCampID As Integer = 0
-        If (chkCampAssociation.Checked) Then
-            selectedCampID = cmbCampPicker.SelectedValue
-        ElseIf (chkCampAssociation.Checked = False) Then
-            selectedCampID = 0
-        End If
-        'Set up query to pass in new promo
-        Dim addPromo As New SqlCommand("INSERT INTO Promotions (promotionID,campaignID,title,description,startDate,endDate)
+        If (txtPromotionName.Text = "") Then
+            MessageBox.Show("Please enter a name for your promotion")
+        ElseIf (txtPromoDesc.Text = "") Then
+            MessageBox.Show("Please enter a description for your promotion")
+        Else
+            CheckConnection()
+            'Get the id of the new promotion
+            Dim promoID As Integer = getNewID("promotionID", "Promotions")
+            'Get campaign ID if they want one or set null 
+            Dim selectedCampID As Integer = 0
+            If (chkCampAssociation.Checked) Then
+                selectedCampID = cmbCampPicker.SelectedValue
+            ElseIf (chkCampAssociation.Checked = False) Then
+                selectedCampID = 0
+            End If
+            'Set up query to pass in new promo
+            Dim addPromo As New SqlCommand("INSERT INTO Promotions (promotionID,campaignID,title,description,startDate,endDate)
                                                                         VALUES(@promotionID,@campaignID,@title,@description,@startDate,@endDate)", MarketingConnection)
-        addPromo.Parameters.AddWithValue("@promotionID", promoID)
-        addPromo.Parameters.AddWithValue("@campaignID", selectedCampID)
-        addPromo.Parameters.AddWithValue("@title", txtPromotionName.Text)
-        addPromo.Parameters.AddWithValue("@description", txtPromoDesc.Text)
-        addPromo.Parameters.AddWithValue("@startDate", promoSDate.Text)
-        addPromo.Parameters.AddWithValue("@endDate", promoEDate.Text)
+            addPromo.Parameters.AddWithValue("@promotionID", promoID)
+            addPromo.Parameters.AddWithValue("@campaignID", selectedCampID)
+            addPromo.Parameters.AddWithValue("@title", txtPromotionName.Text)
+            addPromo.Parameters.AddWithValue("@description", txtPromoDesc.Text)
+            addPromo.Parameters.AddWithValue("@startDate", promoSDate.Text)
+            addPromo.Parameters.AddWithValue("@endDate", promoEDate.Text)
 
-        'Open the connection and try to run the query
-        Try
-            MarketingConnection.Open()
-            addPromo.ExecuteNonQuery()
-            Me.PromotionsTableAdapter.Fill(Me.GEDataSet.Promotions)
-            MarketingConnection.Close()
-            ConfirmBox(txtPromotionName.Text)
-            'Clear
-            txtPromotionName.Text = ""
-            txtPromoDesc.Text = ""
-            promoEDate.ResetText()
-            promoSDate.ResetText()
-            chkCampAssociation.Checked = False
-        Catch ex As Exception
-            MessageBox.Show("Invalid Inputs")
-        End Try
+            'Open the connection and try to run the query
+            Try
+                MarketingConnection.Open()
+                addPromo.ExecuteNonQuery()
+                Me.PromotionsTableAdapter.Fill(Me.GEDataSet.Promotions)
+                MarketingConnection.Close()
+                ConfirmBox(txtPromotionName.Text)
+                'Clear
+                txtPromotionName.Text = ""
+                txtPromoDesc.Text = ""
+                promoEDate.ResetText()
+                promoSDate.ResetText()
+                chkCampAssociation.Checked = False
+            Catch ex As Exception
+                MessageBox.Show("Invalid Inputs")
+            End Try
+        End If
     End Sub
 
     Private Sub chkCampAssociation_CheckedChanged(sender As Object, e As EventArgs) Handles chkCampAssociation.CheckedChanged
@@ -185,52 +196,61 @@ Public Class Marketing
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        CheckConnection()
-        Dim discountID As Integer = getNewID("discountID", "Discounts")
+        If ((cmbDiscountType.SelectedValue = BOGO) And ((txtBuyOne.Text = "") Or (txtGetOne.Text = ""))) Then
+            MessageBox.Show("Please fill out the buy one and get one text boxes")
+        ElseIf (((cmbDiscountType.SelectedValue = FlatRateOrder) Or (cmbDiscountType.SelectedValue = FlatRateItem)) And (txtFlatDiscount.Text = "")) Then
+            MessageBox.Show("Please enter a discount amount in dollars")
+        ElseIf (((cmbDiscountType.SelectedValue = PercentageItem) Or (cmbDiscountType.SelectedValue = PercentageOrder)) And (txtPercentage.Text = "")) Then
+            MessageBox.Show("Please enter a discount amount in a decimal representing the desired percent")
+        Else
+            CheckConnection()
+            Dim discountID As Integer = getNewID("discountID", "Discounts")
 
-        'Pass in appropraite amount value 
-        Dim discountAmount As Decimal = 0
+            'Pass in appropraite amount value 
+            Dim discountAmount As Decimal = 0
 
-        'Whole number for flat rate
-        If ((cmbDiscountType.SelectedValue = FlatRateOrder) Or (cmbDiscountType.SelectedValue = FlatRateItem)) Then
-            discountAmount = txtFlatDiscount.Text
-            'Decimals for percent
-        ElseIf ((cmbDiscountType.SelectedValue = PercentageOrder) Or (cmbDiscountType.SelectedValue = PercentageItem)) Then
-            discountAmount = txtPercentage.Text
-        ElseIf (cmbDiscountType.SelectedValue = BOGO) Then
-            'Amount is always 0 for BOGO
-            discountAmount = 0
-        End If
+            'Whole number for flat rate
+            If ((cmbDiscountType.SelectedValue = FlatRateOrder) Or (cmbDiscountType.SelectedValue = FlatRateItem)) Then
+                discountAmount = txtFlatDiscount.Text
+                'Decimals for percent
+            ElseIf ((cmbDiscountType.SelectedValue = PercentageOrder) Or (cmbDiscountType.SelectedValue = PercentageItem)) Then
+                discountAmount = txtPercentage.Text
+            ElseIf (cmbDiscountType.SelectedValue = BOGO) Then
+                'Amount is always 0 for BOGO
+                discountAmount = 0
+            End If
 
-        'Set up command for passing values into DB
-        Dim addDiscount As New SqlCommand("INSERT INTO Discounts (discountID,discountTypeID,buyOne,getOne,discountAmount,promotionID)
+            'Set up command for passing values into DB
+            Dim addDiscount As New SqlCommand("INSERT INTO Discounts (discountID,discountTypeID,buyOne,getOne,discountAmount,promotionID)
                                                                         VALUES(@discountID,@discountTypeID,@buyOne,@getOne,@discountAmount,@promotionID)", MarketingConnection)
 
-        addDiscount.Parameters.AddWithValue("@discountID", discountID)
-        addDiscount.Parameters.AddWithValue("@discountTypeID", cmbDiscountType.SelectedValue)
-        addDiscount.Parameters.AddWithValue("@buyOne", txtBuyOne.Text)
-        addDiscount.Parameters.AddWithValue("@getOne", txtGetOne.Text)
-        addDiscount.Parameters.AddWithValue("@discountAmount", discountAmount)
-        addDiscount.Parameters.AddWithValue("@promotionID", cmbPromo.SelectedValue)
+            addDiscount.Parameters.AddWithValue("@discountID", discountID)
+            addDiscount.Parameters.AddWithValue("@discountTypeID", cmbDiscountType.SelectedValue)
+            addDiscount.Parameters.AddWithValue("@buyOne", txtBuyOne.Text)
+            addDiscount.Parameters.AddWithValue("@getOne", txtGetOne.Text)
+            addDiscount.Parameters.AddWithValue("@discountAmount", discountAmount)
+            addDiscount.Parameters.AddWithValue("@promotionID", cmbPromo.SelectedValue)
 
-        'Open the connection and try to run the query
-        Try
-            MarketingConnection.Open()
-            addDiscount.ExecuteNonQuery()
-            Me.DiscountsTableAdapter.Fill(Me.GEDataSet.Discounts)
-            MarketingConnection.Close()
-            ConfirmBox("Discount")
-            'Clear
-            txtBuyOne.Text = ""
-            txtGetOne.Text = ""
-            txtFlatDiscount.Text = ""
-            txtPercentage.Text = ""
-            promoEDate.ResetText()
-            promoSDate.ResetText()
-            chkCampAssociation.Checked = False
-        Catch ex As Exception
-            MessageBox.Show("Invalid Inputs")
-        End Try
+            'Open the connection and try to run the query
+            Try
+                MarketingConnection.Open()
+                addDiscount.ExecuteNonQuery()
+                Me.DiscountsTableAdapter.Fill(Me.GEDataSet.Discounts)
+                MarketingConnection.Close()
+                ConfirmBox("Discount")
+                'Clear
+                txtBuyOne.Text = ""
+                txtGetOne.Text = ""
+                txtFlatDiscount.Text = ""
+                txtPercentage.Text = ""
+                promoEDate.ResetText()
+                promoSDate.ResetText()
+                chkCampAssociation.Checked = False
+            Catch ex As Exception
+                MessageBox.Show("Invalid Inputs")
+            End Try
+        End If
+
     End Sub
 
     Private Sub btnAddType_Click(sender As Object, e As EventArgs) Handles btnAddType.Click
@@ -339,5 +359,17 @@ Public Class Marketing
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         frmCouponsView.Show()
+    End Sub
+
+    Private Sub btnPromoProducts_Click(sender As Object, e As EventArgs) Handles btnPromoProducts.Click
+        PromoteProducts.Show()
+    End Sub
+
+    Private Sub btnPromoteCat_Click(sender As Object, e As EventArgs) Handles btnPromoteCat.Click
+        PromoteCat.Show()
+    End Sub
+
+    Private Sub btnPromoteDept_Click(sender As Object, e As EventArgs) Handles btnPromoteDept.Click
+        PromoteDept.Show()
     End Sub
 End Class

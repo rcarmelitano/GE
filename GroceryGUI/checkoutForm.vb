@@ -17,9 +17,22 @@ Public Class frmCheckoutForm
     Dim total As Double = 0
     Dim productSKU As String
     Dim checkoutCounter As Integer = 0
+    Dim productStockAmount As Integer = 0
+    Dim productStockCounterForSubExit As Integer = 0
+    Dim inStoreString As String = "In_Store"
 
     Public UPCString As String
     Public UPCInt As Integer = 0
+    Dim printOrderID As String = String.Empty
+    Dim nextOrderID As Integer = 0
+    Dim newOrderDetailID As Integer = 0
+    Dim employeeName As String = String.Empty
+
+
+    ' Lists used for printing/orders
+    Public SKUList As New List(Of String)  
+    Public PriceList As New List(Of Double)
+    Public QuantityList As New List(Of Integer)
 
     ' Set the initial cost of the product to 0
     Dim costOfProduct As Double = 0
@@ -28,6 +41,10 @@ Public Class frmCheckoutForm
 
         ' Store the entered quantity in the quantity variable
         quantity = CInt(txtQuantity.Text)
+
+
+        ' Add to the Quantity String List
+        QuantityList.Add(quantity)
 
         ' Create a query to grab the cost of the selected product by SKU from the click event when this function is called
         Dim getProductCost As New SqlCommand("SELECT retailCost FROM Products WHERE SKU = @SKU",
@@ -44,11 +61,16 @@ Public Class frmCheckoutForm
         ' Close the connection
         productConnection.Close()
 
+        ' Add to the Price String List
+        PriceList.Add(costOfProduct)
+
+
         ' Multiply the cost of the selected product by the quantity and then pass it into a constant subTotalFinal variable
         subTotal += (costOfProduct * quantity)
         subTotalFinal += subTotal
 
         lblSubTotalAmount.Text = subTotalFinal.ToString("C2")
+
 
         ' Return the price of the product
         Return subTotal
@@ -81,6 +103,26 @@ Public Class frmCheckoutForm
 
     '--------------------------------------------------------------------------------------------------------back button clicked 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+
+        ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
+        For i As Integer = 0 To SKUList.Count - 1
+            ' Create query to update inventory count based on SKU
+            Dim updateInventory As New SqlCommand("UPDATE Inventory SET inventoryCount = inventoryCount + @inventoryCount WHERE SKU = @SKU", productConnection)
+
+            ' Pass in parameter using the list
+            updateInventory.Parameters.AddWithValue("@SKU", SKUList.Item(i))
+            updateInventory.Parameters.AddWithValue("@inventoryCount", QuantityList.Item(i))
+
+
+            ' Open the connection to the database and pass in the information
+            productConnection.Open()
+            updateInventory.ExecuteNonQuery()
+
+            ' Close the connection
+            productConnection.Close()
+        Next
+
+
         ' Close the form.
         Me.Close()
         frmPrimaryForm.Show()
@@ -151,6 +193,8 @@ Public Class frmCheckoutForm
 
         ' Autofill in the employeeID for whichever employee signed into the program at the start
         txtEmployeeID.Text = employeeID
+
+        txtCustomerID.Text = 1
     End Sub
 
     '-----------------------------------------------------------------------------------------------------------------------setting employee ID
@@ -218,12 +262,69 @@ Public Class frmCheckoutForm
         ' Grab the selected ID and stick it in the txtOrderDetailsID textbox
         productSKU = selectedRow.Cells(0).Value.ToString()
 
+
+
+        ' Create a query to get the product inventorycount
+        Dim getStockAmount As New SqlCommand("SELECT inventoryCount FROM Inventory WHERE SKU = @SKU",
+                                                 productConnection)
+
+        getStockAmount.Parameters.AddWithValue("@SKU", productSKU)
+
+        ' Open the connection
+        productConnection.Open()
+
+        getStockAmount.ExecuteNonQuery()
+        productStockAmount = getStockAmount.ExecuteScalar()
+
+        ' Close the connection
+        productConnection.Close()
+
+        If productStockAmount = 0 Then
+            ' Display a message and reset the quantity
+            MessageBox.Show("This product is out of stock.")
+            productStockCounterForSubExit = 1
+        ElseIf CInt(txtQuantity.Text) > productStockAmount Then
+            ' Reset the quantity and display a message
+            MessageBox.Show("There isn't enough stock to support this product purchase." & vbCrLf & "The current product stock is " & productStockAmount.ToString())
+            productStockCounterForSubExit = 1
+        End If
+
+        If productStockCounterForSubExit = 1 Then
+            productStockCounterForSubExit = 0
+            Exit Sub
+        End If
+
+
+        ' Add to the SKU String List
+        SKUList.Add(productSKU)
+
+
         ' Try to get the information for the selected product
         Try
             ' Check if the quantity entered is 1 or greater
             If txtQuantity.Text >= 1 Then
                 ' Call the function ProductPrice to get the price of the selected product
                 ProductPrice()
+
+
+
+                ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
+                For i As Integer = 0 To SKUList.Count - 1
+                    ' Create query to update inventory count based on SKU
+                    Dim updateInventory As New SqlCommand("UPDATE Inventory SET inventoryCount = inventoryCount - @inventoryCount WHERE SKU = @SKU", productConnection)
+
+                    ' Pass in parameter using the list
+                    updateInventory.Parameters.AddWithValue("@SKU", SKUList.Item(i))
+                    updateInventory.Parameters.AddWithValue("@inventoryCount", QuantityList.Item(i))
+
+
+                    ' Open the connection to the database and pass in the information
+                    productConnection.Open()
+                    updateInventory.ExecuteNonQuery()
+
+                    ' Close the connection
+                    productConnection.Close()
+                Next
             Else
                 ' Display an error message to the user
                 MessageBox.Show("You must purchase at least one of a selected product to add the product to your cart, please try again.")
@@ -301,10 +402,32 @@ Public Class frmCheckoutForm
             ' Ask the user if they are sure that they want to void the order
             If MessageBox.Show("Are you sure you want to void the order?", "Checkout Void",
            MessageBoxButtons.YesNo) = DialogResult.Yes Then
+
+                If lbCart.Items.Count > 0 Then
+                    ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
+                    ' Update InventoryCount in Inventory here---------------------------DO FOR EACH PRODUCT HERE USING THE SKUStringList-------------------------------
+                    For i As Integer = 0 To SKUList.Count - 1
+                        ' Create query to update inventory count based on SKU
+                        Dim updateInventory As New SqlCommand("UPDATE Inventory SET inventoryCount = inventoryCount + @inventoryCount WHERE SKU = @SKU", productConnection)
+
+                        ' Pass in parameter using the list
+                        updateInventory.Parameters.AddWithValue("@SKU", SKUList.Item(i))
+                        updateInventory.Parameters.AddWithValue("@inventoryCount", QuantityList.Item(i))
+
+
+                        ' Open the connection to the database and pass in the information
+                        productConnection.Open()
+                        updateInventory.ExecuteNonQuery()
+
+                        ' Close the connection
+                        productConnection.Close()
+                    Next
+                End If
+
                 ' Call the void function
                 voidFunction()
-            End If
-        ElseIf btnCheckout.Text = "Complete Order" Then
+                End If
+            ElseIf btnCheckout.Text = "Complete Order" Then
             ' Do not ask to void and just call the void function
             voidFunction()
         End If
@@ -377,13 +500,123 @@ Public Class frmCheckoutForm
                     ' Do the printing and adding the order to order details and orders here --------------------------
 
 
+                    ' Create query to grab the max orderID + 1 (the order just made)------------------------
+                    Dim getOrderIDForTable As New SqlCommand("SELECT max(orderID) + 1 FROM Orders", productConnection)
 
+                    ' Open the connection
+                    productConnection.Open()
+
+                    getOrderIDForTable.ExecuteNonQuery()
+                    nextOrderID = getOrderIDForTable.ExecuteScalar()
+
+                    ' Create a coupon
+                    Dim addOrder As New SqlCommand("INSERT INTO Orders (orderID, customerID, employeeID, purchaseLocation, orderDate, status)
+                    VALUES(@orderID, @customerID, @employeeID, @purchaseLocation, @orderDate, @status)", productConnection)
+
+                    ' Pass in the values from the controls
+                    addOrder.Parameters.AddWithValue("@orderID", nextOrderID)
+                    addOrder.Parameters.AddWithValue("@customerID", txtCustomerID.Text)
+                    addOrder.Parameters.AddWithValue("@employeeID", txtEmployeeID.Text)
+                    addOrder.Parameters.AddWithValue("@purchaseLocation", inStoreString)
+                    addOrder.Parameters.AddWithValue("@orderDate", DateTime.Now.ToString())
+                    addOrder.Parameters.AddWithValue("@status", "1")
+
+                    ' Run the query
+                    addOrder.ExecuteNonQuery()
+
+                    ' Close the connection
+                    productConnection.Close()
+
+
+
+                    '
+                    '
+                    'DONE
+                    '
+                    ' Need to get max + 1 order detail ID for this below--
+                    Dim getMaxAndNextOrderDetailID As New SqlCommand("SELECT max(orderDetailID) + 1 FROM Order_Details", productConnection)
+
+                    ' Open the connection
+                    productConnection.Open()
+                    getMaxAndNextOrderDetailID.ExecuteNonQuery()
+
+                    ' Pass in Order Detail ID to use for creating a new order detail -------------------------------------vvvv
+                    newOrderDetailID = getMaxAndNextOrderDetailID.ExecuteScalar()
+
+                    ' Close the connection
+                    productConnection.Close()
+
+
+
+
+
+
+                    'Dim quantityArray() As String
+                    '
+                    ' For Each Quantityy As String In QuantityList
+                    ' quantityArray
+                    ' Next
+
+
+
+                    'Dim joinedAllLists = From SKU In SKUList
+                    'Join Quantityy In QuantityList
+                    'On SKU.ToString Equals Quantityy.ToString
+                    'Join Price In PriceList
+                    'On Quantityy.ToString Equals Price
+                    'Select Case New With {SKUList, PriceList, QuantityList}
+
+
+                    ' Add query for Order Details here----------------------
+                    For i As Integer = 0 To SKUList.Count - 1
+                        ' Create query to add data into order details
+                        Dim addData As New SqlCommand("INSERT INTO Order_Details (orderDetailID, orderID, SKU, quantity, price, paid)
+                    VALUES(@orderDetailID, @orderID, @SKU, @quantity, @price, @paid)", productConnection)
+
+                        ' Pass in parameter using the list
+                        addData.Parameters.AddWithValue("@orderDetailID", newOrderDetailID.ToString)
+                        addData.Parameters.AddWithValue("@orderID", nextOrderID.ToString)
+                        addData.Parameters.AddWithValue("@SKU", SKUList.Item(i))
+                        addData.Parameters.AddWithValue("@quantity", QuantityList.Item(i))
+                        addData.Parameters.AddWithValue("@price", PriceList.Item(i))
+                        addData.Parameters.AddWithValue("@paid", "1")
+
+
+                        ' Open the connection to the database and pass in the information
+                        productConnection.Open()
+                        addData.ExecuteNonQuery()
+
+                        ' Close the connection
+                        productConnection.Close()
+
+                        ' Increment the Order Detail ID to the next ID number
+                        newOrderDetailID += 1
+                    Next
+
+
+
+
+
+
+
+
+                    If MessageBox.Show("Would you like to print a receipt?", "Order Receipt",
+                    MessageBoxButtons.YesNo) = DialogResult.Yes Then
+
+                        ' Open print dialog window to print
+                        If PrintDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                            ' Set printer settings
+                            PrintDocument1.PrinterSettings = PrintDialog1.PrinterSettings
+                            ' Print Receipt
+                            PrintDocument1.Print()
+                        End If
+                    End If
 
                     ' AFTER EVERYTHING ABOVE IS DONE, CALL VOID TO CLEAR THE ENTIRE FORM -------------------------------------------------------
                     btnVoid.PerformClick()
                 End If
             End If
-            Else
+        Else
             MessageBox.Show("You cannot checkout with no products.")
         End If
     End Sub
@@ -534,5 +767,95 @@ Public Class frmCheckoutForm
         frmCCCPayment.cbEmail.Location = New Point(150, 132)
         'Displays CCCPayment
         frmCCCPayment.Show()
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+
+        Dim intVerticalPosition As Integer = 0          ' Vertical position for printing
+        Dim finalVerticalPosition As Integer = 0        ' Final vertical position for printing
+
+        ' Print Confirmation Report Header
+        e.Graphics.DrawString("Receipt", New Font("Courier New", 12, FontStyle.Bold), Brushes.Black, 150, 10)
+
+        ' Print Time and Date
+        e.Graphics.DrawString("Date and Time: " & Now.ToString(), New Font("Courier New", 12, FontStyle.Bold), Brushes.Black, 10, 38)
+
+        ' Print Column Heading for Products, Price, and Quantity
+        e.Graphics.DrawString(String.Format("{0, 5} ", "Products"), New Font("Courier New", 12, FontStyle.Bold), Brushes.Black, 10, 66)
+        e.Graphics.DrawString(String.Format("{0, 5} ", "Price"), New Font("Courier New", 12, FontStyle.Bold), Brushes.Black, 160, 66)
+        e.Graphics.DrawString(String.Format("{0, 5} ", "Qty."), New Font("Courier New", 12, FontStyle.Bold), Brushes.Black, 290, 66)
+
+        intVerticalPosition = 90
+
+        ' DO FOR EACH LIST BUT CHANGE THE X AXIS SO THEY CAN ALL DO THIS NO MATTER WHAT
+
+        For Each SKU As String In SKUList
+
+
+            ' Print SKU's
+            e.Graphics.DrawString(String.Format("{0, 3} ", SKU), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, intVerticalPosition)
+
+            intVerticalPosition += 28
+
+        Next
+
+        intVerticalPosition = 90
+
+        For Each Price As String In PriceList
+            ' Print Price
+            e.Graphics.DrawString(String.Format("{0, 3} ", Price), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 160, intVerticalPosition)
+
+            intVerticalPosition += 28
+        Next
+
+        intVerticalPosition = 90
+
+        For Each Quantity As String In QuantityList
+            ' Print Quantity
+            e.Graphics.DrawString(String.Format("{0, 3} ", Quantity), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 290, intVerticalPosition)
+
+            intVerticalPosition += 28
+
+            finalVerticalPosition = intVerticalPosition
+        Next
+
+        ' Print the Total
+        e.Graphics.DrawString(String.Format("{0, 3} ", "Total: " & FinalTotalCost), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, finalVerticalPosition + 64)
+
+        finalVerticalPosition += 14
+
+
+        ' Create query to grab the max orderID (the order just made)
+        Dim getOrderID As New SqlCommand("SELECT max(orderID) FROM Orders", productConnection)
+
+        ' Open the connection
+        productConnection.Open()
+
+        getOrderID.ExecuteNonQuery()
+        printOrderID = getOrderID.ExecuteScalar()
+
+        ' Close the connection
+        productConnection.Close()
+
+
+        e.Graphics.DrawString(String.Format("{0, 3} ", "Order Number: " & printOrderID), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, finalVerticalPosition)
+
+        e.Graphics.DrawString(String.Format("{0, 3} ", "Cashier ID: " & txtEmployeeID.Text), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, finalVerticalPosition + 14)
+
+        ' Create query to grab the max orderID (the order just made)
+        Dim getEmployeeID As New SqlCommand("SELECT firstName FROM Employees WHERE employeeID = @employeeID", productConnection)
+
+        getEmployeeID.Parameters.AddWithValue("@employeeID", txtEmployeeID.Text)
+
+        ' Open the connection
+        productConnection.Open()
+        employeeName = getEmployeeID.ExecuteScalar()
+
+        ' Close the connection
+        productConnection.Close()
+
+        e.Graphics.DrawString(String.Format("{0, 3} ", "Employee: " & employeeName), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, finalVerticalPosition + 28)
+
+
     End Sub
 End Class
