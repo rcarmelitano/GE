@@ -10,10 +10,25 @@
         ' Disable the controls on the top of the form
         Me.ControlBox = False
     End Sub
+    Private Sub PurchaseOrders_IsFocused(sender As Object, e As EventArgs) Handles MyBase.GotFocus
+        'TODO: This line of code loads data into the 'GEDataSet.Purchase_Order' table. You can move, or remove it, as needed.
+        Me.Purchase_OrderTableAdapter.Fill(Me.GEDataSet.Purchase_Order)
+    End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPurchaseOrders.CellContentClick
-        If e.ColumnIndex <> 7 And e.ColumnIndex <> 8 Then
-            Exit Sub
+        If e.ColumnIndex = 7 Then
+            Dim selectedRow As DataGridViewRow
+            UpdatePurchaseOrder.Show()
+            selectedRow = dgvPurchaseOrders.Rows(e.RowIndex)
+            UpdatePurchaseOrder.txtPOID.Text = selectedRow.Cells(0).Value
+            UpdatePurchaseOrder.txtOrderTotal.Text = selectedRow.Cells(3).Value
+            UpdatePurchaseOrder.cmbSupplier.SelectedValue = selectedRow.Cells(2).Value
+            UpdatePurchaseOrder.cmbStatus.SelectedValue = selectedRow.Cells(6).Value
+            UpdatePurchaseOrder.poDate.Value = selectedRow.Cells(4).Value
+            UpdatePurchaseOrder.txtPOID.Enabled = False
+            UpdatePurchaseOrder.Focus()
+
+
         End If
 
         If e.ColumnIndex = 8 Then

@@ -548,6 +548,12 @@
     <Compile Include="UpdateInventory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UpdatePurchaseOrder.Designer.vb">
+      <DependentUpon>UpdatePurchaseOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePurchaseOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UpdateShipping.Designer.vb">
       <DependentUpon>UpdateShipping.vb</DependentUpon>
     </Compile>
@@ -780,6 +786,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateInventory.resx">
       <DependentUpon>UpdateInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePurchaseOrder.resx">
+      <DependentUpon>UpdatePurchaseOrder.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateShipping.resx">
       <DependentUpon>UpdateShipping.vb</DependentUpon>

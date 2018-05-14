@@ -1041,3 +1041,4 @@ C:\Users\bl3s5\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport11.resou
 C:\Users\bl3s5\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport2.resources
 C:\Users\bl3s5\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.ShipmentReceivingLog.resources
 C:\Users\bl3s5\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.ShipmentCheckIn.resources
+C:\Users\bl3s5\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.UpdatePurchaseOrder.resources
