@@ -154,6 +154,12 @@
     <Compile Include="CreditChangeReason.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomerCheckoutSearch.Designer.vb">
+      <DependentUpon>CustomerCheckoutSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerCheckoutSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CustomerHistory.Designer.vb">
       <DependentUpon>CustomerHistory.vb</DependentUpon>
     </Compile>
@@ -609,6 +615,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreditChangeReason.resx">
       <DependentUpon>CreditChangeReason.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerCheckoutSearch.resx">
+      <DependentUpon>CustomerCheckoutSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerHistory.resx">
       <DependentUpon>CustomerHistory.vb</DependentUpon>

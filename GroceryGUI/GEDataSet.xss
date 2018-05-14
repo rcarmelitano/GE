@@ -12,7 +12,7 @@
     <Shape ID="DesignTable:Categories" ZOrder="85" X="336" Y="4004" Height="153" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Coupons" ZOrder="84" X="947" Y="3482" Height="191" Width="195" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:CreditAudit" ZOrder="83" X="912" Y="910" Height="210" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignTable:Customers" ZOrder="82" X="985" Y="1655" Height="324" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignTable:Customers" ZOrder="82" X="985" Y="1655" Height="434" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
     <Shape ID="DesignTable:Departments" ZOrder="81" X="336" Y="4227" Height="134" Width="231" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Discount_Type" ZOrder="80" X="1224" Y="2960" Height="115" Width="229" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Discounts" ZOrder="79" X="953" Y="2960" Height="210" Width="201" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
@@ -48,12 +48,16 @@
     <Connector ID="DesignRelation:FK__Billing_A__custo__398D8EEE" ZOrder="55" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>1191</X>
-          <Y>1760</Y>
+          <X>1285</X>
+          <Y>1882</Y>
         </Point>
         <Point>
-          <X>1261</X>
-          <Y>1760</Y>
+          <X>1302</X>
+          <Y>1882</Y>
+        </Point>
+        <Point>
+          <X>1302</X>
+          <Y>1865</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -73,7 +77,7 @@
       <RoutePoints>
         <Point>
           <X>1174</X>
-          <Y>1979</Y>
+          <Y>2089</Y>
         </Point>
         <Point>
           <X>1174</X>
@@ -160,12 +164,16 @@
     <Connector ID="DesignRelation:FK__Gift_Card__custo__2B3F6F97" ZOrder="46" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>1191</X>
-          <Y>1947</Y>
+          <X>1244</X>
+          <Y>2089</Y>
+        </Point>
+        <Point>
+          <X>1244</X>
+          <Y>2097</Y>
         </Point>
         <Point>
           <X>1261</X>
-          <Y>1947</Y>
+          <Y>2097</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -585,7 +593,7 @@
       <RoutePoints>
         <Point>
           <X>1166</X>
-          <Y>1979</Y>
+          <Y>2089</Y>
         </Point>
         <Point>
           <X>1166</X>

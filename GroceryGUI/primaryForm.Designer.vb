@@ -48,7 +48,7 @@ Partial Class frmPrimaryForm
         Me.btnCheckout.Enabled = False
         Me.btnCheckout.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnCheckout.Location = New System.Drawing.Point(37, 341)
-        Me.btnCheckout.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCheckout.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCheckout.Name = "btnCheckout"
         Me.btnCheckout.Size = New System.Drawing.Size(189, 63)
         Me.btnCheckout.TabIndex = 1
@@ -62,7 +62,7 @@ Partial Class frmPrimaryForm
         Me.btnCustomers.Enabled = False
         Me.btnCustomers.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnCustomers.Location = New System.Drawing.Point(300, 341)
-        Me.btnCustomers.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCustomers.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCustomers.Name = "btnCustomers"
         Me.btnCustomers.Size = New System.Drawing.Size(189, 63)
         Me.btnCustomers.TabIndex = 2
@@ -76,7 +76,7 @@ Partial Class frmPrimaryForm
         Me.btnDeliveries.Enabled = False
         Me.btnDeliveries.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnDeliveries.Location = New System.Drawing.Point(828, 341)
-        Me.btnDeliveries.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDeliveries.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDeliveries.Name = "btnDeliveries"
         Me.btnDeliveries.Size = New System.Drawing.Size(189, 63)
         Me.btnDeliveries.TabIndex = 3
@@ -90,7 +90,7 @@ Partial Class frmPrimaryForm
         Me.btnSupplierInfo.Enabled = False
         Me.btnSupplierInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnSupplierInfo.Location = New System.Drawing.Point(37, 454)
-        Me.btnSupplierInfo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSupplierInfo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSupplierInfo.Name = "btnSupplierInfo"
         Me.btnSupplierInfo.Size = New System.Drawing.Size(189, 63)
         Me.btnSupplierInfo.TabIndex = 4
@@ -104,7 +104,7 @@ Partial Class frmPrimaryForm
         Me.btnReports.Enabled = False
         Me.btnReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnReports.Location = New System.Drawing.Point(828, 454)
-        Me.btnReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReports.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReports.Name = "btnReports"
         Me.btnReports.Size = New System.Drawing.Size(189, 63)
         Me.btnReports.TabIndex = 6
@@ -118,7 +118,7 @@ Partial Class frmPrimaryForm
         Me.btnInventory.Enabled = False
         Me.btnInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnInventory.Location = New System.Drawing.Point(300, 454)
-        Me.btnInventory.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnInventory.Margin = New System.Windows.Forms.Padding(4)
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Size = New System.Drawing.Size(189, 63)
         Me.btnInventory.TabIndex = 5
@@ -142,7 +142,7 @@ Partial Class frmPrimaryForm
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnExit.Location = New System.Drawing.Point(-3, -2)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(187, 63)
         Me.btnExit.TabIndex = 10
@@ -156,7 +156,7 @@ Partial Class frmPrimaryForm
         Me.btnGiftCards.Enabled = False
         Me.btnGiftCards.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnGiftCards.Location = New System.Drawing.Point(300, 570)
-        Me.btnGiftCards.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGiftCards.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGiftCards.Name = "btnGiftCards"
         Me.btnGiftCards.Size = New System.Drawing.Size(189, 63)
         Me.btnGiftCards.TabIndex = 8
@@ -166,7 +166,7 @@ Partial Class frmPrimaryForm
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(796, 15)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(132, 22)
@@ -177,11 +177,11 @@ Partial Class frmPrimaryForm
         Me.btnSearch.BackColor = System.Drawing.SystemColors.ControlLight
         Me.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSearch.Location = New System.Drawing.Point(937, 12)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(100, 28)
         Me.btnSearch.TabIndex = 12
-        Me.btnSearch.Text = "Search"
+        Me.btnSearch.Text = "Log In"
         Me.btnSearch.UseVisualStyleBackColor = False
         '
         'btnEmployees
@@ -191,7 +191,7 @@ Partial Class frmPrimaryForm
         Me.btnEmployees.Enabled = False
         Me.btnEmployees.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnEmployees.Location = New System.Drawing.Point(564, 341)
-        Me.btnEmployees.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEmployees.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEmployees.Name = "btnEmployees"
         Me.btnEmployees.Size = New System.Drawing.Size(189, 63)
         Me.btnEmployees.TabIndex = 13
@@ -205,7 +205,7 @@ Partial Class frmPrimaryForm
         Me.btnShipments.Enabled = False
         Me.btnShipments.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnShipments.Location = New System.Drawing.Point(431, 674)
-        Me.btnShipments.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnShipments.Margin = New System.Windows.Forms.Padding(4)
         Me.btnShipments.Name = "btnShipments"
         Me.btnShipments.Size = New System.Drawing.Size(189, 63)
         Me.btnShipments.TabIndex = 14
@@ -219,7 +219,7 @@ Partial Class frmPrimaryForm
         Me.btnPurchaseOrders.Enabled = False
         Me.btnPurchaseOrders.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnPurchaseOrders.Location = New System.Drawing.Point(564, 454)
-        Me.btnPurchaseOrders.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPurchaseOrders.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPurchaseOrders.Name = "btnPurchaseOrders"
         Me.btnPurchaseOrders.Size = New System.Drawing.Size(189, 63)
         Me.btnPurchaseOrders.TabIndex = 15
@@ -233,7 +233,7 @@ Partial Class frmPrimaryForm
         Me.btnMarketingCampaigns.Enabled = False
         Me.btnMarketingCampaigns.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMarketingCampaigns.Location = New System.Drawing.Point(564, 570)
-        Me.btnMarketingCampaigns.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMarketingCampaigns.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMarketingCampaigns.Name = "btnMarketingCampaigns"
         Me.btnMarketingCampaigns.Size = New System.Drawing.Size(189, 63)
         Me.btnMarketingCampaigns.TabIndex = 16
@@ -247,7 +247,7 @@ Partial Class frmPrimaryForm
         Me.btnDepartments.Enabled = False
         Me.btnDepartments.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnDepartments.Location = New System.Drawing.Point(828, 570)
-        Me.btnDepartments.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDepartments.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDepartments.Name = "btnDepartments"
         Me.btnDepartments.Size = New System.Drawing.Size(189, 63)
         Me.btnDepartments.TabIndex = 17
@@ -261,7 +261,7 @@ Partial Class frmPrimaryForm
         Me.btnItemReturns.Enabled = False
         Me.btnItemReturns.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.btnItemReturns.Location = New System.Drawing.Point(37, 570)
-        Me.btnItemReturns.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnItemReturns.Margin = New System.Windows.Forms.Padding(4)
         Me.btnItemReturns.Name = "btnItemReturns"
         Me.btnItemReturns.Size = New System.Drawing.Size(189, 63)
         Me.btnItemReturns.TabIndex = 7
@@ -291,7 +291,7 @@ Partial Class frmPrimaryForm
         Me.Controls.Add(Me.btnCustomers)
         Me.Controls.Add(Me.btnCheckout)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "frmPrimaryForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

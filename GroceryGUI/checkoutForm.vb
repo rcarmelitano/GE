@@ -155,8 +155,8 @@ Public Class frmCheckoutForm
 
     '---------------------------------------------------------------------------------------------------------------------opens up custom search
     Private Sub btnCustomerSearch_Click(sender As Object, e As EventArgs) Handles btnCustomerSearch.Click
-        POSCustomerSearch.ShowDialog()
-
+        ' Display the customer checkout search form
+        frmCustomerCheckoutSearch.ShowDialog()
     End Sub
 
     '--------------------------------------------------------------------------------------------------------------------------search through inventory
@@ -195,8 +195,6 @@ Public Class frmCheckoutForm
 
         ' Autofill in the employeeID for whichever employee signed into the program at the start
         txtEmployeeID.Text = employeeID
-
-        txtCustomerID.Text = 1
     End Sub
 
     '-----------------------------------------------------------------------------------------------------------------------setting employee ID
@@ -375,6 +373,21 @@ Public Class frmCheckoutForm
         btnCheck.Enabled = False
         btnCredit.Enabled = False
         btnPayPal.Enabled = False
+
+        cmbSearchType.Enabled = False
+        txtQuantity.Enabled = False
+        txtProduct.Enabled = False
+        dgvProducts.Enabled = False
+        btnRefresh.Enabled = False
+        btnProductSearch.Enabled = False
+        btnVoid.Enabled = False
+        btnHotKeys.Enabled = False
+        btnDiscount.Enabled = False
+        btnRemove.Enabled = False
+        btnCheckout.Enabled = False
+        btnAccount.Enabled = False
+        lbCart.Enabled = False
+
 
         ' Reset values
         quantity = 0
@@ -859,5 +872,24 @@ Public Class frmCheckoutForm
         e.Graphics.DrawString(String.Format("{0, 3} ", "Employee: " & employeeName), New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 10, finalVerticalPosition + 28)
 
 
+    End Sub
+
+    Private Sub txtCustomerID_TextChanged(sender As Object, e As EventArgs) Handles txtCustomerID.TextChanged
+        ' If a customer is selected and the textbox is not empty, then re-enable the controls on the form
+        If txtCustomerID.Text <> "" Then
+            cmbSearchType.Enabled = True
+            txtQuantity.Enabled = True
+            txtProduct.Enabled = True
+            dgvProducts.Enabled = True
+            btnRefresh.Enabled = True
+            btnProductSearch.Enabled = True
+            btnVoid.Enabled = True
+            btnHotKeys.Enabled = True
+            btnDiscount.Enabled = True
+            btnRemove.Enabled = True
+            btnCheckout.Enabled = True
+            'btnAccount.Enabled = True
+            lbCart.Enabled = True
+        End If
     End Sub
 End Class
