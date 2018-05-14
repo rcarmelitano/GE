@@ -395,6 +395,8 @@ Partial Class frmUpdateCustomer
         Me.TableAdapterManager.Payment_TypesTableAdapter = Nothing
         Me.TableAdapterManager.PaymentsTableAdapter = Nothing
         Me.TableAdapterManager.ProductsTableAdapter = Nothing
+        Me.TableAdapterManager.Promoted_CategoriesTableAdapter = Nothing
+        Me.TableAdapterManager.Promoted_DepartmentsTableAdapter = Nothing
         Me.TableAdapterManager.Promoted_ProductsTableAdapter = Nothing
         Me.TableAdapterManager.PromotionsTableAdapter = Nothing
         Me.TableAdapterManager.Purchase_Order_DetailsTableAdapter = Nothing

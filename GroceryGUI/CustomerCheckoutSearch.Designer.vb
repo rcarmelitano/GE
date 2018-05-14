@@ -76,19 +76,17 @@ Partial Class frmCustomerCheckoutSearch
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 83)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(10, 67)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 17)
+        Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Customer ID:"
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(443, 80)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSearch.Location = New System.Drawing.Point(332, 65)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(122, 28)
+        Me.btnSearch.Size = New System.Drawing.Size(92, 23)
         Me.btnSearch.TabIndex = 8
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = True
@@ -96,19 +94,17 @@ Partial Class frmCustomerCheckoutSearch
         'txtCustomerID
         '
         Me.txtCustomerID.Enabled = False
-        Me.txtCustomerID.Location = New System.Drawing.Point(113, 80)
-        Me.txtCustomerID.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCustomerID.Location = New System.Drawing.Point(85, 65)
         Me.txtCustomerID.Name = "txtCustomerID"
         Me.txtCustomerID.ReadOnly = True
-        Me.txtCustomerID.Size = New System.Drawing.Size(132, 22)
+        Me.txtCustomerID.Size = New System.Drawing.Size(100, 20)
         Me.txtCustomerID.TabIndex = 7
         '
         'btnReset
         '
-        Me.btnReset.Location = New System.Drawing.Point(573, 80)
-        Me.btnReset.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnReset.Location = New System.Drawing.Point(430, 65)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(96, 28)
+        Me.btnReset.Size = New System.Drawing.Size(72, 23)
         Me.btnReset.TabIndex = 6
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = True
@@ -119,14 +115,15 @@ Partial Class frmCustomerCheckoutSearch
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(682, 28)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(543, 24)
         Me.MenuStrip1.TabIndex = 10
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'dgvCustomers
@@ -137,12 +134,13 @@ Partial Class frmCustomerCheckoutSearch
         Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCustomers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustomerIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.PrimaryPhoneDataGridViewTextBoxColumn, Me.WholeSaleDataGridViewCheckBoxColumn, Me.btnAddCustomer})
         Me.dgvCustomers.DataSource = Me.CustomersBindingSource
-        Me.dgvCustomers.Location = New System.Drawing.Point(12, 115)
+        Me.dgvCustomers.Location = New System.Drawing.Point(9, 93)
+        Me.dgvCustomers.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgvCustomers.Name = "dgvCustomers"
         Me.dgvCustomers.ReadOnly = True
         Me.dgvCustomers.RowHeadersVisible = False
         Me.dgvCustomers.RowTemplate.Height = 24
-        Me.dgvCustomers.Size = New System.Drawing.Size(658, 307)
+        Me.dgvCustomers.Size = New System.Drawing.Size(525, 249)
         Me.dgvCustomers.TabIndex = 11
         '
         'CustomersBindingSource
@@ -162,10 +160,11 @@ Partial Class frmCustomerCheckoutSearch
         'txtCustomerSearch
         '
         Me.txtCustomerSearch.Enabled = False
-        Me.txtCustomerSearch.Location = New System.Drawing.Point(304, 84)
+        Me.txtCustomerSearch.Location = New System.Drawing.Point(228, 68)
+        Me.txtCustomerSearch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtCustomerSearch.Name = "txtCustomerSearch"
         Me.txtCustomerSearch.ReadOnly = True
-        Me.txtCustomerSearch.Size = New System.Drawing.Size(132, 22)
+        Me.txtCustomerSearch.Size = New System.Drawing.Size(100, 20)
         Me.txtCustomerSearch.TabIndex = 12
         '
         'cmbSearchType
@@ -173,17 +172,19 @@ Partial Class frmCustomerCheckoutSearch
         Me.cmbSearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSearchType.FormattingEnabled = True
         Me.cmbSearchType.Items.AddRange(New Object() {"ID", "First Name", "Last Name", "Primary Phone", "Email"})
-        Me.cmbSearchType.Location = New System.Drawing.Point(113, 49)
+        Me.cmbSearchType.Location = New System.Drawing.Point(85, 40)
+        Me.cmbSearchType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbSearchType.Name = "cmbSearchType"
-        Me.cmbSearchType.Size = New System.Drawing.Size(132, 24)
+        Me.cmbSearchType.Size = New System.Drawing.Size(100, 21)
         Me.cmbSearchType.TabIndex = 13
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(9, 52)
+        Me.Label2.Location = New System.Drawing.Point(7, 42)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 17)
+        Me.Label2.Size = New System.Drawing.Size(71, 13)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Search Type:"
         '
@@ -191,9 +192,9 @@ Partial Class frmCustomerCheckoutSearch
         '
         Me.CustomerIDToolStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.CustomerIDToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerIDToolStripLabel, Me.CustomerIDToolStripTextBox, Me.CustomerIDToolStripButton})
-        Me.CustomerIDToolStrip.Location = New System.Drawing.Point(0, 28)
+        Me.CustomerIDToolStrip.Location = New System.Drawing.Point(0, 23)
         Me.CustomerIDToolStrip.Name = "CustomerIDToolStrip"
-        Me.CustomerIDToolStrip.Size = New System.Drawing.Size(593, 27)
+        Me.CustomerIDToolStrip.Size = New System.Drawing.Size(445, 22)
         Me.CustomerIDToolStrip.TabIndex = 15
         Me.CustomerIDToolStrip.Text = "CustomerIDToolStrip"
         Me.CustomerIDToolStrip.Visible = False
@@ -201,28 +202,28 @@ Partial Class frmCustomerCheckoutSearch
         'CustomerIDToolStripLabel
         '
         Me.CustomerIDToolStripLabel.Name = "CustomerIDToolStripLabel"
-        Me.CustomerIDToolStripLabel.Size = New System.Drawing.Size(88, 24)
+        Me.CustomerIDToolStripLabel.Size = New System.Drawing.Size(71, 19)
         Me.CustomerIDToolStripLabel.Text = "customerID:"
         '
         'CustomerIDToolStripTextBox
         '
         Me.CustomerIDToolStripTextBox.Name = "CustomerIDToolStripTextBox"
-        Me.CustomerIDToolStripTextBox.Size = New System.Drawing.Size(100, 27)
+        Me.CustomerIDToolStripTextBox.Size = New System.Drawing.Size(76, 22)
         '
         'CustomerIDToolStripButton
         '
         Me.CustomerIDToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.CustomerIDToolStripButton.Name = "CustomerIDToolStripButton"
-        Me.CustomerIDToolStripButton.Size = New System.Drawing.Size(89, 24)
+        Me.CustomerIDToolStripButton.Size = New System.Drawing.Size(72, 19)
         Me.CustomerIDToolStripButton.Text = "customerID"
         '
         'CustomerNameToolStrip
         '
         Me.CustomerNameToolStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.CustomerNameToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastNameToolStripLabel, Me.LastNameToolStripTextBox, Me.CustomerNameToolStripButton})
-        Me.CustomerNameToolStrip.Location = New System.Drawing.Point(0, 28)
+        Me.CustomerNameToolStrip.Location = New System.Drawing.Point(0, 23)
         Me.CustomerNameToolStrip.Name = "CustomerNameToolStrip"
-        Me.CustomerNameToolStrip.Size = New System.Drawing.Size(593, 27)
+        Me.CustomerNameToolStrip.Size = New System.Drawing.Size(445, 22)
         Me.CustomerNameToolStrip.TabIndex = 16
         Me.CustomerNameToolStrip.Text = "CustomerNameToolStrip"
         Me.CustomerNameToolStrip.Visible = False
@@ -230,28 +231,28 @@ Partial Class frmCustomerCheckoutSearch
         'LastNameToolStripLabel
         '
         Me.LastNameToolStripLabel.Name = "LastNameToolStripLabel"
-        Me.LastNameToolStripLabel.Size = New System.Drawing.Size(75, 24)
+        Me.LastNameToolStripLabel.Size = New System.Drawing.Size(60, 19)
         Me.LastNameToolStripLabel.Text = "lastName:"
         '
         'LastNameToolStripTextBox
         '
         Me.LastNameToolStripTextBox.Name = "LastNameToolStripTextBox"
-        Me.LastNameToolStripTextBox.Size = New System.Drawing.Size(100, 27)
+        Me.LastNameToolStripTextBox.Size = New System.Drawing.Size(76, 22)
         '
         'CustomerNameToolStripButton
         '
         Me.CustomerNameToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.CustomerNameToolStripButton.Name = "CustomerNameToolStripButton"
-        Me.CustomerNameToolStripButton.Size = New System.Drawing.Size(114, 24)
+        Me.CustomerNameToolStripButton.Size = New System.Drawing.Size(93, 19)
         Me.CustomerNameToolStripButton.Text = "customerName"
         '
         'GrabCustomerFirstNameToolStrip
         '
         Me.GrabCustomerFirstNameToolStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.GrabCustomerFirstNameToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FirstNameToolStripLabel, Me.FirstNameToolStripTextBox, Me.GrabCustomerFirstNameToolStripButton})
-        Me.GrabCustomerFirstNameToolStrip.Location = New System.Drawing.Point(0, 28)
+        Me.GrabCustomerFirstNameToolStrip.Location = New System.Drawing.Point(0, 23)
         Me.GrabCustomerFirstNameToolStrip.Name = "GrabCustomerFirstNameToolStrip"
-        Me.GrabCustomerFirstNameToolStrip.Size = New System.Drawing.Size(593, 27)
+        Me.GrabCustomerFirstNameToolStrip.Size = New System.Drawing.Size(445, 22)
         Me.GrabCustomerFirstNameToolStrip.TabIndex = 17
         Me.GrabCustomerFirstNameToolStrip.Text = "GrabCustomerFirstNameToolStrip"
         Me.GrabCustomerFirstNameToolStrip.Visible = False
@@ -259,28 +260,28 @@ Partial Class frmCustomerCheckoutSearch
         'FirstNameToolStripLabel
         '
         Me.FirstNameToolStripLabel.Name = "FirstNameToolStripLabel"
-        Me.FirstNameToolStripLabel.Size = New System.Drawing.Size(77, 24)
+        Me.FirstNameToolStripLabel.Size = New System.Drawing.Size(62, 19)
         Me.FirstNameToolStripLabel.Text = "firstName:"
         '
         'FirstNameToolStripTextBox
         '
         Me.FirstNameToolStripTextBox.Name = "FirstNameToolStripTextBox"
-        Me.FirstNameToolStripTextBox.Size = New System.Drawing.Size(100, 27)
+        Me.FirstNameToolStripTextBox.Size = New System.Drawing.Size(76, 22)
         '
         'GrabCustomerFirstNameToolStripButton
         '
         Me.GrabCustomerFirstNameToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.GrabCustomerFirstNameToolStripButton.Name = "GrabCustomerFirstNameToolStripButton"
-        Me.GrabCustomerFirstNameToolStripButton.Size = New System.Drawing.Size(174, 24)
+        Me.GrabCustomerFirstNameToolStripButton.Size = New System.Drawing.Size(141, 19)
         Me.GrabCustomerFirstNameToolStripButton.Text = "grabCustomerFirstName"
         '
         'CustomerPrimaryPhoneToolStrip
         '
         Me.CustomerPrimaryPhoneToolStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.CustomerPrimaryPhoneToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrimaryPhoneToolStripLabel, Me.PrimaryPhoneToolStripTextBox, Me.CustomerPrimaryPhoneToolStripButton})
-        Me.CustomerPrimaryPhoneToolStrip.Location = New System.Drawing.Point(0, 28)
+        Me.CustomerPrimaryPhoneToolStrip.Location = New System.Drawing.Point(0, 23)
         Me.CustomerPrimaryPhoneToolStrip.Name = "CustomerPrimaryPhoneToolStrip"
-        Me.CustomerPrimaryPhoneToolStrip.Size = New System.Drawing.Size(593, 27)
+        Me.CustomerPrimaryPhoneToolStrip.Size = New System.Drawing.Size(445, 22)
         Me.CustomerPrimaryPhoneToolStrip.TabIndex = 18
         Me.CustomerPrimaryPhoneToolStrip.Text = "CustomerPrimaryPhoneToolStrip"
         Me.CustomerPrimaryPhoneToolStrip.Visible = False
@@ -288,28 +289,28 @@ Partial Class frmCustomerCheckoutSearch
         'PrimaryPhoneToolStripLabel
         '
         Me.PrimaryPhoneToolStripLabel.Name = "PrimaryPhoneToolStripLabel"
-        Me.PrimaryPhoneToolStripLabel.Size = New System.Drawing.Size(104, 24)
+        Me.PrimaryPhoneToolStripLabel.Size = New System.Drawing.Size(85, 19)
         Me.PrimaryPhoneToolStripLabel.Text = "primaryPhone:"
         '
         'PrimaryPhoneToolStripTextBox
         '
         Me.PrimaryPhoneToolStripTextBox.Name = "PrimaryPhoneToolStripTextBox"
-        Me.PrimaryPhoneToolStripTextBox.Size = New System.Drawing.Size(100, 27)
+        Me.PrimaryPhoneToolStripTextBox.Size = New System.Drawing.Size(76, 22)
         '
         'CustomerPrimaryPhoneToolStripButton
         '
         Me.CustomerPrimaryPhoneToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.CustomerPrimaryPhoneToolStripButton.Name = "CustomerPrimaryPhoneToolStripButton"
-        Me.CustomerPrimaryPhoneToolStripButton.Size = New System.Drawing.Size(165, 24)
+        Me.CustomerPrimaryPhoneToolStripButton.Size = New System.Drawing.Size(136, 19)
         Me.CustomerPrimaryPhoneToolStripButton.Text = "customerPrimaryPhone"
         '
         'FillByToolStrip
         '
         Me.FillByToolStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.FillByToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmailToolStripLabel, Me.EmailToolStripTextBox, Me.FillByToolStripButton})
-        Me.FillByToolStrip.Location = New System.Drawing.Point(0, 28)
+        Me.FillByToolStrip.Location = New System.Drawing.Point(0, 23)
         Me.FillByToolStrip.Name = "FillByToolStrip"
-        Me.FillByToolStrip.Size = New System.Drawing.Size(593, 27)
+        Me.FillByToolStrip.Size = New System.Drawing.Size(445, 22)
         Me.FillByToolStrip.TabIndex = 19
         Me.FillByToolStrip.Text = "FillByToolStrip"
         Me.FillByToolStrip.Visible = False
@@ -317,27 +318,29 @@ Partial Class frmCustomerCheckoutSearch
         'EmailToolStripLabel
         '
         Me.EmailToolStripLabel.Name = "EmailToolStripLabel"
-        Me.EmailToolStripLabel.Size = New System.Drawing.Size(49, 24)
+        Me.EmailToolStripLabel.Size = New System.Drawing.Size(39, 19)
         Me.EmailToolStripLabel.Text = "email:"
         '
         'EmailToolStripTextBox
         '
         Me.EmailToolStripTextBox.Name = "EmailToolStripTextBox"
-        Me.EmailToolStripTextBox.Size = New System.Drawing.Size(100, 27)
+        Me.EmailToolStripTextBox.Size = New System.Drawing.Size(76, 22)
         '
         'FillByToolStripButton
         '
         Me.FillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.FillByToolStripButton.Name = "FillByToolStripButton"
-        Me.FillByToolStripButton.Size = New System.Drawing.Size(48, 24)
+        Me.FillByToolStripButton.Size = New System.Drawing.Size(39, 19)
         Me.FillByToolStripButton.Text = "FillBy"
         '
         'CustomerIDDataGridViewTextBoxColumn
         '
+        Me.CustomerIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.CustomerIDDataGridViewTextBoxColumn.DataPropertyName = "customerID"
         Me.CustomerIDDataGridViewTextBoxColumn.HeaderText = "Customer ID"
         Me.CustomerIDDataGridViewTextBoxColumn.Name = "CustomerIDDataGridViewTextBoxColumn"
         Me.CustomerIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CustomerIDDataGridViewTextBoxColumn.Width = 90
         '
         'FirstNameDataGridViewTextBoxColumn
         '
@@ -355,6 +358,7 @@ Partial Class frmCustomerCheckoutSearch
         '
         'PrimaryPhoneDataGridViewTextBoxColumn
         '
+        Me.PrimaryPhoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.PrimaryPhoneDataGridViewTextBoxColumn.DataPropertyName = "primaryPhone"
         Me.PrimaryPhoneDataGridViewTextBoxColumn.HeaderText = "Primary Phone"
         Me.PrimaryPhoneDataGridViewTextBoxColumn.Name = "PrimaryPhoneDataGridViewTextBoxColumn"
@@ -362,10 +366,12 @@ Partial Class frmCustomerCheckoutSearch
         '
         'WholeSaleDataGridViewCheckBoxColumn
         '
+        Me.WholeSaleDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.WholeSaleDataGridViewCheckBoxColumn.DataPropertyName = "wholeSale"
         Me.WholeSaleDataGridViewCheckBoxColumn.HeaderText = "Wholesale"
         Me.WholeSaleDataGridViewCheckBoxColumn.Name = "WholeSaleDataGridViewCheckBoxColumn"
         Me.WholeSaleDataGridViewCheckBoxColumn.ReadOnly = True
+        Me.WholeSaleDataGridViewCheckBoxColumn.Width = 63
         '
         'btnAddCustomer
         '
@@ -378,9 +384,9 @@ Partial Class frmCustomerCheckoutSearch
         '
         'frmCustomerCheckoutSearch
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(682, 434)
+        Me.ClientSize = New System.Drawing.Size(543, 353)
         Me.Controls.Add(Me.CustomerIDToolStrip)
         Me.Controls.Add(Me.CustomerNameToolStrip)
         Me.Controls.Add(Me.GrabCustomerFirstNameToolStrip)
@@ -397,6 +403,7 @@ Partial Class frmCustomerCheckoutSearch
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmCustomerCheckoutSearch"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Customer Selection"

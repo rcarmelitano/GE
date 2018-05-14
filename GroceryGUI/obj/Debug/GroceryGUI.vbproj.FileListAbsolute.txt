@@ -1040,3 +1040,4 @@ C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport1
 C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmReport2.resources
 C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.View_Promoted_Products.resources
 C:\Users\Luke Sanders\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmCustomerCheckoutSearch.resources
+C:\Users\ls0057\Source\Repos\GE\GroceryGUI\obj\Debug\GroceryGUI.frmCustomerCheckoutSearch.resources
