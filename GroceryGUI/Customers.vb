@@ -17,10 +17,10 @@ Public Class frmCustomers
         frmUpdateCustomer.txtAvailableCredit.ReadOnly = False
         frmUpdateCustomer.txtUsedLineOfCredit.ReadOnly = False
         frmUpdateCustomer.txtEmail.ReadOnly = False
-        frmUpdateCustomer.btnSave.Enabled = False
-        frmUpdateCustomer.btnSave.Visible = False
-        frmUpdateCustomer.btnsave2.Visible = True
-        frmUpdateCustomer.btnsave2.Enabled = True
+        frmUpdateCustomer.btnupdate.Enabled = False
+        frmUpdateCustomer.btnupdate.Visible = False
+        frmUpdateCustomer.btnNew.Visible = True
+        frmUpdateCustomer.btnNew.Enabled = True
         ' Enable textboxes
         frmUpdateCustomer.txtFirst.Enabled = True
         frmUpdateCustomer.txtLast.Enabled = True
@@ -30,7 +30,6 @@ Public Class frmCustomers
         frmUpdateCustomer.txtAvailableCredit.Enabled = True
         frmUpdateCustomer.txtUsedLineOfCredit.Enabled = True
         frmUpdateCustomer.txtEmail.Enabled = True
-        frmUpdateCustomer.btnSave.Enabled = True
         frmUpdateCustomer.CheckBox1.Enabled = True
         frmUpdateCustomer.CheckBox2.Enabled = True
         frmUpdateCustomer.CheckBox3.Enabled = True

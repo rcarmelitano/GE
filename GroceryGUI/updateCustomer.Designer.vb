@@ -34,7 +34,7 @@ Partial Class frmUpdateCustomer
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnupdate = New System.Windows.Forms.Button()
         Me.txtUsedLineOfCredit = New System.Windows.Forms.TextBox()
         Me.txtFirst = New System.Windows.Forms.TextBox()
         Me.txtLast = New System.Windows.Forms.TextBox()
@@ -56,7 +56,7 @@ Partial Class frmUpdateCustomer
         Me.CustomerIDTextBox = New System.Windows.Forms.TextBox()
         Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager = New GroceryGUI.GEDataSetTableAdapters.TableAdapterManager()
-        Me.btnsave2 = New System.Windows.Forms.Button()
+        Me.btnNew = New System.Windows.Forms.Button()
         Me.lblFR = New System.Windows.Forms.Label()
         Me.lblLR = New System.Windows.Forms.Label()
         Me.lblDR = New System.Windows.Forms.Label()
@@ -182,16 +182,16 @@ Partial Class frmUpdateCustomer
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Subscriptions"
         '
-        'btnSave
+        'btnupdate
         '
-        Me.btnSave.Enabled = False
-        Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnSave.Location = New System.Drawing.Point(14, 405)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(585, 67)
-        Me.btnSave.TabIndex = 11
-        Me.btnSave.Text = "Save"
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.btnupdate.Enabled = False
+        Me.btnupdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.btnupdate.Location = New System.Drawing.Point(14, 405)
+        Me.btnupdate.Name = "btnupdate"
+        Me.btnupdate.Size = New System.Drawing.Size(585, 67)
+        Me.btnupdate.TabIndex = 11
+        Me.btnupdate.Text = "Save"
+        Me.btnupdate.UseVisualStyleBackColor = True
         '
         'txtUsedLineOfCredit
         '
@@ -411,17 +411,17 @@ Partial Class frmUpdateCustomer
         Me.TableAdapterManager.Trade_ShowsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = GroceryGUI.GEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'btnsave2
+        'btnNew
         '
-        Me.btnsave2.Enabled = False
-        Me.btnsave2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnsave2.Location = New System.Drawing.Point(12, 405)
-        Me.btnsave2.Name = "btnsave2"
-        Me.btnsave2.Size = New System.Drawing.Size(589, 67)
-        Me.btnsave2.TabIndex = 10
-        Me.btnsave2.Text = "Save"
-        Me.btnsave2.UseVisualStyleBackColor = True
-        Me.btnsave2.Visible = False
+        Me.btnNew.Enabled = False
+        Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.btnNew.Location = New System.Drawing.Point(12, 405)
+        Me.btnNew.Name = "btnNew"
+        Me.btnNew.Size = New System.Drawing.Size(589, 67)
+        Me.btnNew.TabIndex = 10
+        Me.btnNew.Text = "Save"
+        Me.btnNew.UseVisualStyleBackColor = True
+        Me.btnNew.Visible = False
         '
         'lblFR
         '
@@ -514,10 +514,10 @@ Partial Class frmUpdateCustomer
         Me.Controls.Add(Me.lblDR)
         Me.Controls.Add(Me.lblLR)
         Me.Controls.Add(Me.lblFR)
-        Me.Controls.Add(Me.btnsave2)
+        Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(CustomerIDLabel)
         Me.Controls.Add(Me.CustomerIDTextBox)
-        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnupdate)
         Me.Controls.Add(Me.txtUsedLineOfCredit)
         Me.Controls.Add(Me.txtFirst)
         Me.Controls.Add(Me.txtLast)
@@ -557,7 +557,7 @@ Partial Class frmUpdateCustomer
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btnSave As Button
+    Friend WithEvents btnupdate As Button
     Friend WithEvents txtUsedLineOfCredit As TextBox
     Friend WithEvents txtFirst As TextBox
     Friend WithEvents txtLast As TextBox
@@ -581,7 +581,7 @@ Partial Class frmUpdateCustomer
     Friend WithEvents mnuUpdate As ToolStripMenuItem
     Friend WithEvents Gift_CardsDataGridView As DataGridView
     Friend WithEvents Gift_CardsBindingSource As BindingSource
-    Friend WithEvents btnsave2 As Button
+    Friend WithEvents btnNew As Button
     Friend WithEvents lblFR As Label
     Friend WithEvents lblLR As Label
     Friend WithEvents lblDR As Label
