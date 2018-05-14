@@ -35,4 +35,13 @@
         Me.Close()
         frmPrimaryForm.Show()
     End Sub
+
+    Private Sub ShipmentsReceivedLogToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShipmentsReceivedLogToolStripMenuItem.Click
+        Me.Close()
+        ShipmentReceivingLog.Show()
+    End Sub
+
+    Private Sub CheckInProductsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckInProductsToolStripMenuItem.Click
+        ShipmentCheckIn.Show()
+    End Sub
 End Class

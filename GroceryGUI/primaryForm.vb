@@ -16,11 +16,6 @@
         Me.Hide()
     End Sub
 
-    Private Sub btnPromotions_Click(sender As Object, e As EventArgs)
-        ' Hide the primaryForm and display the promotions form
-        frmPromotion.Show()
-        Me.Hide()
-    End Sub
 
     Private Sub btnItemReturns_Click(sender As Object, e As EventArgs) Handles btnItemReturns.Click
         ' Hide the primaryForm and display the returns form

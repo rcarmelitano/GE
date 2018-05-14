@@ -1077,6 +1077,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:GroceryGUI.GEDataSet.Shipment_ReceivedDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:GroceryGUI.GEDataSet.Billing_AddressesRow">
 <summary>
 Represents strongly named DataRow class.
@@ -1258,6 +1263,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:GroceryGUI.GEDataSet.Promoted_DepartmentsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSet.Shipment_ReceivedRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -1447,6 +1457,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:GroceryGUI.GEDataSet.Shipment_ReceivedRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:GroceryGUI.GEDataSetTableAdapters.Billing_AddressesTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -1628,6 +1643,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:GroceryGUI.GEDataSetTableAdapters.Promoted_DepartmentsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GroceryGUI.GEDataSetTableAdapters.Shipment_ReceivedTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

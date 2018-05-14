@@ -50,6 +50,9 @@ Partial Class Marketing
         Me.EndDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MarketingCampaignsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tabPromotions = New System.Windows.Forms.TabPage()
+        Me.btnPromoteDept = New System.Windows.Forms.Button()
+        Me.btnPromoteCat = New System.Windows.Forms.Button()
+        Me.btnPromoProducts = New System.Windows.Forms.Button()
         Me.chkCampAssociation = New System.Windows.Forms.CheckBox()
         Me.cmbCampPicker = New System.Windows.Forms.ComboBox()
         Me.btnAddPromotion = New System.Windows.Forms.Button()
@@ -87,13 +90,7 @@ Partial Class Marketing
         Me.lblPercentageDiscount = New System.Windows.Forms.Label()
         Me.txtPercentage = New System.Windows.Forms.TextBox()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.DiscountIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DiscountTypeBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DiscountTypeIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BuyOneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GetOneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DiscountAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DiscountsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -109,6 +106,10 @@ Partial Class Marketing
         Me.txtPromotionTitle = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dgvPromotions = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.description = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAddPromotionID = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnPromotionTitleSearch = New System.Windows.Forms.Button()
         Me.txtPromotionID = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -118,25 +119,24 @@ Partial Class Marketing
         Me.btnDiscountIDSearch = New System.Windows.Forms.Button()
         Me.txtDiscountID = New System.Windows.Forms.TextBox()
         Me.dgvDiscounts = New System.Windows.Forms.DataGridView()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Marketing_CampaignsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Marketing_CampaignsTableAdapter()
-        Me.PromotionsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.PromotionsTableAdapter()
-        Me.DiscountsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DiscountsTableAdapter()
-        Me.Campaign_TypesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Campaign_TypesTableAdapter()
-        Me.Discount_TypeTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Discount_TypeTableAdapter()
-        Me.btnPromoProducts = New System.Windows.Forms.Button()
-        Me.btnPromoteCat = New System.Windows.Forms.Button()
-        Me.btnPromoteDept = New System.Windows.Forms.Button()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.description = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAddPromotionID = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAddDiscountID = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Marketing_CampaignsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Marketing_CampaignsTableAdapter()
+        Me.PromotionsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.PromotionsTableAdapter()
+        Me.DiscountsTableAdapter = New GroceryGUI.GEDataSetTableAdapters.DiscountsTableAdapter()
+        Me.Campaign_TypesTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Campaign_TypesTableAdapter()
+        Me.Discount_TypeTableAdapter = New GroceryGUI.GEDataSetTableAdapters.Discount_TypeTableAdapter()
+        Me.DiscountIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.DiscountTypeIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BuyOneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GetOneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DiscountAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabControl.SuspendLayout()
         Me.tabCampaigns.SuspendLayout()
         CType(Me.CampaignTypesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -415,6 +415,33 @@ Partial Class Marketing
         Me.tabPromotions.TabIndex = 1
         Me.tabPromotions.Text = "Promotions"
         Me.tabPromotions.UseVisualStyleBackColor = True
+        '
+        'btnPromoteDept
+        '
+        Me.btnPromoteDept.Location = New System.Drawing.Point(858, 208)
+        Me.btnPromoteDept.Name = "btnPromoteDept"
+        Me.btnPromoteDept.Size = New System.Drawing.Size(255, 45)
+        Me.btnPromoteDept.TabIndex = 30
+        Me.btnPromoteDept.Text = "Promote Departments"
+        Me.btnPromoteDept.UseVisualStyleBackColor = True
+        '
+        'btnPromoteCat
+        '
+        Me.btnPromoteCat.Location = New System.Drawing.Point(586, 208)
+        Me.btnPromoteCat.Name = "btnPromoteCat"
+        Me.btnPromoteCat.Size = New System.Drawing.Size(255, 45)
+        Me.btnPromoteCat.TabIndex = 29
+        Me.btnPromoteCat.Text = "Promote Categories"
+        Me.btnPromoteCat.UseVisualStyleBackColor = True
+        '
+        'btnPromoProducts
+        '
+        Me.btnPromoProducts.Location = New System.Drawing.Point(299, 208)
+        Me.btnPromoProducts.Name = "btnPromoProducts"
+        Me.btnPromoProducts.Size = New System.Drawing.Size(268, 45)
+        Me.btnPromoProducts.TabIndex = 28
+        Me.btnPromoProducts.Text = "Promote Products"
+        Me.btnPromoProducts.UseVisualStyleBackColor = True
         '
         'chkCampAssociation
         '
@@ -753,52 +780,10 @@ Partial Class Marketing
         Me.DataGridView3.Size = New System.Drawing.Size(1121, 324)
         Me.DataGridView3.TabIndex = 0
         '
-        'DiscountIDDataGridViewTextBoxColumn
-        '
-        Me.DiscountIDDataGridViewTextBoxColumn.DataPropertyName = "discountID"
-        Me.DiscountIDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.DiscountIDDataGridViewTextBoxColumn.Name = "DiscountIDDataGridViewTextBoxColumn"
-        Me.DiscountIDDataGridViewTextBoxColumn.Width = 45
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "discountTypeID"
-        Me.Column1.DataSource = Me.DiscountTypeBindingSource1
-        Me.Column1.DisplayMember = "discountType"
-        Me.Column1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
-        Me.Column1.HeaderText = "Type"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ValueMember = "discountTypeID"
-        '
         'DiscountTypeBindingSource1
         '
         Me.DiscountTypeBindingSource1.DataMember = "Discount_Type"
         Me.DiscountTypeBindingSource1.DataSource = Me.GEDataSet
-        '
-        'DiscountTypeIDDataGridViewTextBoxColumn
-        '
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.DataPropertyName = "discountTypeID"
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.HeaderText = "discountTypeID"
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.Name = "DiscountTypeIDDataGridViewTextBoxColumn"
-        Me.DiscountTypeIDDataGridViewTextBoxColumn.Visible = False
-        '
-        'BuyOneDataGridViewTextBoxColumn
-        '
-        Me.BuyOneDataGridViewTextBoxColumn.DataPropertyName = "buyOne"
-        Me.BuyOneDataGridViewTextBoxColumn.HeaderText = "Buy One"
-        Me.BuyOneDataGridViewTextBoxColumn.Name = "BuyOneDataGridViewTextBoxColumn"
-        '
-        'GetOneDataGridViewTextBoxColumn
-        '
-        Me.GetOneDataGridViewTextBoxColumn.DataPropertyName = "getOne"
-        Me.GetOneDataGridViewTextBoxColumn.HeaderText = "Get One"
-        Me.GetOneDataGridViewTextBoxColumn.Name = "GetOneDataGridViewTextBoxColumn"
-        '
-        'DiscountAmountDataGridViewTextBoxColumn
-        '
-        Me.DiscountAmountDataGridViewTextBoxColumn.DataPropertyName = "discountAmount"
-        Me.DiscountAmountDataGridViewTextBoxColumn.HeaderText = "Amount"
-        Me.DiscountAmountDataGridViewTextBoxColumn.Name = "DiscountAmountDataGridViewTextBoxColumn"
         '
         'DiscountsBindingSource
         '
@@ -951,6 +936,39 @@ Partial Class Marketing
         Me.dgvPromotions.Size = New System.Drawing.Size(1079, 303)
         Me.dgvPromotions.TabIndex = 98
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "promotionID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Promotion ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 89
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "title"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Title"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 60
+        '
+        'description
+        '
+        Me.description.DataPropertyName = "description"
+        Me.description.HeaderText = "Description"
+        Me.description.Name = "description"
+        Me.description.ReadOnly = True
+        Me.description.Width = 230
+        '
+        'btnAddPromotionID
+        '
+        Me.btnAddPromotionID.HeaderText = ""
+        Me.btnAddPromotionID.Name = "btnAddPromotionID"
+        Me.btnAddPromotionID.ReadOnly = True
+        Me.btnAddPromotionID.Text = "Add"
+        Me.btnAddPromotionID.UseColumnTextForButtonValue = True
+        '
         'btnPromotionTitleSearch
         '
         Me.btnPromotionTitleSearch.Location = New System.Drawing.Point(1008, 8)
@@ -1044,95 +1062,6 @@ Partial Class Marketing
         Me.dgvDiscounts.Size = New System.Drawing.Size(1082, 301)
         Me.dgvDiscounts.TabIndex = 90
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(12, 11)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(89, 18)
-        Me.Label13.TabIndex = 85
-        Me.Label13.Text = "Discount ID:"
-        '
-        'Marketing_CampaignsTableAdapter
-        '
-        Me.Marketing_CampaignsTableAdapter.ClearBeforeFill = True
-        '
-        'PromotionsTableAdapter
-        '
-        Me.PromotionsTableAdapter.ClearBeforeFill = True
-        '
-        'DiscountsTableAdapter
-        '
-        Me.DiscountsTableAdapter.ClearBeforeFill = True
-        '
-        'Campaign_TypesTableAdapter
-        '
-        Me.Campaign_TypesTableAdapter.ClearBeforeFill = True
-        '
-        'Discount_TypeTableAdapter
-        '
-        Me.Discount_TypeTableAdapter.ClearBeforeFill = True
-        '
-        'btnPromoProducts
-        '
-        Me.btnPromoProducts.Location = New System.Drawing.Point(299, 208)
-        Me.btnPromoProducts.Name = "btnPromoProducts"
-        Me.btnPromoProducts.Size = New System.Drawing.Size(268, 45)
-        Me.btnPromoProducts.TabIndex = 28
-        Me.btnPromoProducts.Text = "Promote Products"
-        Me.btnPromoProducts.UseVisualStyleBackColor = True
-        '
-        'btnPromoteCat
-        '
-        Me.btnPromoteCat.Location = New System.Drawing.Point(586, 208)
-        Me.btnPromoteCat.Name = "btnPromoteCat"
-        Me.btnPromoteCat.Size = New System.Drawing.Size(255, 45)
-        Me.btnPromoteCat.TabIndex = 29
-        Me.btnPromoteCat.Text = "Promote Categories"
-        Me.btnPromoteCat.UseVisualStyleBackColor = True
-        '
-        'btnPromoteDept
-        '
-        Me.btnPromoteDept.Location = New System.Drawing.Point(858, 208)
-        Me.btnPromoteDept.Name = "btnPromoteDept"
-        Me.btnPromoteDept.Size = New System.Drawing.Size(255, 45)
-        Me.btnPromoteDept.TabIndex = 30
-        Me.btnPromoteDept.Text = "Promote Departments"
-        Me.btnPromoteDept.UseVisualStyleBackColor = True
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "promotionID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Promotion ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 89
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "title"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Title"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 60
-        '
-        'description
-        '
-        Me.description.DataPropertyName = "description"
-        Me.description.HeaderText = "Description"
-        Me.description.Name = "description"
-        Me.description.ReadOnly = True
-        Me.description.Width = 230
-        '
-        'btnAddPromotionID
-        '
-        Me.btnAddPromotionID.HeaderText = ""
-        Me.btnAddPromotionID.Name = "btnAddPromotionID"
-        Me.btnAddPromotionID.ReadOnly = True
-        Me.btnAddPromotionID.Text = "Add"
-        Me.btnAddPromotionID.UseColumnTextForButtonValue = True
-        '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "discountID"
@@ -1185,6 +1114,78 @@ Partial Class Marketing
         Me.btnAddDiscountID.ReadOnly = True
         Me.btnAddDiscountID.Text = "Add"
         Me.btnAddDiscountID.UseColumnTextForButtonValue = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(12, 11)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(89, 18)
+        Me.Label13.TabIndex = 85
+        Me.Label13.Text = "Discount ID:"
+        '
+        'Marketing_CampaignsTableAdapter
+        '
+        Me.Marketing_CampaignsTableAdapter.ClearBeforeFill = True
+        '
+        'PromotionsTableAdapter
+        '
+        Me.PromotionsTableAdapter.ClearBeforeFill = True
+        '
+        'DiscountsTableAdapter
+        '
+        Me.DiscountsTableAdapter.ClearBeforeFill = True
+        '
+        'Campaign_TypesTableAdapter
+        '
+        Me.Campaign_TypesTableAdapter.ClearBeforeFill = True
+        '
+        'Discount_TypeTableAdapter
+        '
+        Me.Discount_TypeTableAdapter.ClearBeforeFill = True
+        '
+        'DiscountIDDataGridViewTextBoxColumn
+        '
+        Me.DiscountIDDataGridViewTextBoxColumn.DataPropertyName = "discountID"
+        Me.DiscountIDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.DiscountIDDataGridViewTextBoxColumn.Name = "DiscountIDDataGridViewTextBoxColumn"
+        Me.DiscountIDDataGridViewTextBoxColumn.Width = 45
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "discountTypeID"
+        Me.Column1.DataSource = Me.DiscountTypeBindingSource1
+        Me.Column1.DisplayMember = "discountType"
+        Me.Column1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.[Nothing]
+        Me.Column1.HeaderText = "Type"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ValueMember = "discountTypeID"
+        Me.Column1.Width = 200
+        '
+        'DiscountTypeIDDataGridViewTextBoxColumn
+        '
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.DataPropertyName = "discountTypeID"
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.HeaderText = "discountTypeID"
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.Name = "DiscountTypeIDDataGridViewTextBoxColumn"
+        Me.DiscountTypeIDDataGridViewTextBoxColumn.Visible = False
+        '
+        'BuyOneDataGridViewTextBoxColumn
+        '
+        Me.BuyOneDataGridViewTextBoxColumn.DataPropertyName = "buyOne"
+        Me.BuyOneDataGridViewTextBoxColumn.HeaderText = "Buy One"
+        Me.BuyOneDataGridViewTextBoxColumn.Name = "BuyOneDataGridViewTextBoxColumn"
+        '
+        'GetOneDataGridViewTextBoxColumn
+        '
+        Me.GetOneDataGridViewTextBoxColumn.DataPropertyName = "getOne"
+        Me.GetOneDataGridViewTextBoxColumn.HeaderText = "Get One"
+        Me.GetOneDataGridViewTextBoxColumn.Name = "GetOneDataGridViewTextBoxColumn"
+        '
+        'DiscountAmountDataGridViewTextBoxColumn
+        '
+        Me.DiscountAmountDataGridViewTextBoxColumn.DataPropertyName = "discountAmount"
+        Me.DiscountAmountDataGridViewTextBoxColumn.HeaderText = "Amount"
+        Me.DiscountAmountDataGridViewTextBoxColumn.Name = "DiscountAmountDataGridViewTextBoxColumn"
         '
         'Marketing
         '
@@ -1289,13 +1290,7 @@ Partial Class Marketing
     Friend WithEvents StartDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EndDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MarketingCampaignsBindingSource1 As BindingSource
-    Friend WithEvents DiscountIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewComboBoxColumn
     Friend WithEvents DiscountTypeBindingSource1 As BindingSource
-    Friend WithEvents DiscountTypeIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents BuyOneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents GetOneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DiscountAmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PromotionIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents campaign As DataGridViewComboBoxColumn
     Friend WithEvents CampaignIDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
@@ -1341,4 +1336,10 @@ Partial Class Marketing
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents btnAddDiscountID As DataGridViewButtonColumn
+    Friend WithEvents DiscountIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewComboBoxColumn
+    Friend WithEvents DiscountTypeIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BuyOneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GetOneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DiscountAmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

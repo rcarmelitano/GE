@@ -122,7 +122,7 @@ Partial Class NewPurchaseOrderDetails
         Me.btnPlacePurchaseOrder.Name = "btnPlacePurchaseOrder"
         Me.btnPlacePurchaseOrder.Size = New System.Drawing.Size(222, 39)
         Me.btnPlacePurchaseOrder.TabIndex = 22
-        Me.btnPlacePurchaseOrder.Text = "Place Purchase Order"
+        Me.btnPlacePurchaseOrder.Text = "Add to Purchase Order"
         Me.btnPlacePurchaseOrder.UseVisualStyleBackColor = True
         '
         'cmbStatusID
@@ -299,7 +299,7 @@ Partial Class NewPurchaseOrderDetails
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "NewPurchaseOrderDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "NewPurchaseOrderDetails"
+        Me.Text = "Add Products to Purchase Order"
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
