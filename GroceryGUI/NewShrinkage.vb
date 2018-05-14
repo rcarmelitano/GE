@@ -19,6 +19,10 @@ Public Class frmNewShrinkage
 
         txtEmployeeID.Text = 4
 
+
+        ' Converts the date and time of the datetimepicker to a usable string format
+        dtpShrinkDate.Format = DateTimePickerFormat.Custom
+        dtpShrinkDate.CustomFormat = "MM/dd/yyyy hh:mm"
     End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
@@ -66,6 +70,11 @@ Public Class frmNewShrinkage
 
                 shrinkageConnection.Close()
 
+
+                Dim dateString As String = String.Empty
+                dateString = DateTime.Now
+
+
                 ' Add the new return and set the values entered to the attributes of the returns table
                 Dim addShrinkage As New SqlCommand("INSERT INTO Shrinkage (shrinkageID, employeeID, SKU, statusID, quantity, shrinkDate, details, unit)
                                                 VALUES(@shrinkageID, @employeeID, @SKU, @statusID, @quantity, @shrinkDate, @details, @unit)", shrinkageConnection)
@@ -75,28 +84,38 @@ Public Class frmNewShrinkage
                 addShrinkage.Parameters.AddWithValue("@SKU", txtSKU.Text)
                 addShrinkage.Parameters.AddWithValue("@statusID", txtStatusID.Text)
                 addShrinkage.Parameters.AddWithValue("@quantity", txtQuantity.Text)
-                addShrinkage.Parameters.AddWithValue("@shrinkDate", DateTime.Now)
+                addShrinkage.Parameters.AddWithValue("@shrinkDate", dateString)
                 addShrinkage.Parameters.AddWithValue("@details", txtDetails.Text)
                 addShrinkage.Parameters.AddWithValue("@unit", txtUnit.Text)
 
                 Dim newInventory As Integer
                 newInventory = txtQuantityStorage.Text - txtQuantity.Text
 
-                ''NEED TO DO; fix this so that it updates inventory with the new inventory count 'newInventory'
-                Dim updateInventory As New SqlCommand("INSERT INTO Inventory (inventoryCount) VALUES (@inventoryCount)", shrinkageConnection)
-
-                updateInventory.Parameters.AddWithValue("@inventoryCount", newInventory.ToString)
-
                 Try
                     shrinkageConnection.Open()
                     addShrinkage.ExecuteNonQuery()
+                Catch ex As Exception
+                    MessageBox.Show("Adding shrinkage has failed due to an unknown error.")
+                    Exit Sub
+                End Try
+                shrinkageConnection.Close()
+
+
+                ''NEED TO DO; fix this so that it updates inventory with the new inventory count 'newInventory'
+                Dim updateInventory As New SqlCommand("UPDATE Inventory SET (inventoryCount = @inventoryCount) WHERE SKU = @SKU", shrinkageConnection)
+
+                updateInventory.Parameters.AddWithValue("@inventoryCount", newInventory.ToString)
+                updateInventory.Parameters.AddWithValue("@SKU", txtSKU.Text)
+
+                Try
+                    shrinkageConnection.Open()
                     updateInventory.ExecuteNonQuery()
                 Catch ex As Exception
-                    MessageBox.Show("Whoops!")
+                    MessageBox.Show("Adding shrinkage has failed due to an unknown error.")
                     Exit Sub
                 End Try
 
-                MessageBox.Show("You have successfully added Shrinkage.")
+                MessageBox.Show("You have successfully added Shrinkage")
                 shrinkageConnection.Close()
                 frmShrinkage.Show()
                 Me.Close()

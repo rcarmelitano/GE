@@ -123,4 +123,9 @@
         Me.Hide()
         frmPurchaseOrders.Show()
     End Sub
+
+    Private Sub btnShrinkage_Click(sender As Object, e As EventArgs) Handles btnShrinkage.Click
+        Me.Hide()
+        frmShrinkage.Show()
+    End Sub
 End Class

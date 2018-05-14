@@ -39,6 +39,7 @@ Partial Class frmPrimaryForm
         Me.btnMarketingCampaigns = New System.Windows.Forms.Button()
         Me.btnDepartments = New System.Windows.Forms.Button()
         Me.btnItemReturns = New System.Windows.Forms.Button()
+        Me.btnShrinkage = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnCheckout
@@ -192,7 +193,7 @@ Partial Class frmPrimaryForm
         Me.btnShipments.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnShipments.Enabled = False
         Me.btnShipments.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.btnShipments.Location = New System.Drawing.Point(323, 548)
+        Me.btnShipments.Location = New System.Drawing.Point(423, 546)
         Me.btnShipments.Name = "btnShipments"
         Me.btnShipments.Size = New System.Drawing.Size(142, 51)
         Me.btnShipments.TabIndex = 14
@@ -251,11 +252,22 @@ Partial Class frmPrimaryForm
         Me.btnItemReturns.Text = "ITEM RETURNS"
         Me.btnItemReturns.UseVisualStyleBackColor = False
         '
+        'btnShrinkage
+        '
+        Me.btnShrinkage.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.btnShrinkage.Location = New System.Drawing.Point(225, 548)
+        Me.btnShrinkage.Name = "btnShrinkage"
+        Me.btnShrinkage.Size = New System.Drawing.Size(142, 49)
+        Me.btnShrinkage.TabIndex = 18
+        Me.btnShrinkage.Text = "SHRINKAGE"
+        Me.btnShrinkage.UseVisualStyleBackColor = True
+        '
         'frmPrimaryForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(790, 609)
+        Me.Controls.Add(Me.btnShrinkage)
         Me.Controls.Add(Me.btnDepartments)
         Me.Controls.Add(Me.btnMarketingCampaigns)
         Me.Controls.Add(Me.btnPurchaseOrders)
@@ -300,4 +312,5 @@ Partial Class frmPrimaryForm
     Friend WithEvents btnMarketingCampaigns As Button
     Friend WithEvents btnDepartments As Button
     Friend WithEvents btnItemReturns As Button
+    Friend WithEvents btnShrinkage As Button
 End Class
